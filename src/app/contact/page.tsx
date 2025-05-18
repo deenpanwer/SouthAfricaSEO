@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { ContactForm } from '@/components/contact/ContactForm';
 import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants.tsx';
+import { ContactForm } from '@/components/contact/ContactForm';
 import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
