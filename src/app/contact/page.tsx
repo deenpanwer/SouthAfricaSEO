@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
-import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants.tsx';
-import { ContactForm } from '@/components/contact/ContactForm';
+import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants';
 // Import Suspense
-import { Suspense } from 'react';
 import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';;
+import Image from 'next/image';
+import { Suspense } from 'react';
+// Import the new ContactFormWrapper
+import { ContactFormWrapper } from '@/components/contact/ContactFormWrapper';
+import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -30,8 +32,9 @@ export default function ContactPage() {
           {/* Contact Form Section */}
           <section className="bg-card p-6 sm:p-8 rounded-lg shadow-xl">
             <h2 className="text-2xl font-semibold text-foreground mb-6">Send Us a Message</h2>
+            {/* Render the ContactFormWrapper */}
             <Suspense fallback={<div>Loading form...</div>}>
-              <ContactForm />
+              <ContactForm/>
             </Suspense>
           </section>
 
@@ -101,5 +104,5 @@ export default function ContactPage() {
         </section>
       </div>
     </div>
-  );
+  )
 }

@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
+import { SERVICE_PACKAGES } from '@/lib/constants';
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -35,22 +35,19 @@ async function submitContactForm(data: ContactFormValues): Promise<{ success: bo
   return { success: true, message: "Thank you for your message! We'll be in touch soon." };
 }
 
-
 export function ContactForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  // Add useSearchParams hook call
   const searchParams = useSearchParams();
-  const preselectedPackage = searchParams.get('package') || SERVICE_PACKAGES[0]?.name || "General Inquiry";
-
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
-      email: "",
       company: "",
       phone: "",
-      service: preselectedPackage,
+      service: "General Inquiry", // Default to General Inquiry initially
       message: "",
     },
   });
@@ -151,7 +148,6 @@ export function ContactForm() {
             )}
           />
         </div>
-
         <FormField
           control={form.control}
           name="service"
