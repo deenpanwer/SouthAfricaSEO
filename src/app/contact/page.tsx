@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 // Import the new ContactFormWrapper
 import { ContactFormWrapper } from '@/components/contact/ContactFormWrapper';
-import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -34,7 +33,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-foreground mb-6">Send Us a Message</h2>
             {/* Render the ContactFormWrapper */}
             <Suspense fallback={<div>Loading form...</div>}>
-              <ContactForm/>
+              <ContactFormWrapper/>
             </Suspense>
           </section>
 
