@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useForm, type SubmitHandler } from 'react-hook-form';
@@ -9,22 +10,23 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { SERVICE_PACKAGES } from '@/lib/constants';
+import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import type { ContactFormValues } from '@/types';
+// import { useSearchParams } from 'next/navigation'; // Removed as useSearchParams is now in the wrapper
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   company: z.string().optional(),
-  phone: z.string().optional(),
+  phone: z.string().min(10, { message: "Please enter a valid phone number." }).regex(/^\+?[0-9\s\-()]{10,}$/, { message: "Invalid phone number format."}).optional(),
+  website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }).optional(),
   service: z.string().min(1, { message: "Please select a service of interest." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000, { message: "Message cannot exceed 1000 characters." }),
 });
 
-type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 // Mock server action
 async function submitContactForm(data: ContactFormValues): Promise<{ success: boolean; message: string }> {
@@ -35,30 +37,32 @@ async function submitContactForm(data: ContactFormValues): Promise<{ success: bo
   return { success: true, message: "Thank you for your message! We'll be in touch soon." };
 }
 
-export function ContactForm() {
+export function ContactForm({ preselectedService }: { preselectedService?: string }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  // Add useSearchParams hook call
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams(); // In wrapper
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
+      email: "",
       company: "",
       phone: "",
-      service: "General Inquiry", // Default to General Inquiry initially
+      website: "",
+      service: preselectedService || "General Inquiry",
       message: "",
     },
   });
-  
-  useEffect(() => {
-    const serviceFromQuery = searchParams.get('package');
-    if (serviceFromQuery) {
-      const foundPackage = SERVICE_PACKAGES.find(pkg => pkg.name === serviceFromQuery);
-      form.setValue('service', foundPackage ? foundPackage.name : "General Inquiry");
-    }
-  }, [searchParams, form]);
+
+  // useEffect(() => { // In wrapper
+  //   const serviceFromQuery = searchParams.get('service');
+  //   if (serviceFromQuery && SERVICE_PACKAGES.some(pkg => pkg.name === serviceFromQuery)) {
+  //     form.setValue('service', serviceFromQuery);
+  //   } else if (serviceFromQuery) {
+  //     form.setValue('service', 'Custom Solution'); // Fallback if specific package name not found
+  //   }
+  // }, [searchParams, form]);
 
 
   const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
@@ -98,9 +102,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="name">Full Name</FormLabel>
+                <FormLabel htmlFor="name">Full Name*</FormLabel>
                 <FormControl>
-                  <Input id="name" placeholder="e.g. Thabo Mbeki" {...field} disabled={isLoading} />
+                  <Input id="name" placeholder="e.g. Alex Smith" {...field} disabled={isLoading} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,7 +115,7 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="email">Email Address</FormLabel>
+                <FormLabel htmlFor="email">Email Address*</FormLabel>
                 <FormControl>
                   <Input id="email" type="email" placeholder="you@example.com" {...field} disabled={isLoading} />
                 </FormControl>
@@ -126,9 +130,9 @@ export function ContactForm() {
             name="company"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="company">Company Name (Optional)</FormLabel>
+                <FormLabel htmlFor="company">Company Name</FormLabel>
                 <FormControl>
-                  <Input id="company" placeholder="Your Company (Pty) Ltd" {...field} disabled={isLoading} />
+                  <Input id="company" placeholder="Your Company Inc." {...field} disabled={isLoading} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -139,25 +143,38 @@ export function ContactForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="phone">Phone Number (Optional)</FormLabel>
+                <FormLabel htmlFor="phone">Phone Number</FormLabel>
                 <FormControl>
-                  <Input id="phone" type="tel" placeholder="+27 82 123 4567" {...field} disabled={isLoading} />
+                  <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" {...field} disabled={isLoading} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
+         <FormField
+            control={form.control}
+            name="website"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel htmlFor="website">Website URL</FormLabel>
+                <FormControl>
+                  <Input id="website" placeholder="https://yourcompany.com" {...field} disabled={isLoading} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         <FormField
           control={form.control}
           name="service"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="service">Service of Interest</FormLabel>
+              <FormLabel htmlFor="service">Service of Interest*</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
                 <FormControl>
                   <SelectTrigger id="service">
-                    <SelectValue placeholder="Select a service package" />
+                    <SelectValue placeholder="Select a service plan" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -167,7 +184,7 @@ export function ContactForm() {
                       {pkg.name}
                     </SelectItem>
                   ))}
-                  <SelectItem value="Custom Solution">Custom SEO Solution</SelectItem>
+                  <SelectItem value="Custom Solution">Custom Business Solution</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -180,7 +197,7 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="message">Your Message</FormLabel>
+              <FormLabel htmlFor="message">Your Message*</FormLabel>
               <FormControl>
                 <Textarea
                   id="message"
@@ -191,7 +208,7 @@ export function ContactForm() {
                 />
               </FormControl>
               <FormDescription>
-                Briefly describe your SEO needs or questions. Max 1000 characters.
+                Briefly describe your business needs or questions. Max 1000 characters.
               </FormDescription>
               <FormMessage />
             </FormItem>

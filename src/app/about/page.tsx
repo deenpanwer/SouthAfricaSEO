@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,7 +9,7 @@ import { CheckCircle, Users, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: `Learn about ${APP_NAME}'s mission, expertise, and the dedicated team helping South African businesses succeed with SEO.`,
+  description: `Learn about ${APP_NAME}'s mission, expertise, and the dedicated team helping businesses succeed with strategic solutions.`,
 };
 
 export default function AboutUsPage() {
@@ -48,7 +49,7 @@ export default function AboutUsPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">{expertise.title}</h2>
             <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Leveraging deep local knowledge and cutting-edge techniques for your success.
+              Leveraging deep market knowledge and cutting-edge techniques for your success.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,9 +69,9 @@ export default function AboutUsPage() {
           </div>
            <div className="mt-12 grid md:grid-cols-2 gap-12 items-center">
              <div className="order-last md:order-first">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose Us for South African SEO?</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose Us for Your Business?</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" /><span><strong>Local Focus, Global Standards:</strong> We combine in-depth understanding of the South African market with world-class SEO practices.</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" /><span><strong>Strategic Focus, Global Standards:</strong> We combine in-depth understanding of market dynamics with world-class practices.</span></li>
                 <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" /><span><strong>Results-Driven:</strong> Our strategies are designed to deliver measurable improvements in traffic, leads, and sales.</span></li>
                 <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" /><span><strong>Transparent Communication:</strong> We keep you informed every step of the way with clear reporting and proactive updates.</span></li>
                 <li className="flex items-start"><CheckCircle className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" /><span><strong>Long-Term Partnerships:</strong> We aim to be an extension of your team, committed to your ongoing success.</span></li>
@@ -121,9 +122,9 @@ export default function AboutUsPage() {
         <section className="text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Ready to Amplify Your Online Presence?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-            Let our South African SEO experts craft a winning strategy for your business.
+            Let our experts craft a winning strategy for your business.
           </p>
-          <Button size="lg" asChild>
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/contact">Get in Touch</Link>
           </Button>
         </section>

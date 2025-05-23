@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export interface NavItem {
@@ -61,11 +62,19 @@ export interface BlogPost {
   content?: string; // Full content for individual blog post page
 }
 
+export interface TracLeadFormValues {
+  website: string;
+  phoneNumber: string;
+  name?: string; // Optional name field
+}
+
 export interface ContactFormValues {
   name: string;
   email: string;
   company?: string;
   phone?: string;
+  website?: string; // Added website to main contact form as well
   service: string;
   message: string;
 }
+

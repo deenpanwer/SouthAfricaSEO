@@ -1,9 +1,10 @@
+
 import Image from 'next/image';
 import { CheckCircle } from 'lucide-react';
-import { IMPORTANCE_OF_SEO_SA } from '@/lib/constants.tsx';
+import { IMPORTANCE_OF_STRATEGY } from '@/lib/constants.tsx'; // Updated constant name
 
 export function ImportanceSection() {
-  const { title, points, imageUrl, dataAiHint } = IMPORTANCE_OF_SEO_SA;
+  const { title, points, imageUrl, dataAiHint } = IMPORTANCE_OF_STRATEGY; // Using IMPORTANCE_OF_STRATEGY
 
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -30,8 +31,8 @@ export function ImportanceSection() {
           <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl order-first md:order-last">
             <Image
               src={imageUrl}
-              alt="Importance of SEO in South Africa"
-              data-ai-hint={dataAiHint || "business strategy"}
+              alt="Importance of Business Strategy"
+              data-ai-hint={dataAiHint || "business planning"}
               layout="fill"
               objectFit="cover"
             />

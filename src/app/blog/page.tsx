@@ -1,5 +1,6 @@
+
 import { Metadata } from 'next';
-import { AITopicSuggestion } from '@/components/blog/AITopicSuggestion';
+// import { AITopicSuggestion } from '@/components/blog/AITopicSuggestion'; // AI component removed
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BLOG_POSTS, APP_NAME } from '@/lib/constants.tsx';
 import { Rss, Search } from 'lucide-react';
@@ -7,8 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'SEO Blog',
-  description: `Stay updated with the latest SEO insights, tips, and trends for South African businesses from ${APP_NAME}.`,
+  title: 'Business Insights Blog',
+  description: `Stay updated with the latest business insights, tips, and trends from ${APP_NAME}.`,
 };
 
 // Mock search functionality for demonstration
@@ -33,16 +34,19 @@ export default async function BlogPage({ searchParams }: { searchParams?: { quer
         <section className="text-center mb-12 md:mb-16">
           <Rss className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
-            {APP_NAME} SEO Blog
+            {APP_NAME} Insights Blog
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your source for expert insights, strategies, and news on SEO in South Africa. Helping you navigate the digital landscape and achieve your business goals.
+            Your source for expert insights, strategies, and news on business growth and optimization. Helping you navigate the competitive landscape and achieve your business goals.
           </p>
         </section>
 
+        {/* AI Topic Suggestion section removed */}
+        {/* 
         <section className="mb-12 md:mb-16">
           <AITopicSuggestion />
-        </section>
+        </section> 
+        */}
         
         <section className="mb-12">
           <form method="GET" action="/blog" className="flex gap-2 mb-8 max-w-lg mx-auto">

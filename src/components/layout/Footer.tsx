@@ -1,6 +1,7 @@
+
 import Link from 'next/link';
 import { APP_NAME, NAV_ITEMS, SOCIAL_LINKS, CONTACT_DETAILS } from '@/lib/constants.tsx';
-import { Zap } from 'lucide-react';
+import { Zap } from 'lucide-react'; // Zap can be a generic "spark" or "boost" icon
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,7 +17,7 @@ export function Footer() {
               <span className="font-bold text-xl text-foreground">{APP_NAME}</span>
             </Link>
             <p className="text-sm">
-              Empowering South African businesses with expert SEO services for sustainable growth and online dominance.
+              Empowering businesses with expert strategies for sustainable growth and market dominance.
             </p>
           </div>
 

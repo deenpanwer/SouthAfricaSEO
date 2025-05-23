@@ -1,3 +1,4 @@
+
 import type { ServicePackage } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -35,8 +36,9 @@ export function ServicePackageDisplay({ packages }: ServicePackageDisplayProps) 
             </ul>
           </CardContent>
           <CardFooter>
+            {/* Pass package name to contact form to pre-select service */}
             <Button asChild className={`w-full mt-4 ${index === 2 ? '' : 'variant-outline'}`}>
-              <Link href="/contact?package=">
+              <Link href={`/contact?package=${encodeURIComponent(pkg.name)}`}>
                 {pkg.cta} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

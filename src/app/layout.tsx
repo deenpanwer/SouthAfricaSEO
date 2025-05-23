@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -17,11 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZA Rank Boost - Dominate South African Search Results',
-    template: '%s | ZA Rank Boost',
+    default: 'TRAC - Amplify Your Revenue & Sales',
+    template: '%s | TRAC',
   },
-  description: 'Expert SEO Services in South Africa to Increase Your Website Traffic, Leads, and Sales.',
-  keywords: ['SEO South Africa', 'South African SEO', 'lead generation', 'online visibility', 'ROI', 'digital marketing South Africa'],
+  description: 'TRAC provides strategic business solutions to increase your website traffic, leads, and sales, driving significant growth for your company.',
+  keywords: ['business growth', 'sales optimization', 'conversion strategies', 'revenue amplification', 'business consulting'],
 };
 
 export default function RootLayout({

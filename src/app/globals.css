@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,79 +9,79 @@ body {
 
 @layer base {
   :root {
-    --background: 220 17% 95%; /* Light blue-gray #F0F2F5 */
-    --foreground: 222 47% 11%; /* Darker blue for text */
+    --background: 0 0% 98%; /* Almost white */
+    --foreground: 240 10% 3.9%; /* Dark cool gray */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 221 44% 41%; /* Deep Blue #3B5998 */
-    --primary-foreground: 210 40% 98%; /* Light color for text on primary */
+    --primary: 258 100% 63%; /* Vibrant Purple */
+    --primary-foreground: 0 0% 98%; /* Light color for text on primary */
 
-    --secondary: 210 40% 96.1%; /* Slightly off-white */
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 240 4.8% 95.9%; /* Light gray */
+    --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 20.2% 65.1%; /* Muted text color */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 5.9% 60%; /* Muted gray text */
 
-    --accent: 300 100% 25%; /* Purple #800080 */
-    --accent-foreground: 300 100% 95%; /* Light color for text on accent */
+    --accent: 50 100% 58%; /* Bright Yellow/Orange for CTAs */
+    --accent-foreground: 240 10% 3.9%; /* Dark text on accent */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 44% 41%; /* Deep Blue for focus rings */
+    --border: 240 5.9% 90%; /* Light border */
+    --input: 240 5.9% 90%;
+    --ring: 258 100% 63%; /* Primary purple for focus rings */
 
     --radius: 0.5rem;
 
-    /* Chart colors - can be adjusted if specific chart colors are needed */
-    --chart-1: 221 44% 41%; /* Primary */
-    --chart-2: 300 100% 25%; /* Accent */
-    --chart-3: 210 40% 50%; 
-    --chart-4: 180 40% 50%;
-    --chart-5: 40 80% 60%;
+    /* Chart colors */
+    --chart-1: 258 100% 63%; /* Primary */
+    --chart-2: 50 100% 58%; /* Accent */
+    --chart-3: 220 80% 60%; 
+    --chart-4: 180 70% 50%;
+    --chart-5: 30 80% 60%;
   }
 
   .dark {
-    --background: 222 47% 11%; /* Dark Blue */
-    --foreground: 210 40% 98%; /* Light text */
+    --background: 240 10% 3.9%; /* Dark cool gray / near black */
+    --foreground: 0 0% 98%; /* Almost white text */
 
-    --card: 222 47% 14%; /* Slightly lighter dark blue for cards */
-    --card-foreground: 210 40% 98%;
+    --card: 240 6% 10%; /* Slightly lighter dark */
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%; /* Light color for primary in dark mode */
-    --primary-foreground: 221 44% 41%; /* Deep Blue for text on primary */
+    --primary: 258 100% 70%; /* Brighter Purple for dark mode */
+    --primary-foreground: 240 10% 3.9%; /* Dark text on primary */
 
-    --secondary: 222 47% 18%; /* Darker secondary */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 3.7% 15.9%; /* Darker gray */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 222 47% 18%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%; /* Lighter muted text */
 
-    --accent: 300 80% 45%; /* Adjusted Purple for dark mode */
-    --accent-foreground: 210 40% 98%;
+    --accent: 50 100% 65%; /* Brighter Yellow/Orange for dark mode */
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 47% 20%;
-    --input: 222 47% 20%;
-    --ring: 300 80% 45%; /* Accent Purple for focus rings in dark mode */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 258 100% 70%; /* Accent Purple for focus rings in dark mode */
     
     /* Chart colors for dark mode */
-    --chart-1: 210 40% 98%; /* Primary Foreground */
-    --chart-2: 300 80% 45%; /* Accent */
-    --chart-3: 210 40% 70%;
-    --chart-4: 180 40% 70%;
-    --chart-5: 40 80% 70%;
+    --chart-1: 258 100% 70%; /* Primary */
+    --chart-2: 50 100% 65%; /* Accent */
+    --chart-3: 220 80% 70%;
+    --chart-4: 180 70% 60%;
+    --chart-5: 30 80% 70%;
   }
 }
 

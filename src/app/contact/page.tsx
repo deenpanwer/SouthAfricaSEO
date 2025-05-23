@@ -1,16 +1,15 @@
+
 import { Metadata } from 'next';
-import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants';
-// Import Suspense
+import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants.tsx';
 import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
-// Import the new ContactFormWrapper
 import { ContactFormWrapper } from '@/components/contact/ContactFormWrapper';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: `Get in touch with ${APP_NAME} for expert SEO services in South Africa. Contact us for a free quote or consultation.`,
+  description: `Get in touch with ${APP_NAME} for expert business solutions. Contact us for a free quote or consultation.`,
 };
 
 export default function ContactPage() {
@@ -23,7 +22,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're here to help your South African business thrive online. Reach out to us with your questions, project ideas, or for a free SEO consultation.
+            We're here to help your business thrive. Reach out to us with your questions, project ideas, or for a free consultation.
           </p>
         </section>
 
@@ -31,8 +30,7 @@ export default function ContactPage() {
           {/* Contact Form Section */}
           <section className="bg-card p-6 sm:p-8 rounded-lg shadow-xl">
             <h2 className="text-2xl font-semibold text-foreground mb-6">Send Us a Message</h2>
-            {/* Render the ContactFormWrapper */}
-            <Suspense fallback={<div>Loading form...</div>}>
+            <Suspense fallback={<div className="text-center py-8">Loading form...</div>}>
               <ContactFormWrapper/>
             </Suspense>
           </section>
@@ -86,15 +84,14 @@ export default function ContactPage() {
           </section>
         </div>
 
-        {/* Map Placeholder Section - Could integrate @vis.gl/react-google-maps if API key provided */}
+        {/* Map Placeholder Section */}
         <section className="mt-16 md:mt-20">
           <h2 className="text-2xl font-semibold text-foreground text-center mb-6">Find Us Here</h2>
           <div className="aspect-video bg-muted rounded-lg shadow-lg overflow-hidden">
-            {/* Placeholder for map. Replace with actual map component if needed. */}
             <Image 
               src="https://placehold.co/1200x600.png?text=Our+Location+Map+(Placeholder)"
-              alt="Map showing ZA Rank Boost location"
-              data-ai-hint="city map location"
+              alt={`Map showing ${APP_NAME} location`}
+              data-ai-hint="city office map"
               width={1200}
               height={600}
               className="w-full h-full object-cover"

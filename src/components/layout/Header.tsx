@@ -1,8 +1,9 @@
+
 "use client";
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react'; // Zap can be a generic "spark" or "boost" icon
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { NAV_ITEMS, APP_NAME } from '@/lib/constants.tsx';
