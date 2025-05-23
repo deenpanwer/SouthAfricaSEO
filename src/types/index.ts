@@ -63,17 +63,17 @@ export interface BlogPost {
 }
 
 export interface TracLeadFormValues {
-  website: string;
+  website?: string; // Now optional
   phoneNumber: string; // Required, will be E.164 format
-  name?: string;
+  name?: string; // Already optional
 }
 
 export interface ContactFormValues {
-  name: string;
-  email: string;
-  company?: string;
+  name?: string; // Now optional
+  email?: string; // Now optional
+  company?: string; // Already optional
   phoneNumber: string; // Required, will be E.164 format
-  website?: string;
-  service: string;
-  message: string;
+  website?: string; // Already optional
+  service?: string; // Now optional
+  message?: string; // Now optional
 }

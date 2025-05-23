@@ -14,12 +14,12 @@ import type { TracLeadFormValues } from '@/types';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
-// E.164 basic validation. For more robust validation, consider libphonenumber-js.
+// E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const leadFormSchema = z.object({
   name: z.string().optional(),
-  website: z.string().min(1, { message: "Website URL is required." }).url({ message: "Please enter a valid website URL (e.g., https://example.com)" }),
+  website: z.string().url({ message: "Please enter a valid website URL if provided (e.g., https://example.com)" }).optional().or(z.literal('')),
   phoneNumber: z.string({ required_error: "Phone number is required."})
     .min(1, "Phone number is required.")
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
@@ -97,7 +97,7 @@ export function TracLeadForm() {
           name="website"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="lead-website" className="text-sm font-medium text-card-foreground">Your Website URL*</FormLabel>
+              <FormLabel htmlFor="lead-website" className="text-sm font-medium text-card-foreground">Your Website URL</FormLabel>
               <FormControl>
                 <Input id="lead-website" placeholder="https://yourcompany.com" {...field} disabled={isLoading} className="bg-background/70"/>
               </FormControl>
@@ -127,6 +127,7 @@ export function TracLeadForm() {
 
                 />
               </FormControl>
+              <FormDescription>Please include your country code (e.g., +1 for USA).</FormDescription>
               <FormMessage />
             </FormItem>
           )}

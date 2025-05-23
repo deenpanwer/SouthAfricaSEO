@@ -17,19 +17,19 @@ import type { ContactFormValues } from '@/types';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 
-// E.164 basic validation. For more robust validation, consider libphonenumber-js.
+// E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
+  name: z.string().optional(),
+  email: z.string().email({ message: "Please enter a valid email address if provided." }).optional().or(z.literal('')),
   company: z.string().optional(),
   phoneNumber: z.string({ required_error: "Phone number is required." })
     .min(1, "Phone number is required.")
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
-  website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }).optional(),
-  service: z.string().min(1, { message: "Please select a service of interest." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000, { message: "Message cannot exceed 1000 characters." }),
+  website: z.string().url({ message: "Please enter a valid website URL if provided (e.g., https://example.com)" }).optional().or(z.literal('')),
+  service: z.string().optional(),
+  message: z.string().max(1000, { message: "Message cannot exceed 1000 characters if provided." }).optional(),
 });
 
 
@@ -54,7 +54,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       company: "",
       phoneNumber: "",
       website: "",
-      service: preselectedService || "General Inquiry",
+      service: preselectedService || "", // Empty string if general inquiry or not preselected
       message: "",
     },
   });
@@ -96,7 +96,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="name">Full Name*</FormLabel>
+                <FormLabel htmlFor="name">Full Name</FormLabel>
                 <FormControl>
                   <Input id="name" placeholder="e.g. Alex Smith" {...field} disabled={isLoading} />
                 </FormControl>
@@ -109,7 +109,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="email">Email Address*</FormLabel>
+                <FormLabel htmlFor="email">Email Address</FormLabel>
                 <FormControl>
                   <Input id="email" type="email" placeholder="you@example.com" {...field} disabled={isLoading} />
                 </FormControl>
@@ -153,6 +153,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
                     style={{'--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))'} as React.CSSProperties}
                   />
                 </FormControl>
+                <FormDescription>Please include your country code (e.g., +1 for USA).</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -176,15 +177,15 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           name="service"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="service">Service of Interest*</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
+              <FormLabel htmlFor="service">Service of Interest</FormLabel>
+              <Select onValueChange={field.onChange} value={field.value} disabled={isLoading}>
                 <FormControl>
                   <SelectTrigger id="service">
-                    <SelectValue placeholder="Select a service plan" />
+                    <SelectValue placeholder="Select a service plan (Optional)" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+                  <SelectItem value="">General Inquiry / Not Specified</SelectItem>
                   {SERVICE_PACKAGES.map(pkg => (
                     <SelectItem key={pkg.name} value={pkg.name}>
                       {pkg.name}
@@ -203,11 +204,11 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="message">Your Message*</FormLabel>
+              <FormLabel htmlFor="message">Your Message</FormLabel>
               <FormControl>
                 <Textarea
                   id="message"
-                  placeholder="Tell us about your project or ask any questions..."
+                  placeholder="Tell us about your project or ask any questions... (Optional)"
                   rows={5}
                   {...field}
                   disabled={isLoading}
