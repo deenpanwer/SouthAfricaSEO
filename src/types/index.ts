@@ -64,17 +64,16 @@ export interface BlogPost {
 
 export interface TracLeadFormValues {
   website: string;
-  phoneNumber: string;
-  name?: string; // Optional name field
+  phoneNumber: string; // Required, will be E.164 format
+  name?: string;
 }
 
 export interface ContactFormValues {
   name: string;
   email: string;
   company?: string;
-  phoneNumber: string; // Changed from 'phone' and made non-optional
-  website?: string; 
+  phoneNumber: string; // Required, will be E.164 format
+  website?: string;
   service: string;
   message: string;
 }
-

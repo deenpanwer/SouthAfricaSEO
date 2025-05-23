@@ -1,13 +1,12 @@
 
 "use client";
 
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
@@ -15,15 +14,19 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import type { ContactFormValues } from '@/types';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
-const internationalPhoneRegex = /^\+\d{1,3}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,9}$/;
+// E.164 basic validation. For more robust validation, consider libphonenumber-js.
+const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   company: z.string().optional(),
-  phoneNumber: z.string({ required_error: "Phone number is required." }).min(1, "Phone number is required.")
-    .regex(internationalPhoneRegex, { message: "Please enter a valid international phone number with country code (e.g., +1 415 555 0123)." }),
+  phoneNumber: z.string({ required_error: "Phone number is required." })
+    .min(1, "Phone number is required.")
+    .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
   website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }).optional(),
   service: z.string().min(1, { message: "Please select a service of interest." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000, { message: "Message cannot exceed 1000 characters." }),
@@ -35,7 +38,7 @@ async function submitContactForm(data: ContactFormValues): Promise<{ success: bo
   console.log("Form data submitted:", data);
   // Simulate API call
   await new Promise(resolve => setTimeout(resolve, 1500));
-  // return { success: false, message: "This is a simulated error." }; 
+  // return { success: false, message: "This is a simulated error." };
   return { success: true, message: "Thank you for your message! We'll be in touch soon." };
 }
 
@@ -131,16 +134,25 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           />
           <FormField
             control={form.control}
-            name="phoneNumber" 
+            name="phoneNumber"
             render={({ field }) => (
               <FormItem>
                 <FormLabel htmlFor="phoneNumber">Phone Number*</FormLabel>
                 <FormControl>
-                  <Input id="phoneNumber" type="tel" placeholder="e.g. +1 415 555 0123" {...field} disabled={isLoading} />
+                   <PhoneInput
+                    id="phoneNumber"
+                    defaultCountry="us"
+                    value={field.value}
+                    onChange={(phone) => field.onChange(phone)}
+                    disabled={isLoading}
+                    inputClassName="w-full !border-input !ring-ring !focus:ring-2" // Ensure input part of PhoneInput matches styling
+                    countrySelectorStyleProps={{
+                      buttonClassName: "!border-input !bg-background hover:!bg-muted",
+                    }}
+                    inputStyle={{width: '100%'}}
+                    style={{'--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))'} as React.CSSProperties}
+                  />
                 </FormControl>
-                 <FormDescription className="text-xs">
-                  Please include your country code.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}

@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
@@ -11,14 +11,18 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2, Send } from 'lucide-react';
 import { useState } from 'react';
 import type { TracLeadFormValues } from '@/types';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
-const internationalPhoneRegex = /^\+\d{1,3}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,9}$/;
+// E.164 basic validation. For more robust validation, consider libphonenumber-js.
+const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const leadFormSchema = z.object({
   name: z.string().optional(),
   website: z.string().min(1, { message: "Website URL is required." }).url({ message: "Please enter a valid website URL (e.g., https://example.com)" }),
-  phoneNumber: z.string({ required_error: "Phone number is required."}).min(1, "Phone number is required.")
-    .regex(internationalPhoneRegex, { message: "Please enter a valid international phone number including country code (e.g., +1 415 555 0123)." }),
+  phoneNumber: z.string({ required_error: "Phone number is required."})
+    .min(1, "Phone number is required.")
+    .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
 });
 
 // Mock server action
@@ -108,11 +112,21 @@ export function TracLeadForm() {
             <FormItem>
               <FormLabel htmlFor="lead-phoneNumber" className="text-sm font-medium text-card-foreground">Phone Number*</FormLabel>
               <FormControl>
-                <Input id="lead-phoneNumber" type="tel" placeholder="e.g. +1 415 555 0123" {...field} disabled={isLoading} className="bg-background/70"/>
+                <PhoneInput
+                  id="lead-phoneNumber"
+                  defaultCountry="us" // You can set a default or let it auto-detect
+                  value={field.value}
+                  onChange={(phone) => field.onChange(phone)}
+                  disabled={isLoading}
+                  inputClassName="w-full bg-background/70 !border-input !ring-ring !focus:ring-2" // Ensure input part of PhoneInput matches styling
+                  countrySelectorStyleProps={{
+                    buttonClassName: "!border-input !bg-background/70 hover:!bg-muted",
+                  }}
+                  inputStyle={{width: '100%'}}
+                  style={{'--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))'} as React.CSSProperties}
+
+                />
               </FormControl>
-              <FormDescription className="text-xs">
-                Please include your country code.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
