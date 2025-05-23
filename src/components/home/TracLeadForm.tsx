@@ -6,16 +6,19 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Send } from 'lucide-react';
 import { useState } from 'react';
 import type { TracLeadFormValues } from '@/types';
 
+const internationalPhoneRegex = /^\+\d{1,3}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,9}$/;
+
 const leadFormSchema = z.object({
-  name: z.string().optional(), // Making name optional for quick capture
-  website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }),
-  phoneNumber: z.string().min(10, { message: "Please enter a valid phone number." }).regex(/^\+?[0-9\s\-()]{10,}$/, { message: "Invalid phone number format."}),
+  name: z.string().optional(),
+  website: z.string().min(1, { message: "Website URL is required." }).url({ message: "Please enter a valid website URL (e.g., https://example.com)" }),
+  phoneNumber: z.string({ required_error: "Phone number is required."}).min(1, "Phone number is required.")
+    .regex(internationalPhoneRegex, { message: "Please enter a valid international phone number including country code (e.g., +1 415 555 0123)." }),
 });
 
 // Mock server action
@@ -105,8 +108,11 @@ export function TracLeadForm() {
             <FormItem>
               <FormLabel htmlFor="lead-phoneNumber" className="text-sm font-medium text-card-foreground">Phone Number*</FormLabel>
               <FormControl>
-                <Input id="lead-phoneNumber" type="tel" placeholder="+1 (555) 123-4567" {...field} disabled={isLoading} className="bg-background/70"/>
+                <Input id="lead-phoneNumber" type="tel" placeholder="e.g. +1 415 555 0123" {...field} disabled={isLoading} className="bg-background/70"/>
               </FormControl>
+              <FormDescription className="text-xs">
+                Please include your country code.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

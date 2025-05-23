@@ -72,8 +72,8 @@ export interface ContactFormValues {
   name: string;
   email: string;
   company?: string;
-  phone?: string;
-  website?: string; // Added website to main contact form as well
+  phoneNumber: string; // Changed from 'phone' and made non-optional
+  website?: string; 
   service: string;
   message: string;
 }

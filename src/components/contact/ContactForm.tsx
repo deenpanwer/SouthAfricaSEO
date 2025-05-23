@@ -13,15 +13,17 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { ContactFormValues } from '@/types';
-// import { useSearchParams } from 'next/navigation'; // Removed as useSearchParams is now in the wrapper
+
+const internationalPhoneRegex = /^\+\d{1,3}[\s.-]?\(?\d{1,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,9}$/;
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
   company: z.string().optional(),
-  phone: z.string().min(10, { message: "Please enter a valid phone number." }).regex(/^\+?[0-9\s\-()]{10,}$/, { message: "Invalid phone number format."}).optional(),
+  phoneNumber: z.string({ required_error: "Phone number is required." }).min(1, "Phone number is required.")
+    .regex(internationalPhoneRegex, { message: "Please enter a valid international phone number with country code (e.g., +1 415 555 0123)." }),
   website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }).optional(),
   service: z.string().min(1, { message: "Please select a service of interest." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(1000, { message: "Message cannot exceed 1000 characters." }),
@@ -40,7 +42,6 @@ async function submitContactForm(data: ContactFormValues): Promise<{ success: bo
 export function ContactForm({ preselectedService }: { preselectedService?: string }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  // const searchParams = useSearchParams(); // In wrapper
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -48,22 +49,12 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       name: "",
       email: "",
       company: "",
-      phone: "",
+      phoneNumber: "",
       website: "",
       service: preselectedService || "General Inquiry",
       message: "",
     },
   });
-
-  // useEffect(() => { // In wrapper
-  //   const serviceFromQuery = searchParams.get('service');
-  //   if (serviceFromQuery && SERVICE_PACKAGES.some(pkg => pkg.name === serviceFromQuery)) {
-  //     form.setValue('service', serviceFromQuery);
-  //   } else if (serviceFromQuery) {
-  //     form.setValue('service', 'Custom Solution'); // Fallback if specific package name not found
-  //   }
-  // }, [searchParams, form]);
-
 
   const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
     setIsLoading(true);
@@ -140,13 +131,16 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           />
           <FormField
             control={form.control}
-            name="phone"
+            name="phoneNumber" 
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="phone">Phone Number</FormLabel>
+                <FormLabel htmlFor="phoneNumber">Phone Number*</FormLabel>
                 <FormControl>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" {...field} disabled={isLoading} />
+                  <Input id="phoneNumber" type="tel" placeholder="e.g. +1 415 555 0123" {...field} disabled={isLoading} />
                 </FormControl>
+                 <FormDescription className="text-xs">
+                  Please include your country code.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
