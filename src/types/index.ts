@@ -63,17 +63,29 @@ export interface BlogPost {
 }
 
 export interface TracLeadFormValues {
-  website?: string; // Now optional
-  phoneNumber: string; // Required, will be E.164 format
-  name?: string; // Already optional
+  name?: string; 
+  website?: string; 
+  phoneNumber: string; 
 }
 
 export interface ContactFormValues {
-  name?: string; // Now optional
-  email?: string; // Now optional
-  company?: string; // Already optional
-  phoneNumber: string; // Required, will be E.164 format
-  website?: string; // Already optional
-  service?: string; // Now optional
-  message?: string; // Now optional
+  name?: string;
+  email?: string;
+  company?: string;
+  phoneNumber: string; 
+  website?: string;
+  service?: string;
+  message?: string;
+}
+
+export interface ClientLogo {
+  name: string;
+  imageUrl: string;
+  dataAiHint?: string;
+}
+
+export interface StatItem {
+  value: string;
+  label: string;
+  icon: LucideIcon;
 }

@@ -1,7 +1,9 @@
 
 import { HeroSection } from '@/components/home/HeroSection';
+import { ClientLogosSection } from '@/components/home/ClientLogosSection'; // New
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { BenefitsSection } from '@/components/home/BenefitsSection';
+import { StatsSection } from '@/components/home/StatsSection'; // New
 import { ImportanceSection } from '@/components/home/ImportanceSection';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -11,7 +13,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <ClientLogosSection /> 
       <BenefitsSection />
+      <StatsSection />
       <TestimonialsSection />
       <ImportanceSection />
       
