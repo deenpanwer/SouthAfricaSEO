@@ -16,6 +16,7 @@ import { useState } from 'react';
 import type { ContactFormValues } from '@/types';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import { GENERAL_INQUIRY_VALUE, CUSTOM_SOLUTION_VALUE } from './ContactFormWrapper';
 
 // E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
@@ -54,7 +55,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       company: "",
       phoneNumber: "",
       website: "",
-      service: preselectedService || "", // Empty string if general inquiry or not preselected
+      service: preselectedService || GENERAL_INQUIRY_VALUE, 
       message: "",
     },
   });
@@ -68,7 +69,15 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           title: "Message Sent!",
           description: response.message,
         });
-        form.reset();
+        form.reset({ // Reset with default values ensuring service field is handled correctly
+          name: "",
+          email: "",
+          company: "",
+          phoneNumber: "",
+          website: "",
+          service: preselectedService || GENERAL_INQUIRY_VALUE,
+          message: "",
+        });
       } else {
         toast({
           title: "Submission Failed",
@@ -185,13 +194,13 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="">General Inquiry / Not Specified</SelectItem>
+                  <SelectItem value={GENERAL_INQUIRY_VALUE}>General Inquiry / Not Specified</SelectItem>
                   {SERVICE_PACKAGES.map(pkg => (
                     <SelectItem key={pkg.name} value={pkg.name}>
                       {pkg.name}
                     </SelectItem>
                   ))}
-                  <SelectItem value="Custom Solution">Custom Business Solution</SelectItem>
+                  <SelectItem value={CUSTOM_SOLUTION_VALUE}>Custom Business Solution</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -238,3 +247,4 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
     </Form>
   );
 }
+
