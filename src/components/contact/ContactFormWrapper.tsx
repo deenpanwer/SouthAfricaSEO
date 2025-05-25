@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useFormContext } from 'react-hook-form'; // If needed for deep integration
 import { ContactForm } from './ContactForm';
-import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
+import { SERVICE_PACKAGES } from '@/lib/constants';
 import type { ContactFormValues } from '@/types';
 
 export const GENERAL_INQUIRY_VALUE = "general_inquiry_not_specified";

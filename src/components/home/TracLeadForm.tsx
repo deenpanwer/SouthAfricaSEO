@@ -25,13 +25,42 @@ const leadFormSchema = z.object({
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
 });
 
-// Mock server action
+// Updated to submit data to SheetDB
 async function submitLeadForm(data: TracLeadFormValues): Promise<{ success: boolean; message: string }> {
-  console.log("Lead form data submitted:", data);
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  // Example: return { success: false, message: "Simulated error processing your request." };
-  return { success: true, message: "Thanks! Our consultants will reach out to you ASAP." };
+  try {
+    const submissionData = {
+      "Name": data.name || '', // Map to 'Name' column
+      "Email Address": '', // Lead form doesn't have email
+      "Company Name": '', // Lead form doesn't have company
+      "Phone Number": data.phoneNumber || '', // Map to 'Phone Number' column
+      "Website URL": data.website || '', // Map to 'Website URL' column
+      "Service of Interest": '', // Lead form doesn't have service
+      "Your Message": '', // Lead form doesn't have message
+      "Form Type": "Lead Form", // Identifier
+      "Timestamp": new Date().toISOString() // Timestamp
+    };
+
+    const response = await fetch('https://sheetdb.io/api/v1/rsdd3ypenh4uu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(submissionData),
+    });
+
+    if (response.ok) {
+      // SheetDB typically returns a 201 Created on success, but response.ok checks for 2xx status
+      return { success: true, message: "Thanks! Our consultants will reach out to you ASAP." };
+    } else {
+      const errorText = await response.text();
+      console.error("SheetDB submission failed:", response.status, errorText);
+      return { success: false, message: `Could not submit your information. Status: ${response.status}. Please try again.` };
+    }
+
+  } catch (error) {
+    console.error("Error submitting form to SheetDB:", error);
+    return { success: false, message: "An unexpected error occurred. Please try again later." };
+  }
 }
 
 export function TracLeadForm() {
@@ -113,7 +142,6 @@ export function TracLeadForm() {
               <FormLabel htmlFor="lead-phoneNumber" className="text-sm font-medium text-card-foreground">Phone Number*</FormLabel>
               <FormControl>
                 <PhoneInput
-                  id="lead-phoneNumber"
                   defaultCountry="us" // You can set a default or let it auto-detect
                   value={field.value}
                   onChange={(phone) => field.onChange(phone)}

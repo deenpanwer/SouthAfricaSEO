@@ -1,6 +1,6 @@
 
 import { Metadata } from 'next';
-import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants.tsx';
+import { APP_NAME, CONTACT_DETAILS, SOCIAL_LINKS } from '@/lib/constants';
 import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';

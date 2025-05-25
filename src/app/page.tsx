@@ -1,24 +1,25 @@
-
 import { HeroSection } from '@/components/home/HeroSection';
 import { ClientLogosSection } from '@/components/home/ClientLogosSection'; // New
+import { PartneredWithSection } from '@/components/home/PartneredWithSection'; // New
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { BenefitsSection } from '@/components/home/BenefitsSection';
 import { StatsSection } from '@/components/home/StatsSection'; // New
 import { ImportanceSection } from '@/components/home/ImportanceSection';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { APP_NAME } from '@/lib/constants.tsx';
+import { APP_NAME } from '@/lib/constants';
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ClientLogosSection /> 
+      <PartneredWithSection />
+      <ClientLogosSection />
       <BenefitsSection />
       <StatsSection />
       <TestimonialsSection />
       <ImportanceSection />
-      
+
       {/* Final Call to Action Section */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -14,7 +14,7 @@ export function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real results from South African businesses like yours.
+            Real results from businesses like yours.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -52,16 +52,6 @@ export function HeroSection() {
             <TracLeadForm />
           </div>
         </div>
-        
-        {/* Brief Company Intro */}
-        <div className="mt-16 md:mt-24 text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-            Your Trusted Partner for Business Amplification
-          </h2>
-          <p className="text-muted-foreground">
-            At {APP_NAME}, we're not just another consultancy. We are specialists in crafting bespoke strategies that elevate your business. Our mission is to empower companies like yours to achieve top performance, attract high-value clients, and significantly boost your return on investment. With a deep understanding of market dynamics and consumer behavior, we develop solutions that deliver real, measurable results.
-          </p>
-        </div>
       </div>
     </section>
   );

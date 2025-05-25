@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next';
 import { APP_NAME } from '@/lib/constants.tsx';
 import { ShieldCheck } from 'lucide-react';
@@ -52,32 +51,46 @@ export default function PrivacyPolicyPage() {
             <li>To send you marketing and promotional communications (with your consent).</li>
           </ul>
 
-          <h2>3. Will Your Information Be Shared With Anyone?</h2>
+          <h2>3. Information for Meta Ads</h2>
+          <p>
+            We use tracking technologies, such as the Meta Pixel (formerly Facebook Pixel), on our website to collect information about your actions on our site. This data is used to measure the effectiveness of our advertising campaigns, to understand how you interact with our website, and to deliver targeted advertisements to you on Meta platforms (Facebook and Instagram).
+          </p>
+          <p>
+            The types of data collected through the Meta Pixel may include: actions taken on our website (e.g., page views, button clicks), device information, and other data related to your online behavior. This data is anonymized and aggregated where possible, but may also be used to create custom audiences for advertising purposes.
+          </p>
+          <p>
+            You can manage your advertising preferences on Meta platforms by visiting your ad settings on Facebook and Instagram. You can also limit tracking by clearing cookies in your browser settings or using browser extensions designed to block tracking.
+          </p>
+          <p>
+            For more information on how Meta collects, uses, and protects your data, please refer to <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer">Meta's Privacy Policy</a>.
+          </p>
+
+          <h2>4. Will Your Information Be Shared With Anyone?</h2>
           <p>
             We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations. We may share your data with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf and require access to such information to do that work.
           </p>
 
-          <h2>4. How Long Do We Keep Your Information?</h2>
+          <h2>5. How Long Do We Keep Your Information?</h2>
           <p>
             We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.
           </p>
 
-          <h2>5. How Do We Keep Your Information Safe?</h2>
+          <h2>6. How Do We Keep Your Information Safe?</h2>
           <p>
             We aim to protect your personal information through a system of organizational and technical security measures. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure.
           </p>
 
-          <h2>6. What Are Your Privacy Rights?</h2>
+          <h2>7. What Are Your Privacy Rights?</h2>
           <p>
             Depending on your location, you may have certain rights regarding your personal information, such as the right to access, correct, or delete your data. Please contact us to exercise these rights.
           </p>
 
-          <h2>7. Updates To This Notice</h2>
+          <h2>8. Updates To This Notice</h2>
           <p>
             We may update this privacy notice from time to time. The updated version will be indicated by an updated &quot;Last updated&quot; date and the updated version will be effective as soon as it is accessible.
           </p>
 
-          <h2>8. How Can You Contact Us About This Notice?</h2>
+          <h2>9. How Can You Contact Us About This Notice?</h2>
           <p>
             If you have questions or comments about this notice, you may email us at info@trac.com or by post to:
           </p>

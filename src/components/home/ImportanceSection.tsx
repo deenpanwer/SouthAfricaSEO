@@ -10,7 +10,7 @@ export function ImportanceSection() {
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="md:col-span-2">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               {title}
             </h2>
@@ -27,16 +27,6 @@ export function ImportanceSection() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl order-first md:order-last">
-            <Image
-              src={imageUrl}
-              alt="Importance of Business Strategy"
-              data-ai-hint={dataAiHint || "business planning"}
-              layout="fill"
-              objectFit="cover"
-            />
-             <div className="absolute inset-0 bg-primary/10"></div>
           </div>
         </div>
       </div>

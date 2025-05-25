@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { APP_NAME } from '@/lib/constants';
 import { BUSINESS_BENEFITS } from '@/lib/constants.tsx'; // Updated constant name
 
 export function BenefitsSection() {
@@ -10,6 +11,9 @@ export function BenefitsSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             Unlock Your Business Potential
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            At {APP_NAME}, we're not just another consultancy. We are specialists in crafting bespoke strategies that elevate your business. Our mission is to empower companies like yours to achieve top performance, attract high-value clients, and significantly boost your return on investment. With a deep understanding of market dynamics and consumer behavior, we develop solutions that deliver real, measurable results.
+          </p>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover how expert strategies can transform your online presence and drive tangible results.
           </p>

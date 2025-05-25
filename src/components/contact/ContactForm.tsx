@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { SERVICE_PACKAGES } from '@/lib/constants.tsx';
+import { SERVICE_PACKAGES } from '@/lib/constants';
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';
@@ -35,12 +35,41 @@ const contactFormSchema = z.object({
 
 
 // Mock server action
+// Updated to submit data to SheetDB
 async function submitContactForm(data: ContactFormValues): Promise<{ success: boolean; message: string }> {
-  console.log("Form data submitted:", data);
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  // return { success: false, message: "This is a simulated error." };
-  return { success: true, message: "Thank you for your message! We'll be in touch soon." };
+  try {
+    const submissionData = {
+      "Name": data.name || '', // Map to 'Name' column
+      "Email Address": data.email || '', // Map to 'Email Address' column
+      "Company Name": data.company || '', // Map to 'Company Name' column
+      "Phone Number": data.phoneNumber || '', // Map to 'Phone Number' column
+      "Website URL": data.website || '', // Map to 'Website URL' column
+      "Service of Interest": data.service || '', // Map to 'Service of Interest' column
+      "Your Message": data.message || '', // Map to 'Your Message' column
+      "Form Type": "Contact Form", // Identifier
+      "Timestamp": new Date().toISOString() // Timestamp
+    };
+
+    const response = await fetch('https://sheetdb.io/api/v1/rsdd3ypenh4uu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(submissionData),
+    });
+
+    if (response.ok) {
+      // SheetDB typically returns a 201 Created on success, but response.ok checks for 2xx status
+      return { success: true, message: "Thank you for your message! We'll be in touch soon." };
+    } else {
+      const errorText = await response.text();
+      console.error("SheetDB submission failed:", response.status, errorText);
+      return { success: false, message: `Could not send your message. Status: ${response.status}. Please try again.` };
+    }
+  } catch (error) {
+    console.error("Error submitting form to SheetDB:", error);
+    return { success: false, message: "An unexpected error occurred. Please try again later." };
+  }
 }
 
 export function ContactForm({ preselectedService }: { preselectedService?: string }) {
@@ -149,7 +178,6 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
                 <FormLabel htmlFor="phoneNumber">Phone Number*</FormLabel>
                 <FormControl>
                    <PhoneInput
-                    id="phoneNumber"
                     defaultCountry="us"
                     value={field.value}
                     onChange={(phone) => field.onChange(phone)}
