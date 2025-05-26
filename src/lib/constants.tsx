@@ -7,7 +7,7 @@ export const APP_NAME = "TRAC";
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
@@ -118,7 +118,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: 'Conversion Rate Boost', value: '+45%', icon: Target },
       { metric: 'Key Metric Rankings (Top 3)', value: '15', icon: Award },
     ],
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.LcStDzwsaSmmZr2LMov7AAHaFj&pid=Api&P=0&h=220',
     dataAiHint: 'ecommerce growth',
     testimonial: "TRAC helped us bloom online! We're now reaching more customers than ever before."
   },
@@ -133,7 +133,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: 'Brand Authority Increase', value: '+15 points', icon: Link2 },
       { metric: 'Visibility for Core Services', value: '+70%', icon: Search },
     ],
-    imageUrl: 'https://placehold.co/600x400.png',
+    imageUrl: 'https://tse2.mm.bing.net/th?id=OIP.LqI7gVBNpVDmcEaOVfvGIAHaEK&pid=Api&P=0&h=220',
     dataAiHint: 'professional services chart',
     testimonial: "The expertise of TRAC has been invaluable. Our firm is now a recognized authority in our practice areas online."
   },
@@ -146,7 +146,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Top Business Growth Trends for 2024',
     date: '2024-07-15',
     excerpt: 'Discover the latest strategies that are shaping the business landscape and how your company can leverage them for growth.',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.pexels.com/photos/7793692/pexels-photo-7793692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     dataAiHint: 'business strategy meeting',
     author: 'The TRAC Team',
     category: 'Business Trends',
@@ -158,7 +158,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The Ultimate Guide to Conversion Optimization for SMEs',
     date: '2024-06-28',
     excerpt: 'Learn how to optimize your online presence to attract and convert customers, from website design to effective CTAs.',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.pexels.com/photos/590014/pexels-photo-590014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     dataAiHint: 'website analytics graph',
     author: 'Jane Doe',
     category: 'Conversion Optimization',
@@ -170,45 +170,12 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Maximizing Your Content Marketing ROI in a Competitive Market',
     date: '2024-06-10',
     excerpt: 'Effective content marketing strategies tailored for diverse audiences that drive engagement and conversions.',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=600',
     dataAiHint: 'content marketing design',
     author: 'John Smith',
     category: 'Content Marketing',
     tags: ['Content Strategy', 'ROI', 'Marketing'],
   },
-];
-
-export const BUSINESS_BENEFITS = [
-  {
-    title: "Increased Market Visibility",
-    description: "Connect with customers actively searching for your products or services. We optimize your online presence, making it easier for consumers to find you.",
-    icon: Building,
-  },
-  {
-    title: "Higher Conversion Rates",
-    description: "Attract qualified leads – users who are already interested in what you offer. This targeted traffic is more likely to convert into paying customers.",
-    icon: TrendingUp,
-  },
-  {
-    title: "Competitive Advantage",
-    description: "Outperform your competitors and establish your brand as a leader. Strong strategy builds credibility and trust with potential customers.",
-    icon: Award,
-  },
-  {
-    title: "Cost-Effective Growth",
-    description: "Compared to traditional advertising, our strategies offer a higher ROI by providing a sustainable source of organic leads. Invest in long-term growth.",
-    icon: DollarSign,
-  },
-  {
-    title: "Build Brand Credibility",
-    description: "A strong online presence builds trust and authority. Users perceive well-positioned sites as more credible and reliable, enhancing your brand reputation.",
-    icon: Zap,
-  },
-  {
-    title: "Understand Your Customers Better",
-    description: "Analytics provide valuable insights into customer behavior, market trends, and preferences, helping you refine your business strategies.",
-    icon: Users2,
-  }
 ];
 
 const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
@@ -248,9 +215,9 @@ export const SOCIAL_LINKS = [
 ];
 
 export const CONTACT_DETAILS = {
-  phone: '+1 (555) 123-4567',
-  email: 'info@trac.com',
-  address: '123 Business Ave, Suite 100, Anytown, USA 12345',
+  phone: '+1 (646) 814-3789',
+  email: 'tracprotact@gmail.com',
+  address: '30 N Gould St St #6573, Sheridan, WY 82801, United States',
 };
 
 export const COMPANY_MOTTO = "Strategic Business Solutions to Amplify Your Revenue and Drive Sales.";
@@ -262,7 +229,7 @@ export const ABOUT_US_CONTENT = {
   mission: {
     title: "Our Mission",
     text: "To empower businesses with effective, data-driven solutions that drive sustainable growth, increase brand authority, and maximize return on investment.",
-    imageUrl: "https://placehold.co/500x350.png",
+    imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     dataAiHint: "team meeting"
   },
   expertise: {
@@ -274,15 +241,15 @@ export const ABOUT_US_CONTENT = {
       { title: "Client-Centric Approach", text: "Building long-term partnerships through personalized service and a deep understanding of your business goals.", icon: Users2 },
       { title: "Cutting-Edge Techniques", text: "Staying ahead of market trends and technological updates to keep your business at the forefront.", icon: Lightbulb }
     ],
-    imageUrl: "https://placehold.co/500x350.png",
+    imageUrl: "https://images.pexels.com/photos/6476787/pexels-photo-6476787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     dataAiHint: "business analytics"
   },
   team: {
     title: "Meet Our Team (Placeholder)",
     members: [
-      { name: "Eleanor Vance", role: "Lead Strategist", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "professional woman portrait" },
-      { name: "Marcus Bellwether", role: "Technical Analyst", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "professional man portrait" },
-      { name: "Sarah Chen", role: "Growth Marketing Manager", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "creative professional portrait" },
+      { name: "Eleanor Vance", role: "Lead Strategist", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.Nw1A3CGvx46PBqyzaRirGQHaKs&pid=Api&P=0&h=220", dataAiHint: "professional woman portrait" },
+      { name: "Marcus Bellwether", role: "Technical Analyst", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.0ruIqpQD6EIyDpmrYzOsCQHaKR&pid=Api&P=0&h=220", dataAiHint: "professional man portrait" },
+      { name: "Sarah Chen", role: "Growth Marketing Manager", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.A1CwO5Q3kquQPVeE9y4WWgHaJ9&pid=Api&P=0&h=220", dataAiHint: "creative professional portrait" },
     ],
     description: "Our team comprises passionate professionals, content creators, and digital strategists with years of experience in various markets. We are committed to your success."
   }

@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Poppins, Host_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -11,10 +11,23 @@ const geistSans = Geist({
   subsets: ['latin'],
 });
 
+const poppins = Poppins({
+ variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['400', '700'], // Corrected weights to '400' and '700'
+});
+
+const hkGrotesk = Host_Grotesk({
+  variable: '--font-hk-grotesk',
+ subsets: ['latin'],
+ weight: ['400', '700'], // Added weights '400' and '700'
+});
+
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased flex flex-col min-h-screen`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${hkGrotesk.variable} font-sans antialiased flex flex-col min-h-screen`}>
         <Header />
         <main className="flex-grow">
           {children}

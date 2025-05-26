@@ -87,16 +87,8 @@ export default function ContactPage() {
         {/* Map Placeholder Section */}
         <section className="mt-16 md:mt-20">
           <h2 className="text-2xl font-semibold text-foreground text-center mb-6">Find Us Here</h2>
-          <div className="aspect-video bg-muted rounded-lg shadow-lg overflow-hidden">
-            <Image 
-              src="https://placehold.co/1200x600.png?text=Our+Location+Map+(Placeholder)"
-              alt={`Map showing ${APP_NAME} location`}
-              data-ai-hint="city office map"
-              width={1200}
-              height={600}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* The Google Maps iframe */}
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167518058706!2d-106.9575253245888!3d44.79777457765749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a655555%3A0x7e2c5a74ee73c789!2s30%20N%20Gould%20St%20%236573%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2s!4v1748214785550!5m2!1sen!2s" width="600" height="450" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </section>
       </div>
     </div>

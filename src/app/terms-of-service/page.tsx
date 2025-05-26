@@ -1,6 +1,6 @@
 
 import { Metadata } from 'next';
-import { APP_NAME } from '@/lib/constants.tsx';
+import { APP_NAME, CONTACT_DETAILS } from '@/lib/constants.tsx';
 import { FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -78,7 +78,11 @@ export default function TermsOfServicePage() {
 
           <h2>11. Contact Us</h2>
           <p>
-            If you have any questions about these Terms, please contact us at info@trac.com.
+            If you have any questions about these Terms, please contact us:
+          </p>
+          <p>
+            Email: {CONTACT_DETAILS.email}<br />
+            Address: {CONTACT_DETAILS.address}
           </p>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { ClientLogosSection } from '@/components/home/ClientLogosSection'; // New
 import { PartneredWithSection } from '@/components/home/PartneredWithSection'; // New
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { BenefitsSection } from '@/components/home/BenefitsSection';
 import { StatsSection } from '@/components/home/StatsSection'; // New
 import { ImportanceSection } from '@/components/home/ImportanceSection';
 import { Button } from '@/components/ui/button';
@@ -15,7 +14,6 @@ export default function HomePage() {
       <HeroSection />
       <PartneredWithSection />
       <ClientLogosSection />
-      <BenefitsSection />
       <StatsSection />
       <TestimonialsSection />
       <ImportanceSection />
@@ -32,12 +30,12 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild className="shadow-lg hover:shadow-xl transition-shadow">
               <Link href="/services">
-                Explore Our Service Plans
+                Explore Our Pricing Plans
               </Link>
             </Button>
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg hover:shadow-xl transition-shadow" asChild>
               <Link href="/contact">
-                Request a Free Quote
+                Contact Us
               </Link>
             </Button>
           </div>

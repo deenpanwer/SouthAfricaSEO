@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { APP_NAME } from '@/lib/constants.tsx';
+import { APP_NAME, CONTACT_DETAILS } from '@/lib/constants.tsx';
 import { ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
                      prose-headings:text-foreground prose-headings:font-semibold
                      prose-a:text-primary hover:prose-a:text-primary/80">
           <p>
-            Welcome to {APP_NAME} (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at info@trac.com.
+            Welcome to {APP_NAME} (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at {CONTACT_DETAILS.email}.
           </p>
 
           <h2>1. Information We Collect</h2>
@@ -92,13 +92,9 @@ export default function PrivacyPolicyPage() {
 
           <h2>9. How Can You Contact Us About This Notice?</h2>
           <p>
-            If you have questions or comments about this notice, you may email us at info@trac.com or by post to:
+            If you have questions or comments about this notice, you may email us at {CONTACT_DETAILS.email} or by post to:
           </p>
-          <p>
-            {APP_NAME}<br />
-            123 Business Ave, Suite 100<br />
-            Anytown, USA 12345
-          </p>
+          <p>{APP_NAME}<br />{CONTACT_DETAILS.address}</p>
         </div>
       </div>
     </div>

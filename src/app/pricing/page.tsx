@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { BarChart, CheckSquare, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Service Plans',
-  description: `Explore ${APP_NAME}'s tailored service plans for businesses. From starter to enterprise solutions, find the perfect fit for your growth.`,
+  title: 'Pricing Plans',
+  description: `Explore ${APP_NAME}'s tailored pricing plans for businesses. From starter to enterprise solutions, find the perfect fit for your growth.`,
 };
 
 export default function ServicesPage() {

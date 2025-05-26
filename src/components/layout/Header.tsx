@@ -21,7 +21,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
             <Zap className="h-8 w-8" />
-            <span className="font-bold text-xl">{APP_NAME}</span>
+            <span className="font-extrabold text-xl font-poppins">{APP_NAME}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,12 +64,6 @@ export function Header() {
                         <Zap className="h-7 w-7" />
                         <span className="font-bold text-lg">{APP_NAME}</span>
                       </Link>
-                    <SheetClose asChild>
-                       <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
-                    </SheetClose>
                   </div>
                   <nav className="flex flex-col space-y-4">
                     {NAV_ITEMS.map((item) => (

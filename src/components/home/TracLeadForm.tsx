@@ -50,7 +50,7 @@ async function submitLeadForm(data: TracLeadFormValues): Promise<{ success: bool
 
     if (response.ok) {
       // SheetDB typically returns a 201 Created on success, but response.ok checks for 2xx status
-      return { success: true, message: "Thanks! Our consultants will reach out to you ASAP." };
+      return { success: true, message: "Thanks! Our experts will reach out to you ASAP." };
     } else {
       const errorText = await response.text();
       console.error("SheetDB submission failed:", response.status, errorText);
@@ -175,7 +175,7 @@ export function TracLeadForm() {
           </Button>
         </div>
         <p className="text-xs text-muted-foreground text-center pt-2">
-          Our business consultants will reach out to you ASAP.
+          Our SEO specialist will reach out to you ASAP.
         </p>
       </form>
     </Form>
