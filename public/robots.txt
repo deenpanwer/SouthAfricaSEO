@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # IMPORTANT: Replace https://www.yourdomain.com with your actual live domain name.
-Sitemap: https://www.yourdomain.com/sitemap.xml
+Sitemap: https://www.tracprotect.online/sitemap.xml

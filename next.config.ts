@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
         hostname: 'images.pexels.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn-icggj.nitrocdn.com',
+        pathname: '/**',
+      }
     ],
   },
 };

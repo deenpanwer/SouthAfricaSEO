@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { BLOG_POSTS } from '@/lib/constants.tsx';
 
 // IMPORTANT: Replace this with your actual live website domain.
-const WEBSITE_DOMAIN = 'https://www.yourdomain.com';
+const WEBSITE_DOMAIN = 'https://www.tracprotect.online';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
