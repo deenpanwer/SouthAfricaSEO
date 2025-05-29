@@ -1,9 +1,12 @@
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import { CheckCircle, ChevronRight, Search, ShieldCheck, Star, TrendingUp, Users, MessageCircle, Award, Lightbulb, Settings, BarChart2, Briefcase, CalendarDays, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
 
 // Helper component for star ratings
+import { useState } from 'react';
+
 const StarRating = ({ rating, count }: { rating: number; count?: number }) => (
   <div className="flex items-center">
     {[...Array(5)].map((_, i) => (
@@ -18,7 +21,7 @@ const ThriveHeader = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-20">
         <Link href="#" className="flex items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-56727e2/thriveagency.com/files/thrive-logo.png" alt="Thrive Logo" width={120} height={35} data-ai-hint="company logo" />
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/thrive-logo.svg" alt="Thrive Logo" width={120} height={35} data-ai-hint="company logo" />
         </Link>
         <nav className="hidden md:flex space-x-6 items-center">
           {['SERVICES', 'WORK', 'RESULTS', 'ABOUT', 'LEARN', 'SUPPORT'].map((item) => (
@@ -76,11 +79,6 @@ const HeroSection = () => (
             className="rounded-lg shadow-xl object-cover mx-auto"
             data-ai-hint="person portrait"
           />
-          {/* Leaf background is complex, skipping for now. Testimonial bubble could be added with absolute positioning. */}
-          <div className="absolute bottom-10 left-0 bg-white p-4 rounded-lg shadow-lg max-w-xs -ml-8 hidden lg:block">
-            <p className="text-sm text-gray-700">"Thrive gives me the tools and confidence to take my business to the next level. Their results speak for themselves."</p>
-            <p className="text-xs text-gray-500 mt-2">- Amit S., CEO</p>
-          </div>
         </div>
       </div>
     </div>
@@ -90,28 +88,45 @@ const HeroSection = () => (
 const PartnerLogosSection = () => (
   <section className="py-12 bg-green-700 text-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
-        <div>
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-56727e2/thriveagency.com/files/google-reviews.png" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="flex flex-col items-center">
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
           <StarRating rating={5} />
-          <p className="text-sm mt-1">500+ Reviews</p>
+          <p className="text-sm mt-1 text-yellow-400">500+ Reviews</p>
         </div>
-        <div>
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-56727e2/thriveagency.com/files/clutch-logo-widget.png" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
+        <div className="flex flex-col items-center">
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
            <StarRating rating={5} />
-          <p className="text-sm mt-1">200+ Reviews</p>
+          <p className="text-sm mt-1 text-yellow-400">200+ Reviews</p>
         </div>
-        <div>
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-56727e2/thriveagency.com/files/upcity-logo-widget.png" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />
+        <div className="flex flex-col items-center">
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />
            <StarRating rating={5} />
-          <p className="text-sm mt-1">150+ Reviews</p>
+          <p className="text-sm mt-1 text-yellow-400">150+ Reviews</p>
         </div>
       </div>
     </div>
   </section>
 );
 
-const ClientResultsSection = () => (
+const ClientResultsSection = () => {
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
+
+  const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
+    if (!isOpen) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={onClose}>
+        <div className="relative w-full max-w-3xl mx-auto p-4" onClick={(e) => e.stopPropagation()}>
+          <button className="absolute top-0 right-0 m-4 text-white text-2xl" onClick={onClose}>&times;</button>
+          {children}
+        </div>
+      </div>
+    );
+  };
+
+  return (
   <section className="py-16 lg:py-24 bg-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Our Clients Get Results</h2>
@@ -120,15 +135,33 @@ const ClientResultsSection = () => (
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+          <div className="cursor-pointer" onClick={() => setIsModalOpen1(true)}>
+            <Image
+              src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/home-group.png"
+              alt="Client Results 1"
+              width={600}
+              height={300}
+              className="w-full object-cover"
+              data-ai-hint="Client testimonial image 1"
+            />
+          </div>
+          <Modal isOpen={isModalOpen1} onClose={() => setIsModalOpen1(false)}>
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/--5lHRSfLZg?rel=0&showinfo=0&autoplay=1"
+              frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+          </Modal>
           <div className="bg-yellow-400 p-4">
             <h3 className="font-semibold text-gray-800">"The results speak for themselves"</h3>
           </div>
           <div className="p-6 grid grid-cols-2 gap-4">
             <div>
+              {/* Example: <p className="text-4xl font-bold text-green-600">Client Leads: +664%</p> */}
               <p className="text-4xl font-bold text-green-600">+664%</p>
               <p className="text-sm text-gray-500">CLIENT LEADS</p>
             </div>
             <div>
+               {/* Example: <p className="text-4xl font-bold text-green-600">Conversion Rate: +360%</p> */}
               <p className="text-4xl font-bold text-green-600">+360%</p>
               <p className="text-sm text-gray-500">CONVERSION RATE</p>
             </div>
@@ -139,6 +172,25 @@ const ClientResultsSection = () => (
           </div>
         </div>
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+           <div className="cursor-pointer" onClick={() => setIsModalOpen2(true)}>
+            <Image
+              src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/home-group-4866.png"
+              alt="Client Results 2"
+              width={600}
+              height={300}
+              className="w-full object-cover"
+              data-ai-hint="Client testimonial image 2"
+            />
+          </div>
+           <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/0cWlf1BmUMw?rel=0&showinfo=0&autoplay=1"
+              frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+          </Modal>
+
+
+
           <div className="bg-yellow-400 p-4">
             <h3 className="font-semibold text-gray-800">"Thrive goes above and beyond"</h3>
           </div>
@@ -165,14 +217,38 @@ const ClientResultsSection = () => (
       </div>
     </div>
   </section>
-);
+  );};
 
 const TestimonialsSection = () => {
   const testimonials = [
-    { name: "Marco Montemayor", company: "Director - Almond Tree Clinic", quote: "They hit everything they told me.", highlighted: "They hit everything they told me." },
-    { name: "Whitney Wells Lewis", company: "Air Integrity A/C - HVAC Company", quote: "Thrive is transparent.", highlighted: "Thrive is transparent." },
-    { name: "Chad Montgomery", company: "CEO - Accurate Leak and Line", quote: "Informative and transparent.", highlighted: "Informative and transparent." },
+    { name: "Marco Montemayor", company: "Director - Almond Tree Clinic", quote: "They hit everything they told me.", highlighted: "They hit everything they told me.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma" },
+    { name: "Whitney Wells Lewis", company: "Air Integrity A/C - HVAC Company", quote: "Thrive is transparent.", highlighted: "Thrive is transparent.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg" },
+    { name: "Chad Montgomery", company: "CEO - Accurate Leak and Line", quote: "Informative and transparent.", highlighted: "Informative and transparent.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg" },
+
   ];
+
+  const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
+    <div className="bg-white p-6 rounded-lg shadow-lg">
+      {testimonial.imageUrl && (
+        <Image
+          src={testimonial.imageUrl}
+          alt={`Photo of ${testimonial.name}`}
+          width={100} // Adjust width and height as needed
+          height={100} // Adjust width and height as needed
+          className="rounded-full mx-auto mb-4"
+          data-ai-hint={`Photo of ${testimonial.name}`}
+        />
+      )}
+      <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+      <div className="mt-4">
+        <p className="font-semibold text-gray-800">{testimonial.name}</p>
+        <p className="text-sm text-gray-500">{testimonial.company}</p>
+      </div>
+      <div className="mt-3 pt-3 border-t border-gray-200">
+        <span className="text-sm bg-yellow-300 px-2 py-1 rounded text-gray-800">{testimonial.highlighted}</span>
+      </div>
+    </div>
+  )
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,16 +258,7 @@ const TestimonialsSection = () => {
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-600 italic">"{testimonial.quote}"</p>
-              <div className="mt-4">
-                <p className="font-semibold text-gray-800">{testimonial.name}</p>
-                <p className="text-sm text-gray-500">{testimonial.company}</p>
-              </div>
-              <div className="mt-3 pt-3 border-t border-gray-200">
-                <span className="text-sm bg-yellow-300 px-2 py-1 rounded text-gray-800">{testimonial.highlighted}</span>
-              </div>
-            </div>
+            <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
       </div>
@@ -253,6 +320,21 @@ const AwardWinningSection = () => (
   </section>
 );
 
+const AwardStripSection = () => (
+  <section className="py-8 bg-white">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Image
+        src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/awardimage2020.jpg"
+        alt="Award Strip"
+        width={1000} // Adjust width and height as needed
+        height={50} // Adjust width and height as needed
+        className="mx-auto"
+        data-ai-hint="Award strip image"
+      />
+    </div>
+  </section>
+);
+
 const ThriveGrowthInsiderSection = () => {
   const articles = [
     { title: "10 Reasons Why You Should Transition Your Business to Our Platform", date: "Jan 15, 2024", excerpt: "Businesses are moving their operations and sales platforms more rapidly than ever before. And for...", image: "https://placehold.co/350x200.png?text=Article+1", dataAiHint: "business platform"},
@@ -269,7 +351,6 @@ const ThriveGrowthInsiderSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {articles.map((article, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image src={article.image} alt={article.title} width={350} height={200} className="w-full object-cover" data-ai-hint={article.dataAiHint} />
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-orange-500 transition-colors"><Link href="#">{article.title}</Link></h3>
                 <p className="text-xs text-gray-500 mb-2">{article.date}</p>
@@ -345,7 +426,7 @@ const ThriveFooter = () => (
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 items-start">
           <div>
-            <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-56727e2/thriveagency.com/files/thrive-logo-footer.png" alt="Thrive Tree Logo" width={80} height={100} data-ai-hint="tree logo" />
+            <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/thrive-logo.svg" alt="Thrive Tree Logo" width={80} height={100} data-ai-hint="tree logo" />
             <p className="text-sm text-gray-600 mt-4">
               Thrive Internet Marketing Agency is a dynamic, versatile and full-service digital marketing agency that doesn’t rely on smoke and mirrors to attract new clients.
             </p>
@@ -422,6 +503,7 @@ export default function Test2Page() {
         <TestimonialsSection />
         <WhyChooseThriveSection />
         <AwardWinningSection />
+        <AwardStripSection />
         <ThriveGrowthInsiderSection />
         <DigitalExpertiseSection />
         <ReadyToGrowSection />
