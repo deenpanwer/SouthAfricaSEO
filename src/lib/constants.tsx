@@ -176,6 +176,39 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Content Marketing',
     tags: ['Content Strategy', 'ROI', 'Marketing'],
   },
+  {
+    id: '4',
+    slug: 'transition-to-our-platform',
+    title: '10 Reasons Why You Should Transition Your Business to Our Platform',
+    date: '2024-01-15',
+    excerpt: 'Businesses are moving their operations and sales platforms more rapidly than ever before. And for...',
+    imageUrl: 'https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    author: 'Placeholder Author',
+    category: 'Placeholder Category',
+    tags: ['Placeholder Tag'],
+  },
+  {
+    id: '5',
+    slug: 'b2b-web-design-that-converts',
+    title: 'How To Build Your First B2B Web Design That Actually Converts',
+    date: '2024-01-18',
+    excerpt: 'If your B2B web design is not properly structured and optimized for conversions, it’s time for a...',
+    imageUrl: 'https://images.pexels.com/photos/7693153/pexels-photo-7693153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    author: 'Placeholder Author',
+    category: 'Placeholder Category',
+    tags: ['Placeholder Tag'],
+  },
+  {
+    id: '6',
+    slug: 'strategies-for-direct-bookings',
+    title: '8 Strategies To Get More Direct Bookings and Boost Your Online...',
+    date: '2024-01-21',
+    excerpt: 'Is your direct booking channel underperforming? If you are tired of paying high commission rates to...',
+    imageUrl: 'https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    author: 'Placeholder Author',
+    category: 'Placeholder Category',
+    tags: ['Placeholder Tag'],
+  },
 ];
 
 const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
@@ -316,5 +349,5 @@ export const STATS_DATA: StatItem[] = [
   { value: "500+", label: "Clients Served", icon: Users2 },
   { value: "95%", label: "Client Retention", icon: RefreshCw },
   { value: "2015", label: "Established Since", icon: CalendarDays },
-  { value: "4.9/5", label: "Satisfaction Score", icon: Smile },
+  { value: "4.9/5", label: "Satisfaction Score", icon: Smile}
 ];

@@ -63,16 +63,16 @@ export interface BlogPost {
 }
 
 export interface TracLeadFormValues {
-  name?: string; 
-  website?: string; 
-  phoneNumber: string; 
+  name?: string;
+  website?: string;
+  phoneNumber: string;
 }
 
 export interface ContactFormValues {
   name?: string;
   email?: string;
   company?: string;
-  phoneNumber: string; 
+  phoneNumber: string;
   website?: string;
   service?: string;
   message?: string;
@@ -88,4 +88,81 @@ export interface StatItem {
   value: string;
   label: string;
   icon: LucideIcon;
+}
+
+// City Specific Page Types
+export interface CityHeroData {
+  pageTitle: string; // For <title> tag
+  metaDescription: string;
+  heroTitle: string; // e.g., "Portland Digital Marketing Agency"
+  heroSubtitle: string;
+  heroDescription: string;
+  heroImage: {
+    src: string;
+    alt: string;
+    dataAiHint?: string;
+  };
+  formTitle: string;
+}
+
+export interface CityServiceItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface CityWhyChooseItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface CityAwardData {
+  headline: string;
+  text: string;
+  logoUrl?: string; // Optional logo for the award provider (e.g., Clutch, UpCity)
+  logoAlt?: string;
+}
+
+export interface CityLocationData {
+  mapEmbedUrl: string;
+  addressLines: string[];
+  phone: string;
+  email: string;
+}
+
+export interface CityPageData {
+  slug: string;
+  cityName: string;
+  heroData: CityHeroData;
+  resultsHeadline: string; // e.g., "Our Portland Digital Marketing Clients Get Results"
+  // Result percentages can be static in the component or added here if they vary by city
+  readyToGrowHeadline: string; // e.g., "Ready to Grow Your Business With Portland Digital Marketing Services?"
+  servicesSectionHeadline: string; // e.g., "Portland Digital Marketing Services"
+  servicesSectionSubheadline: string;
+  services: CityServiceItem[];
+  whyChooseSectionHeadline: string; // e.g., "Why Choose TRAC As Your Portland Digital Marketing Company"
+  whyChooseIntro: string;
+  whyChoosePoints: CityWhyChooseItem[];
+  awards: {
+    clutch: CityAwardData;
+    upcity: CityAwardData;
+  };
+  location: CityLocationData;
+  bottomFormTitle: string;
+}
+
+export interface CityHeroFormValues {
+  website?: string;
+  phoneNumber: string;
+  city: string; // To identify which city the lead came from
+  formType: string; // e.g., "City Hero Lead Form"
+}
+
+export interface CityBottomFormValues {
+  website?: string;
+  phoneNumber: string;
+  message?: string;
+  city: string;
+  formType: string; // e.g., "City Bottom Contact Form"
 }
