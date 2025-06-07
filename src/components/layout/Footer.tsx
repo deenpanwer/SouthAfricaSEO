@@ -74,8 +74,8 @@ export function Footer() {
               // All cities listed in allCities should now have a corresponding page
               return (
                 <div key={citySlug} className="text-center">
-                  <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
-                    {city.charAt(0) + city.slice(1).toLowerCase().replace(/-([a-z])/g, (g) => ` ${g[1].toUpperCase()}`)} SEO Services
+                  <Link href={`/city/${citySlug}`} className="hover:underline hover:text-primary transition-colors">
+                    {city}
                   </Link>
                 </div>
               );

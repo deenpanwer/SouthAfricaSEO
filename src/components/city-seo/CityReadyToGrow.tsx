@@ -14,7 +14,7 @@ export function CityReadyToGrow({ headline, cityName }: CityReadyToGrowProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold mb-4">{headline}</h2>
         <p className="mb-8 max-w-xl mx-auto text-green-100">
-          Partner with TRAC and let our experts craft a winning digital marketing strategy tailored for your {cityName} business.
+          Partner with TRAC and let our experts craft a winning search engine optimization strategy tailored for your {cityName} business.
         </p>
         <Button
           asChild
