@@ -1,5 +1,7 @@
 
 import type { LucideIcon } from 'lucide-react';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { ReactNode } from 'react';
 
 export interface NavItem {
   href: string;
@@ -22,6 +24,7 @@ export interface ServicePackage {
 }
 
 export interface Testimonial {
+  [x: string]: ReactNode;
   id: string;
   name: string;
   company: string;
@@ -97,11 +100,12 @@ export interface CityHeroData {
   heroTitle: string; // e.g., "Portland Digital Marketing Agency"
   heroSubtitle: string;
   heroDescription: string;
-  heroImage: {
-    src: string;
-    alt: string;
-    dataAiHint?: string;
-  };
+ heroImage: string | {
+ src: string;
+ alt: string;
+ dataAiHint?: string;
+ };
+  heroVideoUrl: string;
   formTitle: string;
 }
 
@@ -112,7 +116,7 @@ export interface CityServiceItem {
 }
 
 export interface CityWhyChooseItem {
-  icon: LucideIcon;
+  icon: string; // Changed from LucideIcon to string
   title: string;
   description: string;
 }
@@ -120,12 +124,10 @@ export interface CityWhyChooseItem {
 export interface CityAwardData {
   headline: string;
   text: string;
-  logoUrl?: string; // Optional logo for the award provider (e.g., Clutch, UpCity)
-  logoAlt?: string;
 }
 
 export interface CityLocationData {
-  mapEmbedUrl: string;
+  officeImageUrl: string;
   addressLines: string[];
   phone: string;
   email: string;
@@ -143,6 +145,8 @@ export interface CityPageData {
   services: CityServiceItem[];
   whyChooseSectionHeadline: string; // e.g., "Why Choose TRAC As Your Portland Digital Marketing Company"
   whyChooseIntro: string;
+  whyChooseParagraph1: string;
+  whyChooseParagraph2: string;
   whyChoosePoints: CityWhyChooseItem[];
   awards: {
     clutch: CityAwardData;

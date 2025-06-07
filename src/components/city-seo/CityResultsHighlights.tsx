@@ -1,28 +1,37 @@
+"use client";
 
 import Image from 'next/image';
+import { useState } from 'react';
+
+import type { Testimonial } from '@/types';
+
+const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={onClose}>
+      <div className="relative w-full max-w-3xl mx-auto p-4" onClick={(e) => e.stopPropagation()}>
+        <button className="absolute top-0 right-0 m-4 text-white text-2xl" onClick={onClose}>&times;</button>
+        {children}
+      </div>
+    </div>
+  );
+};
 
 interface CityResultsHighlightsProps {
   headline: string;
 }
 
-// Data based on the image
-const resultsData = [
-  { percentage: "+664%", label: "Organic Traffic", imageUrl: "https://placehold.co/600x400.png?text=Client+A", videoId: "VIDEO_ID_1", clientDescription: "Company A marketing results" },
-  { percentage: "+360%", label: "Conversion Rate", imageUrl: "https://placehold.co/600x400.png?text=Client+B", videoId: "VIDEO_ID_2", clientDescription: "Company B sales growth" },
-  // The image shows two main blocks, each with two percentages.
-  // To simplify, I'm treating each major block as one client with two key metrics.
-  // Alternatively, each percentage could be its own card.
-  // For now, two main blocks.
+// Testimonials Data based on the provided image
+const cityTestimonials: Testimonial[] = [
+  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma", dataAiHint: "Marci Wiersma photo" },
+  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg", dataAiHint: "Whitney Wells Lewis photo" },
+  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg", dataAiHint: "Chad Montgomery photo" },
 ];
-const secondaryResultsData = [
-    { percentage: "+800%", label: "Client Leads", imageUrl: "https://placehold.co/600x400.png?text=Client+C", videoId: "VIDEO_ID_3", clientDescription: "Company C lead generation"},
-    { percentage: "+640%", label: "Customer Base", imageUrl: "https://placehold.co/600x400.png?text=Client+D", videoId: "VIDEO_ID_4", clientDescription: "Company D customer increase"},
-]
-
 
 export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) {
-  // In a real scenario, you might pass video IDs or click handlers.
-  // For now, clicking the image will just be visual.
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
 
   return (
     <section className="py-12 md:py-16 bg-white text-gray-800">
@@ -31,60 +40,102 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
         <div className="grid md:grid-cols-2 gap-8">
           {/* First Client Block */}
           <div className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
-            <div className="relative aspect-[16/7] cursor-pointer group"> {/* Adjusted aspect ratio */}
+            <div className="relative aspect-[16/7] cursor-pointer group" onClick={() => setIsModalOpen1(true)}>
               <Image
-                src={resultsData[0].imageUrl}
-                alt={resultsData[0].clientDescription}
+                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/home-group.png"
+                alt="Client Results 1"
                 layout="fill"
                 objectFit="cover"
                 data-ai-hint="business results graph"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 flex items-center justify-center transition-opacity">
-                 {/* You can add a play icon here if it's a video thumbnail */}
               </div>
             </div>
+            <Modal isOpen={isModalOpen1} onClose={() => setIsModalOpen1(false)}>
+              <iframe
+                className="w-full aspect-video"
+                src="https://www.youtube.com/embed/--5lHRSfLZg?rel=0&showinfo=0&autoplay=1"
+                frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen>
+              </iframe>
+            </Modal>
             <div className="bg-yellow-400 p-3">
               <h3 className="font-semibold text-gray-800 text-center text-sm">"The results speak for themselves"</h3>
             </div>
             <div className="p-6 grid grid-cols-2 gap-4 text-center">
               <div>
-                <p className="text-4xl font-bold text-green-600">{resultsData[0].percentage}</p>
-                <p className="text-sm text-gray-600 uppercase">{resultsData[0].label}</p>
+                <p className="text-4xl font-bold text-green-600">+664%</p>
+                <p className="text-sm text-gray-600 uppercase">CLIENT LEADS</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-green-600">{resultsData[1].percentage}</p>
-                <p className="text-sm text-gray-600 uppercase">{resultsData[1].label}</p>
+                <p className="text-4xl font-bold text-green-600">+360%</p>
+                <p className="text-sm text-gray-600 uppercase">CONVERSION RATE</p>
               </div>
             </div>
           </div>
 
           {/* Second Client Block */}
-           <div className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
-            <div className="relative aspect-[16/7] cursor-pointer group"> {/* Adjusted aspect ratio */}
+          <div className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
+            <div className="relative aspect-[16/7] cursor-pointer group" onClick={() => setIsModalOpen2(true)}>
               <Image
-                src={secondaryResultsData[0].imageUrl}
-                alt={secondaryResultsData[0].clientDescription}
+                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/home-group-4866.png"
+                alt="Client Results 2"
                 layout="fill"
                 objectFit="cover"
                 data-ai-hint="marketing success chart"
               />
-               <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 flex items-center justify-center transition-opacity">
-                 {/* You can add a play icon here if it's a video thumbnail */}
+              <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 flex items-center justify-center transition-opacity">
               </div>
             </div>
+            <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
+              <iframe
+                className="w-full aspect-video"
+                src="https://www.youtube.com/embed/0cWlf1BmUMw?rel=0&showinfo=0&autoplay=1"
+                frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+            </Modal>
             <div className="bg-yellow-400 p-3">
               <h3 className="font-semibold text-gray-800 text-center text-sm">"TRAC goes above and beyond"</h3>
             </div>
             <div className="p-6 grid grid-cols-2 gap-4 text-center">
               <div>
-                <p className="text-4xl font-bold text-green-600">{secondaryResultsData[0].percentage}</p>
-                <p className="text-sm text-gray-600 uppercase">{secondaryResultsData[0].label}</p>
+                <p className="text-4xl font-bold text-green-600">+800%</p>
+                <p className="text-sm text-gray-600 uppercase">CLIENT LEADS</p>
               </div>
-               <div>
-                <p className="text-4xl font-bold text-green-600">{secondaryResultsData[1].percentage}</p>
-                <p className="text-sm text-gray-600 uppercase">{secondaryResultsData[1].label}</p>
+              <div>
+                <p className="text-4xl font-bold text-green-600">+640%</p>
+                <p className="text-sm text-gray-600 uppercase">CONVERSION RATE</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Testimonials Section (Integrated from CityPageTestimonials.tsx) */}
+        <div className="mt-16 pt-16 border-t border-gray-200">
+          <h2 className="text-3xl font-bold text-center mb-2">But Don’t Take Our Word For It</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-xl mx-auto">
+            Hear directly from clients who have experienced growth with TRAC.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {cityTestimonials.map((testimonial) => (
+              <div key={testimonial.id} className="bg-white p-6 rounded-lg shadow-md text-center">
+                <Image
+                  src={testimonial.avatarUrl}
+                  alt={testimonial.name}
+                  width={80}
+                  height={80}
+                  className="rounded-full mx-auto mb-4 border-2 border-yellow-400"
+                  data-ai-hint={testimonial.dataAiHint || "client photo"}
+                />
+                <h3 className="font-semibold text-lg mb-0.5">{testimonial.name}</h3>
+                <p className="text-xs text-gray-500 mb-3">{testimonial.company}</p>
+                 {/* Highlighted Quote */}
+                 <div className="bg-yellow-400 p-2 rounded-md mb-3">
+                    <p className="text-gray-800 italic font-semibold text-sm">"{testimonial.highlightedQuote}"</p>
+                  </div>
+                <blockquote className="text-gray-600 italic text-sm leading-relaxed mb-3">
+                  "{testimonial.quote}"
+                </blockquote>
+              </div>
+            ))}
           </div>
         </div>
       </div>

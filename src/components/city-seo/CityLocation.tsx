@@ -1,5 +1,6 @@
 
 import type { CityLocationData } from '@/types';
+import Image from 'next/image';
 import { MapPin, Phone, Mail } from 'lucide-react'; // Assuming using lucide icons
 
 interface CityLocationProps {
@@ -31,17 +32,14 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               </div>
             </div>
           </div>
-          <div className="aspect-video rounded-lg overflow-hidden shadow-md">
-            <iframe
-              src={locationData.mapEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+          <div className="rounded-lg overflow-hidden shadow-md">
+            <Image
+              src={locationData.officeImageUrl}
+              alt={`${cityName} Office Photo`}
+              width={600} // Adjust as needed for desired image size
+              height={400} // Adjust as needed for desired image size
               title={`${cityName} Office Location`}
-            ></iframe>
+            />
           </div>
         </div>
       </div>

@@ -1,13 +1,12 @@
 
 import type { MetadataRoute } from 'next';
-import { BLOG_POSTS } from '@/lib/constants.tsx'; // .tsx extension
-import { CITIES_DATA } from '@/lib/cityConstants.tsx'; // .tsx extension
+import { BLOG_POSTS } from '@/lib/constants.tsx'; 
+import { CITIES_DATA } from '@/lib/cityConstants.tsx'; 
 
-// IMPORTANT: Replace this with your actual live website domain.
-const WEBSITE_DOMAIN = 'https://www.tracprotect.online'; // Default to current, can be overridden by env var
+const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.tracprotect.online'; 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const domain = process.env.WEBSITE_URL || WEBSITE_DOMAIN;
+  const domain = WEBSITE_DOMAIN;
 
   const staticPages = [
     {
@@ -23,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${domain}/pricing`, // Renamed from /services to /pricing
+      url: `${domain}/pricing`, 
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -58,20 +57,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+     {
+      url: `${domain}/site-map`, // Added human-readable sitemap page
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
   ];
 
   const blogPostEntries = BLOG_POSTS.map(post => ({
     url: `${domain}/blog/${post.slug}`,
-    lastModified: new Date(post.date), // Use the actual post date
+    lastModified: new Date(post.date), 
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
 
   const cityPageEntries = CITIES_DATA.map(city => ({
-    url: `${domain}/city/${city.slug}`,
-    lastModified: new Date(), // Or a specific lastModified date for city content
+    url: `${domain}/${city.slug}-seo-service-agency`, // Use the canonical URL structure
+    lastModified: new Date(), 
     changeFrequency: 'weekly',
-    priority: 0.9, // City pages are important
+    priority: 0.9, 
   }));
 
   return [

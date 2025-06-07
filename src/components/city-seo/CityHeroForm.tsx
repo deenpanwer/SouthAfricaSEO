@@ -14,6 +14,7 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import type { CityHeroFormValues } from '@/types';
 
+import { CONTACT_DETAILS } from '@/lib/constants';
 // E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
@@ -120,7 +121,7 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
   return (
     <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl max-w-md mx-auto text-gray-800">
       <h3 className="text-2xl font-bold text-center mb-1 text-orange-600">{formTitle}</h3>
-      <p className="text-sm text-center text-gray-600 mb-6">Takes less than 30 seconds.</p>
+      <p className="text-sm text-center text-gray-600 mb-6">We just need a little info to get started</p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
@@ -130,7 +131,7 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
               <FormItem>
                 <FormLabel htmlFor={`city-hero-website-${cityName}`} className="text-sm font-medium text-gray-700 sr-only">Your Website URL</FormLabel>
                 <FormControl>
-                  <Input id={`city-hero-website-${cityName}`} placeholder="Your Website (Optional)" {...field} disabled={isLoading} className="bg-gray-50 border-gray-300 focus:border-orange-500 focus:ring-orange-500"/>
+                  <Input id={`city-hero-website-${cityName}`} placeholder="Your Website (Optional)" {...field} disabled={isLoading} className="bg-gray-50 border-gray-300 focus:border-orange-500 focus:ring-orange-500" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -163,25 +164,43 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
           />
           {/* Hidden fields for city and formType are handled in defaultValues and submit */}
           <div>
-            <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg py-3" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold text-lg py-3" disabled={isLoading}>
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                   Submitting...
                 </>
               ) : (
-                "GET MY FREE PROPOSAL!"
+                "GET STARTED >>"
               )}
             </Button>
           </div>
-          <p className="text-xs text-gray-500 text-center pt-2">
-            Our digital marketing experts will reach out to you ASAP.
+          <p className="text-sm text-gray-600 text-center pt-2">
+            In a hurry? Give us a call now at <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-orange-600 font-semibold hover:underline">{CONTACT_DETAILS.phone}</a>
           </p>
         </form>
       </Form>
-       <div className="mt-6 text-center">
-        <span className="text-sm text-gray-500">Or Call Us: </span>
-        <a href="tel:8885551234" className="text-sm font-semibold text-orange-600 hover:underline">(888) 555-1234</a>
+      <div className="mt-8 border-t border-gray-200 pt-6">
+        <h4 className="text-lg font-bold text-center mb-4 text-green-700">HOW IT WORKS</h4>
+        <div className="flex justify-around text-center">
+          <div>
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 font-bold text-lg mx-auto mb-2">1</div>
+            <p className="text-sm text-gray-600">Complete Form</p>
+          </div>
+          <div className="flex-1 border-t-2 border-gray-200 mt-5 mx-2"></div> {/* Line */}
+          <div>
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 font-bold text-lg mx-auto mb-2">2</div>
+            <p className="text-sm text-gray-600">Free Consultation</p>
+          </div>
+          <div className="flex-1 border-t-2 border-gray-200 mt-5 mx-2"></div> {/* Line */}
+          <div>
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 font-bold text-lg mx-auto mb-2">3</div>
+            <p className="text-sm text-gray-600">Get Proposal</p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-6 text-center text-xs text-gray-500">
+        By submitting your phone number, you agree to receiving texts from Thrive Ideas.
       </div>
     </div>
   );

@@ -15,31 +15,35 @@ const StarRating = ({ rating, count }: { rating: number; count?: number }) => (
 
 export const TestimonialsSection = () => {
   const testimonials = [
-    { name: "Marco Montemayor", company: "Director - Almond Tree Clinic", quote: "They hit everything they told me.", highlighted: "They hit everything they told me.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma" },
-    { name: "Whitney Wells Lewis", company: "Air Integrity A/C - HVAC Company", quote: "Thrive is transparent.", highlighted: "Thrive is transparent.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg" },
-    { name: "Chad Montgomery", company: "CEO - Accurate Leak and Line", quote: "Informative and transparent.", highlighted: "Informative and transparent.", imageUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg" },
-
+    { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma" },
+    { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg" },
+    { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg" },
   ];
 
   const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
-      {testimonial.imageUrl && (
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+      {testimonial.avatarUrl && (
         <Image
-          src={testimonial.imageUrl}
+          src={testimonial.avatarUrl}
           alt={`Photo of ${testimonial.name}`}
           width={100} // Adjust width and height as needed
           height={100} // Adjust width and height as needed
-          className="rounded-full mx-auto mb-4"
+          className="rounded-full mx-auto mb-4 border-2 border-yellow-400"
           data-ai-hint={`Photo of ${testimonial.name}`}
         />
       )}
-      <p className="text-gray-600 italic">"{testimonial.quote}"</p>
       <div className="mt-4">
         <p className="font-semibold text-gray-800">{testimonial.name}</p>
         <p className="text-sm text-gray-500">{testimonial.company}</p>
       </div>
       <div className="mt-3 pt-3 border-t border-gray-200">
-        <span className="text-sm bg-yellow-300 px-2 py-1 rounded text-gray-800">{testimonial.highlighted}</span>
+        {/* Highlighted Quote */}
+        <div className="bg-yellow-400 p-2 rounded-md mb-3">
+          <p className="text-gray-800 italic font-semibold text-sm">"{testimonial.highlightedQuote}"</p>
+        </div>
+        <blockquote className="text-gray-600 italic text-sm leading-relaxed mb-3">
+          "{testimonial.quote}"
+        </blockquote>
       </div>
     </div>
   )

@@ -1,27 +1,33 @@
 
 import Link from 'next/link';
 import { APP_NAME, NAV_ITEMS, SOCIAL_LINKS, CONTACT_DETAILS } from '@/lib/constants.tsx';
-import { Zap } from 'lucide-react'; // Zap can be a generic "spark" or "boost" icon
+import { Zap } from 'lucide-react'; 
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const allCities = [
+      'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'CHICAGO',
+      'CLEVELAND', 'DALLAS', 'DENVER', 'HOUSTON', 'JACKSONVILLE',
+      'KANSAS CITY', 'LAS VEGAS', 'LOS ANGELES', 'LOUISVILLE', 'NEW YORK CITY',
+      'MIAMI', 'MINNEAPOLIS', 'PHOENIX', 'NEW ORLEANS', 'ORLANDO',
+      'PHILADELPHIA', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
+    ].sort(); 
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center space-x-2 text-primary mb-4">
               <Zap className="h-8 w-8" />
               <span className="font-bold text-xl text-foreground">{APP_NAME}</span>
             </Link>
             <p className="text-sm">
-              Empowering businesses with expert strategies for sustainable growth and market dominance.
+              Empowering businesses with expert SEO strategies for sustainable growth and market dominance.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-md font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -35,7 +41,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-md font-semibold text-foreground mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
@@ -45,7 +50,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social Media */}
           <div>
             <h3 className="text-md font-semibold text-foreground mb-4">Follow Us</h3>
             <div className="flex space-x-4">
@@ -58,9 +62,31 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="mt-12 pt-12 border-t border-muted-foreground/20">
+          <div className="text-center text-foreground mb-8"> 
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Growing Businesses Since 2005 with Expert SEO</h2>
+            <p className="text-md">Local SEO expertise in {allCities.length} cities and beyond.</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
+            {allCities.map((city) => {
+              const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+              // All cities listed in allCities should now have a corresponding page
+              return (
+                <div key={citySlug} className="text-center">
+                  <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
+                    {city.charAt(0) + city.slice(1).toLowerCase().replace(/-([a-z])/g, (g) => ` ${g[1].toUpperCase()}`)} SEO Services
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="mt-12 border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>&copy; {currentYear} {APP_NAME}. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
+            <Link href="/site-map" className="hover:text-primary transition-colors">Sitemap</Link>
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>

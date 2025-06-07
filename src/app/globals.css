@@ -18,10 +18,10 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 258 100% 63%; /* Vibrant Purple */
-    --primary-foreground: 0 0% 98%; /* Light color for text on primary */
+    --primary: 145 63% 42%; /* Vibrant Purple */
+    --primary-foreground: 240 10% 3.9%; /* Light color for text on primary */
 
-    --secondary: 240 4.8% 95.9%; /* Light gray */
+    --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 10% 3.9%;
 
     --muted: 240 4.8% 95.9%;
@@ -29,7 +29,7 @@ body {
 
     --accent: 50 100% 58%; /* Bright Yellow/Orange for CTAs */
     --accent-foreground: 240 10% 3.9%; /* Dark text on accent */
-
+ --accent: 25 95% 53%; /* Bright Yellow/Orange for CTAs */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
@@ -57,10 +57,10 @@ body {
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 258 100% 70%; /* Brighter Purple for dark mode */
+    --primary: 145 63% 35%; /* Brighter Purple for dark mode */
     --primary-foreground: 240 10% 3.9%; /* Dark text on primary */
 
-    --secondary: 240 3.7% 15.9%; /* Darker gray */
+    --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
@@ -68,7 +68,7 @@ body {
 
     --accent: 50 100% 65%; /* Brighter Yellow/Orange for dark mode */
     --accent-foreground: 240 10% 3.9%;
-
+ --accent: 25 95% 60%; /* Brighter Yellow/Orange for dark mode */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 

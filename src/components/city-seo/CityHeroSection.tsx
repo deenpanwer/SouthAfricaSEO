@@ -1,22 +1,36 @@
+'use client'
 
 import Image from 'next/image';
 import type { CityHeroData } from '@/types';
 import { CityHeroForm } from './CityHeroForm';
-import { CheckCircle } from 'lucide-react';
+import { useState, useRef } from 'react';
 
-interface CityHeroSectionProps {
+const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={onClose}>
+      <div className="relative w-full max-w-3xl mx-auto p-4" onClick={(e) => e.stopPropagation()}>
+        <button className="absolute top-0 right-0 m-4 text-white text-2xl" onClick={onClose}>&times;</button>
+        {children}
+      </div>
+    </div>
+  );
+};
+interface CityHeroSectionProps { // Changed CityPageData to CityHeroData
   cityData: CityHeroData;
   cityName: string;
 }
 
 export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
-  const { heroTitle, heroSubtitle, heroDescription, heroImage, formTitle } = cityData;
+  const { heroTitle, heroSubtitle, heroDescription, heroImage, formTitle, heroVideoUrl } = cityData;
+  const [expanded, setExpanded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  // const videoRef = useRef<HTMLIFrameElement>(null); // This ref is not used anymore
 
-  const benefits = [
-    "Increase Your Leads",
-    "Drive Website Traffic",
-    "Improve Your ROI"
-  ];
+  const sentences = heroDescription.split('. ');
+  const initialDescription = sentences.slice(0, 4).join('. ') + (sentences.length > 4 ? '.' : '');
+  const fullDescription = heroDescription;
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-green-700 text-white">
@@ -35,30 +49,44 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-yellow-400 mb-6">
               {heroSubtitle}
             </h2>
-            <p className="text-base sm:text-lg text-green-100 mb-6 leading-relaxed">
-              {heroDescription}
-            </p>
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg mb-8 mx-auto lg:mx-0 max-w-xl">
+            {/* Image that triggers video */}
+            {/* Always show image, it will open the modal */}
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg mb-8 mx-auto lg:mx-0 max-w-xl cursor-pointer" onClick={() => setShowVideo(true)}>
               <Image
-                src={heroImage.src}
-                alt={heroImage.alt}
-                data-ai-hint={heroImage.dataAiHint}
-                layout="fill"
-                objectFit="cover"
+                src={typeof heroImage === 'string' ? heroImage : heroImage.src}
+                alt={typeof heroImage === 'string' ? `${cityName} city image to play video` : heroImage.alt}
+                width={600}
+                height={400}
+                layout="responsive"
               />
-              {/* Play button overlay if it were a video */}
-              {/* <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                <PlayCircle className="h-20 w-20 text-white opacity-80 hover:opacity-100 transition-opacity cursor-pointer" />
-              </div> */}
+              {/* Play button overlay - optional */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"></div>
+              {/* You can add a Play icon here if desired */}
             </div>
-             <ul className="space-y-2 text-left max-w-md mx-auto lg:mx-0">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-center text-green-50">
-                  <CheckCircle className="h-5 w-5 text-yellow-400 mr-2 flex-shrink-0" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Video Modal */}
+            <Modal isOpen={showVideo} onClose={() => setShowVideo(false)}>
+              <iframe
+                className="w-full aspect-video"
+                src={`${heroVideoUrl}?rel=0&showinfo=0&autoplay=1`} // Ensure autoplay is enabled when opened
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="TRAC Video"
+              ></iframe>
+            </Modal>
+
+            {/* Description and Read More */}
+            <p className="text-base sm:text-lg text-green-100 mb-4 leading-relaxed">
+              {expanded ? fullDescription : initialDescription}
+            </p>
+            {sentences.length > 2 && (
+              <button
+                onClick={() => setExpanded(!expanded)} // This correctly toggles the expanded state
+                className="text-yellow-400 font-semibold hover:underline mb-6"
+              >
+                {expanded ? 'Read Less' : 'Read More'}
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { MessageSquare } from 'lucide-react';
 
 interface CityReadyToGrowProps {
   headline: string;
@@ -17,11 +18,14 @@ export function CityReadyToGrow({ headline, cityName }: CityReadyToGrowProps) {
         </p>
         <Button
           asChild
+          variant="outline"
           size="lg"
-          className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-6 text-lg"
+          className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-6 text-lg border-white hover:border-white"
         >
           {/* This could link to the bottom form on the same page or the main contact page */}
-          <Link href={`/city/${cityName.toLowerCase()}#contact-form`}>GET FREE PROPOSAL</Link>
+          <Link href={`/city/${cityName.toLowerCase()}#contact-form`} className="flex items-center">
+            <MessageSquare className="mr-2 h-6 w-6" /> GET FREE PROPOSAL { '>>' }
+          </Link>
         </Button>
       </div>
     </section>
