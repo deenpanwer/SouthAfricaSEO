@@ -2,7 +2,6 @@
 import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
-import { GENERIC_CITY_HERO_IMAGE_SRC, GENERIC_OFFICE_LOCATION_IMAGE_SRC } from '@/lib/cityConstants';
 
 export const dallasCityData: CityPageData = {
   slug: 'dallas',

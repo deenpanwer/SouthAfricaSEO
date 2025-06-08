@@ -2,7 +2,9 @@
 import type { CityPageData } from '@/types';
 import { Search, Settings, Users, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
-import { GENERIC_CITY_HERO_IMAGE_SRC, GENERIC_OFFICE_LOCATION_IMAGE_SRC } from '@/lib/cityConstants';
+
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const houstonData: CityPageData = {
   slug: 'houston',

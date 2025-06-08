@@ -27,12 +27,6 @@ import { sanAntonioData } from './cityData/sanAntonio';
 import { sanDiegoData } from './cityData/sanDiego';
 import { seattleData } from './cityData/seattle';
 
-
-// Generic placeholder images for new cities - hero
-export const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-// Generic placeholder image for new cities - office location
-export const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
-
 export const CITIES_DATA: CityPageData[] = [
   portlandCityData,
   dallasCityData,
