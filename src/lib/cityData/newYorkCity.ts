@@ -10,48 +10,84 @@ export const newYorkCityData: CityPageData = {
   slug: 'new-york-city',
   cityName: 'New York City',
   heroData: {
-    pageTitle: 'NYC SEO Experts | TRAC - Drive Growth in New York City',
-    metaDescription: 'TRAC provides expert SEO services for New York City businesses. Boost your organic traffic, improve rankings, and achieve sustainable growth in the competitive NYC market. Contact us!',
-    heroTitle: 'Expert SEO Services in New York City',
-    heroSubtitle: 'Navigate the NYC Digital Landscape & Outrank Your Competition with Proven SEO',
-    heroDescription: 'TRAC delivers cutting-edge SEO strategies tailored for the fast-paced New York City market. From comprehensive technical optimization to hyper-local targeting across the five boroughs, we help your NYC business capture high-value organic traffic and achieve significant ROI through strategic search engine optimization.',
+    pageTitle: 'NYC SEO Experts | TRAC - Premier SEO Services in New York City',
+    metaDescription: 'TRAC provides expert SEO services for New York City businesses. Boost your organic traffic, improve rankings, and achieve sustainable growth in the competitive NYC market. Contact us for a free SEO audit!',
+    heroTitle: 'Expert SEO Services for New York City Dominance',
+    heroSubtitle: 'Navigate the NYC Digital Landscape & Outrank Your Competition with TRAC\'s Proven SEO Strategies',
+    heroDescription: 'TRAC delivers cutting-edge SEO strategies meticulously tailored for the fast-paced, hyper-competitive New York City market. We understand that visibility in NYC requires more than just basic optimization. Our approach encompasses comprehensive technical SEO, hyper-local targeting across all five boroughs, sophisticated content marketing, and authoritative link acquisition. We empower your NYC business to capture high-value organic traffic, enhance brand authority, and achieve significant, measurable ROI through strategic and sustained search engine optimization efforts.',
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
-      alt: 'SEO Services in New York City by TRAC',
+      alt: 'Panoramic view of New York City skyline, symbolizing TRAC\'s SEO services',
       dataAiHint: 'new york city skyline business'
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE NYC SEO Audit!',
   },
-  resultsHeadline: 'TRAC\'s SEO Strategies Deliver for NYC Businesses',
-  readyToGrowHeadline: 'Ready to Amplify Your NYC Presence with SEO?',
-  servicesSectionHeadline: 'Comprehensive SEO Solutions for New York City',
-  servicesSectionSubheadline: 'Tailored SEO services to meet the unique demands of businesses in Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.',
+  resultsHeadline: 'TRAC\'s Data-Driven SEO Strategies Deliver for NYC Businesses',
+  readyToGrowHeadline: 'Ready to Amplify Your NYC Online Presence with Strategic SEO?',
+  servicesSectionHeadline: 'Comprehensive SEO Solutions Tailored for New York City',
+  servicesSectionSubheadline: 'Our SEO services are customized to meet the unique demands and opportunities of businesses operating in Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.',
   services: [
-    { icon: Search, title: 'Advanced Keyword Research for NYC', description: 'Uncover high-intent keywords specific to New York City\'s diverse industries and demographics, ensuring your SEO targets the right audience.' },
-    { icon: Settings, title: 'Enterprise SEO for NYC Corporations', description: 'Scalable SEO solutions for large New York City businesses needing to dominate national and international search rankings.' },
-    { icon: Users, title: 'Hyper-Local SEO for NYC Neighborhoods', description: 'Target specific NYC boroughs and neighborhoods, from SoHo to Flushing, to connect with your local customer base through precise local SEO.' },
-    { icon: Briefcase, title: 'E-commerce SEO for NYC Retailers', description: 'Boost online sales for your New York City e-commerce store with specialized SEO strategies, including platform optimization and product listing SEO.' },
-    { icon: Mail, title: 'Authoritative Content Creation for NYC Audiences', description: 'Develop compelling, NYC-relevant content that resonates with your target market, attracts quality backlinks, and builds brand authority through SEO.' },
-    { icon: BarChart2, title: 'NYC SEO Performance Analytics', description: 'Transparent reporting on your New York City SEO campaign\'s progress and key performance indicators, focusing on organic growth and conversions.' },
+    {
+      icon: Search,
+      title: 'Advanced Keyword Research & Analysis for NYC',
+      description: 'We uncover high-intent keywords specific to New York City\'s diverse industries, cultural nuances, and demographic segments. This ensures your SEO strategy effectively targets the right audience, maximizing relevance and conversion potential in the five boroughs.'
+    },
+    {
+      icon: Settings,
+      title: 'Enterprise-Level Technical SEO for NYC Corporations',
+      description: 'TRAC provides scalable technical SEO solutions designed for large New York City businesses. We focus on optimizing complex site architectures, international SEO considerations, and ensuring peak performance to help you dominate national and global search rankings from your NYC base.'
+    },
+    {
+      icon: Users,
+      title: 'Hyper-Local SEO Targeting for NYC Neighborhoods',
+      description: 'Connect with your local customer base through precise local SEO. We target specific NYC boroughs and neighborhoods, from the Financial District to Williamsburg, optimizing your online presence for "near me" searches and Google Maps visibility across the city.'
+    },
+    {
+      icon: Briefcase,
+      title: 'E-commerce SEO Strategies for NYC Retailers & Brands',
+      description: 'Boost online sales for your New York City e-commerce store with our specialized SEO strategies. This includes Shopify SEO, Magento SEO, product page optimization, structured data for products, and advanced category strategy to capture NYC shoppers.'
+    },
+    {
+      icon: Mail,
+      title: 'Authoritative & Engaging Content Creation for NYC Audiences',
+      description: 'Our team develops compelling, NYC-relevant content that resonates with your target market, attracts high-quality backlinks, and builds significant brand authority. Effective content is key to successful SEO in New York City.'
+    },
+    {
+      icon: BarChart2,
+      title: 'NYC SEO Performance Analytics & ROI Tracking',
+      description: 'Receive transparent, detailed reporting on your New York City SEO campaign\'s progress. We track key performance indicators (KPIs) such as organic traffic, keyword rankings, lead generation, and conversion rates, focusing on demonstrating clear ROI from your SEO investment.'
+    },
   ],
-  whyChooseSectionHeadline: 'Why TRAC is NYC\'s Premier SEO Partner',
-  whyChooseIntro: 'In a city that never sleeps, your SEO strategy needs to be working around the clock. TRAC offers the expertise and dedication to make your New York City business a digital leader through effective search engine optimization.',
-  whyChooseParagraph1: 'New York City demands innovation and agility. Our SEO strategies are designed to be dynamic, adapting to the fast-paced changes in search algorithms and consumer behavior. We focus on building a robust online presence that drives sustainable organic traffic for your NYC enterprise.',
-  whyChooseParagraph2: 'With fierce competition in NYC, a data-driven SEO approach is paramount. We meticulously analyze your market, competitors, and target audience to craft SEO campaigns that deliver measurable results and a significant return on your investment.',
+  whyChooseSectionHeadline: 'Why TRAC is New York City\'s Premier SEO Partner for Growth',
+  whyChooseIntro: 'In a city that defines global business, your SEO strategy needs to be world-class. TRAC offers the deep expertise, innovative approach, and unwavering dedication required to make your New York City business a leader in the digital space through powerful and effective search engine optimization.',
+  whyChooseParagraph1: 'New York City demands relentless innovation and strategic agility. Our SEO services are designed to be dynamic, adapting to the ever-changing landscape of search engine algorithms and sophisticated consumer behavior. We focus on building a robust, authoritative online presence that drives sustainable organic traffic and high-value leads for your NYC enterprise, ensuring you stay ahead of the curve.',
+  whyChooseParagraph2: 'With the fierce competition inherent in the NYC market, a data-driven, analytical SEO approach is paramount. We meticulously analyze your specific industry, competitors, and target audience within New York City. This allows us to craft bespoke SEO campaigns that deliver not just rankings, but truly measurable business results and a significant return on your marketing investment.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'NYC Market Domination through SEO', description: 'Our SEO strategies are built to help you stand out and succeed in the ultra-competitive New York City market.' },
-    { icon: 'Lightbulb', title: 'Innovative NYC SEO Tactics', description: 'We leverage the latest SEO techniques and local insights for maximum impact in New York City search results.' },
-    { icon: 'ShieldCheck', title: 'Transparent & Results-Driven SEO', description: 'Clear communication and a relentless focus on delivering measurable SEO results for our NYC clients.' },
+    {
+      icon: 'TrendingUp',
+      title: 'NYC Market Domination via Strategic SEO',
+      description: 'Our advanced SEO strategies are engineered to help your business stand out, attract high-intent traffic, and achieve significant success in the ultra-competitive New York City market.'
+    },
+    {
+      icon: 'Lightbulb',
+      title: 'Innovative & Adaptive NYC SEO Tactics',
+      description: 'We leverage the latest SEO techniques, tools, and local market insights for maximum impact, ensuring your campaigns are effective and future-proof in New York City search results.'
+    },
+    {
+      icon: 'ShieldCheck',
+      title: 'Transparent, Ethical & Results-Driven SEO Partnership',
+      description: 'TRAC is committed to clear communication, ethical practices, and a relentless focus on delivering measurable SEO results that contribute directly to the growth of our NYC clients.'
+    },
   ],
   awards: {
     clutch: {
-      headline: 'TRAC: Clutch Top SEO Agency in New York City 2024',
-      text: 'Recognized by Clutch for our commitment to providing exceptional SEO services and achieving client success in NYC.',
+      headline: 'TRAC: Recognized by Clutch as a Top SEO Agency in New York City for 2024',
+      text: 'Our commitment to providing exceptional SEO services and achieving tangible client success in the demanding NYC market has been acknowledged by Clutch, a leading B2B ratings and reviews platform.',
     },
     upcity: {
-      headline: 'UpCity SEO Excellence Award: TRAC Recognized in NYC 2024',
-      text: 'Honored by UpCity as a leading SEO provider in New York City, showcasing our ability to deliver top-tier organic search results.',
+      headline: 'UpCity SEO Excellence Award: TRAC Honored as a Premier NYC Provider in 2024',
+      text: 'TRAC has been distinguished by UpCity as a leading SEO provider in New York City, highlighting our ability to consistently deliver top-tier organic search results and strategic digital growth for our clients.',
     }
   },
   location: {
@@ -60,5 +96,5 @@ export const newYorkCityData: CityPageData = {
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your FREE NYC SEO Proposal',
+  bottomFormTitle: 'Get Your FREE NYC SEO Proposal & Consultation',
 };
