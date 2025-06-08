@@ -1,6 +1,6 @@
 
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Search, Settings, Mail, Briefcase, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -12,35 +12,35 @@ export const lasVegasData: CityPageData = {
   heroData: {
     pageTitle: 'Las Vegas SEO Agency | TRAC - SEO Services Las Vegas, NV',
     metaDescription: 'TRAC is a Las Vegas SEO agency helping businesses improve online visibility and drive organic growth. Contact our Las Vegas SEO experts for a free consultation.',
-    heroTitle: 'Las Vegas SEO Experts',
-    heroSubtitle: 'Win Big in Las Vegas with TRAC SEO',
-    heroDescription: 'TRAC offers comprehensive SEO services for businesses in Las Vegas, Nevada. Our tailored strategies focus on improving your search engine rankings, attracting qualified local and tourist traffic, and increasing your ROI in the dynamic Las Vegas market.',
+    heroTitle: 'Las Vegas SEO Experts: Shine Brighter on The Strip',
+    heroSubtitle: 'Win Big in Las Vegas with TRAC\'s High-Impact SEO Strategies',
+    heroDescription: 'TRAC offers comprehensive SEO services tailored for the unique and dazzling Las Vegas market. In a city that thrives on visibility and attracting a global audience, a cutting-edge SEO strategy is paramount. We specialize in boosting your online presence, whether you cater to tourists or local Las Vegans. Our services include targeted local SEO for the Strip and surrounding neighborhoods, advanced technical optimization for high-performance websites, and engaging content marketing that captures the excitement of Las Vegas. We understand the specific needs of the hospitality, entertainment, and service industries that dominate Las Vegas. TRAC is committed to delivering measurable results, transparent reporting, and helping your Las Vegas business stand out in a sea of competition. Let us help you hit the SEO jackpot.',
     heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Las Vegas, NV', dataAiHint: 'Las Vegas strip' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Las Vegas SEO Strategy!',
   },
   resultsHeadline: 'Delivering High-Roller SEO Results in Las Vegas',
   readyToGrowHeadline: 'Ready to Hit the SEO Jackpot in Las Vegas?',
-  servicesSectionHeadline: 'Customized Las Vegas SEO Solutions',
-  servicesSectionSubheadline: 'Our SEO services are designed to make your Las Vegas business a leader in organic search, attracting both locals and tourists.',
+  servicesSectionHeadline: 'Customized Las Vegas SEO Solutions for Maximum Impact',
+  servicesSectionSubheadline: 'Our SEO services are strategically designed to make your Las Vegas business a dominant leader in organic search, attracting both the crucial tourist demographic and local clientele.',
   services: [
-    { icon: Search, title: 'Las Vegas Local & Tourism SEO', description: 'Dominate local search in Las Vegas and target tourist queries.' },
-    { icon: Settings, title: 'Technical SEO for Las Vegas Websites', description: 'Optimize your website\'s technical health for peak SEO performance in Las Vegas.' },
-    { icon: Mail, title: 'Las Vegas SEO Content Marketing', description: 'Create compelling content that ranks in Las Vegas and converts visitors.' },
-    { icon: Briefcase, title: 'Hospitality & Entertainment SEO Las Vegas', description: 'Specialized SEO for Las Vegas hotels, shows, and attractions.'},
+    { icon: Search, title: 'Las Vegas Local & Tourism SEO', description: 'Dominate local search results in Las Vegas and effectively target the massive tourist influx. We optimize for "near me" searches, hotel and show queries, and local attractions to drive bookings and foot traffic to your Las Vegas business.' },
+    { icon: Settings, title: 'Technical SEO for High-Traffic Las Vegas Websites', description: 'Optimize your website\'s technical infrastructure for peak SEO performance and user experience in the high-demand Las Vegas market. This includes site speed, mobile-first indexing for on-the-go tourists, and schema for events and hospitality.' },
+    { icon: Mail, title: 'Las Vegas SEO Content Marketing & Engagement', description: 'Create compelling, shareable content that ranks high in Las Vegas search results, captivates visitors, and converts them into customers. We focus on content that showcases the unique appeal of your Las Vegas offerings.' },
+    { icon: Briefcase, title: 'Hospitality, Gaming & Entertainment SEO for Las Vegas', description: 'Leverage our specialized SEO expertise for Las Vegas\'s core industries: hotels, casinos, restaurants, shows, and attractions. We understand the nuances of marketing these experiences to a global audience looking for Las Vegas excitement.'},
   ],
-  whyChooseSectionHeadline: 'TRAC: Your Trusted Las Vegas SEO Agency',
-  whyChooseIntro: 'Partner with TRAC for effective, data-driven SEO services in Las Vegas.',
-  whyChooseParagraph1: 'Our Las Vegas SEO team has deep knowledge of the local market, including the tourism sector.',
-  whyChooseParagraph2: 'We employ ethical, cutting-edge SEO techniques to deliver sustainable growth for Las Vegas businesses.',
+  whyChooseSectionHeadline: 'TRAC: Your Trusted Las Vegas SEO Agency for Unforgettable Results',
+  whyChooseIntro: 'Partner with TRAC for effective, data-driven SEO services that make your Las Vegas business shine. We understand the high stakes of the Las Vegas market and how to achieve top visibility.',
+  whyChooseParagraph1: 'Our Las Vegas SEO team possesses deep knowledge of the local market, particularly the tourism and entertainment sectors that define the city. We tailor strategies to capture both local Las Vegas residents and the millions of visitors seeking world-class experiences.',
+  whyChooseParagraph2: 'We employ ethical, cutting-edge SEO techniques designed to deliver sustainable growth and a commanding online presence for Las Vegas businesses. Our commitment is to transparency, measurable ROI, and helping you outperform the competition on the global stage that is Las Vegas.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'Las Vegas Search Growth', description: 'Improve your organic rankings and lead generation in Las Vegas.' },
-    { icon: 'Lightbulb', title: 'Strategic Las Vegas SEO', description: 'Targeted SEO campaigns for the Las Vegas, NV audience.' },
-    { icon: 'ShieldCheck', title: 'Reliable Las Vegas SEO Partner', description: 'Transparent and results-oriented SEO services in Las Vegas.' },
+    { icon: 'TrendingUp', title: 'Las Vegas Search Growth & Booking Increases', description: 'Significantly improve your organic search rankings, attract more qualified leads and bookings, and enhance your market share in the vibrant Las Vegas tourism and local economy with our expert SEO.' },
+    { icon: 'Lightbulb', title: 'Strategic & Dynamic Las Vegas SEO', description: 'Benefit from targeted SEO campaigns specifically crafted for the Las Vegas, NV audience, adapting to seasonal trends, major events, and the evolving digital landscape of this entertainment capital.' },
+    { icon: 'ShieldCheck', title: 'Reliable & Results-Driven Las Vegas SEO Partner', description: 'Experience transparent, ethical, and results-oriented SEO services in Las Vegas. We are focused on building long-term success and a stellar online reputation for your brand in the heart of Nevada.' },
   ],
   awards: {
-    clutch: { headline: 'Top Las Vegas SEO Agency - Clutch 2024', text: 'Recognized for excellence in Las Vegas SEO.' },
-    upcity: { headline: 'Las Vegas SEO Excellence - UpCity 2024', text: 'Awarded for top-tier SEO services in Las Vegas.' },
+    clutch: { headline: 'Top Las Vegas SEO Agency - Clutch 2024', text: 'Recognized by Clutch for delivering exceptional results and strategic excellence in Las Vegas SEO, especially for hospitality and entertainment clients.' },
+    upcity: { headline: 'Las Vegas SEO Excellence Award - UpCity 2024', text: 'Awarded by UpCity for providing top-tier SEO services and consistently helping Las Vegas businesses achieve premier online visibility.' },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
