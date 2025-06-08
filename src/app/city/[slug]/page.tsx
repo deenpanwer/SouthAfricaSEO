@@ -12,7 +12,7 @@ import { CityWhyChoose } from '@/components/city-seo/CityWhyChoose';
 import { CityAwards } from '@/components/city-seo/CityAwards';
 import { CityLocation } from '@/components/city-seo/CityLocation';
 import { CityBottomForm } from '@/components/city-seo/CityBottomForm';
-import { CityPageTestimonials } from '@/components/city-seo/CityPageTestimonials'; // Assuming this was created
+// CityPageTestimonials is integrated into CityResultsHighlights
 
 interface CityPageProps {
   params: { slug: string };
@@ -26,7 +26,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
   const cityData = getCityData(params.slug);
-  const domain = process.env.WEBSITE_URL || 'https://www.tracprotect.online';
+  // Ensure WEBSITE_URL is set in your .env file or use a default
+  const domain = process.env.WEBSITE_URL || 'https://www.tracprotect.online'; // Fallback to your actual domain
 
   if (!cityData) {
     return {
@@ -55,8 +56,6 @@ export default function CityPage({ params }: CityPageProps) {
     <div className="bg-white"> 
       <CityHeroSection cityData={cityData.heroData} cityName={cityData.cityName} />
       <CityResultsHighlights headline={cityData.resultsHeadline} />
-      {/* Testimonials integrated into CityResultsHighlights or can be a separate call here */}
-      {/* <CityPageTestimonials cityName={cityData.cityName} /> */} 
       <CityReadyToGrow headline={cityData.readyToGrowHeadline} cityName={cityData.cityName} />
       <CityServicesGrid
         headline={cityData.servicesSectionHeadline}
