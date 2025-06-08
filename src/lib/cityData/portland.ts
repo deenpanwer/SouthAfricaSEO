@@ -13,7 +13,7 @@ export const portlandCityData: CityPageData = {
     metaDescription: 'TRAC delivers expert SEO services for Portland businesses. Boost organic traffic, improve search rankings, and achieve sustainable growth. Contact our Portland SEO specialists for a free consultation!',
     heroTitle: 'Portland SEO Agency: Propel Your Business Forward',
     heroSubtitle: 'Elevate Your Search Rankings & Visibility in Portland with TRAC',
-    heroDescription: 'TRAC is a leading SEO agency dedicated to empowering Portland businesses in the competitive digital landscape. The Rose City\'s unique blend of innovation and local charm requires a nuanced SEO approach. We specialize in crafting comprehensive, data-driven SEO strategies, from meticulous local optimization targeting Portland-specific customer segments to advanced technical SEO audits and compelling content marketing plans. Our mission is to significantly enhance your online visibility, attract high-quality organic traffic, and convert searches into measurable business growth for your Portland enterprise.',
+    heroDescription: 'TRAC is a leading SEO agency dedicated to empowering Portland businesses in the competitive digital landscape. The Rose City\'s unique blend of innovation and local charm requires a nuanced SEO approach. We specialize in crafting comprehensive, data-driven SEO strategies, from meticulous local optimization targeting Portland-specific customer segments to advanced technical SEO audits and compelling content marketing plans. Our methodology involves understanding your unique business goals and the Portland market dynamics to build a resilient online presence. We ensure your website not only ranks higher but also connects effectively with your desired audience, converting searches into tangible business growth. Our commitment extends to transparent reporting and continuous strategy refinement to keep you ahead in Portland\'s evolving digital space. Partner with TRAC to unlock the full potential of your Portland enterprise through targeted and effective search engine optimization.',
     heroImage: {
       src: 'https://thriveagency.com/files/Portland-city-img.png',
       alt: 'Skyline of Portland, Oregon, showcasing TRAC\'s SEO services',
@@ -22,7 +22,7 @@ export const portlandCityData: CityPageData = {
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Portland SEO Audit!',
   },
-  resultsHeadline: 'Our Portland SEO Strategies Deliver Tangible ROI & Growth',
+  resultsHeadline: 'Our Portland SEO Strategies Consistently Deliver Real ROI',
   readyToGrowHeadline: 'Ready to Grow Your Portland Business with Expert SEO?',
   servicesSectionHeadline: 'Comprehensive SEO Services for Portland Businesses',
   servicesSectionSubheadline: 'TRAC offers a full suite of SEO solutions tailored to the dynamic Portland, Oregon market, designed to maximize your online visibility and drive meaningful conversions.',

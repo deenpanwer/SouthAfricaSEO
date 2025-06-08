@@ -1,6 +1,6 @@
 
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Search, Settings, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -12,35 +12,35 @@ export const clevelandData: CityPageData = {
   heroData: {
     pageTitle: 'Cleveland SEO Services | TRAC - SEO Company Cleveland, OH',
     metaDescription: 'TRAC is a Cleveland SEO company helping businesses boost online visibility and organic traffic. Contact our Cleveland SEO experts for a free SEO strategy session.',
-    heroTitle: 'Cleveland SEO Company',
-    heroSubtitle: 'Rank Higher in Cleveland with TRAC\'s SEO',
-    heroDescription: 'TRAC offers specialized SEO services for Cleveland businesses. We develop tailored strategies to improve your search engine rankings, attract local customers, and drive growth in the Cleveland market.',
+    heroTitle: 'Cleveland SEO Company: Driving Your Digital Success',
+    heroSubtitle: 'Rank Higher in Cleveland and Attract More Customers with TRAC\'s Expert SEO',
+    heroDescription: 'TRAC offers specialized SEO services tailored for Cleveland businesses looking to make a significant impact online. We develop customized strategies to improve your search engine rankings, attract qualified local customers, and drive sustainable growth in the Cleveland market. Our approach involves a thorough understanding of Cleveland\'s diverse industries and local search trends, enabling us to craft campaigns that deliver real results. From comprehensive technical SEO audits to targeted local optimization and compelling content creation, we ensure your Cleveland business is positioned for success. We are committed to transparent reporting and a collaborative approach, making us your ideal SEO partner in Cleveland. Let us help you navigate the digital landscape and achieve your business objectives.',
     heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Cleveland, OH', dataAiHint: 'Cleveland city business' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Cleveland SEO Review!',
   },
-  resultsHeadline: 'Delivering SEO Results for Cleveland Businesses',
+  resultsHeadline: 'Delivering SEO Results for Cleveland Businesses: Proven Success',
   readyToGrowHeadline: 'Ready for SEO Growth in Cleveland?',
-  servicesSectionHeadline: 'Cleveland SEO Solutions',
-  servicesSectionSubheadline: 'Our SEO services are designed to help your Cleveland business succeed online.',
+  servicesSectionHeadline: 'Cleveland SEO Solutions: Tailored for Your Success',
+  servicesSectionSubheadline: 'Our SEO services are meticulously designed to help your Cleveland business achieve and maintain top search engine visibility.',
   services: [
-    { icon: Search, title: 'Cleveland Local SEO', description: 'Improve your visibility in Cleveland local search results and attract more customers.' },
-    { icon: Settings, title: 'Technical SEO Audits - Cleveland', description: 'Optimize your website\'s technical foundation for better SEO performance in Cleveland.' },
-    { icon: Mail, title: 'Cleveland SEO Content Creation', description: 'Develop engaging content that ranks well in Cleveland and converts visitors.' },
-    { icon: BarChart2, title: 'SEO Performance for Cleveland', description: 'Track key SEO metrics and understand your campaign\'s impact in Cleveland.' },
+    { icon: Search, title: 'Cleveland Local SEO & Visibility', description: 'Improve your visibility in Cleveland local search results and Google Maps. We focus on attracting customers in your specific service areas within Greater Cleveland.' },
+    { icon: Settings, title: 'Technical SEO Audits for Cleveland Businesses', description: 'Optimize your website\'s technical foundation for better SEO performance in Cleveland. This includes site speed, mobile optimization, and ensuring search engine crawlability.' },
+    { icon: Mail, title: 'Cleveland SEO Content Creation & Marketing', description: 'Develop engaging, high-value content that ranks well in Cleveland search results and effectively converts visitors into loyal customers by addressing their specific needs.' },
+    { icon: BarChart2, title: 'SEO Performance Tracking for Cleveland Campaigns', description: 'Track key SEO metrics and understand your campaign\'s impact in the Cleveland market with our comprehensive and transparent reporting solutions.' },
   ],
-  whyChooseSectionHeadline: 'TRAC: Your Cleveland SEO Experts',
-  whyChooseIntro: 'Choose TRAC for effective SEO strategies tailored to the Cleveland market.',
-  whyChooseParagraph1: 'Our team understands the Cleveland business environment and how to achieve SEO success here.',
-  whyChooseParagraph2: 'We use ethical, data-driven SEO techniques to deliver sustainable results for Cleveland clients.',
+  whyChooseSectionHeadline: 'TRAC: Your Cleveland SEO Experts & Growth Partner',
+  whyChooseIntro: 'Choose TRAC for effective SEO strategies specifically tailored to the Cleveland market. We deliver results that drive growth and enhance your online presence.',
+  whyChooseParagraph1: 'Our team deeply understands the Cleveland business environment and the unique factors that influence local search success. We craft strategies that are not only effective but also sustainable, helping you build a strong digital foundation in Cleveland.',
+  whyChooseParagraph2: 'We use ethical, data-driven SEO techniques to deliver sustainable results for our Cleveland clients. Our focus is on transparency, collaboration, and achieving your specific business goals through targeted search engine optimization.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'Cleveland Search Growth', description: 'Boost your organic rankings and traffic in Cleveland.' },
-    { icon: 'Lightbulb', title: 'Local SEO for Cleveland', description: 'Customized SEO for the Cleveland, OH audience.' },
-    { icon: 'ShieldCheck', title: 'Trusted Cleveland SEO Partner', description: 'Reliable and transparent SEO services in Cleveland.' },
+    { icon: 'TrendingUp', title: 'Cleveland Search Growth & Lead Generation', description: 'Boost your organic rankings and attract more qualified leads in the Cleveland area with our customized SEO strategies designed for local impact.' },
+    { icon: 'Lightbulb', title: 'Local SEO Expertise for Cleveland', description: 'Benefit from customized SEO strategies built for the Cleveland, OH audience, considering local market trends and competitive dynamics.' },
+    { icon: 'ShieldCheck', title: 'Trusted & Transparent Cleveland SEO Partner', description: 'Experience reliable and transparent SEO services in Cleveland, focused on ethical practices and achieving measurable, long-term success.' },
   ],
   awards: {
-    clutch: { headline: 'Top Cleveland SEO Agency - Clutch 2024', text: 'Recognized for SEO excellence in Cleveland.' },
-    upcity: { headline: 'Cleveland SEO Excellence - UpCity 2024', text: 'Awarded for top SEO services in Cleveland.' },
+    clutch: { headline: 'Top Cleveland SEO Agency - Clutch 2024', text: 'Recognized by Clutch for delivering exceptional SEO results and client satisfaction to businesses in the Cleveland area.' },
+    upcity: { headline: 'Cleveland SEO Excellence - UpCity 2024', text: 'Awarded by UpCity for top-tier SEO services and consistent success in helping Cleveland businesses achieve their online goals.' },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
