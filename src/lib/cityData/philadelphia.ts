@@ -1,6 +1,6 @@
 
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -12,35 +12,35 @@ export const philadelphiaData: CityPageData = {
   heroData: {
     pageTitle: 'Philadelphia SEO Agency | TRAC - SEO Services Philly',
     metaDescription: 'TRAC is a Philadelphia SEO agency helping businesses improve online visibility and drive organic growth. Contact our Philly SEO experts for a free consultation.',
-    heroTitle: 'Philadelphia SEO Experts',
-    heroSubtitle: 'Lead the Pack in Philadelphia with TRAC SEO',
-    heroDescription: 'TRAC offers comprehensive SEO services for businesses in Philadelphia, Pennsylvania. Our tailored strategies focus on improving your search engine rankings, attracting qualified local traffic, and increasing your ROI in the historic Philadelphia market.',
+    heroTitle: 'Philadelphia SEO Experts: Revolutionize Your Online Presence',
+    heroSubtitle: 'Lead the Pack in Philadelphia with TRAC\'s Historic SEO Success',
+    heroDescription: 'TRAC offers comprehensive SEO services for businesses in Philadelphia, Pennsylvania, a city rich in history and innovation. Our tailored strategies focus on improving your search engine rankings, attracting qualified local traffic, and increasing your ROI in the historic Philadelphia market. We understand Philly\'s unique blend of tradition and modernity. From optimizing for local searches around iconic landmarks like Independence Hall and the Liberty Bell to ensuring your website is technically robust and developing content that resonates with Philadelphians (e.g., related to arts, culture, or local industries), our SEO experts are equipped to elevate your brand. We work with diverse sectors, from professional services to tourism and local businesses. Partner with TRAC to make your Philadelphia business a prominent player in the digital landscape.',
     heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Philadelphia, PA', dataAiHint: 'Philadelphia liberty bell' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Philly SEO Strategy!',
   },
-  resultsHeadline: 'Delivering Historic SEO Results in Philadelphia',
-  readyToGrowHeadline: 'Ready to Revolutionize Your Philadelphia SEO?',
-  servicesSectionHeadline: 'Customized Philadelphia SEO Solutions',
-  servicesSectionSubheadline: 'Our SEO services are designed to make your Philadelphia business a leader in organic search.',
+  resultsHeadline: 'Delivering Historic SEO Results in Philadelphia\'s Diverse Market',
+  readyToGrowHeadline: 'Ready to Revolutionize Your Philadelphia SEO & Market Standing?',
+  servicesSectionHeadline: 'Customized Philadelphia SEO Solutions for a City of Firsts',
+  servicesSectionSubheadline: 'Our SEO services are designed to make your Philadelphia business a leader in organic search, connecting you with customers across its historic neighborhoods and modern business districts.',
   services: [
-    { icon: Search, title: 'Philadelphia Local SEO Dominance', description: 'Dominate local search in Philadelphia and connect with more customers.' },
-    { icon: Settings, title: 'Technical SEO for Philadelphia Websites', description: 'Optimize your website\'s technical health for peak SEO performance in Philadelphia.' },
-    { icon: Mail, title: 'Philadelphia SEO Content Marketing', description: 'Create compelling content that ranks in Philadelphia and converts visitors.' },
-    { icon: Briefcase, title: 'B2B & Historical SEO Philadelphia', description: 'Specialized SEO for Philadelphia\'s diverse business landscape, including historical and cultural attractions.'},
+    { icon: Search, title: 'Philadelphia Local SEO Dominance & Neighborhood Targeting', description: 'Dominate local search in Philadelphia and connect with more customers in specific neighborhoods like Center City, Old City, or Fishtown. We optimize your Google Business Profile and local citations for top Philly visibility.' },
+    { icon: Settings, title: 'Technical SEO for Philadelphia Websites & Institutions', description: 'Optimize your website\'s technical health for peak SEO performance in Philadelphia. This includes ensuring fast load times, mobile-friendliness for a diverse user base, and implementing schema for historical sites, universities, and businesses.' },
+    { icon: Mail, title: 'Philadelphia SEO Content Marketing & Historical Relevance', description: 'Create compelling content that ranks in Philadelphia search results and converts visitors, highlighting local history, cultural events, and unique business offerings. We craft content that speaks to both residents and tourists interested in Philly.' },
+    { icon: Briefcase, title: 'B2B, Historical & Cultural Attraction SEO Philadelphia', description: 'Specialized SEO for Philadelphia\'s diverse business landscape, including B2B services, historical and cultural attractions, and educational institutions. We understand how to target niche audiences in the Philadelphia area through effective SEO.'},
   ],
-  whyChooseSectionHeadline: 'TRAC: Your Trusted Philadelphia SEO Agency',
-  whyChooseIntro: 'Partner with TRAC for effective, data-driven SEO services in Philadelphia.',
-  whyChooseParagraph1: 'Our Philadelphia SEO team has deep knowledge of the local market and its unique historical significance.',
-  whyChooseParagraph2: 'We employ ethical, cutting-edge SEO techniques to deliver sustainable growth for Philadelphia businesses.',
+  whyChooseSectionHeadline: 'TRAC: Your Trusted Philadelphia SEO Agency for Enduring Success',
+  whyChooseIntro: 'Partner with TRAC for effective, data-driven SEO services that honor Philadelphia\'s heritage while driving modern digital growth. We are committed to helping your Philly business achieve lasting online prominence.',
+  whyChooseParagraph1: 'Our Philadelphia SEO team has deep knowledge of the local market, its unique historical significance, and the diverse industries that call Philly home, from life sciences to arts and culture. We leverage this understanding to create SEO strategies that are both impactful and contextually relevant to Philadelphia.',
+  whyChooseParagraph2: 'We employ ethical, cutting-edge SEO techniques to deliver sustainable growth for Philadelphia businesses. Our strategies are designed to adapt to the evolving search landscape, ensuring your brand remains visible and competitive in the City of Brotherly Love. Transparency and client collaboration are at our core.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'Philadelphia Search Growth', description: 'Improve your organic rankings and lead generation in Philly.' },
-    { icon: 'Lightbulb', title: 'Strategic Philly SEO', description: 'Targeted SEO campaigns for the Philadelphia, PA audience.' },
-    { icon: 'ShieldCheck', title: 'Reliable Philly SEO Partner', description: 'Transparent and results-oriented SEO services in Philadelphia.' },
+    { icon: 'TrendingUp', title: 'Philadelphia Search Growth & Lead Generation', description: 'Improve your organic rankings, attract more qualified leads from the Philadelphia metro area, and enhance your market share with our expert SEO services. We focus on strategies that deliver tangible ROI for Philly businesses.' },
+    { icon: 'Lightbulb', title: 'Strategic & Historically-Aware Philly SEO', description: 'Benefit from targeted SEO campaigns specifically designed for the Philadelphia, PA audience, considering its rich history, diverse neighborhoods, and unique local search behaviors. We make your SEO resonate with Philly.' },
+    { icon: 'ShieldCheck', title: 'Reliable & Results-Oriented Philly SEO Partner', description: 'Experience transparent, ethical, and results-oriented SEO services in Philadelphia. We are focused on building long-term success and a strong online reputation for your brand, adhering to all SEO best practices.' },
   ],
   awards: {
-    clutch: { headline: 'Top Philadelphia SEO Agency - Clutch 2024', text: 'Recognized for excellence in Philadelphia SEO.' },
-    upcity: { headline: 'Philadelphia SEO Excellence - UpCity 2024', text: 'Awarded for top-tier SEO services in Philly.' },
+    clutch: { headline: 'Top Philadelphia SEO Agency - Clutch 2024', text: 'Recognized by Clutch for excellence in Philadelphia SEO, helping businesses of all sizes achieve their digital marketing goals in a historic and competitive city.' },
+    upcity: { headline: 'Philadelphia SEO Excellence - UpCity 2024', text: 'Awarded by UpCity for top-tier SEO services in Philly, consistently delivering outstanding results and strategic insights to local and national clients targeting the Philadelphia market.' },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
@@ -50,3 +50,5 @@ export const philadelphiaData: CityPageData = {
   },
   bottomFormTitle: 'Request Your Philadelphia SEO Consultation',
 };
+
+    

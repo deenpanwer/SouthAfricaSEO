@@ -1,6 +1,6 @@
 
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -12,35 +12,35 @@ export const sanDiegoData: CityPageData = {
   heroData: {
     pageTitle: 'San Diego SEO Company | TRAC - SEO Services San Diego, CA',
     metaDescription: 'TRAC is a San Diego SEO company helping businesses improve search rankings and drive organic traffic. Contact our San Diego SEO experts for a free quote.',
-    heroTitle: 'San Diego SEO Company',
-    heroSubtitle: 'Sunny SEO Success in San Diego with TRAC',
-    heroDescription: 'TRAC provides expert SEO services for San Diego businesses. Our tailored strategies are designed to boost your online visibility, attract local customers, and drive growth in the beautiful San Diego market.',
+    heroTitle: 'San Diego SEO Company: Ride the Wave to Online Success',
+    heroSubtitle: 'Sunny SEO Success in San Diego with TRAC\'s Expert Strategies',
+    heroDescription: 'TRAC provides expert SEO services for San Diego businesses, designed to help you thrive in America\'s Finest City. Our tailored strategies boost your online visibility, attract local customers from La Jolla to Gaslamp, and drive growth in the vibrant San Diego market. We understand the diverse economy, from biotech and defense to tourism and craft breweries. Our comprehensive approach includes targeted local SEO for San Diego neighborhoods, advanced technical website optimization for optimal performance, and compelling content creation that captures the SoCal lifestyle and resonates with San Diegans. Partner with TRAC to harness the power of SEO and achieve lasting success in this beautiful coastal city. We are committed to delivering measurable results and building strong client relationships.',
     heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in San Diego, CA', dataAiHint: 'San Diego beach city' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free San Diego SEO Audit!',
   },
-  resultsHeadline: 'SEO Success for San Diego Businesses',
-  readyToGrowHeadline: 'Grow Your San Diego Business with SEO?',
-  servicesSectionHeadline: 'San Diego SEO Services',
-  servicesSectionSubheadline: 'Our SEO solutions are customized for the San Diego, California market.',
+  resultsHeadline: 'Achieving Sunny SEO Success for San Diego Businesses',
+  readyToGrowHeadline: 'Ready to Grow Your San Diego Business with High-Performance SEO?',
+  servicesSectionHeadline: 'San Diego SEO Services: Tailored for California\'s Beach City',
+  servicesSectionSubheadline: 'Our SEO solutions are customized for the San Diego, California market, focusing on connecting businesses with local residents, tourists, and key industries like biotech and tourism.',
   services: [
-    { icon: Search, title: 'San Diego Local SEO', description: 'Improve your local search presence in San Diego.' },
-    { icon: Settings, title: 'Technical SEO for San Diego Sites', description: 'Optimize your website for San Diego search engines.' },
-    { icon: Mail, title: 'Content Strategy for San Diego', description: 'Create content that targets San Diego audiences and boosts SEO.' },
-    { icon: BarChart2, title: 'San Diego SEO Reporting', description: 'Track your SEO results in San Diego with transparent analytics.' },
+    { icon: Search, title: 'San Diego Local SEO & Neighborhood Targeting', description: 'Improve your local search presence in San Diego, targeting specific communities like North Park, Coronado, and Carlsbad. We optimize your Google Business Profile and build relevant local citations to attract more customers searching for San Diego-based services.' },
+    { icon: Settings, title: 'Technical SEO for San Diego Sites & Startups', description: 'Optimize your website’s technical framework for San Diego search engines and user experience, ensuring fast load times, mobile-friendliness for an active populace, and proper indexing. We also specialize in SEO for San Diego\'s tech and biotech startups.' },
+    { icon: Mail, title: 'Content Strategy Targeting San Diego Lifestyles & Tourism', description: 'Create high-value, SEO-driven content (e.g., guides to San Diego beaches, articles on local tech innovations) that targets San Diego audiences, answers their questions, and boosts your website\'s authority and organic search rankings in Southern California.' },
+    { icon: Briefcase, title: 'Biotech, Defense & Tourism SEO in San Diego', description: 'Specialized SEO for San Diego\'s prominent biotech, defense, and tourism sectors. We understand the unique terminology and target audiences for these industries, crafting effective SEO strategies to reach decision-makers and travelers alike.'},
   ],
-  whyChooseSectionHeadline: 'TRAC: Your San Diego SEO Partner',
-  whyChooseIntro: 'Choose TRAC for effective SEO strategies in San Diego.',
-  whyChooseParagraph1: 'We understand the San Diego market and deliver SEO results.',
-  whyChooseParagraph2: 'Our ethical SEO practices ensure long-term success for San Diego clients.',
+  whyChooseSectionHeadline: 'TRAC: Your Dedicated San Diego SEO Partner for a Brighter Online Future',
+  whyChooseIntro: 'Choose TRAC for effective, results-driven SEO strategies specifically designed for the San Diego market. We understand the local business climate, from its innovative industries to its laid-back lifestyle, and how to make your brand stand out.',
+  whyChooseParagraph1: 'Our San Diego SEO team possesses a deep understanding of the local market dynamics, its strong connection to the military and research institutions, and its appeal as a major tourist destination. We craft SEO strategies that are not only effective but also resonate with the unique character and opportunities present in San Diego County.',
+  whyChooseParagraph2: 'We are committed to using ethical, white-hat SEO practices to achieve long-term, sustainable success for our San Diego clients. Our focus is on building your brand\'s authority and online visibility in a way that earns trust from both search engines and users in the San Diego area. We provide transparent reporting and continuous optimization.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'San Diego SEO Growth', description: 'Increase visibility and leads in San Diego.' },
-    { icon: 'Lightbulb', title: 'Local San Diego SEO', description: 'SEO for the San Diego, CA audience.' },
-    { icon: 'ShieldCheck', title: 'Trusted San Diego SEO', description: 'Reliable SEO services in San Diego.' },
+    { icon: 'TrendingUp', title: 'San Diego SEO Growth & Increased Market Share', description: 'Increase your online visibility, attract more qualified organic traffic, and generate more leads within the competitive San Diego, CA market with our tailored SEO approaches. We help you capture more of San Diego\'s diverse economy.' },
+    { icon: 'Lightbulb', title: 'Localized San Diego SEO Expertise & Industry Focus', description: 'Benefit from SEO strategies meticulously crafted for the San Diego, California audience, considering local search trends, industry competition (e.g., in biotech, tourism, craft beer), and regional economic factors to give you a significant edge.' },
+    { icon: 'ShieldCheck', title: 'Trusted & Transparent San Diego SEO Services', description: 'Experience reliable, transparent, and effective SEO services in San Diego, focused on ethical practices and delivering measurable, long-term business success for your company. Our client success stories in San Diego speak volumes.' },
   ],
   awards: {
-    clutch: { headline: 'Top San Diego SEO Agency - Clutch 2024', text: 'Recognized for SEO in San Diego.' },
-    upcity: { headline: 'San Diego SEO Excellence - UpCity 2024', text: 'Awarded for SEO services in San Diego.' },
+    clutch: { headline: 'Top San Diego SEO Agency - Clutch 2024', text: 'Recognized by Clutch for delivering impactful SEO results and superior client service to businesses in the dynamic San Diego area. Our innovative approach is recognized.' },
+    upcity: { headline: 'San Diego SEO Excellence Award - UpCity 2024', text: 'Awarded by UpCity for premier SEO services and demonstrating consistent success in helping San Diego businesses grow their online presence and achieve their digital marketing objectives in Southern California.' },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
@@ -50,3 +50,5 @@ export const sanDiegoData: CityPageData = {
   },
   bottomFormTitle: 'Get Your San Diego SEO Proposal',
 };
+
+    
