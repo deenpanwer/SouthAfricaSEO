@@ -8,8 +8,8 @@ export function Footer() {
 
   const allCities = [
       'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'BELFAST', 'CHICAGO',
-      'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'GALWAY', 'HOUSTON', 'JACKSONVILLE',
-      'KANSAS CITY', 'LAS VEGAS', 'LIMERICK', 'LOS ANGELES', 'LOUISVILLE', 'MIAMI', 
+      'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'FAISALABAD', 'GALWAY', 'GULSHAN-E-HADEED', 'HOUSTON', 'ISLAMABAD', 'JACKSONVILLE',
+      'KANSAS CITY', 'KARACHI', 'LAHORE', 'LAS VEGAS', 'LIMERICK', 'LOS ANGELES', 'LOUISVILLE', 'MIAMI', 
       'MINNEAPOLIS', 'NEW ORLEANS', 'NEW YORK CITY', 'ORLANDO', 'PHILADELPHIA', 
       'PHOENIX', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
     ].sort(); 
@@ -65,16 +65,18 @@ export function Footer() {
         <div className="mt-12 pt-12 border-t border-muted-foreground/20">
           <div className="text-center text-foreground mb-8"> 
             <h2 className="text-2xl md:text-3xl font-bold mb-2">Growing Businesses Since 2005 with Expert SEO</h2>
-            <p className="text-md">Local SEO expertise in {allCities.length} cities and beyond.</p>
+            <p className="text-md">Local SEO expertise in {allCities.length} cities and areas worldwide.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
             {allCities.map((city) => {
               const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+              // Special handling for Gulshan-e-Hadeed display name if needed, slug is already correct
+              const displayName = city.replace(/-/g, ' '); // Simple replace for display
               return (
                 <div key={citySlug} className="text-center">
                   <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
-                    {city} SEO Services
+                    {displayName} SEO Services
                   </Link>
                 </div>
               );

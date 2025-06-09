@@ -31,6 +31,12 @@ import { corkData } from './cityData/cork';
 import { galwayData } from './cityData/galway';
 import { limerickData } from './cityData/limerick';
 import { belfastData } from './cityData/belfast';
+import { karachiData } from './cityData/karachi';
+import { lahoreData } from './cityData/lahore';
+import { islamabadData } from './cityData/islamabad';
+import { faisalabadData } from './cityData/faisalabad';
+import { gulshanEHadeedData } from './cityData/gulshanEHadeed';
+
 
 export const CITIES_DATA: CityPageData[] = [
   portlandCityData,
@@ -63,6 +69,11 @@ export const CITIES_DATA: CityPageData[] = [
   galwayData,
   limerickData,
   belfastData,
+  karachiData,
+  lahoreData,
+  islamabadData,
+  faisalabadData,
+  gulshanEHadeedData,
 ];
 
 export const getCityData = (slug: string): CityPageData | undefined => {
