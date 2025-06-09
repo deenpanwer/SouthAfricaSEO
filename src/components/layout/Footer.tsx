@@ -7,11 +7,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const allCities = [
-      'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'CHICAGO',
-      'CLEVELAND', 'DALLAS', 'DENVER', 'HOUSTON', 'JACKSONVILLE',
-      'KANSAS CITY', 'LAS VEGAS', 'LOS ANGELES', 'LOUISVILLE', 'NEW YORK CITY',
-      'MIAMI', 'MINNEAPOLIS', 'PHOENIX', 'NEW ORLEANS', 'ORLANDO',
-      'PHILADELPHIA', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
+      'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'BELFAST', 'CHICAGO',
+      'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'GALWAY', 'HOUSTON', 'JACKSONVILLE',
+      'KANSAS CITY', 'LAS VEGAS', 'LIMERICK', 'LOS ANGELES', 'LOUISVILLE', 'MIAMI', 
+      'MINNEAPOLIS', 'NEW ORLEANS', 'NEW YORK CITY', 'ORLANDO', 'PHILADELPHIA', 
+      'PHOENIX', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
     ].sort(); 
 
   return (
@@ -71,11 +71,10 @@ export function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
             {allCities.map((city) => {
               const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-              // All cities listed in allCities should now have a corresponding page
               return (
                 <div key={citySlug} className="text-center">
-                  <Link href={`/city/${citySlug}`} className="hover:underline hover:text-primary transition-colors">
-                    {city}
+                  <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
+                    {city} SEO Services
                   </Link>
                 </div>
               );

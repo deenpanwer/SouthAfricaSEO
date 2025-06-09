@@ -26,6 +26,11 @@ import { phoenixData } from './cityData/phoenix';
 import { sanAntonioData } from './cityData/sanAntonio';
 import { sanDiegoData } from './cityData/sanDiego';
 import { seattleData } from './cityData/seattle';
+import { dublinData } from './cityData/dublin';
+import { corkData } from './cityData/cork';
+import { galwayData } from './cityData/galway';
+import { limerickData } from './cityData/limerick';
+import { belfastData } from './cityData/belfast';
 
 export const CITIES_DATA: CityPageData[] = [
   portlandCityData,
@@ -53,6 +58,11 @@ export const CITIES_DATA: CityPageData[] = [
   sanAntonioData,
   sanDiegoData,
   seattleData,
+  dublinData,
+  corkData,
+  galwayData,
+  limerickData,
+  belfastData,
 ];
 
 export const getCityData = (slug: string): CityPageData | undefined => {
