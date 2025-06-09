@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Mail, Briefcase, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company-1.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Las-Vegas-Thrive-office-location.jpg';
 
 export const lasVegasData: CityPageData = {
   slug: 'las-vegas',
@@ -44,7 +44,7 @@ export const lasVegasData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1010 SEO Blvd', 'Suite 100', 'Las Vegas, NV 89101'],
+    addressLines: ['400 S 4th St', 'Suite 500', 'Las Vegas, NV 89101'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },

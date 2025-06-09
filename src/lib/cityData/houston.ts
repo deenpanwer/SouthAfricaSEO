@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck, Briefcase } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Houston-SEO-Company.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Houston-Office-Location.png';
 
 export const houstonData: CityPageData = {
   slug: 'houston',
@@ -45,11 +45,11 @@ export const houstonData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['707 SEO Ln', 'Suite 70', 'Houston, TX 77001'],
+    addressLines: ['707 Ln', 'Suite 200', 'Houston, TX 77019'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Request Your Houston SEO Consultation',
+  bottomFormTitle: 'Request Your SEO Consultation',
 };
 
     

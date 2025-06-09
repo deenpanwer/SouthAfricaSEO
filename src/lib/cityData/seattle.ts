@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company-1.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Seattle-Thrive-office-location.jpg';
 
 export const seattleData: CityPageData = {
   slug: 'seattle',
@@ -44,9 +44,9 @@ export const seattleData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['2020 SEO Needle Way', 'Suite 200', 'Seattle, WA 98101'],
+    addressLines: ['801 2nd Ave', 'Suite 400', 'Seattle, WA 98104'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Request Your Seattle SEO Consultation',
+  bottomFormTitle: 'Request Your SEO Consultation',
 };

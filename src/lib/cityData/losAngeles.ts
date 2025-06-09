@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Cleveland-Thrive-office-location.jpg';
 
 export const losAngelesData: CityPageData = {
   slug: 'los-angeles',
@@ -92,11 +92,11 @@ export const losAngelesData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['456 SEO Drive', 'Suite 200', 'Los Angeles, CA 90001'],
+    addressLines: ['456 Drive', 'Suite 200', 'Los Angeles, CA 90001'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Request Your FREE, In-Depth Los Angeles SEO Strategy Session',
+  bottomFormTitle: 'Request Your FREE, In-Depth SEO Strategy Session',
 };
 
     

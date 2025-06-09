@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Chicago-Thrive-office-location.jpg';
 
 export const chicagoData: CityPageData = {
   slug: 'chicago',
@@ -92,11 +92,11 @@ export const chicagoData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['789 SEO Plaza', 'Suite 300', 'Chicago, IL 60601'],
+    addressLines: ['70 W Madison St', 'Suite 1400', 'Chicago, IL 60602'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your FREE, No-Obligation Chicago SEO Consultation',
+  bottomFormTitle: 'Get Your FREE, No-Obligation SEO Consultation',
 };
 
     

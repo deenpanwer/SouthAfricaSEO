@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/ATLANTA-SEO-AGENCY.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Atlanta-Thrive-office-location.jpg';
 
 export const atlantaData: CityPageData = {
   slug: 'atlanta',
@@ -44,11 +44,11 @@ export const atlantaData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['202 SEO Blvd', 'Suite 20', 'Atlanta, GA 30301'],
+    addressLines: ['260 Peachtree St. NW', 'Suite 2200', 'Atlanta, GA 30303'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your Atlanta SEO Strategy',
+  bottomFormTitle: 'Get Your SEO Strategy',
 };
 
     

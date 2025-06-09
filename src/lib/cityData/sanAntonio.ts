@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/San-Antonio-SEO-Company.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/San-Antonio-Thrive-office-location.jpg';
 
 export const sanAntonioData: CityPageData = {
   slug: 'san-antonio',
@@ -44,9 +44,9 @@ export const sanAntonioData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1818 SEO Riverwalk', 'Suite 180', 'San Antonio, TX 78201'],
+    addressLines: ['9901 I.H. 10 West', 'Suite 800', 'San Antonio, TX 78230'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Request Your San Antonio SEO Consultation',
+  bottomFormTitle: 'Request Your SEO Consultation',
 };

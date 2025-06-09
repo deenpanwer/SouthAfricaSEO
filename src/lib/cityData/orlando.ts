@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://thriveagency.com/files/Orlando-SEO-Agency.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Cleveland-Thrive-office-location.jpg';
 
 export const orlandoData: CityPageData = {
   slug: 'orlando',
@@ -44,9 +44,9 @@ export const orlandoData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1515 SEO Dr', 'Suite 150', 'Orlando, FL 32801'],
+    addressLines: ['1515 Dr', 'Suite 150', 'Orlando, FL 32801'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your Orlando SEO Proposal',
+  bottomFormTitle: 'Get Your SEO Proposal',
 };

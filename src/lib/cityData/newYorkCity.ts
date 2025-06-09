@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company-1.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Manhattang-Thrive-office-location.jpg';
 
 export const newYorkCityData: CityPageData = {
   slug: 'new-york-city',
@@ -92,11 +92,11 @@ export const newYorkCityData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['123 SEO Avenue', 'Suite 100', 'New York City, NY 10001'],
+    addressLines: ['260 Madison Ave', '9th Floor', 'New York City, NY 10016'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your FREE NYC SEO Proposal & Consultation',
+  bottomFormTitle: 'Get Your FREE SEO Proposal & Consultation',
 };
 
     

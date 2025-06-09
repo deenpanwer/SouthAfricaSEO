@@ -3,8 +3,8 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_CITY_HERO_IMAGE_SRC = 'https://thriveagency.com/files/SEO_2.jpg';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://thriveagency.com/files/Philadelphia-Thrive-office-location-626x176.jpg';
 
 export const philadelphiaData: CityPageData = {
   slug: 'philadelphia',
@@ -44,9 +44,9 @@ export const philadelphiaData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1616 SEO Sq', 'Suite 160', 'Philadelphia, PA 19101'],
+    addressLines: ['100 N 18th Street', 'Suite 300', 'Philadelphia, PA 19103'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Request Your Philadelphia SEO Consultation',
+  bottomFormTitle: 'Request Your SEO Consultation',
 };

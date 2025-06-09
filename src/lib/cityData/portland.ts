@@ -3,8 +3,6 @@ import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
-
 export const portlandCityData: CityPageData = {
   slug: 'portland',
   cityName: 'Portland',
@@ -15,7 +13,7 @@ export const portlandCityData: CityPageData = {
     heroSubtitle: 'Elevate Your Search Rankings & Visibility in Portland with TRAC',
     heroDescription: 'TRAC is a leading SEO agency dedicated to empowering Portland businesses in the competitive digital landscape. The Rose City\'s unique blend of innovation and local charm requires a nuanced SEO approach. We specialize in crafting comprehensive, data-driven SEO strategies, from meticulous local optimization targeting Portland-specific customer segments to advanced technical SEO audits and compelling content marketing plans. Our methodology involves understanding your unique business goals and the Portland market dynamics to build a resilient online presence. We ensure your website not only ranks higher but also connects effectively with your desired audience, converting searches into tangible business growth. We focus on sustainable tactics, including thorough keyword research relevant to Portlanders, on-page optimization that speaks to both search engines and users, and building a high-quality backlink profile. Our commitment extends to transparent reporting and continuous strategy refinement to keep you ahead in Portland\'s evolving digital space. Partner with TRAC to unlock the full potential of your Portland enterprise through targeted and effective search engine optimization.',
     heroImage: {
-      src: 'https://thriveagency.com/files/Portland-city-img.png',
+      src: 'https://thriveagency.com/files/portland-seo-1.jpg',
       alt: 'Skyline of Portland, Oregon, showcasing TRAC\'s SEO services',
       dataAiHint: 'portland skyline business'
     },
@@ -91,11 +89,11 @@ export const portlandCityData: CityPageData = {
   },
   location: {
     officeImageUrl: 'https://thriveagency.com/files/Portland-Thrive-office-location.jpg',
-    addressLines: ['121 Southwest Salmon St', '11th Floor', 'Portland, OR 97204'],
+    addressLines: ['121 Southwest Salmon St', '10th Floor', 'Portland, OR 97204'],
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your FREE Portland SEO Audit & Proposal',
+  bottomFormTitle: 'Get Your FREE SEO Audit & Proposal',
 };
 
     

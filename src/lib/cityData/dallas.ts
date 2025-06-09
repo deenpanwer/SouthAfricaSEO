@@ -3,7 +3,7 @@ import type { CityPageData } from '@/types';
 import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
-const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
+const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-Dallas-office-location-1.png';
 
 export const dallasCityData: CityPageData = {
   slug: 'dallas',
@@ -15,7 +15,7 @@ export const dallasCityData: CityPageData = {
     heroSubtitle: 'Achieve Top Search Rankings & Dominate the Dallas Market with TRAC\'s Proven SEO Solutions',
     heroDescription: 'TRAC is a results-driven SEO company providing premier services to businesses across Dallas, Texas. The DFW metroplex is a hub of economic activity, and a strong online presence is non-negotiable for ambitious companies. We offer a full suite of SEO services, including hyper-local SEO tailored for the diverse Dallas market, advanced technical SEO for optimal site performance, strategic high-quality link building, and impactful content strategy designed to convert. Our approach begins with a deep dive into your Dallas business objectives and target audience, ensuring every SEO tactic aligns with your growth goals. We focus on building long-term authority and visibility, helping you connect with more customers in Dallas and stand out in a crowded digital landscape. Our team stays ahead of SEO trends to provide cutting-edge solutions, from optimizing for voice search to leveraging local schema markup. Let us help you navigate the complexities of search engine optimization and achieve lasting success in the DFW area.',
     heroImage: {
-      src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Dallas-city-img.png',
+      src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Dallas-SEO-Company.jpg',
       alt: 'Dallas skyline highlighting TRAC\'s SEO services for local businesses',
       dataAiHint: 'dallas city seo'
     },
@@ -95,7 +95,7 @@ export const dallasCityData: CityPageData = {
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
   },
-  bottomFormTitle: 'Get Your FREE Dallas SEO Strategy Session',
+  bottomFormTitle: 'Get Your FREE SEO Strategy Session',
 };
 
     

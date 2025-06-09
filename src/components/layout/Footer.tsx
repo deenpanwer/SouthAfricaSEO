@@ -76,7 +76,7 @@ export function Footer() {
               return (
                 <div key={citySlug} className="text-center">
                   <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
-                    {displayName} SEO Services
+                    {displayName}
                   </Link>
                 </div>
               );

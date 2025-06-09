@@ -60,7 +60,7 @@ export default function HumanReadableSitemap() {
                         <li key={city.slug} className="text-lg">
                             {/* Link to the canonical URL format */}
                             <Link href={`/${city.slug}-seo-service-agency`} className="block text-blue-600 hover:text-blue-800 transition-colors text-lg">
-                                {city.cityName} SEO Service Agency
+                                {city.cityName}
                             </Link>
                         </li>
                     ))}
