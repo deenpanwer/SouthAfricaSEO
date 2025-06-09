@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 import { BLOG_POSTS } from '@/lib/constants.tsx'; 
 import { CITIES_DATA } from '@/lib/cityConstants.tsx'; 
 
-const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.tracprotect.online'; 
+const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.traconomics.com'; 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = WEBSITE_DOMAIN;

@@ -115,9 +115,9 @@ export const HomeHeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight mb-6">
-              DIGITAL MARKETING AGENCY DRIVEN BY <br />
-              <span className="text-green-600">RELATIONSHIPS</span> & <span className="text-green-600">RESULTS</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-700 leading-tight mb-6">
+            EXPERT SEO AGENCY DRIVEN BY <br />
+              <span className="text-green-600">RANKINGS</span> <span className="text-orange-600">&</span> <span className="text-green-600">REVENUE.</span>
             </h1>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

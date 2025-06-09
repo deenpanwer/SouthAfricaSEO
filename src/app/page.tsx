@@ -2,7 +2,7 @@ import { HomeHeroSection } from '@/components/home/HomeHeroSection';
 import { PartnerLogosSection } from '@/components/home/PartnerLogosSection';
 import { ClientResultsSection } from '@/components/home/ClientResultsSection';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { WhyChooseThriveSection } from '@/components/home/WhyChooseThriveSection';
+import { WhyChooseThriveSection } from '@/components/home/WhyChooseTracSection';
 import { AwardWinningSection } from '@/components/home/AwardWinningSection';
 import { TracGrowthInsiderSection } from '@/components/home/TracGrowthInsiderSection';
 import { DigitalExpertiseSection } from '@/components/home/DigitalExpertiseSection';

@@ -7,4 +7,4 @@ Disallow: /test2/
 Disallow: /site-map/
 
 # IMPORTANT: Replace https://www.yourdomain.com with your actual live domain name.
-Sitemap: https://www.tracprotect.online/sitemap.xml
+Sitemap: https://www.traconomics.com/sitemap.xml

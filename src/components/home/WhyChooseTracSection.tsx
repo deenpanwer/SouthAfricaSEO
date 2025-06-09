@@ -11,15 +11,15 @@ export const WhyChooseThriveSection = () => {
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Why Choose Thrive For Your Digital Marketing Agency?</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Why Choose Trac As Your SEO Agency?</h2>
         <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
-          We’ve been providing a wide range of digital marketing services to our clients since 2005.
+          We’ve been providing a wide range of search engine related services to our clients since 2005.
         </p>
         <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
-          The digital marketing services we provide involve crafting custom strategies for our clients based on their needs and goals. Our team is made up of award-winning marketers, designers, and developers, and we know what it takes to get real results online. We also keep the focus on the metrics that mean the most, like leads and revenue generated. We know that hitting these goals is what moves businesses forward, and we believe that our clients’ success is the best measure of our own performance.
+          The SEO services we provide involve crafting custom strategies for our clients based on their needs and goals. Our team is made up of award-winning marketers, designers, and developers, and we know what it takes to get real results online. We also keep the focus on the metrics that mean the most, like leads and revenue generated. We know that hitting these goals is what moves businesses forward, and we believe that our clients’ success is the best measure of our own performance.
         </p>
         <p className="text-center text-gray-600 font-semibold mb-12 max-w-3xl mx-auto">
-          Meet our team of digital marketing experts.
+          Meet our team of SEO experts.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {reasons.map((reason, index) => (
@@ -35,7 +35,7 @@ export const WhyChooseThriveSection = () => {
         </div>
         <div className="text-center">
           <button className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
-            SPEAK WITH AN EXPERT MARKETING CONSULTANT
+            SPEAK WITH AN SEO EXPERT CONSULTANT
           </button>
         </div>
       </div>

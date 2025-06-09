@@ -50,7 +50,7 @@ export const TestimonialsSection = () => {
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">What Our Clients Are Saying</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Hear How Our SEO Strategies Transformed Businesses.</h2>
         <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
           Our testimonials speak for themselves. Every day, we work diligently to ensure our clients are satisfied and remain an integral part of our growth.
         </p>
