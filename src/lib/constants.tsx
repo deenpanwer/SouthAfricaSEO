@@ -249,7 +249,7 @@ export const SOCIAL_LINKS = [
 
 export const CONTACT_DETAILS = {
   phone: '+1 (646) 814-3789',
-  email: 'tracprotect@gmail.com',
+  email: 'traconomics@gmail.com',
   address: '30 N Gould St St #6573, Sheridan, WY 82801, United States',
 };
 
