@@ -73,35 +73,35 @@ export default function LocationsPage() {
       title: "Veterinary SEO Service States",
       description: "Helping veterinary clinics attract more pet owners in these states.",
       icon: Stethoscope,
-      items: VETERINARY_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "veterinary-seo/", linkSuffix: "-veterinary-seo-clinic" })), // Note linkPrefix
+      items: VETERINARY_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-veterinary-seo-clinic" })),
       iconColor: "text-blue-600",
     },
     {
       title: "Auto Dealer SEO Service States",
       description: "Driving more car buyers to dealerships in these states.",
       icon: Car,
-      items: AUTO_DEALER_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "auto-dealer-seo/", linkSuffix: "-auto-dealer-seo-marketing" })),
+      items: AUTO_DEALER_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-auto-dealer-seo-marketing" })),
       iconColor: "text-red-600",
     },
     {
       title: "Auto Repair SEO Service States",
       description: "Connecting auto repair shops with customers needing service in these states.",
       icon: Wrench,
-      items: AUTO_REPAIR_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "auto-repair-seo/", linkSuffix: "-auto-repair-seo-shop" })),
+      items: AUTO_REPAIR_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-auto-repair-seo-shop" })),
       iconColor: "text-orange-600",
     },
     {
       title: "Salon & Spa SEO Service States",
       description: "Boosting bookings for salons and spas across these states.",
       icon: Scissors,
-      items: SALON_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "salon-seo/", linkSuffix: "-salon-seo-services" })),
+      items: SALON_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-salon-seo-services" })),
       iconColor: "text-pink-600",
     },
     {
       title: "Gym & Fitness SEO Service States",
       description: "Increasing memberships for gyms and fitness centers in these states.",
       icon: Dumbbell,
-      items: GYM_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "gym-seo/", linkSuffix: "-gym-seo-strategies" })),
+      items: GYM_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-gym-seo-strategies" })),
       iconColor: "text-purple-600",
     },
   ];
@@ -116,7 +116,7 @@ export default function LocationsPage() {
             Our Service Locations
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            {APP_NAME} provides expert SEO services across a wide range of cities and states for general businesses and specialized industries. Find your targeted area below.
+            ${APP_NAME} provides expert SEO services across a wide range of cities and states for general businesses and specialized industries. Find your targeted area below.
           </p>
         </section>
 
