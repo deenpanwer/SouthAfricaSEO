@@ -137,13 +137,12 @@ export interface CityPageData {
   slug: string;
   cityName: string;
   heroData: CityHeroData;
-  resultsHeadline: string; // e.g., "Our Portland Digital Marketing Clients Get Results"
-  // Result percentages can be static in the component or added here if they vary by city
-  readyToGrowHeadline: string; // e.g., "Ready to Grow Your Business With Portland Digital Marketing Services?"
-  servicesSectionHeadline: string; // e.g., "Portland Digital Marketing Services"
+  resultsHeadline: string; 
+  readyToGrowHeadline: string; 
+  servicesSectionHeadline: string; 
   servicesSectionSubheadline: string;
   services: CityServiceItem[];
-  whyChooseSectionHeadline: string; // e.g., "Why Choose TRAC As Your Portland Digital Marketing Company"
+  whyChooseSectionHeadline: string; 
   whyChooseIntro: string;
   whyChooseParagraph1: string;
   whyChooseParagraph2: string;
@@ -159,8 +158,8 @@ export interface CityPageData {
 export interface CityHeroFormValues {
   website?: string;
   phoneNumber: string;
-  city: string; // To identify which city the lead came from
-  formType: string; // e.g., "City Hero Lead Form"
+  city: string; 
+  formType: string; 
 }
 
 export interface CityBottomFormValues {
@@ -168,5 +167,82 @@ export interface CityBottomFormValues {
   phoneNumber: string;
   message?: string;
   city: string;
-  formType: string; // e.g., "City Bottom Contact Form"
+  formType: string; 
+}
+
+// Landscaping State Specific Page Types
+export interface LandscapingStateHeroData {
+  pageTitle: string;
+  metaDescription: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroDescription: string;
+  heroImage: {
+    src: string;
+    alt: string;
+    dataAiHint?: string;
+  };
+  heroVideoUrl: string; // Can be generic or state-specific if available
+  formTitle: string;
+}
+
+export interface LandscapingStateServiceItem {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface LandscapingStateWhyChooseItem {
+  icon: string; // Icon name as string
+  title: string;
+  description: string;
+}
+
+export interface LandscapingStateAwardData { // Can reuse CityAwardData or make specific
+  headline: string;
+  text: string;
+}
+
+export interface LandscapingStateCoverageData { // Simpler than physical location
+  mainHeadline: string;
+  points: string[]; // e.g., "Serving landscapers in Los Angeles, San Francisco, San Diego..."
+  mapImageUrl?: string; // Optional: image of the state
+  mapImageAlt?: string;
+}
+
+export interface LandscapingStatePageData {
+  slug: string; // e.g., 'california'
+  stateName: string; // e.g., 'California'
+  heroData: LandscapingStateHeroData;
+  resultsHeadline: string;
+  readyToGrowHeadline: string;
+  servicesSectionHeadline: string;
+  servicesSectionSubheadline: string;
+  services: LandscapingStateServiceItem[];
+  whyChooseSectionHeadline: string;
+  whyChooseIntro: string;
+  whyChooseParagraph1: string;
+  whyChooseParagraph2: string;
+  whyChoosePoints: LandscapingStateWhyChooseItem[];
+  awards: { // Can be generic SEO awards
+    clutch: LandscapingStateAwardData;
+    upcity: LandscapingStateAwardData;
+  };
+  coverageData: LandscapingStateCoverageData; // Instead of physical location
+  bottomFormTitle: string;
+}
+
+export interface LandscapingStateHeroFormValues {
+  website?: string;
+  phoneNumber: string;
+  state: string; 
+  formType: string; // e.g., "Landscaping Hero Form"
+}
+
+export interface LandscapingStateBottomFormValues {
+  website?: string;
+  phoneNumber: string;
+  message?: string;
+  state: string;
+  formType: string; // e.g., "Landscaping Bottom Form"
 }

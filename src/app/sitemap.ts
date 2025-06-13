@@ -2,8 +2,9 @@
 import type { MetadataRoute } from 'next';
 import { BLOG_POSTS } from '@/lib/constants.tsx'; 
 import { CITIES_DATA } from '@/lib/cityConstants.tsx'; 
+import { LANDSCAPING_STATES_DATA } from '@/lib/landscapingStateConstants';
 
-const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.traconomics.com'; 
+const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.tracprotect.online'; 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = WEBSITE_DOMAIN;
@@ -73,15 +74,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const cityPageEntries = CITIES_DATA.map(city => ({
-    url: `${domain}/${city.slug}-seo-service-agency`, // Use the canonical URL structure
+    url: `${domain}/${city.slug}-seo-service-agency`, 
     lastModified: new Date(), 
     changeFrequency: 'weekly',
     priority: 0.9, 
+  }));
+
+  const landscapingStateEntries = LANDSCAPING_STATES_DATA.map(state => ({
+    url: `${domain}/${state.slug}-landscaping-seo-company`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
   }));
 
   return [
     ...staticPages,
     ...blogPostEntries,
     ...cityPageEntries,
+    ...landscapingStateEntries,
   ];
 }
