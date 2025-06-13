@@ -137,12 +137,12 @@ export interface CityPageData {
   slug: string;
   cityName: string;
   heroData: CityHeroData;
-  resultsHeadline: string; 
-  readyToGrowHeadline: string; 
-  servicesSectionHeadline: string; 
+  resultsHeadline: string;
+  readyToGrowHeadline: string;
+  servicesSectionHeadline: string;
   servicesSectionSubheadline: string;
   services: CityServiceItem[];
-  whyChooseSectionHeadline: string; 
+  whyChooseSectionHeadline: string;
   whyChooseIntro: string;
   whyChooseParagraph1: string;
   whyChooseParagraph2: string;
@@ -158,8 +158,8 @@ export interface CityPageData {
 export interface CityHeroFormValues {
   website?: string;
   phoneNumber: string;
-  city: string; 
-  formType: string; 
+  city: string;
+  formType: string;
 }
 
 export interface CityBottomFormValues {
@@ -167,11 +167,11 @@ export interface CityBottomFormValues {
   phoneNumber: string;
   message?: string;
   city: string;
-  formType: string; 
+  formType: string;
 }
 
-// Landscaping State Specific Page Types
-export interface LandscapingStateHeroData {
+// --- Base State Page Data Structure (to be extended or used by specific verticals) ---
+interface BaseStateHeroData {
   pageTitle: string;
   metaDescription: string;
   heroTitle: string;
@@ -182,67 +182,181 @@ export interface LandscapingStateHeroData {
     alt: string;
     dataAiHint?: string;
   };
-  heroVideoUrl: string; // Can be generic or state-specific if available
+  heroVideoUrl: string;
   formTitle: string;
 }
 
-export interface LandscapingStateServiceItem {
+interface BaseStateServiceItem {
   icon: LucideIcon;
   title: string;
   description: string;
 }
 
-export interface LandscapingStateWhyChooseItem {
+interface BaseStateWhyChooseItem {
   icon: string; // Icon name as string
   title: string;
   description: string;
 }
 
-export interface LandscapingStateAwardData { // Can reuse CityAwardData or make specific
+interface BaseStateAwardData {
   headline: string;
   text: string;
 }
 
-export interface LandscapingStateCoverageData { // Simpler than physical location
+interface BaseStateCoverageData {
   mainHeadline: string;
-  points: string[]; // e.g., "Serving landscapers in Los Angeles, San Francisco, San Diego..."
-  mapImageUrl?: string; // Optional: image of the state
+  points: string[];
+  mapImageUrl?: string;
   mapImageAlt?: string;
 }
 
-export interface LandscapingStatePageData {
-  slug: string; // e.g., 'california'
-  stateName: string; // e.g., 'California'
-  heroData: LandscapingStateHeroData;
+interface BaseStatePageData {
+  slug: string;
+  stateName: string;
+  heroData: BaseStateHeroData; // Will be specialized
   resultsHeadline: string;
   readyToGrowHeadline: string;
   servicesSectionHeadline: string;
   servicesSectionSubheadline: string;
-  services: LandscapingStateServiceItem[];
+  services: BaseStateServiceItem[]; // Will be specialized
   whyChooseSectionHeadline: string;
   whyChooseIntro: string;
   whyChooseParagraph1: string;
   whyChooseParagraph2: string;
-  whyChoosePoints: LandscapingStateWhyChooseItem[];
-  awards: { // Can be generic SEO awards
-    clutch: LandscapingStateAwardData;
-    upcity: LandscapingStateAwardData;
+  whyChoosePoints: BaseStateWhyChooseItem[]; // Will be specialized
+  awards: {
+    clutch: BaseStateAwardData;
+    upcity: BaseStateAwardData;
   };
-  coverageData: LandscapingStateCoverageData; // Instead of physical location
+  coverageData: BaseStateCoverageData;
   bottomFormTitle: string;
 }
 
-export interface LandscapingStateHeroFormValues {
+interface BaseStateHeroFormValues {
   website?: string;
   phoneNumber: string;
-  state: string; 
-  formType: string; // e.g., "Landscaping Hero Form"
+  state: string;
+  formType: string;
 }
 
-export interface LandscapingStateBottomFormValues {
+interface BaseStateBottomFormValues {
   website?: string;
   phoneNumber: string;
   message?: string;
   state: string;
-  formType: string; // e.g., "Landscaping Bottom Form"
+  formType: string;
 }
+
+// Landscaping State Specific Page Types
+export interface LandscapingStateHeroData extends BaseStateHeroData {}
+export interface LandscapingStateServiceItem extends BaseStateServiceItem {}
+export interface LandscapingStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface LandscapingStateAwardData extends BaseStateAwardData {}
+export interface LandscapingStateCoverageData extends BaseStateCoverageData {}
+export interface LandscapingStatePageData extends BaseStatePageData {
+  heroData: LandscapingStateHeroData;
+  services: LandscapingStateServiceItem[];
+  whyChoosePoints: LandscapingStateWhyChooseItem[];
+  awards: {
+    clutch: LandscapingStateAwardData;
+    upcity: LandscapingStateAwardData;
+  };
+  coverageData: LandscapingStateCoverageData;
+}
+export interface LandscapingStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface LandscapingStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// Veterinary State Specific Page Types
+export interface VeterinaryStateHeroData extends BaseStateHeroData {}
+export interface VeterinaryStateServiceItem extends BaseStateServiceItem {}
+export interface VeterinaryStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface VeterinaryStateAwardData extends BaseStateAwardData {}
+export interface VeterinaryStateCoverageData extends BaseStateCoverageData {}
+export interface VeterinaryStatePageData extends BaseStatePageData {
+  heroData: VeterinaryStateHeroData;
+  services: VeterinaryStateServiceItem[];
+  whyChoosePoints: VeterinaryStateWhyChooseItem[];
+  awards: {
+    clutch: VeterinaryStateAwardData;
+    upcity: VeterinaryStateAwardData;
+  };
+  coverageData: VeterinaryStateCoverageData;
+}
+export interface VeterinaryStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface VeterinaryStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// Auto Dealer State Specific Page Types
+export interface AutoDealerStateHeroData extends BaseStateHeroData {}
+export interface AutoDealerStateServiceItem extends BaseStateServiceItem {}
+export interface AutoDealerStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface AutoDealerStateAwardData extends BaseStateAwardData {}
+export interface AutoDealerStateCoverageData extends BaseStateCoverageData {}
+export interface AutoDealerStatePageData extends BaseStatePageData {
+  heroData: AutoDealerStateHeroData;
+  services: AutoDealerStateServiceItem[];
+  whyChoosePoints: AutoDealerStateWhyChooseItem[];
+  awards: {
+    clutch: AutoDealerStateAwardData;
+    upcity: AutoDealerStateAwardData;
+  };
+  coverageData: AutoDealerStateCoverageData;
+}
+export interface AutoDealerStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface AutoDealerStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// Auto Repair State Specific Page Types
+export interface AutoRepairStateHeroData extends BaseStateHeroData {}
+export interface AutoRepairStateServiceItem extends BaseStateServiceItem {}
+export interface AutoRepairStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface AutoRepairStateAwardData extends BaseStateAwardData {}
+export interface AutoRepairStateCoverageData extends BaseStateCoverageData {}
+export interface AutoRepairStatePageData extends BaseStatePageData {
+  heroData: AutoRepairStateHeroData;
+  services: AutoRepairStateServiceItem[];
+  whyChoosePoints: AutoRepairStateWhyChooseItem[];
+  awards: {
+    clutch: AutoRepairStateAwardData;
+    upcity: AutoRepairStateAwardData;
+  };
+  coverageData: AutoRepairStateCoverageData;
+}
+export interface AutoRepairStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface AutoRepairStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// Salon State Specific Page Types
+export interface SalonStateHeroData extends BaseStateHeroData {}
+export interface SalonStateServiceItem extends BaseStateServiceItem {}
+export interface SalonStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface SalonStateAwardData extends BaseStateAwardData {}
+export interface SalonStateCoverageData extends BaseStateCoverageData {}
+export interface SalonStatePageData extends BaseStatePageData {
+  heroData: SalonStateHeroData;
+  services: SalonStateServiceItem[];
+  whyChoosePoints: SalonStateWhyChooseItem[];
+  awards: {
+    clutch: SalonStateAwardData;
+    upcity: SalonStateAwardData;
+  };
+  coverageData: SalonStateCoverageData;
+}
+export interface SalonStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface SalonStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// Gym State Specific Page Types
+export interface GymStateHeroData extends BaseStateHeroData {}
+export interface GymStateServiceItem extends BaseStateServiceItem {}
+export interface GymStateWhyChooseItem extends BaseStateWhyChooseItem {}
+export interface GymStateAwardData extends BaseStateAwardData {}
+export interface GymStateCoverageData extends BaseStateCoverageData {}
+export interface GymStatePageData extends BaseStatePageData {
+  heroData: GymStateHeroData;
+  services: GymStateServiceItem[];
+  whyChoosePoints: GymStateWhyChooseItem[];
+  awards: {
+    clutch: GymStateAwardData;
+    upcity: GymStateAwardData;
+  };
+  coverageData: GymStateCoverageData;
+}
+export interface GymStateHeroFormValues extends BaseStateHeroFormValues {}
+export interface GymStateBottomFormValues extends BaseStateBottomFormValues {}
