@@ -64,6 +64,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.3,
     },
+    { // New Locations page
+      url: `${domain}/locations`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly', 
+      priority: 0.7,
+    },
   ];
 
   const blogPostEntries = BLOG_POSTS.map(post => ({
@@ -94,3 +100,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...landscapingStateEntries,
   ];
 }
+    

@@ -6,6 +6,9 @@ import { Zap } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  // Combined list of cities for the main grid - now also including the new "Locations" page link logic.
+  // The Locations page itself will list all cities and states.
+  // This footer grid remains for direct city links.
   const allCities = [
       'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'BELFAST', 'CHICAGO',
       'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'FAISALABAD', 'GALWAY', 'GULSHAN-E-HADEED', 'HOUSTON', 'ISLAMABAD', 'JACKSONVILLE',
@@ -13,6 +16,14 @@ export function Footer() {
       'MINNEAPOLIS', 'NEW ORLEANS', 'NEW YORK CITY', 'ORLANDO', 'PHILADELPHIA', 
       'PHOENIX', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
     ].sort(); 
+
+  // Update NAV_ITEMS for footer quick links if "Locations" should also be there.
+  // For simplicity, I'll add it directly to the quick links list below.
+  const footerNavItems = [
+      ...NAV_ITEMS,
+      { href: '/locations', label: 'Locations' } // Adding Locations page to footer quick links
+  ];
+
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">
@@ -31,7 +42,7 @@ export function Footer() {
           <div>
             <h3 className="text-md font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {NAV_ITEMS.map((item) => (
+              {footerNavItems.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-sm hover:text-primary transition-colors">
                     {item.label}
@@ -65,14 +76,13 @@ export function Footer() {
         <div className="mt-12 pt-12 border-t border-muted-foreground/20">
           <div className="text-center text-foreground mb-8"> 
             <h2 className="text-2xl md:text-3xl font-bold mb-2">Growing Businesses Since 2005 with Expert SEO</h2>
-            <p className="text-md">Local SEO expertise in {allCities.length} cities and areas worldwide.</p>
+            <p className="text-md">Local SEO expertise in {allCities.length} cities and areas worldwide. <Link href="/locations" className="text-primary hover:underline">View all locations</Link>.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
             {allCities.map((city) => {
-              const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-              // Special handling for Gulshan-e-Hadeed display name if needed, slug is already correct
-              const displayName = city.replace(/-/g, ' '); // Simple replace for display
+              const citySlug = city.toLowerCase().replace(/\s+/g, '-').replace(/-e-/g, '-e-'); // Handle Gulshan-e-Hadeed correctly
+              const displayName = city.replace(/-/g, ' '); 
               return (
                 <div key={citySlug} className="text-center">
                   <Link href={`/${citySlug}-seo-service-agency`} className="hover:underline hover:text-primary transition-colors">
@@ -96,3 +106,4 @@ export function Footer() {
     </footer>
   );
 }
+    
