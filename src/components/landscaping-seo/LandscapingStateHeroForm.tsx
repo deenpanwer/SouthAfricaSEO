@@ -177,7 +177,7 @@ export function LandscapingStateHeroForm({ stateName, formTitle }: LandscapingSt
             </Button>
           </div>
           <p className="text-sm text-gray-600 text-center pt-2">
-            Or call us now: <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-orange-600 font-semibold hover:underline">{CONTACT_DETAILS.phone}</a>
+            In a hurry? Give us a call now at <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-orange-600 font-semibold hover:underline">{CONTACT_DETAILS.phone}</a>
           </p>
         </form>
       </Form>

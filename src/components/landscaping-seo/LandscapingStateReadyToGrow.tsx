@@ -24,7 +24,7 @@ export function LandscapingStateReadyToGrow({ headline, stateName, stateSlug }: 
           className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-6 text-lg border-white hover:border-white"
         >
           <Link href={`/landscaping-seo/${stateSlug}#contact-form`} className="flex items-center">
-            <Sprout className="mr-2 h-6 w-6" /> GET FREE LANDSCAPING SEO PROPOSAL { '>>' }
+            <Sprout className="mr-2 h-6 w-6" /> GET FREE SEO PROPOSAL { '>>' }
           </Link>
         </Button>
       </div>

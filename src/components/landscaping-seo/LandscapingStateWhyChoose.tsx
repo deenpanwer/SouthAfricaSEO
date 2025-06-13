@@ -60,13 +60,13 @@ export function LandscapingStateWhyChoose({ headline, intro, points, whyChoosePa
               <p className="text-green-600 mb-1 text-xl font-bold">Meet Our SEO Experts</p>
               <p className="text-gray-600 mb-6 text-base">Discover how our team can help your {stateName} landscaping business grow!</p>
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold">
-                <Link href="/about">GET TO KNOW TRAC</Link>
+                <Link href="/about">GET TO KNOW US</Link>
               </Button>
             </div>
           </div>
           <div className="md:w-1/2 relative group cursor-pointer" onClick={() => setIsModalOpen(true)}>
             <Image 
-                src={videoThumbnailUrl} 
+                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/thrive-video-static-img.jpg" 
                 alt={videoThumbnailAlt.replace('[StateName]', stateName)} 
                 width={600} height={338} 
                 className="rounded-md shadow-lg w-full h-auto object-cover" 
@@ -79,7 +79,7 @@ export function LandscapingStateWhyChoose({ headline, intro, points, whyChoosePa
             </div>
           </div>
            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-              <iframe className="w-full aspect-video" src={`${videoUrl}?rel=0&showinfo=0&controls=0&autoplay=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={`TRAC Landscaping SEO for ${stateName}`}></iframe>
+              <iframe className="w-full aspect-video" src="https://www.youtube.com/embed/pmt7OaqS7Rg?rel=0&showinfo=0&controls=0&autoplay=1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={`TRAC Landscaping SEO for ${stateName}`}></iframe>
             </Modal>
         </div>
         <p className="text-gray-600 mt-8 mb-10 leading-relaxed">{whyChooseParagraph2.replace('[StateName]', stateName)}</p>
