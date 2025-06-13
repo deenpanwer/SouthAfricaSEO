@@ -1,6 +1,6 @@
 
 import type { AutoRepairStatePageData } from '@/types';
-import { Search, Wrench, Users, Settings, TrendingUp, Lightbulb, ShieldCheck, Mail, Tool } from 'lucide-react';
+import { Search, Wrench, Users, Settings, TrendingUp, Lightbulb, ShieldCheck, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
 const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -26,7 +26,7 @@ export const ohioAutoRepairData: AutoRepairStatePageData = {
   services: [
     { icon: Search, title: 'Local SEO for OH Auto Shops', description: 'Get found by drivers in your Ohio service areas (e.g., "Cleveland auto repair," "mechanic near me Columbus"). We optimize GMB and local directory listings.' },
     { icon: Wrench, title: 'Specific Repair Service SEO', description: 'Improve visibility for high-demand services such as brake repair, engine diagnostics, transmission work, and electrical system repair offered by your Ohio shop.' },
-    { icon: Tool, title: 'ASE Certified & Specialty Repair SEO', description: 'Highlight your ASE certifications and any specialty services (e.g., import car repair, classic car restoration) to attract discerning Ohio customers.' },
+    { icon: ShieldCheck, title: 'ASE Certified & Specialty Repair SEO', description: 'Highlight your ASE certifications and any specialty services (e.g., import car repair, classic car restoration) to attract discerning Ohio customers.' },
     { icon: Mail, title: 'Content on OH Vehicle Maintenance', description: 'Develop helpful content about vehicle maintenance for Ohio seasons (winterization, summer prep), warning signs of car trouble, and the benefits of choosing a trusted local mechanic.' },
   ],
   whyChooseSectionHeadline: 'Why TRAC is Your Go-To Partner for Ohio Auto Repair SEO',

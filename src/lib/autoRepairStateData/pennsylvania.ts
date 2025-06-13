@@ -1,6 +1,6 @@
 
 import type { AutoRepairStatePageData } from '@/types';
-import { Search, Wrench, Users, Settings, TrendingUp, Lightbulb, ShieldCheck, Mail, Tool } from 'lucide-react';
+import { Search, Wrench, Users, Settings, TrendingUp, Lightbulb, ShieldCheck, Mail, Car } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
 const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
@@ -26,7 +26,7 @@ export const pennsylvaniaAutoRepairData: AutoRepairStatePageData = {
   services: [
     { icon: Search, title: 'Local SEO for PA Auto Shops', description: 'Get found by drivers in your Pennsylvania service areas (e.g., "Pittsburgh auto repair," "mechanic near Allentown"). We optimize GMB and local listings.' },
     { icon: Wrench, title: 'Service-Specific SEO (Brakes, Transmissions)', description: 'Improve visibility for specific repair services like brake jobs, transmission repair, engine diagnostics, and AC service offered by your PA shop.' },
-    { icon: Tool, title: 'Make & Model Specialization SEO', description: 'Target customers seeking repairs for specific vehicle makes or models (e.g., "Honda repair Philadelphia," "Ford truck mechanic Lancaster") if your shop specializes.' },
+    { icon: Car, title: 'Make & Model Specialization SEO', description: 'Target customers seeking repairs for specific vehicle makes or models (e.g., "Honda repair Philadelphia," "Ford truck mechanic Lancaster") if your shop specializes.' },
     { icon: Mail, title: 'Content on PA Car Care & Maintenance', description: 'Develop informative content about car maintenance tips for Pennsylvania weather, common vehicle issues, and the importance of regular service, establishing your shop as a trusted local expert.' },
   ],
   whyChooseSectionHeadline: 'Why TRAC is Your Premier Partner for Pennsylvania Auto Repair SEO',
