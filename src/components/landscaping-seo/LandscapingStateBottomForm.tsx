@@ -173,7 +173,7 @@ export function LandscapingStateBottomForm({ stateName, formTitle }: Landscaping
                 <FormControl>
                   <Textarea
                     id={`landscaping-bottom-message-${stateName.toLowerCase().replace(/\s+/g, '-')}`}
-                    placeholder="Tell us about your landscaping business or specific SEO needs in [StateName] (Optional)".replace('[StateName]', stateName)
+                    placeholder={"Tell us about your landscaping business or specific SEO needs in " + stateName + " (Optional)"}
                     rows={4}
                     {...field}
                     disabled={isLoading}
