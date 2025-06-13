@@ -16,6 +16,11 @@ import { washingtonLandscapingData } from './landscapingStateData/washington';
 import { massachusettsLandscapingData } from './landscapingStateData/massachusetts';
 import { southCarolinaLandscapingData } from './landscapingStateData/southCarolina';
 import { michiganLandscapingData } from './landscapingStateData/michigan';
+import { newJerseyLandscapingData } from './landscapingStateData/newJersey';
+import { virginiaLandscapingData } from './landscapingStateData/virginia';
+import { tennesseeLandscapingData } from './landscapingStateData/tennessee';
+import { missouriLandscapingData } from './landscapingStateData/missouri';
+import { nevadaLandscapingData } from './landscapingStateData/nevada';
 
 export const LANDSCAPING_STATES_DATA: LandscapingStatePageData[] = [
   californiaLandscapingData,
@@ -33,6 +38,11 @@ export const LANDSCAPING_STATES_DATA: LandscapingStatePageData[] = [
   massachusettsLandscapingData,
   southCarolinaLandscapingData,
   michiganLandscapingData,
+  newJerseyLandscapingData,
+  virginiaLandscapingData,
+  tennesseeLandscapingData,
+  missouriLandscapingData,
+  nevadaLandscapingData,
 ];
 
 export const getLandscapingStateData = (slug: string): LandscapingStatePageData | undefined => {
