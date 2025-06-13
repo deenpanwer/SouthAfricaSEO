@@ -1,6 +1,6 @@
 
 import type { LandscapingStatePageData } from '@/types';
-import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Landmark, Fence } from 'lucide-react';
+import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Landmark, Fence, Waves } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
 const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
