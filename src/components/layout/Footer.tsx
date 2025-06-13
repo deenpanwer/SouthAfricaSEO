@@ -6,9 +6,6 @@ import { Zap } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // Combined list of cities for the main grid - now also including the new "Locations" page link logic.
-  // The Locations page itself will list all cities and states.
-  // This footer grid remains for direct city links.
   const allCities = [
       'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'BELFAST', 'CHICAGO',
       'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'FAISALABAD', 'GALWAY', 'GULSHAN-E-HADEED', 'HOUSTON', 'ISLAMABAD', 'JACKSONVILLE',
@@ -17,12 +14,8 @@ export function Footer() {
       'PHOENIX', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
     ].sort(); 
 
-  // Update NAV_ITEMS for footer quick links if "Locations" should also be there.
-  // For simplicity, I'll add it directly to the quick links list below.
-  const footerNavItems = [
-      ...NAV_ITEMS,
-      { href: '/locations', label: 'Locations' } // Adding Locations page to footer quick links
-  ];
+  // "Locations" is now removed from here and placed in the bottom row.
+  const footerNavItems = NAV_ITEMS;
 
 
   return (
@@ -81,7 +74,7 @@ export function Footer() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
             {allCities.map((city) => {
-              const citySlug = city.toLowerCase().replace(/\s+/g, '-').replace(/-e-/g, '-e-'); // Handle Gulshan-e-Hadeed correctly
+              const citySlug = city.toLowerCase().replace(/\s+/g, '-').replace(/-e-/g, '-e-'); 
               const displayName = city.replace(/-/g, ' '); 
               return (
                 <div key={citySlug} className="text-center">
@@ -96,9 +89,13 @@ export function Footer() {
 
         <div className="mt-12 border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>&copy; {currentYear} {APP_NAME}. All rights reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center md:justify-start space-x-2 md:space-x-4 mt-4 md:mt-0">
+            <Link href="/locations" className="hover:text-primary transition-colors">Locations</Link>
+            <span className="text-muted-foreground/50">|</span>
             <Link href="/site-map" className="hover:text-primary transition-colors">Sitemap</Link>
+            <span className="text-muted-foreground/50">|</span>
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <span className="text-muted-foreground/50">|</span>
             <Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
           </div>
         </div>
