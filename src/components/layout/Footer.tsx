@@ -6,17 +6,16 @@ import { Zap } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const allCities = [
-      'ARLINGTON', 'ATLANTA', 'AUSTIN', 'BALTIMORE', 'BELFAST', 'CHICAGO',
-      'CLEVELAND', 'CORK', 'DALLAS', 'DENVER', 'DUBLIN', 'FAISALABAD', 'GALWAY', 'GULSHAN-E-HADEED', 'HOUSTON', 'ISLAMABAD', 'JACKSONVILLE',
-      'KANSAS CITY', 'KARACHI', 'LAHORE', 'LAS VEGAS', 'LIMERICK', 'LOS ANGELES', 'LOUISVILLE', 'MIAMI', 
-      'MINNEAPOLIS', 'NEW ORLEANS', 'NEW YORK CITY', 'ORLANDO', 'PHILADELPHIA', 
-      'PHOENIX', 'PORTLAND', 'SAN ANTONIO', 'SAN DIEGO', 'SEATTLE',
-    ].sort(); 
+  // Updated to include only US cities. International cities are on the /locations page.
+  const usCities = [
+    'Arlington', 'Atlanta', 'Austin', 'Baltimore', 'Chicago',
+    'Cleveland', 'Dallas', 'Denver', 'Houston', 'Jacksonville',
+    'Kansas City', 'Las Vegas', 'Los Angeles', 'Louisville', 'Miami', 
+    'Minneapolis', 'New Orleans', 'New York City', 'Orlando', 'Philadelphia', 
+    'Phoenix', 'Portland', 'San Antonio', 'San Diego', 'Seattle',
+  ].sort(); 
 
-  // "Locations" is now removed from here and placed in the bottom row.
   const footerNavItems = NAV_ITEMS;
-
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">
@@ -69,11 +68,11 @@ export function Footer() {
         <div className="mt-12 pt-12 border-t border-muted-foreground/20">
           <div className="text-center text-foreground mb-8"> 
             <h2 className="text-2xl md:text-3xl font-bold mb-2">Growing Businesses Since 2005 with Expert SEO</h2>
-            <p className="text-md">Local SEO expertise in {allCities.length} cities and areas worldwide. <Link href="/locations" className="text-primary hover:underline">View all locations</Link>.</p>
+            <p className="text-md">Local SEO expertise in {usCities.length} US cities. <Link href="/locations" className="text-primary hover:underline">View all international & US locations</Link>.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
-            {allCities.map((city) => {
+            {usCities.map((city) => {
               const citySlug = city.toLowerCase().replace(/\s+/g, '-').replace(/-e-/g, '-e-'); 
               const displayName = city.replace(/-/g, ' '); 
               return (
