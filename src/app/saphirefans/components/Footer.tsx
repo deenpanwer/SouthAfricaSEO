@@ -4,6 +4,14 @@ import { Wind } from 'lucide-react';
 
 export function SaphireFooter() {
   const currentYear = new Date().getFullYear();
+  
+  const footerLinks = [
+    { href: '/saphirefans/about', label: 'About Us' },
+    { href: '/saphirefans/contact', label: 'Contact Us' },
+    { href: '/saphirefans/terms', label: 'Terms & Conditions' },
+    { href: '/saphirefans/privacy', label: 'Privacy Policy' },
+  ];
+
   return (
     <footer className="bg-slate-800 text-slate-300 py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,13 +26,16 @@ export function SaphireFooter() {
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">Customer Service</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/saphirefans" className="hover:text-sky-400 transition-colors">Home</Link></li>
-              {/* Add links to category pages once structure is final */}
-              <li><Link href="/saphirefans/category/axial-flow-fans" className="hover:text-sky-400 transition-colors">Axial Fans</Link></li>
-              <li><Link href="/saphirefans/category/centrifugal-fans" className="hover:text-sky-400 transition-colors">Centrifugal Fans</Link></li>
-              <li><Link href="/saphirefans/cart" className="hover:text-sky-400 transition-colors">Your Cart</Link></li>
+              {footerLinks.map(link => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-sky-400 transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+               <li><Link href="/saphirefans/sitemap.xml" className="hover:text-sky-400 transition-colors">Sitemap</Link></li>
             </ul>
           </div>
           <div>
@@ -38,7 +49,7 @@ export function SaphireFooter() {
         </div>
         <div className="border-t border-slate-700 pt-8 text-center text-sm text-slate-400">
           <p>&copy; {currentYear} SaphireFans Pakistan. All rights reserved.</p>
-          <p className="mt-1">A subsidiary of Traconomics Global.</p>
+          <p className="mt-1">A part of Traconomics Global. Industrial solutions for a better Pakistan.</p>
         </div>
       </div>
     </footer>
