@@ -9,7 +9,7 @@ import { AUTO_REPAIR_STATES_DATA } from '@/lib/autoRepairStateConstants';
 import { SALON_STATES_DATA } from '@/lib/salonStateConstants';
 import { GYM_STATES_DATA } from '@/lib/gymStateConstants';
 
-const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.tracprotect.online';
+const WEBSITE_DOMAIN = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = WEBSITE_DOMAIN;
