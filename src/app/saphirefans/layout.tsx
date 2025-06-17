@@ -1,10 +1,17 @@
 
 import type { Metadata } from 'next';
-import '../globals.css'; // You might want a separate global CSS for the e-commerce site later
+import { SaphireHeader } from './components/Header';
+import { SaphireFooter } from './components/Footer';
+import { CartProvider } from './context/CartContext';
+import { Toaster } from "@/components/ui/toaster"; // Re-use main toaster
 
 export const metadata: Metadata = {
-  title: 'SaphireFans - Your E-commerce Store',
-  description: 'Discover amazing products at SaphireFans.',
+  title: {
+    default: 'SaphireFans Pakistan - Industrial & Commercial Fans',
+    template: '%s | SaphireFans Pakistan',
+  },
+  description: 'High-quality industrial fans, axial fans, centrifugal blowers, and exhaust systems in Pakistan. Durable solutions for factories, warehouses, and commercial spaces.',
+  keywords: ['industrial fans Pakistan', 'axial fans', 'centrifugal fans', 'exhaust fans', 'commercial ventilation Pakistan', 'SaphireFans'],
 };
 
 export default function SaphireFansLayout({
@@ -13,22 +20,16 @@ export default function SaphireFansLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {/* Minimal layout for saphirefans.traconomics.com */}
-        {/* You can add a specific Header and Footer for saphirefans here */}
-        <header className="bg-blue-600 text-white p-4">
-          <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">SaphireFans E-commerce</h1>
-            {/* Basic Nav for SaphireFans can go here */}
-          </div>
-        </header>
-        <main className="flex-grow container mx-auto p-4">
-          {children}
-        </main>
-        <footer className="bg-gray-800 text-white p-4 text-center">
-          <p>&copy; {new Date().getFullYear()} SaphireFans. All rights reserved.</p>
-        </footer>
+    <html lang="en" className="font-poppins">
+      <body className="bg-slate-100 text-slate-800 flex flex-col min-h-screen font-poppins">
+        <CartProvider>
+          <SaphireHeader />
+          <main className="flex-grow container mx-auto p-4 sm:p-6 md:p-8">
+            {children}
+          </main>
+          <SaphireFooter />
+          <Toaster />
+        </CartProvider>
       </body>
     </html>
   );
