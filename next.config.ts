@@ -64,19 +64,35 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
+    const saphirefansHost = 'saphirefans.traconomics.com';
     return [
-      // E-commerce Subdomain Rewrite
-      {
-        source: '/:path*', // Match any path on the subdomain
-        has: [
-          {
-            type: 'host',
-            value: 'saphirefans.traconomics.com',
-          },
-        ],
-        destination: '/saphirefans/:path*', // Rewrite to an internal App Router path
+      // --- SaphireFans Subdomain Rewrites (Order is Important) ---
+      { // Rule for the root of the saphirefans subdomain
+        source: '/',
+        has: [{ type: 'host', value: saphirefansHost }],
+        destination: '/saphirefans', // Maps to src/app/saphirefans/page.tsx
       },
-      // Existing Rewrites
+      { // Rule for sitemap.xml on saphirefans subdomain
+        source: '/sitemap.xml',
+        has: [{ type: 'host', value: saphirefansHost }],
+        destination: '/saphirefans/sitemap.xml', // Maps to src/app/saphirefans/sitemap.xml/route.ts
+      },
+      { // Rule for robots.txt on saphirefans subdomain
+        source: '/robots.txt',
+        has: [{ type: 'host', value: saphirefansHost }],
+        destination: '/saphirefans/robots.txt', // Maps to src/app/saphirefans/robots.txt/route.ts
+      },
+      // General rule for other paths on saphirefans subdomain.
+      // This needs to avoid Next.js internal paths and paths already handled above.
+      {
+        source: '/:path((?!_next/|api/|favicon.ico|sitemap.xml|robots.txt).*)',
+        has: [{ type: 'host', value: saphirefansHost }],
+        destination: '/saphirefans/:path*', // Example: /shop/product1 -> /saphirefans/shop/product1
+      },
+
+      // --- Main Domain (traconomics.com) Rewrites ---
+      // These should only be processed if the host is NOT saphirefans.traconomics.com
+      // OR if no saphirefans rule above matched the path.
       {
         source: '/:citySlug-seo-service-agency',
         destination: '/city/:citySlug',
