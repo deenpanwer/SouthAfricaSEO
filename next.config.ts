@@ -1,3 +1,4 @@
+
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
@@ -23,38 +24,12 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
-    const saphirefansHost = 'saphirefans.traconomics.com';
+    // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
+    // as this logic is now handled by src/middleware.ts.
     return [
-      // --- SaphireFans Subdomain Rewrites (MUST COME FIRST) ---
-      // These rules are specific to the saphirefans subdomain and must be
-      // evaluated before any general rules for the main domain.
-
-      { // Rule for the root of the saphirefans subdomain
-        source: '/',
-        has: [{ type: 'host', value: saphirefansHost }],
-        destination: '/saphirefans', // Maps to src/app/saphirefans/page.tsx
-      },
-      { // Rule for sitemap.xml on saphirefans subdomain
-        source: '/sitemap.xml',
-        has: [{ type: 'host', value: saphirefansHost }],
-        destination: '/saphirefans/sitemap.xml', // Maps to src/app/saphirefans/sitemap.xml/route.ts
-      },
-      { // Rule for robots.txt on saphirefans subdomain
-        source: '/robots.txt',
-        has: [{ type: 'host', value: saphirefansHost }],
-        destination: '/saphirefans/robots.txt', // Maps to src/app/saphirefans/robots.txt/route.ts
-      },
-      { // General rule for ALL other paths on saphirefans subdomain
-        // This regex ensures it doesn't accidentally catch _next/, api/, etc.
-        source: '/:path((?!_next/|api/|favicon.ico|sitemap.xml|robots.txt).*)',
-        has: [{ type: 'host', value: saphirefansHost }],
-        destination: '/saphirefans/:path*', // Example: /shop/product1 -> /saphirefans/shop/product1
-      },
-
-
       // --- Main Domain (traconomics.com) Rewrites (After subdomain rules) ---
       // These rules apply when the host is *not* saphirefans.traconomics.com
-      // (because the rules above would have already matched and handled it).
+      // (because the middleware handles saphirefans, and for other hosts, these are evaluated).
       // Keep the specific ones before the general ones.
 
       {
