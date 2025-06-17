@@ -16,6 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { Home, ChevronRight, CreditCard, Truck } from 'lucide-react';
+import { useEffect } from 'react'; // Import useEffect
 
 const checkoutSchema = z.object({
   fullName: z.string().min(3, { message: "Full name must be at least 3 characters." }),
@@ -62,10 +63,14 @@ export default function CheckoutPage() {
     router.push('/saphirefans/thank-you'); // Redirect to thank-you page
   };
 
-  if (items.length === 0 && subtotal === 0) { 
-    if (typeof window !== 'undefined') { 
-        router.replace('/saphirefans/cart'); 
+  // Effect for redirection if cart is empty
+  useEffect(() => {
+    if (items.length === 0 && subtotal === 0 && typeof window !== 'undefined') {
+      router.replace('/saphirefans/cart');
     }
+  }, [items, subtotal, router]);
+
+  if (items.length === 0 && subtotal === 0) { 
     return <div className="text-center py-10">Redirecting to cart...</div>; 
   }
 
@@ -250,3 +255,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+
