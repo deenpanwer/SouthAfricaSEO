@@ -65,6 +65,18 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     return [
+      // E-commerce Subdomain Rewrite
+      {
+        source: '/:path*', // Match any path on the subdomain
+        has: [
+          {
+            type: 'host',
+            value: 'saphirefans.traconomics.com',
+          },
+        ],
+        destination: '/saphirefans/:path*', // Rewrite to an internal App Router path
+      },
+      // Existing Rewrites
       {
         source: '/:citySlug-seo-service-agency',
         destination: '/city/:citySlug',
