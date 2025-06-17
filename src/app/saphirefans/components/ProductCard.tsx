@@ -37,7 +37,9 @@ export function ProductCard({ product }: ProductCardProps) {
         <p className="text-lg font-bold text-slate-700">PKR {product.price.toLocaleString()}</p>
         <Button variant="outline" size="sm" asChild className="border-sky-600 text-sky-600 hover:bg-sky-50 hover:text-sky-700">
           <Link href={`/saphirefans/product/${product.slug}`}>
-            <Eye className="mr-1 h-4 w-4" /> View
+            <span className="flex items-center">
+              <Eye className="mr-1 h-4 w-4" /> View
+            </span>
           </Link>
         </Button>
       </CardFooter>
