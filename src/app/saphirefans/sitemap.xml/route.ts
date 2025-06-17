@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next';
 import { saphireCategories, saphireProducts } from '../lib/data'; 
 
-const SAPHIREFANS_DOMAIN = 'https://saphirefans.traconomics.com'; // Ensure this is your correct subdomain
+const SAPHIREFANS_DOMAIN = 'https://saphirefans.traconomics.com';
 
 export async function GET(): Promise<Response> {
   const staticPages: MetadataRoute.Sitemap = [
@@ -43,10 +43,16 @@ export async function GET(): Promise<Response> {
       priority: 0.5,
     },
     {
-      url: `${SAPHIREFANS_DOMAIN}/checkout`, // Though less critical for SEO, good to include
+      url: `${SAPHIREFANS_DOMAIN}/checkout`, 
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.4,
+    },
+    {
+      url: `${SAPHIREFANS_DOMAIN}/thank-you`, 
+      lastModified: new Date(),
+      changeFrequency: 'yearly', // Thank you pages don't change often
+      priority: 0.2, // Low priority for SEO
     },
   ];
 
@@ -61,7 +67,7 @@ export async function GET(): Promise<Response> {
     url: `${SAPHIREFANS_DOMAIN}/product/${product.slug}`,
     lastModified: new Date(), 
     changeFrequency: 'weekly',
-    priority: 0.9, // Products are usually more important than categories for direct search
+    priority: 0.9, 
   }));
   
   const allPages = [...staticPages, ...categoryPages, ...productPages];
@@ -72,23 +78,21 @@ export async function GET(): Promise<Response> {
   ${allPages
     .map(
       (page) => {
-        // Try to find a corresponding product if it's a product page to add image sitemap data
         const product = saphireProducts.find(p => `${SAPHIREFANS_DOMAIN}/product/${p.slug}` === page.url);
         let imageSitemapEntry = '';
         if (product) {
           imageSitemapEntry = `
     <image:image>
-      <image:loc>${product.imageUrl}</image:loc>
+      <image:loc>${product.imageUrl.startsWith('http') ? product.imageUrl : SAPHIREFANS_DOMAIN + product.imageUrl}</image:loc>
       <image:title>${encodeURIComponent(product.name)}</image:title>
       <image:caption>${encodeURIComponent(product.shortDescription)}</image:caption>
     </image:image>`;
         }
-        // Try to find a corresponding category if it's a category page
         const category = saphireCategories.find(c => `${SAPHIREFANS_DOMAIN}/category/${c.slug}` === page.url);
          if (category) {
           imageSitemapEntry = `
     <image:image>
-      <image:loc>${category.imageUrl}</image:loc>
+      <image:loc>${category.imageUrl.startsWith('http') ? category.imageUrl : SAPHIREFANS_DOMAIN + category.imageUrl}</image:loc>
       <image:title>${encodeURIComponent(category.name)}</image:title>
       ${category.description ? `<image:caption>${encodeURIComponent(category.description)}</image:caption>` : ''}
     </image:image>`;

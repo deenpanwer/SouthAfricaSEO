@@ -16,7 +16,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { Home, ChevronRight, CreditCard, Truck } from 'lucide-react';
-// Metadata export removed
 
 const checkoutSchema = z.object({
   fullName: z.string().min(3, { message: "Full name must be at least 3 characters." }),
@@ -24,7 +23,6 @@ const checkoutSchema = z.object({
   address: z.string().min(10, { message: "Address must be at least 10 characters." }),
   city: z.string().min(3, { message: "City is required." }),
   paymentMethod: z.enum(['card', 'cod'], { required_error: "Please select a payment method." }),
-  // Card fields (optional, only for UI display if 'card' is selected)
   cardNumber: z.string().optional(),
   expiryDate: z.string().optional(),
   cvv: z.string().optional(),
@@ -50,26 +48,25 @@ export default function CheckoutPage() {
   });
 
   const subtotal = getCartTotal();
-  const shippingCost = subtotal > 0 ? 500 : 0; // Example shipping
+  const shippingCost = subtotal > 0 ? 500 : 0; 
   const total = subtotal + shippingCost;
 
   const onSubmit: SubmitHandler<CheckoutFormValues> = async (data) => {
     console.log("Checkout data:", data);
-    // Simulate order placement
     toast({
-      title: "Order Placed Successfully!",
-      description: `Thank you, ${data.fullName}. Your order for SaphireFans will be processed. Payment method: ${data.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Card (Simulated)'}.`,
+      title: "Order Processing...",
+      description: `Thank you, ${data.fullName}. Your order for SaphireFans is being processed. Payment method: ${data.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Card (Simulated)'}.`,
       duration: 7000,
     });
     clearCart();
-    router.push('/saphirefans'); // Redirect to homepage after order
+    router.push('/saphirefans/thank-you'); // Redirect to thank-you page
   };
 
-  if (items.length === 0 && subtotal === 0) { // Check if cart was cleared or user navigated here directly
-    if (typeof window !== 'undefined') { // Ensure this only runs client-side
-        router.replace('/saphirefans/cart'); // Use replace to not add to history
+  if (items.length === 0 && subtotal === 0) { 
+    if (typeof window !== 'undefined') { 
+        router.replace('/saphirefans/cart'); 
     }
-    return <div className="text-center py-10">Redirecting to cart...</div>; // Fallback content
+    return <div className="text-center py-10">Redirecting to cart...</div>; 
   }
 
 
@@ -89,7 +86,6 @@ export default function CheckoutPage() {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="grid lg:grid-cols-3 gap-8 items-start">
-          {/* Shipping & Payment Details */}
           <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-md space-y-6">
             <h2 className="text-2xl font-semibold text-slate-700 border-b pb-3">Shipping Information (Pakistan)</h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -214,14 +210,13 @@ export default function CheckoutPage() {
             )}
           </div>
 
-          {/* Order Summary */}
           <div className="lg:col-span-1 bg-white p-6 rounded-lg shadow-md space-y-4 h-fit sticky top-24">
             <h2 className="text-2xl font-semibold text-slate-700 border-b pb-3">Order Summary</h2>
             <div className="space-y-2 max-h-60 overflow-y-auto pr-2">
               {items.map(item => (
                 <div key={item.id} className="flex justify-between items-start text-sm border-b border-slate-200 py-2">
                   <div className="flex items-start">
-                    <Image src={item.imageUrl} alt={item.name} width={40} height={40} className="rounded mr-2 border"/>
+                    <Image src={item.imageUrl} alt={item.name} width={40} height={40} className="rounded mr-2 border" data-ai-hint={item.dataAiHint}/>
                     <div>
                       <p className="font-medium text-slate-700 line-clamp-1">{item.name}</p>
                       <p className="text-xs text-slate-500">Qty: {item.quantity}</p>
