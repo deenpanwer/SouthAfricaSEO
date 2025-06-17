@@ -5,6 +5,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
+import { headers } from 'next/headers'; // Import headers
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,13 +15,13 @@ const geistSans = Geist({
 const poppins = Poppins({
  variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['400', '700'], // Corrected weights to '400' and '700'
+  weight: ['400', '700'],
 });
 
 const hkGrotesk = Host_Grotesk({
   variable: '--font-hk-grotesk',
  subsets: ['latin'],
- weight: ['400', '700'], // Added weights '400' and '700'
+ weight: ['400', '700'],
 });
 
 const geistMono = Geist_Mono({
@@ -38,11 +39,17 @@ export const metadata: Metadata = {
   keywords: ['business growth', 'sales optimization', 'conversion strategies', 'revenue amplification', 'business consulting'],
 };
 
+const SAPHIREFANS_HOST = 'saphirefans.traconomics.com';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const heads = headers();
+  const host = heads.get('host');
+  const isSaphireFansSite = host === SAPHIREFANS_HOST;
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -78,11 +85,12 @@ export default function RootLayout({
         <noscript><img height="1" width="1" style={{ display: 'none' }}
         src="https://www.facebook.com/tr?id=1375388456853322&ev=PageView&noscript=1"
         /></noscript>
-        <Header />
+        
+        {!isSaphireFansSite && <Header />}
         <main className="flex-grow">
           {children}
         </main>
-        <Footer />
+        {!isSaphireFansSite && <Footer />}
         <Toaster />
       </body>
     </html>
