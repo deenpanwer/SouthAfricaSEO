@@ -15,8 +15,8 @@ import { Label } from '@/components/ui/label';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { Home, ChevronRight, CreditCard, Truck } from 'lucide-react';
-import { useEffect } from 'react'; // Import useEffect
+import { Home, ChevronRight, CreditCard, Truck, Loader2 } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const checkoutSchema = z.object({
   fullName: z.string().min(3, { message: "Full name must be at least 3 characters." }),
@@ -36,6 +36,8 @@ const PAKISTAN_CITIES = ["Karachi", "Lahore", "Islamabad", "Rawalpindi", "Faisal
 export default function CheckoutPage() {
   const { items, getCartTotal, clearCart } = useCart();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isNavigatingPostCheckout, setIsNavigatingPostCheckout] = useState(false);
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutSchema),
@@ -49,31 +51,38 @@ export default function CheckoutPage() {
   });
 
   const subtotal = getCartTotal();
-  const shippingCost = subtotal > 0 ? 500 : 0; 
+  const shippingCost = subtotal > 0 ? 500 : 0;
   const total = subtotal + shippingCost;
 
   const onSubmit: SubmitHandler<CheckoutFormValues> = async (data) => {
+    setIsLoading(true); // For button visual state
     console.log("Checkout data:", data);
     toast({
       title: "Order Processing...",
       description: `Thank you, ${data.fullName}. Your order for SaphireFans is being processed. Payment method: ${data.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Card (Simulated)'}.`,
-      duration: 7000,
+      duration: 7000, // Duration can be adjusted
     });
-    clearCart();
-    router.push('/saphirefans/thank-you'); // Redirect to thank-you page
+
+    setIsNavigatingPostCheckout(true); // Signal that we are proceeding to thank-you page
+
+    clearCart(); // This will trigger the useEffect if not handled
+    router.push('/saphirefans/thank-you');
+    // setIsLoading(false); // Not strictly needed as component will unmount
   };
 
-  // Effect for redirection if cart is empty
   useEffect(() => {
-    if (items.length === 0 && subtotal === 0 && typeof window !== 'undefined') {
+    // Redirect to cart if it's empty AND we are not in the process of navigating post-checkout
+    if (!isNavigatingPostCheckout && items.length === 0 && subtotal === 0 && typeof window !== 'undefined') {
       router.replace('/saphirefans/cart');
     }
-  }, [items, subtotal, router]);
+    // This effect should not depend on `isNavigatingPostCheckout` directly in its re-trigger logic
+    // if we only want it to run on item/subtotal changes.
+    // However, including it ensures that if `isNavigatingPostCheckout` changes, the condition is re-evaluated.
+  }, [items, subtotal, router, isNavigatingPostCheckout]);
 
-  if (items.length === 0 && subtotal === 0) { 
-    return <div className="text-center py-10">Redirecting to cart...</div>; 
+  if (items.length === 0 && subtotal === 0 && !isNavigatingPostCheckout) {
+    return <div className="text-center py-10">Redirecting to cart...</div>;
   }
-
 
   return (
     <div className="space-y-8 py-10">
@@ -100,7 +109,7 @@ export default function CheckoutPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Full Name</FormLabel>
-                    <FormControl><Input placeholder="e.g. Ahmed Khan" {...field} /></FormControl>
+                    <FormControl><Input placeholder="e.g. Ahmed Khan" {...field} disabled={isLoading} /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -111,7 +120,7 @@ export default function CheckoutPage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone Number (for delivery)</FormLabel>
-                    <FormControl><Input type="tel" placeholder="03001234567" {...field} /></FormControl>
+                    <FormControl><Input type="tel" placeholder="03001234567" {...field} disabled={isLoading} /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -123,7 +132,7 @@ export default function CheckoutPage() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Full Address (Street, Area)</FormLabel>
-                  <FormControl><Textarea placeholder="House #, Street, Block/Sector, Area Name" {...field} rows={3} /></FormControl>
+                  <FormControl><Textarea placeholder="House #, Street, Block/Sector, Area Name" {...field} rows={3} disabled={isLoading} /></FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -135,7 +144,7 @@ export default function CheckoutPage() {
                 <FormItem>
                   <FormLabel>City (Pakistan)</FormLabel>
                   <FormControl>
-                    <select {...field} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                    <select {...field} disabled={isLoading} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
                       <option value="">Select City</option>
                       {PAKISTAN_CITIES.map(city => <option key={city} value={city}>{city}</option>)}
                     </select>
@@ -185,7 +194,7 @@ export default function CheckoutPage() {
                     render={({ field }) => (
                     <FormItem>
                         <FormLabel>Card Number</FormLabel>
-                        <FormControl><Input placeholder="XXXX XXXX XXXX XXXX" {...field} /></FormControl>
+                        <FormControl><Input placeholder="XXXX XXXX XXXX XXXX" {...field} disabled={isLoading} /></FormControl>
                     </FormItem>
                     )}
                 />
@@ -196,7 +205,7 @@ export default function CheckoutPage() {
                         render={({ field }) => (
                         <FormItem>
                             <FormLabel>Expiry Date</FormLabel>
-                            <FormControl><Input placeholder="MM/YY" {...field} /></FormControl>
+                            <FormControl><Input placeholder="MM/YY" {...field} disabled={isLoading} /></FormControl>
                         </FormItem>
                         )}
                     />
@@ -206,7 +215,7 @@ export default function CheckoutPage() {
                         render={({ field }) => (
                         <FormItem>
                             <FormLabel>CVV</FormLabel>
-                            <FormControl><Input placeholder="XXX" {...field} /></FormControl>
+                            <FormControl><Input placeholder="XXX" {...field} disabled={isLoading} /></FormControl>
                         </FormItem>
                         )}
                     />
@@ -245,8 +254,15 @@ export default function CheckoutPage() {
                 <span>PKR {total.toLocaleString()}</span>
               </div>
             </div>
-            <Button type="submit" size="lg" className="w-full bg-sky-600 hover:bg-sky-700 text-white mt-4">
-              Place Order
+            <Button type="submit" size="lg" className="w-full bg-sky-600 hover:bg-sky-700 text-white mt-4" disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Placing Order...
+                </>
+              ) : (
+                "Place Order"
+              )}
             </Button>
             <p className="text-xs text-slate-500 text-center">By placing your order, you agree to our terms and conditions.</p>
           </div>
@@ -256,3 +272,4 @@ export default function CheckoutPage() {
   );
 }
 
+    
