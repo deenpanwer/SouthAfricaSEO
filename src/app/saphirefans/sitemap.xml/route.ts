@@ -1,34 +1,25 @@
 
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
 const SAPHIREFANS_DOMAIN = 'https://saphirefans.traconomics.com';
 
 export async function GET(): Promise<Response> {
-  // In a real app, you would fetch your dynamic product routes here
-  // For example:
-  // const products = await fetch(`${SAPHIREFANS_DOMAIN}/api/products-list`).then(res => res.json());
-  // const productEntries = products.map(product => ({
-  //   url: `${SAPHIREFANS_DOMAIN}/shop/${product.slug}`, // Assuming products have slugs
-  //   lastModified: new Date(product.updatedAt),
-  //   changeFrequency: 'weekly',
-  //   priority: 0.8,
-  // }));
-
-  // For this test, we'll just include a couple of example shop paths
+  // In a real app, you would fetch your dynamic product/category routes here
+  // For this test, we'll just include the root page.
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: `${SAPHIREFANS_DOMAIN}/shop/test-product-1`,
+      url: `${SAPHIREFANS_DOMAIN}/`, // Root page for the subdomain
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'daily',
+      priority: 1.0,
     },
-    {
-      url: `${SAPHIREFANS_DOMAIN}/shop/another-item`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    // Add other static saphirefans pages here if any, e.g., /about, /contact for saphirefans
+    // Example: Add other static saphirefans pages here if any
+    // {
+    //   url: `${SAPHIREFANS_DOMAIN}/about`,
+    //   lastModified: new Date(),
+    //   changeFrequency: 'monthly',
+    //   priority: 0.8,
+    // },
   ];
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
