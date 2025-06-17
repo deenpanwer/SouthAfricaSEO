@@ -64,8 +64,11 @@ export function SaphireHeader() {
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-white hover:bg-sky-600">
-                    <Menu className="h-7 w-7" />
-                    <span className="sr-only">Open menu</span>
+                    {/* Wrap icon and sr-only span in a single element */}
+                    <span className="flex items-center justify-center">
+                      <Menu className="h-7 w-7" />
+                      <span className="sr-only">Open menu</span>
+                    </span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-full max-w-xs bg-sky-700 text-white p-6">
@@ -90,7 +93,6 @@ export function SaphireHeader() {
                               "text-base font-medium transition-colors hover:text-sky-200 py-2 border-b border-sky-600",
                               pathname === link.href ? "text-yellow-300" : "text-white"
                             )}
-                            // Removed onClick handler: onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {link.label}
                           </Link>
@@ -107,5 +109,4 @@ export function SaphireHeader() {
     </header>
   );
 }
-
     
