@@ -90,6 +90,7 @@ export function SaphireHeader() {
                               "text-base font-medium transition-colors hover:text-sky-200 py-2 border-b border-sky-600",
                               pathname === link.href ? "text-yellow-300" : "text-white"
                             )}
+                            // Removed onClick handler: onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {link.label}
                           </Link>
@@ -106,3 +107,5 @@ export function SaphireHeader() {
     </header>
   );
 }
+
+    
