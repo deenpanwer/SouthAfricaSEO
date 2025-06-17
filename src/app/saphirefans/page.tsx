@@ -27,9 +27,11 @@ export default function SaphireFansHomePage() {
           <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-sky-100">
             Reliable Ventilation Solutions for Factories, Warehouses & Commercial Spaces Across Pakistan.
           </p>
-          <Button size="lg" asChild className="bg-yellow-400 hover:bg-yellow-500 text-sky-800 font-semibold px-8 py-3 text-lg">
-            <Link href="/saphirefans/category/axial-flow-fans">Explore Our Fans <ChevronRight className="ml-2 h-5 w-5"/></Link>
-          </Button>
+          <Link href="/saphirefans/category/axial-flow-fans" passHref legacyBehavior>
+            <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-sky-800 font-semibold px-8 py-3 text-lg">
+              Explore Our Fans <ChevronRight className="ml-2 h-5 w-5"/>
+            </Button>
+          </Link>
         </div>
       </section>
 
