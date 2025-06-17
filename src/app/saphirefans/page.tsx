@@ -54,9 +54,11 @@ export default function SaphireFansHomePage() {
           ))}
         </div>
         <div className="text-center mt-12">
-           <Button variant="outline" size="lg" asChild className="border-sky-600 text-sky-600 hover:bg-sky-50 hover:text-sky-700">
-            <Link href="/saphirefans/category/axial-flow-fans">View All Products</Link> {/* Link to a main category or future all products page */}
-          </Button>
+           <Link href="/saphirefans/category/axial-flow-fans" passHref legacyBehavior>
+            <Button variant="outline" size="lg" className="border-sky-600 text-sky-600 hover:bg-sky-50 hover:text-sky-700">
+                View All Products
+            </Button>
+          </Link>
         </div>
       </section>
 
