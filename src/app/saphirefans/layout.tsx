@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { SaphireHeader } from './components/Header';
 import { SaphireFooter } from './components/Footer';
 import { CartProvider } from './context/CartContext';
-import { Toaster } from "@/components/ui/toaster"; // Main toaster is in root, can be removed if no saphire-specific toasts are planned
+// Toaster is in RootLayout and global styles are applied in RootLayout's body tag
 
 export const metadata: Metadata = {
   title: {
@@ -20,8 +20,9 @@ export default function SaphireFansLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Apply SaphireFans specific styling and font here
-    // The main <html> and <body> are provided by src/app/layout.tsx
+    // This div applies SaphireFans specific styling and font.
+    // The main <html> and <body> are provided by src/app/layout.tsx (RootLayout)
+    // The Poppins font variable is available from RootLayout.
     <div className="font-poppins bg-slate-100 text-slate-800 flex flex-col min-h-screen">
       <CartProvider>
         <SaphireHeader />
@@ -29,7 +30,7 @@ export default function SaphireFansLayout({
           {children}
         </main>
         <SaphireFooter />
-        {/* The global Toaster from src/app/layout.tsx will handle toasts unless specific context needed here */}
+        {/* Global Toaster is in RootLayout; no need for a separate one here unless specifically required */}
       </CartProvider>
     </div>
   );

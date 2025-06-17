@@ -5,7 +5,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
-import { headers } from 'next/headers'; // Import headers
+import { headers } from 'next/headers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,16 +39,17 @@ export const metadata: Metadata = {
   keywords: ['business growth', 'sales optimization', 'conversion strategies', 'revenue amplification', 'business consulting'],
 };
 
-const SAPHIREFANS_HOST = 'saphirefans.traconomics.com';
+const SAPHIREFANS_INTERNAL_PATH_PREFIX = '/saphirefans';
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const heads = headers();
-  const host = heads.get('host');
-  const isSaphireFansSite = host === SAPHIREFANS_HOST;
+  const headerList = headers();
+  // Use 'next-url' to get the internal URL path after middleware rewrites
+  const currentPath = headerList.get('next-url') || ''; 
+  const isSaphireFansPath = currentPath.startsWith(SAPHIREFANS_INTERNAL_PATH_PREFIX);
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -86,11 +87,11 @@ export default function RootLayout({
         src="https://www.facebook.com/tr?id=1375388456853322&ev=PageView&noscript=1"
         /></noscript>
         
-        {!isSaphireFansSite && <Header />}
+        {!isSaphireFansPath && <Header />}
         <main className="flex-grow">
           {children}
         </main>
-        {!isSaphireFansSite && <Footer />}
+        {!isSaphireFansPath && <Footer />}
         <Toaster />
       </body>
     </html>
