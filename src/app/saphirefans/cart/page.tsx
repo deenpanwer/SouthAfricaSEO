@@ -6,14 +6,7 @@ import Link from 'next/link';
 import { useCart } from '../context/CartContext';
 import { Button } from '@/components/ui/button';
 import { Trash2, Plus, Minus, ShoppingBag, Home, ChevronRight } from 'lucide-react';
-import type { Metadata } from 'next';
-
-// Metadata can still be defined for static pages or initial load even if page is client component
-export const metadata: Metadata = {
-  title: 'Your Shopping Cart | SaphireFans Pakistan',
-  description: 'Review and manage items in your SaphireFans shopping cart. Proceed to checkout to complete your industrial fan purchase in Pakistan.',
-};
-
+// Metadata export removed
 
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
@@ -33,7 +26,7 @@ export default function CartPage() {
   const total = subtotal + shippingCost;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 py-10">
       <nav className="text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex items-center space-x-2">
           <li><Link href="/saphirefans" className="hover:text-sky-600 flex items-center"><Home className="h-4 w-4 mr-1.5" />Home</Link></li>

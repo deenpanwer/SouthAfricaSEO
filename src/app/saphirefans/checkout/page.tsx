@@ -16,13 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { Home, ChevronRight, CreditCard, Truck } from 'lucide-react';
-import type { Metadata } from 'next';
-
-// Metadata can still be defined for static pages or initial load
-export const metadata: Metadata = {
-  title: 'Checkout | SaphireFans Pakistan',
-  description: 'Complete your industrial fan purchase. Provide shipping details and choose your payment method (Card or COD) for delivery in Pakistan.',
-};
+// Metadata export removed
 
 const checkoutSchema = z.object({
   fullName: z.string().min(3, { message: "Full name must be at least 3 characters." }),
@@ -80,7 +74,7 @@ export default function CheckoutPage() {
 
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 py-10">
       <nav className="text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex items-center space-x-2">
           <li><Link href="/saphirefans" className="hover:text-sky-600 flex items-center"><Home className="h-4 w-4 mr-1.5" />Home</Link></li>
