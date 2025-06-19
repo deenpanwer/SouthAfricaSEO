@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { BLOG_POSTS } from '@/lib/constants.tsx';
 import { CITIES_DATA } from '@/lib/cityConstants.tsx';
+import { getAllBlogPosts } from '@/lib/blogService';
+import { BLOG_POSTS } from '@/lib/constants';
 
 // Define metadata for the sitemap page
 export const metadata: Metadata = {
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
     description: 'Navigate our website easily with this comprehensive sitemap.',
 };
 
-export default function HumanReadableSitemap() {
+export default async function HumanReadableSitemap() {
+    const blogPosts = await getAllBlogPosts();
     // Define your static pages (can be the same as in sitemap.ts)
     const staticPages = [
         { url: '/', title: 'Home' },
@@ -68,9 +70,9 @@ export default function HumanReadableSitemap() {
             </section>
 
             <section className="bg-gray-50 rounded-lg p-6 shadow-sm">
-                <h2 className="text-2xl font-semibold text-gray-700 mb-6 pb-4 border-b border-gray-200">Blog Posts ({BLOG_POSTS.length})</h2>
+                <h2 className="text-2xl font-semibold text-gray-700 mb-6 pb-4 border-b border-gray-200">Blog Posts ({blogPosts.length})</h2>
                 {/* Sort by date in descending order */}
-                <ol className="space-y-3 list-decimal pl-5">
+                <ol className="space-y-3 list-decimal pl-5"> {/* Change BLOG_POSTS to blogPosts */}
                     {BLOG_POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post, index) => (
 
                         <li key={post.slug}>
