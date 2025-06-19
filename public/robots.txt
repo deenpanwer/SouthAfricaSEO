@@ -4,6 +4,7 @@ Allow: /
 # Disallow test directories
 Disallow: /test/
 Disallow: /test2/
+Disallow: /saphirefans/
 Disallow: /site-map/
 
 # IMPORTANT: Replace https://www.yourdomain.com with your actual live domain name.

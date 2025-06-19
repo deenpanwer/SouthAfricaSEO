@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BLOG_POSTS, APP_NAME } from '@/lib/constants.tsx';
+import { getAllBlogPosts, getBlogPostBySlug } from '../../../lib/blogService';
 import { ArrowLeft, CalendarDays, UserCircle, Tag } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,7 @@ type BlogPostPageProps = {
 };
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+  const post = await getBlogPostBySlug(params.slug);
   if (!post) {
     return {
       title: `Post Not Found | ${APP_NAME}`,
@@ -40,14 +41,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+// This function generates the static paths for all blog posts
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
+  const posts = await getAllBlogPosts();
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
-
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = await getBlogPostBySlug(params.slug);
 
   if (!post) {
     return (
@@ -81,8 +83,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     </div>
   `;
 
-
-  return (
+ return (
     <article className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
         <header className="mb-8">
@@ -108,21 +109,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               <span>{post.category}</span>
             </div>
           </div>
+ {post.imageUrl && (
           <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md mb-6">
             <Image
               src={post.imageUrl}
               alt={post.title}
               data-ai-hint={post.dataAiHint || "blog feature image"}
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 600px" // Add appropriate sizes prop
+              style={{ objectFit: 'cover' }} // Use style for object-fit
             />
           </div>
+ )}
         </header>
-
-        <div
-          className="prose prose-lg dark:prose-invert max-w-none text-foreground/90
-                     prose-headings:text-foreground prose-headings:font-semibold
+ <div
+          className="prose prose-lg dark:prose-invert max-w-none text-foreground/90 prose-headings:text-foreground prose-headings:font-semibold
                      prose-a:text-primary hover:prose-a:text-primary/80
                      prose-strong:text-foreground/90
                      prose-blockquote:border-primary prose-blockquote:text-muted-foreground"
@@ -140,7 +142,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <Button variant="outline" size="sm">
               <Share2 className="mr-2 h-4 w-4" /> Share
             </Button>
-            {/* Add more social share buttons here if desired */}
+ {/* Add more social share buttons here if desired */}
           </div>
         </footer>
       </div>

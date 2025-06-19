@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { BLOG_POSTS } from '@/lib/constants';
+import { getAllBlogPosts } from '@/lib/blogService';
 
-export const TracGrowthInsiderSection = ({ numberOfBlogsToShow = 3 }: { numberOfBlogsToShow?: number }) => {
-  const displayedBlogs = BLOG_POSTS.slice(0, numberOfBlogsToShow); // This line slices the array
+export const TracGrowthInsiderSection = async ({ numberOfBlogsToShow = 3 }: { numberOfBlogsToShow?: number }) => {
+  const allBlogs = await getAllBlogPosts();
+  const displayedBlogs = allBlogs.slice(0, numberOfBlogsToShow); // This line slices the array
 
   return (
     <section className="py-16 lg:py-24 bg-gray-100">

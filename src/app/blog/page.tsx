@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 // import { AITopicSuggestion } from '@/components/blog/AITopicSuggestion'; // AI component removed
 import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { BLOG_POSTS, APP_NAME } from '@/lib/constants.tsx';
+import { getAllBlogPosts } from '@/lib/blogService';
 import { Rss, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -15,8 +16,9 @@ export const metadata: Metadata = {
 // Mock search functionality for demonstration
 async function searchBlogPosts(query: string | undefined) {
   "use server";
-  if (!query) return BLOG_POSTS;
-  return BLOG_POSTS.filter(post => 
+  const allPosts = await getAllBlogPosts();
+  if (!query) return allPosts;
+  return allPosts.filter(post =>
     post.title.toLowerCase().includes(query.toLowerCase()) ||
     post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
     post.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
@@ -26,7 +28,7 @@ async function searchBlogPosts(query: string | undefined) {
 
 export default async function BlogPage({ searchParams }: { searchParams?: { query?: string }}) {
   const searchQuery = searchParams?.query || undefined;
-  const postsToDisplay = await searchBlogPosts(searchQuery);
+  const postsToDisplay = await searchBlogPosts(searchQuery); // This function now uses getAllBlogPosts internally
 
   return (
     <div className="py-12 md:py-20 bg-background">

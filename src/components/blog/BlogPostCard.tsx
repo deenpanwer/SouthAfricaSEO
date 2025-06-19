@@ -15,13 +15,15 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative w-full h-48">
+          {post.imageUrl ? (
           <Image
             src={post.imageUrl}
             alt={post.title}
             data-ai-hint={post.dataAiHint || "blog article"}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            style={{ objectFit: 'cover' }}
           />
+          ) : <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">No Image</div>} {/* Placeholder */}
         </div>
       </Link>
       <CardHeader className="pb-3">
