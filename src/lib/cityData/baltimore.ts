@@ -1,4 +1,3 @@
-
 import type { CityPageData } from '@/types';
 import { Search, Settings, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
@@ -14,33 +13,69 @@ export const baltimoreData: CityPageData = {
     metaDescription: 'TRAC provides top-tier SEO services for Baltimore businesses. Improve your search rankings, drive organic traffic, and increase sales in Baltimore. Get a free SEO consultation!',
     heroTitle: 'Baltimore SEO Experts: Navigating Your Path to Online Success',
     heroSubtitle: 'Boost Your Baltimore Business with Strategic, Results-Driven SEO',
-    heroDescription: 'TRAC helps Baltimore businesses achieve higher search engine rankings and significantly increased online visibility through tailored SEO strategies. Our approach is designed for the unique dynamics of the Baltimore market, focusing on results that truly matter for your growth. We blend in-depth local market research with advanced SEO techniques to connect you with your target audience in Charm City. From refining your presence for local searches (e.g., "SEO services Inner Harbor," "best seafood Fells Point") to building a strong technical SEO foundation for your website, and creating content that engages Baltimoreans and highlights local attractions or services, we cover all bases. Our commitment is to deliver measurable improvements in traffic, leads, and sales, making TRAC your trusted ally for SEO success in Baltimore. We ensure your business not only gets found but also makes a lasting impression in a competitive digital environment.',
+    heroDescription: `TRAC delivers SEO solutions tailored to Baltimore’s competitive and historically rich market, helping local businesses attract more customers and grow sustainably. Whether you're located near Inner Harbor, Fells Point, or Hampden, our strategies target neighborhood-specific searches that convert. From optimizing your Google Business Profile to ranking for “best seafood in Baltimore” or “legal services near Federal Hill,” we drive traffic that leads to results.
+
+Our team builds authority through content focused on Baltimore’s industries—healthcare, tourism, education, and local retail—while reinforcing your technical foundation with speed audits, mobile responsiveness, and structured data. We don’t just improve rankings—we generate trust and engagement across Charm City’s digital audience. With TRAC, your business is set up for long-term visibility and local credibility online.`,
     heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Baltimore, MD', dataAiHint: 'Baltimore harbor business' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
-    formTitle: 'Free SEO Quote!', // Updated: Removed 'Baltimore'
+    formTitle: 'Free SEO Quote!',
   },
   resultsHeadline: 'SEO Success Stories in Baltimore: Real Growth, Real Results',
   readyToGrowHeadline: 'Elevate Your Baltimore SEO Strategy?',
-  servicesSectionHeadline: 'Comprehensive SEO Solutions for Baltimore', // Adjusted for flow
+  servicesSectionHeadline: 'Comprehensive SEO Solutions for Baltimore',
   servicesSectionSubheadline: 'Comprehensive SEO solutions designed to grow your Baltimore business\'s online presence and market share effectively, targeting both residents and visitors.',
   services: [
-    { icon: Search, title: 'Local Search Optimization', description: 'Rank higher in Baltimore local searches and Google Maps. We refine your Google Business Profile, manage local citations, and target keywords for specific Baltimore neighborhoods like Canton, Federal Hill, and Hampden to attract customers actively searching for your services.' },
-    { icon: Settings, title: 'Website Technical Audits', description: 'Find and fix critical technical SEO issues on your Baltimore-focused website. We improve site speed, mobile-friendliness (important for users exploring Baltimore), discoverability, and add schema markup to boost your rankings and user engagement.' },
-    { icon: Mail, title: 'Engaging Content for Local SEO', description: 'Create compelling, keyword-rich content that engages Baltimore audiences, answers their questions (e.g., "things to do in Baltimore," "best Baltimore IT services"), and improves your website\'s SEO authority and search visibility. We focus on content that highlights local expertise.' },
-    { icon: BarChart2, title: 'SEO Performance Reporting', description: 'Monitor your SEO performance with clear, data-driven reports tailored for your Baltimore campaigns. We focus on transparency and actionable insights related to organic traffic, keyword rankings for local terms, and conversion rates to drive continuous improvement.' },
+    {
+      icon: Search,
+      title: 'Local Search Optimization',
+      description: 'Get discovered in Baltimore neighborhoods like Canton, Mount Vernon, and Federal Hill with hyper-local SEO. We refine Google Maps listings and citations to reach the right customers where they live and search.',
+    },
+    {
+      icon: Settings,
+      title: 'Website Technical Audits',
+      description: 'We audit and improve your website’s technical setup—focusing on page speed, mobile readiness, and indexability to ensure smooth performance for Baltimore users on every device.',
+    },
+    {
+      icon: Mail,
+      title: 'Engaging Content for Local SEO',
+      description: 'We write content that speaks to Baltimore audiences—from “things to do in Fells Point” to “best IT services downtown.” Our content strategy builds authority and improves search engine rankings.',
+    },
+    {
+      icon: BarChart2,
+      title: 'SEO Performance Reporting',
+      description: 'Stay informed with custom reports that break down how your SEO campaign is performing in Baltimore. We track keyword movement, traffic trends, and conversions so you know where your growth comes from.',
+    },
   ],
   whyChooseSectionHeadline: 'Why Choose TRAC for Baltimore SEO?',
   whyChooseIntro: 'TRAC offers effective, customized SEO strategies for businesses aiming to thrive in the competitive Baltimore market. Our local expertise and dedication to results set us apart.',
-  whyChooseParagraph1: 'Our SEO experts possess a deep understanding of the local competitive landscape and consumer search patterns, from the thriving arts scene to its historic districts. We develop strategies that are not only effective but also connect with the Baltimore community, ensuring your message reaches the right people and drives meaningful engagement.',
-  whyChooseParagraph2: 'We focus on ethical, white-hat SEO techniques that deliver long-term, lasting results for our Baltimore clients. Our goal is to build your brand\'s authority and online presence responsibly, fostering trust and credibility with both search engines and users in the Baltimore metropolitan area. We stay updated on all algorithm changes.',
+  whyChooseParagraph1: 'We understand Baltimore’s unique digital landscape—where local pride meets modern business challenges. Whether you serve tourists at the Inner Harbor or run a B2B company in downtown Baltimore, our SEO strategies are built to fit your niche and goals.',
+  whyChooseParagraph2: 'With TRAC, you get a partner who values transparency, communication, and long-term results. We follow ethical SEO practices and continuously adjust your campaign to reflect the latest trends, updates, and search behaviors in Baltimore.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'Local SEO Growth & Visibility', description: 'Achieve better search engine rankings, increased organic traffic, and more qualified leads within the specific context of the Baltimore market. We aim for top positions for your most important keywords.' },
-    { icon: 'Lightbulb', title: 'Targeted Local Strategies', description: 'Benefit from SEO strategies carefully designed for the Baltimore, MD market, taking into account local industries (e.g., healthcare, education, tourism), events, and search behaviors unique to Charm City.' },
-    { icon: 'ShieldCheck', title: 'Reliable & Ethical Partnership', description: 'Experience lasting and effective SEO results through transparent practices and a commitment to the long-term success of your Baltimore business. We believe in building strong client relationships.' },
+    {
+      icon: 'TrendingUp',
+      title: 'Local SEO Growth & Visibility',
+      description: 'Achieve higher local rankings and generate consistent leads with SEO strategies tailored to the Baltimore market and its neighborhoods.',
+    },
+    {
+      icon: 'Lightbulb',
+      title: 'Targeted Local Strategies',
+      description: 'Our SEO campaigns focus on Baltimore’s most searched terms, local events, and service-specific queries to maximize traffic and relevance.',
+    },
+    {
+      icon: 'ShieldCheck',
+      title: 'Reliable & Ethical Partnership',
+      description: 'We deliver lasting value with honest reporting and best-practice SEO that withstands search engine changes and earns user trust.',
+    },
   ],
   awards: {
-    clutch: { headline: 'Top Baltimore SEO Firm - Clutch 2024', text: 'Recognized by Clutch for delivering impactful SEO results and superior client service to businesses in Baltimore. Our focus on client success is paramount.' },
-    upcity: { headline: 'Baltimore SEO Leader - UpCity 2024', text: 'Awarded by UpCity for premier SEO services and consistent success in helping Baltimore businesses grow online through effective search strategies.' },
+    clutch: {
+      headline: 'Top Baltimore SEO Firm - Clutch 2024',
+      text: 'Recognized by Clutch for delivering impactful SEO results and superior client service to businesses in Baltimore. Our focus on client success is paramount.',
+    },
+    upcity: {
+      headline: 'Baltimore SEO Leader - UpCity 2024',
+      text: 'Awarded by UpCity for premier SEO services and consistent success in helping Baltimore businesses grow online through effective search strategies.',
+    },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,

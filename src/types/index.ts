@@ -32,6 +32,7 @@ export interface Testimonial {
   dataAiHint?: string;
   quote: string;
   location?: string;
+  rating?: number;
 }
 
 export interface CaseStudyResult {
@@ -91,6 +92,11 @@ export interface StatItem {
   value: string;
   label: string;
   icon: LucideIcon;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
 }
 
 // City Specific Page Types
@@ -153,6 +159,8 @@ export interface CityPageData {
   };
   location: CityLocationData;
   bottomFormTitle: string;
+  faqData: FAQItem[];
+  metaKeywords: string[];
 }
 
 export interface CityHeroFormValues {

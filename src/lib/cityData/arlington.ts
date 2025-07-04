@@ -1,4 +1,3 @@
-
 import type { CityPageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
@@ -10,37 +9,93 @@ export const arlingtonData: CityPageData = {
   slug: 'arlington',
   cityName: 'Arlington',
   heroData: {
-    pageTitle: 'Arlington SEO Services | TRAC - SEO Experts in Arlington, TX',
-    metaDescription: 'Boost your Arlington business with TRAC\'s expert SEO services. Drive organic traffic, increase leads, and maximize sales in Arlington. Get your free SEO proposal!',
-    heroTitle: 'Arlington SEO Agency: Your Partner for Digital Growth',
-    heroSubtitle: 'Dominate Search in Arlington, TX with TRAC\'s Tailored SEO Strategies',
-    heroDescription: 'TRAC provides specialized SEO services carefully designed for Arlington businesses aiming to significantly increase their online visibility and attract a steady stream of qualified local customers. Our expert team understands the unique digital landscape of Arlington, Texas, a key city within the DFW metroplex, and we craft strategies that truly resonate with your target audience. We go deep into local SEO tactics, making sure your Google Business Profile is perfectly optimized and your business ranks prominently in "near me" searches across Arlington for relevant services. Our comprehensive technical SEO audits address website speed, mobile-friendliness, and crawlability, laying a strong foundation for lasting search engine success. Our content strategies are built around keywords relevant to the Arlington area, creating valuable information that engages users and positions your brand as an authority in sectors like entertainment, education, or local services. Partner with TRAC to unlock your business\'s full online potential here and achieve measurable growth through targeted SEO.',
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Arlington, TX', dataAiHint: 'Arlington city business' },
+    pageTitle: 'Arlington SEO Agency & Company | TRAC - Arlington, TX SEO Experts',
+    metaDescription: 'Looking for a top-rated Arlington SEO agency or Arlington SEO company? TRAC delivers tailored SEO strategies in Arlington, TX to boost organic traffic, leads, and sales. Get your free SEO proposal today!',
+    heroTitle: 'Top Arlington SEO Agency & Company for Digital Growth',
+    heroSubtitle: 'Arlington SEO Experts Focused on Driving Local Business Success',
+    heroDescription: `As an experienced Arlington SEO agency and Arlington SEO company, TRAC crafts data-driven strategies that elevate your local visibility and drive real leads. Whether you’re searching for an Arlington SEO firm, an Arlington SEO consultant, or specialized SEO for landscapers in Arlington TX, our team customizes every campaign to your market and goals.
+
+From optimizing your Google Business Profile for map-pack dominance to implementing precise technical SEO fixes for fast load times, we ensure your site ranks where it matters most. We research long-tail search terms—like “roof repair south Arlington” or “family dentist near UTA”—and weave them into content that resonates with Arlington residents. Our transparent reporting and hands-on approach make TRAC the SEO partner Arlington businesses trust for sustainable growth.
+
+We specialize in delivering SEO for contractors in Arlington TX, healthcare providers, law firms, and retail businesses alike—each with custom keyword targeting and on-page optimization that aligns with your niche. If you're searching for a trusted SEO expert in Arlington or an Arlington TX SEO consultant that understands your market, you're in the right place.
+
+Our Arlington SEO strategies are built around user behavior and search trends in your neighborhoods—from East Arlington and Dalworthington Gardens to businesses around The Parks Mall. Whether you're looking to increase visibility for a new business or need enterprise SEO support for a multi-location company in Arlington, our team has the tools and experience to make it happen.
+
+Explore our SEO services for Arlington small businesses, or contact us today to discuss how we can build a campaign around your brand, your goals, and your location.`,
+    heroImage: {
+      src: GENERIC_CITY_HERO_IMAGE_SRC,
+      alt: 'Arlington SEO Services by TRAC',
+      dataAiHint: 'Arlington SEO agency and company',
+    },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
-    formTitle: 'Free SEO Quote!', // Updated: Removed 'Arlington'
+    formTitle: 'Free SEO Quote!',
   },
-  resultsHeadline: 'SEO Results That Matter for Arlington Businesses',
-  readyToGrowHeadline: 'Grow Your Arlington Business with SEO?',
-  servicesSectionHeadline: 'Targeted SEO Services for Arlington',
-  servicesSectionSubheadline: 'Our SEO strategies are designed to put your business in front of local customers actively searching for your services in Arlington.', // Adjusted for flow
+  resultsHeadline: 'SEO Wins That Drive Business in Arlington',
+  readyToGrowHeadline: 'Ready to Elevate Your Arlington Business with SEO?',
+  servicesSectionHeadline: 'SEO Services Built for Arlington’s Search Landscape',
+  servicesSectionSubheadline: 'From local visibility to lead generation, we tailor every SEO service to Arlington’s unique market.',
   services: [
-    { icon: Search, title: 'Local SEO Optimization', description: 'Refine your Google Business Profile and local citations to rank higher in Arlington local search results. We target area-specific keywords to attract geographically relevant customers looking for services like yours.' },
-    { icon: Settings, title: 'Technical Site SEO', description: 'Ensure your website is fast, mobile-friendly, and easily discoverable for better Arlington rankings. We perform thorough audits to find and fix technical issues, improving user experience.' },
-    { icon: Users, title: 'Keyword Strategy', description: 'Pinpoint and target the right keywords to attract qualified organic traffic from the Arlington area. Our research focuses on terms with high purchase intent relevant to local consumers and businesses.' },
-    { icon: Mail, title: 'Content Marketing for Local SEO', description: 'Create engaging, high-quality content that resonates with Arlington audiences and builds SEO authority. We focus on topics relevant to your local customers, establishing your expertise and driving organic traffic.' },
+    {
+      icon: Search,
+      title: 'Local SEO Optimization',
+      description:
+        'Stand out in Arlington map packs and “near me” searches. As a leading Arlington SEO agency, we fine-tune local listings, boost citations, and enhance your Google Business Profile to connect you with nearby customers.',
+    },
+    {
+      icon: Settings,
+      title: 'Technical Site SEO',
+      description:
+        'We conduct in-depth audits to ensure your site loads quickly for Arlington visitors, is mobile-friendly, and fully crawlable. Every technical fix is prioritized for maximum ROI.',
+    },
+    {
+      icon: Users,
+      title: 'Keyword Strategy',
+      description:
+        'Our Arlington TX SEO consultants identify high-intent keywords and long-tail queries—like “arlington seo agency” and “seo for landscapers Arlington TX”—to guide content and link-building.',
+    },
+    {
+      icon: Mail,
+      title: 'Content Marketing for Local SEO',
+      description:
+        'We create city-specific blog posts, service pages, and FAQs that align with how Arlington residents search, building your authority and keeping your site relevant.',
+    },
   ],
-  whyChooseSectionHeadline: 'Why TRAC for Your Arlington SEO Needs?',
-  whyChooseIntro: 'TRAC delivers customized, results-driven SEO solutions for businesses in Arlington, Texas. We understand the local market and how to make your business stand out from the competition.',
-  whyChooseParagraph1: 'Our SEO experts understand the local market dynamics and consumer behavior specific to Arlington and the broader DFW area. We tailor strategies to achieve your specific business goals, whether it\'s increasing foot traffic to your Arlington location, generating online leads, or building brand awareness within the community.',
-  whyChooseParagraph2: 'We combine proven SEO techniques with clear reporting to ensure your Arlington business achieves lasting online growth. Our commitment is to ethical practices and measurable outcomes, making us a trusted SEO partner dedicated to your long-term success.',
+  whyChooseSectionHeadline: 'Why Choose TRAC for SEO in Arlington?',
+  whyChooseIntro:
+    'We don’t do cookie-cutter SEO. TRAC’s local-first approach drives sustainable growth and measurable results.',
+  whyChooseParagraph1:
+    'Whether you need an Arlington SEO firm to boost foot traffic near AT&T Stadium or an Arlington SEO company to increase high-intent search visibility off Cooper Street, our strategies align with your business goals.',
+  whyChooseParagraph2:
+    'With transparent reporting and ethical, white-hat methods, we ensure your Arlington business maintains growth and avoids penalties, giving you confidence in long-term SEO success.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'SEO Growth for Arlington', description: 'Drive more organic traffic and generate high-quality leads in the competitive Arlington market. We focus on SEO strategies that convert visitors into customers.' },
-    { icon: 'Lightbulb', title: 'Local Arlington Expertise', description: 'Benefit from SEO strategies tailored specifically to the Arlington, TX market and its unique demographic and economic factors. We know what local searches are looking for.' },
-    { icon: 'ShieldCheck', title: 'Ethical SEO Practices', description: 'Achieve lasting, long-term results through white-hat SEO techniques that build trust with search engines and Arlington users. We prioritize quality and integrity.' },
+    {
+      icon: 'TrendingUp',
+      title: 'Search Growth That Converts',
+      description:
+        'We target clicks and leads—calls, form submissions, and visits—instead of vanity metrics.',
+    },
+    {
+      icon: 'Lightbulb',
+      title: 'Deep Local Knowledge',
+      description:
+        'Our strategies reflect actual Arlington search behavior—from East Arlington homeowners to UTA students.',
+    },
+    {
+      icon: 'ShieldCheck',
+      title: 'Trustworthy SEO Execution',
+      description:
+        'We follow proven, white-hat methods to build lasting authority and protect your rankings.',
+    },
   ],
   awards: {
-    clutch: { headline: 'Top Arlington SEO Agency - Clutch 2024', text: 'Recognized by Clutch for delivering impactful SEO results and exceptional service to Arlington businesses. Our clients vouch for our expertise.' },
-    upcity: { headline: 'Arlington SEO Excellence - UpCity 2024', text: 'Awarded by UpCity for outstanding SEO services and client success stories in the Arlington area. We pride ourselves on achieving excellence.' },
+    clutch: {
+      headline: 'Recognized by Clutch: Top Arlington SEO Agency',
+      text: 'TRAC was named a leading Arlington SEO provider for client satisfaction, transparent methods, and strong local results.',
+    },
+    upcity: {
+      headline: 'SEO Impact Award – UpCity 2024',
+      text: 'UpCity honored our Arlington SEO team for delivering measurable growth to local businesses.',
+    },
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,

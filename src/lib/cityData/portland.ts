@@ -94,6 +94,19 @@ export const portlandCityData: CityPageData = {
     email: CONTACT_DETAILS.email,
   },
   bottomFormTitle: 'Get Your FREE SEO Audit & Proposal',
+  faqData: [
+    {
+      question: 'Why is local SEO so important for a business in [CityName]?',
+      answer: 'Local SEO is crucial in [CityName] because it connects you with customers in your immediate vicinity who are actively searching for your products or services. It helps you appear in Google Maps, the "Local Pack," and "near me" searches, driving highly qualified foot traffic and phone calls directly to your [CityName] business.'
+    },
+    {
+      question: 'How long does it take to see results from an SEO campaign in [CityName]?',
+      answer: 'While some improvements can be seen within a few months, significant and sustainable SEO results typically take 6-12 months. This is because building genuine authority, creating quality content, and earning backlinks takes time. The competitive nature of the [CityName] market also plays a role. We focus on building a strong foundation for long-term success.'
+    },
+    {
+      question: 'Can you guarantee a #1 ranking on Google for my [CityName] business?',
+      answer: 'No reputable SEO agency can guarantee a #1 ranking. Google\'s algorithm is complex and constantly changing. However, our proven strategies, deep understanding of the [CityName] market, and ethical "white-hat" techniques significantly increase your chances of ranking at the top for your most valuable keywords.'
+    }
+  ],
+  metaKeywords: ['portland seo', 'portland seo company', 'portland seo agency', 'local seo portland', 'seo services portland or'],
 };
-
-    

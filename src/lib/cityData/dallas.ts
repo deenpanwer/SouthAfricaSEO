@@ -96,6 +96,19 @@ export const dallasCityData: CityPageData = {
     email: CONTACT_DETAILS.email,
   },
   bottomFormTitle: 'Get Your FREE SEO Strategy Session',
+  faqData: [
+    {
+      question: 'What types of businesses in [CityName] do you work with?',
+      answer: 'We work with a wide range of businesses in the [CityName] area, from B2B service providers and tech startups to local retailers and e-commerce stores. Our strategies are customized to fit the unique needs of your industry and your specific goals within the DFW market.'
+    },
+    {
+      question: 'How does your SEO process for a [CityName] client begin?',
+      answer: 'Our process starts with a comprehensive discovery phase. We conduct a technical SEO audit of your website, analyze your top [CityName] competitors, perform in-depth keyword research, and work with you to understand your business objectives. This allows us to build a data-driven strategy from the ground up.'
+    },
+    {
+      question: 'Do you offer social media marketing services in [CityName] as well?',
+      answer: 'Yes, absolutely. TRAC is a full-service digital marketing agency. While SEO is our core focus for organic growth, we can integrate social media marketing, PPC advertising, and email marketing to create a cohesive and powerful digital strategy for your [CityName] business.'
+    }
+  ],
+  metaKeywords: ['dallas seo', 'dallas seo company', 'seo agency dallas', 'dfw seo', 'local seo dallas tx'],
 };
-
-    

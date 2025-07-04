@@ -1,9 +1,10 @@
+
 "use client";
 
 import Image from 'next/image';
 import { useState } from 'react';
-
 import type { Testimonial } from '@/types';
+import { Star } from 'lucide-react';
 
 const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
   if (!isOpen) return null;
@@ -22,19 +23,41 @@ interface CityResultsHighlightsProps {
   headline: string;
 }
 
-// Testimonials Data based on the provided image
 const cityTestimonials: Testimonial[] = [
-  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma", dataAiHint: "Marci Wiersma photo" },
-  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg", dataAiHint: "Whitney Wells Lewis photo" },
-  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg", dataAiHint: "Chad Montgomery photo" },
+  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma", dataAiHint: "Marci Wiersma photo", rating: 5 },
+  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg", dataAiHint: "Whitney Wells Lewis photo", rating: 5 },
+  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg", dataAiHint: "Chad Montgomery photo", rating: 5 },
 ];
 
 export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) {
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
 
+  const reviewSchema = cityTestimonials.map(testimonial => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Organization",
+      "name": "TRAC"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": testimonial.rating,
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name
+    },
+    "reviewBody": testimonial.quote
+  }));
+
   return (
     <section className="py-12 md:py-16 bg-white text-gray-800">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-10">{headline}</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -127,7 +150,11 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
                 />
                 <h3 className="font-semibold text-lg mb-0.5">{testimonial.name}</h3>
                 <p className="text-xs text-gray-500 mb-3">{testimonial.company}</p>
-                 {/* Highlighted Quote */}
+                <div className="flex justify-center mb-3">
+                  {[...Array(testimonial.rating || 5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
                  <div className="bg-yellow-400 p-2 rounded-md mb-3">
                     <p className="text-gray-800 italic font-semibold text-sm">"{testimonial.highlightedQuote}"</p>
                   </div>
