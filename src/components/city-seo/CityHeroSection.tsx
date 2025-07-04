@@ -27,10 +27,44 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
   const [expanded, setExpanded] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   // const videoRef = useRef<HTMLIFrameElement>(null); // This ref is not used anymore
-
-  const sentences = heroDescription.split('. ');
-  const initialDescription = sentences.slice(0, 4).join('. ') + (sentences.length > 4 ? '.' : '');
+  
+  const characterLimit = 350; // Adjust this number to show more or less text initially
   const fullDescription = heroDescription;
+  const initialDescription = heroDescription.length > characterLimit
+    ? heroDescription.substring(0, characterLimit).split(' ').slice(0, -1).join(' ') + '...'
+    : heroDescription;
+
+  // Function to render text with markdown-like parsing
+  const renderDescription = (text: string) => {
+    const paragraphs = text.split('\n\n');
+
+    return paragraphs.map((paragraph, pIndex) => {
+      // Handle Vertical Names (lines starting with - **)
+      if (paragraph.startsWith('- **') && paragraph.endsWith('**')) {
+        const verticalName = paragraph.substring(4, paragraph.length - 2);
+        return <h4 key={`p-${pIndex}`} className={pIndex > 0 ? 'mt-4 font-semibold text-xl' : 'font-semibold text-xl'}>{verticalName}</h4>;
+      }
+
+      // Handle Links (URLs and [text](url))
+      const parts = paragraph.split(/(\s+)/); // Split by whitespace, keeping whitespace
+      const renderedParts = parts.map((part, partIndex) => {
+        // Simple URL detection
+        if (part.startsWith('http://') || part.startsWith('https://')) {
+          return <a key={`p${pIndex}-part${partIndex}`} href={part} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{part}</a>;
+        }
+        // Basic [text](url) detection (can be enhanced)
+        const markdownLinkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+        if (markdownLinkMatch) {
+          return <a key={`p${pIndex}-part${partIndex}`} href={markdownLinkMatch[2]} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{markdownLinkMatch[1]}</a>;
+        }
+        return part;
+      });
+      return <p key={`p-${pIndex}`} className={pIndex > 0 ? 'mt-4' : ''}>{renderedParts}</p>;
+    });
+  };
+
+  // Check if description is long enough to require "Read More"
+  const needsReadMore = heroDescription.length > characterLimit;
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-green-700 text-white">
@@ -76,10 +110,12 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
             </Modal>
 
             {/* Description and Read More */}
-            <p className="text-base sm:text-lg text-green-100 mb-4 leading-relaxed">
-              {expanded ? fullDescription : initialDescription}
-            </p>
-            {sentences.length > 2 && (
+            <div className="text-base sm:text-lg text-green-100 mb-4 leading-relaxed">
+              {expanded ? renderDescription(fullDescription) : (
+                <p>{initialDescription}</p>
+              )}
+            </div>
+            {needsReadMore && (
               <button
                 onClick={() => setExpanded(!expanded)} // This correctly toggles the expanded state
                 className="text-yellow-400 font-semibold hover:underline mb-6"

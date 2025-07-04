@@ -29,7 +29,7 @@ export const ClientResultsSection = () => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Our Clients Get Results</h2>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-        Thrive is a full-service digital marketing agency. We’ve been providing a wide array of services to clients of all industries since 2005. Our digital marketing services include consulting and management options for a variety of online marketing tactics including search engine optimization (SEO), pay-per-click (PPC) ads, Amazon store optimization, copywriting, conversion rate optimization (CRO), and more. We also offer expert web design and development services for both eCommerce and B2B companies. Don’t just partner with any digital marketing agency; work with a company you can trust.
+        Trac is a full-service digital marketing agency. We’ve been providing a wide array of services to clients of all industries since 2005. Our digital marketing services include consulting and management options for a variety of online marketing tactics including search engine optimization (SEO), pay-per-click (PPC) ads, Amazon store optimization, copywriting, conversion rate optimization (CRO), and more. We also offer expert web design and development services for both eCommerce and B2B companies. Don’t just partner with any digital marketing agency; work with a company you can trust.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
@@ -39,7 +39,7 @@ export const ClientResultsSection = () => {
               alt="Client Results 1"
               width={600}
               height={300}
-              className="w-full object-cover"
+              className="w-full"
               data-ai-hint="Client testimonial image 1"
             />
           </div>
@@ -76,7 +76,7 @@ export const ClientResultsSection = () => {
               alt="Client Results 2"
               width={600}
               height={300}
-              className="w-full object-cover"
+              className="w-full"
               data-ai-hint="Client testimonial image 2"
             />
           </div>
@@ -103,7 +103,7 @@ export const ClientResultsSection = () => {
             </div>
           </div>
           <div className="p-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600 mb-2">THRIVE IS A DIGITAL MARKETING EXPERT & DEVELOPED A ROBUST REPORTING MODEL.</p>
+            <p className="text-sm text-gray-600 mb-2">TRAC IS A DIGITAL MARKETING EXPERT & DEVELOPED A ROBUST REPORTING MODEL.</p>
             <Link href="#" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
           </div>
         </div>

@@ -26,7 +26,7 @@ interface HeroLeadFormValues {
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const heroLeadFormSchema = z.object({
-  website: z.string().url({ message: "Please enter a valid website URL." }).optional().or(z.literal('')),
+ website: z.string().optional(),
   phoneNumber: z.string({ required_error: "Phone number is required." })
     .min(1, "Please enter your phone number.")
     .regex(e164Regex, { message: "Please enter a valid phone number, including country code." }),
@@ -144,7 +144,13 @@ export const HomeHeroSection = () => {
                         <PhoneInput
                           defaultCountry="us"
                           value={field.value}
-                          onChange={(phone) => field.onChange(phone)}
+                          onChange={(phone) => {
+                            // Clean the input: remove non-digits except for a leading '+'
+                            const cleanedPhone = phone.replace(/[^0-9+]/g, '');
+                            // Ensure the '+' is only at the very beginning
+                            const finalCleanedPhone = cleanedPhone.startsWith('+') ? '+' + cleanedPhone.replace(/\+/g, '') : cleanedPhone.replace(/\+/g, '');
+                            field.onChange(finalCleanedPhone);
+                          }}
                           disabled={isLoading}
                           inputClassName="w-full"
                           countrySelectorStyleProps={{

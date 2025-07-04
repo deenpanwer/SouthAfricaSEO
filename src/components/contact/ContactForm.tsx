@@ -22,15 +22,15 @@ import { GENERAL_INQUIRY_VALUE, CUSTOM_SOLUTION_VALUE } from './ContactFormWrapp
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const contactFormSchema = z.object({
-  name: z.string().optional(),
-  email: z.string().email({ message: "Please enter a valid email address if provided." }).optional().or(z.literal('')),
-  company: z.string().optional(),
+  name: z.string().optional().or(z.literal('')),
+  email: z.string().optional().or(z.literal('')),
+  company: z.string().optional().or(z.literal('')),
   phoneNumber: z.string({ required_error: "Phone number is required." })
     .min(1, "Phone number is required.")
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
-  website: z.string().url({ message: "Please enter a valid website URL if provided (e.g., https://example.com)" }).optional().or(z.literal('')),
-  service: z.string().optional(),
-  message: z.string().max(1000, { message: "Message cannot exceed 1000 characters if provided." }).optional(),
+  website: z.string().optional().or(z.literal('')),
+  service: z.string().optional().or(z.literal('')),
+  message: z.string().optional().or(z.literal('')),
 });
 
 
@@ -84,7 +84,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
       company: "",
       phoneNumber: "",
       website: "",
-      service: preselectedService || GENERAL_INQUIRY_VALUE, 
+      service: preselectedService || GENERAL_INQUIRY_VALUE,
       message: "",
     },
   });
@@ -177,17 +177,22 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
               <FormItem>
                 <FormLabel htmlFor="phoneNumber">Phone Number*</FormLabel>
                 <FormControl>
-                   <PhoneInput
+                  <PhoneInput
                     defaultCountry="us"
                     value={field.value}
-                    onChange={(phone) => field.onChange(phone)}
+                    // Clean the input by removing non-digit characters except the leading '+'
+                    onChange={(phone) => {
+                      const cleanedPhone = phone.replace(/[^\d+]/g, '');
+                      // Ensure that the '+' sign is only at the beginning if present
+                      field.onChange(cleanedPhone.replace(/(?<!^)\+/g, ''));
+                    }}
                     disabled={isLoading}
                     inputClassName="w-full !border-input !ring-ring !focus:ring-2" // Ensure input part of PhoneInput matches styling
                     countrySelectorStyleProps={{
                       buttonClassName: "!border-input !bg-background hover:!bg-muted",
                     }}
-                    inputStyle={{width: '100%'}}
-                    style={{'--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))'} as React.CSSProperties}
+                    inputStyle={{ width: '100%' }}
+                    style={{ '--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))' } as React.CSSProperties}
                   />
                 </FormControl>
                 <FormDescription>Please include your country code (e.g., +1 for USA).</FormDescription>
@@ -196,19 +201,19 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
             )}
           />
         </div>
-         <FormField
-            control={form.control}
-            name="website"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor="website">Website URL</FormLabel>
-                <FormControl>
-                  <Input id="website" placeholder="https://yourcompany.com" {...field} disabled={isLoading} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <FormField
+          control={form.control}
+          name="website"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="website">Website URL</FormLabel>
+              <FormControl>
+                <Input id="website" placeholder="https://yourcompany.com" {...field} disabled={isLoading} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="service"

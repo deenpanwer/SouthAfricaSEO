@@ -19,7 +19,12 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  {locationData.addressLines.map(line => <p key={line}>{line}</p>)}
+                  {/* Display address using new structured properties */}
+                  <p>{locationData.streetAddress}</p>
+                  <p>{locationData.addressLocality}, {locationData.addressRegion} {locationData.postalCode}</p>
+                  {/* You might want to conditionally render the country if needed */}
+                  {/* <p>{locationData.addressCountry}</p> */}
+
                 </div>
               </div>
               <div className="flex items-center">

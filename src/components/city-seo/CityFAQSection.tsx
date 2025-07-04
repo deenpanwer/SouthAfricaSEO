@@ -7,11 +7,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 interface CityFAQSectionProps {
   faqData: FAQItem[];
   cityName: string;
+  headline: string;
 }
 
-export function CityFAQSection({ faqData, cityName }: CityFAQSectionProps) {
+export function CityFAQSection({ faqData, cityName, headline }: CityFAQSectionProps) {
   if (!faqData || faqData.length === 0) {
-    return null;
+ return null;
   }
 
   const faqSchema = {
@@ -35,7 +36,7 @@ export function CityFAQSection({ faqData, cityName }: CityFAQSectionProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Frequently Asked Questions About SEO in {cityName}
+          {headline}
         </h2>
         <Accordion type="single" collapsible className="w-full">
           {faqData.map((item, index) => (

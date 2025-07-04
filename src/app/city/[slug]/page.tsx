@@ -54,28 +54,29 @@ export default function CityPage({ params }: CityPageProps) {
   }
 
   const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    'name': `${APP_NAME} - ${cityData.cityName} SEO Services`,
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': cityData.location.addressLines.join(', '),
-      'addressLocality': cityData.cityName,
-      'addressRegion': cityData.location.addressLines[2]?.split(', ')[1]?.split(' ')[0] || '', // Attempt to get state abbr.
-      'postalCode': cityData.location.addressLines[2]?.split(', ')[1]?.split(' ')[1] || '', // Attempt to get postal code
-      'addressCountry': 'US', // Assuming US for now
-    },
-    'telephone': cityData.location.phone,
-    'email': cityData.location.email,
-    'url': `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
-    'image': typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
-    'description': cityData.heroData.metaDescription,
-    'geo': { // Placeholder GeoCoordinates, should be updated with real data if available
-      '@type': 'GeoCoordinates',
-      'latitude': '0.0',
-      'longitude': '0.0'
-    },
-  };
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  'name': `${APP_NAME} - ${cityData.cityName} SEO Services`,
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': cityData.location.streetAddress, // Use new streetAddress property
+    'addressLocality': cityData.location.addressLocality, // Use new addressLocality property
+    'addressRegion': cityData.location.addressRegion, // Use new addressRegion property
+    'postalCode': cityData.location.postalCode, // Use new postalCode property
+    'addressCountry': cityData.location.addressCountry, // Use new addressCountry property
+  },
+  'telephone': cityData.location.phone,
+  'email': cityData.location.email,
+  'url': `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
+  'image': typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
+  'description': cityData.heroData.metaDescription,
+  'geo': { // Placeholder GeoCoordinates, should be updated with real data if available
+    '@type': 'GeoCoordinates',
+    'latitude': '0.0',
+    'longitude': '0.0'
+  },
+};
+
 
   return (
     <div className="bg-white">
@@ -105,7 +106,11 @@ export default function CityPage({ params }: CityPageProps) {
         cityName={cityData.cityName}
       />
       <CityLocation locationData={cityData.location} cityName={cityData.cityName} />
-      <CityFAQSection faqData={cityData.faqData} cityName={cityData.cityName} />
+      <CityFAQSection
+        faqData={cityData.faqData}
+        cityName={cityData.cityName}
+        headline={cityData.faqSectionHeadline}
+      />
       <section className="py-12 md:py-16 bg-white"> 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CityBottomForm cityName={cityData.cityName} formTitle={cityData.bottomFormTitle} />

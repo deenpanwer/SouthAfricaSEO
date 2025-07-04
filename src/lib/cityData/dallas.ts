@@ -1,6 +1,5 @@
-
 import type { CityPageData } from '@/types';
-import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck, Globe2, MonitorSmartphone, PencilRuler, LineChart } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-Dallas-office-location-1.png';
@@ -8,12 +7,42 @@ const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmy
 export const dallasCityData: CityPageData = {
   slug: 'dallas',
   cityName: 'Dallas',
+  metaKeywords: [
+    'Dallas SEO services',
+    'local SEO Dallas TX',
+    'Dallas digital marketing agency',
+    'SEO consultants Dallas',
+    'TRAC SEO',
+    'Google optimization Dallas',
+    'SEO for DFW businesses',
+    'Dallas search engine optimization',
+    'Texas local SEO',
+    'Dallas B2B SEO',
+    'ecommerce SEO Dallas',
+    'Dallas map pack SEO',
+    'GMB optimization Dallas',
+    'HVAC SEO Dallas',
+    'lawyer SEO Dallas',
+    'Dallas lead generation',
+    'restaurant SEO Dallas TX',
+    'multilingual SEO Dallas',
+    'technical SEO Dallas',
+    'Dallas CRO agency'
+  ],
   heroData: {
     pageTitle: 'Dallas SEO Company | TRAC - Expert SEO Services in Dallas, TX',
     metaDescription: 'TRAC is a top-rated Dallas SEO company. We help Dallas businesses increase organic traffic, generate more leads, and boost sales through effective and ethical SEO. Contact us for a free strategy session!',
-    heroTitle: 'Dallas SEO Experts: Drive Your Business Growth',
-    heroSubtitle: 'Achieve Top Search Rankings & Dominate the Dallas Market with TRAC\'s Proven SEO Solutions',
-    heroDescription: 'TRAC is a results-driven SEO company providing premier services to businesses across Dallas, Texas. The DFW metroplex is a hub of economic activity, and a strong online presence is non-negotiable for ambitious companies. We offer a full suite of SEO services, including hyper-local SEO tailored for the diverse Dallas market, advanced technical SEO for optimal site performance, strategic high-quality link building, and impactful content strategy designed to convert. Our approach begins with a deep dive into your Dallas business objectives and target audience, ensuring every SEO tactic aligns with your growth goals. We focus on building long-term authority and visibility, helping you connect with more customers in Dallas and stand out in a crowded digital landscape. Our team stays ahead of SEO trends to provide cutting-edge solutions, from optimizing for voice search to leveraging local schema markup. Let us help you navigate the complexities of search engine optimization and achieve lasting success in the DFW area.',
+    heroTitle: 'Dallas SEO Company: Long-Tail Traffic That Converts',
+    heroSubtitle: 'Build Authority & Acquire High-Intent Local Leads Across the DFW Metroplex',
+    heroDescription: `TRAC offers custom SEO campaigns designed for real search behavior across Dallas. From "dental SEO near Highland Park" to "personal injury lawyer search optimization in Oak Cliff," we target long-tail keywords that bring ready-to-convert traffic.
+
+Our Dallas SEO specialists build site structures and content silos around high-converting neighborhoods, including Plano, Frisco, Irving, Addison, Uptown, and Deep Ellum. We ensure local schema is deployed across every business profile, NAP citation, and city landing page.
+
+We create SEO content hubs like "roofing SEO Plano," "DFW fitness center marketing," or "restaurant SEO Oak Lawn" that build topical authority and rank for both short- and long-tail queries. Our backlink strategy is focused on acquiring regionally authoritative links from Dallas business directories, blogs, chambers, and local news outlets.
+
+CRO is integrated across all SEO pages—expect form placement optimization, trust signals, and scroll-triggered CTAs designed to convert users at every step. Monthly reporting keeps your strategy agile and data-backed, ensuring your Dallas SEO campaign responds to search trend shifts quickly.
+
+Whether you're a small service provider in Richardson or a mid-sized B2B brand near Las Colinas, TRAC positions your brand for steady, scalable SEO growth in the Dallas market.`,
     heroImage: {
       src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Dallas-SEO-Company.jpg',
       alt: 'Dallas skyline highlighting TRAC\'s SEO services for local businesses',
@@ -22,93 +51,59 @@ export const dallasCityData: CityPageData = {
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Dallas SEO Quote!',
   },
-  resultsHeadline: 'Our Dallas SEO Strategies Consistently Deliver Real ROI',
-  readyToGrowHeadline: 'Ready to Dominate Dallas Search Results with Expert SEO?',
-  servicesSectionHeadline: 'Customized Dallas SEO Services for Lasting Success',
-  servicesSectionSubheadline: 'TRAC provides SEO strategies specifically designed for businesses in the Dallas-Fort Worth area, aiming to enhance online presence and attract a steady stream of targeted customers. Our local Dallas expertise means we understand the market nuances.',
+  resultsHeadline: 'Real Dallas SEO Growth, From Organic Leads to Market Authority',
+  readyToGrowHeadline: 'Let\'s Put Your Business on the Dallas SEO Map',
+  servicesSectionHeadline: 'Full-Spectrum Dallas SEO Services Tailored to the DFW Area',
+  servicesSectionSubheadline: 'From Oak Lawn to Fort Worth, our SEO strategies meet Dallas businesses where they are, targeting search behavior by district, demographic, and device.',
   services: [
-    {
-      icon: Search,
-      title: 'Dallas Local SEO & Map Optimization',
-      description: 'Maximize your visibility in Dallas local search results and Google Maps. We connect your business with local customers actively searching for your services within the DFW area, optimizing listings (Google Business Profile, Bing Places) and targeting community-specific keywords to drive foot traffic and local inquiries. We also manage local citations for consistency.'
-    },
-    {
-      icon: Settings,
-      title: 'Comprehensive Website Technical SEO for Dallas',
-      description: 'Our Dallas SEO experts conduct thorough on-page and technical SEO audits to ensure your website is perfectly optimized for search engines and provides an excellent user experience for Dallas visitors. This includes site speed optimization (LCP, FID, CLS), mobile responsiveness, crawlability enhancements, internal linking strategy, and structured data implementation.'
-    },
-    {
-      icon: Users,
-      title: 'Dallas Audience & Keyword Targeting',
-      description: 'We identify and target the most profitable keywords specific to the Dallas market, including transactional and informational queries. Our data-driven SEO strategies focus on high-conversion search terms, ensuring your content reaches the Dallas audience most likely to engage with your business and become customers.'
-    },
-    {
-      icon: Briefcase,
-      title: 'B2B SEO Solutions for Dallas Corporations',
-      description: 'TRAC offers specialized SEO strategies for B2B companies in Dallas, focusing on generating high-quality leads through organic search. We aim to establish your business as an industry authority, attracting decision-makers in the Dallas corporate landscape by optimizing for relevant industry terms and building thought leadership content.'
-    },
-    {
-      icon: Mail,
-      title: 'SEO Content & Digital Authority Building in Dallas',
-      description: 'Develop high-quality, Dallas-relevant content that not only attracts engagement but also earns authoritative backlinks. Our content strategies establish your expertise, address user intent effectively, and significantly improve your search rankings within the Dallas market through well-researched articles, blog posts, and landing pages.'
-    },
-    {
-      icon: BarChart2,
-      title: 'Dallas SEO Performance Analytics & Insights',
-      description: 'Track your Dallas SEO campaign\'s progress with clear, actionable, and transparent reports. We focus on metrics that directly contribute to organic business growth, including traffic, rankings, lead generation, sales in the Dallas area, and comprehensive ROI analysis.'
-    },
+    { icon: Search, title: 'Hyperlocal Dallas SEO Targeting', description: 'Local landing pages targeting Deep Ellum, Plano, Irving, and more. Perfect for ranking in neighborhood-specific searches like "family lawyer Addison" or "salon marketing Dallas Uptown".' },
+    { icon: Settings, title: 'Advanced Technical SEO Audits', description: 'From Core Web Vitals to JavaScript rendering and crawl budgets—we optimize for technical health across all Dallas business websites.' },
+    { icon: Users, title: 'Persona-Based Keyword Strategy', description: 'We go beyond keywords to understand the buyer journey—mapping search terms to real user intent across DFW industries.' },
+    { icon: Briefcase, title: 'Industry SEO for Dallas Professionals', description: 'Specialized SEO for legal, healthcare, trades, and creative sectors across the Dallas metro. We tailor SERP features and schema to match user needs.' },
+    { icon: Mail, title: 'Link Building & Digital PR in DFW', description: 'Dallas-specific citations, blogger outreach, and media mentions that build brand authority with every link.' },
+    { icon: BarChart2, title: 'ROI-Focused Analytics & Reporting', description: 'We track rankings, leads, GMB views, and user behavior with transparent dashboards built around your business goals.' },
+    { icon: Globe2, title: 'Multilingual SEO for Diverse Markets', description: 'Spanish SEO content, hreflang implementation, and Dallas-specific multilingual strategy for growing your reach across communities.' },
+    { icon: MonitorSmartphone, title: 'Mobile-First UX Optimization', description: 'Fast, intuitive, and conversion-optimized—your Dallas SEO campaign won’t just rank, it’ll perform on mobile.' },
+    { icon: PencilRuler, title: 'CRO Design + Local SEO Conversion Boosting', description: 'We merge CRO best practices with SEO structure—from scroll heatmaps to schema-enhanced service buttons.' },
+    { icon: LineChart, title: 'Local SERP Feature Strategy', description: 'Target map packs, FAQ-rich snippets, and People Also Ask boxes for maximum Dallas SERP coverage.' }
   ],
-  whyChooseSectionHeadline: 'Why TRAC is the Go-To SEO Agency in Dallas, TX',
-  whyChooseIntro: 'Choose TRAC for unparalleled SEO expertise tailored to the Dallas market. We deliver data-driven strategies and tangible results, helping your Dallas business thrive in the competitive DFW digital landscape through superior search engine optimization techniques and dedicated local support.',
-  whyChooseParagraph1: 'In the dynamic and expansive Dallas market, a generic, one-size-fits-all SEO approach simply won\'t deliver sustainable results. TRAC provides bespoke SEO services that deeply understand Dallas-specific consumer search behavior, key industry trends, and the intense competitive pressures. We prioritize clear, consistent communication and foster a true partnership approach to achieve your specific business objectives through strategic organic search engine optimization.',
-  whyChooseParagraph2: 'Our team of seasoned Dallas SEO experts is adept at navigating the complexities of modern search engine algorithms and leveraging local market intelligence. We combine cutting-edge technical proficiency with creative content strategies and ethical, sustainable link-building practices to deliver long-term success and a dominant online presence for your Dallas-based company. We are committed to your growth.',
+  whyChooseSectionHeadline: 'Why Dallas Businesses Trust TRAC for SEO Wins',
+  whyChooseIntro: 'TRAC is a proven SEO agency delivering scalable, search-first growth in Dallas. Our campaigns are localized, transparent, and laser-focused on ROI.',
+  whyChooseParagraph1: 'We don’t apply cookie-cutter strategies—we analyze your service areas, customer psychology, and local Dallas SERP environment. Our team works side-by-side with your internal stakeholders to execute SEO that fuels your bottom line.' ,
+  whyChooseParagraph2: 'From hyperlocal citations to citywide brand visibility, we use tools, research, and creative SEO implementation to make sure Dallas users not only find you—but choose you.',
   whyChoosePoints: [
-    {
-      icon: 'TrendingUp',
-      title: 'Measurable Dallas SEO & Business Growth',
-      description: 'We are laser-focused on delivering quantifiable SEO results, from significant increases in organic traffic and keyword rankings to higher conversion rates and improved ROI for Dallas businesses. Our reports provide full transparency.'
-    },
-    {
-      icon: 'Lightbulb',
-      title: 'In-Depth Local Dallas SEO Market Insight',
-      description: 'Our team possesses extensive knowledge of the Dallas-Fort Worth SEO market, its diverse industries (from tech to real estate), and local economic factors, ensuring our strategies resonate effectively and rank prominently for your target audience.'
-    },
-    {
-      icon: 'ShieldCheck',
-      title: 'Transparent, Ethical & Long-Term SEO Practices',
-      description: 'We believe in building lasting trust through open communication and strictly ethical, white-hat SEO strategies. Our commitment is to the long-term success and online reputation of our Dallas clients, adhering to all search engine guidelines.'
-    },
+    { icon: 'TrendingUp', title: 'Dallas Growth-Minded SEO Strategy', description: 'Every step is mapped to ROI—from long-tail traffic increases to lead capture and market authority in the DFW area.' },
+    { icon: 'Lightbulb', title: 'SEO Designed for Dallas Buyer Intent', description: 'Get found in the moments that matter most to your Dallas audience—from mobile searches to voice queries and local pack clicks.' },
+    { icon: 'ShieldCheck', title: 'No Black Hat. Just Real Results.', description: 'We use 100% ethical, algorithm-compliant methods for long-term stability and search success.' },
+    { icon: 'LineChart', title: 'Metrics that Move Your Business', description: 'Beyond rankings—we measure form fills, phone calls, CTRs, and revenue generated from organic performance.' }
   ],
   awards: {
     clutch: {
-      headline: 'TRAC: Clutch\'s Choice for Top-Performing Dallas SEO Agency in 2024',
-      text: 'We are proud to be recognized by Clutch for consistently delivering outstanding SEO results and exceptional client satisfaction to businesses operating within the Dallas metroplex. This reflects our dedication to client success through effective SEO.',
+      headline: 'Clutch Recognizes TRAC as a Top Dallas SEO Agency in 2024',
+      text: 'Known for our data-backed strategy and personalized campaigns, TRAC consistently ranks among the top Dallas SEO providers, recognized by Clutch for excellence.'
     },
     upcity: {
-      headline: 'UpCity SEO Excellence Award: TRAC Shines Bright in Dallas for 2024',
-      text: 'TRAC has been honored by UpCity as a leading SEO agency in Dallas, a testament to our commitment to innovative strategies, client success, and leadership in organic search. We strive for excellence in every Dallas campaign.',
+      headline: 'TRAC Earns UpCity’s SEO Excellence Award for Dallas 2024',
+      text: 'Awarded for consistent performance, transparent reporting, and real ROI across Dallas SMBs and enterprise clients.'
     }
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['2626 Cole Ave', 'Suite 488', 'Dallas, TX 75204'],
+    streetAddress: '2626 Cole Ave, Suite 488',
+    addressLocality: 'Dallas',
+    addressRegion: 'TX',
+    postalCode: '75204',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email,
+    email: CONTACT_DETAILS.email
   },
-  bottomFormTitle: 'Get Your FREE SEO Strategy Session',
+  bottomFormTitle: 'Book Your Free Dallas SEO Strategy Call Today',
+  faqSectionHeadline: 'Dallas SEO Questions, Answered',
   faqData: [
-    {
-      question: 'What types of businesses in [CityName] do you work with?',
-      answer: 'We work with a wide range of businesses in the [CityName] area, from B2B service providers and tech startups to local retailers and e-commerce stores. Our strategies are customized to fit the unique needs of your industry and your specific goals within the DFW market.'
-    },
-    {
-      question: 'How does your SEO process for a [CityName] client begin?',
-      answer: 'Our process starts with a comprehensive discovery phase. We conduct a technical SEO audit of your website, analyze your top [CityName] competitors, perform in-depth keyword research, and work with you to understand your business objectives. This allows us to build a data-driven strategy from the ground up.'
-    },
-    {
-      question: 'Do you offer social media marketing services in [CityName] as well?',
-      answer: 'Yes, absolutely. TRAC is a full-service digital marketing agency. While SEO is our core focus for organic growth, we can integrate social media marketing, PPC advertising, and email marketing to create a cohesive and powerful digital strategy for your [CityName] business.'
-    }
-  ],
-  metaKeywords: ['dallas seo', 'dallas seo company', 'seo agency dallas', 'dfw seo', 'local seo dallas tx'],
+    { question: 'How long does it take to rank locally in Dallas?', answer: 'It varies by competition, but most Dallas businesses see measurable SEO gains within 3 to 6 months. For high-competition keywords, it may take longer but results compound over time.' },
+    { question: 'Do you help rank in specific Dallas neighborhoods?', answer: 'Yes. We build neighborhood-optimized content targeting searches like “Frisco HVAC SEO” or “Plano lawyer search engine optimization.”' },
+    { question: 'Can you improve my map pack visibility in Dallas?', answer: 'Absolutely. We audit and optimize your Google Business Profile, manage citations, and build reviews to increase your chances of 3-pack rankings.' },
+    { question: 'What’s included in your monthly Dallas SEO reports?', answer: 'You’ll receive rankings, GMB metrics, organic traffic, leads, and behavior analysis—plus insights into what’s working and what we’re adjusting next.' },
+    { question: 'Is Dallas SEO worth it for small businesses?', answer: 'Yes—especially when targeting specific Dallas communities or service types. Local SEO brings consistent, high-intent leads at a better cost than ads long-term.' }
+  ]
 };

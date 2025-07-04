@@ -1,6 +1,5 @@
-
 import type { CityPageData } from '@/types';
-import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck, Globe, LineChart } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
@@ -9,19 +8,47 @@ const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmy
 export const chicagoData: CityPageData = {
   slug: 'chicago',
   cityName: 'Chicago',
+  metaKeywords: [
+    'Chicago SEO agency',
+    'local SEO company Chicago',
+    'SEO for law firms Chicago',
+    'restaurant SEO in Chicago',
+    'Windy City SEO consultants',
+    'Chicago digital marketing firm',
+    'affordable SEO Chicago IL',
+    'technical SEO audit Chicago',
+    'Chicago local search optimization',
+    'SEO experts for Chicago startups'
+  ],
   heroData: {
     pageTitle: 'Chicago SEO Agency | TRAC - Expert SEO Services in Chicago, IL',
     metaDescription: 'TRAC is your trusted Chicago SEO agency. We help businesses in Chicago improve search rankings, drive targeted organic traffic, and significantly increase sales. Contact us for a free SEO audit and strategy session!',
     heroTitle: 'Chicago SEO Company: Driving Growth in the Windy City',
     heroSubtitle: 'Boost Your Visibility & Outperform Competitors in Chicago with TRAC\'s Expert SEO Expertise',
-    heroDescription: 'Navigate Chicago\'s competitive and diverse digital market with TRAC, your dedicated expert SEO partner. We craft custom, data-informed SEO strategies focusing on effective local Chicago optimization to connect you with your ideal customers. Our strong technical SEO ensures your website performs optimally for both users and search engines across all devices. Furthermore, our impactful content marketing, tailored for Chicago audiences, is designed to engage and convert your target audience, from Lincoln Park to the Loop. Our goal is to ensure your business not only stands out but also attracts high-quality, qualified leads, ultimately driving measurable growth for your presence here. We achieve this through our proven SEO methods, continuous analysis of the Chicago market (including its major industries like finance, manufacturing, and tech), and adapting to the latest search algorithm updates. Trust TRAC to elevate your Chicago business to new heights in online search.',
+    heroDescription: `In a city as vast, competitive, and fast-paced as Chicago, standing out online requires more than just basic SEO—it requires precision, local expertise, and a partner who understands how the Windy City works. At TRAC, we engineer SEO strategies that not only help you rank but dominate local search in areas like the Loop, River North, and Logan Square.
+
+We create custom campaigns designed to outperform your competitors and connect you directly with high-converting, local searchers. Whether you're a restaurant trying to rank for "best brunch in Wicker Park" or a law firm targeting "divorce attorney in Lincoln Park," our keyword targeting, structured content, and on-page optimization drive organic growth that matters.
+
+We specialize in:
+- Schema-rich city landing pages
+- Review optimization and citation building
+- Technical audits that go deep into crawl health and Core Web Vitals
+- Location-aware internal linking and service siloing
+- Locally-tuned content marketing aligned with Google Trends and event-based search behavior
+
+Clients receive monthly performance dashboards, direct access to our SEO strategists, and a battle-tested roadmap based on real-time Google algorithm shifts. From South Side businesses to North Shore startups, TRAC is the trusted name for long-term SEO wins in Illinois.
+
+Need SEO for specific industries? TRAC provides:
+https://traconomics.com/illinois-salon-seo-services
+https://traconomics.com/illinois-gym-seo-strategies
+https://traconomics.com/illinois-landscaping-seo-company`,
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
-      alt: 'Chicago city skyline, illustrating TRAC\'s SEO services',
+      alt: "Chicago city skyline, illustrating TRAC's SEO services",
       dataAiHint: 'chicago skyline buildings'
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
-    formTitle: 'Get Your FREE SEO Plan!', // Updated: Removed 'Chicago'
+    formTitle: 'Get Your FREE SEO Plan!'
   },
   resultsHeadline: 'Driving Verifiable SEO Success & ROI for Chicago Businesses',
   readyToGrowHeadline: 'Ready to Elevate Your Chicago SEO Game & Market Reach?',
@@ -31,70 +58,107 @@ export const chicagoData: CityPageData = {
     {
       icon: Search,
       title: 'Local SEO Services & Optimization',
-      description: 'Enhance your visibility in Chicago local search results. We optimize your online listings (Google Business Profile, Yelp, etc.), target local neighborhood keywords (e.g., "Wicker Park boutiques," "River North restaurants"), and build local authority to attract customers in your specific Chicago service areas and communities.'
+      description: 'We optimize GMB listings, citations, and location pages for neighborhood-specific search intent throughout Chicago.'
     },
     {
       icon: Settings,
-      title: 'Advanced Technical Website SEO',
-      description: 'Our Chicago SEO experts conduct thorough technical audits to improve site speed (Core Web Vitals), mobile-friendliness, indexability, and overall search engine compatibility. A technically sound website, with proper structured data and internal linking, is essential for ranking in Chicago\'s competitive digital space.'
+      title: 'Technical SEO Audits',
+      description: 'We ensure Core Web Vitals compliance and clean indexation to boost user experience and crawlability.'
     },
     {
       icon: Users,
-      title: 'Keyword Intelligence & Competitor Analysis',
-      description: 'Gain a deep understanding of what your Chicago customers are searching for and how your local competitors are positioned. We build data-driven SEO strategies based on comprehensive keyword research (long-tail, semantic) and market analysis for Chicago, finding untapped opportunities.'
+      title: 'Keyword & Competitor Research',
+      description: 'Targeting what Chicagoans search and where competitors fall short. Data-backed, city-specific keyword clusters.'
     },
     {
       icon: Briefcase,
-      title: 'Strategic SEO for Key Industries',
-      description: 'TRAC offers tailored SEO for Chicago\'s robust financial and professional services sectors (e.g., law firms, consultancies). Our strategies help firms build trust, improve online reputation, and attract high-value clients through targeted organic search visibility and thought leadership content.'
+      title: 'SEO for Finance & Legal Sectors',
+      description: 'We help law firms and financial institutions capture high-intent leads through trustworthy SEO architecture.'
     },
     {
       icon: Mail,
-      title: 'SEO-Driven Content Marketing',
-      description: 'Create high-quality, engaging, and authoritative content that specifically addresses the needs and interests of your Chicago audience (e.g., guides to Chicago events, industry insights for local businesses). This not only improves your search engine rankings but also establishes your brand as a valuable resource in the Chicago area.'
+      title: 'Content Marketing & Outreach',
+      description: 'Guides, FAQs, blogs—all designed around Chicago searches and built to earn links and rankings.'
     },
     {
       icon: BarChart2,
-      title: 'SEO Reporting, Analytics & Performance',
-      description: 'Gain clear, actionable insights into your Chicago SEO performance with our comprehensive, transparent reporting. We focus on tracking key metrics like organic traffic growth, keyword ranking improvements for Chicago-based terms, lead generation, conversions, and overall campaign return.'
+      title: 'SEO KPIs & Performance Tracking',
+      description: 'Transparent reporting focused on ROI. Rankings, calls, leads, and revenue tracked monthly.'
     },
+    {
+      icon: Globe,
+      title: 'On-Page SEO',
+      description: 'From metadata to internal link flow, we ensure every page is optimized for both bots and humans.'
+    }
   ],
   whyChooseSectionHeadline: 'Choose TRAC: Your Dedicated Partner for SEO Success in Chicago',
   whyChooseIntro: 'TRAC is the SEO agency Chicago businesses trust for lasting growth and digital dominance. Our unwavering commitment to data-driven strategies, clear communication, and delivering measurable results sets us apart in the competitive Chicago SEO landscape.',
-  whyChooseParagraph1: 'In the bustling and diverse Chicago market, a one-size-fits-all SEO approach doesn\'t work. TRAC develops custom SEO strategies that clearly reflect the unique character of your Chicago business and the specific needs and search behaviors of your target audience, whether they are in the Gold Coast or South Side. We focus on building a strong, lasting online foundation and improving your digital footprint across all relevant platforms.',
-  whyChooseParagraph2: 'Our team of dedicated Chicago SEO professionals stays current with search engine algorithm changes and emerging digital marketing trends. This ensures your business maintains a significant competitive edge. We focus on building a strong, lasting online presence through ethical, effective, and innovative SEO practices tailored for Chicago, from on-page optimization to local link building and reputation management.',
+  whyChooseParagraph1: 'Chicago’s diversity and density demand precision. We map our campaigns to the city’s rhythm—from Lakeview nightlife to West Loop startups. Our strategies balance structured content with authentic relevance, resulting in trust, authority, and lead generation that scales with your growth.',
+  whyChooseParagraph2: 'With TRAC, you get a team that delivers clarity and performance. Our approach is iterative, proactive, and aligned with your revenue targets. Whether it’s gaining 3-pack visibility or competing nationally from a Chicago base—we help you dominate with purpose-driven SEO.',
   whyChoosePoints: [
     {
       icon: 'TrendingUp',
-      title: 'Chicago-Focused SEO Growth & Market Penetration',
-      description: 'Achieve significant, measurable improvements in organic visibility, lead generation, and customer acquisition within the highly competitive Chicago market through our expert SEO services. We understand how to make your business stand out in the Windy City.'
+      title: 'City-Tuned Growth Strategy',
+      description: 'We combine SEO strategy with neighborhood data to capture the Chicago market block by block.'
     },
     {
       icon: 'Lightbulb',
-      title: 'Strategic Local Insights & Competitive Edge',
-      description: 'Use our deep understanding of the Chicago search landscape, local consumer behavior (including seasonal trends and event-driven searches), and industry trends to clearly outperform your competitors and capture greater market share.'
+      title: 'Chicago Local Market Intelligence',
+      description: 'From CTA traffic trends to local SERP intent—we design around what drives searchers here.'
     },
     {
       icon: 'ShieldCheck',
-      title: 'Reliable, Transparent & Ethical SEO',
-      description: 'We provide clear, honest, and ethical SEO services with a steady focus on long-term success and building lasting partnerships with our Chicago clients based on trust and proven results. All strategies adhere to Google\'s best practices.'
+      title: 'Trust-Centric SEO Delivery',
+      description: 'No shortcuts. Just sustainable, white-hat SEO built for algorithm changes and long-term growth.'
     },
+    {
+      icon: 'LineChart',
+      title: 'ROI-Based Reporting',
+      description: 'We focus on leads and revenue, not just vanity rankings—so you see SEO value clearly.'
+    }
   ],
   awards: {
     clutch: {
       headline: 'TRAC: A Top-Ranked & Reviewed Chicago SEO Company by Clutch for 2024',
-      text: 'Clutch, a leading B2B review platform, consistently recognizes TRAC for delivering exceptional SEO results and maintaining superior client service standards for businesses across the Chicagoland area. Our clients\' success stories speak for themselves.',
+      text: 'Clutch, a leading B2B review platform, consistently recognizes TRAC for delivering exceptional SEO results and maintaining superior client service standards for businesses across the Chicagoland area. Our clients\' success stories speak for themselves.'
     },
     upcity: {
       headline: 'UpCity National Excellence Award: TRAC - Premier Chicago SEO Agency 2024',
-      text: 'TRAC has been proudly awarded by UpCity for our outstanding SEO performance, strategic innovation, and unwavering dedication to client success in the dynamic Chicago digital marketplace. We are committed to leading the way in Chicago SEO.',
+      text: 'TRAC has been proudly awarded by UpCity for our outstanding SEO performance, strategic innovation, and unwavering dedication to client success in the dynamic Chicago digital marketplace. We are committed to leading the way in Chicago SEO.'
     }
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['70 W Madison St', 'Suite 1400', 'Chicago, IL 60602'],
+    streetAddress: '70 W Madison St, Suite 1400',
+    addressLocality: 'Chicago',
+    addressRegion: 'IL',
+    postalCode: '60602',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email,
+    email: CONTACT_DETAILS.email
   },
   bottomFormTitle: 'Get Your FREE, No-Obligation SEO Consultation',
+  faqSectionHeadline: 'SEO FAQs for Chicago Businesses',
+  faqData: [
+    {
+      question: 'How long does SEO take in the Chicago market?',
+      answer: 'On average, clients begin seeing measurable SEO improvements within 3–5 months. Competitive niches may take longer, but momentum builds steadily.'
+    },
+    {
+      question: 'What industries does TRAC specialize in for Chicago?',
+      answer: 'We support legal, financial, hospitality, fitness, tech, and local services—building Chicago-specific content and search visibility tailored to each.'
+    },
+    {
+      question: 'Do you offer Google Business Profile optimization?',
+      answer: 'Yes, we optimize your GBP to boost map pack visibility, improve reviews, and strengthen local SEO across Chicago neighborhoods.'
+    },
+    {
+      question: 'Are your SEO strategies compliant with Google?',
+      answer: 'Absolutely. We use ethical, white-hat SEO methods aligned with Google’s guidelines to deliver safe, long-lasting growth.'
+    },
+    {
+      question: 'How do I know your SEO is working?',
+      answer: 'You’ll get monthly reports tracking rankings, leads, calls, and conversions—plus access to our strategists for campaign reviews.'
+    }
+  ]
 };

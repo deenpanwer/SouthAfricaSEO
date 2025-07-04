@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { ChevronRight, TrendingUp, ShieldCheck, Lightbulb, Users } from 'lucide-react';
 
 export const WhyChooseThriveSection = () => {
-  const reasons = [
+  const reasons = [ 
     { title: "We Drive Real Results", icon: TrendingUp, description: "Why waste time with an SEO company that can’t deliver on their promises? Stop throwing away your hard-earned money on a strategy that isn’t converting." },
-    { title: "We Are Honest & Ethical", icon: ShieldCheck, description: "At Thrive, we believe in honesty, integrity, and respecting our clients. We don’t believe in “selling” a service that you don’t need or applying a one-size-fits-all approach to each client." },
+    { title: "We Are Honest & Ethical", icon: ShieldCheck, description: "At Trac, we believe in honesty, integrity, and respecting our clients. We don’t believe in “selling” a service that you don’t need or applying a one-size-fits-all approach to each client." },
     { title: "We Know Digital Marketing", icon: Lightbulb, description: "Working with a digital marketing agency that actually knows digital marketing seems obvious, but unfortunately, many firms fail to deliver positive results." },
-    { title: "We Put Customers First", icon: Users, description: "Maintaining a customer-centric focus is a priority for many marketing agencies, however, few actually follow through. At Thrive, we are different." },
+    { title: "We Put Customers First", icon: Users, description: "Maintaining a customer-centric focus is a priority for many marketing agencies, however, few actually follow through. At Trac, we are different." },
   ];
   return (
     <section className="py-16 lg:py-24 bg-white">

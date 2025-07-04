@@ -19,7 +19,7 @@ import { CONTACT_DETAILS } from '@/lib/constants';
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const cityHeroFormSchema = z.object({
-  website: z.string().url({ message: "Please enter a valid website URL if provided (e.g., https://example.com)" }).optional().or(z.literal('')),
+  website: z.string().optional(),
   phoneNumber: z.string({ required_error: "Phone number is required." })
     .min(1, "Phone number is required.")
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
@@ -131,7 +131,7 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
               <FormItem>
                 <FormLabel htmlFor={`city-hero-website-${cityName}`} className="text-sm font-medium text-gray-700 sr-only">Your Website URL</FormLabel>
                 <FormControl>
-                  <Input id={`city-hero-website-${cityName}`} placeholder="Your Website (Optional)" {...field} disabled={isLoading} className="bg-gray-50 border-gray-300 focus:border-orange-500 focus:ring-orange-500" />
+                  <Input id={`city-hero-website-${cityName}`} placeholder="Your Website" {...field} disabled={isLoading} className="bg-gray-50 border-gray-300 focus:border-orange-500 focus:ring-orange-500" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -147,7 +147,11 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
                   <PhoneInput
                     defaultCountry="us"
                     value={field.value}
-                    onChange={(phone) => field.onChange(phone)}
+                    onChange={(phone) => {
+                      // Clean the phone number: remove non-digits and keep the leading '+'
+                      const cleanedPhone = phone.replace(/[^+\d]/g, '');
+                      field.onChange(cleanedPhone);
+                    }}
                     disabled={isLoading}
                     placeholder="Your Phone Number*"
                     inputClassName="w-full bg-gray-50 !border-gray-300 placeholder:text-gray-500 focus:!border-orange-500 focus:!ring-orange-500"

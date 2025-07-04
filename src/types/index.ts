@@ -134,7 +134,11 @@ export interface CityAwardData {
 
 export interface CityLocationData {
   officeImageUrl: string;
-  addressLines: string[];
+  streetAddress: string; // New: Single string for street address
+  addressLocality: string; // New: City
+  addressRegion: string; // New: State or region
+  postalCode: string; // New: Postal code
+  addressCountry: string; // New: Country
   phone: string;
   email: string;
 }
@@ -160,6 +164,7 @@ export interface CityPageData {
   location: CityLocationData;
   bottomFormTitle: string;
   faqData: FAQItem[];
+  faqSectionHeadline: string; // New: Headline for the FAQ section
   metaKeywords: string[];
 }
 
