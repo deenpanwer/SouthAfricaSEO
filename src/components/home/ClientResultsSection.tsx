@@ -1,9 +1,11 @@
+
 "use client";
 
 import Image from "next/image";
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { Button } from "../ui/button";
 
 const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
   if (!isOpen) return null;
@@ -54,19 +56,17 @@ export const ClientResultsSection = () => {
           </div>
           <div className="p-6 grid grid-cols-2 gap-4">
             <div>
-              {/* Example: <p className="text-4xl font-bold text-green-600">Client Leads: +664%</p> */}
               <p className="text-4xl font-bold text-green-600">+664%</p>
-              <p className="text-sm text-gray-500">CLIENT LEADS</p>
+              <p className="text-sm text-gray-500">QUALIFIED LEADS</p>
             </div>
             <div>
-               {/* Example: <p className="text-4xl font-bold text-green-600">Conversion Rate: +360%</p> */}
               <p className="text-4xl font-bold text-green-600">+360%</p>
               <p className="text-sm text-gray-500">CONVERSION RATE</p>
             </div>
           </div>
           <div className="p-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600 mb-2">CHOOSE MANDING CATEGORY AND PLATFORM. BUILT FOR THE FUTURE OF THEIR BUSINESS AND THEIRS NOW.</p>
-            <Link href="#" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
+            <p className="text-sm text-gray-600 mb-2">B2B SAAS COMPANY SEES EXPONENTIAL GROWTH IN DEMO REQUESTS.</p>
+            <Link href="/case-studies#cs-nexusflow" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
           </div>
         </div>
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
@@ -90,7 +90,7 @@ export const ClientResultsSection = () => {
 
 
           <div className="bg-yellow-400 p-4">
-            <h3 className="font-semibold text-gray-800">"Thrive goes above and beyond"</h3>
+            <h3 className="font-semibold text-gray-800">"TRAC goes above and beyond"</h3>
           </div>
           <div className="p-6 grid grid-cols-2 gap-4">
             <div>
@@ -98,20 +98,20 @@ export const ClientResultsSection = () => {
               <p className="text-sm text-gray-500">CLIENT LEADS</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-green-600">+640%</p>
-              <p className="text-sm text-gray-500">CONVERSION RATE</p>
+               <p className="text-4xl font-bold text-green-600">+22</p>
+              <p className="text-sm text-gray-500">DOMAIN AUTHORITY</p>
             </div>
           </div>
           <div className="p-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600 mb-2">TRAC IS A DIGITAL MARKETING EXPERT & DEVELOPED A ROBUST REPORTING MODEL.</p>
-            <Link href="#" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
+            <p className="text-sm text-gray-600 mb-2">LOGISTICS FIRM BUILDS DOMINANT LOCAL PRESENCE.</p>
+            <Link href="/case-studies#cs-momentum" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
           </div>
         </div>
       </div>
       <div className="text-center mt-12">
-        <button className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
-          WORK WITH A TRUSTED MARKETING AGENCY
-        </button>
+        <Button asChild className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
+          <Link href="/contact">WORK WITH A TRUSTED MARKETING AGENCY</Link>
+        </Button>
       </div>
     </div>
   </section>

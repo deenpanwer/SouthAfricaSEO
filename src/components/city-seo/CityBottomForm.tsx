@@ -19,9 +19,8 @@ import type { CityBottomFormValues } from '@/types';
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const cityBottomFormSchema = z.object({
-  website: z.string().url({ message: "Please enter a valid website URL if provided (e.g., https://example.com)" }).optional().or(z.literal('')),
+ website: z.string().optional(),
   phoneNumber: z.string({ required_error: "Phone number is required." })
-    .min(1, "Phone number is required.")
     .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
   message: z.string().max(1000, { message: "Message cannot exceed 1000 characters." }).optional().or(z.literal('')),
   city: z.string(), // Hidden field
@@ -128,7 +127,7 @@ export function CityBottomForm({ cityName, formTitle }: CityBottomFormProps) {
               <FormItem>
                 <FormLabel htmlFor={`city-bottom-website-${cityName}`} className="text-sm font-medium text-gray-700 sr-only">Your Website URL</FormLabel>
                 <FormControl>
-                  <Input id={`city-bottom-website-${cityName}`} placeholder="Your Website (Optional)" {...field} disabled={isLoading} className="bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500" />
+                  <Input id={`city-bottom-website-${cityName}`} placeholder="Your Website" {...field} disabled={isLoading} className="bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -144,7 +143,11 @@ export function CityBottomForm({ cityName, formTitle }: CityBottomFormProps) {
                   <PhoneInput
                     defaultCountry="us"
                     value={field.value}
-                    onChange={(phone) => field.onChange(phone)}
+                    onChange={(phone) => {
+                      // Clean the phone number: remove non-digits and keep the leading '+'
+                      const cleanedPhone = phone.replace(/[^+\d]/g, '');
+                      field.onChange(cleanedPhone);
+                    }}
                     disabled={isLoading}
                     placeholder="Your Phone Number*"
                     inputClassName="w-full bg-white !border-gray-300 placeholder:text-gray-500 focus:!border-orange-500 focus:!ring-orange-500"

@@ -1,12 +1,14 @@
+
 import Link from 'next/link';
 import { ChevronRight, TrendingUp, ShieldCheck, Lightbulb, Users } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export const WhyChooseThriveSection = () => {
   const reasons = [ 
-    { title: "We Drive Real Results", icon: TrendingUp, description: "Why waste time with an SEO company that can’t deliver on their promises? Stop throwing away your hard-earned money on a strategy that isn’t converting." },
-    { title: "We Are Honest & Ethical", icon: ShieldCheck, description: "At Trac, we believe in honesty, integrity, and respecting our clients. We don’t believe in “selling” a service that you don’t need or applying a one-size-fits-all approach to each client." },
-    { title: "We Know Digital Marketing", icon: Lightbulb, description: "Working with a digital marketing agency that actually knows digital marketing seems obvious, but unfortunately, many firms fail to deliver positive results." },
-    { title: "We Put Customers First", icon: Users, description: "Maintaining a customer-centric focus is a priority for many marketing agencies, however, few actually follow through. At Trac, we are different." },
+    { title: "We Drive Real Results", icon: TrendingUp, description: "Why waste time with an SEO company that can’t deliver on their promises? Stop throwing away your hard-earned money on a strategy that isn’t converting.", href: "/philosophy/results-driven" },
+    { title: "We Are Honest & Ethical", icon: ShieldCheck, description: "At Trac, we believe in honesty, integrity, and respecting our clients. We don’t believe in “selling” a service that you don’t need or applying a one-size-fits-all approach to each client.", href: "/philosophy/ethics" },
+    { title: "We Know Digital Marketing", icon: Lightbulb, description: "Working with a digital marketing agency that actually knows digital marketing seems obvious, but unfortunately, many firms fail to deliver positive results.", href: "/philosophy/expertise" },
+    { title: "We Put Customers First", icon: Users, description: "Maintaining a customer-centric focus is a priority for many marketing agencies, however, few actually follow through. At Trac, we are different.", href: "/philosophy/customer-centric" },
   ];
   return (
     <section className="py-16 lg:py-24 bg-white">
@@ -29,14 +31,14 @@ export const WhyChooseThriveSection = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{reason.title}</h3>
               <p className="text-sm text-gray-600">{reason.description}</p>
-              <Link href="#" className="text-sm font-semibold text-orange-500 hover:text-orange-600 mt-4 inline-block">Read More <ChevronRight className="inline w-4 h-4" /></Link>
+              <Link href={reason.href} className="text-sm font-semibold text-orange-500 hover:text-orange-600 mt-4 inline-block">Read More <ChevronRight className="inline w-4 h-4" /></Link>
             </div>
           ))}
         </div>
         <div className="text-center">
-          <button className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
-            SPEAK WITH AN SEO EXPERT CONSULTANT
-          </button>
+          <Button asChild className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
+            <Link href="/contact">SPEAK WITH AN SEO EXPERT CONSULTANT</Link>
+          </Button>
         </div>
       </div>
     </section>
