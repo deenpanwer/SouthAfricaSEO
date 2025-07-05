@@ -6,7 +6,6 @@ import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone,
 export const APP_NAME = "TRAC";
 
 export const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   {
     href: '/services',
@@ -23,13 +22,11 @@ export const NAV_ITEMS: NavItem[] = [
       { href: '/services/reputation-management', label: 'Reputation Management' },
       { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization' },
       { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)' },
-      { isSeparator: true },
-      { href: '/pricing', label: 'Pricing & Plans' }
     ]
   },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact Us' },
 ];
 
 export const SPECIAL_OFFER_PACKAGE: ServicePackage = {
