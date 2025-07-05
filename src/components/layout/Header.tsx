@@ -86,7 +86,7 @@ export function Header() {
 
           <div className="flex items-center">
             <div className="hidden md:block">
-              <Button asChild>
+            <Button asChild className="bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
             </div>
@@ -151,7 +151,7 @@ export function Header() {
                         })}
                       </nav>
                       <SheetClose asChild>
-                        <Button asChild className="w-full mt-6">
+                      <Button asChild className="w-full bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
                           <Link href="/contact">Get a Free Quote</Link>
                         </Button>
                       </SheetClose>

@@ -16,7 +16,7 @@ export const ReadyToGrowSection = () => (
             GET FREE PROPOSAL
           </Link>
         </Button>
-        <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-green-700 font-semibold px-6 transition-colors">
+        <Button asChild size="lg" variant="outline" className="bg-transparent border-2 border-white hover:bg-white hover:text-green-700 text-white font-semibold py-3 px-6 rounded-md transition-colors">
             <a href={`tel:${CONTACT_DETAILS.phone.replace(/\s/g, '')}`}>
               CALL {CONTACT_DETAILS.phone}
             </a>

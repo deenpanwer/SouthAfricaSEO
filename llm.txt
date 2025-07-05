@@ -1,0 +1,49 @@
+
+# Project Context: Trac Digital Marketing Agency Website
+
+## 1. Project Overview & Brand Identity
+
+The project is the official website for "Trac" (traconomics.com), a digital marketing agency. The brand's core mission is to provide strategic business solutions that lead to tangible growth for its clients, focusing on increasing revenue, sales, and qualified leads.
+
+The brand voice is expert, confident, and benefit-driven, positioning Trac as a strategic partner rather than just a service provider. This is reinforced by a series of dedicated philosophy pages covering their results-driven methodology, ethical practices, and deep expertise.
+
+A key promotional offer is a "Free Website Development" service, highlighted via a persistent floating banner, designed to attract clients to high-tier service plans.
+
+## 2. Core Business Strategy & Target Audience
+
+Trac's primary strategy is to attract B2B clients through a powerful demonstration of expertise and a focus on local/niche market domination.
+
+- **Local & Niche SEO Dominance:** A cornerstone of the project is its extensive system for generating dynamic, SEO-optimized landing pages for specific industries within specific US states (e.g., Landscaping SEO in Texas, Gym SEO in Colorado). This is complemented by numerous city-specific pages for a global audience. This architecture is designed to capture high-intent, long-tail search traffic.
+- **Thought Leadership:** The site features a scalable, file-based system for both a Blog and Case Studies. This content positions Trac as an authority in the digital marketing space.
+- **Service Offerings:** The agency provides a full suite of digital marketing services, including SEO, PPC, Social Media Marketing, Web Design, Content Writing, and more.
+
+## 3. Key Content Systems & Architecture
+
+The project is architected around scalable, content-driven systems, making it easy to expand.
+
+- **File-Based CMS:** The Blog (`/blog`) and Case Studies (`/case-studies`) are managed through Markdown (`.md`) files located in `src/lib/articles` and `src/lib/case-studies` respectively. A `blogService.ts` and `caseStudyService.ts` handle reading, parsing (using `gray-matter` and `remark`), and serving this content.
+- **Dynamic Location Pages:** A significant feature is the dynamic generation of landing pages for specific geographic locations.
+    - **/city/[slug]:** Generates pages for dozens of individual cities worldwide.
+    - **Industry-State Pages:** Routes like `/landscaping-seo/[stateSlug]` generate pages for specific services in specific states.
+- **Data Source:** All content for these dynamic location pages is sourced from constants files within the `src/lib/` directory (e.g., `cityConstants.tsx`, `landscapingStateConstants.tsx`), which import data from specific state/city files.
+
+## 4. Lead Generation
+
+The primary conversion goal is lead generation.
+
+- **Forms:** Lead capture forms are present on the homepage, contact page, and all dynamic location-based pages.
+- **Data Submission:** All forms use `react-hook-form` with `zod` for validation and submit their data to a SheetDB API endpoint (`https://sheetdb.io/api/v1/rsdd3ypenh4uu`).
+- **Call to Action (CTA):** The main CTAs across the site are "Get a Free Proposal," "Get a Free Quote," or a similarly action-oriented phrase.
+
+## 5. Technology Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS with ShadCN UI components. The core theme is defined in `src/app/globals.css`.
+- **Forms:** `react-hook-form`, `zod`, `react-international-phone`.
+- **Animations:** `framer-motion` for UI animations like the number tickers.
+- **Content Parsing:** `gray-matter` and `remark` for Markdown processing.
+
+## 6. Exclusions
+
+This summary explicitly **excludes** all files, routes, and logic related to the `/saphirefans` directory. The "SaphireFans" section is a separate, self-contained e-commerce sub-project running on a different subdomain and should be treated as distinct from the main Trac agency website.
