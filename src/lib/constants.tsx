@@ -1,3 +1,4 @@
+
 import type { SVGProps } from 'react';
 import type { NavItem, ServicePackage, Testimonial, CaseStudy, BlogPost, ClientLogo, StatItem } from '@/types';
 import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Building, DollarSign, LineChart, Smile, CalendarDays, RefreshCw, Percent, BriefcaseBusiness, Rocket, Code } from 'lucide-react';
@@ -7,22 +8,8 @@ export const APP_NAME = "TRAC";
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { 
-    href: '/services', 
-    label: 'Services',
-    children: [
-      { href: '/services/seo', label: 'SEO' },
-      { href: '/services/ppc', label: 'PPC Management' },
-      { href: '/services/social-media-marketing', label: 'Social Media Marketing' },
-      { href: '/services/web-design-and-development', label: 'Web Design & Development' },
-      { href: '/services/content-writing', label: 'Content Writing' },
-      { href: '/services/email-marketing', label: 'Email Marketing' },
-      { href: '/services/reputation-management', label: 'Reputation Management' },
-      { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization' },
-      { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)' },
-      { href: '/pricing', label: 'View All Pricing', isSeparator: true },
-    ]
-  },
+  { href: '/services', label: 'Services' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/case-studies', label: 'Case Studies' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
@@ -199,6 +186,106 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: '1',
+    slug: 'business-trends-2024',
+    title: 'Top Business Growth Trends for 2024',
+    date: '2024-07-15',
+    excerpt: 'Discover the latest strategies that are shaping the business landscape and how your company can leverage them for growth.',
+    imageUrl: 'https://images.pexels.com/photos/7793692/pexels-photo-7793692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    dataAiHint: 'business strategy meeting',
+    author: 'The TRAC Team',
+    category: 'Business Trends',
+    tags: ['Business Growth', 'Digital Strategy', '2024 Trends'],
+  },
+  {
+    id: '2',
+    slug: 'conversion-optimization-guide',
+    title: 'The Ultimate Guide to Conversion Optimization for SMEs',
+    date: '2024-06-28',
+    excerpt: 'Learn how to optimize your online presence to attract and convert customers, from website design to effective CTAs.',
+    imageUrl: 'https://images.pexels.com/photos/590014/pexels-photo-590014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    dataAiHint: 'website analytics graph',
+    author: 'Jane Doe',
+    category: 'Conversion Optimization',
+    tags: ['CRO', 'SMEs', 'Lead Generation'],
+  },
+  {
+    id: '3',
+    slug: 'content-marketing-roi',
+    title: 'Maximizing Your Content Marketing ROI in a Competitive Market',
+    date: '2024-06-10',
+    excerpt: 'Effective content marketing strategies tailored for diverse audiences that drive engagement and conversions.',
+    imageUrl: 'https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=600',
+    dataAiHint: 'content marketing design',
+    author: 'John Smith',
+    category: 'Content Marketing',
+    tags: ['Content Strategy', 'ROI', 'Marketing'],
+  },
+  {
+    id: '4',
+    slug: 'transition-to-our-platform',
+    title: '10 Reasons Why You Should Transition Your Business to Our Platform',
+    date: '2024-01-15',
+    excerpt: 'Thinking of switching platforms? Here are 10 reasons why moving to a modern content-first system could transform your business operations.',
+    imageUrl: 'https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    dataAiHint: 'digital platform migration concept',
+    author: 'The TRAC Team',
+    category: 'Digital Transformation',
+    tags: ['Platform Migration', 'Digital Tools', 'Scalability'],
+  },
+  {
+    id: '5',
+    slug: 'b2b-web-design-that-converts',
+    title: 'How To Build Your First B2B Web Design That Actually Converts',
+    date: '2024-01-18',
+    excerpt: 'Discover the core principles behind a high-converting B2B website—from layout to messaging and beyond.',
+    imageUrl: 'https://images.pexels.com/photos/7693153/pexels-photo-7693153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    dataAiHint: 'b2b design strategy interface',
+    author: 'The TRAC Team',
+    category: 'Web Design',
+    tags: ['B2B', 'Conversion Design', 'Web Strategy'],
+  },
+  {
+    id: '6',
+    slug: 'strategies-for-direct-bookings',
+    title: '8 Strategies To Get More Direct Bookings and Boost Your Online Revenue',
+    date: '2024-01-21',
+    excerpt: 'Sick of high commission rates and low control? Here’s how to increase your direct bookings with proven strategies that work in 2024.',
+    imageUrl: 'https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    dataAiHint: 'booking strategy presentation',
+    author: 'The TRAC Team',
+    category: 'Lead Generation',
+    tags: ['Direct Bookings', 'Revenue Growth', 'Customer Acquisition'],
+  },
+  {
+    id: '7',
+    slug: 'business-growth-isnt-optional',
+    title: 'Business Growth Isn’t Optional',
+    date: '2024-05-01',
+    excerpt: 'In today’s rapidly evolving business landscape, standing still is the same as falling behind.',
+    imageUrl: 'https://placehold.co/400x250.png',
+    dataAiHint: 'growth arrow chart graph',
+    author: 'The TRAC Team',
+    category: 'Business Strategy',
+    tags: ['Business Growth', 'Mindset', 'Strategy'],
+  },
+  {
+    id: '8',
+    slug: 'top-10-tampa-seo-companies-2025',
+    title: 'Top 10 Tampa SEO Companies: Boost Your Online Presence in 2025',
+    date: '2025-06-20',
+    excerpt: 'In the bustling digital landscape of 2025, having a robust online presence is no longer optional; it’s essential for businesses looking to thrive.',
+    imageUrl: 'https://placehold.co/400x250.png',
+    dataAiHint: 'Tampa skyline with SEO graph',
+    author: 'The TRAC Team',
+    category: 'SEO',
+    tags: ['Tampa', 'SEO', 'Digital Marketing', '2025'],
+  },
+];
+
+
 const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <title>Facebook</title>
@@ -223,7 +310,7 @@ const LinkedInIcon = (props: SVGProps<SVGSVGElement>) => (
 const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <title>Instagram</title>
-    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.314 1.647 20.644 1.233 19.86.93c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.056 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.819-.679-1.381-.896-.422-.164-1.057.36-2.227-.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.056-1.805-.249-2.227-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057.36 2.227-.413C8.415 2.176 8.797 2.16 12 2.16zm0 9.004c-2.193 0-3.972 1.779-3.972 3.972s1.779 3.972 3.972 3.972 3.972-1.779 3.972-3.972c0-2.193-1.779-3.972-3.972-3.972zm0 6.369c-1.325 0-2.396-1.071-2.396-2.396s1.071-2.396 2.396-2.396 2.396 1.071 2.396 2.396c0 1.325-1.071 2.396-2.396 2.396zm6.369-9.517c0 .762-.617 1.379-1.378 1.379s-1.379-.617-1.379-1.379.617-1.379 1.379-1.379 1.378.617 1.378 1.379z"/>
+    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.314 1.647 20.644 1.233 19.86.93c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.056 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.819-.679-1.381.896-.422-.164-1.057.36-2.227-.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.056-1.805-.249-2.227-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057.36 2.227-.413C8.415 2.176 8.797 2.16 12 2.16zm0 9.004c-2.193 0-3.972 1.779-3.972 3.972s1.779 3.972 3.972 3.972 3.972-1.779 3.972-3.972c0-2.193-1.779-3.972-3.972-3.972zm0 6.369c-1.325 0-2.396-1.071-2.396-2.396s1.071-2.396 2.396-2.396 2.396 1.071 2.396 2.396c0 1.325-1.071 2.396-2.396 2.396zm6.369-9.517c0 .762-.617 1.379-1.378 1.379s-1.379-.617-1.379-1.379.617-1.379 1.379-1.379 1.378.617 1.378 1.379z"/>
   </svg>
 );
 

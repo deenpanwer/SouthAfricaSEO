@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Search, TrendingUp, Users, Settings, Briefcase, MailIcon, Award, BarChart2, ChevronRight } from 'lucide-react';
 import React from 'react';

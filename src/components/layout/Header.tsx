@@ -34,45 +34,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1 items-center">
-            {NAV_ITEMS.map((item) =>
-              item.children ? (
-                <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className={cn(
-                        "text-sm font-medium transition-colors hover:text-primary hover:bg-transparent",
-                        pathname.startsWith(item.href) ? "text-primary" : "text-foreground/70"
-                      )}>
-                      {item.label}
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start">
-                    {item.children.map((child) => (
-                      <React.Fragment key={child.label}>
-                        {child.isSeparator && <DropdownMenuSeparator />}
-                        <DropdownMenuItem asChild>
-                          <Link href={child.href} className={cn(
-                              "w-full",
-                              pathname === child.href ? "font-bold" : ""
-                            )}>
-                            {child.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      </React.Fragment>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Button key={item.label} variant="ghost" asChild className={cn(
-                    "text-sm font-medium transition-colors hover:text-primary hover:bg-transparent",
-                    pathname === item.href ? "text-primary" : "text-foreground/70"
-                  )}>
-                  <Link href={item.href}>
-                    {item.label}
-                  </Link>
-                </Button>
-              )
-            )}
+            {NAV_ITEMS.map((item) => (
+              <Button key={item.label} variant="ghost" asChild className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary hover:bg-transparent",
+                  pathname === item.href ? "text-primary" : "text-foreground/70"
+                )}>
+                <Link href={item.href}>
+                  {item.label}
+                </Link>
+              </Button>
+            ))}
           </nav>
 
           {/* CTA - Desktop */}
@@ -101,28 +72,11 @@ export function Header() {
                   </div>
                   <nav className="flex flex-col space-y-2">
                     {NAV_ITEMS.map((item) => (
-                       <React.Fragment key={item.label}>
-                        {item.children ? (
-                          <div className="flex flex-col space-y-2">
-                             <span className="text-base font-medium text-foreground/80 py-2">{item.label}</span>
-                             <div className="pl-4 flex flex-col space-y-2">
-                              {item.children.map(child => (
-                                <SheetClose asChild key={child.label}>
-                                  <Link href={child.href} className={cn("text-base font-medium transition-colors hover:text-primary py-2", pathname === child.href ? "text-primary" : "text-foreground/80")}>
-                                    {child.label}
-                                  </Link>
-                                </SheetClose>
-                              ))}
-                             </div>
-                          </div>
-                        ) : (
-                           <SheetClose asChild>
-                            <Link href={item.href} className={cn("text-base font-medium transition-colors hover:text-primary py-2", pathname === item.href ? "text-primary" : "text-foreground/80")}>
-                              {item.label}
-                            </Link>
-                          </SheetClose>
-                        )}
-                       </React.Fragment>
+                       <SheetClose asChild key={item.label}>
+                        <Link href={item.href} className={cn("text-base font-medium transition-colors hover:text-primary py-2", pathname === item.href ? "text-primary" : "text-foreground/80")}>
+                          {item.label}
+                        </Link>
+                      </SheetClose>
                     ))}
                   </nav>
                   <SheetClose asChild>
