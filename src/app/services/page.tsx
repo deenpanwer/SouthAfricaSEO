@@ -1,6 +1,6 @@
 
 import { Metadata } from 'next';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronRight, Search, TrendingUp, Users, Settings, Briefcase, Mail, Award, BarChart2 } from 'lucide-react';
