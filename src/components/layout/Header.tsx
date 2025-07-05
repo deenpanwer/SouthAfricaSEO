@@ -3,16 +3,15 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { NAV_ITEMS, APP_NAME } from '@/lib/constants.tsx';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -48,7 +47,7 @@ export function Header() {
 
           {/* CTA - Desktop */}
           <div className="hidden md:block">
-            <Button asChild className="bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+            <Button asChild>
               <Link href="/contact">Get a Free Quote</Link>
             </Button>
           </div>
@@ -63,6 +62,7 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col space-y-6">
                   <div className="flex justify-between items-center">
                      <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
@@ -80,7 +80,7 @@ export function Header() {
                     ))}
                   </nav>
                   <SheetClose asChild>
-                    <Button asChild className="w-full bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+                    <Button asChild className="w-full">
                       <Link href="/contact">Get a Free Quote</Link>
                     </Button>
                   </SheetClose>
