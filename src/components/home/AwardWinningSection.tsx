@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
@@ -11,7 +12,7 @@ export const AwardWinningSection = () => {
          TRAC isn't just another agency. We are a full-service digital marketing partner recognized for our commitment to excellence and innovation. Our strategies are consistently honored by leading industry bodies for their effectiveness and impact on client growth.
        </p>
        <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-         We are proud recipients of accolades such as the **Global SEO Excellence Award (2023)**, **National Excellence Award from UpCity**, and consistent recognition as a **Top B2B Company by Clutch**. These awards reflect our dedication to driving real, measurable results through strategic, data-driven marketing.
+         We are proud recipients of accolades such as the <strong>Global SEO Excellence Award (2023)</strong>, <strong>National Excellence Award from UpCity</strong>, and consistent recognition as a <strong>Top B2B Company by Clutch</strong>. These awards reflect our dedication to driving real, measurable results through strategic, data-driven marketing.
        </p>
        {/* "Read More" link is removed as the content is now more comprehensive. */}
      </div>
