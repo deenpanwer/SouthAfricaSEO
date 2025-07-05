@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView, useSpring, useTransform } from 'framer-motion';
+import { motion, useInView, useSpring, useTransform, useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 function NumberTicker({ value }: { value: string }) {
@@ -26,7 +26,7 @@ function NumberTicker({ value }: { value: string }) {
     }
   }, [motionValue, numericValue, inView]);
 
-  const displayValue = useTransform(springValue, (v) => {
+  const displayValue = useTransform(springValue, (v: number) => {
     if (value.includes('.')) {
       return v.toFixed(1);
     }
