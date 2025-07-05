@@ -52,14 +52,22 @@ export interface CaseStudyResult {
 }
 export interface CaseStudy {
   id: string;
+  slug: string;
   clientName: string;
   industry: string;
+  services: string[]; // Changed from single service to array
   challenge: string;
   solution: string;
   results: CaseStudyResult[];
   imageUrl: string;
+  logoUrl?: string;
   dataAiHint?: string;
-  testimonial?: string;
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
+  content?: string; // Full content for individual case study page
 }
 
 export interface BlogPost {
@@ -252,7 +260,6 @@ interface BaseStatePageData {
     upcity: BaseStateAwardData;
   };
   coverageData: BaseStateCoverageData;
-  bottomFormTitle: string;
 }
 
 interface BaseStateHeroFormValues {

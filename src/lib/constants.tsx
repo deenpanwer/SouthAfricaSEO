@@ -1,7 +1,6 @@
-
 import type { SVGProps } from 'react';
-import type { NavItem, ServicePackage, Testimonial, CaseStudy, BlogPost, ClientLogo, StatItem, ServicePackageGroup } from '@/types';
-import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Building, DollarSign, LineChart, Smile, CalendarDays, RefreshCw, Percent, BriefcaseBusiness, Rocket, Code } from 'lucide-react';
+import type { NavItem, ServicePackage, Testimonial, ClientLogo, StatItem, ServicePackageGroup } from '@/types';
+import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Share2, Rocket, Code } from 'lucide-react';
 
 export const APP_NAME = "TRAC";
 
@@ -272,139 +271,6 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-export const CASE_STUDIES: CaseStudy[] = [
-  {
-    id: 'cs-nexusflow',
-    clientName: 'NexusFlow SaaS',
-    industry: 'B2B Software (SaaS)',
-    challenge: 'Stagnant lead growth and low conversion rates from organic search despite having a technically sound product.',
-    solution: 'TRAC developed a content strategy focused on high-intent, bottom-of-funnel keywords. We created detailed comparison pages, in-depth feature guides, and optimized the user flow from blog post to demo request, implementing clearer calls-to-action and social proof.',
-    results: [
-      { metric: 'Qualified Leads', value: '+664%', icon: TrendingUp },
-      { metric: 'Demo Request Conversion Rate', value: '+360%', icon: Target },
-      { metric: 'Organic Traffic to Key Pages', value: '+450%', icon: Search },
-    ],
-    imageUrl: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'SaaS dashboard analytics',
-    testimonial: "The results speak for themselves. TRAC didn't just bring us traffic; they brought us the right traffic and showed us how to convert it."
-  },
-  {
-    id: 'cs-momentum',
-    clientName: 'Momentum Logistics',
-    industry: 'B2B Services (Logistics)',
-    challenge: 'Lacked online visibility in a competitive market and struggled to generate inbound inquiries for their specialized logistics services.',
-    solution: 'TRAC executed a hyper-local SEO strategy combined with building topical authority. This involved creating service-in-location pages, optimizing their Google Business Profile, and publishing expert articles on supply chain optimization to attract high-value B2B clients.',
-    results: [
-      { metric: 'Client Leads', value: '+800%', icon: Users },
-      { metric: 'Ranking for "Logistics Services" + Geo-modifier', value: 'Top 3', icon: Award },
-      { metric: 'Website Authority (DA)', value: '+22 points', icon: Link2 },
-    ],
-    imageUrl: 'https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'logistics warehouse shipping',
-    testimonial: "TRAC goes above and beyond. They developed a robust reporting model and helped us understand our digital footprint in a way no other agency has."
-  },
-];
-
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    id: '1',
-    slug: 'business-trends-2024',
-    title: 'Top Business Growth Trends for 2024',
-    date: '2024-07-15',
-    excerpt: 'Discover the latest strategies that are shaping the business landscape and how your company can leverage them for growth.',
-    imageUrl: 'https://images.pexels.com/photos/7793692/pexels-photo-7793692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'business strategy meeting',
-    author: 'The TRAC Team',
-    category: 'Business Trends',
-    tags: ['Business Growth', 'Digital Strategy', '2024 Trends'],
-  },
-  {
-    id: '2',
-    slug: 'conversion-optimization-guide',
-    title: 'The Ultimate Guide to Conversion Optimization for SMEs',
-    date: '2024-06-28',
-    excerpt: 'Learn how to optimize your online presence to attract and convert customers, from website design to effective CTAs.',
-    imageUrl: 'https://images.pexels.com/photos/590014/pexels-photo-590014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'website analytics graph',
-    author: 'Jane Doe',
-    category: 'Conversion Optimization',
-    tags: ['CRO', 'SMEs', 'Lead Generation'],
-  },
-  {
-    id: '3',
-    slug: 'content-marketing-roi',
-    title: 'Maximizing Your Content Marketing ROI in a Competitive Market',
-    date: '2024-06-10',
-    excerpt: 'Effective content marketing strategies tailored for diverse audiences that drive engagement and conversions.',
-    imageUrl: 'https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=600',
-    dataAiHint: 'content marketing design',
-    author: 'John Smith',
-    category: 'Content Marketing',
-    tags: ['Content Strategy', 'ROI', 'Marketing'],
-  },
-  {
-    id: '4',
-    slug: 'transition-to-our-platform',
-    title: '10 Reasons Why You Should Transition Your Business to Our Platform',
-    date: '2024-01-15',
-    excerpt: 'Thinking of switching platforms? Here are 10 reasons why moving to a modern content-first system could transform your business operations.',
-    imageUrl: 'https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'digital platform migration concept',
-    author: 'The TRAC Team',
-    category: 'Digital Transformation',
-    tags: ['Platform Migration', 'Digital Tools', 'Scalability'],
-  },
-  {
-    id: '5',
-    slug: 'b2b-web-design-that-converts',
-    title: 'How To Build Your First B2B Web Design That Actually Converts',
-    date: '2024-01-18',
-    excerpt: 'Discover the core principles behind a high-converting B2B website—from layout to messaging and beyond.',
-    imageUrl: 'https://images.pexels.com/photos/7693153/pexels-photo-7693153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'b2b design strategy interface',
-    author: 'The TRAC Team',
-    category: 'Web Design',
-    tags: ['B2B', 'Conversion Design', 'Web Strategy'],
-  },
-  {
-    id: '6',
-    slug: 'strategies-for-direct-bookings',
-    title: '8 Strategies To Get More Direct Bookings and Boost Your Online Revenue',
-    date: '2024-01-21',
-    excerpt: 'Sick of high commission rates and low control? Here’s how to increase your direct bookings with proven strategies that work in 2024.',
-    imageUrl: 'https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    dataAiHint: 'booking strategy presentation',
-    author: 'The TRAC Team',
-    category: 'Lead Generation',
-    tags: ['Direct Bookings', 'Revenue Growth', 'Customer Acquisition'],
-  },
-  {
-    id: '7',
-    slug: 'business-growth-isnt-optional',
-    title: 'Business Growth Isn’t Optional',
-    date: '2024-05-01',
-    excerpt: 'In today’s rapidly evolving business landscape, standing still is the same as falling behind.',
-    imageUrl: '/business-growth1.png',
-    dataAiHint: 'growth arrow chart graph',
-    author: 'The TRAC Team',
-    category: 'Business Strategy',
-    tags: ['Business Growth', 'Mindset', 'Strategy'],
-  },
-  {
-    id: '8',
-    slug: 'top-10-tampa-seo-companies-2025',
-    title: 'Top 10 Tampa SEO Companies: Boost Your Online Presence in 2025',
-    date: '2025-06-20',
-    excerpt: 'In the bustling digital landscape of 2025, having a robust online presence is no longer optional; it’s essential for businesses looking to thrive.',
-    imageUrl: '/tampa-seo-2025.png',
-    dataAiHint: 'Tampa skyline with SEO graph',
-    author: 'The TRAC Team',
-    category: 'SEO',
-    tags: ['Tampa', 'SEO', 'Digital Marketing', '2025'],
-  },
-];
-
-
 const FacebookIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <title>Facebook</title>
@@ -493,7 +359,7 @@ export const IMPORTANCE_OF_STRATEGY = {
     {
       title: "Dominate Your Niche",
       text: "For businesses serving specific markets, targeted strategies are vital. We help you appear in relevant searches and platforms, driving traffic and inquiries.",
-      icon: LineChart,
+      icon: Target,
     },
     {
       title: "Build Trust and Credibility",

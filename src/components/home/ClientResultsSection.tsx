@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -65,8 +64,8 @@ export const ClientResultsSection = () => {
             </div>
           </div>
           <div className="p-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600 mb-2">B2B SAAS COMPANY SEES EXPONENTIAL GROWTH IN DEMO REQUESTS.</p>
-            <Link href="/case-studies#cs-nexusflow" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
+            <p className="text-sm text-gray-600 mb-2">B2B LAW FIRM SEES EXPONENTIAL GROWTH IN CASE INQUIRIES.</p>
+            <Link href="/case-studies/the-farah-law-firm" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
           </div>
         </div>
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
@@ -86,9 +85,6 @@ export const ClientResultsSection = () => {
               src="https://www.youtube.com/embed/0cWlf1BmUMw?rel=0&showinfo=0&autoplay=1"
               frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
           </Modal>
-
-
-
           <div className="bg-yellow-400 p-4">
             <h3 className="font-semibold text-gray-800">"TRAC goes above and beyond"</h3>
           </div>
@@ -103,8 +99,8 @@ export const ClientResultsSection = () => {
             </div>
           </div>
           <div className="p-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600 mb-2">LOGISTICS FIRM BUILDS DOMINANT LOCAL PRESENCE.</p>
-            <Link href="/case-studies#cs-momentum" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
+            <p className="text-sm text-gray-600 mb-2">CONSTRUCTION FIRM BUILDS DOMINANT LOCAL PRESENCE.</p>
+            <Link href="/case-studies/nationwide-construction" className="text-sm font-semibold text-orange-500 hover:text-orange-600">View Full Case Study <ChevronRight className="inline w-4 h-4" /></Link>
           </div>
         </div>
       </div>
