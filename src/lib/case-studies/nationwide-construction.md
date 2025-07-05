@@ -1,7 +1,7 @@
 ---
 slug: 'nationwide-construction'
 clientName: 'Nationwide Construction'
-logoUrl: 'https://img.favpng.com/21/2/23/logo-construction-building-company-png-favpng-Cj507TBvj3A75j4dYAWZ2Df0w.jpg'
+logoUrl: 'https://placehold.co/120x50.png'
 industry: 'B2B Services (Construction)'
 services:
   - 'Local SEO'

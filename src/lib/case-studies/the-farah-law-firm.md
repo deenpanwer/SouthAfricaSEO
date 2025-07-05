@@ -1,7 +1,7 @@
 ---
 slug: 'the-farah-law-firm'
 clientName: 'The Farah Law Firm'
-logoUrl: 'https://img.favpng.com/15/21/2/the-farah-law-firm-logo-brand-font-png-favpng-sQp45ASyU0XzT2pBsPxwG2gZ9.jpg'
+logoUrl: 'https://placehold.co/120x50.png'
 industry: 'Professional Services (Law)'
 services:
   - 'SEO'
