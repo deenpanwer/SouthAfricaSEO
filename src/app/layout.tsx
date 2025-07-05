@@ -4,7 +4,10 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
-import { headers, cookies } from 'next/headers'; // Added cookies import, though not directly used in this change
+import { headers, cookies } from 'next/headers'; 
+import { Button } from '@/components/ui/button';
+import { Gift } from 'lucide-react';
+import Link from 'next/link';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,11 +43,22 @@ export const metadata: Metadata = {
 
 const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefans hostname
 
+const FloatingOfferBanner = () => {
+    return (
+        <div className="fixed bottom-4 right-4 z-50">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg p-4 h-auto animate-pulse">
+                <Link href="/services/web-design-and-development" title="Limited Time Offer: Free Website Development">
+                    <Gift className="h-6 w-6 mr-2" />
+                    <span className="text-sm font-semibold">Limited Time: Get a FREE Website!</span>
+                </Link>
+            </Button>
+        </div>
+    );
+};
+
+
 export default async function RootLayout({
   children,
-  // The incoming request object is not directly available here in app directory layouts.
-  // We'll rely on the headers to get the hostname, as the middleware sets a header
-  // or we can infer from the host header.
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -95,6 +109,7 @@ export default async function RootLayout({
           {children}
         </main>
         {!isSaphireFansDomain && <Footer />}
+        {!isSaphireFansDomain && <FloatingOfferBanner />}
         <Toaster />
       </body>
     </html>

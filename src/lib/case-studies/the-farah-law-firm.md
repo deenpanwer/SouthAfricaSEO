@@ -1,7 +1,7 @@
 ---
 slug: 'the-farah-law-firm'
 clientName: 'The Farah Law Firm'
-logoUrl: 'https://placehold.co/120x50.png'
+logoUrl: 'https://tse1.mm.bing.net/th/id/OIP.V9oWEBDXIr1Sk01gn2epGgHaCq?pid=Api&P=0&h=220'
 industry: 'Professional Services (Law)'
 services:
   - 'SEO'

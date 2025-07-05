@@ -1,37 +1,42 @@
-import Image from "next/image";
-import { Star } from 'lucide-react';
+"use client";
 
-// Helper component for star ratings
-const StarRating = ({ rating, count }: { rating: number; count?: number }) => (
-  <div className="flex items-center">
-    {[...Array(5)].map((_, i) => (
-      <Star key={i} className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
-    ))}
-    {count && <span className="ml-2 text-sm text-gray-600">{count} Reviews</span>}
-  </div>
-);
+import Image from 'next/image';
+import { useMemo } from 'react';
+import { CLIENT_LOGOS } from '@/lib/constants.tsx';
+import type { ClientLogo } from '@/types';
 
+export const PartnerLogosSection = () => {
+  if (!CLIENT_LOGOS || CLIENT_LOGOS.length === 0) {
+    return null;
+  }
 
-export const PartnerLogosSection = () => (
-  <section className="py-12 bg-green-700 text-white">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
-          <StarRating rating={5} />
-          <p className="text-sm mt-1 text-yellow-400">500+ Reviews</p>
+  const duplicatedLogos = useMemo(() => [...CLIENT_LOGOS, ...CLIENT_LOGOS], []);
+
+  return (
+    <section className="py-12 md:py-16 bg-secondary/20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-2xl font-semibold text-foreground mb-10">
+          Trusted by Innovative Businesses Across the Nation
+        </h2>
+        <div
+          className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <ul
+            className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll-left">
+            {duplicatedLogos.map((logo: ClientLogo, index: number) => (
+                <li key={index}>
+                    <Image
+                        src={logo.imageUrl}
+                        alt={`${logo.name} logo`}
+                        width={120}
+                        height={48}
+                        data-ai-hint={logo.dataAiHint}
+                        className="object-contain h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    />
+                </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
-           <StarRating rating={5} />
-          <p className="text-sm mt-1 text-yellow-400">200+ Reviews</p>
-        </div>
-        <div className="flex flex-col items-center">          
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />           
-          <StarRating rating={5} />          
-          <p className="text-sm mt-1 text-yellow-400">150+ Reviews</p>        
-          </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+}

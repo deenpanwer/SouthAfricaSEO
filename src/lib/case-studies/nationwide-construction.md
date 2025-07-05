@@ -1,13 +1,13 @@
 ---
 slug: 'nationwide-construction'
 clientName: 'Nationwide Construction'
-logoUrl: 'https://placehold.co/120x50.png'
+logoUrl: 'https://tse1.mm.bing.net/th/id/OIP.gDRIKPZq2PPCCBYMeZ9jWQAAAA?pid=Api&P=0&h=220'
 industry: 'B2B Services (Construction)'
 services:
   - 'Local SEO'
   - 'Content Marketing'
   - 'Link Building'
-imageUrl: 'https://images.pexels.com/photos/159306/construction-site-build-crane-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+imageUrl: 'https://tse3.mm.bing.net/th/id/OIP.9V6hraT5GL9j027i13uQuAHaEO?pid=Api&P=0&h=220'
 dataAiHint: 'construction site building'
 challenge: 'Struggled to generate inbound leads for their specialized construction services and had low online visibility in a competitive regional market.'
 solution: 'TRAC executed a hyper-local SEO strategy combined with building topical authority. This involved creating service-in-location pages (e.g., "commercial construction Houston"), optimizing their Google Business Profile, and publishing expert articles on construction management and safety to attract high-value B2B clients.'

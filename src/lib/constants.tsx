@@ -11,7 +11,11 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'Services',
     children: [
       { href: '/services', label: 'All Services Overview' },
-      { isSeparator: true },
+      {
+        isSeparator: true,
+        href: '',
+        label: ''
+      },
       { href: '/services/seo', label: 'SEO' },
       { href: '/services/ppc', label: 'PPC Management' },
       { href: '/services/social-media-marketing', label: 'Social Media Marketing' },
@@ -411,5 +415,3 @@ export const STATS_DATA: StatItem[] = [
   { value: "2015", label: "Established Since", icon: CalendarDays },
   { value: "4.9/5", label: "Satisfaction Score", icon: Smile}
 ];
-
-    

@@ -1,13 +1,13 @@
+
 'use client'
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"; // Keep if still used elsewhere, otherwise remove
-
 import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
@@ -15,6 +15,7 @@ import { Loader2, Send } from 'lucide-react';
 import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import { HERO_HEADLINE, COMPANY_MOTTO } from '@/lib/constants.tsx';
 
 // Define the type for form values
 interface HeroLeadFormValues {
@@ -116,9 +117,12 @@ export const HomeHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-700 leading-tight mb-6">
-            EXPERT SEO AGENCY DRIVEN BY <br />
-              <span className="text-green-600">RANKINGS</span> <span className="text-orange-600">&</span> <span className="text-green-600">REVENUE.</span>
+                {HERO_HEADLINE}
             </h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-xl">
+                {COMPANY_MOTTO}
+            </p>
+
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField
@@ -144,13 +148,7 @@ export const HomeHeroSection = () => {
                         <PhoneInput
                           defaultCountry="us"
                           value={field.value}
-                          onChange={(phone) => {
-                            // Clean the input: remove non-digits except for a leading '+'
-                            const cleanedPhone = phone.replace(/[^0-9+]/g, '');
-                            // Ensure the '+' is only at the very beginning
-                            const finalCleanedPhone = cleanedPhone.startsWith('+') ? '+' + cleanedPhone.replace(/\+/g, '') : cleanedPhone.replace(/\+/g, '');
-                            field.onChange(finalCleanedPhone);
-                          }}
+                          onChange={(phone) => field.onChange(phone)}
                           disabled={isLoading}
                           inputClassName="w-full"
                           countrySelectorStyleProps={{
@@ -179,9 +177,6 @@ export const HomeHeroSection = () => {
                 </div>
               </form>
             </Form>
-            <div className="mt-8"> {/* Added margin top for spacing */}
-              <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Badge-Strip-670X60.png" alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
-            </div>
           </div>
           <div className="relative">
             <Image

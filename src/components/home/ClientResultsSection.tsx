@@ -28,9 +28,9 @@ export const ClientResultsSection = () => {
   return (
   <section className="py-16 lg:py-24 bg-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Our Clients Get Results</h2>
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Our Clients Get Real Results</h2>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-        Trac is a full-service digital marketing agency. We’ve been providing a wide array of services to clients of all industries since 2005. Our digital marketing services include consulting and management options for a variety of online marketing tactics including search engine optimization (SEO), pay-per-click (PPC) ads, Amazon store optimization, copywriting, conversion rate optimization (CRO), and more. We also offer expert web design and development services for both eCommerce and B2B companies. Don’t just partner with any digital marketing agency; work with a company you can trust.
+       Trac is a full-service digital marketing agency. We provide a wide array of services to clients of all industries. Our services include consulting and management for a variety of tactics including SEO, PPC, copywriting, and CRO. We also offer expert web design and development. Don’t just partner with any agency; work with a company you can trust.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
