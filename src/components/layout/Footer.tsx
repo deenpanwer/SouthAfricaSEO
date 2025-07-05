@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { APP_NAME, NAV_ITEMS, SOCIAL_LINKS, CONTACT_DETAILS } from '@/lib/constants.tsx';
+import { APP_NAME, FOOTER_NAV_ITEMS, SOCIAL_LINKS, CONTACT_DETAILS } from '@/lib/constants.tsx';
 import { Zap } from 'lucide-react'; 
 
 export function Footer() {
@@ -15,7 +15,7 @@ export function Footer() {
     'Phoenix', 'Portland', 'San Antonio', 'San Diego', 'Seattle',
   ].sort(); 
 
-  const footerNavItems = NAV_ITEMS;
+  const footerNavItems = FOOTER_NAV_ITEMS;
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">

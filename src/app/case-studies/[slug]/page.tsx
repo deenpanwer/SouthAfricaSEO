@@ -7,7 +7,7 @@ import { APP_NAME } from '@/lib/constants.tsx';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { NumberTicker } from '@/components/home/NumberTicker'; // Reusing this cool component
+import { NumberTicker } from '@/components/ui/NumberTicker'; // Reusing this cool component
 
 type CaseStudyPageProps = {
   params: { slug: string };
