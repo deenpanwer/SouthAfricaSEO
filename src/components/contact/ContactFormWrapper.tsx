@@ -1,11 +1,10 @@
-
 "use client";
 
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useFormContext } from 'react-hook-form'; // If needed for deep integration
 import { ContactForm } from './ContactForm';
-import { SERVICE_PACKAGES } from '@/lib/constants';
+import { SERVICE_PACKAGE_GROUPS } from '@/lib/constants';
 import type { ContactFormValues } from '@/types';
 
 export const GENERAL_INQUIRY_VALUE = "general_inquiry_not_specified";
@@ -23,8 +22,10 @@ export function ContactFormWrapper() {
   
   let preselectedServiceActualValue = GENERAL_INQUIRY_VALUE;
 
+  const allPackages = SERVICE_PACKAGE_GROUPS.flatMap(group => group.packages);
+
   if (serviceFromQuery) {
-    if (SERVICE_PACKAGES.some(pkg => pkg.name === serviceFromQuery)) {
+    if (allPackages.some(pkg => pkg.name === serviceFromQuery)) {
       preselectedServiceActualValue = serviceFromQuery;
     } else if (serviceFromQuery === CUSTOM_SOLUTION_VALUE) {
       // Allows "Custom Solution" to be passed directly if needed, though pkg.name should usually cover it
@@ -43,4 +44,3 @@ export function ContactFormWrapper() {
     <ContactForm key={preselectedServiceActualValue} preselectedService={preselectedServiceActualValue} />
   );
 }
-

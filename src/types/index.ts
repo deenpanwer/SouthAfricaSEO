@@ -26,6 +26,13 @@ export interface ServicePackage {
   isSpecialOffer?: boolean;
 }
 
+export interface ServicePackageGroup {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  packages: ServicePackage[];
+}
+
 export interface Testimonial {
   [x: string]: ReactNode;
   id: string;

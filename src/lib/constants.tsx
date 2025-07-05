@@ -1,6 +1,6 @@
 
 import type { SVGProps } from 'react';
-import type { NavItem, ServicePackage, Testimonial, CaseStudy, BlogPost, ClientLogo, StatItem } from '@/types';
+import type { NavItem, ServicePackage, Testimonial, CaseStudy, BlogPost, ClientLogo, StatItem, ServicePackageGroup } from '@/types';
 import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Building, DollarSign, LineChart, Smile, CalendarDays, RefreshCw, Percent, BriefcaseBusiness, Rocket, Code } from 'lucide-react';
 
 export const APP_NAME = "TRAC";
@@ -15,83 +15,218 @@ export const NAV_ITEMS: NavItem[] = [
   { href: '/contact', label: 'Contact Us' },
 ];
 
-export const SERVICE_PACKAGES: ServicePackage[] = [
-   {
-    name: 'Web Design & Development',
-    price: '$0',
-    originalPrice: '$5,000',
-    description: 'A professional, custom-built website designed to convert. Free for a limited time with any Pro or Enterprise plan.',
-    icon: Code,
-    features: [
-      { name: 'Custom Design', description: 'Up to 10 pages, tailored to your brand.' },
-      { name: 'Mobile-First & Responsive', description: 'Looks great on all devices.' },
-      { name: 'SEO-Ready Foundation', description: 'Built for search engine visibility.' },
-      { name: 'Basic Content Integration', description: 'We’ll set up your initial pages.' },
-    ],
-    cta: 'Claim This Offer',
-    isSpecialOffer: true,
-  },
+export const SPECIAL_OFFER_PACKAGE: ServicePackage = {
+  name: 'Web Design & Development',
+  price: '$0',
+  originalPrice: '$5,000',
+  description: 'A professional, custom-built website designed to convert. Free for a limited time with any Pro or Enterprise plan.',
+  icon: Code,
+  features: [
+    { name: 'Custom Design', description: 'Up to 10 pages, tailored to your brand.' },
+    { name: 'Mobile-First & Responsive', description: 'Looks great on all devices.' },
+    { name: 'SEO-Ready Foundation', description: 'Built for search engine visibility.' },
+    { name: 'Basic Content Integration', description: 'We’ll set up your initial pages.' },
+  ],
+  cta: 'Claim This Offer',
+  isSpecialOffer: true,
+};
+
+const SEO_PACKAGES: ServicePackage[] = [
   {
-    name: 'Starter Plan',
-    price: '$250/mo',
-    description: 'Ideal for new businesses looking to establish a foundational presence.',
+    name: 'SEO Starter',
+    price: '$1,500/mo',
+    description: 'Foundational SEO to build online visibility and authority.',
     icon: Search,
     features: [
-      { name: 'Core Strategy Setup', description: 'Initial analysis and planning for up to 5 key objectives' },
-      { name: 'Basic Metric Tracking', description: 'Identify foundational performance indicators' },
-      { name: 'Initial Audit', description: 'Technical and content assessment' },
-      { name: 'Monthly Reporting', description: 'Track key performance indicators' },
+      { name: 'Keyword Research', description: 'Up to 20 target keywords' },
+      { name: 'On-Page SEO', description: 'Optimization for all core pages' },
+      { name: 'Technical Audit', description: 'Full site health check' },
+      { name: 'Monthly Reporting', description: 'Performance dashboard' },
     ],
-    cta: 'Get Started',
+    cta: 'Choose SEO Starter',
   },
   {
-    name: 'Growth Plan',
-    price: '$550/mo',
-    description: 'Perfect for growing businesses aiming to expand their market reach.',
+    name: 'SEO Growth',
+    price: '$3,000/mo',
+    description: 'Comprehensive SEO for competitive markets.',
     icon: TrendingUp,
     features: [
-      { name: 'Everything in Starter', description: 'Includes all Starter Plan features' },
-      { name: 'Advanced Strategy', description: 'For up to 15 key objectives' },
-      { name: 'In-depth Analysis', description: 'Comprehensive review of relevant growth levers' },
-      { name: 'Performance Optimization', description: 'Targeted improvements for better results' },
-      { name: 'Online Presence Enhancement', description: 'Boost visibility across key channels' },
-      { name: 'Competitive Landscape Review', description: 'Understand your market position' },
+      { name: 'Everything in Starter', description: 'Plus advanced features' },
+      { name: 'Content Creation', description: '2 SEO-focused blog posts/mo' },
+      { name: 'Link Building', description: 'High-quality backlink acquisition' },
+      { name: 'GMB Optimization', description: 'Dominate local search' },
     ],
-    cta: 'Choose Growth',
+    cta: 'Choose SEO Growth',
   },
   {
-    name: 'Pro Plan',
-    price: '$900/mo',
-    description: 'Designed for established businesses seeking to dominate their market.',
-    icon: Target,
-    features: [
-      { name: 'Everything in Growth', description: 'Includes all Growth Plan features' },
-      { name: 'Comprehensive Strategy', description: 'For up to 30 key objectives' },
-      { name: 'Advanced Optimization Techniques', description: 'High-impact performance enhancements' },
-      { name: 'Content Development', description: '2 impactful content pieces per month' },
-      { name: 'Conversion Analysis', description: 'Improve overall effectiveness' },
-      { name: 'Dedicated Consultant', description: 'Personalized support and strategy' },
-    ],
-    cta: 'Go Pro',
-  },
-  {
-    name: 'Enterprise Solution',
-    price: 'Custom Pricing',
-    description: 'Tailored solutions for large businesses with specific growth needs.',
+    name: 'SEO Pro',
+    price: '$5,500/mo',
+    description: 'Aggressive SEO for market domination.',
     icon: Award,
     features: [
-      { name: 'Customized Strategy & Deliverables', description: 'Bespoke plan for your unique goals' },
-      { name: 'Unlimited Objective Optimization', description: 'Comprehensive strategic targeting' },
-      { name: 'Premium Growth Tactics', description: 'High-authority actions and integrations' },
-      { name: 'Full-Scale Content Strategy', description: 'Comprehensive content plan for all funnels' },
-      { name: 'A/B Testing & Advanced Analytics', description: 'Data-driven optimization for maximum results' },
-      { name: 'Customized Reporting Dashboard', description: 'Real-time insights into your performance' },
-      { name: 'Bi-weekly Strategy Meetings', description: 'Regular consultations and progress reviews' },
-      { name: '24/7 Priority Support', description: 'Round-the-clock assistance' },
+      { name: 'Everything in Growth', description: 'Plus premium services' },
+      { name: 'Advanced Content Strategy', description: 'Pillar pages & topic clusters' },
+      { name: 'Digital PR', description: 'High-authority media outreach' },
+      { name: 'CRO & A/B Testing', description: 'Optimize for conversions' },
+    ],
+    cta: 'Choose SEO Pro',
+  }
+];
+
+const PPC_PACKAGES: ServicePackage[] = [
+  {
+    name: 'PPC Launch',
+    price: '$1,000/mo',
+    description: 'For businesses new to PPC, focused on one platform.',
+    icon: Rocket,
+    features: [
+      { name: 'Ad Spend Limit', description: 'Up to $5,000/mo' },
+      { name: 'Platform', description: 'Google Ads or Meta Ads' },
+      { name: 'Campaign Setup', description: 'Full account & campaign build' },
+      { name: 'Monthly Reporting', description: 'Key performance metrics' },
+    ],
+    cta: 'Choose PPC Launch',
+  },
+  {
+    name: 'PPC Scale',
+    price: '$2,500/mo',
+    description: 'Multi-platform advertising for growing brands.',
+    icon: TrendingUp,
+    features: [
+      { name: 'Ad Spend Limit', description: 'Up to $15,000/mo' },
+      { name: 'Platforms', description: 'Google Ads & Meta Ads' },
+      { name: 'A/B Testing', description: 'Ad copy & landing page tests' },
+      { name: 'Dedicated Manager', description: 'Weekly performance check-ins' },
+    ],
+    cta: 'Choose PPC Scale',
+  },
+  {
+    name: 'PPC Dominate',
+    price: 'Custom',
+    description: 'Aggressive, multi-channel campaigns for market leaders.',
+    icon: Award,
+    features: [
+      { name: 'Ad Spend Limit', description: '$15,000+/mo' },
+      { name: 'All Platforms', description: 'Google, Meta, LinkedIn, etc.' },
+      { name: 'Advanced CRO', description: 'Full funnel optimization' },
+      { name: 'Custom Dashboards', description: 'Real-time ROI tracking' },
     ],
     cta: 'Request Quote',
+  }
+];
+
+const SOCIAL_MEDIA_PACKAGES: ServicePackage[] = [
+  {
+    name: 'Social Starter',
+    price: '$800/mo',
+    description: 'Establish a professional presence on key social platforms.',
+    icon: Users,
+    features: [
+      { name: 'Platforms', description: 'Up to 2 social media platforms' },
+      { name: 'Posting Frequency', description: '3 posts per week per platform' },
+      { name: 'Content Creation', description: 'Basic graphic design & copywriting' },
+      { name: 'Monthly Reporting', description: 'Follower growth & engagement' },
+    ],
+    cta: 'Choose Social Starter',
+  },
+  {
+    name: 'Social Growth',
+    price: '$1,800/mo',
+    description: 'Build an engaged community and drive traffic.',
+    icon: TrendingUp,
+    features: [
+      { name: 'Platforms', description: 'Up to 3 platforms' },
+      { name: 'Posting Frequency', description: '5 posts per week per platform' },
+      { name: 'Community Management', description: 'Proactive engagement' },
+      { name: 'Ad Campaign', description: 'Includes basic ad management' },
+    ],
+    cta: 'Choose Social Growth',
+  },
+  {
+    name: 'Social Pro',
+    price: '$3,500/mo',
+    description: 'Comprehensive social media and influencer marketing.',
+    icon: Award,
+    features: [
+      { name: 'Platforms', description: 'Up to 4 platforms' },
+      { name: 'Content', description: 'Includes video & stories' },
+      { name: 'Influencer Outreach', description: 'Partnerships with micro-influencers' },
+      { name: 'Advanced Analytics', description: 'Full-funnel ROI tracking' },
+    ],
+    cta: 'Choose Social Pro',
+  }
+];
+
+const OTHER_SERVICE_PACKAGES: ServicePackage[] = [
+    {
+    name: 'Content Writing',
+    price: 'From $750/mo',
+    description: 'High-quality, SEO-optimized content to build authority.',
+    icon: Edit3,
+    features: [
+      { name: 'Basic', description: '2 blog posts/mo (1000 words each)' },
+      { name: 'Growth', description: '4 blog posts/mo + content strategy' },
+      { name: 'Pro', description: 'Pillar pages & cluster content' },
+      { name: 'Custom', description: 'Tailored to your needs' },
+    ],
+    cta: 'Get Content Plan',
+  },
+  {
+    name: 'Email Marketing',
+    price: 'From $600/mo',
+    description: 'Engage your audience and drive sales with email.',
+    icon: Mail,
+    features: [
+      { name: 'Setup', description: 'List setup & welcome sequence' },
+      { name: 'Campaigns', description: '2 newsletter campaigns/mo' },
+      { name: 'Automation', description: 'Cart abandonment & nurture flows' },
+      { name: 'Reporting', description: 'Open, click, and conversion rates' },
+    ],
+    cta: 'Start Email Marketing',
+  },
+   {
+    name: 'eCommerce Optimization',
+    price: 'From $2,000/mo',
+    description: 'Turn your store into a selling machine.',
+    icon: BarChart2,
+    features: [
+      { name: 'CRO Audit', description: 'Identify conversion bottlenecks' },
+      { name: 'A/B Testing', description: 'Product pages & checkout flow' },
+      { name: 'eCommerce SEO', description: 'Optimize product & category pages' },
+      { name: 'Reporting', description: 'Revenue per visitor & AOV' },
+    ],
+    cta: 'Optimize My Store',
+  }
+];
+
+
+export const SERVICE_PACKAGE_GROUPS: ServicePackageGroup[] = [
+  {
+    title: "SEO Packages",
+    description: "Build a durable, organic growth engine by becoming the best answer for what your customers are searching for.",
+    icon: Search,
+    packages: SEO_PACKAGES,
+  },
+  {
+    title: "PPC Management Packages",
+    description: "Treat ad spend as a high-return investment with campaigns engineered for profitability, not just clicks.",
+    icon: TrendingUp,
+    packages: PPC_PACKAGES,
+  },
+  {
+    title: "Social Media Packages",
+    description: "Cultivate a loyal community of brand advocates, not just a passive audience of followers.",
+    icon: Users,
+    packages: SOCIAL_MEDIA_PACKAGES,
+  },
+  {
+    title: "Content & eCommerce Packages",
+    description: "Drive growth with expert content and scientifically optimized online store performance.",
+    icon: Briefcase,
+    packages: OTHER_SERVICE_PACKAGES,
   },
 ];
+
 
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -153,36 +288,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     imageUrl: 'https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     dataAiHint: 'logistics warehouse shipping',
     testimonial: "TRAC goes above and beyond. They developed a robust reporting model and helped us understand our digital footprint in a way no other agency has."
-  },
-  {
-    id: 'cs1',
-    clientName: 'Bloom & Grow Online',
-    industry: 'E-commerce (Retail)',
-    challenge: 'Low online visibility and declining sales in a competitive market.',
-    solution: 'Implemented a comprehensive digital strategy, optimized product funnels, and built high-quality marketing assets.',
-    results: [
-      { metric: 'Lead Increase', value: '+200%', icon: TrendingUp },
-      { metric: 'Conversion Rate Boost', value: '+45%', icon: Target },
-      { metric: 'Key Metric Rankings (Top 3)', value: '15', icon: Award },
-    ],
-    imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.LcStDzwsaSmmZr2LMov7AAHaFj&pid=Api&P=0&h=220',
-    dataAiHint: 'ecommerce growth',
-    testimonial: "TRAC helped us bloom online! We're now reaching more customers than ever before."
-  },
-  {
-    id: 'cs2',
-    clientName: 'Alpha Legal Services',
-    industry: 'Professional Services',
-    challenge: 'Struggling to attract qualified leads through their website.',
-    solution: 'Developed a content marketing strategy focused on key industry topics, combined with technical optimizations and targeted outreach.',
-    results: [
-      { metric: 'Qualified Leads per Month', value: '+120%', icon: Users },
-      { metric: 'Brand Authority Increase', value: '+15 points', icon: Link2 },
-      { metric: 'Visibility for Core Services', value: '+70%', icon: Search },
-    ],
-    imageUrl: 'https://tse2.mm.bing.net/th?id=OIP.LqI7gVBNpVDmcEaOVfvGIAHaEK&pid=Api&P=0&h=220',
-    dataAiHint: 'professional services chart',
-    testimonial: "The expertise of TRAC has been invaluable. Our firm is now a recognized authority in our practice areas online."
   },
 ];
 
@@ -388,7 +493,7 @@ export const IMPORTANCE_OF_STRATEGY = {
     },
     {
       title: "Understand Your Audience",
-      text: "Strategic data provides invaluable insights into consumer behavior, market trends, and preferences, helping you refine your business strategies.",
+      text: "Strategic data provides invaluable insights into consumer behavior, market trends, and preferences, allowing you to tailor your offerings effectively.",
       icon: Users,
     },
     {

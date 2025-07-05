@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
@@ -9,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { SERVICE_PACKAGES } from '@/lib/constants';
+import { SERVICE_PACKAGE_GROUPS } from '@/lib/constants';
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';
@@ -75,6 +74,9 @@ async function submitContactForm(data: ContactFormValues): Promise<{ success: bo
 export function ContactForm({ preselectedService }: { preselectedService?: string }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+
+  // Flatten the package groups into a single array of packages
+  const allPackages = SERVICE_PACKAGE_GROUPS.flatMap(group => group.packages);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -228,7 +230,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
                 </FormControl>
                 <SelectContent>
                   <SelectItem value={GENERAL_INQUIRY_VALUE}>General Inquiry / Not Specified</SelectItem>
-                  {SERVICE_PACKAGES.map(pkg => (
+                  {allPackages.map(pkg => (
                     <SelectItem key={pkg.name} value={pkg.name}>
                       {pkg.name}
                     </SelectItem>
@@ -280,4 +282,3 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
     </Form>
   );
 }
-

@@ -75,9 +75,14 @@ export default function ServicesPage() {
           <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
             Let's discuss how these services can be integrated into a cohesive strategy for your business.
           </p>
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="/contact">Get Your Free Proposal</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/contact">Get Your Free Proposal</Link>
+            </Button>
+            <Button size="lg" asChild variant="outline">
+              <Link href="/pricing">View Pricing & Plans</Link>
+            </Button>
+          </div>
         </footer>
       </div>
     </div>
