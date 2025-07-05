@@ -1,4 +1,3 @@
-
 import type { LucideIcon } from 'lucide-react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { ReactNode } from 'react';
@@ -7,6 +6,8 @@ export interface NavItem {
   href: string;
   label: string;
   icon?: LucideIcon;
+  children?: NavItem[];
+  isSeparator?: boolean;
 }
 
 export interface ServicePackageFeature {
@@ -17,10 +18,12 @@ export interface ServicePackageFeature {
 export interface ServicePackage {
   name: string;
   price: string;
+  originalPrice?: string;
   description: string;
   icon: LucideIcon;
   features: ServicePackageFeature[];
   cta: string;
+  isSpecialOffer?: boolean;
 }
 
 export interface Testimonial {

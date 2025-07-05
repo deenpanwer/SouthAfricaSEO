@@ -4,30 +4,54 @@ import { ServicePackageDisplay } from '@/components/services/ServicePackageDispl
 import { SERVICE_PACKAGES, APP_NAME } from '@/lib/constants.tsx';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { BarChart, CheckSquare, MessageCircle } from 'lucide-react';
+import { BarChart, CheckSquare, MessageCircle, Star } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: 'Pricing Plans',
-  description: `Explore ${APP_NAME}'s tailored pricing plans for businesses. From starter to enterprise solutions, find the perfect fit for your growth.`,
+  title: 'Pricing & Plans',
+  description: `Explore ${APP_NAME}'s tailored pricing plans. From starter packages to enterprise solutions, find the perfect fit for your growth.`,
 };
 
-export default function ServicesPage() {
+export default function PricingPage() {
+  const webDevPackage = SERVICE_PACKAGES.filter(p => p.isSpecialOffer);
+  const regularPackages = SERVICE_PACKAGES.filter(p => !p.isSpecialOffer);
+
   return (
     <div className="py-12 md:py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <section className="text-center mb-16 md:mb-20">
           <BarChart className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
-            Our Service Plans
+            Transparent Pricing for Real Results
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tailored solutions designed to elevate your business. We offer a range of plans to meet your specific needs and budget, ensuring measurable results and sustainable growth.
+            Choose a plan that scales with your business. No hidden fees, no long-term contracts—just clear, value-driven pricing designed for your growth.
           </p>
         </section>
 
-        <section className="mb-16 md:mb-20">
-          <ServicePackageDisplay packages={SERVICE_PACKAGES} />
-        </section>
+        <Accordion type="single" collapsible className="w-full max-w-6xl mx-auto mb-16 md:mb-20" defaultValue="item-1">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-2xl font-semibold">Limited Time: Free Website Offer</AccordionTrigger>
+            <AccordionContent className="pt-6">
+              <p className="text-center text-muted-foreground mb-6">Get a professional, conversion-focused website built by our team, completely free when you sign up for any Pro or Enterprise plan.</p>
+              <div className="flex justify-center">
+                 <ServicePackageDisplay packages={webDevPackage} />
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-2xl font-semibold">Core Growth Packages</AccordionTrigger>
+            <AccordionContent className="pt-6">
+               <p className="text-center text-muted-foreground mb-8">Our core packages are designed to provide foundational growth and scale with your business needs.</p>
+               <ServicePackageDisplay packages={regularPackages} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
 
         <section className="mb-16 md:mb-20 p-8 bg-muted rounded-lg shadow-md">
           <h2 className="text-3xl font-bold text-foreground text-center mb-8">Why Choose Our Service Plans?</h2>
