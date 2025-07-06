@@ -93,6 +93,8 @@ export function Footer() {
             <span className="text-muted-foreground/50">|</span>
             <Link href="/site-map" className="hover:text-primary transition-colors">Sitemap</Link>
             <span className="text-muted-foreground/50">|</span>
+            <Link href="/llm.txt" className="hover:text-primary transition-colors">LLM File</Link>
+            <span className="text-muted-foreground/50">|</span>
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <span className="text-muted-foreground/50">|</span>
             <Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>

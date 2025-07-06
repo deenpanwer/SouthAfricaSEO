@@ -3,73 +3,157 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ShoppingBag, Search, BarChart2 } from 'lucide-react';
+import { CheckCircle, TrendingUp, Search, BarChart2, Zap, ArrowRight, Star } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: `Amazon Marketing Services (AMS) | ${APP_NAME}`,
-  description: `Dominate the world's largest marketplace. We provide strategic Amazon SEO, PPC, and listing optimization to increase your sales velocity and win the Buy Box.`,
+  title: `Amazon Marketing Services | Win on Amazon | ${APP_NAME}`,
+  description: `Don't just compete on Amazon—dominate your category. TRAC builds systematic growth flywheels to increase sales velocity, elevate rankings, and secure market leadership.`,
 };
+
+const SectionSubHeader = ({ children }: { children: React.ReactNode }) => (
+  <p className="text-primary font-semibold uppercase tracking-wider text-center">{children}</p>
+);
+
+const SectionHeader = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mt-2">{children}</h2>
+);
+
+const SectionDescription = ({ children }: { children: React.ReactNode }) => (
+  <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mt-4">{children}</p>
+);
 
 export default function AmazonMarketingPage() {
   return (
-    <div className="py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <header className="text-center mb-12 md:mb-16">
-          <ShoppingBag className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground">
-            Winning on Amazon is a System, Not a Secret
+    <div className="bg-gray-50 dark:bg-black">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-background py-20 md:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground !leading-tight mb-6">
+            Stop Competing on Amazon.
+            <br />
+            <span className="text-primary">Start Dominating.</span>
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-            We use a data-driven system to increase your sales velocity, improve your rankings, and dominate your product category on the world's largest marketplace.
+          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Winning on Amazon isn't about running ads. It's about building a self-sustaining growth engine. We build that engine for you.
           </p>
-        </header>
-
-        <div className="prose prose-lg dark:prose-invert max-w-none text-foreground/90 prose-headings:text-foreground prose-headings:font-semibold prose-a:text-primary hover:prose-a:text-primary/80">
-          
-          <h2 className="text-2xl font-bold">The Flaw in Conventional Amazon Management</h2>
-          <p>
-            Many sellers approach Amazon reactively. They launch a product, run some basic ads, and hope for the best. They might tweak keywords based on guesswork or copy what their competitors are doing. This approach is unpredictable and rarely leads to sustainable success.
-          </p>
-          <p>
-            The Amazon marketplace is a complex ecosystem. Treating it like a simple sales channel, without understanding its unique search algorithm (A9), advertising platform, and flywheel effect, is a recipe for wasted ad spend and stagnant growth.
-          </p>
-
-          <h2 className="text-2xl font-bold mt-8">A First-Principles Approach: The Amazon Flywheel</h2>
-          <p>
-            Our entire Amazon strategy is built around a single, powerful concept: the Amazon Flywheel. The principle is simple: traffic and conversions lead to higher sales velocity. Higher sales velocity leads to more reviews and a better sales history. More reviews and a better sales history lead to higher organic rankings. Higher organic rankings lead to more traffic. And the wheel spins faster.
-          </p>
-          <p>Our job is to apply force to every part of that flywheel, simultaneously:</p>
-          <ul>
-            <li><strong>Optimized Product Listings (Conversion):</strong> Your product detail page must be a conversion machine. This means high-quality images, benefit-driven copy, and comprehensive A+ Content.</li>
-            <li><strong>Targeted Amazon PPC (Traffic):</strong> We use Amazon Ads to drive targeted traffic to your listings, focusing on profitable keywords that kickstart sales velocity.</li>
-            <li><strong>Amazon SEO (Organic Traffic):</strong> We optimize your titles, bullet points, and backend keywords to align with how Amazon's A9 algorithm ranks products, capturing high-intent organic traffic.</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-8">What This Looks Like in Practice</h2>
-          <p>
-            We manage your Amazon presence as a holistic system for growth.
-          </p>
-          <ul>
-              <li><strong>Comprehensive Listing Optimization:</strong> We conduct a full audit and rewrite of your product listings, including keyword research, compelling copywriting, and creating enhanced A+ Content and Brand Stores.</li>
-              <li><strong>Data-Driven PPC Campaign Management:</strong> We structure your campaigns logically (e.g., auto, research, proven), systematically harvest converting keywords, and optimize bids to achieve your target Advertising Cost of Sale (ACoS).</li>
-              <li><strong>Inventory and Review Management Strategy:</strong> We advise on inventory levels to avoid stockouts (which kill sales velocity) and help implement strategies for ethically generating product reviews.</li>
-              <li><strong>Competitive Analysis:</strong> We constantly monitor your competitors' pricing, keywords, and advertising strategies to identify opportunities and threats.</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-8">Who This Is For</h2>
-          <p>
-            Our Amazon Marketing Services are for brands that are serious about winning their category. It's for sellers who are ready to move beyond guesswork and implement a professional, data-driven system for growth on the platform. If you want a strategic partner to help you navigate the complexities of Amazon and build a dominant presence, we are the right fit.
-          </p>
-
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg text-lg px-8 py-6">
+            <Link href="/contact?service=Amazon+Marketing">Build Your Amazon Flywheel</Link>
+          </Button>
         </div>
+        <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[bottom_1px_center] dark:bg-grid-slate-400/[0.05] dark:bg-bottom dark:border-b dark:border-slate-100/5 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+      </section>
 
-        <footer className="mt-12 text-center">
-             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="/contact?service=Amazon+Marketing">Dominate the Amazon Marketplace</Link>
-            </Button>
-        </footer>
-      </div>
+      {/* The Problem Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionSubHeader>The Flaw in Conventional Strategy</SectionSubHeader>
+          <SectionHeader>Are You Just Another Listing?</SectionHeader>
+          <SectionDescription>
+            Most sellers treat Amazon like a simple storefront—they upload products, buy some ads, and hope for the best. This is a recipe for wasted ad spend, stagnant rankings, and being drowned out by savvier competitors.
+          </SectionDescription>
+        </div>
+      </section>
+      
+      {/* The Flywheel Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionSubHeader>Our First-Principles Approach</SectionSubHeader>
+          <SectionHeader>The Amazon Flywheel</SectionHeader>
+          <SectionDescription>
+            We don't just manage your account; we build a system. Each part of our strategy energizes the next, creating a powerful, self-reinforcing cycle of growth that's incredibly difficult for competitors to stop.
+          </SectionDescription>
+          <div className="relative mt-12 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center space-x-2 md:space-x-4">
+              {['Traffic', 'Conversions', 'Velocity', 'Rankings'].map((item, index) => (
+                <React.Fragment key={item}>
+                  <div className="text-center">
+                    <div className="p-4 bg-background rounded-full shadow-lg border">
+                      <Zap className="h-8 w-8 text-primary mx-auto" />
+                    </div>
+                    <p className="mt-2 text-sm font-semibold">{item}</p>
+                  </div>
+                  {index < 3 && <ArrowRight className="h-6 w-6 text-muted-foreground flex-shrink-0" />}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center -z-10">
+                <div className="w-full h-24 bg-primary/5 rounded-full blur-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionSubHeader>How We Build It</SectionSubHeader>
+          <SectionHeader>A System for Dominance</SectionHeader>
+          <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
+                <Search className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">1. Total Listing Optimization</h3>
+              <p className="text-muted-foreground mt-2">We transform your product pages into conversion machines with keyword-rich titles, benefit-driven copy, and stunning A+ Content.</p>
+            </div>
+            <div className="p-6">
+              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
+                <TrendingUp className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">2. Profit-Driven Advertising</h3>
+              <p className="text-muted-foreground mt-2">Your ad spend is an investment. We build data-driven PPC campaigns that target high-intent keywords to fuel the flywheel with profitable sales.</p>
+            </div>
+            <div className="p-6">
+              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
+                <BarChart2 className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground">3. Continuous Optimization</h3>
+              <p className="text-muted-foreground mt-2">We use analytics to harvest converting keywords, refine bids, manage inventory strategy, and keep the growth engine accelerating.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+       <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <div className="bg-background rounded-lg p-8 md:p-12 shadow-xl border text-center">
+            <div className="flex justify-center text-yellow-400 mb-4">
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-6 w-6 fill-current" />)}
+            </div>
+            <blockquote className="text-xl md:text-2xl font-medium text-foreground">
+              &ldquo;TRAC's Amazon strategy was a game-changer. They didn't just increase our sales; they gave us a dominant position in our category. Their systematic approach is unmatched.&rdquo;
+            </blockquote>
+            <footer className="mt-6">
+              <p className="font-semibold text-foreground">Jessica Miller</p>
+              <p className="text-muted-foreground">Founder, EcoHome Goods</p>
+            </footer>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-6">
+            Ready to Build Your Amazon Empire?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+            Stop fighting for scraps. Let's build a system that puts you in control of your category.
+          </p>
+          <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg text-lg px-8 py-6">
+            <Link href="/contact?service=Amazon+Marketing">Schedule a Strategy Call</Link>
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
+
+// Minimalist background grid component
+const GridBg = () => (
+  <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+    <div className="absolute left-0 right-0 top-0 -z-10 h-full w-full bg-gradient-to-b from-white to-transparent"></div>
+  </div>
+);
