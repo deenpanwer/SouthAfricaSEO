@@ -1,12 +1,12 @@
 ---
 slug: 'dublin-emergency-plumbers'
 clientName: 'Dublin Emergency Plumbers'
-logoUrl: 'https://placehold.co/120x50.png?text=DEP'
+logoUrl: 'https://tse4.mm.bing.net/th/id/OIP.dHzUHYnzFud7tkjxBv9MSAAAAA?pid=Api&P=0&h=220'
 industry: 'Home Services (Plumbing)'
 services:
   - 'Local SEO'
   - 'PPC Management'
-imageUrl: 'https://placehold.co/600x400.png'
+imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.2txnHMBia5rGLitb4uNw5gHaE8?pid=Api&P=0&h=220'
 dataAiHint: 'plumber working'
 challenge: 'Struggled to generate leads for urgent, high-intent searches. Their competition dominated the Google Map Pack, and they had a high cost-per-acquisition from their ad campaigns.'
 solution: 'TRAC executed a hyper-local SEO strategy focused on "emergency plumber Dublin" and neighborhood-specific terms. We restructured their Google Ads account to prioritize high-intent keywords and set up robust call tracking. We also built out specific service pages for issues like burst pipes and blocked drains.'

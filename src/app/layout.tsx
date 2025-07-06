@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
+import { PostHogProvider } from './providers'
 import { headers, cookies } from 'next/headers'; 
 import { Button } from '@/components/ui/button';
 import { Gift } from 'lucide-react';
@@ -104,13 +105,15 @@ export default async function RootLayout({
         src="https://www.facebook.com/tr?id=1375388456853322&ev=PageView&noscript=1"
         /></noscript>
         
-        {!isSaphireFansDomain && <Header />}
-        <main className="flex-grow">
-          {children}
-        </main>
-        {!isSaphireFansDomain && <Footer />}
-        {!isSaphireFansDomain && <FloatingOfferBanner />}
-        <Toaster />
+        <PostHogProvider>
+          {!isSaphireFansDomain && <Header />}
+          <main className="flex-grow">
+            {children}
+          </main>
+          {!isSaphireFansDomain && <Footer />}
+          {!isSaphireFansDomain && <FloatingOfferBanner />}
+          <Toaster />
+        </PostHogProvider>
       </body>
     </html>
   );

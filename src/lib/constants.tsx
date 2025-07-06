@@ -317,15 +317,15 @@ const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
 
 
 export const SOCIAL_LINKS = [
-  { name: 'Facebook', href: '#', icon: FacebookIcon },
-  { name: 'Twitter', href: '#', icon: TwitterIcon },
+  { name: 'Facebook', href: 'https://www.facebook.com/share/1CXosykBPP/', icon: FacebookIcon },
+  { name: 'Twitter', href: 'https://x.com/TRACPakistan?t=jAC22ELlFjQrtrfYjWmnxQ&s=09', icon: TwitterIcon },
   { name: 'LinkedIn', href: '#', icon: LinkedInIcon },
-  { name: 'Instagram', href: '#', icon: InstagramIcon },
+  { name: 'Instagram', href: 'https://www.instagram.com/tracprotect?igsh=ZGZ0azBteWprMHYx', icon: InstagramIcon },
 ];
 
 export const CONTACT_DETAILS = {
   phone: '+1 (646) 814-3789',
-  email: 'traconomics@gmail.com',
+  email: 'info@traconomics.com',
   address: '30 N Gould St St #6573, Sheridan, WY 82801, United States',
 };
 
