@@ -73,6 +73,8 @@ export default async function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Verification: 5d40a7b47460fe9a */}
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         {/* Pinterest Domain Verification */}
         <meta name="p:domain_verify" content="365262371841d527f65afe63daac06e7"/>
         {/* Google Tag Manager */}
