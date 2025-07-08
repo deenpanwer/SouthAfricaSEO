@@ -91,6 +91,9 @@ export default async function RootLayout({
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
+          
+          
+          
           fbq('init', '1375388456853322');
           fbq('track', 'PageView');` }} />
         {/* End Meta Pixel Code */}
@@ -110,6 +113,10 @@ export default async function RootLayout({
         src="https://www.facebook.com/tr?id=1375388456853322&ev=PageView&noscript=1"
         /></noscript>
         
+        {/* Ahrefs Analytics */}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="tnxVRD66xIkq2+pljVV9QQ" async></script>
+        {/* End Ahrefs Analytics */}
+
         <PostHogProvider>
           {!isSaphireFansDomain && <Header />}
           <main className="flex-grow">
