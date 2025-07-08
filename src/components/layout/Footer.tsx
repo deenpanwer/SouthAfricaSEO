@@ -67,8 +67,8 @@ export function Footer() {
 
         <div className="mt-12 pt-12 border-t border-muted-foreground/20">
           <div className="text-center text-foreground mb-8"> 
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Growing Businesses Since 2005 with Expert SEO</h2>
-            <p className="text-md">Local SEO expertise in {usCities.length} US cities. <Link href="/locations" className="text-primary hover:underline">View all international & US locations</Link>.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Growing Businesses Since 2005 with Expert SEO</h2>
+            <p className="text-md mb-2">Partner with confidence. We're committed to your measurable online growth.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm font-semibold text-foreground">
