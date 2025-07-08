@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { CITIES_DATA } from '@/lib/cityConstants.tsx';
 import { getAllBlogPosts } from '@/lib/blogService';
-import { BLOG_POSTS } from '@/lib/constants';
 
 // Define metadata for the sitemap page
 export const metadata: Metadata = {
@@ -72,8 +71,8 @@ export default async function HumanReadableSitemap() {
             <section className="bg-gray-50 rounded-lg p-6 shadow-sm">
                 <h2 className="text-2xl font-semibold text-gray-700 mb-6 pb-4 border-b border-gray-200">Blog Posts ({blogPosts.length})</h2>
                 {/* Sort by date in descending order */}
-                <ol className="space-y-3 list-decimal pl-5"> {/* Change BLOG_POSTS to blogPosts */}
-                    {BLOG_POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post, index) => (
+                <ol className="space-y-3 list-decimal pl-5">
+                    {blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((post, index) => (
 
                         <li key={post.slug}>
                             <Link href={`/blog/${post.slug}`} className="block text-blue-600 hover:text-blue-800 transition-colors text-lg">
