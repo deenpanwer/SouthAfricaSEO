@@ -90,6 +90,7 @@ export default function AboutUsPage() {
         </section>
 
         {/* Team Section */}
+{/*
         <section className="mb-16 md:mb-24 bg-secondary/50 py-12 md:py-16 rounded-lg">
            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -117,7 +118,9 @@ export default function AboutUsPage() {
             </div>
           </div>
         </section>
-        
+*/}
+
+
         {/* Call to Action */}
         <section className="text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Ready to Amplify Your Online Presence?</h2>

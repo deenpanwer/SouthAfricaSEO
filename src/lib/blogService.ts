@@ -4,6 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import gfm from 'remark-gfm'; // <-- ADD THIS IMPORT
 
 const articlesDirectory = path.join(process.cwd(), 'src', 'lib', 'articles');
 
@@ -18,7 +19,11 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       const { data, content } = matter(fileContents);
 
       // Convert markdown content to HTML
-      const processedContent = await remark().use(html).process(content);
+      // Ensure gfm is used before html for table support
+      const processedContent = await remark()
+        .use(gfm) // <-- ADD THIS LINE for GFM features like tables
+        .use(html)
+        .process(content);
       const contentHtml = processedContent.toString();
 
       return {
@@ -49,7 +54,11 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
     const { data, content } = matter(fileContents);
 
     // Convert markdown content to HTML
-    const processedContent = await remark().use(html).process(content);
+    // Ensure gfm is used before html for table support
+    const processedContent = await remark()
+      .use(gfm) // <-- ADD THIS LINE for GFM features like tables
+      .use(html)
+      .process(content);
     const contentHtml = processedContent.toString();
 
     return {

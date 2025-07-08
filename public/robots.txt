@@ -1,3 +1,26 @@
+User-agent: Googlebot
+Disallow: /saphirefans
+Disallow: /llms.txt
+
+User-agent: SBSearch
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
 User-agent: *
 Allow: /
 

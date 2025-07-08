@@ -46,11 +46,14 @@ const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefan
 
 const FloatingOfferBanner = () => {
     return (
-        <div className="fixed bottom-4 right-4 z-50">
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg p-4 h-auto animate-pulse">
+        <div className="fixed bottom-4 right-4 z-50 md:bottom-8 md:right-8">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-lg p-3 h-auto animate-pulse md:p-4">
                 <Link href="/services/web-design-and-development" title="Limited Time Offer: Free Website Development">
                     <Gift className="h-6 w-6 mr-2" />
-                    <span className="text-sm font-semibold">Limited Time: Get a FREE Website!</span>
+                    {/* Hide full text on small screens, show shorter text */}
+                    <span className="text-sm font-semibold hidden sm:inline">Limited Time: Get a FREE Website!</span>
+                    {/* Show shorter text on small screens */}
+                    <span className="text-sm font-semibold inline sm:hidden">Free Website Offer!</span>
                 </Link>
             </Button>
         </div>
