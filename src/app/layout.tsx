@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Poppins, Host_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
 };
 
 const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefans hostname
+const ENVIROPAINTING_PATH = '/test3';
 
 const FloatingOfferBanner = () => {
     return (
@@ -68,7 +70,12 @@ export default async function RootLayout({
 }>) {
   const headersList = await headers();
   const host = headersList.get('host') as string;
+  const pathname = headersList.get('x-pathname') || '';
+  
   const isSaphireFansDomain = host === SAPHIREFANS_HOST;
+  const isEnviroPaintingPath = pathname.startsWith(ENVIROPAINTING_PATH);
+
+  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath;
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -118,12 +125,12 @@ export default async function RootLayout({
         {/* End Ahrefs Analytics */}
 
         <PostHogProvider>
-          {!isSaphireFansDomain && <Header />}
+          {showMainLayout && <Header />}
           <main className="flex-grow">
             {children}
           </main>
-          {!isSaphireFansDomain && <Footer />}
-          {!isSaphireFansDomain && <FloatingOfferBanner />}
+          {showMainLayout && <Footer />}
+          {showMainLayout && <FloatingOfferBanner />}
           <Toaster />
         </PostHogProvider>
       </body>
