@@ -16,7 +16,7 @@ export function HeroSection() {
           <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
             Experience a premium painting service that's better for your home and the planet. We use high-quality, eco-friendly paints for a beautiful, long-lasting result you can feel good about.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
             <Button asChild variant="primary" size="lg">
               <Link href="/test3/contact">Get Your Free Quote</Link>
             </Button>

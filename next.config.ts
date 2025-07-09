@@ -74,6 +74,9 @@ const nextConfig: NextConfig = {
             type: 'header',
             key: 'x-original-path',
             value: '^(?!/test3).*$',
+          },{
+            type: 'host',
+            value: '^(?!enviropainting\\.traconomics\\.com$).*$',
           },
         ],
       },
