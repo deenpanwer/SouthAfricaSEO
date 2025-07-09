@@ -18,10 +18,10 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild variant="primary" size="lg">
-              <Link href="/enviropainting/contact">Get Your Free Quote</Link>
+              <Link href="/test3/contact">Get Your Free Quote</Link>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <Link href="/enviropainting/services">Explore Services</Link>
+              <Link href="/test3/services">Explore Services</Link>
             </Button>
           </div>
         </div>

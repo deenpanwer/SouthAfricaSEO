@@ -13,7 +13,7 @@ interface BlogPreviewCardProps {
 
 export function BlogPreviewCard({ post }: BlogPreviewCardProps) {
   return (
-    <Link href={`/enviropainting/resources/${post.slug}`} className="block group">
+    <Link href={`/test3/resources/${post.slug}`} className="block group">
       <Card className="flex flex-col h-full overflow-hidden rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 border-0">
         <div className="relative w-full aspect-[16/10] overflow-hidden">
           {post.imageUrl && (

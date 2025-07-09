@@ -47,7 +47,7 @@ export default function ProjectsPage() {
         <section className="mt-20 text-center">
             <h2 className="text-3xl font-bold text-enviro-green mb-4">Inspired to start your own transformation?</h2>
             <Button variant="primary" asChild size="lg">
-                <Link href="/enviropainting/contact">Let's Talk About Your Project</Link>
+                <Link href="/test3/contact">Let's Talk About Your Project</Link>
             </Button>
         </section>
 

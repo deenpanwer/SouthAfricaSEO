@@ -18,7 +18,7 @@ export interface EnviroPost {
   content?: string;
 }
 
-const articlesDirectory = path.join(process.cwd(), 'src/app/enviropainting/articles');
+const articlesDirectory = path.join(process.cwd(), 'src/app/test3/articles');
 
 export async function getAllPosts(): Promise<EnviroPost[]> {
   try {

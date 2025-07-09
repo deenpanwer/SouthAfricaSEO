@@ -36,7 +36,7 @@ export function ProjectsShowcase() {
         </div>
          <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg">
-            <Link href="/enviropainting/projects">
+            <Link href="/test3/projects">
               View All Projects
             </Link>
           </Button>

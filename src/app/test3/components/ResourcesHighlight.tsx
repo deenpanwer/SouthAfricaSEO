@@ -30,7 +30,7 @@ export async function ResourcesHighlight() {
 
         <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg">
-            <Link href="/enviropainting/resources">
+            <Link href="/test3/resources">
               Explore All Resources
             </Link>
           </Button>

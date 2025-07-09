@@ -12,7 +12,7 @@ export function FinalCTA() {
           A fresh coat of paint can do wonders. Let's discuss your project and provide you with a free, detailed, and no-obligation quote.
         </p>
         <Button asChild variant="secondary" size="lg">
-          <Link href="/enviropainting/contact">
+          <Link href="/test3/contact">
             Get My Free Quote <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </Button>

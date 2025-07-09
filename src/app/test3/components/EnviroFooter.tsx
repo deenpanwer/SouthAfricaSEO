@@ -5,11 +5,11 @@ import { Button } from './ui/Button';
 
 export function EnviroFooter() {
   const navLinks = [
-    { href: '/enviropainting/about', label: 'About Us' },
-    { href: '/enviropainting/services', label: 'Services' },
-    { href: '/enviropainting/projects', label: 'Our Work' },
-    { href: '/enviropainting/resources', label: 'Resources' },
-    { href: '/enviropainting/contact', label: 'Contact' },
+    { href: '/test3/about', label: 'About Us' },
+    { href: '/test3/services', label: 'Services' },
+    { href: '/test3/projects', label: 'Our Work' },
+    { href: '/test3/resources', label: 'Resources' },
+    { href: '/test3/contact', label: 'Contact' },
   ];
 
   return (
@@ -22,7 +22,7 @@ export function EnviroFooter() {
             <h3 className="text-3xl font-bold mb-2">Have a project in mind?</h3>
             <p className="text-white/80 mb-6">Let's talk about how we can bring your vision to life with a beautiful, eco-friendly coat of paint.</p>
             <Button variant="secondary" asChild>
-              <Link href="/enviropainting/contact">Get a Quote</Link>
+              <Link href="/test3/contact">Get a Quote</Link>
             </Button>
           </div>
           <div>
@@ -38,7 +38,7 @@ export function EnviroFooter() {
         {/* Main Footer */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
-            <Link href="/enviropainting" className="flex items-center gap-2 text-enviro-green mb-4">
+            <Link href="/test3" className="flex items-center gap-2 text-enviro-green mb-4">
               <PaintBucket className="w-8 h-8" />
               <span className="text-2xl font-extrabold tracking-tight">EnviroPainting</span>
             </Link>

@@ -48,7 +48,7 @@ export default function ServicesPage() {
             Let's discuss how we can transform your space with a fresh, eco-friendly coat of paint.
           </p>
           <Button variant="secondary" asChild>
-            <Link href="/enviropainting/contact">
+            <Link href="/test3/contact">
               Get Your Free Quote <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </Button>

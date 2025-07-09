@@ -16,17 +16,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  // Rewrite /enviropainting paths for the main domain
-  if (pathname.startsWith(INTERNAL_ENVIROPAINTING_BASE_PATH)) {
-    // This logic is now handled by the file system router in Next.js 13+ App Router
-    // We just need to ensure the request is not rewritten for other domains.
-    // If you were on Pages Router, you might need a rewrite.
-    // With App Router, as long as the files are in app/enviropainting, it works.
-    // The main purpose of middleware here is now the subdomain routing.
-    return NextResponse.next();
-  }
-
-  // Default behavior for traconomics.com and other domains
+  // All other requests for the main domain are passed through.
+  // The App Router will handle file-system based routing for /test3, /about, etc.
   return NextResponse.next();
 }
 

@@ -42,7 +42,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <div className="bg-enviro-background text-enviro-text">
       <div className="container mx-auto px-6 py-16 md:py-24 max-w-3xl">
-        <Link href="/enviropainting/resources" className="inline-flex items-center gap-2 text-enviro-green font-semibold mb-8 hover:text-enviro-pink transition-colors">
+        <Link href="/test3/resources" className="inline-flex items-center gap-2 text-enviro-green font-semibold mb-8 hover:text-enviro-pink transition-colors">
           <ArrowLeft className="w-4 h-4" />
           Back to Resources
         </Link>
