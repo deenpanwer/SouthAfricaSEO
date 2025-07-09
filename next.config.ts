@@ -24,7 +24,14 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
+    // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
+    // as this logic is now handled by src/middleware.ts.
     return [
+      // --- Main Domain (traconomics.com) Rewrites (After subdomain rules) ---
+      // These rules apply when the host is *not* saphirefans.traconomics.com
+      // (because the middleware handles saphirefans, and for other hosts, these are evaluated).
+      // Keep the specific ones before the general ones.
+
       {
         source: '/:citySlug-seo-service-agency',
         destination: '/city/:citySlug',
@@ -54,20 +61,20 @@ const nextConfig: NextConfig = {
         destination: '/gym-seo/:stateSlug',
       },
       // This more general rewrite should come after specific ones on the main domain.
-      { 
+      // It should *still* come before the subdomain-specific rules.
+      { // General city slug, catches things like /new-york
         source: '/:citySlug',
         destination: '/city/:citySlug',
-        // Add a condition to prevent this rule from matching our microsite paths.
-        // It will only match paths that DO NOT start with /test3, /saphirefans, etc.
-        // This is a more future-proof way to handle exclusions.
-        has: [
-          {
-            type: 'path',
-            value: '^(?!/test3|/saphirefans|/enviropainting|/blog|/about|/contact|/services|/case-studies|/pricing|/locations|/philosophy|/site-map|/privacy-policy|/terms-of-service)(/.*)',
-          },
-        ],
       },
-      // Default fallback is implicitly handled by Next.js, no need for a catch-all
+
+      // --- Default Fallback (Highly Recommended as the LAST rule) ---
+      // This ensures any path not caught by the above rules falls back to the default
+      // Next.js routing (e.g., your root index.js or app/page.tsx).
+      // If you omit this, unhandled paths might lead to 404s or unexpected behavior.
+      {
+        source: '/:path*',
+        destination: '/:path*',
+      },
     ];
   },
 };

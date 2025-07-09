@@ -11,16 +11,16 @@ import { Loader2 } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Input } from './ui/Input';
 import { Textarea } from './ui/Textarea';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 
 const quoteFormSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  projectType: z.enum(["interior", "exterior", "commercial", "other"]),
+  projectType: z.enum(["interior", "exterior", "commercial", "other"], {
+    errorMap: () => ({ message: "Please select a project type." })
+  }),
   message: z.string().min(10, "Please provide a brief description of your project.").max(500, "Message is too long."),
-  contactMethod: z.enum(["email", "phone"]).optional(),
 });
 
 type QuoteFormValues = z.infer<typeof quoteFormSchema>;
@@ -31,6 +31,12 @@ export function QuoteForm() {
 
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phone: '',
+      message: '',
+    }
   });
 
   const onSubmit: SubmitHandler<QuoteFormValues> = async (data) => {
@@ -65,17 +71,23 @@ export function QuoteForm() {
           </div>
         </div>
         
-        <div className="space-y-2">
-            <Label>Project Type</Label>
-            <div className="flex flex-wrap gap-4">
-                {["interior", "exterior", "commercial", "other"].map(type => (
-                    <div key={type} className="flex items-center gap-2">
-                        <input type="radio" id={type} value={type} {...form.register("projectType")} className="accent-enviro-pink focus:ring-enviro-pink" />
-                        <Label htmlFor={type} className="capitalize font-normal">{type}</Label>
-                    </div>
-                ))}
+        <div className="grid md:grid-cols-2 gap-6">
+           <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number (Optional)</Label>
+                <Input id="phone" type="tel" {...form.register("phone")} />
+                {form.formState.errors.phone && <p className="text-sm text-red-500">{form.formState.errors.phone.message}</p>}
             </div>
-            {form.formState.errors.projectType && <p className="text-sm text-red-500">{form.formState.errors.projectType.message}</p>}
+            <div className="space-y-2">
+                <Label>Project Type</Label>
+                <select {...form.register("projectType")} className="flex h-12 w-full rounded-xl border border-enviro-green/20 bg-enviro-green/5 px-4 py-2 text-base ring-offset-background placeholder:text-enviro-text/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enviro-pink focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                    <option value="" disabled selected>Select a type...</option>
+                    <option value="interior">Interior</option>
+                    <option value="exterior">Exterior</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="other">Other</option>
+                </select>
+                {form.formState.errors.projectType && <p className="text-sm text-red-500">{form.formState.errors.projectType.message}</p>}
+            </div>
         </div>
 
         <div className="space-y-2">

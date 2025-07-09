@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const teamMembers = [
-    { name: 'Jane Doe', role: 'Founder & Lead Painter', imageUrl: 'https://placehold.co/300x300.png', dataAiHint: 'professional woman portrait' },
-    { name: 'John Smith', role: 'Project Manager', imageUrl: 'https://placehold.co/300x300.png', dataAiHint: 'professional man portrait' },
-    { name: 'Emily White', role: 'Color Consultant', imageUrl: 'https://placehold.co/300x300.png', dataAiHint: 'creative person portrait' },
+    { name: 'Tayne Sinclair', role: 'Co-Owner | Lead Painter', imageUrl: 'https://static.wixstatic.com/media/3ec430_ffda54d427b441a3ac78da5b7a02acc8~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tayne_Headshot.jpg', dataAiHint: 'professional man portrait' },
+    { name: 'Lisa Sinclair', role: 'Co-Owner | Office Manager', imageUrl: 'https://static.wixstatic.com/media/3ec430_9a5f95557d0e462cb421d3c7ad8d9a6c~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Lisa_Headshot_2.jpg', dataAiHint: 'professional woman portrait' },
+    { name: 'Jordan Sinclair', role: 'Job Coordinator', imageUrl: 'https://static.wixstatic.com/media/3ec430_1065410371bc487db2fa8767da48f100~mv2.jpg/v1/crop/x_0,y_287,w_1147,h_1147/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jordan_Headshot_2.jpg', dataAiHint: 'creative person portrait' },
+    { name: 'Mason', role: 'Head of Security', imageUrl: 'https://static.wixstatic.com/media/3ec430_63c8c57f628e4df3b8e171cea37b0373~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mason5.jpg', dataAiHint: 'dog cute' },
   ];
 
   return (
@@ -29,13 +30,13 @@ export default function AboutPage() {
 
         {/* Our Mission Section */}
         <section className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="https://placehold.co/600x450.png"
-              alt="A team of painters working collaboratively"
+              src="https://static.wixstatic.com/media/3ec430_be631561fc4e47f089c561985999f803~mv2.jpg/v1/fill/w_402,h_566,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3ec430_be631561fc4e47f089c561985999f803~mv2.jpg"
+              alt="The EnviroPainting founders"
               layout="fill"
               objectFit="cover"
-              data-ai-hint="team painters work"
+              data-ai-hint="team founders portrait"
             />
           </div>
           <div>
@@ -77,7 +78,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-enviro-green">Meet the Team</h2>
             <p className="mt-2 text-lg text-enviro-text/80">The passionate people behind our quality work.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {teamMembers.map(member => (
               <div key={member.name} className="text-center">
                 <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">

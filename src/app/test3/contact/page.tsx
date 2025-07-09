@@ -33,7 +33,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-enviro-green">Email</h3>
-                  <a href="mailto:quote@enviropainting.co" className="text-enviro-text/80 hover:text-enviro-pink">quote@enviropainting.co</a>
+                  <a href="mailto:jordan@enviropainting.ca" className="text-enviro-text/80 hover:text-enviro-pink">jordan@enviropainting.ca</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-enviro-green">Phone</h3>
-                  <a href="tel:123-456-7890" className="text-enviro-text/80 hover:text-enviro-pink">123-456-7890</a>
+                  <a href="tel:519-500-8854" className="text-enviro-text/80 hover:text-enviro-pink">519-500-8854</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
