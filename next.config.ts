@@ -27,6 +27,14 @@ const nextConfig: NextConfig = {
     // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
     // as this logic is now handled by src/middleware.ts.
     return [
+      // --- EnviroPainting Microsite Rule (NEW) ---
+      // This rule ensures that any request to /enviropainting/... is correctly handled
+      // by the pages inside the app/enviropainting directory.
+      {
+        source: '/enviropainting/:path*',
+        destination: '/enviropainting/:path*',
+      },
+      
       // --- Main Domain (traconomics.com) Rewrites (After subdomain rules) ---
       // These rules apply when the host is *not* saphirefans.traconomics.com
       // (because the middleware handles saphirefans, and for other hosts, these are evaluated).
