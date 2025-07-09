@@ -20,18 +20,12 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'images.pexels.com', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn-icggj.nitrocdn.com', pathname: '/**' },
       { protocol: 'https', hostname: 'thriveagency.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'static.wixstatic.com', port: '', pathname: '/**' },
     ],
   },
 
   async rewrites() {
-    // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
-    // as this logic is now handled by src/middleware.ts.
     return [
-      // --- Main Domain (traconomics.com) Rewrites (After subdomain rules) ---
-      // These rules apply when the host is *not* saphirefans.traconomics.com
-      // (because the middleware handles saphirefans, and for other hosts, these are evaluated).
-      // Keep the specific ones before the general ones.
-
       {
         source: '/:citySlug-seo-service-agency',
         destination: '/city/:citySlug',
@@ -60,17 +54,21 @@ const nextConfig: NextConfig = {
         source: '/:stateSlug-gym-seo-strategies',
         destination: '/gym-seo/:stateSlug',
       },
-      // This more general rewrite should come after specific ones on the main domain.
-      // It should *still* come before the subdomain-specific rules.
-      { // General city slug, catches things like /new-york
+      { 
         source: '/:citySlug',
         destination: '/city/:citySlug',
+        has: [
+          {
+            type: 'host',
+            value: '^(?!saphirefans\\.traconomics\\.com$).*$',
+          },
+          {
+            type: 'header',
+            key: 'x-original-path',
+            value: '^(?!/test3).*$',
+          },
+        ],
       },
-
-      // --- Default Fallback (Highly Recommended as the LAST rule) ---
-      // This ensures any path not caught by the above rules falls back to the default
-      // Next.js routing (e.g., your root index.js or app/page.tsx).
-      // If you omit this, unhandled paths might lead to 404s or unexpected behavior.
       {
         source: '/:path*',
         destination: '/:path*',
