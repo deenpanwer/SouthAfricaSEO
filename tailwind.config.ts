@@ -1,3 +1,4 @@
+
 // tailwind.config.js
 import type { Config } from "tailwindcss";
 
@@ -60,7 +61,16 @@ export default {
                     'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
                     border: 'hsl(var(--sidebar-border))',
                     ring: 'hsl(var(--sidebar-ring))'
-                }
+                },
+                // EnviroPainting Theme
+                'enviro-background': 'hsl(var(--enviro-background))',
+                'enviro-text': 'hsl(var(--enviro-text))',
+                'enviro-green': 'hsl(var(--enviro-green))',
+                'enviro-pink': 'hsl(var(--enviro-pink))',
+                'enviro-card-background': 'hsl(var(--enviro-card-background))',
+            },
+            fontFamily: {
+              sans: ['var(--font-poppins)', 'sans-serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',

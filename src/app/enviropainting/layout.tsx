@@ -1,0 +1,38 @@
+
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
+import { Toaster } from "@/components/ui/toaster";
+import { EnviroHeader } from './components/EnviroHeader';
+import { EnviroFooter } from './components/EnviroFooter';
+import './globals.css';
+
+const poppins = Poppins({
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: 'EnviroPainting | Eco-Friendly Painting Services',
+    template: '%s | EnviroPainting',
+  },
+  description: 'Premium, eco-friendly residential and commercial painting services. Quality craftsmanship with a conscience.',
+};
+
+export default function EnviroPaintingLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={poppins.variable}>
+      <body className="font-sans bg-enviro-background text-enviro-text antialiased">
+        <EnviroHeader />
+        <main>{children}</main>
+        <EnviroFooter />
+        <Toaster />
+      </body>
+    </html>
+  );
+}

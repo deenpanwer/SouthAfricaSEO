@@ -1,0 +1,31 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Define CSS variables for the color scheme */
+    --enviro-background: 260 100% 99%; /* Very light, almost white cream */
+    --enviro-text: 150 14% 15%; /* Dark, slightly desaturated green */
+    --enviro-green: 158 52% 25%; /* Deep, rich green */
+    --enviro-pink: 336 84% 77%; /* Soft, pastel pink */
+    --enviro-card-background: 0 0% 100%; /* Pure white for cards */
+  }
+}
+
+@layer components {
+  /* You can add component-level styles here if needed */
+}
+
+@layer utilities {
+  /* Custom utility classes */
+  .shadow-soft {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Apply base styles to the body within the layout */
+body.font-sans {
+  font-family: var(--font-poppins), sans-serif;
+}
