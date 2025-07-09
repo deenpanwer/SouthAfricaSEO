@@ -14,6 +14,8 @@ export function middleware(request: NextRequest) {
   // Check if the request is for the saphirefans.traconomics.com host
   if (hostname === SAPHIREFANS_HOST) {
     // Construct the new internal path
+    // If pathname is '/', newPath becomes '/saphirefans'
+    // If pathname is '/shop/product', newPath becomes '/saphirefans/shop/product'
     const newPath = `${INTERNAL_SAPHREFANS_BASE_PATH}${pathname === '/' ? '' : pathname}`;
 
     // Clone the URL and rewrite the pathname
