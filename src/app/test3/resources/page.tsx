@@ -1,18 +1,49 @@
 
 import type { Metadata } from 'next';
-import { getAllPosts } from '../lib/blog';
 import { BlogPreviewCard } from '../components/BlogPreviewCard';
-import { Button } from '../components/ui/Button';
-import Link from 'next/link';
+import type { EnviroPost } from '../lib/blog';
 
 export const metadata: Metadata = {
   title: 'Resources',
   description: 'Explore tips, trends, and advice on eco-friendly painting, color selection, and home maintenance from the experts at EnviroPainting.',
 };
 
-export default async function ResourcesPage() {
-  const posts = await getAllPosts();
+// Hardcoded post data
+const posts: EnviroPost[] = [
+    {
+        slug: 'why-eco-friendly-paint-is-right-for-your-home',
+        title: "Why Eco-Friendly Paint is the Right Choice for Your Home",
+        date: "2024-07-15",
+        excerpt: "Learn about the benefits of low-VOC and zero-VOC paints, from improved air quality to long-lasting durability.",
+        imageUrl: "https://placehold.co/800x450.png",
+        dataAiHint: "paint can with leaf",
+        category: "Sustainability",
+        tags: ["Eco-Friendly", "Health", "Painting Tips"],
+    },
+    {
+        slug: 'top-5-interior-color-trends-for-2024',
+        title: "Top 5 Interior Color Trends for 2024",
+        date: "2024-07-10",
+        excerpt: "Ready for a change? Discover the colors that are defining interior design this year, from earthy tones to bold accent hues.",
+        imageUrl: "https://placehold.co/800x450.png",
+        dataAiHint: "paint swatches wall",
+        category: "Design Trends",
+        tags: ["Color Theory", "Interior Design", "Trends"],
+    },
+    {
+        slug: 'the-secret-to-a-perfect-paint-job',
+        title: "The Secret to a Perfect Paint Job: Why Prep Work is Everything",
+        date: "2024-07-01",
+        excerpt: "A flawless finish doesn't start with the first coat of paint. It starts with meticulous preparation. Learn why we never skip this crucial step.",
+        imageUrl: "https://placehold.co/800x450.png",
+        dataAiHint: "painter taping wall",
+        category: "Painting Tips",
+        tags: ["DIY", "Professional Painting", "Quality"],
+    }
+];
 
+
+export default function ResourcesPage() {
   return (
     <div className="bg-enviro-background text-enviro-text">
       <div className="container mx-auto px-6 py-16 md:py-24">
