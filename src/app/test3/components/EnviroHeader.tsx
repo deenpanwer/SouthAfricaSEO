@@ -7,9 +7,10 @@ import { Menu, X, PaintBucket } from 'lucide-react';
 import { Button } from './ui/Button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function EnviroHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
@@ -50,40 +51,44 @@ export function EnviroHeader() {
               </Button>
             </div>
             <div className="md:hidden">
-              <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(true)}>
-                <Menu className="w-6 h-6" />
-              </Button>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="w-6 h-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-full max-w-xs bg-enviro-background p-6">
+                   <div className="flex justify-between items-center mb-10">
+                    <SheetClose asChild>
+                      <Link href="/test3" className="flex items-center gap-2 text-enviro-green">
+                        <PaintBucket className="w-7 h-7" />
+                        <span className="text-xl font-extrabold tracking-tight">EnviroPainting</span>
+                      </Link>
+                    </SheetClose>
+                  </div>
+                  <nav className="flex flex-col gap-4">
+                    {navLinks.map((link) => (
+                      <SheetClose asChild key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-2xl font-semibold text-enviro-green/80 hover:text-enviro-green transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                    <SheetClose asChild>
+                      <Button asChild size="lg" className="mt-6">
+                        <Link href="/test3/contact">Get a Free Quote</Link>
+                      </Button>
+                    </SheetClose>
+                  </nav>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-50 bg-enviro-background p-6 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
-        <div className="flex justify-between items-center mb-10">
-           <Link href="/test3" className="flex items-center gap-2 text-enviro-green" onClick={() => setIsMenuOpen(false)}>
-            <PaintBucket className="w-7 h-7" />
-            <span className="text-xl font-extrabold tracking-tight">EnviroPainting</span>
-          </Link>
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
-            <X className="w-6 h-6" />
-          </Button>
-        </div>
-        <nav className="flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-2xl font-semibold text-enviro-green/80 hover:text-enviro-green transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-           <Button asChild size="lg" className="mt-6">
-            <Link href="/test3/contact">Get a Free Quote</Link>
-          </Button>
-        </nav>
       </div>
     </header>
   );
