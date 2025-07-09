@@ -26,9 +26,9 @@ export default function EnviroPaintingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${poppins.variable} font-sans bg-enviro-background text-enviro-text antialiased`}>
+    <div className={`${poppins.variable} font-sans bg-enviro-background text-enviro-text antialiased flex flex-col min-h-screen overflow-hidden`}>
       <EnviroHeader />
-      <main>{children}</main>
+      <main className="flex-grow">{children}</main>
       <EnviroFooter />
       <Toaster />
     </div>
