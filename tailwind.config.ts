@@ -70,7 +70,8 @@ export default {
                 'enviro-card-background': 'hsl(var(--enviro-card-background))',
             },
             fontFamily: {
-              sans: ['var(--font-poppins)', 'sans-serif'],
+              sans: ['var(--font-geist-sans)', 'sans-serif'],
+              poppins: ['var(--font-poppins)', 'sans-serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',

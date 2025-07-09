@@ -26,13 +26,11 @@ export default function EnviroPaintingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body className="font-sans bg-enviro-background text-enviro-text antialiased">
-        <EnviroHeader />
-        <main>{children}</main>
-        <EnviroFooter />
-        <Toaster />
-      </body>
-    </html>
+    <div className={`${poppins.variable} font-sans bg-enviro-background text-enviro-text antialiased`}>
+      <EnviroHeader />
+      <main>{children}</main>
+      <EnviroFooter />
+      <Toaster />
+    </div>
   );
 }

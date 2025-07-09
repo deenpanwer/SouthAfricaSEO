@@ -24,8 +24,3 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
 }
-
-/* Apply base styles to the body within the layout */
-body.font-sans {
-  font-family: var(--font-poppins), sans-serif;
-}
