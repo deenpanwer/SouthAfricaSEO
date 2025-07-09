@@ -27,6 +27,7 @@ Allow: /
 # Disallow test directories
 Disallow: /test/
 Disallow: /test2/
+Disallow: /test3/
 Disallow: /saphirefans/
 Disallow: /site-map/
 
