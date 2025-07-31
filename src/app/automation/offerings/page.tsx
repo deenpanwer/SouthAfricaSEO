@@ -1,3 +1,6 @@
+
+'use client';
+
 import React from 'react';
 import Card from '../components/ui/Card';
 
@@ -7,49 +10,49 @@ const OfferingsPage: React.FC = () => {
       title: "Anti-Money Laundering Solutions",
       description: "Leverage AI to detect and prevent financial crime with advanced analytics.",
       imageUrl: "/automation/aml.jpg",
-      link: "/offerings/anti-money-laundering",
+      link: "/automation/offerings/anti-money-laundering",
     },
     {
       title: "Applied Customer Intelligence",
       description: "Gain deep insights into customer behavior to drive personalized experiences and growth.",
       imageUrl: "/automation/customer-intelligence.jpg",
-      link: "/offerings/customer-intelligence",
+      link: "/automation/offerings/customer-intelligence",
     },
     {
       title: "Artificial Intelligence & Machine Learning",
       description: "Develop and deploy cutting-edge AI/ML models for various business needs.",
       imageUrl: "/automation/ai-ml.jpg",
-      link: "/offerings/ai-ml",
+      link: "/automation/offerings/ai-ml",
     },
     {
       title: "Data Protection & Privacy",
       description: "Secure your sensitive data and ensure compliance with robust data protection solutions.",
       imageUrl: "/automation/data-protection.jpg",
-      link: "/offerings/data-protection",
+      link: "/automation/offerings/data-protection",
     },
     {
       title: "Edge AI Solutions",
       description: "Bring AI capabilities to the edge for real-time processing and decision-making.",
       imageUrl: "/automation/edge-ai.jpg",
-      link: "/offerings/edge-ai",
+      link: "/automation/offerings/edge-ai",
     },
     {
       title: "Supply Chain Optimization",
       description: "Optimize your supply chain with AI-driven forecasting, logistics, and risk management.",
       imageUrl: "/automation/supply-chain.jpg",
-      link: "/offerings/supply-chain",
+      link: "/automation/offerings/supply-chain",
     },
     {
       title: "Government Financial Management",
       description: "Modernize financial operations for government agencies with intelligent automation.",
       imageUrl: "/automation/gov-finance.jpg",
-      link: "/offerings/gov-finance",
+      link: "/automation/offerings/gov-finance",
     },
     {
       title: "Hospital Operations & Healthcare Analytics",
       description: "Improve hospital efficiency and patient outcomes with advanced analytics and operational insights.",
       imageUrl: "/automation/hospital-ops.jpg",
-      link: "/offerings/hospital-ops",
+      link: "/automation/offerings/hospital-ops",
     },
   ];
 

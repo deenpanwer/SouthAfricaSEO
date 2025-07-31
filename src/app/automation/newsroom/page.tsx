@@ -11,13 +11,13 @@ const NewsroomPage: React.FC = () => {
       title: "[Your Company Name] Partners with Leading Government Agency for AI Integration",
       description: "A landmark partnership to deploy advanced AI solutions for enhanced public services.",
       imageUrl: "/automation/news-gov-partnership.jpg",
-      link: "/newsroom/press-release-1",
+      link: "/automation/newsroom/press-release-1",
     },
     {
       title: "[Your Company Name] Named #1 AI Lab in Pakistan",
       description: "Recognized for our innovative contributions and leadership in the artificial intelligence landscape.",
       imageUrl: "/automation/news-ai-lab.jpg",
-      link: "/newsroom/press-release-2",
+      link: "/automation/newsroom/press-release-2",
     },
   ];
 
@@ -26,13 +26,13 @@ const NewsroomPage: React.FC = () => {
       title: "How [Your Company Name] is Revolutionizing Data Analytics in Pakistan",
       description: "Featured in Tech Magazine Pakistan for our groundbreaking work in data integration and insights.",
       imageUrl: "/automation/news-tech-magazine.jpg",
-      link: "/newsroom/media-coverage-1",
+      link: "/automation/newsroom/media-coverage-1",
     },
     {
       title: "AI in Defense: An Interview with [Your CEO Name]",
       description: "Our CEO discusses the critical role of AI in national security on National TV.",
       imageUrl: "/automation/news-ceo-interview.jpg",
-      link: "/newsroom/media-coverage-2",
+      link: "/automation/newsroom/media-coverage-2",
     },
   ];
 
@@ -41,13 +41,13 @@ const NewsroomPage: React.FC = () => {
       title: "The Ethical Imperatives of AI Development",
       description: "A white paper exploring the responsible development and deployment of artificial intelligence.",
       imageUrl: "/automation/news-ethics-paper.jpg",
-      link: "/newsroom/thought-leadership-1",
+      link: "/automation/newsroom/thought-leadership-1",
     },
     {
       title: "Predictive Analytics for Supply Chain Resilience",
       description: "Our latest research on leveraging AI to build robust and adaptive supply chains.",
       imageUrl: "/automation/news-supply-chain-research.jpg",
-      link: "/newsroom/thought-leadership-2",
+      link: "/automation/newsroom/thought-leadership-2",
     },
   ];
 

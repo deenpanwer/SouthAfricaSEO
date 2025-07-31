@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import Card from './ui/Card';
+import PlatformCard from './ui/PlatformCard';
 import { motion, useAnimation } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -146,7 +146,7 @@ const HomepagePlatformsSection: React.FC = () => {
           >
             {platforms.map((platform, index) => (
               <div key={index} className="w-full flex-shrink-0" style={{ paddingRight: '2rem' }}>
-                <Card platform={platform} isActive={currentIndex === index} />
+                <PlatformCard platform={platform} isActive={currentIndex === index} />
               </div>
             ))}
           </div>

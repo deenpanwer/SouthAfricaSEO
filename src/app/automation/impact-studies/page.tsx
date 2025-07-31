@@ -1,26 +1,28 @@
 
+'use client';
+
 import React from 'react';
 import Card from '../components/ui/Card';
 
 const ImpactStudiesPage: React.FC = () => {
   const studies = [
     {
-      title: "Impact Study 1",
+      title: "Impact Study 1: AI in Government Operations",
       description: "Description for Impact Study 1.",
-      imageUrl: "/automation/impact-study1.jpg",
-      link: "/impact-studies/impact-study-1",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
+      link: "/automation/impact-studies/impact-study-1",
     },
     {
-      title: "Impact Study 2",
+      title: "Impact Study 2: Enterprise Data Integration",
       description: "Description for Impact Study 2.",
-      imageUrl: "/automation/impact-study2.jpg",
-      link: "/impact-studies/impact-study-2",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
+      link: "/automation/impact-studies/impact-study-2",
     },
     {
-      title: "Impact Study 3",
+      title: "Impact Study 3: AI in Defense and Security",
       description: "Description for Impact Study 3.",
-      imageUrl: "/automation/impact-study3.jpg",
-      link: "/impact-studies/impact-study-3",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
+      link: "/automation/impact-studies/impact-study-3",
     },
   ];
 

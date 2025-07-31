@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -10,25 +11,25 @@ const HomepageOfferingsSection: React.FC = () => {
       title: "Anti-Money Laundering Solutions",
       description: "Leverage AI to detect and prevent financial crime with advanced analytics.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/offerings/anti-money-laundering",
+      link: "/automation/offerings/anti-money-laundering",
     },
     {
       title: "Applied Customer Intelligence",
       description: "Gain deep insights into customer behavior to drive personalized experiences and growth.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/offerings/customer-intelligence",
+      link: "/automation/offerings/customer-intelligence",
     },
     {
       title: "Artificial Intelligence & Machine Learning",
       description: "Develop and deploy cutting-edge AI/ML models for various business needs.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/offerings/ai-ml",
+      link: "/automation/offerings/ai-ml",
     },
     {
       title: "Data Protection & Privacy",
       description: "Secure your sensitive data and ensure compliance with robust data protection solutions.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/offerings/data-protection",
+      link: "/automation/offerings/data-protection",
     },
   ];
 
@@ -73,7 +74,6 @@ const HomepageOfferingsSection: React.FC = () => {
                   description={offering.description}
                   imageUrl={offering.imageUrl}
                   link={offering.link}
-                  useNextImage={true}
                 />
             </motion.div>
           ))}

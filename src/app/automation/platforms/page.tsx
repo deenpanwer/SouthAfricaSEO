@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import Card from '../components/ui/Card'; // Assuming a generic Card component exists or is adapted
+import PlatformCard from '../components/ui/PlatformCard'; 
 import { motion } from 'framer-motion';
 
 // Using a slightly different structure to match the HomepagePlatformsSection
@@ -92,7 +92,7 @@ const PlatformsPage: React.FC = () => {
         {platforms.map((platform, index) => (
           <motion.div key={index} variants={itemVariants}>
             {/* The isActive prop is not relevant on this page, but we can pass it as false */}
-            <Card platform={platform} isActive={false} />
+            <PlatformCard platform={platform} isActive={false} />
           </motion.div>
         ))}
       </motion.div>
