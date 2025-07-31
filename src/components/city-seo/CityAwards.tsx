@@ -9,15 +9,15 @@ interface CityAwardsProps {
 }
 
 const clutchAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Top-Digital-Marketing-Agencies-2021-by-Clutch.png',
-  alt: 'Clutch Award Logo',
+  src: '/home/Top-SEO-Agencies-2025-by-Clutch.webp',
+  alt: 'Top SEO Agencies 2025 by Clutch',
 };
 const upcityAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-National-Excellence-Awards-2021-in-United-States-761x761.png',
-  alt: 'UpCity National Excellence Award Logo',
+  src: '/home/Trac-National-Excellence-Awards-2025-in-United-States-UpCity.webp',
+  alt: 'Trac National Excellence Awards 2025 in United States by UpCity',
 }
 
-const AWARD_BADGES_STRIP_IMAGE = 'https://thriveagency.com/files/awardimage2020.jpg';
+const AWARD_BADGES_STRIP_IMAGE = '/home/awardimage2025.webp';
 const AWARD_BADGES_STRIP_ALT = 'Various digital marketing awards and recognitions';
 
 // Hardcoded categories for Clutch award

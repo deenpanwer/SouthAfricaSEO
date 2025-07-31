@@ -13,9 +13,9 @@ export const WhyChooseTracSection = () => {
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Why Choose Trac As Your Growth Partner?</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Why Choose Trac As Your SEO Partner?</h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-         We build systems for growth. Our approach is rooted in a deep understanding of business fundamentals and the first principles of digital marketing. We focus on creating durable assets that deliver predictable returns, not chasing fleeting trends.
+         We build systems for growth. Our approach is rooted in a deep understanding of business fundamentals and the first principles of SEO. We focus on creating durable assets that deliver predictable returns, not chasing fleeting trends.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {reasons.map((reason, index) => (

@@ -35,16 +35,13 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: {
-    default: 'TRAC provides strategic business solutions to increase your website traffic, leads, and sales, driving significant growth for your company.',
-    template: '%s | TRAC',
-  },
-  description: 'TRAC provides strategic business solutions to increase your website traffic, leads, and sales, driving significant growth for your company.',
-  keywords: ['business growth', 'sales optimization', 'conversion strategies', 'revenue amplification', 'business consulting'],
+  title: "Trac: #1 SEO Service Provider | Proven Results & ROI",
+  description: "Tired of agencies that overpromise and underdeliver? Trac is a results-driven SEO service provider focused on ROI. We help businesses grow with proven SEO strategies. Get your free proposal today.",
 };
 
 const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefans hostname
 const ENVIROPAINTING_PATH = '/test3';
+const AUTOMATION_PATH = '/automation';
 
 const FloatingOfferBanner = () => {
     return (
@@ -75,10 +72,10 @@ export default async function RootLayout({
   const isSaphireFansDomain = host === SAPHIREFANS_HOST;
   const isEnviroPaintingPath = pathname.startsWith(ENVIROPAINTING_PATH);
 
-  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath;
+  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !pathname.startsWith(AUTOMATION_PATH);
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={showMainLayout ? "scroll-smooth" : ""}>
       <head>
         {/* Verification: yandex */}
         <meta name="yandex-verification" content="5d40a7b47460fe9a" />
@@ -106,7 +103,7 @@ export default async function RootLayout({
         {/* End Meta Pixel Code */}
       </head>
       
-      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${hkGrotesk.variable} font-sans antialiased flex flex-col min-h-screen`}>
+      <body className={showMainLayout ? `${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${hkGrotesk.variable} font-sans antialiased flex flex-col min-h-screen` : ""}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

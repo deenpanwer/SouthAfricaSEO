@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'images.pexels.com', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn-icggj.nitrocdn.com', pathname: '/**' },
       { protocol: 'https', hostname: 'thriveagency.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'www.farahlegal.com', pathname: '/**' },
       { protocol: 'https', hostname: 'static.wixstatic.com', port: '', pathname: '/**' },
     ],
   },

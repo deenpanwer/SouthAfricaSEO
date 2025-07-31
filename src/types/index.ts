@@ -48,7 +48,7 @@ export interface Testimonial {
 export interface CaseStudyResult {
   metric: string;
   value: string;
-  icon: LucideIcon;
+  icon: string;
 }
 export interface CaseStudy {
   id: string;
@@ -68,6 +68,7 @@ export interface CaseStudy {
     role: string;
   };
   content?: string; // Full content for individual case study page
+  websiteUrl?: string;
 }
 
 export interface BlogPost {

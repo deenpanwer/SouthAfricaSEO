@@ -30,14 +30,14 @@ export const ClientResultsSection = () => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Our Clients Get Real Results</h2>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-       Trac is a full-service digital marketing agency. We provide a wide array of services to clients of all industries. Our services include consulting and management for a variety of tactics including SEO, PPC, copywriting, and CRO. We also offer expert web design and development. Don’t just partner with any agency; work with a company you can trust.
+       Trac is a full-service SEO company. We provide a wide array of services to clients of all industries. Our services include consulting and management for a variety of tactics including SEO, PPC, copywriting, and CRO. We also offer expert web design and development. Don’t just partner with any agency; work with a company you can trust.
       </p>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
           <div className="cursor-pointer" onClick={() => setIsModalOpen1(true)}>
             <Image
-              src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/home-group.png"
-              alt="Client Results 1"
+              src="/home/Client-Farah-Law-Firm.webp"
+              alt="A law firm's case results, including a 664% increase in qualified leads and a 360% increase in conversion rate."
               width={600}
               height={300}
               className="w-full"
@@ -71,8 +71,8 @@ export const ClientResultsSection = () => {
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
            <div className="cursor-pointer" onClick={() => setIsModalOpen2(true)}>
             <Image
-              src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/home-group-4866.png"
-              alt="Client Results 2"
+              src="/home/Client-Natiowide-Construction.webp"
+              alt="A construction firm's case results, including an 800% increase in client leads and a 22-point increase in domain authority."
               width={600}
               height={300}
               className="w-full"
@@ -106,7 +106,7 @@ export const ClientResultsSection = () => {
       </div>
       <div className="text-center mt-12">
         <Button asChild className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
-          <Link href="/contact">WORK WITH A TRUSTED MARKETING AGENCY</Link>
+          <Link href="/contact">WORK WITH A TRUSTED SEO COMPANY</Link>
         </Button>
       </div>
     </div>

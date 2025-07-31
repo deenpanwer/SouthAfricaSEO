@@ -2,12 +2,13 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllCaseStudies, getCaseStudyBySlug } from '@/lib/caseStudyService';
+import { getCaseStudyBySlug, getAllCaseStudies } from '@/lib/caseStudyService';
 import { APP_NAME } from '@/lib/constants.tsx';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { NumberTicker } from '@/components/ui/NumberTicker'; // Reusing this cool component
+import { NumberTicker } from '@/components/ui/NumberTicker';
+import { Button } from '@/components/ui/button';
 
 type CaseStudyPageProps = {
   params: { slug: string };
@@ -55,94 +56,119 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   }
 
   const currentIndex = allCaseStudies.findIndex(cs => cs.slug === params.slug);
+  const prevStudy = allCaseStudies[(currentIndex - 1 + allCaseStudies.length) % allCaseStudies.length];
   const nextStudy = allCaseStudies[(currentIndex + 1) % allCaseStudies.length];
 
   return (
-    <article className="py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <header className="text-center mb-12 md:mb-16">
-          <div className="flex justify-center items-center gap-4 mb-4">
-            {caseStudy.logoUrl && (
-              <Image src={caseStudy.logoUrl} alt={`${caseStudy.clientName} Logo`} width={120} height={50} className="object-contain" />
-            )}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground">
-              {caseStudy.clientName}
-            </h1>
+    <article className="bg-background">
+      {/* Hero Section */}
+      <section className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+        <Image
+          src={caseStudy.imageUrl}
+          alt={caseStudy.clientName}
+          layout="fill"
+          objectFit="cover"
+          className="brightness-50" // Darken image for text readability
+          data-ai-hint={caseStudy.dataAiHint}
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4 bg-black/40">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            {caseStudy.clientName}
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-200 mb-6 drop-shadow-md">{caseStudy.industry}</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {caseStudy.services.map(service => <Badge key={service} variant="outline" className="text-white border-white/50 bg-white/20 backdrop-blur-sm">{service}</Badge>)}
           </div>
-          <p className="text-lg text-muted-foreground">{caseStudy.industry}</p>
-          <div className="mt-4 flex justify-center gap-2">
-            {caseStudy.services.map(service => <Badge key={service}>{service}</Badge>)}
-          </div>
-        </header>
+        </div>
+      </section>
 
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-2xl font-bold text-center text-primary mb-8">Results at a Glance</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-            {caseStudy.results.map((result, index) => (
-              <Card key={index} className="shadow-lg">
-                <CardContent className="pt-6">
-                  <result.icon className="h-10 w-10 text-accent mx-auto mb-3" />
-                  <p className="text-4xl font-bold text-primary">
-                    <NumberTicker value={result.value} />
-                  </p>
-                  <p className="text-sm text-muted-foreground font-medium uppercase mt-1">{result.metric}</p>
-                </CardContent>
-              </Card>
-            ))}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-12 md:py-20">
+        {/* Results at a Glance */}
+        <section className="mb-12 md:mb-16 bg-muted py-12 rounded-lg shadow-inner">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-primary mb-8">Results at a Glance</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+              {caseStudy.results.map((result, index) => (
+                <Card key={index} className="bg-background shadow-lg border-none">
+                  <CardContent className="pt-6">
+                    <result.icon className="h-12 w-12 text-accent mx-auto mb-3" />
+                    <p className="text-5xl font-bold text-primary">
+                      <NumberTicker value={result.value} />
+                    </p>
+                    <p className="text-md text-muted-foreground font-medium uppercase mt-1">{result.metric}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-3 prose prose-lg dark:prose-invert max-w-none text-foreground/90 prose-headings:text-foreground prose-headings:font-semibold">
-            <h2 className="text-2xl font-bold">The Challenge</h2>
-            <p>{caseStudy.challenge}</p>
+        {/* Testimonial Section */}
+        {caseStudy.testimonial && (
+          <section className="mb-12 md:mb-16">
+            <Card className="bg-gray-800 text-white shadow-xl max-w-3xl mx-auto">
+              <CardContent className="pt-8">
+                <blockquote className="text-xl md:text-2xl text-center italic border-none p-0">
+                  "{caseStudy.testimonial.quote}"
+                </blockquote>
+                <p className="mt-6 text-center font-semibold text-lg">
+                  - {caseStudy.testimonial.author}, <span className="font-normal text-base text-gray-300">{caseStudy.testimonial.role}</span>
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
-            <h2 className="text-2xl font-bold mt-8">Our Solution</h2>
-            <p>{caseStudy.solution}</p>
-            
-            <h2 className="text-2xl font-bold mt-8">The Outcome</h2>
-            <div dangerouslySetInnerHTML={{ __html: caseStudy.content || '' }} />
-          </div>
+        {/* Challenge, Solution, Outcome */}
+        <div className="prose prose-lg dark:prose-invert max-w-none mx-auto text-foreground/90 prose-headings:text-foreground prose-headings:font-semibold">
+          <h2 className="text-3xl font-bold mt-8">The Challenge</h2>
+          <p>{caseStudy.challenge}</p>
 
-          <aside className="md:col-span-2">
-            <div className="sticky top-24 space-y-8">
-              <div className="relative aspect-video w-full rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={caseStudy.imageUrl}
-                  alt={caseStudy.clientName}
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint={caseStudy.dataAiHint}
-                />
-              </div>
-              {caseStudy.testimonial && (
-                <Card className="bg-muted/50">
-                  <CardContent className="pt-6">
-                    <blockquote className="text-muted-foreground italic border-l-4 border-primary pl-4">
-                      "{caseStudy.testimonial.quote}"
-                    </blockquote>
-                    <p className="mt-4 text-right font-semibold text-foreground">
-                      - {caseStudy.testimonial.author}, <span className="text-sm text-muted-foreground">{caseStudy.testimonial.role}</span>
-                    </p>
-                  </CardContent>
-                </Card>
-              )}
-            </div>
-          </aside>
+          <h2 className="text-3xl font-bold mt-8">Our Solution</h2>
+          <p>{caseStudy.solution}</p>
+          
+          <h2 className="text-3xl font-bold mt-8">The Outcome</h2>
+          <div dangerouslySetInnerHTML={{ __html: caseStudy.content || '' }} />
         </div>
 
-        {nextStudy && (
-          <footer className="mt-16 pt-12 border-t text-center">
-            <h3 className="text-xl font-semibold text-muted-foreground mb-4">Read another success story</h3>
-            <Link href={`/case-studies/${nextStudy.slug}`} className="group inline-block">
-              <p className="text-2xl font-bold text-primary group-hover:underline">{nextStudy.clientName}</p>
-              <p className="flex items-center justify-center text-muted-foreground group-hover:text-primary">
-                View Next Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </p>
-            </Link>
-          </footer>
+        {/* Call to Action */}
+        {caseStudy.websiteUrl && (
+          <div className="text-center mt-12 md:mt-16">
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-md transition-colors">
+              <a href={caseStudy.websiteUrl} target="_blank" rel="noopener noreferrer">
+                Visit Client Website <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         )}
+
+        {/* Previous/Next Navigation */}
+        <footer className="mt-16 pt-12 border-t grid grid-cols-2 gap-8">
+          <div className="text-left">
+            {prevStudy && (
+              <Link href={`/case-studies/${prevStudy.slug}`} className="group inline-block">
+                <h3 className="text-xl font-semibold text-muted-foreground mb-2">Previous Case Study</h3>
+                <p className="text-2xl font-bold text-primary group-hover:underline">{prevStudy.clientName}</p>
+                <p className="flex items-center text-muted-foreground group-hover:text-primary">
+                  <ArrowRight className="mr-2 h-4 w-4 rotate-180 transition-transform group-hover:-translate-x-1" /> View Case Study
+                </p>
+              </Link>
+            )}
+          </div>
+          <div className="text-right">
+            {nextStudy && (
+              <Link href={`/case-studies/${nextStudy.slug}`} className="group inline-block">
+                <h3 className="text-xl font-semibold text-muted-foreground mb-2">Next Case Study</h3>
+                <p className="text-2xl font-bold text-primary group-hover:underline">{nextStudy.clientName}</p>
+                <p className="flex items-center justify-end text-muted-foreground group-hover:text-primary">
+                  View Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </p>
+              </Link>
+            )}
+          </div>
+        </footer>
       </div>
     </article>
   );
 }
+

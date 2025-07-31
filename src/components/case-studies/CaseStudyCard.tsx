@@ -3,11 +3,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import type { CaseStudy } from '@/types';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award, Link2, Search, Target, TrendingUp, Users } from 'lucide-react';
 
 interface CaseStudyCardProps {
   caseStudy: CaseStudy;
 }
+
+const iconMap = {
+  TrendingUp,
+  Target,
+  Award,
+  Users,
+  Link2,
+  Search,
+};
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
@@ -32,12 +41,12 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             <CardTitle className="text-xl font-semibold">{caseStudy.clientName}</CardTitle>
           )}
           <CardDescription className="text-sm text-muted-foreground h-12 overflow-hidden">
-            {caseStudy.challenge.length > 90 ? caseStudy.challenge.substring(0, 90) + '...' : caseStudy.challenge}
+            {caseStudy.challenge ? (caseStudy.challenge.length > 90 ? caseStudy.challenge.substring(0, 90) + '...' : caseStudy.challenge) : ''}
           </CardDescription>
         </CardHeader>
         <CardContent className="flex-grow">
           <div className="flex flex-wrap gap-2">
-            {caseStudy.services.slice(0,3).map((service) => (
+            {caseStudy.services?.slice(0,3).map((service) => (
               <Badge key={service} variant="secondary">{service}</Badge>
             ))}
           </div>

@@ -180,12 +180,12 @@ export const HomeHeroSection = () => {
               </form>
             </Form>
             <div className="mt-8"> {/* Added margin top for spacing */}
-              <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Badge-Strip-670X60.png" alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
+              <Image src="/home/logostriphome.png" alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
             </div>
           </div>
           <div className="relative">
             <Image
-              src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Amit-Cro.jpg"
+              src="/home/Amit-Cro(1).webp"
               alt="Amit Sharma"
               width={450}
               height={500}

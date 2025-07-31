@@ -8,7 +8,7 @@ export const ReadyToGrowSection = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 className="text-3xl font-bold mb-4">READY TO GROW YOUR BUSINESS?</h2>
       <p className="mb-8 max-w-xl mx-auto">
-       If you're looking for an agency that delivers real results—not just vanity metrics—you're in the right place. Connect with us to work with a results-driven digital marketing agency you can trust.
+       If you're looking for an agency that delivers real results—not just vanity metrics—you're in the right place. Connect with us to work with a results-driven SEO company you can trust.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 transition-colors">

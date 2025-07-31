@@ -17,17 +17,17 @@ export const PartnerLogosSection = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
+          <Image src="/home/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
           <StarRating rating={5} />
           <p className="text-sm mt-1 text-yellow-400">500+ Reviews</p>
         </div>
         <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
+          <Image src="/home/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
            <StarRating rating={5} />
           <p className="text-sm mt-1 text-yellow-400">200+ Reviews</p>
         </div>
         <div className="flex flex-col items-center">          
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />           
+          <Image src="/home/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />           
           <StarRating rating={5} />          
           <p className="text-sm mt-1 text-yellow-400">150+ Reviews</p>        
           </div>

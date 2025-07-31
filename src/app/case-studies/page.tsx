@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { Award } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants.tsx';
-import { getAllCaseStudies } from '@/lib/caseStudyService';
-import { CaseStudyCard } from '@/components/case-studies/CaseStudyCard';
+import { getAllCaseStudies, getCaseStudyFilters } from '@/lib/caseStudyService';
+import { CaseStudiesList } from '@/components/case-studies/CaseStudiesList';
 
 export const metadata: Metadata = {
   title: 'SEO Case Studies',
@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function CaseStudiesPage() {
-  const caseStudies = await getAllCaseStudies();
+  const [caseStudies, { services, industries }] = await Promise.all([
+    getAllCaseStudies(),
+    getCaseStudyFilters(),
+  ]);
 
   return (
     <div className="py-12 md:py-20 bg-background">
@@ -25,18 +28,8 @@ export default async function CaseStudiesPage() {
           </p>
         </section>
 
-        {caseStudies.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((cs) => (
-              <CaseStudyCard key={cs.slug} caseStudy={cs} />
-            ))}
-          </div>
-        ) : (
-          <section className="text-center py-16 text-muted-foreground">
-            <Award className="h-12 w-12 mx-auto mb-4" />
-            <p className="text-xl">We're currently documenting our latest success stories. Please check back soon!</p>
-          </section>
-        )}
+        <CaseStudiesList initialCaseStudies={caseStudies} services={services} industries={industries} />
+
       </div>
     </div>
   );

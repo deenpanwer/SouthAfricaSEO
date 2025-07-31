@@ -24,23 +24,27 @@ testimonial:
   quote: "Our phones started ringing off the hook for the right kinds of jobs. TRAC's local SEO and PPC work delivered exactly what they promised: more emergency calls and a lower ad spend."
   author: 'Sean Murphy'
   role: 'Owner, Dublin Emergency Plumbers'
+websiteUrl: 'https://plumber-dublin.ie/'
 ---
 
 ### The Full Story
 
-Dublin Emergency Plumbers had a solid reputation for quality work but were invisible online when it mattered most. Their website wasn't ranking for critical, high-intent terms like "emergency plumber Dublin" or "burst pipe repair near me." Competitors with stronger local SEO were capturing the majority of urgent calls, leaving Dublin Emergency Plumbers reliant on expensive, inefficient ad campaigns with a high cost-per-lead.
+Dublin Emergency Plumbers, a trusted name in local plumbing services, faced a critical challenge: despite their expertise, they were struggling to capture high-intent emergency calls. Their online visibility was severely limited, particularly in the crucial Google Map Pack, where competitors consistently outranked them. This forced them to rely on expensive and often inefficient ad campaigns, leading to a high cost-per-acquisition for new clients.
 
-Our analysis revealed several key issues:
-- A non-optimized Google Business Profile that was absent from the crucial Google Map Pack.
-- A lack of specific, high-ranking landing pages for different emergency services.
-- A Google Ads campaign that was targeting broad, non-converting keywords, leading to wasted spend.
+Our initial audit revealed several key issues:
 
-**The Solution:**
+*   **Poor Local Search Visibility:** Their Google Business Profile was under-optimized, preventing them from appearing prominently in local search results and the Map Pack for urgent queries.
+*   **Lack of Targeted Landing Pages:** They lacked specific, well-optimized landing pages for various emergency services (e.g., burst pipes, blocked drains), which hindered their ability to rank for precise, high-value keywords.
+*   **Inefficient Ad Spend:** Their existing Google Ads campaigns were broadly targeted, leading to wasted budget on irrelevant clicks and a low conversion rate for emergency services.
 
-Our team implemented an aggressive, two-pronged local marketing strategy:
+**Our Solution:**
 
-1.  **Hyper-Local SEO Overhaul:** We completely revamped their Google Business Profile, ensuring it was rich with service keywords, location data, and positive reviews. We built out dedicated service pages for each type of emergency (e.g., blocked drains, boiler repair, leak detection), each optimized for specific Dublin neighborhoods like Temple Bar, Ballsbridge, and Rathmines. This created a strong network of locally relevant pages that Google could rank highly.
+TRAC implemented a comprehensive, two-pronged digital strategy designed to dominate local emergency plumbing searches:
 
-2.  **Profit-Driven PPC Restructuring:** We paused their existing broad-match ad campaigns and built new ones from the ground up. The new campaigns focused exclusively on high-intent, "emergency" keywords. We implemented sophisticated call tracking to measure exactly which ads were driving phone calls, allowing us to optimize the budget in real-time towards the most profitable campaigns.
+1.  **Hyper-Local [SEO Optimization](/services/seo):** We initiated a complete overhaul of their Google Business Profile, enriching it with detailed service descriptions, accurate location data, and a proactive strategy for acquiring positive customer reviews. Concurrently, we developed a series of highly optimized, neighborhood-specific landing pages for critical services like "emergency boiler repair Dublin" and "24-hour plumber Ballsbridge." This ensured maximum relevance for local search queries.
 
-The impact was immediate and dramatic. By appearing at the top of local search results and running highly efficient ads, Dublin Emergency Plumbers became the go-to service for urgent plumbing needs in their service area, turning their online presence into their most valuable source of new business.
+2.  **Precision [PPC Management](/services/ppc):** We meticulously restructured their Google Ads account, shifting focus from broad targeting to highly specific, high-intent keywords such as "emergency plumber near me" and "burst pipe repair Dublin." We implemented advanced call tracking to precisely measure the ROI of each ad group, allowing for real-time budget allocation to the most profitable campaigns and significantly reducing their cost-per-acquisition.
+
+**The Outcome:**
+
+The results were immediate and transformative. Dublin Emergency Plumbers saw a dramatic increase in qualified emergency call leads, with their phones ringing off the hook for high-value jobs. Their consistent #1 ranking in the Google Map Pack for critical terms established them as the go-to emergency plumbing service in Dublin. The optimized PPC campaigns delivered a significantly lower cost-per-acquisition, turning their advertising budget into a highly efficient lead-generation machine. TRAC successfully transformed their online presence into their most powerful asset for acquiring new business.

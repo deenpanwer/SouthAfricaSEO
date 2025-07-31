@@ -68,10 +68,18 @@ export default {
                 'enviro-green': 'hsl(var(--enviro-green))',
                 'enviro-pink': 'hsl(var(--enviro-pink))',
                 'enviro-card-background': 'hsl(var(--enviro-card-background))',
+                // Palantir-inspired theme colors
+                'ph-black': '#000000',
+                'ph-dark-gray': '#111111',
+                'ph-white': '#FFFFFF',
+                'ph-light-gray': '#AAAAAA',
+                'ph-accent': '#00BFFF',
+                'ph-border': '#333333',
+                'ph-translucent-white': 'rgba(255, 255, 255, 0.1)', // Translucent white for header
             },
             fontFamily: {
               sans: ['var(--font-geist-sans)', 'sans-serif'],
-              poppins: ['var(--font-poppins)', 'sans-serif'],
+              poppins: ['Poppins', 'sans-serif'], // Directly use Poppins as it's imported in globals.css
             },
             borderRadius: {
                 lg: 'var(--radius)',

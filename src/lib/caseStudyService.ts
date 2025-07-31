@@ -32,7 +32,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
         // Map icon names to components for results
         const resultsWithIcons = data.results?.map((result: { metric: string, value: string, icon: string }) => ({
           ...result,
-          icon: iconMap[result.icon as keyof typeof iconMap] || Search,
+          icon: result.icon as string,
         })) || [];
 
         return {
@@ -45,6 +45,13 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
   );
 
   return posts;
+}
+
+export async function getCaseStudyFilters() {
+  const caseStudies = await getAllCaseStudies();
+  const services = [...new Set(caseStudies.flatMap(cs => cs.services))];
+  const industries = [...new Set(caseStudies.map(cs => cs.industry))];
+  return { services, industries };
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {

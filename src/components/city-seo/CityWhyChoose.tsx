@@ -69,7 +69,7 @@ export function CityWhyChoose({ headline, intro, points, whyChooseParagraph1, wh
             </div>
           </div>
           <div className="md:w-1/2 relative group cursor-pointer" onClick={() => setIsModalOpen(true)}>
-            <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/thrive-video-static-img.jpg" alt="Thrive Agency Team" className="rounded-md shadow-lg w-full h-auto" />
+            <img src="/home/Our-Team.webp" alt="The Trac team" className="rounded-md shadow-lg w-full h-auto" />
              {/* Play button overlay (optional, but good for UX) */}
              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity rounded-md">
                 <svg className="h-16 w-16 text-white opacity-75 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">

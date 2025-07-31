@@ -7,7 +7,7 @@ export const AwardWinningSection = () => {
  return (
   <><section className="py-16 bg-gray-50">
      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-       <h2 className="text-3xl font-bold text-gray-800 mb-4">An Award-Winning Digital Marketing Agency</h2>
+       <h2 className="text-3xl font-bold text-gray-800 mb-4">An Award-Winning SEO Company</h2>
        <p className="text-gray-600 max-w-2xl mx-auto mb-4">
          Awards are a byproduct of results. Our recognition from industry leaders like Clutch and UpCity isn't just about trophies; it's third-party validation that our first-principles approach works. It confirms that our focus on transparent, ROI-driven strategies creates measurable value for our clients.
        </p>
@@ -18,8 +18,8 @@ export const AwardWinningSection = () => {
    </section><section className="py-8 bg-white">
        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
          <Image
-           src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/awardimage2020.jpg"
-           alt="Award Strip"
+           src="/home/awardimage2025.webp"
+           alt="A collection of award badges from various industry leaders."
            width={1000}
            height={50}
            className="mx-auto" />

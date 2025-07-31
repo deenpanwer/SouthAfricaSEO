@@ -24,9 +24,9 @@ interface CityResultsHighlightsProps {
 }
 
 const cityTestimonials: Testimonial[] = [
-  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/desktop/optimized/rev-d6d7292/thriveagency.com/files/marci-wiersma", dataAiHint: "Marci Wiersma photo", rating: 5 },
-  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/whitney-wells-lewis.jpg", dataAiHint: "Whitney Wells Lewis photo", rating: 5 },
-  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/chad-montgomery.jpg", dataAiHint: "Chad Montgomery photo", rating: 5 },
+  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "/home/marci-wiersma.webp", dataAiHint: "Marci Wiersma photo", rating: 5 },
+  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "/home/whitney-wells-lewis.webp", dataAiHint: "Whitney Wells Lewis photo", rating: 5 },
+  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "/home/chad-montgomery.webp", dataAiHint: "Chad Montgomery photo", rating: 5 },
 ];
 
 export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) {
@@ -65,8 +65,8 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
           <div className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
             <div className="relative aspect-[16/7] cursor-pointer group" onClick={() => setIsModalOpen1(true)}>
               <Image
-                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/home-group.png"
-                alt="Client Results 1"
+                src="/home/Client-Farah-Law-Firm.webp"
+              alt="A law firm's case results, including a 664% increase in qualified leads and a 360% increase in conversion rate."
                 layout="fill"
                 objectFit="cover"
                 data-ai-hint="business results graph"
@@ -100,8 +100,8 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
           <div className="border border-gray-200 rounded-lg shadow-md overflow-hidden">
             <div className="relative aspect-[16/7] cursor-pointer group" onClick={() => setIsModalOpen2(true)}>
               <Image
-                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/home-group-4866.png"
-                alt="Client Results 2"
+               src="/home/Client-Natiowide-Construction.webp"
+              alt="A construction firm's case results, including an 800% increase in client leads and a 22-point increase in domain authority."
                 layout="fill"
                 objectFit="cover"
                 data-ai-hint="marketing success chart"
