@@ -19,24 +19,22 @@ interface PlatformCardProps {
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
   return (
-    <div className="relative w-full aspect-[16/9] min-h-[60vh] md:min-h-[70vh] rounded-lg overflow-hidden text-ph-white group">
-      <Image
+    <div className="relative w-full aspect-[16/9] min-h-[60vh] md:min-h-[70vh] group bg-ph-black">
+       <Image
         src={platform.imageUrl}
         alt={platform.title}
         layout="fill"
         objectFit="cover"
-        className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+        className="transition-transform duration-500 ease-in-out group-hover:scale-105 opacity-50 group-hover:opacity-70"
         data-ai-hint={platform.dataAiHint}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-      
-      <div className="absolute top-0 left-0 p-6 md:p-8">
+      <div className="absolute inset-0 flex items-start justify-start p-6 md:p-8">
         <div 
-          className="bg-black/40 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 shadow-lg"
+          className="bg-black/60 backdrop-blur-sm p-6 md:p-8 border border-ph-border/50 text-ph-white max-w-md"
         >
           <p className="text-xs uppercase tracking-widest text-ph-light-gray">{platform.category}</p>
-          <h3 className="text-xl md:text-2xl font-bold mt-1">{platform.description}</h3>
-          <Link href={platform.link} className="text-sm text-ph-accent hover:underline mt-4 inline-flex items-center group/link">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mt-2 leading-tight text-ph-white">{platform.description}</h3>
+          <Link href={platform.link} className="text-sm font-semibold text-ph-accent hover:underline mt-4 inline-flex items-center group/link">
             Learn More <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover/link:translate-x-1" />
           </Link>
         </div>

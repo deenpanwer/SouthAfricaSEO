@@ -4,7 +4,8 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PlatformCard from './ui/PlatformCard';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const platforms = [
     {
@@ -79,47 +80,38 @@ const HomepagePlatformsSection: React.FC = () => {
   const handleNextClick = () => advanceSlide('next');
 
   return (
-    <section className="py-12 md:py-20 bg-ph-whitest-gray text-ph-black w-full overflow-hidden">
+    <section className="py-12 md:py-20 bg-ph-dark-gray text-ph-white w-full overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Top Navigation */}
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-8 border-b border-gray-200 pb-4">
-          <div className="flex items-center justify-center flex-wrap gap-2">
+        <div className="flex items-center justify-center flex-wrap gap-x-2 gap-y-4 mb-8 border-b border-ph-border pb-4">
+          <div className="flex items-center justify-center flex-wrap gap-x-2">
             {platforms.map((platform, index) => (
               <button
                 key={index}
                 onClick={() => handleNavClick(index)}
-                className={`relative px-5 py-2 text-sm font-semibold rounded-md transition-colors duration-300 overflow-hidden
+                className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-300
                   ${currentIndex === index
-                    ? 'bg-white text-ph-black shadow-sm'
-                    : 'bg-transparent text-gray-500 hover:bg-white/60'
+                    ? 'bg-ph-border text-white'
+                    : 'bg-transparent text-ph-light-gray hover:text-white'
                   }`}
               >
                 <span>{platform.title}</span>
-                {currentIndex === index && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-0.5 bg-ph-accent/50 shadow-lg"
-                    initial={{ width: '0%' }}
-                    animate={{ width: '100%' }}
-                    transition={{ duration: AUTOPLAY_INTERVAL / 1000, ease: 'linear' }}
-                    key={currentIndex} // Re-trigger animation when index changes
-                  />
-                )}
               </button>
             ))}
           </div>
-          <a href="/automation/platforms" className="text-sm font-semibold text-gray-600 hover:text-ph-black">
-            See All →
-          </a>
+           <Link href="/automation/platforms" className="px-4 py-2 text-sm font-semibold border border-ph-border text-ph-light-gray hover:bg-ph-border hover:text-white transition-colors">
+            See All
+          </Link>
         </div>
 
         {/* Horizontal Scroller */}
         <div className="relative">
           {/* Previous Button */}
-          <button onClick={handlePrevClick} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-ph-black transition-colors rounded-full bg-white/50 hover:bg-white shadow-md">
+          <button onClick={handlePrevClick} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-white transition-colors rounded-full bg-black/50 hover:bg-black/80 shadow-md">
             <ChevronLeft className="w-6 h-6"/>
           </button>
           {/* Next Button */}
-          <button onClick={handleNextClick} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-ph-black transition-colors rounded-full bg-white/50 hover:bg-white shadow-md">
+          <button onClick={handleNextClick} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-white transition-colors rounded-full bg-black/50 hover:bg-black/80 shadow-md">
             <ChevronRight className="w-6 h-6"/>
           </button>
           
