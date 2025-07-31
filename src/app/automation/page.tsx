@@ -7,6 +7,7 @@ import HomepageImpactStudiesSection from "./components/HomepageImpactStudiesSect
 import HomepageBlogSection from "./components/HomepageBlogSection";
 
 import type { Metadata } from "next";
+import VideoBackground from "./components/VideoBackground";
 
 export const metadata: Metadata = {
   title: "Automation",
@@ -15,14 +16,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection />
-      <HomepagePlatformsSection />
-      <HomepageOfferingsSection />
-      <HomepageImpactStudiesSection />
-      <HomepageBlogSection />
-      <VideoSection />
-      <TestimonialsCarousel />
+    <main className="relative flex min-h-screen flex-col items-center justify-between bg-ph-black">
+      <VideoBackground />
+      <div className="relative z-20 w-full">
+        <HeroSection />
+        <HomepagePlatformsSection />
+        <HomepageOfferingsSection />
+        <HomepageImpactStudiesSection />
+        <HomepageBlogSection />
+        <VideoSection />
+        <TestimonialsCarousel />
+      </div>
     </main>
   );
 }

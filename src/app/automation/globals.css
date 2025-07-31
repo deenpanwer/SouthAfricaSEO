@@ -10,9 +10,8 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-a {
+/* a {
   color: #00BFFF; /* Accent color for links */
-}
 
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }

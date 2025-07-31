@@ -1,149 +1,156 @@
+
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import Card from './ui/Card'; // Assuming Card component is still useful for individual platform display
-import { motion } from 'framer-motion';
-// Import necessary styles for react-slick. You might need to install it: npm install react-slick slick-carousel
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import Card from './ui/Card';
+import { motion, useAnimation } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const HomepagePlatformsSection: React.FC = () => {
-  const platforms = [
+const platforms = [
     {
-      title: "Palantir Gotham",
-      description: "An AI-ready operating system primarily used for defense and intelligence, aiding in decision-making for operators.",
-      imageUrl: "/automation/gotham.jpg",
-      link: "/platforms/gotham",
+      title: "Gotham",
+      category: "Platform",
+      description: "An AI-ready operating system for global defense and intelligence.",
+      largeText: "Gotham",
+      link: "/automation/platforms/gotham",
+      details: {
+        writtenBy: "Alex Karp, CEO",
+        published: "2023",
+        length: "5 Min Read"
+      }
     },
     {
-      title: "Palantir Foundry",
-      description: "An ontology-powered operating system for enterprises, focusing on data integration, analysis, and operational operational workflows in commercial and civil government sectors.",
-      imageUrl: "/automation/foundry.jpg",
-      link: "/platforms/foundry",
+      title: "Foundry",
+      category: "Platform",
+      description: "An ontology-powered operating system for the modern enterprise.",
+      largeText: "Foundry",
+      link: "/automation/platforms/foundry",
+      details: {
+        writtenBy: "Shyam Sankar, CTO",
+        published: "2024",
+        length: "7 Min Read"
+      }
     },
     {
-      title: "Palantir Apollo",
-      description: "A continuous delivery system that deploys, monitors, and secures software across diverse environments, including multi-cloud, on-premise, and edge devices.",
-      imageUrl: "/automation/apollo.jpg",
-      link: "/platforms/apollo",
+      title: "AIP",
+      category: "Platform",
+      description: "Activate large language models and other AI on private networks.",
+      largeText: "AIP",
+      link: "/automation/platforms/aip",
+       details: {
+        writtenBy: "AI Division",
+        published: "2024",
+        length: "6 Min Read"
+      }
     },
-    {
-      title: "Palantir Artificial Intelligence Platform (AIP)",
-      description: "Enables the activation and control of large language models (LLMs) and other AI on private networks, integrating AI into operational decision-making.",
-      imageUrl: "/automation/aip.jpg",
-      link: "/platforms/aip",
+     {
+      title: "Apollo",
+      category: "Platform",
+      description: "Continuous delivery system for deploying software across all environments.",
+      largeText: "Apollo",
+      link: "/automation/platforms/apollo",
+       details: {
+        writtenBy: "DevOps Team",
+        published: "2023",
+        length: "4 Min Read"
+      }
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const navRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+const AUTOPLAY_INTERVAL = 7000; // 7 seconds
 
-  // Effect for animating the black strip indicator below the active navigation item
-  useEffect(() => {
-    const activeNavItem = navRefs.current[currentSlide];
-    if (activeNavItem) {
-      setIndicatorStyle({
-        left: activeNavItem.offsetLeft,
-        width: activeNavItem.offsetWidth,
-      });
+const HomepagePlatformsSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const controls = useAnimation();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
-  }, [currentSlide]);
+  };
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Changed to show multiple slides
-    slidesToScroll: 1, // Changed to scroll one slide at a time
-    autoplay: true,
-    autoplaySpeed: 5000, // Slide every 5 seconds
-    // Removed fade: true for horizontal sliding
-    beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
-    // You can add more settings here like arrows, responsive breakpoints, etc.
-     responsive: [ // Added responsive settings
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
+  const advanceSlide = useCallback((direction: 'next' | 'prev') => {
+    setCurrentIndex(prevIndex => {
+      let newIndex;
+      if (direction === 'next') {
+        newIndex = (prevIndex + 1) % platforms.length;
+      } else {
+        newIndex = (prevIndex - 1 + platforms.length) % platforms.length;
       }
-    ]
-  };
+      return newIndex;
+    });
+  }, []);
 
-  // Function to handle navigation item click
+  useEffect(() => {
+    controls.set({ width: 0 });
+    controls.start({ width: '100%', transition: { duration: AUTOPLAY_INTERVAL / 1000, ease: 'linear' } });
+    
+    resetTimeout();
+    timeoutRef.current = setTimeout(() => advanceSlide('next'), AUTOPLAY_INTERVAL);
+
+    return () => resetTimeout();
+  }, [currentIndex, controls, advanceSlide]);
+
   const handleNavClick = (index: number) => {
-    setCurrentSlide(index);
-    // Optionally, you can add logic here to manually go to the slide using slider ref if needed
+    setCurrentIndex(index);
   };
+  
+  const handlePrevClick = () => advanceSlide('prev');
+  const handleNextClick = () => advanceSlide('next');
 
   return (
-    <section className="py-24 bg-gray-100"> {/* Changed background to light gray */}
-      <div className="w-full"> {/* Removed container mx-auto px-6 */}
-        {/* Removed "OUR CORE PLATFORMS" title */}
-
-        {/* Platform Navigation and See All Button */}
-        <div className="flex items-center justify-center mb-8 relative"> {/* Removed bg-white and p-2 */}
-          {platforms.map((platform, index) => (
-            <div
-              key={index}
-              ref={el => { navRefs.current[index] = el; }} // Corrected ref callback
-              className={`px-4 py-2 cursor-pointer text-gray-600 bg-white relative overflow-hidden 
-                ${currentSlide === index ? '!text-ph-black font-semibold' : ''} 
-                transition-colors duration-300
-                ${index < platforms.length - 1 ? 'mr-1' : ''} // Added margin right for spacing
-              `} // Styled navigation items with white background, removed rounded-md
-              onClick={() => handleNavClick(index)}
-            >
-              {/* Simplify title for button */}
-              {platform.title.replace('Palantir ', '').replace('(AIP)', '').trim()}
-
-              {/* Animated Time Indicator */}
-              {currentSlide === index && (
-                <motion.div
-                  key={currentSlide} // Key to restart animation
-                  className="absolute bottom-0 left-0 h-full w-0 bg-gray-300" // Changed indicator height to full and added initial width
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: settings.autoplaySpeed / 1000, ease: "linear" }}
-                />
-              )}
-            </div>
-          ))}
-          {/* Animated Indicator Strip - This was the old indicator below the nav, removing or repurposing if needed */}
-          {/* <motion.div
-            className="absolute bottom-0 h-0.5 bg-ph-black"
-            style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
-            transition={{ duration: 0.3 }}
-          /> */}
-          <a href="/platforms" className="ml-4 px-4 py-2 bg-gray-200 text-ph-dark-gray font-semibold rounded-md">See All</a> {/* Styled See All button */}
+    <section className="py-12 md:py-20 bg-ph-dark-gray text-ph-white w-full overflow-hidden">
+      <div className="container mx-auto px-6">
+        {/* Top Navigation */}
+        <div className="flex items-center justify-center mb-8 border-b border-ph-border">
+          <div className="flex items-center space-x-4">
+            {platforms.map((platform, index) => (
+              <div
+                key={index}
+                className="relative py-3 cursor-pointer"
+                onClick={() => handleNavClick(index)}
+              >
+                <span className={`text-sm font-medium transition-colors ${currentIndex === index ? 'text-ph-white' : 'text-ph-light-gray hover:text-ph-white'}`}>
+                  {platform.title}
+                </span>
+                {currentIndex === index && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 bg-ph-white"
+                    initial={{ width: 0 }}
+                    animate={controls}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+          <a href="/automation/platforms" className="ml-auto text-sm font-medium text-ph-light-gray hover:text-ph-white border border-ph-border px-3 py-1 rounded-md">
+            See All
+          </a>
         </div>
 
-        {/* Carousel */} 
-        <Slider {...settings}>
-          {platforms.map((platform, index) => (
-            <div key={index} className="px-2"> {/* Added padding for spacing between slides */} 
-              <a href={platform.link}>
-                <div className="rounded-lg overflow-hidden border border-gray-300 relative min-h-[400px]"> {/* Adjusted border color and added min-height */}
-                  <img src={platform.imageUrl} alt={platform.title} className="w-full h-auto object-cover" onLoad={() => console.log(`Image loaded: ${platform.imageUrl}`)} onError={() => console.error(`Error loading image: ${platform.imageUrl}`)} />
-                  {/* Removed platform title overlay - assuming title is in the image */}
-                </div>
-              </a>
-            </div>
-          ))}
-        </Slider>
+        {/* Horizontal Scroller */}
+        <div className="relative">
+           {/* Previous Button */}
+          <button onClick={handlePrevClick} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 text-ph-light-gray hover:text-ph-white transition-colors">
+            <ChevronLeft className="w-8 h-8"/>
+          </button>
+          {/* Next Button */}
+          <button onClick={handleNextClick} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 text-ph-light-gray hover:text-ph-white transition-colors">
+            <ChevronRight className="w-8 h-8"/>
+          </button>
 
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 2}rem))` }}
+          >
+            {platforms.map((platform, index) => (
+              <div key={index} className="w-full flex-shrink-0" style={{ paddingRight: '2rem' }}>
+                <Card platform={platform} isActive={currentIndex === index} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

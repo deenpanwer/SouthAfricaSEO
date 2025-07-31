@@ -9,19 +9,19 @@ const HomepageBlogSection: React.FC = () => {
     {
       title: "Blog Post 1: The Future of AI in Pakistan",
       description: "An in-depth look at the burgeoning AI landscape in Pakistan and our role as a leading AI lab.",
-      imageUrl: "/automation/blog-post1.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/blog/blog-post-1",
     },
     {
       title: "Blog Post 2: Ethical AI and Its Implications",
       description: "Exploring the ethical considerations in AI development and deployment, and our commitment to responsible AI practices.",
-      imageUrl: "/automation/blog-post2.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/blog/blog-post-2",
     },
     {
       title: "Blog Post 3: AI in Action - Real-World Applications",
       description: "Showcasing practical applications of AI across various industries and how our solutions are making a tangible impact.",
-      imageUrl: "/automation/blog-post3.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/blog/blog-post-3",
     },
   ];

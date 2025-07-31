@@ -9,19 +9,19 @@ const HomepageImpactStudiesSection: React.FC = () => {
     {
       title: "Impact Study 1: AI in Government Operations",
       description: "Detailed case study on how our AI solutions transformed government operations, leading to increased efficiency and transparency.",
-      imageUrl: "/automation/impact-study1.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/impact-studies/impact-study-1",
     },
     {
       title: "Impact Study 2: Enterprise Data Integration",
       description: "A deep dive into how our Foundry-like platform enabled a large enterprise to integrate disparate data sources and gain actionable insights.",
-      imageUrl: "/automation/impact-study2.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/impact-studies/impact-study-2",
     },
     {
       title: "Impact Study 3: AI in Defense and Security",
       description: "Case study on the application of our AI solutions in military combat and national security, enhancing threat detection and strategic decision-making.",
-      imageUrl: "/automation/impact-study3.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/impact-studies/impact-study-3",
     },
   ];

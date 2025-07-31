@@ -9,25 +9,25 @@ const HomepageOfferingsSection: React.FC = () => {
     {
       title: "Anti-Money Laundering Solutions",
       description: "Leverage AI to detect and prevent financial crime with advanced analytics.",
-      imageUrl: "/automation/aml.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/offerings/anti-money-laundering",
     },
     {
       title: "Applied Customer Intelligence",
       description: "Gain deep insights into customer behavior to drive personalized experiences and growth.",
-      imageUrl: "/automation/customer-intelligence.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/offerings/customer-intelligence",
     },
     {
       title: "Artificial Intelligence & Machine Learning",
       description: "Develop and deploy cutting-edge AI/ML models for various business needs.",
-      imageUrl: "/automation/ai-ml.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/offerings/ai-ml",
     },
     {
       title: "Data Protection & Privacy",
       description: "Secure your sensitive data and ensure compliance with robust data protection solutions.",
-      imageUrl: "/automation/data-protection.txt",
+      imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
       link: "/offerings/data-protection",
     },
   ];
@@ -69,11 +69,12 @@ const HomepageOfferingsSection: React.FC = () => {
           {offerings.map((offering, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card
-                title={offering.title}
-                description={offering.description}
-                imageUrl={offering.imageUrl}
-                link={offering.link}
-              />
+                  title={offering.title}
+                  description={offering.description}
+                  imageUrl={offering.imageUrl}
+                  link={offering.link}
+                  useNextImage={true}
+                />
             </motion.div>
           ))}
         </motion.div>
