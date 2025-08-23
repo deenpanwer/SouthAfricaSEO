@@ -26,6 +26,7 @@ export const NAV_ITEMS: NavItem[] = [
       { href: '/services/reputation-management', label: 'Reputation Management' },
       { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization' },
       { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)' },
+      { href: '/automations', label: 'Automations' },
     ]
   },
   { href: '/pricing', label: 'Pricing' },

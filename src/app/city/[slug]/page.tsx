@@ -14,6 +14,10 @@ import { CityAwards } from '@/components/city-seo/CityAwards';
 import { CityLocation } from '@/components/city-seo/CityLocation';
 import { CityBottomForm } from '@/components/city-seo/CityBottomForm';
 import { CityFAQSection } from '@/components/city-seo/CityFAQSection';
+import { CityRoadmap } from '@/components/city-seo/CityRoadmap';
+import { CityTeam } from '@/components/city-seo/CityTeam';
+import { CityOpportunityScore } from '@/components/city-seo/CityOpportunityScore';
+import { CityROICalculator } from '@/components/city-seo/CityROICalculator';
 
 interface CityPageProps {
   params: { slug: string };
@@ -100,6 +104,10 @@ export default function CityPage({ params }: CityPageProps) {
         whyChooseParagraph2={cityData.whyChooseParagraph2}
         cityName={cityData.cityName}
       />
+      <CityRoadmap cityName={cityData.cityName} />
+      <CityTeam cityName={cityData.cityName} />
+      <CityOpportunityScore cityName={cityData.cityName} />
+      <CityROICalculator cityName={cityData.cityName} />
       <CityAwards
         clutchAward={cityData.awards.clutch}
         upcityAward={cityData.awards.upcity}

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from "../ui/button";
+import clientFarahLawFirm from '../../../public/home/Client-Farah-Law-Firm.webp';
+import clientNationwideConstruction from '../../../public/home/Client-Natiowide-Construction.webp';
 
 const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
   if (!isOpen) return null;
@@ -36,7 +38,7 @@ export const ClientResultsSection = () => {
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
           <div className="cursor-pointer" onClick={() => setIsModalOpen1(true)}>
             <Image
-              src="/home/Client-Farah-Law-Firm.webp"
+              src={clientFarahLawFirm}
               alt="A law firm's case results, including a 664% increase in qualified leads and a 360% increase in conversion rate."
               width={600}
               height={300}

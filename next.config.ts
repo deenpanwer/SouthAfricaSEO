@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'thriveagency.com', pathname: '/**' },
       { protocol: 'https', hostname: 'www.farahlegal.com', pathname: '/**' },
       { protocol: 'https', hostname: 'static.wixstatic.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.ctfassets.net', port: '', pathname: '/**' },
     ],
   },
 
@@ -29,7 +30,12 @@ const nextConfig: NextConfig = {
     // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
     // as this logic is now handled by src/middleware.ts.
     return [
-      // --- Main Domain (traconomics.com) Rewrites (After subdomain rules) ---
+      // Automations Subsite Rewrite
+      {
+        source: '/automations/:path*',
+        destination: '/automations/:path*',
+      },
+      // --- Main Domain (traconomics.com) Rewrites (After subdomain rules)---
       // These rules apply when the host is *not* saphirefans.traconomics.com
       // (because the middleware handles saphirefans, and for other hosts, these are evaluated).
       // Keep the specific ones before the general ones.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "AI Research Scientist",
+    "category": "Research",
+    "location": "Islamabad, Pakistan",
+    "description": "Develop novel AI algorithms and models for defense and national security applications.",
+    "requirements": [
+      "Ph.D. in AI/ML or related field",
+      "5+ years experience in deep learning frameworks",
+      "Strong publication record"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Full-stack AI Engineer",
+    "category": "Engineering",
+    "location": "Lahore, Pakistan",
+    "description": "Build and deploy scalable AI-powered applications and infrastructure.",
+    "requirements": [
+      "Bachelor's or Master's in Computer Science",
+      "3+ years experience with Next.js, Python, FastAPI",
+      "Experience with cloud platforms (AWS/Azure/GCP)"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "AI Policy Analyst",
+    "category": "Policy",
+    "location": "Islamabad, Pakistan",
+    "description": "Analyze and shape national AI policy, focusing on ethical AI and governance.",
+    "requirements": [
+      "Master's in Public Policy, Law, or International Relations",
+      "Strong understanding of AI ethics and regulatory frameworks",
+      "Excellent research and communication skills"
+    ]
+  }
+]

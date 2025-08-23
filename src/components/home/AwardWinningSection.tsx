@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
+import awardImage from '../../../public/home/awardimage2025.webp';
 
 export const AwardWinningSection = () => {
  return (

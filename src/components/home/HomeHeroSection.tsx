@@ -15,6 +15,8 @@ import { Loader2, Send } from 'lucide-react';
 import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import logoStripHome from '../../../public/home/logostriphome.png';
+import amitCro from '../../../public/home/Amit-Cro(1).webp';
 
 // Define the type for form values
 interface HeroLeadFormValues {
@@ -180,7 +182,7 @@ export const HomeHeroSection = () => {
               </form>
             </Form>
             <div className="mt-8"> {/* Added margin top for spacing */}
-              <Image src="/home/logostriphome.png" alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
+              <Image src={logoStripHome} alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
             </div>
           </div>
           <div className="relative">

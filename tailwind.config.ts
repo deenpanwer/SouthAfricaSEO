@@ -8,6 +8,8 @@ export default {
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/automations/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/automations/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
@@ -80,7 +82,7 @@ export default {
             },
             fontFamily: {
               sans: ['var(--font-geist-sans)', 'sans-serif'],
-              poppins: ['Poppins', 'sans-serif'], // Directly use Poppins as it's imported in globals.css
+              poppins: ['var(--font-poppins)', 'sans-serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',
