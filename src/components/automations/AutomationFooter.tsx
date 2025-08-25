@@ -47,14 +47,14 @@ export const AutomationFooter = () => {
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* About Snippet */}
         <div className="col-span-full md:col-span-1 flex flex-col space-y-4">
-          <h2 className="text-2xl font-bold text-white">
-            <span className="text-primary">AI</span><span className="text-secondary">Lab</span>
-          </h2>
+          <Link href="/automations" className="text-2xl font-bold text-white">
+            <span className="text-primary">TR</span><span className="text-primary">AC</span>
+          </Link>
           <p className="text-sm">
             Pakistan's premier AI research and development agency, driving innovation for national security, government efficiency, and enterprise transformation.
           </p>
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} AILab. All rights reserved.
+            &copy; {new Date().getFullYear()} TRAC. All rights reserved.
           </p>
         </div>
 
@@ -64,6 +64,7 @@ export const AutomationFooter = () => {
           <Link href="/automations/blog" className="hover:text-white transition-colors">Blog</Link>
           <Link href="/automations/news" className="hover:text-white transition-colors">News</Link>
           <Link href="/automations/case-studies" className="hover:text-white transition-colors">Case Studies</Link>
+          <Link href="/automations/briefings" className="hover:text-white transition-colors">Briefings</Link>
           <Link href="/automations/careers" className="hover:text-white transition-colors">Careers</Link>
           <Link href="/automations/contact" className="hover:text-white transition-colors">Contact</Link>
         </FooterColumn>
@@ -72,12 +73,12 @@ export const AutomationFooter = () => {
         <FooterColumn title="Resources">
           <Link href="/automations/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="/automations/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-          <Link href="/automations/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
+          <Link href="/automations/sitemap" className="hover:text-white transition-colors">Site Map</Link>
         </FooterColumn>
 
         {/* Contact & Social */}
         <FooterColumn title="Connect">
-          <p>Email: <a href="mailto:info@ailab.pk" className="hover:text-white transition-colors">info@ailab.pk</a></p>
+          <p>Email: <a href="mailto:traconomics@gmail.com" className="hover:text-white transition-colors">traconomics@gmail.com</a></p>
           <SocialIconRow />
         </FooterColumn>
       </div>

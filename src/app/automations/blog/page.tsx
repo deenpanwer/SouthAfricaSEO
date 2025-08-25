@@ -1,21 +1,13 @@
 import React from 'react';
-import { getSortedPostsData } from '@/app/automations/lib/blog/get-mdx-data';
-import { getContentfulBlogPosts } from '@/app/automations/lib/contentfulService';
+import { getContentfulBlogPosts } from '@/app/automations/lib/blog/contentfulService';
 import { BlogCard } from '@/components/automations/blog/BlogCard';
 
 const BlogPage = async () => {
   // 1. Fetch posts from both sources
-  const localPosts = getSortedPostsData();
   const contentfulPosts = await getContentfulBlogPosts();
 
-  // 2. Combine and normalize the arrays
-  const allPostsData = [
-    ...localPosts.map(post => ({ ...post, slug: post.id })), // Ensure local posts have a slug property
-    ...contentfulPosts,
-  ];
-
-  // 3. Sort all posts by date, ensuring newest are first
-  allPostsData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // 2. Sort all posts by date, ensuring newest are first
+  contentfulPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
@@ -38,7 +30,7 @@ const BlogPage = async () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-8">Latest Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allPostsData.map(({ id, slug, title, description, date, image, author, tags }) => (
+            {contentfulPosts.map(({ id, slug, title, description, publicationDate, image, author, tags }) => (
               <BlogCard
                 key={id}
                 post={{
@@ -46,7 +38,7 @@ const BlogPage = async () => {
                   slug,
                   title,
                   description,
-                  date,
+                  publicationDate: publicationDate ? new Date(publicationDate).toISOString() : '',
                   image,
                   author,
                   tags,

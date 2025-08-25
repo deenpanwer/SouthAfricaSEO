@@ -1,9 +1,12 @@
 import React from 'react';
-import { getSortedNewsData } from '@/app/automations/lib/news/get-mdx-data';
+import { getContentfulNewsArticles } from '@/app/automations/lib/news/contentfulService';
 import { NewsCard } from '@/components/automations/news/NewsCard';
 
-const NewsPage = () => {
-  const allNewsData = getSortedNewsData();
+const NewsPage = async () => {
+  const allNewsData = await getContentfulNewsArticles();
+
+  // Sort news articles by publicationDate, newest first
+  allNewsData.sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime());
 
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
@@ -18,17 +21,12 @@ const NewsPage = () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-8">Recent Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allNewsData.map(({ id, title, description, date, image, author, tags }) => (
+            {allNewsData.map((news) => (
               <NewsCard
-                key={id}
+                key={news.id}
                 news={{
-                  id,
-                  title,
-                  description,
-                  date,
-                  image,
-                  author,
-                  tags,
+                  ...news,
+                  publicationDate: news.publicationDate ? new Date(news.publicationDate).toISOString() : '',
                 }}
               />
             ))}

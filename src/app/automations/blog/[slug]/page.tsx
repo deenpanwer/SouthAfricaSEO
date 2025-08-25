@@ -1,7 +1,6 @@
 
-import { getPostData, getSortedPostsData } from '@/app/automations/lib/blog/get-mdx-data';
-import { getContentfulBlogPostBySlug, getContentfulBlogPosts } from '@/app/automations/lib/contentfulService';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { getContentfulBlogPostBySlug, getContentfulBlogPosts } from '@/app/automations/lib/blog/contentfulService';
+import { marked } from 'marked'; // Import marked
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPostClient from '@/components/automations/blog/BlogPostClient'; // Import the new client component
@@ -17,21 +16,15 @@ async function getPost(slug: string) {
 
   if (contentfulPost) {
     // If found, convert its rich text content to HTML, checking if content exists
-    const contentHtml = contentfulPost.content ? documentToHtmlString(contentfulPost.content) : '';
+    const contentHtml = contentfulPost.markdown ? marked.parse(contentfulPost.markdown) : '';
     return {
       ...contentfulPost,
       contentHtml,
+      publicationDate: contentfulPost.publicationDate ? new Date(contentfulPost.publicationDate).toISOString() : '',
     };
   }
 
-  // If not in Contentful, try to get it from local MDX files
-  try {
-    const localPost = await getPostData(slug);
-    return localPost;
-  } catch (error) {
-    // If it's not in either place, return null
-    return null;
-  }
+  return null;
 }
 
 // For metadata generation (still runs on server)
@@ -46,7 +39,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title || 'Untitled Post',
     description: post.description || '',
     openGraph: {
-      images: post.image ? [post.image] : [],
+      title: post.title || 'Untitled Post',
+      description: post.description || '',
+      images: [
+        {
+          url: post.image || '',
+          alt: post.imageTitle || post.title || 'Image',
+        },
+      ],
     },
   };
 }
@@ -60,16 +60,11 @@ export default async function Post({ params }: Props) {
   }
 
   // Fetch related posts on the server
-  const localPosts = getSortedPostsData(); // Correctly get all local posts
   const contentfulPosts = await getContentfulBlogPosts();
 
-  const allPosts = [
-    ...(Array.isArray(localPosts) ? localPosts.map(p => ({ ...p, slug: p.id })) : []), // Ensure local posts are array and have slug
-    ...contentfulPosts,
-  ];
-
-  const filteredRelated = allPosts.filter(p => p.slug !== postData.slug)
-                                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const filteredRelated = (contentfulPosts || []).filter(p => p.slug !== postData.slug)
+                                  .map(p => ({ ...p, publicationDate: p.publicationDate ? new Date(p.publicationDate).toISOString() : '' })) // Ensure related posts also have ISO date
+                                  .sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime())
                                   .slice(0, 2); // Get top 2 recent related posts
 
   return (

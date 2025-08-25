@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
@@ -6,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
 
-interface BlogPostClientProps {
-  initialPostData: any;
-  initialRelatedPosts: any[];
+interface BriefingArticleClientProps {
+  initialBriefingData: any;
+  initialRelatedBriefings: any[];
 }
 
 // Helper function to estimate read time (can be moved to a utility file if used elsewhere)
@@ -20,12 +19,12 @@ function estimateReadTime(content: string): string {
   return `${minutes} min read`;
 }
 
-export default function BlogPostClient({
-  initialPostData,
-  initialRelatedPosts,
-}: BlogPostClientProps) {
-  const [postData, setPostData] = useState(initialPostData);
-  const [relatedPosts, setRelatedPosts] = useState(initialRelatedPosts);
+export default function BriefingArticleClient({
+  initialBriefingData,
+  initialRelatedBriefings,
+}: BriefingArticleClientProps) {
+  const [briefingData, setBriefingData] = useState(initialBriefingData);
+  const [relatedBriefings, setRelatedBriefings] = useState(initialRelatedBriefings);
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
   const [copySuccess, setCopySuccess] = useState('');
@@ -56,7 +55,7 @@ export default function BlogPostClient({
     };
   }, [showShareOptions]); // Re-run effect when showShareOptions changes
 
-  if (!postData) {
+  if (!briefingData) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         Loading...
@@ -64,7 +63,7 @@ export default function BlogPostClient({
     );
   }
 
-  const contentHtml = postData.contentHtml || '';
+  const contentHtml = briefingData.contentHtml || '';
   const readTime = estimateReadTime(contentHtml);
 
   const handleShareClick = () => {
@@ -90,19 +89,21 @@ export default function BlogPostClient({
 
         {/* Article Header */}
         <header className="mb-8 md:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{postData.title || 'Untitled Post'}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{briefingData.title || 'Untitled Briefing'}</h1>
           
           <div className="flex flex-col sm:flex-row sm:items-center text-ph-light-gray text-sm sm:text-base mb-4 space-y-1 sm:space-y-0 sm:space-x-4">
-            <span>By <span className="font-semibold text-white">{postData.author || 'Admin'}</span></span>
+            <span>By <span className="font-semibold text-white">{briefingData.author || 'Admin'}</span></span>
             <span className="hidden sm:inline">•</span>
-            <span>{format(postData.publicationDate, 'MMMM dd, yyyy')}</span>
+            <span>
+              {format(new Date(briefingData.publicationDate), 'MMMM dd, yyyy')}
+            </span>
             <span className="hidden sm:inline">•</span>
             <span>{readTime}</span>
           </div>
 
-          {postData.tags && postData.tags.length > 0 && (
+          {briefingData.tags && briefingData.tags.length > 0 && (
             <div className="mb-6 flex flex-wrap gap-2">
-              {postData.tags.map((tag: string) => (
+              {briefingData.tags.map((tag: string) => (
                 <span
                   key={tag}
                   className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full"
@@ -131,10 +132,10 @@ export default function BlogPostClient({
                   <a href={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
                     Share on Facebook
                   </a>
-                  <a href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(postData.title || '')}`} target="_blank" rel="noopenernoreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
+                  <a href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(briefingData.title || '')}`} target="_blank" rel="noopenernoreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
                     Share on Twitter
                   </a>
-                  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${encodeURIComponent(postData.title || '')}`} target= "_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem"> 
+                  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${encodeURIComponent(briefingData.title || '')}`} target= "_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem"> 
                     Share on LinkedIn
                   </a>
                   <button onClick={handleCopyLink} className="block w-full text-left px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
@@ -147,46 +148,45 @@ export default function BlogPostClient({
         </header>
 
         {/* Featured Image */}
-        {postData.image && (
+        {briefingData.featuredImage && (
           <div className="mb-8">
             <div className="relative w-full h-72 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden"> {/* More prominent image */}
               <Image
-                src={postData.image}
-                alt={postData.imageTitle || postData.title || 'Image'}
-                title={postData.imageDescription || postData.title || 'Image'}
+                src={briefingData.featuredImage.url}
+                alt={briefingData.featuredImage.title || briefingData.title || 'Image'}
+                title={briefingData.featuredImage.description || briefingData.title || 'Image'}
                 fill
                 style={{ objectFit: 'cover' }}
                 className="rounded-lg"
               />
             </div>
-            {postData.imageDescription && (
-              <p className="text-center text-sm text-ph-light-gray mt-2">{postData.imageDescription}</p>
+            {briefingData.featuredImage.description && (
+              <p className="text-center text-sm text-ph-light-gray mt-2">{briefingData.featuredImage.description}</p>
             )}
           </div>
         )}
 
         {/* Article Content */}
         <article className="automation-blog-content mx-auto text-ph-light-gray max-w-none"> {/* max-w-none for full width */}
-          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: briefingData.contentHtml }} />
         </article>
 
         {/* Related Posts */}
-        {relatedPosts.length > 0 && (
+        {relatedBriefings.length > 0 && (
           <section className="mt-12 pt-8 border-t border-ph-border">
-            <h2 className="text-xl font-semibold text-white mb-4">More from our Blog</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">More Briefings</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {relatedPosts.map(post => (
-                <Link key={post.id} href={`/automations/blog/${post.slug}`} className="block">
+              {relatedBriefings.map(briefing => (
+                <Link key={briefing.id} href={`/automations/briefings/${briefing.slug}`} className="block">
                   <div className="bg-card p-4 rounded-lg border border-ph-border hover:border-primary transition-colors duration-200">
-                    <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">{post.title}</h3>
-                    <p className="text-sm text-ph-light-gray line-clamp-3">{post.description}</p>
+                    <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">{briefing.title}</h3>
+                    <p className="text-sm text-ph-light-gray line-clamp-3">{briefing.description}</p>
                   </div>
                 </Link>
               ))}
             </div>
           </section>
         )}
-
       </div>
     </div>
   );

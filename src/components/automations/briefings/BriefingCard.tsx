@@ -4,15 +4,18 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { format } from 'date-fns';
 
 interface BriefingCardProps {
   briefing: {
     id: string;
+    slug: string;
     title: string;
     description: string;
-    date: string;
+    publicationDate: string;
     image: string;
-    category: string;
+    author: string;
+    tags: string[];
   };
 }
 
@@ -25,7 +28,7 @@ export const BriefingCard = ({ briefing }: BriefingCardProps) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
     >
-      <Link href={`/automations/briefings/${briefing.id}`}>
+      <Link href={`/automations/briefings/${briefing.slug}`}>
         <div className="relative w-full h-48">
           <Image
             src={briefing.image}
@@ -36,9 +39,6 @@ export const BriefingCard = ({ briefing }: BriefingCardProps) => {
           />
         </div>
         <div className="p-6">
-          <span className="text-sm font-semibold text-accent uppercase mb-2 block">
-            {briefing.category}
-          </span>
           <h3 className="text-xl font-semibold text-white mb-2 line-clamp-2">
             {briefing.title}
           </h3>
@@ -46,7 +46,22 @@ export const BriefingCard = ({ briefing }: BriefingCardProps) => {
             {briefing.description}
           </p>
           <div className="flex items-center justify-between text-xs text-ph-light-gray">
-            <span>{new Date(briefing.date).toLocaleDateString()}</span>
+            <span>By {briefing.author}</span>
+            <span>
+              {briefing.publicationDate
+                ? format(briefing.publicationDate, 'MMMM dd, yyyy')
+                : ''}
+            </span>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {briefing.tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </Link>

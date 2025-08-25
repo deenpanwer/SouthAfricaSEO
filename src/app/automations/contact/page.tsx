@@ -8,10 +8,10 @@ const ContactPage = () => {
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <h1 className="text-5xl font-bold text-center text-white mb-12">
-          Get in Touch
+          Connect with Our Ethical AI Team
         </h1>
         <p className="text-lg text-ph-light-gray text-center mb-16">
-          Have a question, a project idea, or want to collaborate? Reach out to us.
+          Whether you have a question about our ethical AI solutions, a potential collaboration, or simply want to learn more about our responsible approach to technology, we'd love to hear from you.
         </p>
 
         <section className="mb-16">

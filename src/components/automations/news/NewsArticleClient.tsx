@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
@@ -6,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
 
-interface BlogPostClientProps {
-  initialPostData: any;
-  initialRelatedPosts: any[];
+interface NewsArticleClientProps {
+  initialNewsData: any;
+  initialRelatedNews: any[]; // Adapted for news
 }
 
 // Helper function to estimate read time (can be moved to a utility file if used elsewhere)
@@ -20,12 +19,12 @@ function estimateReadTime(content: string): string {
   return `${minutes} min read`;
 }
 
-export default function BlogPostClient({
-  initialPostData,
-  initialRelatedPosts,
-}: BlogPostClientProps) {
-  const [postData, setPostData] = useState(initialPostData);
-  const [relatedPosts, setRelatedPosts] = useState(initialRelatedPosts);
+export default function NewsArticleClient({
+  initialNewsData,
+  initialRelatedNews,
+}: NewsArticleClientProps) {
+  const [newsData, setNewsData] = useState(initialNewsData);
+  const [relatedNews, setRelatedNews] = useState(initialRelatedNews); // Adapted for news
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
   const [copySuccess, setCopySuccess] = useState('');
@@ -56,7 +55,7 @@ export default function BlogPostClient({
     };
   }, [showShareOptions]); // Re-run effect when showShareOptions changes
 
-  if (!postData) {
+  if (!newsData) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         Loading...
@@ -64,7 +63,7 @@ export default function BlogPostClient({
     );
   }
 
-  const contentHtml = postData.contentHtml || '';
+  const contentHtml = newsData.contentHtml || '';
   const readTime = estimateReadTime(contentHtml);
 
   const handleShareClick = () => {
@@ -84,25 +83,25 @@ export default function BlogPostClient({
   return (
     <div className="min-h-screen bg-background text-foreground py-8 sm:py-12 md:py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Wider container */}
-        <Link href="/automations/blog" className="text-ph-accent hover:text-primary-foreground transition-colors duration-200 mb-6 inline-block text-sm sm:text-base">
-          &larr; Back to Blog
+        <Link href="/automations/news" className="text-ph-accent hover:text-primary-foreground transition-colors duration-200 mb-6 inline-block text-sm sm:text-base">
+          &larr; Back to News
         </Link>
 
         {/* Article Header */}
         <header className="mb-8 md:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{postData.title || 'Untitled Post'}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">{newsData.title || 'Untitled News'}</h1>
           
           <div className="flex flex-col sm:flex-row sm:items-center text-ph-light-gray text-sm sm:text-base mb-4 space-y-1 sm:space-y-0 sm:space-x-4">
-            <span>By <span className="font-semibold text-white">{postData.author || 'Admin'}</span></span>
+            <span>By <span className="font-semibold text-white">{newsData.author || 'Admin'}</span></span>
             <span className="hidden sm:inline">•</span>
-            <span>{format(postData.publicationDate, 'MMMM dd, yyyy')}</span>
+            <span>{format(newsData.publicationDate, 'MMMM dd, yyyy')}</span>
             <span className="hidden sm:inline">•</span>
             <span>{readTime}</span>
           </div>
 
-          {postData.tags && postData.tags.length > 0 && (
+          {newsData.tags && newsData.tags.length > 0 && (
             <div className="mb-6 flex flex-wrap gap-2">
-              {postData.tags.map((tag: string) => (
+              {newsData.tags.map((tag: string) => (
                 <span
                   key={tag}
                   className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full"
@@ -131,10 +130,10 @@ export default function BlogPostClient({
                   <a href={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`} target="_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
                     Share on Facebook
                   </a>
-                  <a href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(postData.title || '')}`} target="_blank" rel="noopenernoreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
+                  <a href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodeURIComponent(newsData.title || '')}`} target="_blank" rel="noopenernoreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
                     Share on Twitter
                   </a>
-                  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${encodeURIComponent(postData.title || '')}`} target= "_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem"> 
+                  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${encodeURIComponent(newsData.title || '')}`} target= "_blank" rel="noopener noreferrer" className="block px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem"> 
                     Share on LinkedIn
                   </a>
                   <button onClick={handleCopyLink} className="block w-full text-left px-4 py-2 text-sm text-ph-light-gray hover:bg-muted hover:text-white" role="menuitem">
@@ -147,46 +146,45 @@ export default function BlogPostClient({
         </header>
 
         {/* Featured Image */}
-        {postData.image && (
+        {newsData.featuredImage && (
           <div className="mb-8">
             <div className="relative w-full h-72 sm:h-96 md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden"> {/* More prominent image */}
               <Image
-                src={postData.image}
-                alt={postData.imageTitle || postData.title || 'Image'}
-                title={postData.imageDescription || postData.title || 'Image'}
+                src={newsData.featuredImage.url}
+                alt={newsData.featuredImage.title || newsData.title || 'Image'}
+                title={newsData.featuredImage.description || newsData.title || 'Image'}
                 fill
                 style={{ objectFit: 'cover' }}
                 className="rounded-lg"
               />
             </div>
-            {postData.imageDescription && (
-              <p className="text-center text-sm text-ph-light-gray mt-2">{postData.imageDescription}</p>
+            {newsData.featuredImage.description && (
+              <p className="text-center text-sm text-ph-light-gray mt-2">{newsData.featuredImage.description}</p>
             )}
           </div>
         )}
 
         {/* Article Content */}
         <article className="automation-blog-content mx-auto text-ph-light-gray max-w-none"> {/* max-w-none for full width */}
-          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: newsData.contentHtml }} />
         </article>
 
-        {/* Related Posts */}
-        {relatedPosts.length > 0 && (
+        {/* Related News */}
+        {relatedNews.length > 0 && (
           <section className="mt-12 pt-8 border-t border-ph-border">
-            <h2 className="text-xl font-semibold text-white mb-4">More from our Blog</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">More News</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {relatedPosts.map(post => (
-                <Link key={post.id} href={`/automations/blog/${post.slug}`} className="block">
+              {relatedNews.map(news => (
+                <Link key={news.id} href={`/automations/news/${news.slug}`} className="block">
                   <div className="bg-card p-4 rounded-lg border border-ph-border hover:border-primary transition-colors duration-200">
-                    <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">{post.title}</h3>
-                    <p className="text-sm text-ph-light-gray line-clamp-3">{post.description}</p>
+                    <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">{news.title}</h3>
+                    <p className="text-sm text-ph-light-gray line-clamp-3">{news.description}</p>
                   </div>
                 </Link>
               ))}
             </div>
           </section>
         )}
-
       </div>
     </div>
   );

@@ -1,53 +1,67 @@
-import { getCaseStudyData, getAllCaseStudyIds } from '@/app/automations/lib/case-studies/get-mdx-data';
+import { getContentfulCaseStudyBySlug, getContentfulCaseStudies } from '@/app/automations/lib/case-studies/contentfulService';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import CaseStudyPostClient from '@/components/automations/case-studies/CaseStudyPostClient';
+import { marked } from 'marked'; // Import marked
 
 type Props = {
   params: { slug: string };
 };
 
+async function getCaseStudy(slug: string) {
+  const contentfulCaseStudy = await getContentfulCaseStudyBySlug(slug);
+
+  if (contentfulCaseStudy) {
+    const contentHtml = contentfulCaseStudy.markdown ? marked.parse(contentfulCaseStudy.markdown) : '';
+    return {
+      ...contentfulCaseStudy,
+      contentHtml,
+      publicationDate: contentfulCaseStudy.publicationDate ? new Date(contentfulCaseStudy.publicationDate).toISOString() : '',
+    };
+  }
+
+  return null;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const caseStudyData = await getCaseStudyData(params.slug);
+  const caseStudy = await getCaseStudy(params.slug);
+
+  if (!caseStudy) {
+    return notFound();
+  }
+
   return {
-    title: caseStudyData.title,
-    description: caseStudyData.description,
+    title: caseStudy.title || 'Untitled Case Study',
+    description: caseStudy.description || '',
     openGraph: {
-      images: [caseStudyData.image],
+      title: caseStudy.title || 'Untitled Case Study',
+      description: caseStudy.description || '',
+      images: [
+        {
+          url: caseStudy.featuredImage?.url || '',
+          alt: caseStudy.featuredImage?.title || caseStudy.title || 'Image',
+        },
+      ],
     },
   };
 }
 
-export async function generateStaticParams() {
-  const paths = getAllCaseStudyIds();
-  return paths;
-}
-
 export default async function CaseStudyArticle({ params }: Props) {
-  const caseStudyData = await getCaseStudyData(params.slug);
+  const caseStudyData = await getCaseStudy(params.slug);
+
+  if (!caseStudyData) {
+    notFound();
+  }
+
+  // Fetch related case studies on the server
+  const contentfulCaseStudies = await getContentfulCaseStudies();
+
+  const filteredRelated = (contentfulCaseStudies || []).filter(cs => cs.slug !== caseStudyData.slug)
+                                  .map(cs => ({ ...cs, publicationDate: cs.publicationDate ? new Date(cs.publicationDate).toISOString() : '' })) // Ensure related case studies also have ISO date
+                                  .sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime())
+                                  .slice(0, 2); // Get top 2 recent related case studies
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-16">
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <h1 className="text-5xl font-bold text-white mb-4">{caseStudyData.title}</h1>
-        <p className="text-ph-light-gray text-lg mb-6">
-          By {caseStudyData.author} on {new Date(caseStudyData.date).toLocaleDateString()}
-        </p>
-        {caseStudyData.image && (
-          <div className="mb-8 relative h-64 w-full">
-            <Image
-              src={caseStudyData.image}
-              alt={caseStudyData.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-lg"
-            />
-          </div>
-        )}
-        <div
-          className="prose prose-invert prose-lg mx-auto text-ph-light-gray"
-          dangerouslySetInnerHTML={{ __html: caseStudyData.contentHtml }}
-        />
-      </div>
-    </div>
+    <CaseStudyPostClient initialCaseStudyData={caseStudyData} initialRelatedCaseStudies={filteredRelated} />
   );
 }

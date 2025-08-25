@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { format } from 'date-fns';
 
 interface BlogCardProps {
   post: {
@@ -10,7 +11,7 @@ interface BlogCardProps {
     slug: string;
     title: string;
     description: string;
-    date: string;
+    publicationDate: string;
     image: string;
     author: string;
     tags: string[];
@@ -45,7 +46,11 @@ export const BlogCard = ({ post }: BlogCardProps) => {
           </p>
           <div className="flex items-center justify-between text-xs text-ph-light-gray">
             <span>By {post.author}</span>
-            <span>{new Date(post.date).toISOString().split('T')[0]}</span>
+            <span>
+              {post.publicationDate
+                ? format(post.publicationDate, 'MMMM dd, yyyy')
+                : ''}
+            </span>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {post.tags.map((tag) => (

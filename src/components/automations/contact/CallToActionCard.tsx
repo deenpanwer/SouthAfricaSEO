@@ -16,7 +16,7 @@ export const CallToActionCard = () => {
           <Link href="/automations/contact">Schedule a Consultation</Link>
         </Button>
         <Button className="bg-transparent border border-ph-border text-white hover:bg-ph-border px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-105">
-          <Link href="mailto:info@ailab.pk">Email Us Directly</Link>
+          <Link href="mailto:traconomics@gmail.com">Email Us Directly</Link>
         </Button>
       </div>
     </div>

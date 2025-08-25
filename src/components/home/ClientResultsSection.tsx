@@ -107,7 +107,7 @@ export const ClientResultsSection = () => {
         </div>
       </div>
       <div className="text-center mt-12">
-        <Button asChild className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-md hover:bg-orange-600 transition-colors text-lg">
+        <Button asChild className="bg-orange-500 text-white font-semibold py-2 px-4 md:py-3 md:px-8 rounded-md hover:bg-orange-600 transition-colors text-base md:text-lg">
           <Link href="/contact">WORK WITH A TRUSTED SEO COMPANY</Link>
         </Button>
       </div>

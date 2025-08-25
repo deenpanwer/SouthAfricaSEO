@@ -3,17 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { ContentfulNewsArticle } from '@/app/automations/lib/news/contentfulService';
+import { format } from 'date-fns';
 
 interface NewsCardProps {
-  news: {
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    image: string;
-    author: string;
-    tags: string[];
-  };
+  news: ContentfulNewsArticle;
 }
 
 export const NewsCard = ({ news }: NewsCardProps) => {
@@ -25,11 +19,12 @@ export const NewsCard = ({ news }: NewsCardProps) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
     >
-      <Link href={`/automations/news/${news.id}`}>
+      <Link href={`/automations/news/${news.slug}`}>
         <div className="relative w-full h-48">
           <Image
-            src={news.image}
-            alt={news.title}
+            src={news.featuredImage.url}
+            alt={news.featuredImage.title || news.title || 'Image'}
+            title={news.featuredImage.description || news.title || 'Image'}
             fill
             style={{ objectFit: 'cover' }}
             className="rounded-t-lg"
@@ -44,13 +39,17 @@ export const NewsCard = ({ news }: NewsCardProps) => {
           </p>
           <div className="flex items-center justify-between text-xs text-ph-light-gray">
             <span>By {news.author}</span>
-            <span>{new Date(news.date).toLocaleDateString()}</span>
+            <span>
+              {news.publicationDate
+                ? format(news.publicationDate, 'MMMM dd, yyyy')
+                : ''}
+            </span>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {news.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full"
+                className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full"
               >
                 {tag}
               </span>

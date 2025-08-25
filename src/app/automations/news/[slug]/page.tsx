@@ -1,53 +1,52 @@
-import { getNewsData, getAllNewsIds } from '@/app/automations/lib/news/get-mdx-data';
+import { getContentfulNewsArticleBySlug, getContentfulNewsArticles } from '@/app/automations/lib/news/contentfulService';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import NewsArticleClient from '@/components/automations/news/NewsArticleClient';
+import { marked } from 'marked'; // Import marked
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const newsData = await getNewsData(params.slug);
+  const newsData = await getContentfulNewsArticleBySlug(params.slug);
+  if (!newsData) {
+    return notFound();
+  }
   return {
     title: newsData.title,
     description: newsData.description,
     openGraph: {
-      images: [newsData.image],
+      title: newsData.title,
+      description: newsData.description,
+      images: [
+        {
+          url: newsData.featuredImage.url,
+          alt: newsData.featuredImage.title,
+        },
+      ],
     },
   };
 }
 
-export async function generateStaticParams() {
-  const paths = getAllNewsIds();
-  return paths;
-}
-
 export default async function NewsArticle({ params }: Props) {
-  const newsData = await getNewsData(params.slug);
+  const newsData = await getContentfulNewsArticleBySlug(params.slug);
+
+  if (!newsData) {
+    return notFound();
+  }
+
+  const contentHtml = newsData.markdown ? marked.parse(newsData.markdown) : '';
+
+  // Fetch related news on the server
+  const contentfulNews = await getContentfulNewsArticles();
+
+  const filteredRelated = (contentfulNews || []).filter(n => n.slug !== newsData.slug)
+                                  .map(n => ({ ...n, publicationDate: n.publicationDate ? new Date(n.publicationDate).toISOString() : '' })) // Ensure related news also have ISO date
+                                  .sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime())
+                                  .slice(0, 2); // Get top 2 recent related news
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-16">
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <h1 className="text-5xl font-bold text-white mb-4">{newsData.title}</h1>
-        <p className="text-ph-light-gray text-lg mb-6">
-          By {newsData.author} on {new Date(newsData.date).toLocaleDateString()}
-        </p>
-        {newsData.image && (
-          <div className="mb-8 relative h-64 w-full">
-            <Image
-              src={newsData.image}
-              alt={newsData.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-lg"
-            />
-          </div>
-        )}
-        <div
-          className="prose prose-invert prose-lg mx-auto text-ph-light-gray"
-          dangerouslySetInnerHTML={{ __html: newsData.contentHtml }}
-        />
-      </div>
-    </div>
+    <NewsArticleClient initialNewsData={{ ...newsData, contentHtml, publicationDate: newsData.publicationDate ? new Date(newsData.publicationDate).toISOString() : '' }} initialRelatedNews={filteredRelated} />
   );
 }

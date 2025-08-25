@@ -1,53 +1,67 @@
-import { getBriefingData, getAllBriefingIds } from '@/app/automations/lib/briefings/get-mdx-data';
+import { getContentfulBriefingArticleBySlug, getContentfulBriefingArticles } from '@/app/automations/lib/briefings/contentfulService';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import BriefingArticleClient from '@/components/automations/briefings/BriefingArticleClient';
+import { marked } from 'marked'; // Import marked
 
 type Props = {
   params: { slug: string };
 };
 
+async function getBriefing(slug: string) {
+  const contentfulBriefing = await getContentfulBriefingArticleBySlug(slug);
+
+  if (contentfulBriefing) {
+    const contentHtml = contentfulBriefing.markdown ? marked.parse(contentfulBriefing.markdown) : '';
+    return {
+      ...contentfulBriefing,
+      contentHtml,
+      publicationDate: contentfulBriefing.publicationDate ? new Date(contentfulBriefing.publicationDate).toISOString() : '',
+    };
+  }
+
+  return null;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const briefingData = await getBriefingData(params.slug);
+  const briefing = await getBriefing(params.slug);
+
+  if (!briefing) {
+    return notFound();
+  }
+
   return {
-    title: briefingData.title,
-    description: briefingData.description,
+    title: briefing.title || 'Untitled Briefing',
+    description: briefing.description || '',
     openGraph: {
-      images: [briefingData.image],
+      title: briefing.title || 'Untitled Briefing',
+      description: briefing.description || '',
+      images: [
+        {
+          url: briefing.featuredImage?.url || '',
+          alt: briefing.featuredImage?.title || briefing.title || 'Image',
+        },
+      ],
     },
   };
 }
 
-export async function generateStaticParams() {
-  const paths = getAllBriefingIds();
-  return paths;
-}
-
 export default async function BriefingArticle({ params }: Props) {
-  const briefingData = await getBriefingData(params.slug);
+  const briefingData = await getBriefing(params.slug);
+
+  if (!briefingData) {
+    notFound();
+  }
+
+  // Fetch related briefings on the server
+  const contentfulBriefings = await getContentfulBriefingArticles();
+
+  const filteredRelated = (contentfulBriefings || []).filter(b => b.slug !== briefingData.slug)
+                                  .map(b => ({ ...b, publicationDate: b.publicationDate ? new Date(b.publicationDate).toISOString() : '' })) // Ensure related briefings also have ISO date
+                                  .sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime())
+                                  .slice(0, 2); // Get top 2 recent related briefings
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-16">
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <h1 className="text-5xl font-bold text-white mb-4">{briefingData.title}</h1>
-        <p className="text-ph-light-gray text-lg mb-6">
-          Category: {briefingData.category} on {new Date(briefingData.date).toLocaleDateString()}
-        </p>
-        {briefingData.image && (
-          <div className="mb-8 relative h-64 w-full">
-            <Image
-              src={briefingData.image}
-              alt={briefingData.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-lg"
-            />
-          </div>
-        )}
-        <div
-          className="prose prose-invert prose-lg mx-auto text-ph-light-gray"
-          dangerouslySetInnerHTML={{ __html: briefingData.contentHtml }}
-        />
-      </div>
-    </div>
+    <BriefingArticleClient initialBriefingData={briefingData} initialRelatedBriefings={filteredRelated} />
   );
 }

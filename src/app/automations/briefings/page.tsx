@@ -1,9 +1,12 @@
 import React from 'react';
-import { getSortedBriefingsData } from '@/app/automations/lib/briefings/get-mdx-data';
+import { getContentfulBriefingArticles } from '@/app/automations/lib/briefings/contentfulService';
 import { BriefingCard } from '@/components/automations/briefings/BriefingCard';
 
-const BriefingsPage = () => {
-  const allBriefingsData = getSortedBriefingsData();
+const BriefingsPage = async () => {
+  const contentfulBriefings = await getContentfulBriefingArticles();
+
+  // Sort briefings by publicationDate, newest first
+  contentfulBriefings.sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime());
 
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
@@ -18,16 +21,19 @@ const BriefingsPage = () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-8">Latest Briefings</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allBriefingsData.map(({ id, title, description, date, image, category }) => (
+            {contentfulBriefings.map(({ id, slug, title, description, publicationDate, featuredImage, author, tags }) => (
               <BriefingCard
                 key={id}
                 briefing={{
                   id,
+                  slug,
                   title,
                   description,
-                  date,
-                  image,
-                  category,
+                  publicationDate: publicationDate ? new Date(publicationDate).toISOString() : '',
+                  image: featuredImage.url,
+                  category: tags[0] || 'General',
+                  author,
+                  tags,
                 }}
               />
             ))}
