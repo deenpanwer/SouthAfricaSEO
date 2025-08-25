@@ -41,7 +41,8 @@ export const metadata: Metadata = {
 
 const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefans hostname
 const ENVIROPAINTING_PATH = '/test3';
-const AUTOMATION_PATH = '/automation';
+const AUTOMATION_PATH = '/automations';
+const TEST4_PATH = '/test4';
 
 const FloatingOfferBanner = () => {
     return (
@@ -71,12 +72,38 @@ export default async function RootLayout({
   
   const isSaphireFansDomain = host === SAPHIREFANS_HOST;
   const isEnviroPaintingPath = pathname.startsWith(ENVIROPAINTING_PATH);
+  const isTest4Path = pathname.startsWith(TEST4_PATH);
 
-  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !pathname.startsWith(AUTOMATION_PATH);
+  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !isTest4Path && !pathname.startsWith(AUTOMATION_PATH) && !pathname.startsWith('/saphirefans');
 
   return (
     <html lang="en" className={showMainLayout ? "scroll-smooth" : ""}>
       <head>
+        {showMainLayout && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Trac SEO Agency",
+              "alternateName": "TRAC",
+              "url": "https://www.traconomics.com",
+              "logo": "https://www.traconomics.com/trac_logo.jpeg",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 (646) 814-3789",
+                "contactType": "customer service"
+              },
+              "areaServed": ["PK", "US", "GB", "AU", "CA", "AE"],
+              "availableLanguage": ["en"],
+              "sameAs": [
+                "https://www.facebook.com/share/1CXosykBPP/",
+                "https://x.com/TRACPakistan?t=jAC22ELlFjQrtrfYjWmnxQ&s=09",
+                "https://www.instagram.com/tracprotect?igsh=ZGZ0azBteWprMHYx"
+              ]
+            }) }}
+          />
+        )}
         {/* Verification: yandex */}
         <meta name="yandex-verification" content="5d40a7b47460fe9a" />
         {/* Pinterest Domain Verification */}

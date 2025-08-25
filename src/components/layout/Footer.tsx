@@ -6,6 +6,31 @@ import { Zap } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Trac agency',
+    image: 'https://www.traconomics.com/trac_logo.jpeg',
+    telephone: CONTACT_DETAILS.phone,
+    priceRange: '$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '30 N Gould St St #6573',
+      addressLocality: 'Sheridan',
+      addressRegion: 'WY',
+      postalCode: '82801',
+      addressCountry: {
+        '@type': 'Country',
+        name: 'US',
+      },
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '44.7967',
+      longitude: '-106.9548',
+    },
+  };
+
   // Updated to include only US cities. International cities are on the /locations page.
   const usCities = [
     'Arlington', 'Atlanta', 'Austin', 'Baltimore', 'Chicago',
@@ -19,6 +44,10 @@ export function Footer() {
 
   return (
     <footer className="bg-muted text-muted-foreground border-t">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>

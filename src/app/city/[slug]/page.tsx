@@ -60,25 +60,28 @@ export default function CityPage({ params }: CityPageProps) {
   const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  'name': `${APP_NAME} - ${cityData.cityName} SEO Services`,
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': cityData.location.streetAddress, // Use new streetAddress property
-    'addressLocality': cityData.location.addressLocality, // Use new addressLocality property
-    'addressRegion': cityData.location.addressRegion, // Use new addressRegion property
-    'postalCode': cityData.location.postalCode, // Use new postalCode property
-    'addressCountry': cityData.location.addressCountry, // Use new addressCountry property
-  },
+  'name': 'Trac SEO Agency',
+  'additionalType': 'https://www.productontology.org/id/Search_engine_optimization',
+  'image': typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
   'telephone': cityData.location.phone,
   'email': cityData.location.email,
-  'url': `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
-  'image': typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
-  'description': cityData.heroData.metaDescription,
-  'geo': { // Placeholder GeoCoordinates, should be updated with real data if available
-    '@type': 'GeoCoordinates',
-    'latitude': '0.0',
-    'longitude': '0.0'
+  'priceRange': '$',
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': cityData.location.streetAddress,
+    'addressLocality': cityData.location.addressLocality,
+    'addressRegion': cityData.location.addressRegion,
+    'postalCode': cityData.location.postalCode,
+    'addressCountry': cityData.location.addressCountry,
   },
+  'geo': {
+    '@type': 'GeoCoordinates',
+    'latitude': cityData.location.geo.latitude,
+    'longitude': cityData.location.geo.longitude,
+  },
+  'url': `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
+  'hasMap': cityData.location.hasMap,
+  'description': cityData.heroData.metaDescription,
 };
 
 

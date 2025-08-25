@@ -113,6 +113,11 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/xHTreDepnQ72',
+    geo: {
+      latitude: '32.705002',
+      longitude: '-97.122780',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
   faqData: [

@@ -153,13 +153,18 @@ export interface CityAwardData {
 
 export interface CityLocationData {
   officeImageUrl: string;
-  streetAddress: string; // New: Single string for street address
-  addressLocality: string; // New: City
-  addressRegion: string; // New: State or region
-  postalCode: string; // New: Postal code
-  addressCountry: string; // New: Country
+  streetAddress: string;
+  addressLocality: string;
+  addressRegion: string;
+  postalCode: string;
+  addressCountry: string;
   phone: string;
   email: string;
+  hasMap: string;
+  geo: {
+    latitude: string;
+    longitude: string;
+  };
 }
 
 export interface CityPageData {
@@ -183,7 +188,7 @@ export interface CityPageData {
   location: CityLocationData;
   bottomFormTitle: string;
   faqData: FAQItem[];
-  faqSectionHeadline: string; // New: Headline for the FAQ section
+  faqSectionHeadline: string;
   metaKeywords: string[];
 }
 
