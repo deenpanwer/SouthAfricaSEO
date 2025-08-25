@@ -4,6 +4,8 @@ import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone,
 
 export const APP_NAME = "TRAC";
 
+export const REVIEW_COUNT = 10; // Manually adjustable review count for schema
+
 export const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },

@@ -13,6 +13,33 @@ export const metadata: Metadata = {
 export default function EthicsPage() {
   return (
     <div className="py-12 md:py-20 bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/`
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Philosophy",
+              "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/philosophy`
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Our Ethical Approach",
+              "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/philosophy/ethics`
+            }
+          ]
+        }) }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <header className="text-center mb-12 md:mb-16">
           <ShieldCheck className="h-16 w-16 text-primary mx-auto mb-4" />

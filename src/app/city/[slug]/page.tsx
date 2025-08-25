@@ -2,7 +2,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getCityData, CITIES_DATA } from '@/lib/cityConstants.tsx'; 
-import { APP_NAME, CONTACT_DETAILS } from '@/lib/constants.tsx';
+import { APP_NAME, CONTACT_DETAILS, REVIEW_COUNT } from '@/lib/constants.tsx';
+import { cityTestimonials } from '@/components/city-seo/CityResultsHighlights';
 
 // Import City Specific Components
 import { CityHeroSection } from '@/components/city-seo/CityHeroSection';
@@ -60,7 +61,7 @@ export default function CityPage({ params }: CityPageProps) {
   const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  'name': 'Trac SEO Agency',
+  'name': `TRAC, a ${cityData.cityName} SEO Agency`,
   'additionalType': 'https://www.productontology.org/id/Search_engine_optimization',
   'image': typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
   'telephone': cityData.location.phone,
@@ -84,12 +85,120 @@ export default function CityPage({ params }: CityPageProps) {
   'description': cityData.heroData.metaDescription,
 };
 
+  // Product Schema with AggregateRating and a single Review
+  const firstTestimonial = cityTestimonials[0]; // Get the first testimonial
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${cityData.cityName} SEO Services`,
+    "description": cityData.heroData.metaDescription,
+    "url": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
+    "image": typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
+    "brand": {
+      "@type": "Brand",
+      "name": "TRAC"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": firstTestimonial ? (firstTestimonial.rating || 5).toFixed(1) : "5.0", // Use first testimonial's rating or default
+      "reviewCount": REVIEW_COUNT // Use the manually set review count
+    },
+    "review": firstTestimonial ? {
+      "@type": "Review",
+      "reviewBody": firstTestimonial.quote,
+      "author": {
+        "@type": "Person",
+        "name": firstTestimonial.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": firstTestimonial.rating || 5,
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    } : undefined // Only include review if a testimonial exists
+  };
+
+    const heroVideoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": `${cityData.cityName} SEO Agency: Our Proven Approach`,
+    "description": `Learn how Trac, a leading ${cityData.cityName} SEO agency, helps businesses achieve top search rankings and sustainable organic growth with proven strategies.`,
+    "uploadDate": "2025-08-25T00:00:00Z",
+    "thumbnailUrl": typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
+    "embedUrl": cityData.heroData.heroVideoUrl,
+  };
+
+  const farahLawFirmTestimonialSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": `Client Success Story: Farah Law Firm - ${cityData.cityName} SEO Results with Trac`,
+    "description": `Hear how Farah Law Firm partnered with Trac to achieve significant SEO results and increased online visibility in ${cityData.cityName}.`,
+    "uploadDate": "2025-08-25T00:00:00Z",
+    "thumbnailUrl": "/home/Client-Farah-Law-Firm.webp",
+    "embedUrl": "https://www.youtube.com/embed/--5lHRSfLZg",
+  };
+
+  const nationwideConstructionTestimonialSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": `Nationwide Construction: Boosting ${cityData.cityName} Leads with Trac SEO`,
+    "description": `Discover how Trac's tailored SEO strategies helped Nationwide Construction drive more qualified leads and improve search performance in ${cityData.cityName}.`,
+    "uploadDate": "2025-08-25T00:00:00Z",
+    "thumbnailUrl": "/home/Client-Natiowide-Construction.webp",
+    "embedUrl": "https://www.youtube.com/embed/0cWlf1BmUMw",
+  };
+
+  
+
+
+
+  const whyChooseUsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${cityData.whyChooseSectionHeadline} - ${cityData.cityName}`,
+    "description": cityData.whyChooseIntro,
+    "itemListElement": cityData.whyChoosePoints.map((point, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": point.title,
+      "description": point.description,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Locations",
+        "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/locations`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": cityData.cityName,
+        "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`
+      }
+    ]
+  };
+
+  const combinedSchemas = [localBusinessSchema, productSchema, heroVideoSchema, farahLawFirmTestimonialSchema, nationwideConstructionTestimonialSchema, whyChooseUsSchema, breadcrumbSchema];
 
   return (
     <div className="bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchemas) }}
       />
       <CityHeroSection cityData={cityData.heroData} cityName={cityData.cityName} />
       <CityResultsHighlights headline={cityData.resultsHeadline} />

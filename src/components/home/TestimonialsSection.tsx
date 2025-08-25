@@ -49,32 +49,9 @@ export const TestimonialsSection = () => {
     </div>
   )
 
-  const reviewSchema = testimonials.map(testimonial => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Organization",
-      "name": "TRAC"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": testimonial.rating,
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": testimonial.name
-    },
-    "reviewBody": testimonial.quote
-  }));
-
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-        />
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Hear How Our SEO Strategies Transformed Businesses.</h2>
         <p className="text-center text-gray-600 mb-12 max-w-xl mx-auto">
           Our testimonials speak for themselves. Every day, we work diligently to ensure our clients are satisfied and remain an integral part of our growth.

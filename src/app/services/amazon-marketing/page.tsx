@@ -1,160 +1,181 @@
-
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CheckCircle, TrendingUp, Search, BarChart2, Zap, ArrowRight, Star } from 'lucide-react';
-import { APP_NAME } from '@/lib/constants';
-import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Highlight } from '@/components/ui/highlight';
+import { PlatformIconGrid } from '@/components/services/amazon-marketing/platform-icon-grid';
+import { AmazonProcessVisual } from '@/components/services/amazon-marketing/amazon-process-visual';
+import { CaseStudyCard } from '@/components/services/amazon-marketing/case-study-card';
+import { WhyChooseUs } from '@/components/services/amazon-marketing/why-choose-us';
+import { CallToAction } from '@/components/services/amazon-marketing/call-to-action';
+import { FeatureCard } from '@/components/ui/feature-card'; // New import
+import { ServiceCard } from '@/components/ui/service-card'; // New import
+import { AlertTriangle, DollarSign, TrendingUp, Search, BarChart2, Store } from 'lucide-react'; // Icons for FeatureCard and ServiceCard
+
 
 export const metadata: Metadata = {
-  title: `Amazon Marketing Services | Win on Amazon | ${APP_NAME}`,
-  description: `Don't just compete on Amazon—dominate your category. TRAC builds systematic growth flywheels to increase sales velocity, elevate rankings, and secure market leadership.`,
+  title: 'New Amazon Marketing Services',
+  description: 'Comprehensive Amazon marketing services to boost your sales and presence.',
 };
 
-const SectionSubHeader = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-primary font-semibold uppercase tracking-wider text-center">{children}</p>
-);
+export default function NewAmazonMarketingPage() {
+  const dummyCaseStudies = [
+    {
+      clientName: "Client A",
+      clientAvatar: "/path/to/clientA-avatar.jpg", // Placeholder
+      industry: "E-commerce",
+      quote: "TRAC's Amazon strategy was a game-changer. They didn't just increase our sales; they gave us a dominant position in our category. Their systematic approach is unmatched.",
+      results: [
+        { label: "Sales Growth", value: "200%" },
+        { label: "ACOS", value: "15%" },
+      ],
+    },
+    {
+      clientName: "Client B",
+      clientAvatar: "/path/to/clientB-avatar.jpg", // Placeholder
+      industry: "Retail",
+      quote: "We saw incredible results with TRAC. Our organic rankings soared, and our traffic increased significantly. Highly recommend their Amazon expertise.",
+      results: [
+        { label: "Keyword Rank", value: "#3" },
+        { label: "Organic Traffic", value: "+150%" },
+      ],
+    },
+  ];
 
-const SectionHeader = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mt-2">{children}</h2>
-);
+  const dummyFeatures = [
+    {
+      title: "Low Visibility",
+      description: "Your products are lost in the Amazon search results, leading to missed sales opportunities.",
+      icon: <AlertTriangle className="h-8 w-8 text-red-500" />,
+    },
+    {
+      title: "Wasted Ad Spend",
+      description: "Ineffective PPC campaigns are draining your budget without generating profitable returns.",
+      icon: <DollarSign className="h-8 w-8 text-green-500" />,
+    },
+    {
+      title: "Stagnant Growth",
+      description: "Your sales have plateaued, and you're struggling to scale your Amazon business.",
+      icon: <TrendingUp className="h-8 w-8 text-blue-500" />,
+    },
+  ];
 
-const SectionDescription = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-center mt-4">{children}</p>
-);
+  const dummyServices = [
+    {
+      title: "Amazon SEO & Listing Optimization",
+      description: "Rank higher and convert more with expert keyword research, compelling copy, and A+ Content.",
+      icon: <Search className="h-8 w-8 text-orange-500" />,
+    },
+    {
+      title: "Amazon PPC Management",
+      description: "Maximize your ROI with data-driven Amazon PPC campaigns that drive profitable sales.",
+      icon: <BarChart2 className="h-8 w-8 text-orange-500" />,
+    },
+    {
+      title: "Amazon Storefront & Brand Registry",
+      description: "Build a powerful brand presence with a custom Amazon Storefront and Brand Registry support.",
+      icon: <Store className="h-8 w-8 text-orange-500" />,
+    },
+  ];
 
-export default function AmazonMarketingPage() {
   return (
-    <div className="bg-gray-50 dark:bg-black">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background py-20 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground !leading-tight mb-6">
-            Stop Competing on Amazon.
-            <br />
-            <span className="text-primary">Start Dominating.</span>
+    <main>
+      {/* Component 1: Hero Section */}
+      <section className="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-orange-500 to-yellow-600 overflow-hidden">
+        <Image
+          src="/dallas-local-leads-seo.png" // Placeholder image
+          alt="Amazon Marketing Background"
+          fill={true}
+          objectFit="cover"
+          className="absolute z-0 opacity-30"
+        />
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="relative z-20 p-4 text-white max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">
+            <Highlight text="Dominate Amazon: Your Partner for E-commerce Growth" words={["Dominate Amazon", "E-commerce Growth"]} />
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Winning on Amazon isn't about running ads. It's about building a self-sustaining growth engine. We build that engine for you.
+          <p className="mt-4 text-lg sm:text-xl">
+            We help brands like yours unlock their full potential on Amazon, driving sales, increasing visibility, and maximizing profitability.
           </p>
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg text-lg px-8 py-6">
-            <Link href="/contact?service=Amazon+Marketing">Build Your Amazon Flywheel</Link>
-          </Button>
+          <div className="mt-8 flex justify-center gap-4">
+            <Button size="lg" asChild>
+              <Link href="/contact?service=Amazon">Get a Free Amazon Audit</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black">
+              <Link href="#services">Explore Our Services</Link>
+            </Button>
+          </div>
+          <PlatformIconGrid
+            icons={[
+              { src: "https://tse4.mm.bing.net/th/id/OIP.fQkwX1ZDIGJdxn8gBQ43GwHaE8?pid=Api&P=0&h=220", alt: "Amazon" }, // Placeholder, need actual logos
+              { src: "https://tse1.mm.bing.net/th/id/OIP.u_dVishNAQYCWvKO1ox7GQHaHa?pid=Api&P=0&h=220", alt: "Walmart" },
+              { src: "https://tse1.mm.bing.net/th/id/OIP.i3lQOJ82UU61iGfJMPcf0QHaHa?pid=Api&P=0&h=220", alt: "eBay" },
+            ]}
+          />
         </div>
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[bottom_1px_center] dark:bg-grid-slate-400/[0.05] dark:bg-bottom dark:border-b dark:border-slate-100/5 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
       </section>
 
-      {/* The Problem Section */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* Component 2: Amazon Seller Pain Points */}
+      <section className="py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionSubHeader>The Flaw in Conventional Strategy</SectionSubHeader>
-          <SectionHeader>Are You Just Another Listing?</SectionHeader>
-          <SectionDescription>
-            Most sellers treat Amazon like a simple storefront—they upload products, buy some ads, and hope for the best. This is a recipe for wasted ad spend, stagnant rankings, and being drowned out by savvier competitors.
-          </SectionDescription>
-        </div>
-      </section>
-      
-      {/* The Flywheel Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionSubHeader>Our First-Principles Approach</SectionSubHeader>
-          <SectionHeader>The Amazon Flywheel</SectionHeader>
-          <SectionDescription>
-            We don't just manage your account; we build a system. Each part of our strategy energizes the next, creating a powerful, self-reinforcing cycle of growth that's incredibly difficult for competitors to stop.
-          </SectionDescription>
-          <div className="relative mt-12 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center space-x-2 md:space-x-4">
-              {['Traffic', 'Conversions', 'Velocity', 'Rankings'].map((item, index) => (
-                <React.Fragment key={item}>
-                  <div className="text-center">
-                    <div className="p-4 bg-background rounded-full shadow-lg border">
-                      <Zap className="h-8 w-8 text-primary mx-auto" />
-                    </div>
-                    <p className="mt-2 text-sm font-semibold">{item}</p>
-                  </div>
-                  {index < 3 && <ArrowRight className="h-6 w-6 text-muted-foreground flex-shrink-0" />}
-                </React.Fragment>
-              ))}
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center -z-10">
-                <div className="w-full h-24 bg-primary/5 rounded-full blur-3xl"></div>
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-8">Amazon Seller Pain Points</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {dummyFeatures.map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Our Process Section */}
-      <section className="py-16 md:py-24 bg-background">
+      {/* New Component: Our Amazon Services */}
+      <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionSubHeader>How We Build It</SectionSubHeader>
-          <SectionHeader>A System for Dominance</SectionHeader>
-          <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
-            <div className="p-6">
-              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
-                <Search className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground">1. Total Listing Optimization</h3>
-              <p className="text-muted-foreground mt-2">We transform your product pages into conversion machines with keyword-rich titles, benefit-driven copy, and stunning A+ Content.</p>
-            </div>
-            <div className="p-6">
-              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
-                <TrendingUp className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground">2. Profit-Driven Advertising</h3>
-              <p className="text-muted-foreground mt-2">Your ad spend is an investment. We build data-driven PPC campaigns that target high-intent keywords to fuel the flywheel with profitable sales.</p>
-            </div>
-            <div className="p-6">
-              <div className="inline-block p-4 bg-primary/10 text-primary rounded-full mb-4">
-                <BarChart2 className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground">3. Continuous Optimization</h3>
-              <p className="text-muted-foreground mt-2">We use analytics to harvest converting keywords, refine bids, manage inventory strategy, and keep the growth engine accelerating.</p>
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-8">Our Amazon Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {dummyServices.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
-       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <div className="bg-background rounded-lg p-8 md:p-12 shadow-xl border text-center">
-            <div className="flex justify-center text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-6 w-6 fill-current" />)}
-            </div>
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground">
-              &ldquo;TRAC's Amazon strategy was a game-changer. They didn't just increase our sales; they gave us a dominant position in our category. Their systematic approach is unmatched.&rdquo;
-            </blockquote>
-            <footer className="mt-6">
-              <p className="font-semibold text-foreground">Jessica Miller</p>
-              <p className="text-muted-foreground">Founder, EcoHome Goods</p>
-            </footer>
+      {/* Component 3: Our Amazon Process */}
+      <section className="py-12 bg-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AmazonProcessVisual />
+        </div>
+      </section>
+
+      {/* Component 4: Amazon Case Studies & Results */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-8">Amazon Case Studies & Results</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {dummyCaseStudies.map((study, index) => (
+              <CaseStudyCard key={index} {...study} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-6">
-            Ready to Build Your Amazon Empire?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Stop fighting for scraps. Let's build a system that puts you in control of your category.
-          </p>
-          <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg text-lg px-8 py-6">
-            <Link href="/contact?service=Amazon+Marketing">Schedule a Strategy Call</Link>
-          </Button>
+      {/* Component 5: Why Choose Us */}
+      <section className="py-12 bg-gray-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <WhyChooseUs />
         </div>
       </section>
-    </div>
+
+      {/* Component 6: Call to Action */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <CallToAction />
+        </div>
+      </section>
+
+      {/* Placeholder for other components */}
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center my-12">More Amazon Marketing Components Coming Soon...</h2>
+      </div>
+    </main>
   );
 }
-
-// Minimalist background grid component
-const GridBg = () => (
-  <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-    <div className="absolute left-0 right-0 top-0 -z-10 h-full w-full bg-gradient-to-b from-white to-transparent"></div>
-  </div>
-);

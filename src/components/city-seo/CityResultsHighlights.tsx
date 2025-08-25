@@ -23,7 +23,7 @@ interface CityResultsHighlightsProps {
   headline: string;
 }
 
-const cityTestimonials: Testimonial[] = [
+export const cityTestimonials: Testimonial[] = [
   { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "/home/marci-wiersma.webp", dataAiHint: "Marci Wiersma photo", rating: 5 },
   { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "/home/whitney-wells-lewis.webp", dataAiHint: "Whitney Wells Lewis photo", rating: 5 },
   { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "/home/chad-montgomery.webp", dataAiHint: "Chad Montgomery photo", rating: 5 },
@@ -33,31 +33,8 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
 
-  const reviewSchema = cityTestimonials.map(testimonial => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Organization",
-      "name": "TRAC"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": testimonial.rating,
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": testimonial.name
-    },
-    "reviewBody": testimonial.quote
-  }));
-
   return (
     <section className="py-12 md:py-16 bg-white text-gray-800">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-10">{headline}</h2>
         <div className="grid md:grid-cols-2 gap-8">
