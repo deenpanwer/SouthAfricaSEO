@@ -2,11 +2,19 @@ import React from 'react';
 import { InquiryForm } from '@/components/automations/contact/InquiryForm';
 import { GeoMapOverlay } from '@/components/automations/contact/GeoMapOverlay';
 import { CallToActionCard } from '@/components/automations/contact/CallToActionCard';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const ContactPage = () => {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Contact', href: '/automations/contact' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-center text-white mb-12">
           Connect with Our Ethical AI Team
         </h1>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import type { CityHeroData } from '@/types';
 import { CityHeroForm } from './CityHeroForm';
 import { useState, useRef } from 'react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode }) => {
   if (!isOpen) return null;
@@ -53,7 +54,7 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
           return <a key={`p${pIndex}-part${partIndex}`} href={part} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{part}</a>;
         }
         // Basic [text](url) detection (can be enhanced)
-        const markdownLinkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+        const markdownLinkMatch = part.match(/.*\[(.*?)\].*\((.*?)\)/);
         if (markdownLinkMatch) {
           return <a key={`p${pIndex}-part${partIndex}`} href={markdownLinkMatch[2]} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{markdownLinkMatch[1]}</a>;
         }
@@ -66,9 +67,15 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
   // Check if description is long enough to require "Read More"
   const needsReadMore = heroDescription.length > characterLimit;
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: `${cityName} SEO Service Agency`, href: '#' },
+  ];
+
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-green-700 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Column: Form */}
           <div className="lg:order-2">

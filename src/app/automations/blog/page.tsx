@@ -1,6 +1,7 @@
 import React from 'react';
 import { getContentfulBlogPosts } from '@/app/automations/lib/blog/contentfulService';
 import { BlogCard } from '@/components/automations/blog/BlogCard';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const BlogPage = async () => {
   // 1. Fetch posts from both sources
@@ -9,9 +10,16 @@ const BlogPage = async () => {
   // 2. Sort all posts by date, ensuring newest are first
   contentfulPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Blog', href: '/automations/blog' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-center text-white mb-12">
           Our Blog
         </h1>

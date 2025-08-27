@@ -3,11 +3,19 @@ import { JobBoard } from '@/components/automations/careers/JobBoard';
 import { CultureQuoteSlider } from '@/components/automations/careers/CultureQuoteSlider';
 import { PerkMatrix } from '@/components/automations/careers/PerkMatrix';
 import { TimelineOfImpact } from '@/components/automations/careers/TimelineOfImpact';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const CareersPage = () => {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Careers', href: '/automations/careers' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-center text-white mb-12">
           Join Our Ethical AI Mission
         </h1>

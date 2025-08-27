@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { format, parseISO } from 'date-fns'; // date-fns is used here
 import { Share2 } from 'lucide-react'; // For social sharing
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 type BlogPostPageProps = {
   params: { slug: string };
@@ -66,10 +67,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     );
   }
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Blog', href: '/blog' },
+    { name: post.title, href: `/blog/${post.slug}` },
+  ];
+
   return (
     <article className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 **max-w-3xl lg:max-w-4xl xl:max-w-5xl**"> {/* Adjusted max-width for desktop */}
         <header className="mb-8 **lg:mb-12**"> {/* Increased header bottom margin for desktop */}
+          <Breadcrumb items={breadcrumbItems} />
           <Button variant="outline" size="sm" asChild className="mb-6">
             <Link href="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog

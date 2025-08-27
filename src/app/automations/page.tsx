@@ -5,6 +5,7 @@ import { AnimatedUseCaseCards } from '@/components/automations/AnimatedUseCaseCa
 import { SectorGrid } from '@/components/automations/SectorGrid';
 import { ContentTeaserGrid } from '@/components/automations/ContentTeaserGrid';
 import { MissionCTA } from '@/components/automations/MissionCTA';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 // Import Contentful service functions
 import { getContentfulBlogPosts, ContentfulBlogPost } from '@/app/automations/lib/blog/contentfulService';

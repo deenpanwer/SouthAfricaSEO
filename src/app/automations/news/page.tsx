@@ -1,6 +1,7 @@
 import React from 'react';
 import { getContentfulNewsArticles } from '@/app/automations/lib/news/contentfulService';
 import { NewsCard } from '@/components/automations/news/NewsCard';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const NewsPage = async () => {
   const allNewsData = await getContentfulNewsArticles();
@@ -8,9 +9,16 @@ const NewsPage = async () => {
   // Sort news articles by publicationDate, newest first
   allNewsData.sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime());
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'News', href: '/automations/news' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-center text-white mb-12">
           Latest News
         </h1>

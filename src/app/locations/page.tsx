@@ -12,6 +12,7 @@ import { GYM_STATES_DATA } from '@/lib/gymStateConstants';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Sprout, Stethoscope, Car, Wrench, Scissors, Dumbbell } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: `Service Locations | ${APP_NAME}`,
@@ -107,9 +108,15 @@ export default function LocationsPage() {
   ];
 
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Service Locations', href: '/locations' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         <section className="text-center mb-12 md:mb-16">
           <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">

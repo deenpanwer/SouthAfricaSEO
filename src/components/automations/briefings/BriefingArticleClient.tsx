@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 interface BriefingArticleClientProps {
   initialBriefingData: any;
@@ -80,9 +81,17 @@ export default function BriefingArticleClient({
     }
   };
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Briefings', href: '/automations/briefings' },
+    { name: briefingData.title, href: `/automations/briefings/${briefingData.slug}` },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-8 sm:py-12 md:py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Wider container */}
+        <Breadcrumb items={breadcrumbItems} />
         <Link href="/automations/blog" className="text-ph-accent hover:text-primary-foreground transition-colors duration-200 mb-6 inline-block text-sm sm:text-base">
           &larr; Back to Blog
         </Link>

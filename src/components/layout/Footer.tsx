@@ -9,7 +9,7 @@ export function Footer() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Trac agency',
+    name: 'TRAC Agency',
     image: 'https://www.traconomics.com/trac_logo.jpeg',
     telephone: CONTACT_DETAILS.phone,
     priceRange: '$',

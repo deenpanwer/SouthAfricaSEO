@@ -1,9 +1,17 @@
 import React from 'react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const PrivacyPolicyPage = () => {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Privacy Policy', href: '/automations/privacy-policy' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-white mb-8">Privacy Policy</h1>
         <div className="prose prose-invert prose-lg text-ph-light-gray">
           <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>

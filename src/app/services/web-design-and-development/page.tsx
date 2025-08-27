@@ -13,6 +13,7 @@ import { FinalCTASection } from '@/components/services/web-design-and-developmen
 
 import { Code, Rocket, Palette, XCircle, CheckCircle, Search, Lightbulb, BarChart2, ShoppingCart } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: `Web Design & Development Services | ${APP_NAME}`,
@@ -20,8 +21,17 @@ export const metadata: Metadata = {
 };
 
 export default function WebDevPage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Web Design & Development', href: '/services/web-design-and-development' },
+  ];
+
   return (
     <div className="bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

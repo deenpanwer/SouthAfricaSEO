@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import { ContactFormWrapper } from '@/components/contact/ContactFormWrapper';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -13,9 +14,15 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Contact Us', href: '/contact' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         <section className="text-center mb-12 md:mb-16">
           <MessageSquare className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">

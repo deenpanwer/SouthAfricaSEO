@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 // Import Contentful service functions
 import { getContentfulBlogPosts } from '@/app/automations/lib/blog/contentfulService';
@@ -58,9 +59,16 @@ const SitemapPage = async () => {
 
   const allEntries = [...staticRoutes, ...dynamicRoutes].sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime());
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Sitemap', href: '/automations/sitemap' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-center text-white mb-12">
           Automations Site Map
         </h1>

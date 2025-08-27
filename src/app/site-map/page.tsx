@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { CITIES_DATA } from '@/lib/cityConstants.tsx';
 import { getAllBlogPosts } from '@/lib/blogService';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 // Define metadata for the sitemap page
 export const metadata: Metadata = {
@@ -24,20 +25,14 @@ export default async function HumanReadableSitemap() {
         // Add other static pages here
     ];
 
+    const breadcrumbItems = [
+        { name: 'TRAC', href: '/' },
+        { name: 'Sitemap', href: '/site-map' },
+    ];
+
     return (
         <div className="container mx-auto px-4 py-10 text-gray-800">
-            {/* Simple Breadcrumb */}
-            <nav className="text-sm mb-6" aria-label="Breadcrumb">
-                <ol className="list-none p-0 inline-flex">
-                    <li className="flex items-center">
-                        <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
-                        <span className="mx-2 text-gray-400">/</span>
-                    </li>
-                    <li className="flex items-center">
-                        <span className="text-gray-500">Sitemap</span>
-                    </li>
-                </ol>
-            </nav>
+            <Breadcrumb items={breadcrumbItems} />
 
             <h1 className="text-4xl font-bold text-gray-800 mb-10">Website Sitemap</h1>
 

@@ -11,6 +11,7 @@ import { CallToAction } from '@/components/services/amazon-marketing/call-to-act
 import { FeatureCard } from '@/components/ui/feature-card'; // New import
 import { ServiceCard } from '@/components/ui/service-card'; // New import
 import { AlertTriangle, DollarSign, TrendingUp, Search, BarChart2, Store } from 'lucide-react'; // Icons for FeatureCard and ServiceCard
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 
 export const metadata: Metadata = {
@@ -78,8 +79,17 @@ export default function NewAmazonMarketingPage() {
     },
   ];
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Amazon Marketing', href: '/services/amazon-marketing' },
+  ];
+
   return (
     <main>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
       {/* Component 1: Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center text-center bg-gradient-to-r from-orange-500 to-yellow-600 overflow-hidden">
         <Image

@@ -2,6 +2,7 @@
 import { Metadata } from 'next';
 import { APP_NAME, CONTACT_DETAILS } from '@/lib/constants.tsx';
 import { FileText } from 'lucide-react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -9,9 +10,15 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfServicePage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Terms of Service', href: '/terms-of-service' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <Breadcrumb items={breadcrumbItems} />
         <header className="text-center mb-12">
           <FileText className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground">

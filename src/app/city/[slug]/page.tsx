@@ -170,23 +170,19 @@ export default function CityPage({ params }: CityPageProps) {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "name": `${cityData.cityName} SEO Service Agency`,
+    "url": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/`,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": "TRAC seo agency",
         "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Locations",
-        "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/locations`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": cityData.cityName,
+        "name": `${cityData.cityName} SEO Service Agency`,
         "item": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`
       }
     ]

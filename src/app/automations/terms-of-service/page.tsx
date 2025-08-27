@@ -1,9 +1,17 @@
 import React from 'react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const TermsOfServicePage = () => {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Automations', href: '/automations' },
+    { name: 'Terms of Service', href: '/automations/terms-of-service' },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground py-16">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <Breadcrumb items={breadcrumbItems} />
         <h1 className="text-5xl font-bold text-white mb-8">Terms of Service</h1>
         <div className="prose prose-invert prose-lg text-ph-light-gray">
           <p>Welcome to TRAC! These Terms of Service outline the rules and regulations for the use of TRAC's Website, located at https://www.traconomics.com. By accessing this website, you agree to be bound by these Terms of Service and our commitment to ethical AI practices. If you do not agree with any part of these terms, please do not use our website.</p>

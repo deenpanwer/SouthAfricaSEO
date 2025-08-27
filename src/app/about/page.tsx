@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ABOUT_US_CONTENT, APP_NAME } from '@/lib/constants.tsx';
 import Link from 'next/link';
 import { CheckCircle, Users, Zap } from 'lucide-react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -15,9 +16,15 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   const { title, introduction, mission, expertise, team } = ABOUT_US_CONTENT;
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'About Us', href: '/about' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         {/* Hero Section */}
         <section className="text-center mb-16 md:mb-24">
           <Zap className="h-16 w-16 text-primary mx-auto mb-4" />

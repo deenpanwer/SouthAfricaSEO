@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, Star, MessageSquare } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: `Online Reputation Management Services | ${APP_NAME}`,
@@ -12,8 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function ReputationManagementPage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Reputation Management', href: '/services/reputation-management' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

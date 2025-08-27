@@ -7,6 +7,7 @@ import { getAllBlogPosts } from '@/lib/blogService';
 import { Rss, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Business Insights Blog',
@@ -30,9 +31,15 @@ export default async function BlogPage({ searchParams }: { searchParams?: { quer
   const searchQuery = searchParams?.query || undefined;
   const postsToDisplay = await searchBlogPosts(searchQuery); // This function now uses getAllBlogPosts internally
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Blog', href: '/blog' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         <section className="text-center mb-12 md:mb-16">
           <Rss className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">

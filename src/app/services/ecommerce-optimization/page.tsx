@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShoppingCart, BarChart2, Lightbulb } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 // Placeholder for ShoppingBagIcon if not available in lucide-react default export
 const ShoppingBagIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -21,8 +22,17 @@ export const metadata: Metadata = {
 };
 
 export default function EcommercePage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'eCommerce Optimization', href: '/services/ecommerce-optimization' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({

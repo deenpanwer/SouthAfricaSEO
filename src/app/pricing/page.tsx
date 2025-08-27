@@ -15,6 +15,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { ServicePackageDisplay } from '@/components/services/ServicePackageDisplay';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Pricing & Plans',
@@ -22,9 +23,15 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Pricing & Plans', href: '/pricing' },
+  ];
+
   return (
     <div className="py-12 md:py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
         <section className="text-center mb-16 md:mb-20">
           <BarChart className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">

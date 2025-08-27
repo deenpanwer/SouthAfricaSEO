@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { NumberTicker } from '@/components/ui/NumberTicker';
 import { Button } from '@/components/ui/button';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 type CaseStudyPageProps = {
   params: { slug: string };
@@ -59,6 +60,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const prevStudy = allCaseStudies[(currentIndex - 1 + allCaseStudies.length) % allCaseStudies.length];
   const nextStudy = allCaseStudies[(currentIndex + 1) % allCaseStudies.length];
 
+  const breadcrumbItems = [
+    { name: 'TRAC', href: '/' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: caseStudy.clientName, href: `/case-studies/${caseStudy.slug}` },
+  ];
+
   return (
     <article className="bg-background">
       {/* Hero Section */}
@@ -83,6 +90,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl py-12 md:py-20">
+        <Breadcrumb items={breadcrumbItems} />
         {/* Results at a Glance */}
         <section className="mb-12 md:mb-16 bg-muted py-12 rounded-lg shadow-inner">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
