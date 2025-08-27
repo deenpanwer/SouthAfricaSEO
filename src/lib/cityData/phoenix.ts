@@ -45,9 +45,18 @@ export const phoenixData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1717 Way', 'Suite 170', 'Phoenix, AZ 85001'],
+    streetAddress: '1717 Way, Suite 170',
+    addressLocality: 'Phoenix',
+    addressRegion: 'AZ',
+    postalCode: '85001',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/uVwXyZ1aB2',
+    geo: {
+      latitude: '33.448400',
+      longitude: '-112.074000',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
 };

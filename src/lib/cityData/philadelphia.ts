@@ -44,9 +44,18 @@ export const philadelphiaData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['100 N 18th Street', 'Suite 300', 'Philadelphia, PA 19103'],
+    streetAddress: '100 N 18th Street, Suite 300',
+    addressLocality: 'Philadelphia',
+    addressRegion: 'PA',
+    postalCode: '19103',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/uVwXyZ1aB2',
+    geo: {
+      latitude: '39.952600',
+      longitude: '-75.165200',
+    },
   },
   bottomFormTitle: 'Request Your SEO Consultation',
 };

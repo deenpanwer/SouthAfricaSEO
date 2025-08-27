@@ -135,7 +135,12 @@ https://traconomics.com/illinois-landscaping-seo-company`,
     postalCode: '60602',
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/d5E6f7G8h9',
+    geo: {
+      latitude: '41.878100',
+      longitude: '-87.629800',
+    },
   },
   bottomFormTitle: 'Get Your FREE, No-Obligation SEO Consultation',
   faqSectionHeadline: 'SEO FAQs for Chicago Businesses',

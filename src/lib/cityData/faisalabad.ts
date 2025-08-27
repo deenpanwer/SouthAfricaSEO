@@ -82,7 +82,12 @@ https://traconomics.com/punjab-landscaping-seo-company`,
     postalCode: '38000',
     addressCountry: 'PK',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/jK1lM2nO3p',
+    geo: {
+      latitude: '31.418700',
+      longitude: '73.079100',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
   faqSectionHeadline: 'SEO Questions from Faisalabad Businesses',

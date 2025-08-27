@@ -147,6 +147,11 @@ We also offer optimized content hubs across Texas verticals such as [landscaping
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/b2C3d4E5f6',
+    geo: {
+      latitude: '30.267200',
+      longitude: '-97.743100',
+    },
   },
   bottomFormTitle: 'Request Your SEO Plan',
   faqSectionHeadline: 'Frequently Asked Questions About SEO in Austin',

@@ -95,7 +95,12 @@ Whether you're a small service provider in Richardson or a mid-sized B2B brand n
     postalCode: '75204',
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/XyZ1aB2c3D',
+    geo: {
+      latitude: '32.800000',
+      longitude: '-96.800000',
+    },
   },
   bottomFormTitle: 'Book Your Free Dallas SEO Strategy Call Today',
   faqSectionHeadline: 'Dallas SEO Questions, Answered',

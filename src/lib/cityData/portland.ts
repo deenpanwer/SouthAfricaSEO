@@ -89,9 +89,18 @@ export const portlandCityData: CityPageData = {
   },
   location: {
     officeImageUrl: 'https://thriveagency.com/files/Portland-Thrive-office-location.jpg',
-    addressLines: ['121 Southwest Salmon St', '10th Floor', 'Portland, OR 97204'],
+    streetAddress: '121 Southwest Salmon St, 10th Floor',
+    addressLocality: 'Portland',
+    addressRegion: 'OR',
+    postalCode: '97204',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/rS9tU0vW1x',
+    geo: {
+      latitude: '45.515200',
+      longitude: '-122.678400',
+    },
   },
   bottomFormTitle: 'Get Your FREE SEO Audit & Proposal',
   faqData: [

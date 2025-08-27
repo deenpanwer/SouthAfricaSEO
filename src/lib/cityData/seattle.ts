@@ -44,9 +44,18 @@ export const seattleData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['801 2nd Ave', 'Suite 400', 'Seattle, WA 98104'],
+    streetAddress: '801 2nd Ave, Suite 400',
+    addressLocality: 'Seattle',
+    addressRegion: 'WA',
+    postalCode: '98104',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/oPqR6sT7uV',
+    geo: {
+      latitude: '47.606200',
+      longitude: '-122.332100',
+    },
   },
   bottomFormTitle: 'Request Your SEO Consultation',
 };

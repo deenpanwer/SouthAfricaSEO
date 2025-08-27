@@ -44,9 +44,18 @@ export const louisvilleData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1111 St', 'Suite 120', 'Louisville, KY 40201'],
+    streetAddress: '1111 St, Suite 120',
+    addressLocality: 'Louisville',
+    addressRegion: 'KY',
+    postalCode: '40201',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/qRsTuVwXyZ',
+    geo: {
+      latitude: '38.252700',
+      longitude: '-85.758500',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy',
 };

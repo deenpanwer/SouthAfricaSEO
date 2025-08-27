@@ -76,6 +76,11 @@ We complement execution with transparent monthly analytics—tracking keyword ra
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/kLpQ2rStUv',
+    geo: {
+      latitude: '30.332200',
+      longitude: '-81.655700',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
   faqSectionHeadline: 'Jacksonville SEO FAQs: Your Most Pressing Questions Answered',

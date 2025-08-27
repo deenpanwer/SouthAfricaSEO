@@ -142,7 +142,12 @@ Cleveland SEO isn’t just about being seen—it’s about being trusted. That�
     postalCode: '44114',
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/e4F5g6H7i8',
+    geo: {
+      latitude: '41.499300',
+      longitude: '-81.694400',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy',
   faqSectionHeadline: 'SEO FAQs for Cleveland Businesses',

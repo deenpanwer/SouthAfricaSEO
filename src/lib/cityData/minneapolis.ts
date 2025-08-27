@@ -45,9 +45,18 @@ export const minneapolisData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['100 S 5th St', 'Suite 1900', 'Minneapolis, MN 55401'],
+    streetAddress: '100 S 5th St, Suite 1900',
+    addressLocality: 'Minneapolis',
+    addressRegion: 'MN',
+    postalCode: '55401',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/qRsTuVwXyZ',
+    geo: {
+      latitude: '44.977800',
+      longitude: '-93.265000',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy',
 };

@@ -92,9 +92,18 @@ export const losAngelesData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['456 Drive', 'Suite 200', 'Los Angeles, CA 90001'],
+    streetAddress: '456 Drive, Suite 200',
+    addressLocality: 'Los Angeles',
+    addressRegion: 'CA',
+    postalCode: '90001',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/pQ7rS8tU9v',
+    geo: {
+      latitude: '34.052200',
+      longitude: '-118.243700',
+    },
   },
   bottomFormTitle: 'Request Your FREE, In-Depth SEO Strategy Session',
 };

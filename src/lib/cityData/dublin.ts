@@ -87,7 +87,12 @@ https://traconomics.com/ireland-landscaping-seo-company`,
     postalCode: '',
     addressCountry: 'IE',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/iJkL1mN2o3',
+    geo: {
+      latitude: '53.349800',
+      longitude: '-6.260300',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
   faqSectionHeadline: 'SEO Questions from Dublin Businesses',

@@ -84,6 +84,11 @@ We believe SEO in Cork should reflect its people—dynamic, enterprising, and de
     addressCountry: 'IE',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/g7H8i9J0k1',
+    geo: {
+      latitude: '51.898500',
+      longitude: '-8.475700',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
   faqSectionHeadline: 'Frequently Asked Questions About Our Cork SEO Services',

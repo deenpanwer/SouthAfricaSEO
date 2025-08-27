@@ -44,9 +44,18 @@ export const lasVegasData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['400 S 4th St', 'Suite 500', 'Las Vegas, NV 89101'],
+    streetAddress: '400 S 4th St, Suite 500',
+    addressLocality: 'Las Vegas',
+    addressRegion: 'NV',
+    postalCode: '89101',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/pQ7rS8tU9v',
+    geo: {
+      latitude: '36.169900',
+      longitude: '-115.139800',
+    },
   },
   bottomFormTitle: 'Request Your Las Vegas SEO Consultation',
 };

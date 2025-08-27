@@ -44,9 +44,18 @@ export const lahoreData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['202 Garden Rd', 'Gulberg III', 'Lahore, Punjab, Pakistan'],
+    streetAddress: '202 Garden Rd, Gulberg III',
+    addressLocality: 'Lahore',
+    addressRegion: 'Punjab',
+    postalCode: '54000',
+    addressCountry: 'PK',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/qRsTuVwXyZ',
+    geo: {
+      latitude: '31.549700',
+      longitude: '74.343600',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
 };

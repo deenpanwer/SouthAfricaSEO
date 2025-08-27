@@ -127,7 +127,12 @@ We also provide sector-specific SEO for Belfast’s tourism, tech, education, an
     postalCode: 'BT3 9EP',
     addressCountry: 'UK',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/c3D4e5F6g7',
+    geo: {
+      latitude: '54.597300',
+      longitude: '-5.930100',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
   faqSectionHeadline: 'SEO FAQs for Belfast Businesses',

@@ -44,9 +44,18 @@ export const miamiData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1212 Ave', 'Suite 120', 'Miami, FL 33101'],
+    streetAddress: '1212 Ave, Suite 120',
+    addressLocality: 'Miami',
+    addressRegion: 'FL',
+    postalCode: '33101',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/mN4o5pQ6rS',
+    geo: {
+      latitude: '25.761700',
+      longitude: '-80.191800',
+    },
   },
   bottomFormTitle: 'Request Your SEO Consultation',
 };

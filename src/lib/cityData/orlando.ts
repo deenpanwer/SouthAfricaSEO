@@ -44,9 +44,18 @@ export const orlandoData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1515 Dr', 'Suite 150', 'Orlando, FL 32801'],
+    streetAddress: '1515 Dr, Suite 150',
+    addressLocality: 'Orlando',
+    addressRegion: 'FL',
+    postalCode: '32801',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/rS9tU0vW1x',
+    geo: {
+      latitude: '28.538300',
+      longitude: '-81.379200',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
 };

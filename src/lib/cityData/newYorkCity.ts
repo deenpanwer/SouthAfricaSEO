@@ -92,9 +92,18 @@ export const newYorkCityData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['260 Madison Ave', '9th Floor', 'New York City, NY 10016'],
+    streetAddress: '260 Madison Ave, 9th Floor',
+    addressLocality: 'New York City',
+    addressRegion: 'NY',
+    postalCode: '10016',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/tU9vW0xY1z',
+    geo: {
+      latitude: '40.712800',
+      longitude: '-74.006000',
+    },
   },
   bottomFormTitle: 'Get Your FREE SEO Proposal & Consultation',
 };

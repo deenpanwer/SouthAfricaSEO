@@ -111,6 +111,11 @@ We specialize in SEO for Atlanta contractors, salons, healthcare practices, and 
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/fGhIjKlMnO',
+    geo: {
+      latitude: '33.748800',
+      longitude: '-84.387700',
+    },
   },
   bottomFormTitle: 'Get Your SEO Strategy',
   faqSectionHeadline: 'Frequently Asked Questions about SEO in Atlanta',

@@ -44,9 +44,18 @@ export const sanAntonioData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['9901 I.H. 10 West', 'Suite 800', 'San Antonio, TX 78230'],
+    streetAddress: '9901 I.H. 10 West, Suite 800',
+    addressLocality: 'San Antonio',
+    addressRegion: 'TX',
+    postalCode: '78230',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/qRsTuVwXyZ',
+    geo: {
+      latitude: '29.424100',
+      longitude: '-98.493600',
+    },
   },
   bottomFormTitle: 'Request Your SEO Consultation',
 };

@@ -128,7 +128,12 @@ We also offer SEO campaigns for law firms, dental clinics, and service-based bus
     postalCode: '21202',
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/gH1iJ2kL3m',
+    geo: {
+      latitude: '39.290400',
+      longitude: '-76.612200',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
   faqSectionHeadline: 'Baltimore SEO FAQs: What Local Businesses Need to Know',

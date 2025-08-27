@@ -44,9 +44,18 @@ export const newOrleansData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['1414 St', 'Suite 140', 'New Orleans, LA 70112'],
+    streetAddress: '1414 St, Suite 140',
+    addressLocality: 'New Orleans',
+    addressRegion: 'LA',
+    postalCode: '70112',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/rS9tU0vW1x',
+    geo: {
+      latitude: '29.951100',
+      longitude: '-90.071500',
+    },
   },
   bottomFormTitle: 'Request Your SEO Consultation',
 };

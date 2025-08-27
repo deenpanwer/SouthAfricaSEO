@@ -88,7 +88,12 @@ Every client receives full-funnel SEO reporting: rankings, revenue attribution, 
     postalCode: '80201',
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/h9I0j1K2l3',
+    geo: {
+      latitude: '39.739200',
+      longitude: '-104.990300',
+    },
   },
   bottomFormTitle: 'Book Your Free Denver SEO Strategy Call',
   faqSectionHeadline: 'Denver SEO: Your Questions Answered',

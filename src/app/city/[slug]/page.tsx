@@ -75,11 +75,11 @@ export default function CityPage({ params }: CityPageProps) {
     'postalCode': cityData.location.postalCode,
     'addressCountry': cityData.location.addressCountry,
   },
-  'geo': {
+  'geo': cityData.location.geo ? {
     '@type': 'GeoCoordinates',
     'latitude': cityData.location.geo.latitude,
     'longitude': cityData.location.geo.longitude,
-  },
+  } : undefined,
   'url': `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/${cityData.slug}-seo-service-agency`,
   'hasMap': cityData.location.hasMap,
   'description': cityData.heroData.metaDescription,
@@ -126,14 +126,14 @@ export default function CityPage({ params }: CityPageProps) {
     "name": `${cityData.cityName} SEO Agency: Our Proven Approach`,
     "description": `Learn how Trac, a leading ${cityData.cityName} SEO agency, helps businesses achieve top search rankings and sustainable organic growth with proven strategies.`,
     "uploadDate": "2025-08-25T00:00:00Z",
-    "thumbnailUrl": typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
+    "thumbnailUrl": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/home/Our-Team.webp`,
     "embedUrl": cityData.heroData.heroVideoUrl,
   };
 
   const farahLawFirmTestimonialSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": `Client Success Story: Farah Law Firm - ${cityData.cityName} SEO Results with Trac`,
+    "name": `Client Success Story: Farah Law Firm - ${cityData.cityName} SEO Agency Testimonial`,
     "description": `Hear how Farah Law Firm partnered with Trac to achieve significant SEO results and increased online visibility in ${cityData.cityName}.`,
     "uploadDate": "2025-08-25T00:00:00Z",
     "thumbnailUrl": "/home/Client-Farah-Law-Firm.webp",
@@ -143,7 +143,7 @@ export default function CityPage({ params }: CityPageProps) {
   const nationwideConstructionTestimonialSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": `Nationwide Construction: Boosting ${cityData.cityName} Leads with Trac SEO`,
+    "name": `Nationwide Construction: ${cityData.cityName} SEO Agency Testimonial`,
     "description": `Discover how Trac's tailored SEO strategies helped Nationwide Construction drive more qualified leads and improve search performance in ${cityData.cityName}.`,
     "uploadDate": "2025-08-25T00:00:00Z",
     "thumbnailUrl": "/home/Client-Natiowide-Construction.webp",
@@ -188,7 +188,17 @@ export default function CityPage({ params }: CityPageProps) {
     ]
   };
 
-  const combinedSchemas = [localBusinessSchema, productSchema, heroVideoSchema, farahLawFirmTestimonialSchema, nationwideConstructionTestimonialSchema, whyChooseUsSchema, breadcrumbSchema];
+  const localSeoVideoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": `TRAC SEO Agency, ${cityData.cityName}`,
+    "description": `Learn how TRAC, a leading local SEO agency, helps businesses in ${cityData.cityName} achieve top search rankings and sustainable organic growth with proven local strategies.`,
+    "uploadDate": "2025-05-02T01:24:00Z",
+    "thumbnailUrl": typeof cityData.heroData.heroImage === 'string' ? cityData.heroData.heroImage : cityData.heroData.heroImage.src,
+    "embedUrl": cityData.heroData.heroVideoUrl
+  };
+
+  const combinedSchemas = [localBusinessSchema, productSchema, heroVideoSchema, farahLawFirmTestimonialSchema, nationwideConstructionTestimonialSchema, localSeoVideoSchema, whyChooseUsSchema, breadcrumbSchema];
 
   return (
     <div className="bg-white">

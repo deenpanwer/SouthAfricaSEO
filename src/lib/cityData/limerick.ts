@@ -44,9 +44,18 @@ export const limerickData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['4 Street', 'O\'Connell Street', 'Limerick City, Ireland'],
+    streetAddress: '4 Street, O\'Connell Street',
+    addressLocality: 'Limerick City',
+    addressRegion: 'County Limerick',
+    postalCode: 'V94',
+    addressCountry: 'IE',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/kL1mN2oP3q',
+    geo: {
+      latitude: '52.668000',
+      longitude: '-8.626700',
+    },
   },
   bottomFormTitle: 'Request Your SEO Plan',
 };

@@ -44,9 +44,18 @@ export const gulshanEHadeedData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['Main Commercial Area', 'Phase 1', 'Gulshan-e-Hadeed, Karachi, Pakistan'],
+    streetAddress: 'Main Commercial Area, Phase 1',
+    addressLocality: 'Gulshan-e-Hadeed',
+    addressRegion: 'Sindh', // Assuming Sindh province for Karachi
+    postalCode: '75010', // A common Karachi postal code, specific for Gulshan-e-Hadeed might vary
+    addressCountry: 'PK',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/nO3pQ4rS5t',
+    geo: {
+      latitude: '24.840000',
+      longitude: '67.330000',
+    },
   },
   bottomFormTitle: 'Request Your SEO Plan',
 };

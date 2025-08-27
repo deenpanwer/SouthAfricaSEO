@@ -75,7 +75,12 @@ https://traconomics.com/pakistan-real-estate-seo`,
     postalCode: '44000',
     addressCountry: 'PK',
     phone: CONTACT_DETAILS.phone,
-    email: CONTACT_DETAILS.email
+    email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/mN4o5pQ6rS',
+    geo: {
+      latitude: '33.684400',
+      longitude: '73.047900',
+    },
   },
   bottomFormTitle: 'Request Your SEO Plan',
   faqSectionHeadline: 'Islamabad SEO FAQs: Capital Queries Answered',

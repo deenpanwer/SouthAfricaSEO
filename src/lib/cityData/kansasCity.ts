@@ -75,6 +75,11 @@ Our local SEO tactics extend to GMB optimization across neighborhoods—ensuring
     addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/jK1lM2nO3p',
+    geo: {
+      latitude: '39.099700',
+      longitude: '-94.578600',
+    },
   },
   bottomFormTitle: 'Get Your SEO Plan',
   faqSectionHeadline: 'Kansas City SEO FAQs: In-Depth Answers for KC Businesses',

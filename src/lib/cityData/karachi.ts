@@ -44,9 +44,18 @@ export const karachiData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['101 Road', 'Shahrah-e-Faisal', 'Karachi, Sindh, Pakistan'],
+    streetAddress: '101 Road, Shahrah-e-Faisal',
+    addressLocality: 'Karachi',
+    addressRegion: 'Sindh',
+    postalCode: '74000',
+    addressCountry: 'PK',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/oPqR6sT7uV',
+    geo: {
+      latitude: '24.860000',
+      longitude: '67.010000',
+    },
   },
   bottomFormTitle: 'Request Your SEO Strategy Session',
 };

@@ -44,9 +44,18 @@ export const sanDiegoData: CityPageData = {
   },
   location: {
     officeImageUrl: GENERIC_OFFICE_LOCATION_IMAGE_SRC,
-    addressLines: ['402 West Broadway', 'Suite 400', 'San Diego, CA 92101'],
+    streetAddress: '402 West Broadway, Suite 400',
+    addressLocality: 'San Diego',
+    addressRegion: 'CA',
+    postalCode: '92101',
+    addressCountry: 'US',
     phone: CONTACT_DETAILS.phone,
     email: CONTACT_DETAILS.email,
+    hasMap: 'https://goo.gl/maps/uVwXyZ1aB2',
+    geo: {
+      latitude: '32.715700',
+      longitude: '-117.161100',
+    },
   },
   bottomFormTitle: 'Get Your SEO Proposal',
 };
