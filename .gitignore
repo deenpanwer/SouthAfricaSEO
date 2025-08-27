@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+/docs
 
 # next.js
 /.next/
@@ -39,6 +40,11 @@ next-env.d.ts
 
 .genkit/*
 .env*
+.ssh
+.gemini
+.idx
+.vscode
+
 
 # firebase
 firebase-debug.log
