@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: AutoRepairStatePageProps): Promise<Metadata> {
   const stateData = getAutoRepairStateData(params.stateSlug);
-  const domain = process.env.WEBSITE_URL || 'https://www.tracprotect.online';
+  const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!stateData) {
     return {

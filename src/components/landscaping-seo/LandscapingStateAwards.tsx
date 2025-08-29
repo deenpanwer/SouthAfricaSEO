@@ -9,11 +9,11 @@ interface LandscapingStateAwardsProps {
 }
 
 const clutchAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Top-Digital-Marketing-Agencies-2021-by-Clutch.png',
+  src: '/home/Top-SEO-Agencies-2025-by-Clutch.webp',
   alt: 'Clutch Award Logo for SEO Excellence',
 };
 const upcityAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-National-Excellence-Awards-2021-in-United-States-761x761.png',
+  src: '/home/Trac-National-Excellence-Awards-2025-in-United-States-UpCity.webp',
   alt: 'UpCity National Excellence Award Logo for SEO',
 }
 const AWARD_BADGES_STRIP_IMAGE = 'https://thriveagency.com/files/awardimage2020.jpg';
@@ -51,7 +51,7 @@ export function LandscapingStateAwards({ clutchAward, upcityAward, stateName }: 
                 ))}
               </ul>
               <p className="mb-4 leading-relaxed">
-                Agencies are chosen for this distinction based on overall market presence and client feedback for SEO services. TRAC maintains a top rating on Clutch for {stateName} landscaping SEO. Check out the <a href="https://clutch.co/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">reviews</a>.
+                Agencies are chosen for this distinction based on overall market presence and client feedback for SEO services. TRAC maintains a top rating on Clutch for {stateName} landscaping SEO. Check out the <a href="https://clutch.co/profile/traconomics" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">reviews</a>.
               </p>
             </div>
           </div>

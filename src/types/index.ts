@@ -152,7 +152,7 @@ export interface CityAwardData {
 }
 
 export interface CityLocationData {
-  officeImageUrl: string;
+  officeImageUrl?: string;
   streetAddress: string;
   addressLocality: string;
   addressRegion: string;

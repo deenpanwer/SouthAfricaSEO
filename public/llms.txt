@@ -31,7 +31,7 @@ The project is architected around scalable, content-driven systems, making it ea
 The primary conversion goal is lead generation.
 
 - **Forms:** Lead capture forms are present on the homepage, contact page, and all dynamic location-based pages.
-- **Data Submission:** All forms use `react-hook-form` with `zod` for validation and submit their data to a SheetDB API endpoint (`https://sheetdb.io/api/v1/rsdd3ypenh4uu`).
+- **Data Submission:** All forms use `react-hook-form` with `zod` for validation and submit their data to a SheetDB API endpoint.
 - **Call to Action (CTA):** The main CTAs across the site are "Get a Free Proposal," "Get a Free Quote," or a similarly action-oriented phrase.
 
 ## 5. Technology Stack

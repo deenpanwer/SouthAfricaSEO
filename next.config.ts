@@ -26,6 +26,20 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async headers() {
+    return [
+      {
+        source: '/llms.txt',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex',
+          },
+        ],
+      },
+    ];
+  },
+
   async rewrites() {
     // Subdomain-specific rewrites for saphirefans.traconomics.com have been removed
     // as this logic is now handled by src/middleware.ts.

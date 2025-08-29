@@ -18,9 +18,20 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ message: 'No URLs found in sitemap to submit.' }, { status: 200 });
       }
 
-      await submitUrlsToIndexNow(urls);
+      const result = await submitUrlsToIndexNow(urls);
 
-      return NextResponse.json({ message: 'IndexNow submission initiated successfully.' }, { status: 200 });
+      if (!result) {
+        return NextResponse.json({ message: 'No URLs provided for IndexNow submission.' }, { status: 200 });
+      }
+
+      const { requestBody, response } = result;
+      const indexNowResponseText = await response.text();
+
+      return NextResponse.json({
+        sentToIndexNow: requestBody,
+        indexNowResponse: indexNowResponseText,
+      }, { status: response.status });
+
     } catch (error) {
       console.error('Error during IndexNow submission:', error);
       return NextResponse.json({ error: 'Failed to submit URLs to IndexNow.' }, { status: 500 });

@@ -37,15 +37,17 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               </div>
             </div>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-md">
-            <Image
-              src={locationData.officeImageUrl}
-              alt={`${cityName} Office Photo`}
-              width={600} // Adjust as needed for desired image size
-              height={400} // Adjust as needed for desired image size
-              title={`${cityName} Office Location`}
-            />
-          </div>
+          {locationData.officeImageUrl && (
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <Image
+                src={locationData.officeImageUrl}
+                alt={`${cityName} Office Photo`}
+                width={600} // Adjust as needed for desired image size
+                height={400} // Adjust as needed for desired image size
+                title={`${cityName} Office Location`}
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

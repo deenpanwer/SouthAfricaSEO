@@ -9,11 +9,11 @@ interface SalonStateAwardsProps {
 }
 
 const clutchAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Top-Digital-Marketing-Agencies-2021-by-Clutch.png',
+  src: '/home/Top-SEO-Agencies-2025-by-Clutch.webp',
   alt: 'Clutch Award Logo for Salon SEO Excellence',
 };
 const upcityAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-National-Excellence-Awards-2021-in-United-States-761x761.png',
+  src: '/home/Trac-National-Excellence-Awards-2025-in-United-States-UpCity.webp',
   alt: 'UpCity National Excellence Award Logo for Salon SEO',
 }
 const AWARD_BADGES_STRIP_IMAGE = 'https://thriveagency.com/files/awardimage2020.jpg';
@@ -51,7 +51,7 @@ export function SalonStateAwards({ clutchAward, upcityAward, stateName }: SalonS
                 ))}
               </ul>
               <p className="mb-4 leading-relaxed text-muted-foreground">
-                TRAC is proud of its top ratings on Clutch for {stateName} salon and spa SEO. View our <a href="https://clutch.co/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">client testimonials</a>.
+                TRAC is proud of its top ratings on Clutch for {stateName} salon and spa SEO. View our <a href="https://clutch.co/profile/traconomics" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">client testimonials</a>.
               </p>
             </div>
           </div>

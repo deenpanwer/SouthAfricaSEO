@@ -56,7 +56,7 @@ export function CityAwards({ clutchAward, upcityAward, cityName }: CityAwardsPro
               </ul>
               {/* Final Paragraphs with Links */}
               <p className="mb-4 leading-relaxed">
-                Agencies are chosen for this distinction based off of several factors, including overall market presence and, most importantly, client feedback. Thrive has a 5.0 rating on Clutch. Check out the <a href="https://clutch.co/" className="text-blue-600 hover:underline">reviews</a>.
+                Agencies are chosen for this distinction based off of several factors, including overall market presence and, most importantly, client feedback. TRAC has a 5.0 rating on Clutch. Check out the <a href="https://clutch.co/profile/traconomics" className="text-blue-600 hover:underline">reviews</a>.
               </p>
               {/* Placeholder for "Check out the reviews" link */}
               {/* <p className="text-sm text-gray-600">Thrive has a 5.0 rating on Clutch. Check out the <a href="#" className="text-blue-600 hover:underline">reviews</a>.</p> */}
@@ -80,7 +80,7 @@ export function CityAwards({ clutchAward, upcityAward, cityName }: CityAwardsPro
               <p className="text-gray-700 leading-relaxed mb-4">{upcityAward.text}</p> {/* Slightly darker text, added margin */}
               <p className="leading-relaxed">
                 {/* Final Paragraphs with Links */}
-                Thrive has a 5.0 rating on UpCity. Check out the <a href="https://upcity.com/" className="text-blue-600 hover:underline">reviews</a>.
+                TRAC has a 5.0 rating on UpCity. Check out the <a href="https://upcity.com/" className="text-blue-600 hover:underline">reviews</a>.
               </p>
               {/* Placeholder for quote */}
               {/* <blockquote className="text-gray-600 italic mb-4">

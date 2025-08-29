@@ -97,7 +97,7 @@ export default async function RootLayout({
               "areaServed": ["PK", "US", "GB", "AU", "CA", "AE"],
               "availableLanguage": ["en"],
               "sameAs": [
-                "https://www.facebook.com/share/1CXosykBPP/",
+                "https://www.facebook.com/profile.php?id=61560557825807",
                 "https://x.com/TRACPakistan?t=jAC22ELlFjQrtrfYjWmnxQ&s=09",
                 "https://www.instagram.com/tracprotect?igsh=ZGZ0azBteWprMHYx"
               ]

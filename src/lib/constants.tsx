@@ -320,7 +320,7 @@ const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
 
 
 export const SOCIAL_LINKS = [
-  { name: 'Facebook', href: 'https://www.facebook.com/share/1CXosykBPP/', icon: FacebookIcon },
+  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61560557825807', icon: FacebookIcon },
   { name: 'Twitter', href: 'https://x.com/TRACPakistan?t=jAC22ELlFjQrtrfYjWmnxQ&s=09', icon: TwitterIcon },
   { name: 'LinkedIn', href: '#', icon: LinkedInIcon },
   { name: 'Instagram', href: 'https://www.instagram.com/tracprotect?igsh=ZGZ0azBteWprMHYx', icon: InstagramIcon },

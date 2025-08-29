@@ -181,7 +181,7 @@ export default function WebDevPage() {
           {
             title: "E-commerce Platform Redesign",
             description: "A complete overhaul of an online retail platform, resulting in a 30% increase in conversion rates.",
-            imageUrl: "/test4/offering1.jpg", // Placeholder image
+            imageUrl: "https://via.placeholder.com/320x200?text=Project+1", // Placeholder image
             projectUrl: "#",
           },
           {

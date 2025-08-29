@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -11,25 +10,25 @@ const HomepageOfferingsSection: React.FC = () => {
       title: "Anti-Money Laundering Solutions",
       description: "Leverage AI to detect and prevent financial crime with advanced analytics.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/offerings/anti-money-laundering",
+      link: "/test4/offerings/anti-money-laundering",
     },
     {
       title: "Applied Customer Intelligence",
       description: "Gain deep insights into customer behavior to drive personalized experiences and growth.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/offerings/customer-intelligence",
+      link: "/test4/offerings/customer-intelligence",
     },
     {
       title: "Artificial Intelligence & Machine Learning",
       description: "Develop and deploy cutting-edge AI/ML models for various business needs.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/offerings/ai-ml",
+      link: "/test4/offerings/ai-ml",
     },
     {
       title: "Data Protection & Privacy",
       description: "Secure your sensitive data and ensure compliance with robust data protection solutions.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/offerings/data-protection",
+      link: "/test4/offerings/data-protection",
     },
   ];
 

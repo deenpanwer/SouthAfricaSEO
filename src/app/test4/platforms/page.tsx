@@ -12,7 +12,9 @@ const platforms = [
     category: "Platform",
     description: "An AI-ready operating system for global defense and intelligence.",
     largeText: "Gotham",
-    link: "/automation/platforms/gotham",
+    link: "/test4/platforms/gotham",
+    imageUrl: "https://tse4.mm.bing.net/th/id/OIP.ymLTKxXZ4nrz4JRU69VLaQHaE8?pid=Api&P=0&h=220",
+    dataAiHint: "defense system interface",
     details: {
       writtenBy: "Alex Karp, CEO",
       published: "2023",
@@ -24,7 +26,9 @@ const platforms = [
     category: "Platform",
     description: "An ontology-powered operating system for the modern enterprise.",
     largeText: "Foundry",
-    link: "/automation/platforms/foundry",
+    link: "/test4/platforms/foundry",
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.XmvQx4oA9-xeZ7kEQcM8mwHaEp?pid=Api&P=0&h=220",
+    dataAiHint: "enterprise data graph",
     details: {
       writtenBy: "Shyam Sankar, CTO",
       published: "2024",
@@ -36,7 +40,9 @@ const platforms = [
     category: "Platform",
     description: "Activate large language models and other AI on private networks.",
     largeText: "AIP",
-    link: "/automation/platforms/aip",
+    link: "/test4/platforms/aip",
+    imageUrl: "https://tse4.mm.bing.net/th/id/OIP.KeH-qYdWqFvfs2igElKiBQHaEU?pid=Api&P=0&h=220",
+    dataAiHint: "ai model network",
      details: {
       writtenBy: "AI Division",
       published: "2024",
@@ -48,7 +54,9 @@ const platforms = [
     category: "Platform",
     description: "Continuous delivery system for deploying software across all environments.",
     largeText: "Apollo",
-    link: "/automation/platforms/apollo",
+    link: "/test4/platforms/apollo",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.5V0cFbikaK5sit3BkEFNDQHaEK?pid=Api&P=0&h=220",
+    dataAiHint: "software deployment pipeline",
      details: {
       writtenBy: "DevOps Team",
       published: "2023",

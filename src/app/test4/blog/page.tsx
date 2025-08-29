@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -10,19 +9,19 @@ const BlogPage: React.FC = () => {
       title: "Blog Post 1: The Future of AI in Pakistan",
       description: "Description for Blog Post 1.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/blog/blog-post-1",
+      link: "/test4/blog/blog-post-1",
     },
     {
       title: "Blog Post 2: Ethical AI and Its Implications",
       description: "Description for Blog Post 2.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/blog/blog-post-2",
+      link: "/test4/blog/blog-post-2",
     },
     {
       title: "Blog Post 3: AI in Action - Real-World Applications",
       description: "Description for Blog Post 3.",
       imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eUUpZVsMF8yAHi6uW44f5gHaD-?pid=Api&P=0&h=220",
-      link: "/automation/blog/blog-post-3",
+      link: "/test4/blog/blog-post-3",
     },
   ];
 

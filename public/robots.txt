@@ -1,6 +1,5 @@
 User-agent: Googlebot
 Disallow: /saphirefans
-Disallow: /llms.txt
 
 User-agent: SBSearch
 Allow: /

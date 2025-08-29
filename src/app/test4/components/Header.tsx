@@ -33,13 +33,13 @@ const Header: React.FC = () => {
             style={{ backdropFilter: 'blur(10px)' }}
           >
           <div className="text-2xl font-bold text-gray-500">
-            <Link href="/automation">AUTOMATION</Link>
+            <Link href="/test4">AUTOMATION</Link>
           </div>
 
           {/* CTA Button and Hamburger Menu Toggle */}
           <div className="flex items-center space-x-6">
             <Link
-              href="/automation/contact"
+              href="/test4/contact"
               className={`hidden md:flex items-center px-4 py-2 border transition-colors duration-300
                   bg-white text-ph-dark-gray hover:bg-gray-200 hover:text-ph-dark-gray
                   rounded-md font-semibold`}
@@ -95,20 +95,20 @@ const Header: React.FC = () => {
                 <div>
                   <h3 className="text-gray-400 text-sm font-semibold uppercase mb-4">Navigation</h3>
                   <nav className="flex flex-col space-y-4">
-                    <Link href="/automation/platforms" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Platforms</Link>
-                    <Link href="/automation/offerings" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Offerings</Link>
-                    <Link href="/automation/impact-studies" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Impact Studies</Link>
-                    <Link href="/automation/blog" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Blog</Link>
-                    <Link href="/automation/about" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>About</Link>
-                    <Link href="/automation/contact" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Contact</Link>
-                    <Link href="/automation/military" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Military</Link>
+                    <Link href="/test4/platforms" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Platforms</Link>
+                    <Link href="/test4/offerings" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Offerings</Link>
+                    <Link href="/test4/impact-studies" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Impact Studies</Link>
+                    <Link href="/test4/blog" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Blog</Link>
+                    <Link href="/test4/about" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>About</Link>
+                    <Link href="/test4/contact" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Contact</Link>
+                    <Link href="/test4/military" className="text-white hover:text-gray-400" onClick={toggleMobileMenu}>Military</Link>
                   </nav>
                 </div>
 
                 {/* Add more sections as needed, e.g., Latest News, Documentation, etc. */}
 
                 <Link
-                  href="/automation/contact"
+                  href="/test4/contact"
                   className="mt-8 px-4 py-2 border border-ph-white text-ph-white hover:bg-ph-white hover:text-ph-black transition-colors duration-300 rounded-md font-semibold self-start" // Styled Get Started button
                   onClick={toggleMobileMenu}
                 >

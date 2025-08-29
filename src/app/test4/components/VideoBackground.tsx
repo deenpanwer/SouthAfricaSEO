@@ -9,7 +9,7 @@ const VideoBackground: React.FC = () => {
     <>
       <div
         className={`fixed inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 ${videoReady ? 'opacity-0' : 'opacity-100'}`}
-        style={{ backgroundImage: 'url(/automation/frame_00-00-00.png)' }}
+        style={{ backgroundImage: 'url(/test4/frame_00-00-00.png)' }}
       ></div>
       <video
         autoPlay
@@ -20,7 +20,7 @@ const VideoBackground: React.FC = () => {
         onCanPlayThrough={() => setVideoReady(true)}
         className={`fixed top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 object-cover z-0 transition-opacity duration-1000 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
       >
-        <source src="/automation/hero-video.mp4" type="video/mp4" />
+        <source src="/test4/hero-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* Minimal overlay */}

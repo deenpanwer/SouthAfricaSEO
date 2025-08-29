@@ -1,6 +1,6 @@
 # Project Progress Log - Automation Website (Palantir Replica)
 
-This document summarizes the work completed and outlines the next steps for building the Palantir-like automation services website within the `/src/app/automation` directory.
+This document summarizes the work completed and outlines the next steps for building the Palantir-like automation services website within the `/src/app/test4` directory.
 
 ## Completed Work
 
@@ -61,6 +61,6 @@ This document summarizes the work completed and outlines the next steps for buil
 
 ## Current Issue to Resolve
 
-- `Error: ./src/app/automation/components/HeroSection.tsx:7:6 Parsing ecmascript source code failed`
+- `Error: ./src/app/test4/components/HeroSection.tsx:7:6 Parsing ecmascript source code failed`
 
 ---

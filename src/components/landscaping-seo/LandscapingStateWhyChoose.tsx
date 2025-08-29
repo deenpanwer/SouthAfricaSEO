@@ -66,7 +66,7 @@ export function LandscapingStateWhyChoose({ headline, intro, points, whyChoosePa
           </div>
           <div className="md:w-1/2 relative group cursor-pointer" onClick={() => setIsModalOpen(true)}>
             <Image 
-                src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/thrive-video-static-img.jpg" 
+                src="/trac_logo.jpeg" 
                 alt={videoThumbnailAlt.replace('[StateName]', stateName)} 
                 width={600} height={338} 
                 className="rounded-md shadow-lg w-full h-auto object-cover" 

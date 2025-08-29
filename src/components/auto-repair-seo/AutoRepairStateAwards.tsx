@@ -9,11 +9,11 @@ interface AutoRepairStateAwardsProps {
 }
 
 const clutchAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Top-Digital-Marketing-Agencies-2021-by-Clutch.png',
+  src: '/home/Top-SEO-Agencies-2025-by-Clutch.webp',
   alt: 'Clutch Award Logo for Auto Repair SEO',
 };
 const upcityAwardImageData = {
-  src: 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Thrive-National-Excellence-Awards-2021-in-United-States-761x761.png',
+  src: '/home/Trac-National-Excellence-Awards-2025-in-United-States-UpCity.webp',
   alt: 'UpCity National Excellence Award Logo for Auto Repair SEO',
 }
 const AWARD_BADGES_STRIP_IMAGE = 'https://thriveagency.com/files/awardimage2020.jpg';
@@ -51,7 +51,7 @@ export function AutoRepairStateAwards({ clutchAward, upcityAward, stateName }: A
                 ))}
               </ul>
               <p className="mb-4 leading-relaxed text-muted-foreground">
-                TRAC is consistently recognized on Clutch for top-tier {stateName} auto repair SEO. View <a href="https://clutch.co/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">client reviews</a>.
+                TRAC is consistently recognized on Clutch for top-tier {stateName} auto repair SEO. View <a href="https://clutch.co/profile/traconomics" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">client reviews</a>.
               </p>
             </div>
           </div>

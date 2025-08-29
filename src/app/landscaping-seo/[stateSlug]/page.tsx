@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: LandscapingStatePageProps): Promise<Metadata> {
   const stateData = getLandscapingStateData(params.stateSlug);
-  const domain = process.env.WEBSITE_URL || 'https://www.tracprotect.online'; 
+  const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com'; 
 
   if (!stateData) {
     return {

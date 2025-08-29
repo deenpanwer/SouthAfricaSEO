@@ -1,10 +1,11 @@
+
+
 export async function submitUrlsToIndexNow(urls: string[]) {
   const key = "2b70f05e09df481bb4cdf818a2ad4e6c";
   const host = "traconomics.com";
 
   if (!urls || !Array.isArray(urls) || urls.length === 0) {
-    console.warn('No URLs provided for IndexNow submission.');
-    return;
+    return null;
   }
 
   const body = {
@@ -23,15 +24,13 @@ export async function submitUrlsToIndexNow(urls: string[]) {
       body: JSON.stringify(body),
     });
 
-    if (response.ok) {
-      console.log('URLs submitted successfully to IndexNow.');
-    } else {
-      const errorText = await response.text();
-      console.error(`Failed to submit URLs to IndexNow: ${response.status} - ${errorText}`);
-      throw new Error(`IndexNow submission failed: ${response.status} - ${errorText}`);
-    }
+    
+
+    return { requestBody: body, response };
+
   } catch (error) {
-    console.error('An unexpected error occurred during IndexNow submission:', error);
     throw error;
   }
 }
+
+
