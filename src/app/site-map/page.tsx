@@ -8,6 +8,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 export const metadata: Metadata = {
     title: 'Website Sitemap | TRAC',
     description: 'Navigate our website easily with this comprehensive sitemap.',
+    robots: 'noindex, follow', // Add this line to prevent indexing
 };
 
 export default async function HumanReadableSitemap() {

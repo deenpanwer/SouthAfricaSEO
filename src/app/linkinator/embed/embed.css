@@ -1,0 +1,32 @@
+/* src/app/linkinator/embed/embed.css */
+/* This CSS will be specifically for the embedded widget */
+
+.linkinator-embed-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: border-box;
+  color: #333;
+}
+
+.linkinator-embed-container * {
+  box-sizing: border-box;
+}
+
+.linkinator-embed-title {
+  /* Tailwind classes will be compiled, but for direct CSS: */
+  /* color: #E67E22; */
+}
+
+.linkinator-embed-description {
+  /* color: #6b7280; */
+}
+
+/* Example of overriding shadcn/ui styles for embed if needed */
+.linkinator-embed-container .linkinator-embed-button {
+  /* background-color: #E67E22 !important; */
+  /* color: white !important; */
+}
+
+/* Ensure scrollable content within the embed */
+.linkinator-embed-container .overflow-y-auto {
+  overflow-y: auto;
+}

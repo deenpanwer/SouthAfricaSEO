@@ -79,6 +79,11 @@ export default {
                 'ph-border': '#333333',
                 'ph-translucent-white': 'rgba(255, 255, 255, 0.1)', // Translucent white for header
                 'ph-menu-overlay': 'rgba(0, 0, 0, 1)', // Pitch black for menu overlay
+                // Linkinator Custom Colors
+                "primary-orange": "#E67E22", // Your chosen orange
+                "success-green": "#2ECC71",
+                "error-red": "#E74C3C",
+                "warning-yellow": "#F1C40F",
             },
             fontFamily: {
               sans: ['var(--font-geist-sans)', 'sans-serif'],

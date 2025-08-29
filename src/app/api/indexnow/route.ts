@@ -27,14 +27,21 @@ export async function GET(req: NextRequest) {
       const { requestBody, response } = result;
       const indexNowResponseText = await response.text();
 
+      let displayIndexNowResponse;
+      if (indexNowResponseText === '') {
+        displayIndexNowResponse = 'IndexNow accepted without any issue.';
+      } else {
+        displayIndexNowResponse = indexNowResponseText;
+      }
+
       return NextResponse.json({
         sentToIndexNow: requestBody,
-        indexNowResponse: indexNowResponseText,
+        indexNowResponse: displayIndexNowResponse,
       }, { status: response.status });
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error during IndexNow submission:', error);
-      return NextResponse.json({ error: 'Failed to submit URLs to IndexNow.' }, { status: 500 });
+      return NextResponse.json({ error: `Failed to submit URLs to IndexNow: ${error.message || 'Unknown error'}` }, { status: 500 });
     }
   }
 
