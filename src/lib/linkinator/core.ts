@@ -36,14 +36,17 @@ export async function performLinkScan(scanId: string, initialUrl: string, option
       });
       responseTimeMs = Date.now() - startTime;
 
-      statusCode = response.status;
-      if (response.ok) {
-        status = "OK";
-      } else if (statusCode >= 300 && statusCode < 400) {
-        status = "Redirected";
-        redirectedTo = response.url; // Final URL after redirects
-      } else {
-        status = "Broken";
+      // Only process response if it's defined (i.e., fetch didn't throw an error)
+      if (response) {
+        statusCode = response.status;
+        if (response.ok) {
+          status = "OK";
+        } else if (statusCode >= 300 && statusCode < 400) {
+          status = "Redirected";
+          redirectedTo = response.url; // Final URL after redirects
+        } else {
+          status = "Broken";
+        }
       }
     } catch (e: any) {
       responseTimeMs = Date.now() - startTime;
