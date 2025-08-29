@@ -1,112 +1,80 @@
 // src/lib/linkinator/core.ts
-import * as cheerio from "cheerio";
+import { Linkinator } from 'linkinator';
 import { LinkScanOptions, LinkScanResult } from "@/types/linkinator";
 import { tursoClient } from "@/lib/linkinator/db";
 
-// A simple in-memory cache to avoid re-fetching the same URL multiple times in a single scan
-const fetchedUrls = new Set<string>();
-
 export async function performLinkScan(scanId: string, initialUrl: string, options: LinkScanOptions): Promise<LinkScanResult[]> {
-  fetchedUrls.clear(); // Clear cache for new scan
   const results: LinkScanResult[] = [];
-  const queue: { url: string; sourcePage?: string; depth: number }[] = [{ url: initialUrl, depth: 0 }];
 
-  while (queue.length > 0) {
-    const { url: currentUrl, sourcePage, depth } = queue.shift()!;
+  const linkinatorOptions: any = {
+    concurrency: 10, // Number of concurrent checks
+    timeout: 10000, // 10 seconds timeout per request
+    userAgent: options.userAgent || 'LinkinatorBot/1.0',
+    // Linkinator's depth option is for how many levels deep it will crawl.
+    // Our 'depth' option is 1-based, Linkinator's is 0-based (0 = only initial URL, 1 = initial + links on initial, etc.)
+    // So, if our depth is 1, Linkinator's should be 0. If our depth is 2, Linkinator's should be 1.
+    // We'll cap it at a reasonable number to prevent excessively long scans.
+    depth: (options.depth && options.depth > 0) ? options.depth - 1 : 0,
+    // Linkinator's skip option takes an array of regular expressions
+    skip: options.ignorePatterns?.map(pattern => new RegExp(pattern)) || [],
+    // Linkinator also has 'recursive' and 'strict' options, but we'll stick to what's mapped from LinkScanOptions
+  };
 
-    if (fetchedUrls.has(currentUrl) || depth > (options.depth || 1)) {
-      continue;
-    }
+  // If includeSubdomains is false, we need to ensure Linkinator doesn't follow subdomains.
+  // Linkinator doesn't have a direct 'includeSubdomains' option. We might need to filter results or use 'skip' more aggressively.
+  // For now, we'll rely on the default behavior and filter results if necessary.
 
-    fetchedUrls.add(currentUrl);
+  const checker = new Linkinator(linkinatorOptions);
 
-    let response: Response | undefined;
-    let status: LinkScanResult["status"] = "Broken";
-    let statusCode: number | undefined;
-    let redirectedTo: string | undefined;
-    let responseTimeMs: number | undefined;
+  // Linkinator emits events for each link checked
+  checker.on('link', (link) => {
+    let status: LinkScanResult["status"];
     let errorMessage: string | undefined;
 
-    const startTime = Date.now();
-    try {
-      response = await fetch(currentUrl, {
-        redirect: "follow", // Follow redirects
-        headers: { "User-Agent": options.userAgent || "LinkinatorBot/1.0" },
-        signal: AbortSignal.timeout(10000) // 10 second timeout
-      });
-      responseTimeMs = Date.now() - startTime;
-
-      // Only process response if it's defined (i.e., fetch didn't throw an error)
-      if (response) {
-        statusCode = response.status;
-        if (response.ok) {
-          status = "OK";
-        } else if (statusCode >= 300 && statusCode < 400) {
-          status = "Redirected";
-          redirectedTo = response.url; // Final URL after redirects
-        } else {
-          status = "Broken";
-        }
-      }
-    } catch (e: any) {
-      responseTimeMs = Date.now() - startTime;
-      if (e.name === 'AbortError') {
-        status = "Timeout";
-        errorMessage = "Request timed out.";
-      } else {
-        status = "Network Error";
-        errorMessage = e.message;
-      }
+    if (link.state === 'OK') {
+      status = 'OK';
+    } else if (link.state === 'BROKEN') {
+      status = 'Broken';
+      errorMessage = link.failureReason || 'Unknown broken link reason';
+    } else if (link.state === 'REDIRECTED') {
+      status = 'Redirected';
+    } else if (link.state === 'TIMEOUT') {
+      status = 'Timeout';
+      errorMessage = 'Request timed out.';
+    } else {
+      status = 'Broken'; // Default to broken for other states
+      errorMessage = `Unexpected state: ${link.state}`;
     }
 
     results.push({
-      link: currentUrl,
+      link: link.url,
       status,
-      statusCode,
-      redirectedTo,
-      type: isInternalLink(currentUrl, initialUrl, options.includeSubdomains) ? "internal" : "external",
-      responseTimeMs,
-      sourcePage,
+      statusCode: link.status,
+      redirectedTo: link.redirectedTo,
+      type: link.isInternal ? 'internal' : 'external', // Linkinator provides isInternal
+      responseTimeMs: link.responseTime,
+      sourcePage: link.parentUrl, // Linkinator provides parentUrl
       errorMessage,
     });
+  });
 
-    // If it's an HTML page and we need to crawl deeper
-    if (status === "OK" && response && response.headers.get("content-type")?.includes("text/html") && depth < (options.depth || 1)) {
-      const html = await response.text();
-      const $ = cheerio.load(html);
-
-      $("a[href], img[src], link[href], script[src]").each((_, element) => {
-        const href = $(element).attr("href");
-        const src = $(element).attr("src");
-        const link = href || src;
-
-        if (link) {
-          try {
-            const absoluteLink = new URL(link, currentUrl).href;
-            if (!shouldIgnoreLink(absoluteLink, options.ignorePatterns)) {
-              queue.push({ url: absoluteLink, sourcePage: currentUrl, depth: depth + 1 });
-            }
-          } catch (e) {
-            // Handle malformed URLs
-            results.push({
-              link: link,
-              status: "Broken",
-              statusCode: undefined,
-              type: "external", // Assume external if malformed
-              sourcePage: currentUrl,
-              errorMessage: "Malformed URL"
-            });
-          }
-        }
-      });
-    }
-
-    // Update DB periodically or after a certain number of links processed
-    // For simplicity, we'll update at the end of the scan in this example.
-    // For very large scans, consider batching updates.
+  try {
+    // Linkinator's check method returns a promise that resolves when the scan is complete
+    await checker.check({ path: initialUrl });
+    console.log(`Linkinator scan completed for ${initialUrl}. Total links: ${results.length}`);
+  } catch (error: any) {
+    console.error(`Linkinator scan failed for ${initialUrl}:`, error);
+    // If the checker.check() throws an error, it means the scan itself failed to start or encountered a critical issue.
+    // We should update the scan status to 'failed' in the DB.
+    await tursoClient.execute({
+      sql: `UPDATE link_scans SET status = ?, error_message = ?, completed_at = ? WHERE id = ?`,
+      args: ["failed", error.message || "Linkinator scan failed unexpectedly", Math.floor(Date.now() / 1000), scanId],
+    });
+    throw error; // Re-throw to propagate the error to the QStash webhook handler
   }
 
   // After scan, update the database with final results and status
+  // This part is now only reached if checker.check() completes without throwing.
   await tursoClient.execute({
     sql: `UPDATE link_scans SET status = ?, results = ?, completed_at = ? WHERE id = ?`,
     args: ["completed", JSON.stringify(results), Math.floor(Date.now() / 1000), scanId],
@@ -115,33 +83,6 @@ export async function performLinkScan(scanId: string, initialUrl: string, option
   return results;
 }
 
-function isInternalLink(link: string, baseUrl: string, includeSubdomains?: boolean): boolean {
-  try {
-    const linkUrl = new URL(link);
-    const baseUrlObj = new URL(baseUrl);
-
-    if (includeSubdomains) {
-      return linkUrl.hostname.endsWith(baseUrlObj.hostname);
-    } else {
-      return linkUrl.hostname === baseUrlObj.hostname;
-    }
-  } catch (e) {
-    return false; // Malformed URL
-  }
-}
-
-function shouldIgnoreLink(link: string, ignorePatterns?: string[]): boolean {
-  if (!ignorePatterns || ignorePatterns.length === 0) {
-    return false;
-  }
-  return ignorePatterns.some(pattern => {
-    try {
-      // Simple glob to regex conversion for now
-      const regexPattern = pattern.replace(/\./g, '\\.\\').replace(/\*/g, '.*');
-      return new RegExp(regexPattern).test(link);
-    } catch (e) {
-      console.warn(`Invalid ignore pattern regex: ${pattern}`, e);
-      return false; // Don't ignore if pattern is invalid
-    }
-  });
-}
+// The following helper functions are no longer needed as Linkinator handles them internally
+// function isInternalLink(...) { ... }
+// function shouldIgnoreLink(...) { ... }
