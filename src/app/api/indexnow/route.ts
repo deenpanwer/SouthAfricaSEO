@@ -24,20 +24,16 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ message: 'No URLs provided for IndexNow submission.' }, { status: 200 });
       }
 
-      const { requestBody, response } = result;
-      const indexNowResponseText = await response.text();
+      const { response } = result;
+      const body = await response.text();
+      const headers = new Headers(response.headers);
+      headers.set('Cache-Control', 'no-cache');
 
-      let displayIndexNowResponse;
-      if (indexNowResponseText === '') {
-        displayIndexNowResponse = 'IndexNow accepted without any issue.';
-      } else {
-        displayIndexNowResponse = indexNowResponseText;
-      }
-
-      return NextResponse.json({
-        sentToIndexNow: requestBody,
-        indexNowResponse: displayIndexNowResponse,
-      }, { status: response.status });
+      return new NextResponse(body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: headers,
+      });
 
     } catch (error: any) {
       console.error('Error during IndexNow submission:', error);

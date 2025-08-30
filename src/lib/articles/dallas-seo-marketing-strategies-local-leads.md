@@ -26,7 +26,7 @@ The modern search journey often follows a familiar pattern:
 2.  **Consideration (Commercial Investigation):** The user knows the problem and is exploring solutions, comparing options, reading reviews. "Best HVAC repair companies Dallas," "cost of roofing replacement in Plano."
 3.  **Decision (Transactional Intent):** The user is ready to act, looking for a provider. "Plumber near me open now," "book an appointment hair salon Knox Henderson."
 
-Your lead generation strategy must weave through all these phases, ensuring you are visible and authoritative at each critical juncture. Neglecting informational queries, for instance, means ceding the crucial "mindshare" early in the customer journey to competitors. You can dive deeper into understanding [search intent in SEO](https://moz.com/blog/understand-search-intent).
+Your lead generation strategy must weave through all these phases, ensuring you are visible and authoritative at each critical juncture. Neglecting informational queries, for instance, means ceding the crucial "mindshare" early in the customer journey to competitors. You can dive deeper into understanding [search intent in SEO](https://moz.com/).
 
 ### II. The Unassailable Foundation: Mastering Your Google Business Profile for Leads
 
@@ -106,4 +106,4 @@ For a small business in Dallas, SEO for lead generation isn't a nebulous marketi
 
 ---
 
-**Ready to architect your Dallas business's lead generation pipeline?** Explore our comprehensive [Dallas SEO services](https://www.traconomics.com/dallas-seo-services) designed to convert local search intent into tangible business growth, leveraging precision strategies tailored for the competitive DFW market.
+**Ready to architect your Dallas business's lead generation pipeline?** Explore our comprehensive [Dallas SEO services](https://www.traconomics.com/dallas-seo-service-agency) designed to convert local search intent into tangible business growth, leveraging precision strategies tailored for the competitive DFW market.

@@ -181,19 +181,19 @@ export default function WebDevPage() {
           {
             title: "E-commerce Platform Redesign",
             description: "A complete overhaul of an online retail platform, resulting in a 30% increase in conversion rates.",
-            imageUrl: "https://via.placeholder.com/320x200?text=Project+1", // Placeholder image
+            imageUrl: "https://tse4.mm.bing.net/th/id/OIP.TAj5tw-UyptnQoZ2efFvZwHaEK?pid=Api&P=0&h=220",
             projectUrl: "#",
           },
           {
             title: "SaaS Marketing Website",
             description: "Designed and developed a lead-generating website for a B2B SaaS company, improving lead quality by 25%.",
-            imageUrl: "/test4/offering2.jpg", // Placeholder image
+            imageUrl: "https://tse4.mm.bing.net/th/id/OIP.iCjcTKecM6-QyPfuqYXU6AHaDw?pid=Api&P=0&h=220",
             projectUrl: "#",
           },
           {
             title: "Service Business Portal",
             description: "Created a custom client portal for a service-based business, streamlining operations and enhancing user experience.",
-            imageUrl: "/test4/offering3.jpg", // Placeholder image
+            imageUrl: "https://tse3.mm.bing.net/th/id/OIP.bJqxPIEqHtkTF7YLDUr3zgAAAA?pid=Api&P=0&h=220",
             projectUrl: "#",
           },
         ]}
