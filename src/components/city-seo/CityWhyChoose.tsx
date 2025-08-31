@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image'; // Keep Image import if needed elsewhere, but img tag is used for static image
 import { getCityData } from '@/lib/cityConstants';
-import React, { ComponentType, Fragment } from 'react';
-import { Lightbulb, ShieldCheck, TrendingUp, Search, BarChart2, LineChart, MapPinned, Newspaper } from 'lucide-react';
+import React from 'react';
+import { Lightbulb, ShieldCheck, TrendingUp, Search, BarChart2, LineChart, MapPinned, Newspaper, Users, Mail } from 'lucide-react';
 // Import the Modal component
 interface CityWhyChooseProps {
   cityName: string;

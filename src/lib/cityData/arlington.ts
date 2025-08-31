@@ -1,5 +1,5 @@
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, BarChart2, LineChart, MapPinned, Newspaper } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants.tsx';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency-nov.flywheelsites.com/files/770x385-2-1.png';
@@ -54,23 +54,57 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
   services: [
     {
       icon: Search,
-      title: 'Local SEO Optimization',
-      description: 'We help your business dominate in Arlington’s most-searched neighborhoods—targeting East Arlington, Southwest Arlington, and Dalworthington Gardens with geo-relevant landing pages, NAP consistency, and Google Maps optimization.',
+      title: 'SEO',
+      url: '/services/seo',
+      description: 'Our core service. We use data-driven strategies to improve your search engine rankings, driving organic traffic and leads.',
     },
     {
-      icon: Settings,
-      title: 'Technical Site SEO',
-      description: 'We fix slow load times, crawl issues, broken links, and weak schema structures to make your site technically sound and ready to rank across all Arlington user devices.',
+      icon: BarChart2,
+      title: 'PPC',
+      url: '/services/ppc',
+      description: 'We create and manage high-performing pay-per-click campaigns on Google Ads and other platforms to deliver immediate, targeted traffic.',
+    },
+    {
+      icon: Newspaper,
+      title: 'Content Writing',
+      url: '/services/content-writing',
+      description: 'Our team of expert writers creates compelling, SEO-friendly content that engages your audience and builds your brand authority.',
+    },
+    {
+      icon: LineChart,
+      title: 'Web Design and Development',
+      url: '/services/web-design-and-development',
+      description: 'We design and build beautiful, high-performing websites that are optimized for user experience and conversions.',
     },
     {
       icon: Users,
-      title: 'Keyword Strategy',
-      description: 'We build a custom Arlington keyword matrix that targets both high-volume terms and long-tail opportunities—like “contractor SEO near Arlington Highlands” or “salon web optimization South Arlington”.',
+      title: 'Social Media Marketing',
+      url: '/services/social-media-marketing',
+      description: 'We help you connect with your audience on social media, building a strong brand presence and driving engagement.',
     },
     {
       icon: Mail,
-      title: 'Content Marketing for Local SEO',
-      description: 'We craft local blog posts, service pages, and industry-specific content that targets how real people search in Arlington—earning backlinks and building trust in your niche.',
+      title: 'Email Marketing',
+      url: '/services/email-marketing',
+      description: 'We create and manage effective email marketing campaigns that nurture leads and drive conversions.',
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Reputation Management',
+        url: '/services/reputation-management',
+        description: 'We help you build and maintain a positive online reputation, ensuring that your customers see the best of your brand.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'eCommerce Optimization',
+        url: '/services/ecommerce-optimization',
+        description: 'We optimize your ecommerce store for maximum sales, improving everything from product pages to the checkout process.',
+    },
+    {
+        icon: MapPinned,
+        title: 'Amazon Marketing',
+        url: '/services/amazon-marketing',
+        description: 'We help you succeed on the world\'s largest online marketplace with our expert Amazon marketing services.',
     },
   ],
   whyChooseSectionHeadline: 'Why Choose TRAC for SEO in Arlington?',
@@ -92,6 +126,21 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
       icon: 'ShieldCheck',
       title: 'Trustworthy SEO Execution',
       description: 'We use white-hat, algorithm-safe SEO practices aligned with Google’s guidelines to protect your site from penalties and help it grow sustainably month over month.',
+    },
+    {
+        icon: 'BarChart2',
+        title: 'Data-Driven Strategies',
+        description: 'We believe in transparency and accountability. Our campaigns are backed by data, and we provide regular reports to show you the ROI of your investment.',
+    },
+    {
+        icon: 'Users',
+        title: 'Dedicated Team of Experts',
+        description: 'You get a dedicated team of SEO experts, content writers, and web developers who are committed to your success.',
+    },
+    {
+        icon: 'LineChart',
+        title: 'Holistic Approach',
+        description: 'We look at the bigger picture, combining SEO with other digital marketing channels to create a comprehensive strategy for growth.',
     },
   ],
   awards: {

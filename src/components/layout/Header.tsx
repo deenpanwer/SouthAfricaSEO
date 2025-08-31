@@ -3,7 +3,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Zap, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -20,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
+import Logo from './logo';
 import { NAV_ITEMS, APP_NAME } from '@/lib/constants.tsx';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -37,8 +39,10 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
-            <Zap className="h-8 w-8" />
-            <span className="font-extrabold text-xl font-poppins">{APP_NAME}</span>
+            {/* To revert to the Zap icon, replace the Image component below with: <Zap className="h-8 w-8" /> */}
+            {/* <Image src="/traconomics-icon.svg" alt="Traconomics Logo" width={32} height={32} className="h-8 w-auto" /> */}
+            <Logo />
+            {/* <span className="font-extrabold text-xl font-poppins">{APP_NAME}</span> */}
           </Link>
 
           <nav className="hidden md:flex space-x-1 items-center">
@@ -105,8 +109,10 @@ export function Header() {
                     <div className="p-6">
                       <div className="flex justify-between items-center mb-4">
                           <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
-                              <Zap className="h-7 w-7" />
-                              <span className="font-bold text-lg">{APP_NAME}</span>
+                              {/* To revert to the Zap icon, replace the Image component below with: <Zap className="h-7 w-7" /> */}
+                              {/* <Image src="/traconomics-icon.svg" alt="Traconomics Icon" width={28} height={28} className="h-7 w-auto" /> */}
+                              <Logo />
+                              {/* <span className="font-bold text-lg">{APP_NAME}</span> */}
                             </Link>
                         </div>
                       <nav className="flex flex-col">

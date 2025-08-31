@@ -36,7 +36,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Trac: #1 SEO Service Provider | Proven Results & ROI",
-  description: "Tired of agencies that overpromise and underdeliver? Trac is a results-driven SEO service provider focused on ROI. We help businesses grow with proven SEO strategies. Get your free proposal today.",
+  description: "Grow your business with ROI-driven SEO. Trac's proven strategies deliver results, not empty promises. Get your free proposal today and start seeing real growth.",
 };
 
 const SAPHIREFANS_HOST = 'saphirefans.traconomics.com'; // Define the saphirefans hostname

@@ -135,13 +135,14 @@ export interface CityHeroData {
 }
 
 export interface CityServiceItem {
+  [x: string]: any;
   icon: LucideIcon;
   title: string;
   description: string;
 }
 
 export interface CityWhyChooseItem {
-  icon: string; // Changed from LucideIcon to string
+  icon: LucideIcon;
   title: string;
   description: string;
 }

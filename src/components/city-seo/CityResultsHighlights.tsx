@@ -2,6 +2,7 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import type { Testimonial } from '@/types';
 import { Star } from 'lucide-react';
@@ -106,6 +107,12 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link href="/case-studies" className="text-orange-500 hover:underline">
+            View All Case Studies
+          </Link>
         </div>
 
         {/* Testimonials Section (Integrated from CityPageTestimonials.tsx) */}

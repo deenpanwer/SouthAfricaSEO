@@ -1,5 +1,6 @@
 
 import type { CityServiceItem } from '@/types';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'; // Can reuse ShadCN card for structure
 
 interface CityServicesGridProps {
@@ -18,15 +19,21 @@ export function CityServicesGrid({ headline, subheadline, services }: CityServic
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.title} className="flex items-start space-x-4 p-1">
-              <div className="flex-shrink-0 mt-1">
-                <service.icon className="h-8 w-8 text-orange-500" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">{service.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
-            </div>
+            <Link href={service.url} key={service.title} className="block hover:shadow-lg transition-shadow duration-300 rounded-lg">
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0">
+                      <service.icon className="h-8 w-8 text-orange-500" />
+                    </div>
+                    <CardTitle>{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
