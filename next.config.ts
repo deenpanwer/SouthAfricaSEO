@@ -25,7 +25,9 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'images.ctfassets.net', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn.worldvectorlogo.com', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'brandfetch.com', port: '', pathname: '/**' },
-      { protocol: 'https', hostname: 'ahrefs.com', port: '', pathname: '/**' }
+      { protocol: 'https', hostname: 'ahrefs.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.brandfetch.io' },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
     ],
   },
 
