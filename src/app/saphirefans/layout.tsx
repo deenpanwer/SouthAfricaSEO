@@ -23,8 +23,7 @@ const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+92-300-1234567", // Placeholder from SaphireFans Contact Page
     "contactType": "Customer Service",
-    "areaServed": "PK",
-    "availableLanguage": ["en", "Ur"] // Assuming Urdu
+    "areaServed": "PK"
   },
   "address": {
     "@type": "PostalAddress",

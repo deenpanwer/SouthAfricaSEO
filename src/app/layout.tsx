@@ -95,7 +95,6 @@ export default async function RootLayout({
                 "contactType": "customer service"
               },
               "areaServed": ["PK", "US", "GB", "AU", "CA", "AE"],
-              "availableLanguage": ["en"],
               "sameAs": [
                 "https://www.facebook.com/profile.php?id=61560557825807",
                 "https://x.com/TRACPakistan?t=jAC22ELlFjQrtrfYjWmnxQ&s=09",

@@ -25,15 +25,12 @@ export async function GET(req: NextRequest) {
       }
 
       const { response } = result;
-      const body = await response.text();
-      const headers = new Headers(response.headers);
-      headers.set('Cache-Control', 'no-cache');
-
-      return new NextResponse(body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: headers,
-      });
+      if (response.ok) {
+        return NextResponse.json({ message: `Successfully submitted ${urls.length} URLs to IndexNow.` }, { status: 200 });
+      } else {
+        const errorBody = await response.text();
+        return NextResponse.json({ message: `IndexNow API returned an error: ${errorBody}` }, { status: response.status });
+      }
 
     } catch (error: any) {
       console.error('Error during IndexNow submission:', error);

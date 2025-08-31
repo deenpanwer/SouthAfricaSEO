@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'www.farahlegal.com', pathname: '/**' },
       { protocol: 'https', hostname: 'static.wixstatic.com', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'images.ctfassets.net', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.worldvectorlogo.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'brandfetch.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'ahrefs.com', port: '', pathname: '/**' }
     ],
   },
 
