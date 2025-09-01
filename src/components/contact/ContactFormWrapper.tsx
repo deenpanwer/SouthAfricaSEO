@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useFormContext } from 'react-hook-form'; // If needed for deep integration
 import { ContactForm } from './ContactForm';
-import { SERVICE_PACKAGE_GROUPS } from '@/lib/constants';
+import { SERVICE_PACKAGE_GROUPS } from '@/lib/packages';
 import type { ContactFormValues } from '@/types';
+import { ContactFormSkeleton } from './ContactFormSkeleton';
 
 export const GENERAL_INQUIRY_VALUE = "general_inquiry_not_specified";
 export const CUSTOM_SOLUTION_VALUE = "Custom Solution";
@@ -17,6 +18,7 @@ export const CUSTOM_SOLUTION_VALUE = "Custom Solution";
 // So this wrapper primarily helps with Suspense or specific client hooks if needed.
 
 export function ContactFormWrapper() {
+  const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
   const serviceFromQuery = searchParams.get('package'); // Match param from ServicePackageDisplay
   
@@ -35,6 +37,19 @@ export function ContactFormWrapper() {
     // it will default to GENERAL_INQUIRY_VALUE.
     // Alternatively, you could map unknown query params to "Custom Solution" here if desired:
     // else { preselectedServiceActualValue = CUSTOM_SOLUTION_VALUE; }
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 100); // Simulate a loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  if (loading) {
+    return <ContactFormSkeleton />;
   }
 
 

@@ -51,12 +51,12 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
       const renderedParts = parts.map((part, partIndex) => {
         // Simple URL detection
         if (part.startsWith('http://') || part.startsWith('https://')) {
-          return <a key={`p${pIndex}-part${partIndex}`} href={part} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{part}</a>;
+          return <a key={`p${pIndex}-part${partIndex}`} href={part} className="text-orange-500 hover:text-orange-600" target="_blank" rel="noopener noreferrer">{part}</a>;
         }
         // Basic [text](url) detection (can be enhanced)
         const markdownLinkMatch = part.match(/.*\[(.*?)\].*\((.*?)\)/);
         if (markdownLinkMatch) {
-          return <a key={`p${pIndex}-part${partIndex}`} href={markdownLinkMatch[2]} className="text-yellow-400 hover:underline" target="_blank" rel="noopener noreferrer">{markdownLinkMatch[1]}</a>;
+          return <a key={`p${pIndex}-part${partIndex}`} href={markdownLinkMatch[2]} className="text-orange-500 hover:text-orange-600" target="_blank" rel="noopener noreferrer">{markdownLinkMatch[1]}</a>;
         }
         return part;
       });
@@ -84,10 +84,10 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
 
           {/* Right Column: Text Content & Image/Video Placeholder */}
           <div className="lg:order-1 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
               {heroTitle}
             </h1>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-yellow-400 mb-6">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-yellow-400 mb-8">
               {heroSubtitle}
             </h2>
             {/* Image that triggers video */}

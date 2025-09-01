@@ -19,7 +19,7 @@ const ShoppingBagIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 
 export const metadata: Metadata = {
-  title: `Digital Marketing Services | ${APP_NAME}`,
+  title: `Digital Marketing Services`,
   description: `Explore our full suite of digital marketing services, from SEO and PPC to content writing and web development. Discover how we build data-driven systems for sustainable business growth.`,
 };
 

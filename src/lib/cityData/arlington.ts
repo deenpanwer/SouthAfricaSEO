@@ -1,6 +1,6 @@
 import type { CityPageData } from '@/types';
-import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, BarChart2, LineChart, MapPinned, Newspaper } from 'lucide-react';
-import { CONTACT_DETAILS } from '@/lib/constants.tsx';
+import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, BarChart2, LineChart, MapPinned, Newspaper, Code, FileText, Link as LinkIcon, BarChart, CheckCircle } from 'lucide-react';
+import { CONTACT_DETAILS } from '@/lib/constants';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency-nov.flywheelsites.com/files/770x385-2-1.png';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Arlington-office-location.png';
@@ -56,55 +56,97 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
       icon: Search,
       title: 'SEO',
       url: '/services/seo',
-      description: 'Our core service. We use data-driven strategies to improve your search engine rankings, driving organic traffic and leads.',
+      description: 'Our core service focuses on elevating your website’s visibility in search engine results. We employ advanced, data-driven strategies to significantly improve your organic rankings, driving a consistent flow of qualified traffic and generating valuable leads for your business. Our comprehensive approach ensures sustainable growth and a strong online presence.',
     },
     {
       icon: BarChart2,
       title: 'PPC',
       url: '/services/ppc',
-      description: 'We create and manage high-performing pay-per-click campaigns on Google Ads and other platforms to deliver immediate, targeted traffic.',
+      description: 'We specialize in creating and meticulously managing high-performing pay-per-click campaigns across major platforms like Google Ads. Our goal is to deliver immediate, highly targeted traffic to your website, maximizing your return on ad spend. We continuously optimize bids, keywords, and ad copy to ensure your campaigns are efficient and effective in reaching your ideal customers.',
     },
     {
       icon: Newspaper,
       title: 'Content Writing',
       url: '/services/content-writing',
-      description: 'Our team of expert writers creates compelling, SEO-friendly content that engages your audience and builds your brand authority.',
+      description: 'Our team of experienced writers crafts compelling, SEO-friendly content designed to engage your target audience and establish your brand as an authority in your industry. From blog posts and articles to website copy and landing pages, we produce high-quality, relevant content that not only attracts search engines but also converts visitors into loyal customers, building trust and credibility.',
     },
     {
       icon: LineChart,
       title: 'Web Design and Development',
       url: '/services/web-design-and-development',
-      description: 'We design and build beautiful, high-performing websites that are optimized for user experience and conversions.',
+      description: 'We design and develop beautiful, responsive, and high-performing websites that are meticulously optimized for an exceptional user experience and maximum conversions. Our focus is on creating visually appealing and functionally robust online platforms that not only reflect your brand identity but also drive business growth through intuitive navigation, fast loading times, and seamless interactions.',
     },
     {
       icon: Users,
       title: 'Social Media Marketing',
       url: '/services/social-media-marketing',
-      description: 'We help you connect with your audience on social media, building a strong brand presence and driving engagement.',
+      description: 'We help you forge meaningful connections with your audience across various social media platforms. Our strategies are designed to build a strong brand presence, foster community engagement, and drive measurable results. We manage your social channels, create compelling content, and run targeted campaigns to expand your reach and cultivate a loyal customer base.',
     },
     {
       icon: Mail,
       title: 'Email Marketing',
       url: '/services/email-marketing',
-      description: 'We create and manage effective email marketing campaigns that nurture leads and drive conversions.',
+      description: 'We develop and manage highly effective email marketing campaigns that nurture leads, build customer loyalty, and drive conversions. From crafting engaging newsletters to automating personalized drip campaigns, our strategies are designed to keep your audience informed, interested, and ready to take action. We focus on delivering the right message to the right person at the right time.',
     },
     {
         icon: ShieldCheck,
         title: 'Reputation Management',
         url: '/services/reputation-management',
-        description: 'We help you build and maintain a positive online reputation, ensuring that your customers see the best of your brand.',
+        description: 'We proactively help you build, monitor, and maintain a positive online reputation. Our strategies ensure that your customers consistently see the best of your brand across all digital channels. We address negative feedback, highlight positive reviews, and implement proactive measures to safeguard your brand’s image, fostering trust and credibility among your audience.',
     },
     {
         icon: TrendingUp,
         title: 'eCommerce Optimization',
         url: '/services/ecommerce-optimization',
-        description: 'We optimize your ecommerce store for maximum sales, improving everything from product pages to the checkout process.',
+        description: 'We specialize in optimizing your e-commerce store for maximum sales and profitability. Our comprehensive approach covers everything from enhancing product pages and streamlining the checkout process to improving site speed and mobile responsiveness. We focus on creating a seamless shopping experience that encourages conversions and drives significant revenue growth for your online business.',
     },
     {
         icon: MapPinned,
         title: 'Amazon Marketing',
         url: '/services/amazon-marketing',
-        description: 'We help you succeed on the world\'s largest online marketplace with our expert Amazon marketing services.',
+        description: 'We empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help you dominate the competitive Amazon landscape and reach millions of potential customers.',
+    },
+    {
+      icon: Code,
+      title: 'Technical SEO',
+      url: '',
+      description: 'Our technical SEO services focus on optimizing your website\'s infrastructure to ensure seamless crawling and indexing by search engines. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance.',
+    },
+    {
+      icon: FileText,
+      title: 'On-Page SEO',
+      url: '',
+      description: 'On-page SEO involves optimizing individual web pages to rank higher and earn more relevant traffic from search engines. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms.',
+    },
+    {
+      icon: LinkIcon,
+      title: 'Off-Page SEO / Link Building',
+      url: '',
+      description: 'Our off-page SEO and link building strategies are designed to significantly improve your website\'s authority and relevance through external signals. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic.',
+    },
+    {
+      icon: Settings,
+      title: 'Schema Markup',
+      url: '',
+      description: 'Implementing structured data, or Schema Markup, is key to enhancing search engine understanding of your content and achieving rich results in SERPs. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates.',
+    },
+    {
+      icon: Search,
+      title: 'Local SEO',
+      url: '',
+      description: 'Our local SEO services are dedicated to optimizing your online presence to attract more business from local searches. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services.',
+    },
+    {
+      icon: BarChart,
+      title: 'SEO Audits',
+      url: '',
+      description: 'Our comprehensive SEO audits provide an in-depth analysis of your website\'s current performance and identify critical areas for improvement. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. The audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic.',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Content Marketing for SEO',
+      url: '',
+      description: 'Our content marketing for SEO services focuses on creating and distributing valuable, relevant, and consistent content that attracts and retains a clearly defined audience. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader.',
     },
   ],
   whyChooseSectionHeadline: 'Why Choose TRAC for SEO in Arlington?',

@@ -28,6 +28,13 @@ export const NAV_ITEMS: NavItem[] = [
       { href: '/services/reputation-management', label: 'Reputation Management' },
       { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization' },
       { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)' },
+      { href: '/services/technical-seo', label: 'Technical SEO' },
+      { href: '/services/on-page-seo', label: 'On-Page SEO' },
+      { href: '/services/off-page-seo', label: 'Off-Page SEO / Link Building' },
+      { href: '/services/schema-markup', label: 'Schema Markup' },
+      { href: '/services/local-seo', label: 'Local SEO' },
+      { href: '/services/seo-audits', label: 'SEO Audits' },
+      { href: '/services/content-marketing-for-seo', label: 'Content Marketing for SEO' },
       { href: '/automations', label: 'Automations' },
     ]
   },
@@ -44,220 +51,10 @@ export const FOOTER_NAV_ITEMS: NavItem[] = [
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/services', label: 'Services' },
+  { href: '/pay', label: 'How to Pay' },
 ];
 
 
-export const SPECIAL_OFFER_PACKAGE: ServicePackage = {
-  name: 'Web Design & Development',
-  price: '$0',
-  originalPrice: '$5,000',
-  description: 'A professional, custom-built website designed to convert. Free for a limited time with any Pro or Enterprise plan.',
-  icon: Code,
-  features: [
-    { name: 'Custom Design', description: 'Up to 10 pages, tailored to your brand.' },
-    { name: 'Mobile-First & Responsive', description: 'Looks great on all devices.' },
-    { name: 'SEO-Ready Foundation', description: 'Built for search engine visibility.' },
-    { name: 'Basic Content Integration', description: 'We’ll set up your initial pages.' },
-  ],
-  cta: 'Claim This Offer',
-  isSpecialOffer: true,
-};
-
-const SEO_PACKAGES: ServicePackage[] = [
-  {
-    name: 'SEO Starter',
-    price: '$1,500/mo',
-    description: 'Foundational SEO to build online visibility and authority.',
-    icon: Search,
-    features: [
-      { name: 'Keyword Research', description: 'Up to 20 target keywords' },
-      { name: 'On-Page SEO', description: 'Optimization for all core pages' },
-      { name: 'Technical Audit', description: 'Full site health check' },
-      { name: 'Monthly Reporting', description: 'Performance dashboard' },
-    ],
-    cta: 'Choose SEO Starter',
-  },
-  {
-    name: 'SEO Growth',
-    price: '$3,000/mo',
-    description: 'Comprehensive SEO for competitive markets.',
-    icon: TrendingUp,
-    features: [
-      { name: 'Everything in Starter', description: 'Plus advanced features' },
-      { name: 'Content Creation', description: '2 SEO-focused blog posts/mo' },
-      { name: 'Link Building', description: 'High-quality backlink acquisition' },
-      { name: 'GMB Optimization', description: 'Dominate local search' },
-    ],
-    cta: 'Choose SEO Growth',
-  },
-  {
-    name: 'SEO Pro',
-    price: '$5,500/mo',
-    description: 'Aggressive SEO for market domination.',
-    icon: Award,
-    features: [
-      { name: 'Everything in Growth', description: 'Plus premium services' },
-      { name: 'Advanced Content Strategy', description: 'Pillar pages & topic clusters' },
-      { name: 'Digital PR', description: 'High-authority media outreach' },
-      { name: 'CRO & A/B Testing', description: 'Optimize for conversions' },
-    ],
-    cta: 'Choose SEO Pro',
-  }
-];
-
-const PPC_PACKAGES: ServicePackage[] = [
-  {
-    name: 'PPC Launch',
-    price: '$1,000/mo',
-    description: 'For businesses new to PPC, focused on one platform.',
-    icon: Rocket,
-    features: [
-      { name: 'Ad Spend Limit', description: 'Up to $5,000/mo' },
-      { name: 'Platform', description: 'Google Ads or Meta Ads' },
-      { name: 'Campaign Setup', description: 'Full account & campaign build' },
-      { name: 'Monthly Reporting', description: 'Key performance metrics' },
-    ],
-    cta: 'Choose PPC Launch',
-  },
-  {
-    name: 'PPC Scale',
-    price: '$2,500/mo',
-    description: 'Multi-platform advertising for growing brands.',
-    icon: TrendingUp,
-    features: [
-      { name: 'Ad Spend Limit', description: 'Up to $15,000/mo' },
-      { name: 'Platforms', description: 'Google Ads & Meta Ads' },
-      { name: 'A/B Testing', description: 'Ad copy & landing page tests' },
-      { name: 'Dedicated Manager', description: 'Weekly performance check-ins' },
-    ],
-    cta: 'Choose PPC Scale',
-  },
-  {
-    name: 'PPC Dominate',
-    price: 'Custom',
-    description: 'Aggressive, multi-channel campaigns for market leaders.',
-    icon: Award,
-    features: [
-      { name: 'Ad Spend Limit', description: '$15,000+/mo' },
-      { name: 'All Platforms', description: 'Google, Meta, LinkedIn, etc.' },
-      { name: 'Advanced CRO', description: 'Full funnel optimization' },
-      { name: 'Custom Dashboards', description: 'Real-time ROI tracking' },
-    ],
-    cta: 'Request Quote',
-  }
-];
-
-const SOCIAL_MEDIA_PACKAGES: ServicePackage[] = [
-  {
-    name: 'Social Starter',
-    price: '$800/mo',
-    description: 'Establish a professional presence on key social platforms.',
-    icon: Users,
-    features: [
-      { name: 'Platforms', description: 'Up to 2 social media platforms' },
-      { name: 'Posting Frequency', description: '3 posts per week per platform' },
-      { name: 'Content Creation', description: 'Basic graphic design & copywriting' },
-      { name: 'Monthly Reporting', description: 'Follower growth & engagement' },
-    ],
-    cta: 'Choose Social Starter',
-  },
-  {
-    name: 'Social Growth',
-    price: '$1,800/mo',
-    description: 'Build an engaged community and drive traffic.',
-    icon: TrendingUp,
-    features: [
-      { name: 'Platforms', description: 'Up to 3 platforms' },
-      { name: 'Posting Frequency', description: '5 posts per week per platform' },
-      { name: 'Community Management', description: 'Proactive engagement' },
-      { name: 'Ad Campaign', description: 'Includes basic ad management' },
-    ],
-    cta: 'Choose Social Growth',
-  },
-  {
-    name: 'Social Pro',
-    price: '$3,500/mo',
-    description: 'Comprehensive social media and influencer marketing.',
-    icon: Award,
-    features: [
-      { name: 'Platforms', description: 'Up to 4 platforms' },
-      { name: 'Content', description: 'Includes video & stories' },
-      { name: 'Influencer Outreach', description: 'Partnerships with micro-influencers' },
-      { name: 'Advanced Analytics', description: 'Full-funnel ROI tracking' },
-    ],
-    cta: 'Choose Social Pro',
-  }
-];
-
-const OTHER_SERVICE_PACKAGES: ServicePackage[] = [
-    {
-    name: 'Content Writing',
-    price: 'From $750/mo',
-    description: 'High-quality, SEO-optimized content to build authority.',
-    icon: Edit3,
-    features: [
-      { name: 'Basic', description: '2 blog posts/mo (1000 words each)' },
-      { name: 'Growth', description: '4 blog posts/mo + content strategy' },
-      { name: 'Pro', description: 'Pillar pages & cluster content' },
-      { name: 'Custom', description: 'Tailored to your needs' },
-    ],
-    cta: 'Get Content Plan',
-  },
-  {
-    name: 'Email Marketing',
-    price: 'From $600/mo',
-    description: 'Engage your audience and drive sales with email.',
-    icon: Mail,
-    features: [
-      { name: 'Setup', description: 'List setup & welcome sequence' },
-      { name: 'Campaigns', description: '2 newsletter campaigns/mo' },
-      { name: 'Automation', description: 'Cart abandonment & nurture flows' },
-      { name: 'Reporting', description: 'Open, click, and conversion rates' },
-    ],
-    cta: 'Start Email Marketing',
-  },
-   {
-    name: 'eCommerce Optimization',
-    price: 'From $2,000/mo',
-    description: 'Turn your store into a selling machine.',
-    icon: BarChart2,
-    features: [
-      { name: 'CRO Audit', description: 'Identify conversion bottlenecks' },
-      { name: 'A/B Testing', description: 'Product pages & checkout flow' },
-      { name: 'eCommerce SEO', description: 'Optimize product & category pages' },
-      { name: 'Reporting', description: 'Revenue per visitor & AOV' },
-    ],
-    cta: 'Optimize My Store',
-  }
-];
-
-
-export const SERVICE_PACKAGE_GROUPS: ServicePackageGroup[] = [
-  {
-    title: "SEO Packages",
-    description: "Build a durable, organic growth engine by becoming the best answer for what your customers are searching for.",
-    icon: Search,
-    packages: SEO_PACKAGES,
-  },
-  {
-    title: "PPC Management Packages",
-    description: "Treat ad spend as a high-return investment with campaigns engineered for profitability, not just clicks.",
-    icon: TrendingUp,
-    packages: PPC_PACKAGES,
-  },
-  {
-    title: "Social Media Packages",
-    description: "Cultivate a loyal community of brand advocates, not just a passive audience of followers.",
-    icon: Users,
-    packages: SOCIAL_MEDIA_PACKAGES,
-  },
-  {
-    title: "Content & eCommerce Packages",
-    description: "Drive growth with expert content and scientifically optimized online store performance.",
-    icon: Briefcase,
-    packages: OTHER_SERVICE_PACKAGES,
-  },
-];
 
 
 export const TESTIMONIALS: Testimonial[] = [

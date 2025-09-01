@@ -3,8 +3,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, Zap, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -21,7 +20,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import Logo from './logo';
 import { NAV_ITEMS, APP_NAME } from '@/lib/constants.tsx';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -30,7 +28,7 @@ import React from 'react';
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  
+
   const mobileLinkClass = "text-base font-medium transition-colors hover:text-primary py-2 block w-full text-left";
   const desktopLinkClass = "text-sm font-medium transition-colors hover:text-primary hover:bg-transparent";
 
@@ -39,10 +37,8 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
-            {/* To revert to the Zap icon, replace the Image component below with: <Zap className="h-8 w-8" /> */}
-            {/* <Image src="/traconomics-icon.svg" alt="Traconomics Logo" width={32} height={32} className="h-8 w-auto" /> */}
-            <Logo />
-            {/* <span className="font-extrabold text-xl font-poppins">{APP_NAME}</span> */}
+            <Zap className="h-8 w-8" />
+            <span className="font-extrabold text-xl font-poppins">{APP_NAME}</span>
           </Link>
 
           <nav className="hidden md:flex space-x-1 items-center">
@@ -90,7 +86,7 @@ export function Header() {
 
           <div className="flex items-center">
             <div className="hidden md:block">
-            <Button asChild className="bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+              <Button asChild className="bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
             </div>
@@ -108,13 +104,11 @@ export function Header() {
                   <ScrollArea className="h-full w-full">
                     <div className="p-6">
                       <div className="flex justify-between items-center mb-4">
-                          <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
-                              {/* To revert to the Zap icon, replace the Image component below with: <Zap className="h-7 w-7" /> */}
-                              {/* <Image src="/traconomics-icon.svg" alt="Traconomics Icon" width={28} height={28} className="h-7 w-auto" /> */}
-                              <Logo />
-                              {/* <span className="font-bold text-lg">{APP_NAME}</span> */}
-                            </Link>
-                        </div>
+                        <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
+                          <Zap className="h-7 w-7" />
+                          <span className="font-bold text-lg">{APP_NAME}</span>
+                        </Link>
+                      </div>
                       <nav className="flex flex-col">
                         {NAV_ITEMS.map((item) => {
                           if (item.children) {
@@ -157,7 +151,7 @@ export function Header() {
                         })}
                       </nav>
                       <SheetClose asChild>
-                      <Button asChild className="w-full bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+                        <Button asChild className="w-full bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
                           <Link href="/contact">Get a Free Quote</Link>
                         </Button>
                       </SheetClose>

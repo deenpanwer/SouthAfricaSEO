@@ -24,6 +24,8 @@ export interface ServicePackage {
   features: ServicePackageFeature[];
   cta: string;
   isSpecialOffer?: boolean;
+  freeTrialOffer?: string;
+  url?: string; // Added url property
 }
 
 export interface ServicePackageGroup {
@@ -142,7 +144,7 @@ export interface CityServiceItem {
 }
 
 export interface CityWhyChooseItem {
-  icon: LucideIcon;
+  icon: string; // Changed to string for dynamic loading
   title: string;
   description: string;
 }

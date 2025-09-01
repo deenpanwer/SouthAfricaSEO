@@ -59,7 +59,7 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
                 frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen>
               </iframe>
             </Modal>
-            <div className="bg-yellow-400 p-3">
+            <div className="bg-yellow-800 p-3">
               <h3 className="font-semibold text-gray-800 text-center text-sm">"The results speak for themselves"</h3>
             </div>
             <div className="p-6 grid grid-cols-2 gap-4 text-center">
@@ -93,7 +93,7 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
                 src="https://www.youtube.com/embed/0cWlf1BmUMw?rel=0&showinfo=0&autoplay=1"
                 frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
             </Modal>
-            <div className="bg-yellow-400 p-3">
+            <div className="bg-yellow-800 p-3">
               <h3 className="font-semibold text-gray-800 text-center text-sm">"TRAC goes above and beyond"</h3>
             </div>
             <div className="p-6 grid grid-cols-2 gap-4 text-center">
@@ -110,8 +110,10 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/case-studies" className="text-orange-500 hover:underline">
-            View All Case Studies
+          <Link href="/case-studies">
+            <button className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition duration-300">
+              View All Case Studies
+            </button>
           </Link>
         </div>
 
@@ -139,7 +141,7 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <div className="bg-yellow-400 p-2 rounded-md mb-3">
+                <div className="bg-yellow-800 p-2 rounded-md mb-3">
                   <p className="text-gray-800 italic font-semibold text-sm">"{testimonial.highlightedQuote}"</p>
                 </div>
                 <blockquote className="text-gray-600 italic text-sm leading-relaxed mb-3">

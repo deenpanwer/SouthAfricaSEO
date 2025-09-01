@@ -1,25 +1,17 @@
 
 import { Metadata } from 'next';
-import {
-  SERVICE_PACKAGE_GROUPS,
-  APP_NAME,
-  SPECIAL_OFFER_PACKAGE,
-} from '@/lib/constants.tsx';
+import { APP_NAME } from '@/lib/constants.tsx';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { BarChart, CheckSquare, MessageCircle, Star } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { BarChart, CheckSquare, MessageCircle } from 'lucide-react';
 import { ServicePackageDisplay } from '@/components/services/ServicePackageDisplay';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { SERVICE_PACKAGE_GROUPS, SPECIAL_OFFER_PACKAGE } from '@/lib/packages';
+import { PricingAccordions } from './components/PricingAccordions';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Plans',
-  description: `Explore ${APP_NAME}'s tailored pricing plans for SEO, PPC, Social Media, and more. Find the perfect fit for your growth.`,
+  title: 'Affordable SEO, PPC & Web Design Plans | TRAC',
+  description: `Explore transparent, affordable pricing for TRAC's expert digital marketing services. Find the perfect SEO, PPC, or web design plan for your US business and start growing today.`,
 };
 
 export default function PricingPage() {
@@ -28,23 +20,76 @@ export default function PricingPage() {
     { name: 'Pricing & Plans', href: '/pricing' },
   ];
 
+  const serviceSchemas = SERVICE_PACKAGE_GROUPS.flatMap(group =>
+    group.packages.map(pkg => ({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": pkg.name,
+      "description": pkg.description,
+      "serviceType": group.title.replace(" Packages", ""), // e.g., "SEO" from "SEO Packages"
+      "provider": {
+        "@type": "Organization",
+        "name": APP_NAME,
+        "url": process.env.WEBSITE_URL || 'https://www.traconomics.com',
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": pkg.price.replace(/[^0-9.]/g, ''), // Extract numeric part of price
+          "priceCurrency": "USD",
+          "valueAddedTaxIncluded": false,
+        },
+        "url": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/pricing`, // Link to pricing page
+        ...(pkg.freeTrialOffer && {
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "Free Trial Offer",
+            "value": pkg.freeTrialOffer
+          }
+        })
+      },
+    }))
+  );
+
   return (
     <div className="py-12 md:py-20 bg-gradient-to-b from-background to-secondary/20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumb items={breadcrumbItems} />
         <section className="text-center mb-16 md:mb-20">
           <BarChart className="h-16 w-16 text-primary mx-auto mb-4" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-6">
-            Transparent Pricing for Real Results
+            Affordable Digital Marketing Plans for US Businesses
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose a plan that scales with your business. No hidden fees, no
-            long-term contracts—just clear, value-driven pricing designed for
-            your growth.
+            Unlock growth with transparent, value-driven pricing. Choose a plan that scales with your business goals, designed for real results across the United States.
           </p>
         </section>
 
-        {/* Special Offer Section */}
+        {/* New: First 3 Weeks Free Offer Section */}
+        <section className="mb-16 md:mb-20 bg-gradient-to-r from-green-500 to-green-700 text-white p-8 rounded-lg shadow-xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-extrabold mb-4">
+              Start Your Growth Journey: First 3 Weeks FREE!
+            </h2>
+            <p className="text-xl mb-6 max-w-3xl mx-auto">
+              Experience our top-tier SEO, PPC, and Social Media services with no commitment for the first three weeks. See the results for yourself!
+            </p>
+            <Button
+              size="lg"
+              asChild
+              className="bg-white text-green-700 hover:bg-gray-100 hover:text-green-800 transition-colors duration-300"
+            >
+              <Link href="/contact?offer=3-weeks-free">Claim Your Free Trial Now</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* Special Offer Section (retained, but can be removed if redundant) */}
         <section className="mb-16 md:mb-20">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-foreground">
@@ -70,29 +115,7 @@ export default function PricingPage() {
               Find the right plan for each of our specialized services.
             </p>
           </div>
-          <Accordion
-            type="single"
-            collapsible
-            className="w-full"
-            defaultValue="SEO Packages"
-          >
-            {SERVICE_PACKAGE_GROUPS.map((group) => (
-              <AccordionItem key={group.title} value={group.title}>
-                <AccordionTrigger className="text-2xl font-semibold hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <group.icon className="h-8 w-8 text-primary" />
-                    {group.title}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-6">
-                  <p className="text-center text-muted-foreground mb-8">
-                    {group.description}
-                  </p>
-                  <ServicePackageDisplay packages={group.packages} />
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <PricingAccordions />
         </section>
 
         <section className="mt-16 md:mt-20 p-8 bg-muted rounded-lg shadow-md">
