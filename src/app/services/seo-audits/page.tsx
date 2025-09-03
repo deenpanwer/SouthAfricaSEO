@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'SEO Audit Services | TRAC',
-  description: 'Comprehensive SEO Audit services providing an in-depth analysis of your website's current performance. Identify critical areas for improvement and get actionable recommendations for enhanced search visibility.',
+  description: "Comprehensive SEO Audit services providing an in-depth analysis of your website's current performance. Identify critical areas for improvement and get actionable recommendations for enhanced search visibility.",
 };
 
 export default function SEOAuditServicePage() {

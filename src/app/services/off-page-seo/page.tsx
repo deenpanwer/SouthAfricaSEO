@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Off-Page SEO & Link Building Services | TRAC',
-  description: 'Expert Off-Page SEO and Link Building services to significantly improve your website's authority and relevance through external signals. Acquire high-quality backlinks and enhance domain authority.',
+  description: "Expert Off-Page SEO and Link Building services to significantly improve your website's authority and relevance through external signals. Acquire high-quality backlinks and enhance domain authority.",
 };
 
 export default function OffPageSEOServicePage() {

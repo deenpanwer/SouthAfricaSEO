@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Technical SEO Services | TRAC',
-  description: 'Expert Technical SEO services to optimize your website's infrastructure for search engine crawling, indexing, and ranking. Improve site speed, mobile-friendliness, and structured data.',
+  description: "Expert Technical SEO services to optimize your website's infrastructure for search engine crawling, indexing, and ranking. Improve site speed, mobile-friendliness, and structured data.",
 };
 
 export default function TechnicalSEOServicePage() {
