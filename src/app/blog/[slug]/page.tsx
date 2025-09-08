@@ -1,8 +1,9 @@
+import { marked } from 'marked'; // Import marked
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { APP_NAME } from '@/lib/constants.tsx'; // Assuming APP_NAME is defined here
-import { getAllBlogPosts, getBlogPostBySlug } from '../../../lib/blogService';
+import { APP_NAME } from '@/lib/constants'; // Assuming APP_NAME is defined here
+import { getContentfulBlogPosts, getContentfulBlogPostBySlug, ContentfulBlogPost } from '@/lib/contentfulBlogService';
 import { ArrowLeft, CalendarDays, UserCircle, Tag } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -15,7 +16,7 @@ type BlogPostPageProps = {
 };
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+  const post = await getContentfulBlogPostBySlug(params.slug);
   if (!post) {
     return {
       title: `Post Not Found | ${APP_NAME}`,
@@ -24,34 +25,36 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
   return {
     title: `${post.title} | ${APP_NAME} Blog`,
-    description: post.excerpt,
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: post.description,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: post.publicationDate,
       authors: [post.author],
-      images: [{ url: post.imageUrl }],
+      images: [{ url: post.image }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt,
-      images: [post.imageUrl],
+      description: post.description,
+      images: [post.image],
     },
   };
 }
 
 // This function generates the static paths for all blog posts
 export async function generateStaticParams() {
-  const posts = await getAllBlogPosts();
-  return posts.map((post) => ({
+  const posts = await getContentfulBlogPosts();
+  return posts.map((post: ContentfulBlogPost) => ({
     slug: post.slug,
   }));
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug);
+  const post = await getContentfulBlogPostBySlug(params.slug);
+
+  const contentHtml = post?.markdown ? marked.parse(post.markdown) : '';
 
   if (!post) {
     return (
@@ -90,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="flex flex-wrap items-center space-x-4 text-sm text-muted-foreground mb-4">
             <div className="flex items-center">
               <CalendarDays className="h-4 w-4 mr-1.5" />
-              <span>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
+              <span>{format(parseISO(post.publicationDate), 'MMMM d, yyyy')}</span>
             </div>
             <div className="flex items-center">
               <UserCircle className="h-4 w-4 mr-1.5" />
@@ -101,12 +104,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>{post.category}</span>
             </div>
           </div>
-          {post.imageUrl && (
+          {post.image && (
             <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md mb-6 **lg:mb-8**"> {/* Adjusted image bottom margin for desktop */}
               <Image
-                src={post.imageUrl}
-                alt={post.title}
-                data-ai-hint={post.dataAiHint || "blog feature image"}
+                src={post.image}
+                alt={post.imageDescription || post.title}
+                data-ai-hint={post.imageDescription || "blog feature image"}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 600px"
@@ -123,14 +126,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                          prose-a:text-primary hover:prose-a:text-primary/80
                          prose-strong:text-foreground/90
                          prose-blockquote:border-primary prose-blockquote:text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: post.content || '' }}
+            dangerouslySetInnerHTML={{ __html: contentHtml || '' }}
           />
         </div>
 
         <footer className="mt-12 pt-8 border-t">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <span className="text-sm font-medium text-muted-foreground">Tags:</span>
-            {post.tags.map((tag) => (
+            {post.tags.map((tag: string) => (
               <Badge key={tag} variant="outline">{tag}</Badge>
             ))}
           </div>

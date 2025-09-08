@@ -77,14 +77,15 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
-  date: string;
-  excerpt: string;
-  imageUrl: string;
+  publicationDate: string;
+  description: string;
+  image: string;
   dataAiHint?: string;
   author: string;
   category: string;
   tags: string[];
-  content?: string; // Full content for individual blog post page
+  markdown: string;
+  createdAt: string;
 }
 
 export interface TracLeadFormValues {

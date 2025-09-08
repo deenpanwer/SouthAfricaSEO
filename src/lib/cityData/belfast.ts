@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
+const GENERIC_CITY_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const belfastData: CityPageData = {

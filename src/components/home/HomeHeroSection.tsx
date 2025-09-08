@@ -16,7 +16,7 @@ import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import logoStripHome from '../../../public/home/logostriphome.png';
-import amitCro from '../../../public/home/Amit-Cro(1).webp';
+import amitCro from '../../../public/home/amit-cro.png';
 
 // Define the type for form values
 interface HeroLeadFormValues {
@@ -187,7 +187,7 @@ export const HomeHeroSection = () => {
           </div>
           <div className="relative">
             <Image
-              src="/home/Amit-Cro(1).webp"
+              src="/home/amit-cro.png"
               alt="Amit Sharma"
               width={450}
               height={500}

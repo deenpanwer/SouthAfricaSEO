@@ -36,9 +36,13 @@ import { lahoreData } from './cityData/lahore';
 import { islamabadData } from './cityData/islamabad';
 import { faisalabadData } from './cityData/faisalabad';
 import { gulshanEHadeedData } from './cityData/gulshanEHadeed';
+import { sanFranciscoData } from './cityData/sanFrancisco';
+import { kilkennyData } from './cityData/kilkenny';
 
 
 export const CITIES_DATA: CityPageData[] = [
+  sanFranciscoData,
+  kilkennyData,
   portlandCityData,
   dallasCityData,
   newYorkCityData,

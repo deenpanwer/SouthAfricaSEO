@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company-1.jpg';
+const GENERIC_CITY_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Baltimore-office-location.png';
 
 export const baltimoreData: CityPageData = {

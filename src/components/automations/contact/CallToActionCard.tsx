@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { CONTACT_DETAILS } from '@/lib/constants';
 
 export const CallToActionCard = () => {
   return (
@@ -16,7 +17,7 @@ export const CallToActionCard = () => {
           <Link href="/automations/contact">Schedule a Consultation</Link>
         </Button>
         <Button className="bg-transparent border border-ph-border text-white hover:bg-ph-border px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-105">
-          <Link href="mailto:traconomics@gmail.com">Email Us Directly</Link>
+          <Link href={`mailto:${CONTACT_DETAILS.email}`}>Email Us Directly</Link>
         </Button>
       </div>
     </div>

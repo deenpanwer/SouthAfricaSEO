@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Github, Twitter, Linkedin, Rss } from "lucide-react";
+import { CONTACT_DETAILS, SOCIAL_LINKS } from "@/lib/constants";
 
 const FooterColumn = ({
   title,
@@ -78,7 +79,7 @@ export const AutomationFooter = () => {
 
         {/* Contact & Social */}
         <FooterColumn title="Connect">
-          <p>Email: <a href="mailto:traconomics@gmail.com" className="hover:text-white transition-colors">traconomics@gmail.com</a></p>
+          <p>Email: <a href={`mailto:${CONTACT_DETAILS.email}`} className="hover:text-white transition-colors">{CONTACT_DETAILS.email}</a></p>
           <SocialIconRow />
         </FooterColumn>
       </div>

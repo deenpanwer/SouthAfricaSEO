@@ -80,7 +80,7 @@ We don't just promise results; we deliver them. Our team provides monthly strate
 
 Don't let your competitors capture the Portland market. Partner with TRAC, the trusted Portland SEO agency committed to driving your success. We specialize in helping businesses like yours increase online visibility, attract more qualified leads, and ultimately, dominate local search results. Ready to transform your online presence and achieve sustainable growth in Portland? Contact us today for a free SEO analysis and discover the TRAC difference.`,
     heroImage: {
-      src: 'https://thriveagency.com/files/portland-seo-1.jpg',
+      src: '/trac-seo.jpg',
       alt: 'Skyline of Portland, Oregon, showcasing TRAC\'s SEO services',
       dataAiHint: 'portland skyline business'
     },

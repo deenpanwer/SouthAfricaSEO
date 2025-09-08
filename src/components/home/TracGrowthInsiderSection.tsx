@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { getAllBlogPosts } from '@/lib/blogService';
+import { getContentfulBlogPosts } from '@/lib/contentfulBlogService';
 
 export const TracGrowthInsiderSection = async ({ numberOfBlogsToShow = 3 }: { numberOfBlogsToShow?: number }) => {
-  const allBlogs = await getAllBlogPosts();
+  const allBlogs = await getContentfulBlogPosts();
   const displayedBlogs = allBlogs.slice(0, numberOfBlogsToShow); // This line slices the array
 
   return (
@@ -19,7 +19,7 @@ export const TracGrowthInsiderSection = async ({ numberOfBlogsToShow = 3 }: { nu
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 hover:text-orange-500 transition-colors"><Link href={`/blog/${article.slug}`}>{article.title}</Link></h3>
-                <p className="text-xs text-gray-500 mb-2">{article.date}</p>
+                <p className="text-xs text-gray-500 mb-2">{article.publicationDate}</p>
                 <p className="text-sm text-gray-600 mb-4">{article.excerpt}</p>
                 <Link href={`/blog/${article.slug}`} className="text-sm font-semibold text-orange-500 hover:text-orange-600">
                   Read More <ChevronRight className="inline w-4 h-4" />

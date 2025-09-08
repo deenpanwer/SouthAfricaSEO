@@ -3,7 +3,7 @@ import type { CityPageData } from '@/types';
 import { Search, Settings, Users, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck, LineChart, MapPinned, Newspaper, Code, FileText, Link as LinkIcon, BarChart, CheckCircle } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
+const GENERIC_CITY_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Cleveland-Thrive-office-location.jpg';
 
 export const gulshanEHadeedData: CityPageData = {

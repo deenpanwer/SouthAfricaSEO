@@ -1,10 +1,10 @@
 import React from 'react';
 import { SpotlightBackground } from '@/components/ui/spotlight-background';
 import { SpotlightBlogCard } from '@/components/blog/spotlight-blog-card';
-import { getAllBlogPosts } from '@/lib/blogService';
+import { getContentfulBlogPosts } from '@/lib/contentfulBlogService';
 
 export async function CityBlogSection() {
-  const posts = await getAllBlogPosts();
+  const posts = await getContentfulBlogPosts();
 
   return (
     <SpotlightBackground className="py-16 md:py-24">
@@ -16,8 +16,8 @@ export async function CityBlogSection() {
             <SpotlightBlogCard
               key={post.slug}
               title={post.title}
-              excerpt={post.excerpt}
-              image={post.imageUrl}
+              description={post.description}
+              image={post.image}
               slug={post.slug}
             />
           ))}
