@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Search, TrendingUp, Lightbulb } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { SEO_PACKAGES } from '@/lib/packages'; // Import SEO_PACKAGES
 
 export const metadata: Metadata = {
   title: `Search Engine Optimization (SEO) Services | ${APP_NAME}`,
@@ -18,6 +19,36 @@ export default function SEOPage() {
     { name: 'Services', href: '/services' },
     { name: 'SEO', href: '/services/seo' },
   ];
+
+  const seoServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Search Engine Optimization (SEO) Services",
+    "serviceType": "SEO",
+    "areaServed": "US",
+    "description": `Drive sustainable, organic growth with our first-principles approach to SEO. We focus on user intent, authority building, and technical excellence, not just algorithm tricks.`,
+    "provider": {
+      "@type": "Organization",
+      "name": APP_NAME,
+      "url": process.env.WEBSITE_URL || 'https://www.traconomics.com',
+    },
+    "offers": SEO_PACKAGES.flatMap(pkg => {
+      const priceNumeric = pkg.price.replace(/[^0-9.]/g, '');
+      if (!priceNumeric) return []; // Skip if price is not numeric
+
+      return {
+        "@type": "Offer",
+        "name": pkg.name,
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": priceNumeric,
+          "priceCurrency": "USD",
+          "valueAddedTaxIncluded": false,
+        },
+        "url": `${process.env.WEBSITE_URL || 'https://www.traconomics.com'}/pricing`, // Link to pricing page
+      };
+    }),
+  };
 
   return (
     <div className="py-12 md:py-20 bg-background">
@@ -50,6 +81,10 @@ export default function SEOPage() {
             }
           ]
         }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoServiceSchema) }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <header className="text-center mb-12 md:mb-16">

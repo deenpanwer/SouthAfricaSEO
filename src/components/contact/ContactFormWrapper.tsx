@@ -20,23 +20,22 @@ export const CUSTOM_SOLUTION_VALUE = "Custom Solution";
 export function ContactFormWrapper() {
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();
-  const serviceFromQuery = searchParams.get('package'); // Match param from ServicePackageDisplay
+  const packageFromQuery = searchParams.get('package'); // Match param from ServicePackageDisplay
   
   let preselectedServiceActualValue = GENERAL_INQUIRY_VALUE;
 
   const allPackages = SERVICE_PACKAGE_GROUPS.flatMap(group => group.packages);
 
-  if (serviceFromQuery) {
-    if (allPackages.some(pkg => pkg.name === serviceFromQuery)) {
-      preselectedServiceActualValue = serviceFromQuery;
-    } else if (serviceFromQuery === CUSTOM_SOLUTION_VALUE) {
-      // Allows "Custom Solution" to be passed directly if needed, though pkg.name should usually cover it
+  if (packageFromQuery) {
+    if (allPackages.some(pkg => pkg.name === packageFromQuery)) {
+      preselectedServiceActualValue = packageFromQuery;
+    } else if (packageFromQuery === CUSTOM_SOLUTION_VALUE) {
       preselectedServiceActualValue = CUSTOM_SOLUTION_VALUE;
+    } else if (packageFromQuery === '3-weeks-free') {
+      preselectedServiceActualValue = '3 Weeks Free Trial';
+    } else if (packageFromQuery === 'free-website-offer') {
+      preselectedServiceActualValue = 'Free Website Offer';
     }
-    // If serviceFromQuery is present but doesn't match known packages or "Custom Solution",
-    // it will default to GENERAL_INQUIRY_VALUE.
-    // Alternatively, you could map unknown query params to "Custom Solution" here if desired:
-    // else { preselectedServiceActualValue = CUSTOM_SOLUTION_VALUE; }
   }
 
   useEffect(() => {

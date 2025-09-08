@@ -89,10 +89,12 @@ export default async function RootLayout({
               "alternateName": "TRAC",
               "url": "https://www.traconomics.com",
               "logo": "https://www.traconomics.com/trac_logo.jpeg",
+              "description": "We are a full digital services agency.",
+              "foundingDate": "2005-05-16",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1 (646) 814-3789",
-                "contactType": "customer service"
+                "contactType": "sales"
               },
               "areaServed": ["PK", "US", "GB", "AU", "CA", "AE"],
               "sameAs": [

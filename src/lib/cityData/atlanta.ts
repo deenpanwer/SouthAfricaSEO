@@ -1,6 +1,6 @@
 import type { CityPageData } from '@/types';
-import { Search, Settings, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
-import { CONTACT_DETAILS } from '@/lib/constants.tsx';
+import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, BarChart2, LineChart, MapPinned, Newspaper, Code, FileText, Link as LinkIcon, BarChart, CheckCircle } from 'lucide-react';
+import { CONTACT_DETAILS } from '@/lib/constants';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/ATLANTA-SEO-AGENCY.jpg';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Atlanta-Thrive-office-location.jpg';
@@ -21,22 +21,23 @@ export const atlantaData: CityPageData = {
     'Atlanta multi-location SEO specialists',
     'SEO for startups in Atlanta Tech Village',
   ],
+  teamSectionHeadline: 'Meet Our Founder & CEO, Kaayf',
+  teamSectionDescription: 'The visionary leader behind TRAC, dedicated to your success in Atlanta.',
+  founderBio: 'Kaayf, our Founder & CEO, brings over 15 years of digital marketing expertise to Atlanta businesses. He is passionate about driving measurable ROI and building sustainable growth for clients in the local market. His leadership ensures TRAC delivers tailored SEO strategies that resonate with Atlanta\'s unique business landscape.',
   heroData: {
     pageTitle: 'Atlanta SEO Experts | TRAC - Drive Growth in Atlanta, GA',
     metaDescription: 'TRAC offers expert SEO services in Atlanta tailored to contractors, healthcare providers, salons, and law firms. Discover SEO strategies that drive real growth.',
-    heroTitle: 'Atlanta SEO Agency: Propelling Your Business to the Forefront',
+    heroTitle: 'Atlanta SEO Services: Drive Growth & Dominate Local Search with TRAC',
     heroSubtitle: 'Unlock Atlanta\'s Market with Powerful, Data-Driven SEO Strategies',
-    heroDescription: `Atlanta’s digital market is booming—but so is the competition. To succeed, your business needs a strategy built for how people actually search in Georgia’s capital. At TRAC, we help service-based businesses across Atlanta get discovered and drive qualified leads using localized, long-tail keyword strategies that make you more visible where it matters.
+    heroDescription: `Is your Atlanta business struggling to stand out online? In a competitive market like Atlanta, simply existing isn't enough. You need a powerful SEO strategy that connects you directly with customers ready to buy. TRAC offers expert Atlanta SEO services designed to transform your online presence, drive qualified leads, and deliver measurable ROI.
 
-We go beyond broad terms to target phrases like “Midtown Atlanta dentist SEO,” “Buckhead salon digital marketing,” “contractor SEO near Decatur,” and “best spa SEO Inman Park.” These super-specific queries bring in high-converting traffic because they match how real Atlantans search.
+We understand the unique challenges and opportunities within Atlanta's diverse neighborhoods and industries. Our approach goes beyond generic keywords, focusing on high-intent, localized search terms that capture genuine buying intent. Imagine your business appearing at the top of search results for phrases like "best SEO company in Atlanta," "hire SEO expert Atlanta," or "Atlanta digital marketing agency for leads." That's the power of TRAC's tailored SEO solutions.
 
-Our SEO campaigns begin with a deep audit of your technical setup—improving mobile performance, load speed, schema markup, and indexing. Then we craft pages and blog content that address local pain points and search trends in your industry. Whether you’re a solo practitioner in Dunwoody, a multi-location medspa, or a contractor based near Grant Park, we tailor every keyword and page to your core service areas.
+Our comprehensive Atlanta SEO campaigns begin with a deep dive into your current online performance and competitive landscape. We optimize your technical SEO, ensuring your website is fast, mobile-friendly, and easily discoverable by search engines. Then, our content specialists craft compelling, authoritative content that not only ranks for critical keywords but also resonates with your target audience, establishing your business as a leader in the Atlanta market.
 
-We’ve helped local salons rank in Virginia-Highland, guided law firms to dominate organic search around Five Points, and built fintech SEO strategies for startups in Atlanta Tech Village. Our blend of precision keyword research and hyper-local content development ensures your SEO campaign captures demand—not just traffic.
+Whether you're a growing startup in Midtown, an established law firm near Five Points, a thriving salon in Buckhead, or a contractor serving Sandy Springs, TRAC has a proven track record of helping Atlanta businesses achieve their growth goals. We leverage advanced keyword research, local SEO strategies, and transparent reporting to ensure your investment translates into tangible results.
 
-If you're looking for an Atlanta SEO company that understands Georgia’s regulatory landscape, local market patterns, and how users in neighborhoods like Buckhead and Sandy Springs search, TRAC is ready to help.
-
-We specialize in SEO for Atlanta contractors, salons, healthcare practices, and service-based businesses. Explore our expertise in [Georgia landscaping SEO](https://www.traconomics.com/texas-landscaping-seo-company), [salon SEO services](https://www.traconomics.com/georgia-salon-seo-services), and more to see how we can drive ROI for your niche.`,
+Don't let your competitors capture the Atlanta market. Partner with TRAC, the trusted Atlanta SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local search results. Ready to grow your Atlanta business? Contact us today for a free SEO analysis.`,
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
       alt: 'SEO Services in Atlanta, GA',
@@ -46,50 +47,181 @@ We specialize in SEO for Atlanta contractors, salons, healthcare practices, and 
     formTitle: 'Free SEO Analysis!',
   },
   resultsHeadline: 'Proven SEO Results for Atlanta Businesses',
-  readyToGrowHeadline: 'Boost Your Atlanta SEO Performance?',
+  readyToGrowHeadline: 'Ready to Transform Your Atlanta Business with SEO?',
   servicesSectionHeadline: 'Tailored SEO Services for Atlanta',
   servicesSectionSubheadline: 'Our SEO experts craft data-driven strategies to enhance your online visibility and connect with customers across Atlanta, helping you grow your market share.',
   services: [
     {
       icon: Search,
       title: 'Local Search & GMB Optimization',
-      description: 'Get found in Atlanta’s local searches with optimized Google Business Profiles, structured citations, and geo-targeted pages for neighborhoods like Buckhead, Old Fourth Ward, and Sandy Springs.',
+      description: 'Dominate local search results in Atlanta with our expert Google Business Profile optimization. We enhance your visibility on Google Maps and local searches through strategic GMB management, structured citations, and geo-targeted content, ensuring your business attracts nearby customers actively seeking your services.',
     },
     {
       icon: Settings,
       title: 'Website Technical Optimization',
-      description: 'We improve your website’s speed, mobile usability, and crawlability—focusing on performance metrics that help Atlanta users and Google bots alike navigate with ease.',
+      description: 'Ensure your website is a high-performing asset with our technical SEO optimization. We meticulously improve site speed, mobile responsiveness, and crawlability, addressing critical performance metrics that enhance user experience and search engine ranking, ultimately driving more qualified traffic to your Atlanta business.',
     },
     {
       icon: Mail,
       title: 'Content Strategy & Creation',
-      description: 'Our team writes SEO content that mirrors Atlanta’s market—from blog posts on Georgia’s regulatory changes to service pages crafted for Midtown’s business climate.',
+      description: 'Attract and engage your target audience with our tailored content strategy and creation services. We develop high-quality, SEO-optimized content—including blog posts, service pages, and articles—that resonates with Atlanta’s market, addresses local pain points, and positions your business as an authoritative voice, converting readers into loyal customers.',
     },
     {
       icon: BarChart2,
       title: 'Analytics & Reporting for SEO',
-      description: 'Stay informed with detailed performance tracking. We measure leads, rankings, traffic, and more—so you can see exactly how SEO is fueling your growth in Atlanta.',
+      description: 'Gain clear insights into your SEO performance with our comprehensive analytics and reporting. We provide transparent, data-driven reports on key metrics like leads generated, keyword rankings, website traffic, and conversion rates, empowering you to understand the tangible ROI of your SEO investment and make informed business decisions for growth in Atlanta.',
+    },
+    {
+      icon: BarChart2,
+      title: 'PPC',
+      url: '/services/ppc',
+      description: 'Maximize your immediate online impact in Atlanta with our expertly managed Pay-Per-Click (PPC) campaigns. We specialize in creating high-performing ads across major platforms like Google Ads, delivering highly targeted traffic directly to your website. Our continuous optimization of bids, keywords, and ad copy ensures your campaigns are efficient, effective, and drive maximum return on ad spend for your Atlanta business.',
+    },
+    {
+      icon: LineChart,
+      title: 'Web Design and Development',
+      url: '/services/web-design-and-development',
+      description: 'Transform your online presence with our expert web design and development services. We create beautiful, responsive, and high-performing websites meticulously optimized for exceptional user experience and maximum conversions. Our focus is on delivering visually appealing and functionally robust platforms that reflect your brand identity and drive business growth through intuitive navigation, fast loading times, and seamless interactions for your Atlanta customers.',
+    },
+    {
+      icon: Users,
+      title: 'Social Media Marketing',
+      url: '/services/social-media-marketing',
+      description: 'Forge meaningful connections with your Atlanta audience across various social media platforms with our expert marketing strategies. We design campaigns to build a strong brand presence, foster community engagement, and drive measurable results. Our team manages your social channels, create compelling content, and run targeted campaigns to expand your reach and cultivate a loyal customer base within the Atlanta community.',
+    },
+    {
+      icon: Mail,
+      title: 'Email Marketing',
+      url: '/services/email-marketing',
+      description: 'Nurture leads and drive conversions with our highly effective email marketing campaigns. We develop and manage engaging newsletters and automated personalized drip campaigns designed to keep your audience informed, interested, and ready to take action. Our strategies focus on delivering the right message to the right person at the right time, building customer loyalty and driving business growth for your Atlanta enterprise.',
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Reputation Management',
+        url: '/services/reputation-management',
+        description: 'Proactively build and maintain a stellar online reputation in Atlanta with our comprehensive reputation management services. We ensure your customers consistently see the best of your brand across all digital channels, addressing feedback, highlighting positive reviews, and implementing proactive measures to safeguard your brand’s image. Foster trust and credibility among your target audience and enhance your business standing in the Atlanta community.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'eCommerce Optimization',
+        url: '/services/ecommerce-optimization',
+        description: 'Maximize sales and profitability for your e-commerce store with our specialized optimization services. Our comprehensive approach enhances product pages, streamlines the checkout process, and improves site speed and mobile responsiveness. We focus on creating a seamless shopping experience that encourages conversions and drives significant revenue growth for your online business, ensuring your Atlanta-based e-commerce venture thrives.',
+    },
+    {
+        icon: MapPinned,
+        title: 'Amazon Marketing',
+        url: '/services/amazon-marketing',
+        description: 'Empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help your Atlanta-based business dominate the competitive Amazon landscape and reach millions of potential customers.',
+    },
+    {
+      icon: Code,
+      title: 'Technical SEO',
+      url: '',
+      description: 'Optimize your website\'s infrastructure for seamless crawling and indexing by search engines with our technical SEO services. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance and ensuring your Atlanta business is easily found online.',
+    },
+    {
+      icon: FileText,
+      title: 'On-Page SEO',
+      url: '',
+      description: 'Optimize individual web pages to rank higher and earn more relevant traffic from search engines with our on-page SEO services. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms, driving targeted traffic to your Atlanta business.',
+    },
+    {
+      icon: LinkIcon,
+      title: 'Off-Page SEO / Link Building',
+      url: '',
+      description: 'Significantly improve your website\'s authority and relevance through external signals with our off-page SEO and link building strategies. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic, solidifying your online presence in Atlanta.',
+    },
+    {
+      icon: Settings,
+      title: 'Schema Markup',
+      url: '',
+      description: 'Enhance search engine understanding of your content and achieve rich results in SERPs with our Schema Markup implementation. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates and improving your visibility in Atlanta search results.',
+    },
+    {
+      icon: Search,
+      title: 'Local SEO',
+      url: '',
+      description: 'Optimize your online presence to attract more business from local searches in Atlanta with our dedicated local SEO services. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services in Atlanta.',
+    },
+    {
+      icon: BarChart,
+      title: 'SEO Audits',
+      url: '',
+      description: 'Gain a clear understanding of your website\'s current performance and identify critical areas for improvement with our comprehensive SEO audits. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. Our audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic for your Atlanta business.',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Content Marketing for SEO',
+      url: '',
+      description: 'Attract and retain your target audience in Atlanta with our content marketing for SEO services. We focus on creating and distributing valuable, relevant, and consistent content. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader in the Atlanta market.',
+    },
+  ],
+  roadmapSteps: [
+    {
+      icon: "Search",
+      title: "Step 1: Deep Market Analysis",
+      description: "We start by analyzing the Atlanta market, identifying your top competitors and uncovering local search trends to build a data-driven foundation.",
+    },
+    {
+      icon: "CheckCircle",
+      title: "Step 2: Hyper-Local Keyword Targeting",
+      description: "Our experts find the high-intent keywords your Atlanta customers are using to search for your services, ensuring we attract the most qualified traffic.",
+    },
+    {
+      icon: "BarChart2",
+      title: "Step 3: Google Business Profile Optimization",
+      description: "We meticulously optimize your Google Business Profile to dominate the Atlanta local map pack, driving direct calls and website visits.",
+    },
+    {
+      icon: "Edit",
+      title: "Step 4: On-Page & Technical SEO",
+      description: "We enhance your website's structure, content, and technical health to ensure it's perfectly optimized for both search engines and user experience.",
+    },
+    {
+      icon: "Link2",
+      title: "Step 5: Local Link Building & Citations",
+      description: "We build your authority by acquiring high-quality backlinks from reputable Atlanta businesses and online directories, signaling trust to Google.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Step 6: Transparent Reporting & Strategy Refinement",
+      description: "You get clear, monthly reports showing your progress. We continually refine our strategy based on the data to maximize your ROI and keep you ahead.",
     },
   ],
   whyChooseSectionHeadline: 'Why TRAC for Atlanta SEO?',
-  whyChooseIntro: 'TRAC is your dedicated partner for achieving SEO success in the dynamic and competitive Atlanta market. We bring local expertise and proven strategies to elevate your brand.',
-  whyChooseParagraph1: 'Atlanta is a blend of vibrant industries and diverse neighborhoods, each with unique consumer intent. Whether your business serves corporate clients in Midtown or residential homeowners in Brookhaven, our team builds SEO campaigns that match the exact way your audience searches.',
-  whyChooseParagraph2: 'We never take a one-size-fits-all approach. Instead, we use hard data from Atlanta-specific SERPs and your actual business KPIs to guide every action—from schema deployment to content clustering. You’ll receive consistent reporting, proactive updates, and a clear roadmap to long-term growth.',
+  whyChooseIntro: 'Choosing the right SEO partner in Atlanta is crucial for your business\'s success. TRAC stands apart as a trusted agency, combining unparalleled local market expertise with a proven track record of delivering tangible, measurable results for businesses like yours.',
+  whyChooseParagraph1: 'Atlanta’s diverse economic landscape demands a nuanced SEO approach. From the bustling tech hubs of Midtown to the vibrant retail districts of Buckhead and the growing communities in Sandy Springs, each neighborhood and industry presents unique opportunities. Our team possesses an intimate understanding of Atlanta’s digital ecosystem, allowing us to craft hyper-localized SEO strategies that precisely target your ideal customers, wherever they are searching.',
+  whyChooseParagraph2: 'We don\'t just promise results; we deliver them through a data-driven, transparent, and ethical process. Our methodology is rooted in deep analysis of Atlanta-specific search trends, competitor landscapes, and your unique business objectives. We provide clear, consistent reporting, proactive communication, and a dedicated team committed to your long-term growth. With TRAC, you gain a strategic partner focused on maximizing your online visibility, driving qualified leads, and ensuring a significant return on your SEO investment.',
   whyChoosePoints: [
     {
       icon: 'TrendingUp',
       title: 'SEO Growth & ROI',
-      description: 'Our strategies go beyond impressions—we help you generate leads, bookings, and real revenue from your Atlanta audience through precise keyword targeting.',
+      description: 'Our strategies are meticulously designed to go beyond mere impressions, focusing on generating high-quality leads, increasing bookings, and driving substantial revenue for your Atlanta business through precise, high-intent keyword targeting and conversion optimization.',
     },
     {
       icon: 'Lightbulb',
       title: 'Market SEO Expertise',
-      description: 'We know Atlanta’s digital patterns—from tech startups in Midtown to wellness brands in Edgewood—and we use that intel to shape campaigns that resonate.',
+      description: 'Leverage our profound understanding of Atlanta’s dynamic digital patterns. From emerging tech startups in the Atlanta Tech Village to established healthcare providers and thriving salons, we utilize deep market intelligence to shape SEO campaigns that resonate specifically with your local audience and competitive landscape.',
     },
     {
       icon: 'ShieldCheck',
       title: 'Reliable & Transparent SEO',
-      description: 'You’ll never wonder what’s happening with your campaign. We deliver transparent dashboards, clear goals, and proven results without smoke and mirrors.',
+      description: 'Experience complete peace of mind with our fully transparent SEO services. We provide clear, accessible dashboards, regular performance reports, and open communication, ensuring you always know the exact status of your campaign and the tangible results we are achieving for your Atlanta business.',
+    },
+    {
+        icon: 'BarChart2',
+        title: 'Data-Driven Strategies',
+        description: 'Our campaigns are built on a foundation of rigorous data analysis and continuous optimization. We provide transparent, detailed reports that clearly demonstrate the return on your SEO investment, ensuring every decision is backed by measurable insights for your Atlanta business.',
+    },
+    {
+        icon: 'Users',
+        title: 'Dedicated Team of Experts',
+        description: 'Benefit from a dedicated team of SEO experts, content strategists, and web developers committed to your success. Our specialists bring collective expertise and a personalized approach to every aspect of your campaign, ensuring your Atlanta business receives the highest level of service and support.',
+    },
+    {
+        icon: 'LineChart',
+        title: 'Holistic Approach',
+        description: 'We adopt a holistic approach to your online growth, seamlessly integrating SEO with other digital marketing channels to create a comprehensive and synergistic strategy. This ensures maximum impact and sustained growth, positioning your Atlanta business for long-term success in the digital landscape.',
     },
   ],
   awards: {
@@ -143,6 +275,18 @@ We specialize in SEO for Atlanta contractors, salons, healthcare practices, and 
     {
       question: 'How is TRAC different from other Atlanta SEO companies?',
       answer: 'We focus on long-term SEO results rooted in real local behavior—not just ranking for generic terms. Our clients appreciate our industry expertise, ethical execution, and detailed monthly performance insights tailored for the Atlanta market.',
+    },
+    {
+      question: 'How do I find the best SEO agency in Atlanta?',
+      answer: 'TRAC is consistently recognized as a top SEO agency in Atlanta, known for delivering measurable results and exceptional client satisfaction. Our data-driven strategies are designed to elevate your business\'s online presence and drive significant growth in the competitive Atlanta market.',
+    },
+    {
+      question: 'What are the benefits of local SEO for businesses in Atlanta?',
+      answer: 'Local SEO for your Atlanta business can significantly increase your visibility in local search results, drive more foot traffic to your physical location, and attract highly qualified leads from customers in your immediate area. TRAC specializes in hyper-local strategies that connect you directly with your target audience in Atlanta.',
+    },
+    {
+      question: 'How can my business improve its Google ranking in Atlanta?',
+      answer: 'To improve your Google ranking in Atlanta, focus on optimizing your Google Business Profile, creating localized content, building high-quality local backlinks, and ensuring your website is technically sound. TRAC offers comprehensive SEO services that cover all these aspects, helping your Atlanta business climb to the top of search results.',
     },
   ],
 };

@@ -193,6 +193,17 @@ export interface CityPageData {
   faqData: FAQItem[];
   faqSectionHeadline: string;
   metaKeywords: string[];
+  // New fields for CityTeam component
+  teamSectionHeadline: string;
+  teamSectionDescription: string;
+  founderBio: string; // City-specific bio
+  roadmapSteps: RoadmapStep[]; // New field for roadmap steps
+}
+
+export interface RoadmapStep {
+  icon: string;
+  title: string;
+  description: string;
 }
 
 export interface CityHeroFormValues {

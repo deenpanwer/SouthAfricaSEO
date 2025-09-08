@@ -1,7 +1,7 @@
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getCityData, CITIES_DATA } from '@/lib/cityConstants.tsx'; 
+import { getCityData, CITIES_DATA } from '@/lib/cityConstants'; 
 import { APP_NAME, CONTACT_DETAILS, REVIEW_COUNT } from '@/lib/constants.tsx';
 import { cityTestimonials } from '@/components/city-seo/CityResultsHighlights';
 
@@ -17,8 +17,8 @@ import { CityBottomForm } from '@/components/city-seo/CityBottomForm';
 import { CityFAQSection } from '@/components/city-seo/CityFAQSection';
 import { CityRoadmap } from '@/components/city-seo/CityRoadmap';
 import { CityTeam } from '@/components/city-seo/CityTeam';
-import { CityOpportunityScore } from '@/components/city-seo/CityOpportunityScore';
 import { CityROICalculator } from '@/components/city-seo/CityROICalculator';
+import { CityBlogSection } from '@/components/city-seo/CityBlogSection';
 
 interface CityPageProps {
   params: { slug: string };
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   };
 }
 
-export default function CityPage({ params }: CityPageProps) {
+export default async function CityPage({ params }: CityPageProps) {
   const cityData = getCityData(params.slug);
 
   if (!cityData) {
@@ -222,9 +222,14 @@ export default function CityPage({ params }: CityPageProps) {
         whyChooseParagraph2={cityData.whyChooseParagraph2}
         cityName={cityData.cityName}
       />
-      <CityRoadmap cityName={cityData.cityName} />
-      <CityTeam cityName={cityData.cityName} />
-      <CityOpportunityScore cityName={cityData.cityName} />
+      <CityRoadmap cityName={cityData.cityName} roadmapSteps={cityData.roadmapSteps} />
+            <CityTeam
+        cityName={cityData.cityName}
+        teamSectionHeadline={cityData.teamSectionHeadline}
+        teamSectionDescription={cityData.teamSectionDescription}
+        founderBio={cityData.founderBio}
+      />
+      <CityBlogSection />
       <CityROICalculator cityName={cityData.cityName} />
       <CityAwards
         clutchAward={cityData.awards.clutch}

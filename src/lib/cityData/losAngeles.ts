@@ -1,7 +1,7 @@
 
 import type { CityPageData } from '@/types';
-import { Briefcase, Search, BarChart2, Users, Settings, Mail, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
-import { CONTACT_DETAILS } from '@/lib/constants.tsx';
+import { Search, Settings, Users, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck, LineChart, MapPinned, Newspaper, Code, FileText, Link as LinkIcon, BarChart, CheckCircle } from 'lucide-react';
+import { CONTACT_DETAILS } from '@/lib/constants';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/SEO-Company.jpg';
 const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Cleveland-Thrive-office-location.jpg';
@@ -9,12 +9,79 @@ const GENERIC_OFFICE_LOCATION_IMAGE_SRC = 'https://cdn-icggj.nitrocdn.com/AphBmy
 export const losAngelesData: CityPageData = {
   slug: 'los-angeles',
   cityName: 'Los Angeles',
+  metaKeywords: [
+    'Los Angeles SEO services for small businesses',
+    'local SEO company Los Angeles',
+    'SEO for entertainment in Los Angeles',
+    'Hollywood SEO experts',
+    'Santa Monica SEO LA',
+    'Los Angeles small business SEO experts',
+    'best SEO agency in Los Angeles',
+    'SEO for tech companies in Los Angeles',
+    'Google Business optimization Los Angeles',
+    'Los Angeles e-commerce SEO company'
+  ],
+  teamSectionHeadline: 'Meet Your Founder & CEO, Kaayf',
+  teamSectionDescription: 'The visionary leader behind TRAC, dedicated to your success in Los Angeles.',
+  founderBio: 'Kaayf, our Founder & CEO, brings over 15 years of digital marketing expertise to Los Angeles businesses. He is passionate about driving measurable ROI and building sustainable growth for clients in the local market. His leadership ensures TRAC delivers tailored SEO strategies that resonate with Los Angeles\'s unique business landscape.',
+  roadmapSteps: [
+    {
+      icon: "Search",
+      title: "Step 1: Deep Market Analysis",
+      description: "We start by analyzing the local market, identifying your top competitors and uncovering local search trends to build a data-driven foundation.",
+    },
+    {
+      icon: "CheckCircle",
+      title: "Step 2: Hyper-Local Keyword Targeting",
+      description: "Our experts find the high-intent keywords your local customers are using to search for your services, ensuring we attract the most qualified traffic.",
+    },
+    {
+      icon: "BarChart2",
+      title: "Step 3: Google Business Profile Optimization",
+      description: "We meticulously optimize your Google Business Profile to dominate the local map pack, driving direct calls and website visits.",
+    },
+    {
+      icon: "Edit",
+      title: "Step 4: On-Page & Technical SEO",
+      description: "We enhance your website's structure, content, and technical health to ensure it's perfectly optimized for both search engines and user experience.",
+    },
+    {
+      icon: "Link2",
+      title: "Step 5: Local Link Building & Citations",
+      description: "We build your authority by acquiring high-quality backlinks from reputable local businesses and online directories, signaling trust to Google.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Step 6: Transparent Reporting & Strategy Refinement",
+      description: "You get clear, monthly reports showing your progress. We continually refine our strategy based on the data to maximize your ROI and keep you ahead.",
+    },
+  ],
   heroData: {
     pageTitle: 'Los Angeles SEO Services | TRAC - Expert LA SEO Agency',
     metaDescription: 'TRAC offers leading SEO services for Los Angeles businesses. Increase website traffic, get more leads, and dominate LA search results. Contact us for your free SEO consultation and see how we drive growth in LA!',
     heroTitle: 'Premier Los Angeles SEO Agency Services',
     heroSubtitle: 'Capture the LA Market & Shine Online with Powerful, Tailored SEO Strategies from TRAC',
-    heroDescription: 'Unlock the immense potential of your Los Angeles business with TRAC\'s expert SEO services. LA\'s diverse and competitive market demands a sophisticated, tailored approach. We specialize in creating custom SEO campaigns that drive targeted organic traffic, significantly improve search engine rankings, and deliver tangible, measurable results for your bottom line. From comprehensive local SEO targeting specific LA neighborhoods (like Hollywood, Santa Monica, or Downtown LA) and industries to advanced e-commerce optimization for LA-based online stores, and content strategies that resonate with the unique Southern California audience, TRAC covers all your SEO needs. Our process begins with understanding your specific business goals and the competitive landscape in Los Angeles, ensuring a strategy built for success. We focus on building authority through quality content and ethical link-building, crucial for ranking in LA. We are committed to propelling your LA business to new heights of online visibility and customer engagement through proven SEO methodologies. Let us help you make your mark in the City of Angels.',
+    heroDescription: `Is your Los Angeles business struggling to capture the attention of local customers online? In a city as vibrant and diverse as Los Angeles, standing out requires more than just a website—it demands a strategic, results-driven SEO approach. TRAC offers expert Los Angeles SEO services designed to elevate your online presence, connect you with high-intent local searchers, and drive tangible growth for your business.
+
+### Why Los Angeles Businesses Need Specialized SEO
+
+Los Angeles's unique blend of world-class entertainment and diverse neighborhoods creates a distinct digital landscape. From the iconic Hollywood Hills to the bustling downtown, and the serene beaches of Santa Monica, each area presents unique opportunities and challenges. Generic SEO strategies simply won't cut it. You need a partner who understands the nuances of Los Angeles's market, the local search behavior, and how to position your business to attract customers actively seeking your services.
+
+At TRAC, we specialize in crafting hyper-local SEO campaigns that resonate with the Los Angeles audience. We go beyond basic keyword targeting, delving into the specific phrases and questions your potential customers are using when they're ready to make a purchasing decision. Imagine your business appearing prominently for searches like "best SEO company Los Angeles," "hire SEO expert Los Angeles," "Los Angeles digital marketing agency for leads," or "local SEO services Los Angeles for small business." This is the power of our tailored approach.
+
+### Our Comprehensive Los Angeles SEO Approach
+
+Our process begins with a deep dive into your current online performance and the competitive landscape within Los Angeles. We analyze your website's technical health, ensuring it's fast, mobile-friendly, and easily discoverable by search engines. A strong technical foundation is crucial for ranking success.
+
+Next, our content specialists develop compelling, authoritative content that not only ranks for critical local keywords but also establishes your business as a trusted authority in the Los Angeles market. We focus on creating content that answers user questions, addresses pain points, and guides them towards a conversion. This includes optimizing your Google Business Profile to dominate local map pack results, ensuring your business is the first one local customers see.
+
+### Driving Measurable Results for Your Los Angeles Business
+
+Whether you're a growing startup in Silicon Beach, an established entertainment company in Hollywood, a thriving restaurant in West Hollywood, or a service-based business expanding across Southern California, TRAC has a proven track record of helping Los Angeles businesses achieve their growth goals. We leverage advanced keyword research, local SEO strategies, and transparent reporting to ensure your investment translates into measurable ROI.
+
+We don't just promise results; we deliver them. Our team provides monthly strategy sessions, detailed performance dashboards, and content calendars, keeping you informed and involved every step of the way. Our ethical, white-hat SEO tactics build long-term equity, protecting your rankings and fostering trust with both search engines and your customers.
+
+Don't let your competitors capture the Los Angeles market. Partner with TRAC, the trusted Los Angeles SEO agency committed to driving your success. We specialize in helping businesses like yours increase online visibility, attract more qualified leads, and ultimately, dominate local search results. Ready to transform your online presence and achieve sustainable growth in Los Angeles? Contact us today for a free SEO analysis and discover the TRAC difference.`,
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
       alt: 'View of Los Angeles skyline representing TRAC\'s SEO services',
@@ -24,39 +91,105 @@ export const losAngelesData: CityPageData = {
     formTitle: 'Get Your FREE LA SEO Analysis!',
   },
   resultsHeadline: 'Proven SEO Results: Driving Growth for Businesses Across Los Angeles',
-  readyToGrowHeadline: 'Ready to Boost Your Los Angeles SEO Performance & Market Share?',
+  readyToGrowHeadline: 'Ready to Elevate Your Los Angeles Business with SEO?',
   servicesSectionHeadline: 'Tailored SEO Services for Sustainable Los Angeles Success',
   servicesSectionSubheadline: 'Our Los Angeles SEO experts craft data-driven strategies designed to enhance your online visibility and connect you with your ideal target audience throughout LA County, from Malibu to Long Beach.',
   services: [
     {
       icon: Search,
-      title: 'LA Local SEO Domination & Geo-Targeting',
-      description: 'Get found by local customers across Los Angeles. We optimize your online presence for "near me" searches, enhance your Google Maps visibility in key LA neighborhoods (e.g., Beverly Hills, Pasadena), and build local authority to attract qualified foot traffic and service inquiries for LA businesses.'
-    },
-    {
-      icon: Settings,
-      title: 'Advanced Technical SEO for LA Websites',
-      description: 'Our rigorous technical SEO audits ensure your website meets and exceeds search engine guidelines for optimal performance. We focus on critical factors like site speed (Core Web Vitals), mobile usability for LA users, structured data (schema markup for events, local businesses), and efficient crawlability to boost your rankings in the Los Angeles market.'
-    },
-    {
-      icon: Users,
-      title: 'Strategic Content & SEO for LA Audiences',
-      description: 'Develop engaging, SEO-friendly content that speaks directly to the diverse Los Angeles market, covering topics relevant to Southern California lifestyles and industries. Our content strategies aim to build authority, attract high-quality organic traffic, and guide LA users through their customer journey, from awareness to conversion.'
-    },
-    {
-      icon: Briefcase,
-      title: 'Entertainment, Media & Lifestyle SEO in LA',
-      description: 'TRAC offers specialized SEO services for Los Angeles\' unique entertainment, media, fashion, and lifestyle industries. We understand the nuances of these sectors (e.g., movie production SEO, influencer marketing SEO) and help you reach both local LA trendsetters and a global audience seeking LA-centric content and services.'
-    },
-    {
-      icon: Mail,
-      title: 'Authoritative Link Building & Digital PR for LA Brands',
-      description: 'Acquire high-quality backlinks from relevant Los Angeles and industry-specific sources (including LA news outlets, blogs, and influencers) to significantly boost your website’s authority and search rankings. Our ethical outreach and digital PR strategies amplify your LA brand\'s visibility.'
+      title: 'SEO',
+      url: '/services/seo',
+      description: 'Elevate your website\'s visibility in Los Angeles\'s competitive search landscape with our core SEO services. We employ advanced, data-driven strategies to significantly improve your organic rankings, driving a consistent flow of qualified traffic and generating valuable leads for your business. Our comprehensive approach ensures sustainable growth and a strong online presence tailored to the Los Angeles market.',
     },
     {
       icon: BarChart2,
-      title: 'Advanced SEO Analytics & Reporting for Los Angeles',
-      description: 'Monitor and refine your Los Angeles SEO strategy with in-depth analytics and transparent, easy-to-understand reporting. We focus on key growth metrics, including organic traffic, keyword positions for LA-specific terms, conversion rates, and overall campaign ROI in the LA market.'
+      title: 'PPC',
+      url: '/services/ppc',
+      description: 'Maximize your immediate online impact in Los Angeles with our expertly managed Pay-Per-Click (PPC) campaigns. We specialize in creating high-performing ads across major platforms like Google Ads, delivering highly targeted traffic directly to your website. Our continuous optimization of bids, keywords, and ad copy ensures your campaigns are efficient, effective, and drive maximum return on ad spend for your Los Angeles business.',
+    },
+    {
+      icon: Newspaper,
+      title: 'Content Writing',
+      url: '/services/content-writing',
+      description: 'Engage your Los Angeles audience and establish your brand as an authority with our compelling, SEO-friendly content writing services. Our experienced team crafts high-quality blog posts, articles, website copy, and landing pages that not only attract search engines but also resonate with your target customers, building trust and credibility while converting visitors into loyal clients in the Los Angeles market.',
+    },
+    {
+      icon: LineChart,
+      title: 'Web Design and Development',
+      url: '/services/web-design-and-development',
+      description: 'Transform your online presence with our expert web design and development services. We create beautiful, responsive, and high-performing websites meticulously optimized for exceptional user experience and maximum conversions. Our focus is on delivering visually appealing and functionally robust platforms that reflect your brand identity and drive business growth through intuitive navigation, fast loading times, and seamless interactions for your Los Angeles customers.',
+    },
+    {
+      icon: Users,
+      title: 'Social Media Marketing',
+      url: '/services/social-media-marketing',
+      description: 'Forge meaningful connections with your Los Angeles audience across various social media platforms with our expert marketing strategies. We design campaigns to build a strong brand presence, foster community engagement, and drive measurable results. Our team manages your social channels, create compelling content, and run targeted campaigns to expand your reach and cultivate a loyal customer base within the Los Angeles community.',
+    },
+    {
+      icon: Mail,
+      title: 'Email Marketing',
+      url: '/services/email-marketing',
+      description: 'Nurture leads and drive conversions with our highly effective email marketing campaigns. We develop and manage engaging newsletters and automated personalized drip campaigns designed to keep your audience informed, interested, and ready to take action. Our strategies focus on delivering the right message to the right person at the right time, building customer loyalty and driving business growth for your Los Angeles enterprise.',
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Reputation Management',
+        url: '/services/reputation-management',
+        description: 'Proactively build and maintain a stellar online reputation in Los Angeles with our comprehensive reputation management services. We ensure your customers consistently see the best of your brand across all digital channels, addressing feedback, highlighting positive reviews, and implementing proactive measures to safeguard your brand’s image. Foster trust and credibility among your target audience and enhance your business standing in the Los Angeles community.',
+    },
+    {
+        icon: TrendingUp,
+        title: 'eCommerce Optimization',
+        url: '/services/ecommerce-optimization',
+        description: 'Maximize sales and profitability for your e-commerce store with our specialized optimization services. Our comprehensive approach enhances product pages, streamlines the checkout process, and improves site speed and mobile responsiveness. We focus on creating a seamless shopping experience that encourages conversions and drives significant revenue growth for your online business, ensuring your Los Angeles-based e-commerce venture thrives.',
+    },
+    {
+        icon: MapPinned,
+        title: 'Amazon Marketing',
+        url: '/services/amazon-marketing',
+        description: 'Empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help your Los Angeles-based business dominate the competitive Amazon landscape and reach millions of potential customers.',
+    },
+    {
+      icon: Code,
+      title: 'Technical SEO',
+      url: '',
+      description: 'Our technical SEO services focus on optimizing your website\'s infrastructure to ensure seamless crawling and indexing by search engines. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance and ensuring your Los Angeles business is easily found online.',
+    },
+    {
+      icon: FileText,
+      title: 'On-Page SEO',
+      url: '',
+      description: 'Optimize individual web pages to rank higher and earn more relevant traffic from search engines with our on-page SEO services. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms, driving targeted traffic to your Los Angeles business.',
+    },
+    {
+      icon: LinkIcon,
+      title: 'Off-Page SEO / Link Building',
+      url: '',
+      description: 'Significantly improve your website\'s authority and relevance through external signals with our off-page SEO and link building strategies. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic, solidifying your online presence in Los Angeles.',
+    },
+    {
+      icon: Settings,
+      title: 'Schema Markup',
+      url: '',
+      description: 'Enhance search engine understanding of your content and achieve rich results in SERPs with our Schema Markup implementation. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates and improving your visibility in Los Angeles search results.',
+    },
+    {
+      icon: Search,
+      title: 'Local SEO',
+      url: '',
+      description: 'Optimize your online presence to attract more business from local searches in Los Angeles with our dedicated local SEO services. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services in Los Angeles.',
+    },
+    {
+      icon: BarChart,
+      title: 'SEO Audits',
+      url: '',
+      description: 'Gain a clear understanding of your website\'s current performance and identify critical areas for improvement with our comprehensive SEO audits. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. Our audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic for your Los Angeles business.',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Content Marketing for SEO',
+      url: '',
+      description: 'Attract and retain your target audience in Los Angeles with our content marketing for SEO services. We focus on creating and distributing valuable, relevant, and consistent content. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader in the Los Angeles market.',
     },
   ],
   whyChooseSectionHeadline: 'Why TRAC is the Leading & Most Trusted SEO Agency in Los Angeles',
@@ -66,18 +199,33 @@ export const losAngelesData: CityPageData = {
   whyChoosePoints: [
     {
       icon: 'TrendingUp',
-      title: 'LA SEO Growth & ROI Experts',
-      description: 'We specialize in delivering quantifiable improvements in organic search traffic, keyword rankings for competitive LA terms, lead generation, and ultimately, conversions and revenue for our Los Angeles clients. Our focus is on measurable impact.'
+      title: 'Search Growth That Converts',
+      description: 'Our strategies are meticulously designed to go beyond mere rankings, focusing on generating high-quality leads, increasing bookings, and driving substantial revenue for your Los Angeles business through precise, high-intent keyword targeting and conversion optimization.',
     },
     {
       icon: 'Lightbulb',
-      title: 'Targeted & Adaptive LA SEO Strategies',
-      description: 'Our custom SEO campaigns are designed to capture the unique opportunities within the diverse Los Angeles market, adapting to algorithm changes and evolving local trends (like new LA hotspots or events) for sustained success.'
+      title: 'Deep Local Knowledge',
+      description: 'Leverage our profound understanding of Los Angeles’s dynamic digital patterns. From emerging businesses in Silicon Beach to established entertainment giants and thriving retail districts, we utilize deep market intelligence to shape SEO campaigns that resonate specifically with your local audience and competitive landscape.',
     },
     {
       icon: 'ShieldCheck',
-      title: 'Data-Driven, Transparent & Ethical SEO for LA',
-      description: 'We employ only ethical, white-hat SEO practices, coupled with clear, consistent reporting on your Los Angeles campaign performance. We believe in building partnerships based on trust, collaboration, and proven results for LA businesses.'
+      title: 'Trustworthy SEO Execution',
+      description: 'Experience complete peace of mind with our fully transparent SEO services. We provide clear, accessible dashboards, regular performance reports, and open communication, ensuring you always know the exact status of your campaign and the tangible results we are achieving for your Los Angeles business.',
+    },
+    {
+        icon: 'BarChart2',
+        title: 'Data-Driven Strategies',
+        description: 'Our campaigns are built on a foundation of rigorous data analysis and continuous optimization. We provide transparent, detailed reports that clearly demonstrate the return on your SEO investment, ensuring every decision is backed by measurable insights for your Los Angeles business.',
+    },
+    {
+        icon: 'Users',
+        title: 'Dedicated Team of Experts',
+        description: 'Benefit from a dedicated team of SEO experts, content strategists, and web developers committed to your success. Our specialists bring collective expertise and a personalized approach to every aspect of your campaign, ensuring your Los Angeles business receives the highest level of service and support.',
+    },
+    {
+        icon: 'LineChart',
+        title: 'Holistic Approach',
+        description: 'We adopt a holistic approach to your online growth, seamlessly integrating SEO with other digital marketing channels to create a comprehensive and synergistic strategy. This ensures maximum impact and sustained growth, positioning your Los Angeles business for long-term success in the digital landscape.',
     },
   ],
   awards: {
@@ -106,6 +254,45 @@ export const losAngelesData: CityPageData = {
     },
   },
   bottomFormTitle: 'Request Your FREE, In-Depth SEO Strategy Session',
+  faqSectionHeadline: 'Los Angeles SEO FAQs: What Local Businesses Need to Know',
+  faqData: [
+    {
+      question: 'How much does SEO cost in Los Angeles, CA?',
+      answer: 'SEO pricing in Los Angeles typically ranges from $1,500 to $5,000 per month. Pricing depends on your website’s existing condition, local competition, and your specific business goals. For example, a single-location boutique may require a different strategy than a large entertainment studio with multiple properties or a tech startup targeting various sectors. We offer flexible plans customized for each Los Angeles business and provide detailed scopes before we begin.',
+    },
+    {
+      question: 'How long until my Los Angeles business sees SEO results?',
+      answer: 'Generally, Los Angeles businesses begin seeing measurable SEO traction within 3 to 4 months, depending on competition and industry. Some clients experience faster growth in niche industries, while others—especially those in highly competitive sectors like entertainment or legal—may require longer ramp-up due to keyword competitiveness. Real, sustained results typically compound by months 6 to 9. We provide regular reports and adjust our strategy as your site gains more authority in the Los Angeles market.',
+    },
+    {
+      question: 'What industries do you specialize in for Los Angeles SEO?',
+      answer: 'TRAC specializes in SEO for service-based businesses including entertainment, media, fashion, retail, tech, and more. We build dedicated strategies that align with each niche’s competitive search environment in Los Angeles. Our team conducts thorough research on both general and hyperlocal terms to help your business earn visibility where it matters most—whether you operate in Hollywood, Beverly Hills, or Downtown LA.',
+    },
+    {
+      question: 'Can you help my business rank in multiple Los Angeles areas?',
+      answer: 'Absolutely. We build location-targeted landing pages for each area you serve—whether that’s Hollywood, Santa Monica, Pasadena, or the San Fernando Valley. These pages include unique content, optimized metadata, localized schema markup, and backlinks from trusted regional directories. We also track performance on a neighborhood level, so you know which areas are generating the most traction and which pages need further optimization. Multi-location SEO is one of our specialties.',
+    },
+    {
+      question: 'Is TRAC a good fit for small businesses in Los Angeles?',
+      answer: 'Yes. Our Los Angeles SEO solutions are perfect for small to mid-sized businesses aiming to generate consistent leads from search. We understand budget constraints and build lean, results-driven campaigns tailored to your service offerings and service radius. Whether you\'re a one-person creative agency or a small boutique retail shop, our team ensures you get the most SEO value per dollar spent—without overwhelming jargon or bloated contracts.',
+    },
+    {
+      question: 'Do you optimize for Los Angeles-specific search intent?',
+      answer: 'Definitely. Our keyword research is hyper-targeted to how Los Angeles residents search—from mobile queries like “best coffee shop near me Hollywood” to long-tail phrases like “top vegan restaurants Santa Monica”. We use real-time data, local modifiers, and behavioral trends to build content and metadata that reflect Los Angeles’s unique search landscape. This ensures your site ranks for the exact terms that drive leads—not just vanity keywords.',
+    },
+    {
+      question: 'How do I find the best SEO agency in Los Angeles?',
+      answer: 'TRAC is consistently recognized as a top SEO agency in Los Angeles, known for delivering measurable results and exceptional client satisfaction. Our data-driven strategies are designed to elevate your business\'s online presence and drive significant growth in the competitive Los Angeles market.',
+    },
+    {
+      question: 'What are the benefits of local SEO for businesses in Los Angeles?',
+      answer: 'Local SEO for your Los Angeles business can significantly increase your visibility in local search results, drive more foot traffic to your physical location, and attract highly qualified leads from customers in your immediate area. TRAC specializes in hyper-local strategies that connect you directly with your target audience in Los Angeles.',
+    },
+    {
+      question: 'How can my business improve its Google ranking in Los Angeles?',
+      answer: 'To improve your Google ranking in Los Angeles, focus on optimizing your Google Business Profile, creating localized content, building high-quality local backlinks, and ensuring your website is technically sound. TRAC offers comprehensive SEO services that cover all these aspects, helping your Los Angeles business climb to the top of search results.',
+    },
+  ]
 };
 
     

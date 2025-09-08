@@ -3,51 +3,14 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle, Search, BarChart2, Link2, Edit, TrendingUp } from "lucide-react";
-
-interface RoadmapStep {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}
-
-const roadmapData: RoadmapStep[] = [
-  {
-    icon: Search,
-    title: "Step 1: Deep Market Analysis",
-    description: "We start by analyzing the [CityName] market, identifying your top competitors and uncovering local search trends to build a data-driven foundation.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Step 2: Hyper-Local Keyword Targeting",
-    description: "Our experts find the high-intent keywords your [CityName] customers are using to search for your services, ensuring we attract the most qualified traffic.",
-  },
-  {
-    icon: BarChart2,
-    title: "Step 3: Google Business Profile Optimization",
-    description: "We meticulously optimize your Google Business Profile to dominate the [CityName] local map pack, driving direct calls and website visits.",
-  },
-  {
-    icon: Edit,
-    title: "Step 4: On-Page & Technical SEO",
-    description: "We enhance your website's structure, content, and technical health to ensure it's perfectly optimized for both search engines and user experience.",
-  },
-  {
-    icon: Link2,
-    title: "Step 5: Local Link Building & Citations",
-    description: "We build your authority by acquiring high-quality backlinks from reputable [CityName] businesses and online directories, signaling trust to Google.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Step 6: Transparent Reporting & Strategy Refinement",
-    description: "You get clear, monthly reports showing your progress. We continually refine our strategy based on the data to maximize your ROI and keep you ahead.",
-  },
-];
+import { RoadmapStep } from '@/types'; // Import RoadmapStep from types
 
 interface CityRoadmapProps {
   cityName: string;
+  roadmapSteps: RoadmapStep[]; // New prop for roadmap steps
 }
 
-export function CityRoadmap({ cityName }: CityRoadmapProps) {
+export function CityRoadmap({ cityName, roadmapSteps }: CityRoadmapProps) {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -101,7 +64,7 @@ export function CityRoadmap({ cityName }: CityRoadmapProps) {
             variants={containerVariants}
             className="space-y-12"
           >
-            {roadmapData.map((step, index) => {
+            {roadmapSteps.map((step, index) => {
               const isOdd = index % 2 !== 0;
               return (
                 <motion.div
@@ -112,7 +75,13 @@ export function CityRoadmap({ cityName }: CityRoadmapProps) {
                   <div className={`w-1/2 ${isOdd ? 'pl-8 md:pl-16' : 'pr-8 md:pr-16 text-right'}`}>
                     <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                       <div className={`flex items-center ${isOdd ? 'justify-start' : 'justify-end'}`}>
-                        <step.icon className="h-8 w-8 text-orange-500 mb-2" />
+                        {/* Render icon based on string name */}
+                        {step.icon === "Search" && <Search className="h-8 w-8 text-orange-500 mb-2" />}
+                        {step.icon === "CheckCircle" && <CheckCircle className="h-8 w-8 text-orange-500 mb-2" />}
+                        {step.icon === "BarChart2" && <BarChart2 className="h-8 w-8 text-orange-500 mb-2" />}
+                        {step.icon === "Edit" && <Edit className="h-8 w-8 text-orange-500 mb-2" />}
+                        {step.icon === "Link2" && <Link2 className="h-8 w-8 text-orange-500 mb-2" />}
+                        {step.icon === "TrendingUp" && <TrendingUp className="h-8 w-8 text-orange-500 mb-2" />}
                       </div>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
                       <p className="text-gray-600">{step.description.replace(/\[CityName\]/g, cityName)}</p>

@@ -22,23 +22,56 @@ export const arlingtonData: CityPageData = {
     'google maps ranking boost Arlington area',
     'custom SEO plan for Arlington service companies',
   ],
+  teamSectionHeadline: 'Meet Your Founder & CEO, Kaayf',
+  teamSectionDescription: 'The visionary leader behind TRAC, dedicated to your success in Arlington.',
+  founderBio: 'Kaayf, our Founder & CEO, brings over 15 years of digital marketing expertise to Arlington businesses. He is passionate about driving measurable ROI and building sustainable growth for clients in the local market. His leadership ensures TRAC delivers tailored SEO strategies that resonate with Arlington\'s unique business landscape.',
+  roadmapSteps: [
+    {
+      icon: "Search",
+      title: "Step 1: Deep Market Analysis",
+      description: "We start by analyzing the local market, identifying your top competitors and uncovering local search trends to build a data-driven foundation.",
+    },
+    {
+      icon: "CheckCircle",
+      title: "Step 2: Hyper-Local Keyword Targeting",
+      description: "Our experts find the high-intent keywords your local customers are using to search for your services, ensuring we attract the most qualified traffic.",
+    },
+    {
+      icon: "BarChart2",
+      title: "Step 3: Google Business Profile Optimization",
+      description: "We meticulously optimize your Google Business Profile to dominate the local map pack, driving direct calls and website visits.",
+    },
+    {
+      icon: "Edit",
+      title: "Step 4: On-Page & Technical SEO",
+      description: "We enhance your website's structure, content, and technical health to ensure it's perfectly optimized for both search engines and user experience.",
+    },
+    {
+      icon: "Link2",
+      title: "Step 5: Local Link Building & Citations",
+      description: "We build your authority by acquiring high-quality backlinks from reputable local businesses and online directories, signaling trust to Google.",
+    },
+    {
+      icon: "TrendingUp",
+      title: "Step 6: Transparent Reporting & Strategy Refinement",
+      description: "You get clear, monthly reports showing your progress. We continually refine our strategy based on the data to maximize your ROI and keep you ahead.",
+    },
+  ],
   faqSectionHeadline: 'Frequently Asked Questions about Arlington SEO',
   heroData: {
     pageTitle: 'Arlington SEO Agency & Company | TRAC - Arlington, TX SEO Experts',
     metaDescription: 'Looking for expert SEO services in Arlington, TX? TRAC delivers industry-specific strategies for salons, auto dealers, contractors, and healthcare businesses. Grow with local SEO that works.',
-    heroTitle: 'Top Arlington SEO Agency & Company for Digital Growth',
+    heroTitle: 'Arlington SEO Services: Drive Growth & Dominate Local Search with TRAC',
     heroSubtitle: 'Hyper-Local SEO Strategies for Real Business Impact in Arlington',
-    heroDescription: `In a city as competitive and dynamic as Arlington, Texas, your business can’t afford to get lost in search results. At TRAC, we help Arlington-based companies dominate local rankings with SEO strategies tailored to neighborhoods like Dalworthington Gardens, East Arlington, and around The Parks Mall. From startups to seasoned service providers, our clients trust us to grow their presence, drive calls, and fill appointment calendars.
+    heroDescription: `Is your Arlington business struggling to stand out online? In a competitive market like Arlington, simply existing isn't enough. You need a powerful SEO strategy that connects you directly with customers ready to buy. TRAC offers expert Arlington SEO services designed to transform your online presence, drive qualified leads, and deliver measurable ROI.
 
-We specialize in working with high-impact verticals such as [landscaping SEO in Texas](https://www.traconomics.com/texas-landscaping-seo-company), [auto dealer SEO in Texas](https://www.traconomics.com/texas-auto-dealer-seo-marketing), [salon SEO in Texas](https://www.traconomics.com/texas-salon-seo-services), and healthcare or legal practices throughout Arlington. Whether you run a contractor business in South Arlington, a medspa off I-20, or a multi-location clinic near UTA, we tailor content and on-page strategy to your niche and audience.
+We understand the unique challenges and opportunities within Arlington's diverse neighborhoods and industries. Our approach goes beyond generic keywords, focusing on high-intent, localized search terms that capture genuine buying intent. Imagine your business appearing at the top of search results for phrases like "best SEO company in Arlington," "hire SEO expert Arlington," or "Arlington digital marketing agency for leads." That's the power of TRAC's tailored SEO solutions.
 
-We don’t just optimize for broad terms—we go after exact-match, long-tail phrases like “emergency HVAC repair Arlington TX”, “best criminal defense SEO Arlington”, and “walk-in salon digital marketing Arlington”. These low-competition, high-intent keywords are where your ROI lives.
+Our comprehensive Arlington SEO campaigns begin with a deep dive into your current online performance and competitive landscape. We optimize your technical SEO, ensuring your website is fast, mobile-friendly, and easily discoverable by search engines. Then, our content specialists craft compelling, authoritative content that not only ranks for critical keywords but also resonates with your target audience, establishing your business as a leader in the Arlington market.
 
-From improving your Google Business Profile to full technical audits and mobile-first UX, our SEO approach is deeply technical yet conversion-focused. Our campaigns include schema markup, local citations, internal link architecture, and high-quality localized content that establishes topical authority and trust.
+Whether you're a growing startup near UTA, an established law firm in downtown Arlington, a thriving salon in Arlington Highlands, or a contractor serving South Arlington, TRAC has a proven track record of helping Arlington businesses achieve their growth goals. We leverage advanced keyword research, local SEO strategies, and transparent reporting to ensure your investment translates into tangible results.
 
-Unlike generic agencies, TRAC builds city-specific SEO assets that perform. We work with your Arlington customer base in mind—from Cooper Street to Green Oaks Boulevard—and we create ranking strategies that speak to both Google’s algorithm and your actual audience.
-
-If you're looking for a strategic, transparent, and proven SEO partner in Arlington, we’re ready to show you what’s possible. Let TRAC build your next growth campaign with local precision and real business impact.`,
+Don't let your competitors capture the Arlington market. Partner with TRAC, the trusted Arlington SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local search results. Ready to grow your Arlington business? Contact us today for a free SEO analysis.`,
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
       alt: 'Arlington SEO Services by TRAC',
@@ -56,133 +89,133 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
       icon: Search,
       title: 'SEO',
       url: '/services/seo',
-      description: 'Our core service focuses on elevating your website’s visibility in search engine results. We employ advanced, data-driven strategies to significantly improve your organic rankings, driving a consistent flow of qualified traffic and generating valuable leads for your business. Our comprehensive approach ensures sustainable growth and a strong online presence.',
+      description: 'Elevate your website\'s visibility in Arlington\'s competitive search landscape with our core SEO services. We employ advanced, data-driven strategies to significantly improve your organic rankings, driving a consistent flow of qualified traffic and generating valuable leads for your business. Our comprehensive approach ensures sustainable growth and a strong online presence tailored to the Arlington market.',
     },
     {
       icon: BarChart2,
       title: 'PPC',
       url: '/services/ppc',
-      description: 'We specialize in creating and meticulously managing high-performing pay-per-click campaigns across major platforms like Google Ads. Our goal is to deliver immediate, highly targeted traffic to your website, maximizing your return on ad spend. We continuously optimize bids, keywords, and ad copy to ensure your campaigns are efficient and effective in reaching your ideal customers.',
+      description: 'Maximize your immediate online impact in Arlington with our expertly managed Pay-Per-Click (PPC) campaigns. We specialize in creating high-performing ads across major platforms like Google Ads, delivering highly targeted traffic directly to your website. Our continuous optimization of bids, keywords, and ad copy ensures your campaigns are efficient, effective, and drive maximum return on ad spend for your Arlington business.',
     },
     {
       icon: Newspaper,
       title: 'Content Writing',
       url: '/services/content-writing',
-      description: 'Our team of experienced writers crafts compelling, SEO-friendly content designed to engage your target audience and establish your brand as an authority in your industry. From blog posts and articles to website copy and landing pages, we produce high-quality, relevant content that not only attracts search engines but also converts visitors into loyal customers, building trust and credibility.',
+      description: 'Engage your Arlington audience and establish your brand as an authority with our compelling, SEO-friendly content writing services. Our experienced team crafts high-quality blog posts, articles, website copy, and landing pages that not only attract search engines but also resonate with your target customers, building trust and credibility while converting visitors into loyal clients in the Arlington market.',
     },
     {
       icon: LineChart,
       title: 'Web Design and Development',
       url: '/services/web-design-and-development',
-      description: 'We design and develop beautiful, responsive, and high-performing websites that are meticulously optimized for an exceptional user experience and maximum conversions. Our focus is on creating visually appealing and functionally robust online platforms that not only reflect your brand identity but also drive business growth through intuitive navigation, fast loading times, and seamless interactions.',
+      description: 'Transform your online presence with our expert web design and development services. We create beautiful, responsive, and high-performing websites meticulously optimized for exceptional user experience and maximum conversions. Our focus is on delivering visually appealing and functionally robust platforms that reflect your brand identity and drive business growth through intuitive navigation, fast loading times, and seamless interactions for your Arlington customers.',
     },
     {
       icon: Users,
       title: 'Social Media Marketing',
       url: '/services/social-media-marketing',
-      description: 'We help you forge meaningful connections with your audience across various social media platforms. Our strategies are designed to build a strong brand presence, foster community engagement, and drive measurable results. We manage your social channels, create compelling content, and run targeted campaigns to expand your reach and cultivate a loyal customer base.',
+      description: 'Forge meaningful connections with your Arlington audience across various social media platforms with our expert marketing strategies. We design campaigns to build a strong brand presence, foster community engagement, and drive measurable results. Our team manages your social channels, create compelling content, and run targeted campaigns to expand your reach and cultivate a loyal customer base within the Arlington community.',
     },
     {
       icon: Mail,
       title: 'Email Marketing',
       url: '/services/email-marketing',
-      description: 'We develop and manage highly effective email marketing campaigns that nurture leads, build customer loyalty, and drive conversions. From crafting engaging newsletters to automating personalized drip campaigns, our strategies are designed to keep your audience informed, interested, and ready to take action. We focus on delivering the right message to the right person at the right time.',
+      description: 'Nurture leads and drive conversions with our highly effective email marketing campaigns. We develop and manage engaging newsletters and automated personalized drip campaigns designed to keep your audience informed, interested, and ready to take action. Our strategies focus on delivering the right message to the right person at the right time, building customer loyalty and driving business growth for your Arlington enterprise.',
     },
     {
         icon: ShieldCheck,
         title: 'Reputation Management',
         url: '/services/reputation-management',
-        description: 'We proactively help you build, monitor, and maintain a positive online reputation. Our strategies ensure that your customers consistently see the best of your brand across all digital channels. We address negative feedback, highlight positive reviews, and implement proactive measures to safeguard your brand’s image, fostering trust and credibility among your audience.',
+        description: 'Proactively build and maintain a stellar online reputation in Arlington with our comprehensive reputation management services. We ensure your customers consistently see the best of your brand across all digital channels, addressing feedback, highlighting positive reviews, and implementing proactive measures to safeguard your brand’s image. Foster trust and credibility among your target audience and enhance your business standing in the Arlington community.',
     },
     {
         icon: TrendingUp,
         title: 'eCommerce Optimization',
         url: '/services/ecommerce-optimization',
-        description: 'We specialize in optimizing your e-commerce store for maximum sales and profitability. Our comprehensive approach covers everything from enhancing product pages and streamlining the checkout process to improving site speed and mobile responsiveness. We focus on creating a seamless shopping experience that encourages conversions and drives significant revenue growth for your online business.',
+        description: 'Maximize sales and profitability for your e-commerce store with our specialized optimization services. Our comprehensive approach enhances product pages, streamlines the checkout process, and improves site speed and mobile responsiveness. We focus on creating a seamless shopping experience that encourages conversions and drives significant revenue growth for your online business, ensuring your Arlington-based e-commerce venture thrives.',
     },
     {
         icon: MapPinned,
         title: 'Amazon Marketing',
         url: '/services/amazon-marketing',
-        description: 'We empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help you dominate the competitive Amazon landscape and reach millions of potential customers.',
+        description: 'Empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help your Arlington-based business dominate the competitive Amazon landscape and reach millions of potential customers.',
     },
     {
       icon: Code,
       title: 'Technical SEO',
       url: '',
-      description: 'Our technical SEO services focus on optimizing your website\'s infrastructure to ensure seamless crawling and indexing by search engines. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance.',
+      description: 'Our technical SEO services focus on optimizing your website\'s infrastructure to ensure seamless crawling and indexing by search engines. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance and ensuring your Arlington business is easily found online.',
     },
     {
       icon: FileText,
       title: 'On-Page SEO',
       url: '',
-      description: 'On-page SEO involves optimizing individual web pages to rank higher and earn more relevant traffic from search engines. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms.',
+      description: 'Optimize individual web pages to rank higher and earn more relevant traffic from search engines with our on-page SEO services. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms, driving targeted traffic to your Arlington business.',
     },
     {
       icon: LinkIcon,
       title: 'Off-Page SEO / Link Building',
       url: '',
-      description: 'Our off-page SEO and link building strategies are designed to significantly improve your website\'s authority and relevance through external signals. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic.',
+      description: 'Significantly improve your website\'s authority and relevance through external signals with our off-page SEO and link building strategies. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic, solidifying your online presence in Arlington.',
     },
     {
       icon: Settings,
       title: 'Schema Markup',
       url: '',
-      description: 'Implementing structured data, or Schema Markup, is key to enhancing search engine understanding of your content and achieving rich results in SERPs. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates.',
+      description: 'Enhance search engine understanding of your content and achieve rich results in SERPs with our Schema Markup implementation. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates and improving your visibility in Arlington search results.',
     },
     {
       icon: Search,
       title: 'Local SEO',
       url: '',
-      description: 'Our local SEO services are dedicated to optimizing your online presence to attract more business from local searches. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services.',
+      description: 'Optimize your online presence to attract more business from local searches in Arlington with our dedicated local SEO services. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services in Arlington.',
     },
     {
       icon: BarChart,
       title: 'SEO Audits',
       url: '',
-      description: 'Our comprehensive SEO audits provide an in-depth analysis of your website\'s current performance and identify critical areas for improvement. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. The audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic.',
+      description: 'Gain a clear understanding of your website\'s current performance and identify critical areas for improvement with our comprehensive SEO audits. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. Our audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic for your Arlington business.',
     },
     {
       icon: CheckCircle,
       title: 'Content Marketing for SEO',
       url: '',
-      description: 'Our content marketing for SEO services focuses on creating and distributing valuable, relevant, and consistent content that attracts and retains a clearly defined audience. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader.',
+      description: 'Attract and retain your target audience in Arlington with our content marketing for SEO services. We focus on creating and distributing valuable, relevant, and consistent content. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader in the Arlington market.',
     },
   ],
   whyChooseSectionHeadline: 'Why Choose TRAC for SEO in Arlington?',
-  whyChooseIntro: 'We don’t do cookie-cutter SEO. TRAC’s local-first approach drives sustainable growth and measurable results.',
-  whyChooseParagraph1: 'Whether you’re a landscaper based in Southwest Arlington, a boutique law firm downtown, or a home service company near Lake Arlington, we tailor our SEO strategy to how your audience actually searches. We research location-specific behavior and seasonal keyword demand to create campaigns that make your phones ring and inboxes fill up. Our local-first methodology means Arlington-based businesses rank in Arlington—not just regionally.',
-  whyChooseParagraph2: 'Our team goes beyond SEO checklists. We run full technical diagnostics, implement advanced on-page structure, optimize site speed, and manage local backlink acquisition—all while reporting clearly and consistently. TRAC believes in long-term SEO wins, not temporary rankings. We bring Arlington business owners a transparent roadmap to organic success—backed by data, insights, and decades of combined digital marketing experience.',
+  whyChooseIntro: 'Choosing the right SEO partner in Arlington is crucial for your business\'s success. TRAC stands apart as a trusted agency, combining unparalleled local market expertise with a proven track record of delivering tangible, measurable results for businesses like yours.',
+  whyChooseParagraph1: 'Arlington’s diverse economic landscape demands a nuanced SEO approach. From the bustling university area near UTA to the vibrant retail districts of Arlington Highlands and the growing communities in South Arlington, each neighborhood and industry presents unique opportunities. Our team possesses an intimate understanding of Arlington’s digital ecosystem, allowing us to craft hyper-localized SEO strategies that precisely target your ideal customers, wherever they are searching.',
+  whyChooseParagraph2: 'We don\'t just promise results; we deliver them through a data-driven, transparent, and ethical process. Our methodology is rooted in deep analysis of Arlington-specific search trends, competitor landscapes, and your unique business objectives. We provide clear, consistent reporting, proactive communication, and a dedicated team committed to your long-term growth. With TRAC, you gain a strategic partner focused on maximizing your online visibility, driving qualified leads, and ensuring a significant return on your SEO investment.',
   whyChoosePoints: [
     {
       icon: 'TrendingUp',
       title: 'Search Growth That Converts',
-      description: 'We go beyond rankings to focus on actual conversions—form fills, calls, appointment bookings, and direction requests from real Arlington users who need your service now.',
+      description: 'Our strategies are meticulously designed to go beyond mere rankings, focusing on generating high-quality leads, increasing bookings, and driving substantial revenue for your Arlington business through precise, high-intent keyword targeting and conversion optimization.',
     },
     {
       icon: 'Lightbulb',
       title: 'Deep Local Knowledge',
-      description: 'TRAC builds SEO campaigns rooted in Arlington’s neighborhoods, culture, and customer behavior—from UTA students and Cooper Street shoppers to North Arlington homeowners.',
+      description: 'Leverage our profound understanding of Arlington’s dynamic digital patterns. From emerging businesses near the Entertainment District to established healthcare providers and thriving salons, we utilize deep market intelligence to shape SEO campaigns that resonate specifically with your local audience and competitive landscape.',
     },
     {
       icon: 'ShieldCheck',
       title: 'Trustworthy SEO Execution',
-      description: 'We use white-hat, algorithm-safe SEO practices aligned with Google’s guidelines to protect your site from penalties and help it grow sustainably month over month.',
+      description: 'Experience complete peace of mind with our fully transparent SEO services. We provide clear, accessible dashboards, regular performance reports, and open communication, ensuring you always know the exact status of your campaign and the tangible results we are achieving for your Arlington business.',
     },
     {
         icon: 'BarChart2',
         title: 'Data-Driven Strategies',
-        description: 'We believe in transparency and accountability. Our campaigns are backed by data, and we provide regular reports to show you the ROI of your investment.',
+        description: 'Our campaigns are built on a foundation of rigorous data analysis and continuous optimization. We provide transparent, detailed reports that clearly demonstrate the return on your SEO investment, ensuring every decision is backed by measurable insights for your Arlington business.',
     },
     {
         icon: 'Users',
         title: 'Dedicated Team of Experts',
-        description: 'You get a dedicated team of SEO experts, content writers, and web developers who are committed to your success.',
+        description: 'Benefit from a dedicated team of SEO experts, content strategists, and web developers committed to your success. Our specialists bring collective expertise and a personalized approach to every aspect of your campaign, ensuring your Arlington business receives the highest level of service and support.',
     },
     {
         icon: 'LineChart',
         title: 'Holistic Approach',
-        description: 'We look at the bigger picture, combining SEO with other digital marketing channels to create a comprehensive strategy for growth.',
+        description: 'We adopt a holistic approach to your online growth, seamlessly integrating SEO with other digital marketing channels to create a comprehensive and synergistic strategy. This ensures maximum impact and sustained growth, positioning your Arlington business for long-term success in the digital landscape.',
     },
   ],
   awards: {
@@ -235,6 +268,18 @@ If you're looking for a strategic, transparent, and proven SEO partner in Arling
     {
       question: 'Do you optimize for Arlington-specific search intent?',
       answer: 'Definitely. Our keyword research is hyper-targeted to how Arlington residents search—from mobile queries like “urgent AC repair near me” to long-tail phrases like “best salon near Arlington Highlands open late”. We use real-time data, local modifiers, and behavioral trends to build content and metadata that reflect Arlington’s unique search landscape. This ensures your site ranks for the exact terms that drive leads—not just vanity keywords.',
+    },
+    {
+      question: 'How do I find the best SEO agency in Arlington?',
+      answer: 'TRAC is consistently recognized as a top SEO agency in Arlington, known for delivering measurable results and exceptional client satisfaction. Our data-driven strategies are designed to elevate your business\'s online presence and drive significant growth in the competitive Arlington market.',
+    },
+    {
+      question: 'What are the benefits of local SEO for businesses in Arlington?',
+      answer: 'Local SEO for your Arlington business can significantly increase your visibility in local search results, drive more foot traffic to your physical location, and attract highly qualified leads from customers in your immediate area. TRAC specializes in hyper-local strategies that connect you directly with your target audience in Arlington.',
+    },
+    {
+      question: 'How can my business improve its Google ranking in Arlington?',
+      answer: 'To improve your Google ranking in Arlington, focus on optimizing your Google Business Profile, creating localized content, building high-quality local backlinks, and ensuring your website is technically sound. TRAC offers comprehensive SEO services that cover all these aspects, helping your Arlington business climb to the top of search results.',
     },
   ],
 };

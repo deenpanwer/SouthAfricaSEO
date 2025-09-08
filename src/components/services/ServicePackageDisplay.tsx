@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight, Badge } from 'lucide-react';
 import Link from 'next/link';
-import { toSlug } from '@/lib/constants'; // Import toSlug utility
+import { toSlug } from '@/lib/utils'; // Import toSlug utility
 
 interface ServicePackageDisplayProps {
   packages: ServicePackage[];
@@ -56,12 +56,22 @@ export function ServicePackageDisplay({ packages, groupTitle }: ServicePackageDi
           <CardFooter className="p-6 pt-4 flex-col"> {/* Adjusted pt-0 to pt-4 for better spacing from content */}
             <div className="flex flex-col w-full gap-2"> {/* Changed mt-2 to gap-2 for consistent spacing */}
               <Button className={`w-full ${pkg.isSpecialOffer ? '' : 'variant-outline'}`}>
-                <Link href={`/contact?package=${encodeURIComponent(pkg.name)}`} className="flex items-center justify-center"> {/* Added flex and alignment classes */}
+                <Link 
+                  href={pkg.name === 'Web Design & Development' 
+                    ? '/contact?package=free-website-offer' 
+                    : `/contact?package=${encodeURIComponent(pkg.name)}`}
+                  className="flex items-center justify-center"
+                >
                   {pkg.cta} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="ghost" className="w-full text-primary hover:bg-primary/10">
-                <Link href={getServicePageUrl(pkg.name, groupTitle)} className="flex items-center justify-center">
+                <Link 
+                  href={pkg.name === 'Web Design & Development' 
+                    ? '/services/web-design-and-development' 
+                    : getServicePageUrl(pkg.name, groupTitle)}
+                  className="flex items-center justify-center"
+                >
                   More Details <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

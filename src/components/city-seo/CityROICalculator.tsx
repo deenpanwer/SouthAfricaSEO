@@ -42,7 +42,7 @@ export function CityROICalculator({ cityName }: { cityName: string }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Calculate Your <span className="text-green-500">{cityName}</span> SEO ROI
+            Calculate What You'd Earn Once You Rank On Top in <span className="text-green-500">{cityName}</span>
           </h2>
           <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
             Use the sliders to see the potential financial impact of a powerful SEO strategy.

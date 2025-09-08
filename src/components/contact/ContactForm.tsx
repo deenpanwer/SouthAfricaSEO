@@ -230,6 +230,8 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
                 </FormControl>
                 <SelectContent>
                   <SelectItem value={GENERAL_INQUIRY_VALUE}>General Inquiry / Not Specified</SelectItem>
+                  <SelectItem value="3 Weeks Free Trial">3 Weeks Free Trial</SelectItem>
+                  <SelectItem value="Free Website Offer">Free Website Offer</SelectItem>
                   {allPackages.map(pkg => (
                     <SelectItem key={pkg.name} value={pkg.name}>
                       {pkg.name}

@@ -9,18 +9,19 @@ export default function CityTeamPlain3D() {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    const currentMount = mountRef.current;
     let scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x160016); // Dark background
+    scene.background = new THREE.Color(0x160016); // Restore original purple background
 
-    let camera = new THREE.PerspectiveCamera(75, mountRef.current.clientWidth / mountRef.current.clientHeight, 0.1, 1000);
+    let camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
     camera.position.z = 5;
 
     let renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
-    mountRef.current.appendChild(renderer.domElement);
+    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    currentMount.appendChild(renderer.domElement);
 
     // Particle setup (similar to original, but simplified for plain Three.js)
-    const particleCount = 5000;
+    const particleCount = 3000;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
@@ -60,28 +61,30 @@ export default function CityTeamPlain3D() {
 
     animate();
 
-    const handleResize = () => {
-      if (mountRef.current) {
-        camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
+    const resizeObserver = new ResizeObserver(entries => {
+      if (!entries || entries.length === 0) return;
+      const { width, height } = entries[0].contentRect;
+      if (width > 0 && height > 0) {
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+        renderer.setSize(width, height);
       }
-    };
+    });
 
-    window.addEventListener("resize", handleResize);
+    resizeObserver.observe(currentMount);
 
     // Cleanup function
     return () => {
-      window.removeEventListener("resize", handleResize);
+      resizeObserver.disconnect();
+      if (currentMount && renderer.domElement) {
+        currentMount.removeChild(renderer.domElement);
+      }
       renderer.dispose();
       geometry.dispose();
       material.dispose();
       scene.remove(particles);
       scene.remove(ambientLight);
       scene.remove(pointLight);
-      if (mountRef.current && renderer.domElement) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
     };
   }, []);
 
