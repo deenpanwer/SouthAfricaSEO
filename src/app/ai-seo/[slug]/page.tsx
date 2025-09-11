@@ -1,7 +1,18 @@
+
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAiSeoCityData, AI_SEO_CITIES_DATA } from '@/lib/aiSeoConstants';
-import { AiSeoCityPageData } from '../../types/aiSeo';
+import type { AiSeoCityPageData } from '@/types/aiSeo';
+
+// Import New Components
+import { AiSeoHeroSection } from '@/components/ai-seo/AiSeoHeroSection';
+import { AiSeoProblemSolution } from '@/components/ai-seo/AiSeoProblemSolution';
+import { AiSeoServiceGrid } from '@/components/ai-seo/AiSeoServiceGrid';
+import { AiSeoProcessVisual } from '@/components/ai-seo/AiSeoProcessVisual';
+import { AiSeoResultsHighlights } from '@/components/ai-seo/AiSeoResultsHighlights';
+import { AiSeoTechnologyShowcase } from '@/components/ai-seo/AiSeoTechnologyShowcase';
+import { AiSeoFaqSection } from '@/components/ai-seo/AiSeoFaqSection';
+import { AiSeoFinalCTA } from '@/components/ai-seo/AiSeoFinalCTA';
 
 interface AiSeoPageProps {
   params: { slug: string };
@@ -41,10 +52,34 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
   }
 
   return (
-    <div>
-      <h1>{cityData.heroData.pageTitle}</h1>
-      <p>This is the AI SEO company page for {cityData.cityName}.</p>
-      <p>Slug: {cityData.slug}</p>
+    <div className="bg-background">
+      <AiSeoHeroSection cityName={cityData.cityName} heroData={cityData.heroData} />
+      <AiSeoProblemSolution
+        headline={cityData.problemSolutionData.headline}
+        items={cityData.problemSolutionData.items}
+      />
+      <AiSeoServiceGrid
+        headline={cityData.servicesData.headline}
+        items={cityData.servicesData.items}
+      />
+      <AiSeoProcessVisual
+        headline={cityData.processData.headline}
+        steps={cityData.processData.steps}
+      />
+      <AiSeoResultsHighlights
+        headline={cityData.resultsData.headline}
+        stats={cityData.resultsData.stats}
+        testimonials={cityData.resultsData.testimonials}
+      />
+      <AiSeoTechnologyShowcase
+        headline={cityData.technologyData.headline}
+        items={cityData.technologyData.items}
+      />
+      <AiSeoFaqSection
+        headline={cityData.faqData.headline}
+        items={cityData.faqData.items}
+      />
+      <AiSeoFinalCTA finalCtaData={cityData.finalCtaData} />
     </div>
   );
 }
