@@ -55,28 +55,34 @@ export function Header() {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="p-0 w-full max-w-screen-xl mx-auto">
+                    <DropdownMenuContent align="start" className="w-screen max-w-screen-lg p-0">
                       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                        <div className="flex items-start">
+                        <div className="flex items-start gap-8">
                           {/* Image Section */}
-                          <div className="w-70 flex-shrink-0 mr-8 bg-green-500 rounded-md p-4">
-                            <img src="/services.png" alt="Services Overview" className="w-full h-auto object-cover rounded-md" />
+                          <div className="w-1/3 flex-shrink-0">
+                            <div className="bg-muted rounded-md p-4 h-full flex flex-col justify-center">
+                              <img src="/services.png" alt="Our Services" className="w-full h-auto object-cover rounded-md" />
+                               <h3 className="mt-4 text-lg font-semibold text-foreground">Explore Our Growth Solutions</h3>
+                               <p className="text-sm text-muted-foreground mt-1">From SEO to Web Design, we build systems that drive results.</p>
+                            </div>
                           </div>
                           {/* Services List Section */}
-                          <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
-                            {item.children.map((child) => {
-                              if (child.isSeparator) {
-                                return <DropdownMenuSeparator key={Math.random()} className="col-span-full" />;
-                              }
-                              return (
-                                <DropdownMenuItem key={child.label} asChild className="w-full p-0">
-                                  <Link href={child.href} className="flex items-center space-x-2 py-2 px-3 hover:bg-accent hover:text-accent-foreground rounded-md text-base font-medium">
-                                    {child.icon && <child.icon className="h-5 w-5" />}
-                                    <span>{child.label}</span>
-                                  </Link>
-                                </DropdownMenuItem>
-                              );
-                            })}
+                          <div className="flex-grow">
+                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                                {item.children.map((child) => {
+                                  if (child.isSeparator) {
+                                    return <DropdownMenuSeparator key={Math.random()} className="col-span-full my-2" />;
+                                  }
+                                  return (
+                                    <DropdownMenuItem key={child.label} asChild className="p-0">
+                                      <Link href={child.href} className="flex items-center gap-3 p-2 rounded-md hover:bg-accent/50 transition-colors">
+                                        {child.icon && <child.icon className="h-5 w-5 text-primary flex-shrink-0" />}
+                                        <span className="font-medium text-foreground">{child.label}</span>
+                                      </Link>
+                                    </DropdownMenuItem>
+                                  );
+                                })}
+                              </div>
                           </div>
                         </div>
                       </div>
