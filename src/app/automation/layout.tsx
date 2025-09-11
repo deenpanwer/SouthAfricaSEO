@@ -21,11 +21,9 @@ export default function RootLayout({
   return (
     <div className="min-h-screen">
       <Providers>
-        <div className="bg-ph-black text-ph-white">
+        <div className="relative">
           <Header />
-          {/* ADJUST THIS LINE'S PADDING */}
-          <div className="z-20 pt-16">
-            {/* pt-16 to account for fixed header height */}
+          <div className="z-20">
             {children}
           </div>
           <Footer />

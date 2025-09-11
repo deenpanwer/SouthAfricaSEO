@@ -21,9 +21,11 @@ export default function Home() {
         <VideoBackground />
       </div>
       <div className="relative z-10 w-full">
-        <HeroSection />
+        <div className="bg-ph-black text-ph-white">
+            <HeroSection />
+        </div>
         <HomepagePlatformsSection />
-        <div className="bg-ph-black">
+        <div className="bg-ph-black text-ph-white">
           <HomepageOfferingsSection />
           <HomepageImpactStudiesSection />
           <HomepageBlogSection />

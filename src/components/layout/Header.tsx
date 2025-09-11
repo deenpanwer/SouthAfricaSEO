@@ -20,7 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { NAV_ITEMS, APP_NAME } from '@/lib/constants.tsx';
+import { NAV_ITEMS, APP_NAME } from '@/lib/constants';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import React from 'react';
@@ -55,17 +55,31 @@ export function Header() {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start">
-                      {item.children.map((child) => {
-                        if (child.isSeparator) {
-                          return <DropdownMenuSeparator key={Math.random()} />;
-                        }
-                        return (
-                          <DropdownMenuItem key={child.label} asChild>
-                            <Link href={child.href}>{child.label}</Link>
-                          </DropdownMenuItem>
-                        );
-                      })}
+                    <DropdownMenuContent align="start" className="p-0 w-full max-w-screen-xl mx-auto">
+                      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                        <div className="flex items-start">
+                          {/* Image Section */}
+                          <div className="w-70 flex-shrink-0 mr-8 bg-green-500 rounded-md p-4">
+                            <img src="/services.png" alt="Services Overview" className="w-full h-auto object-cover rounded-md" />
+                          </div>
+                          {/* Services List Section */}
+                          <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
+                            {item.children.map((child) => {
+                              if (child.isSeparator) {
+                                return <DropdownMenuSeparator key={Math.random()} className="col-span-full" />;
+                              }
+                              return (
+                                <DropdownMenuItem key={child.label} asChild className="w-full p-0">
+                                  <Link href={child.href} className="flex items-center space-x-2 py-2 px-3 hover:bg-accent hover:text-accent-foreground rounded-md text-base font-medium">
+                                    {child.icon && <child.icon className="h-5 w-5" />}
+                                    <span>{child.label}</span>
+                                  </Link>
+                                </DropdownMenuItem>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 );
@@ -129,8 +143,9 @@ export function Header() {
                                         }
                                         return (
                                           <SheetClose asChild key={child.label}>
-                                            <Link href={child.href} className={cn("py-2 text-muted-foreground hover:text-primary block text-base", pathname === child.href && "text-primary")}>
-                                              {child.label}
+                                            <Link href={child.href} className={cn("flex items-center space-x-2 py-2 text-muted-foreground hover:text-primary block text-base", pathname === child.href && "text-primary")}>
+                                              {child.icon && <child.icon className="h-5 w-5" />}
+                                              <span>{child.label}</span>
                                             </Link>
                                           </SheetClose>
                                         );

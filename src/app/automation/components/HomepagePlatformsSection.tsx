@@ -12,28 +12,28 @@ const platforms = [
       category: "Platform",
       description: "An AI-ready operating system for global defense and intelligence.",
       imageUrl: "https://tse4.mm.bing.net/th/id/OIP.ymLTKxXZ4nrz4JRU69VLaQHaE8?pid=Api&P=0&h=220",
-      link: "/test4/platforms/gotham",
+      link: "/automation/platforms/gotham",
     },
     {
       title: "Foundry",
       category: "Platform",
       description: "An ontology-powered operating system for the modern enterprise.",
       imageUrl: "https://tse2.mm.bing.net/th/id/OIP.XmvQx4oA9-xeZ7kEQcM8mwHaEp?pid=Api&P=0&h=220",
-      link: "/test4/platforms/foundry",
+      link: "/automation/platforms/foundry",
     },
     {
       title: "AIP",
       category: "Platform",
       description: "Activate large language models and other AI on private networks.",
       imageUrl: "https://tse4.mm.bing.net/th/id/OIP.KeH-qYdWqFvfs2igElKiBQHaEU?pid=Api&P=0&h=220",
-      link: "/test4/platforms/aip",
+      link: "/automation/platforms/aip",
     },
      {
       title: "Apollo",
       category: "Platform",
       description: "Continuous delivery system for deploying software across all environments.",
       imageUrl: "https://tse3.mm.bing.net/th/id/OIP.5V0cFbikaK5sit3BkEFNDQHaEK?pid=Api&P=0&h=220",
-      link: "/test4/platforms/apollo",
+      link: "/automation/platforms/apollo",
     },
   ];
 
@@ -94,7 +94,7 @@ const HomepagePlatformsSection: React.FC = () => {
               </button>
             ))}
           </div>
-           <Link href="/test4/platforms" className="px-4 py-2 text-sm font-semibold border border-gray-300 text-slate-500 hover:bg-gray-200 hover:text-black transition-colors rounded-md">
+           <Link href="/automation/platforms" className="px-4 py-2 text-sm font-semibold border border-gray-300 text-slate-500 hover:bg-gray-200 hover:text-black transition-colors rounded-md">
             See All
           </Link>
         </div>
@@ -111,17 +111,19 @@ const HomepagePlatformsSection: React.FC = () => {
           </button>
           
            <div className="overflow-hidden">
-             <motion.div
-              className="flex"
-              animate={{ x: `-${currentIndex * 100}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              {platforms.map((platform, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-1 md:px-2">
-                  <PlatformCard platform={platform} />
-                </div>
-              ))}
-            </motion.div>
+             <AnimatePresence initial={false} custom={currentIndex}>
+                <motion.div
+                  className="flex"
+                  animate={{ x: `-${currentIndex * 100}%` }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                >
+                  {platforms.map((platform, index) => (
+                    <div key={index} className="w-full flex-shrink-0 px-1 md:px-2">
+                      <PlatformCard platform={platform} />
+                    </div>
+                  ))}
+                </motion.div>
+             </AnimatePresence>
           </div>
         </div>
       </div>

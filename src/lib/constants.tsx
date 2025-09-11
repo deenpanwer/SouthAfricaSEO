@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 import type { NavItem, ServicePackage, Testimonial, ClientLogo, StatItem, ServicePackageGroup } from '@/types';
-import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Share2, Rocket, Code, Smile, CalendarDays, RefreshCw } from 'lucide-react';
+import { BarChart, Search, Users, Briefcase, MessageSquare, Mail, MapPin, Phone, TrendingUp, Target, Award, Lightbulb, Edit3, Link2, BarChart2, Users2, FileText, Settings, HelpCircle, BarChartBig, Zap, Share2, Rocket, Code, Smile, CalendarDays, RefreshCw, Layout, DollarSign, Shield, ShoppingCart, Globe, PenTool } from 'lucide-react';
 
 export const APP_NAME = "TRAC";
 
@@ -13,29 +13,29 @@ export const NAV_ITEMS: NavItem[] = [
     href: '/services',
     label: 'Services',
     children: [
-      { href: '/services', label: 'All Services Overview' },
+      { href: '/services', label: 'All Services Overview', icon: Layout },
       {
         isSeparator: true,
         href: '',
         label: ''
       },
-      { href: '/services/seo', label: 'SEO' },
-      { href: '/services/ppc', label: 'PPC Management' },
-      { href: '/services/social-media-marketing', label: 'Social Media Marketing' },
-      { href: '/services/web-design-and-development', label: 'Web Design & Development' },
-      { href: '/services/content-writing', label: 'Content Writing' },
-      { href: '/services/email-marketing', label: 'Email Marketing' },
-      { href: '/services/reputation-management', label: 'Reputation Management' },
-      { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization' },
-      { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)' },
-      { href: '/services/technical-seo', label: 'Technical SEO' },
-      { href: '/services/on-page-seo', label: 'On-Page SEO' },
-      { href: '/services/off-page-seo', label: 'Off-Page SEO / Link Building' },
-      { href: '/services/schema-markup', label: 'Schema Markup' },
-      { href: '/services/local-seo', label: 'Local SEO' },
-      { href: '/services/seo-audits', label: 'SEO Audits' },
-      { href: '/services/content-marketing-for-seo', label: 'Content Marketing for SEO' },
-      { href: '/automations', label: 'Automations' },
+      { href: '/services/seo', label: 'SEO', icon: Search },
+      { href: '/services/ppc', label: 'PPC Management', icon: DollarSign },
+      { href: '/services/social-media-marketing', label: 'Social Media Marketing', icon: Users },
+      { href: '/services/web-design-and-development', label: 'Web Design & Development', icon: Code },
+      { href: '/services/content-writing', label: 'Content Writing', icon: PenTool },
+      { href: '/services/email-marketing', label: 'Email Marketing', icon: Mail },
+      { href: '/services/reputation-management', label: 'Reputation Management', icon: Shield },
+      { href: '/services/ecommerce-optimization', label: 'eCommerce Optimization', icon: ShoppingCart },
+      { href: '/services/amazon-marketing', label: 'Amazon Marketing (AMS)', icon: Globe },
+      { href: '/services/technical-seo', label: 'Technical SEO', icon: Settings },
+      { href: '/services/on-page-seo', label: 'On-Page SEO', icon: Lightbulb },
+      { href: '/services/off-page-seo', label: 'Off-Page SEO / Link Building', icon: TrendingUp },
+      { href: '/services/schema-markup', label: 'Schema Markup', icon: BarChart },
+      { href: '/services/local-seo', label: 'Local SEO', icon: MapPin },
+      { href: '/services/seo-audits', label: 'SEO Audits', icon: FileText },
+      { href: '/services/content-marketing-for-seo', label: 'Content Marketing for SEO', icon: MessageSquare },
+      { href: '/automations', label: 'Automations', icon: Zap },
     ]
   },
   { href: '/pricing', label: 'Pricing' },

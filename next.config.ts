@@ -86,6 +86,10 @@ const nextConfig: NextConfig = {
         source: '/:stateSlug-gym-seo-strategies',
         destination: '/gym-seo/:stateSlug',
       },
+      {
+        source: '/:aiSeoSlug-ai-seo-company',
+        destination: '/ai-seo/:aiSeoSlug-ai-seo-company',
+      },
       // This more general rewrite should come after specific ones on the main domain.
       // It should *still* come before the subdomain-specific rules.
       { // General city slug, catches things like /new-york

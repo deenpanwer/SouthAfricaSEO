@@ -87,7 +87,7 @@ Don't let your competitors dominate the digital space in Waterford. Partner with
     {
       icon: Search,
       title: 'SEO',
-      url: '',
+      url: '/services/seo',
       description: 'Our core SEO services are designed to improve your organic rankings in Waterford. We use data-driven strategies to increase your visibility, drive qualified traffic, and generate leads for your business.',
     },
     {
