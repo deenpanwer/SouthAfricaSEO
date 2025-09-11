@@ -55,19 +55,19 @@ export function Header() {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-screen max-w-screen-lg p-0">
+                    <DropdownMenuContent align="start" className="w-screen p-0 border-t">
                       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                        <div className="flex items-start gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                           {/* Image Section */}
-                          <div className="w-1/3 flex-shrink-0">
-                            <div className="bg-muted rounded-md p-4 h-full flex flex-col justify-center">
-                              <img src="/services.png" alt="Our Services" className="w-full h-auto object-cover rounded-md" />
+                          <div className="col-span-1 hidden md:flex items-center justify-center">
+                            <div className="bg-muted rounded-md p-4 h-full w-full">
+                              <img src="/services.png" alt="Our Services" className="w-full h-full object-cover rounded-md" />
                                <h3 className="mt-4 text-lg font-semibold text-foreground">Explore Our Growth Solutions</h3>
                                <p className="text-sm text-muted-foreground mt-1">From SEO to Web Design, we build systems that drive results.</p>
                             </div>
                           </div>
                           {/* Services List Section */}
-                          <div className="flex-grow">
+                          <div className="col-span-1 md:col-span-2">
                              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                                 {item.children.map((child) => {
                                   if (child.isSeparator) {
@@ -172,7 +172,7 @@ export function Header() {
                         })}
                       </nav>
                       <SheetClose asChild>
-                        <Button asChild className="w-full bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+                        <Button asChild className="w-full mt-6 bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
                           <Link href="/contact">Get a Free Quote</Link>
                         </Button>
                       </SheetClose>
