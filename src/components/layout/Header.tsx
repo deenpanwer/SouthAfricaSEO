@@ -55,20 +55,18 @@ export function Header() {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-screen p-0 border-t">
+                    <DropdownMenuContent align="start" className="w-screen max-w-none p-0 border-t">
                       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div className="grid grid-cols-4 gap-8 items-center">
                           {/* Image Section */}
-                          <div className="col-span-1 hidden md:flex items-center justify-center">
-                            <div className="bg-muted rounded-md p-4 h-full w-full">
-                              <img src="/services.png" alt="Our Services" className="w-full h-full object-cover rounded-md" />
-                               <h3 className="mt-4 text-lg font-semibold text-foreground">Explore Our Growth Solutions</h3>
-                               <p className="text-sm text-muted-foreground mt-1">From SEO to Web Design, we build systems that drive results.</p>
-                            </div>
+                          <div className="col-span-1 hidden md:flex flex-col items-center justify-center bg-primary/10 rounded-md p-4 h-full">
+                            <img src="/services.png" alt="Our Services" className="w-full h-auto object-contain rounded-md" />
+                             <h3 className="mt-4 text-lg font-semibold text-foreground">Explore Our Growth Solutions</h3>
+                             <p className="text-sm text-muted-foreground mt-1 text-center">From SEO to Web Design, we build systems that drive results.</p>
                           </div>
                           {/* Services List Section */}
-                          <div className="col-span-1 md:col-span-2">
-                             <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                          <div className="col-span-3">
+                             <div className="grid grid-cols-4 gap-x-6 gap-y-2">
                                 {item.children.map((child) => {
                                   if (child.isSeparator) {
                                     return <DropdownMenuSeparator key={Math.random()} className="col-span-full my-2" />;
