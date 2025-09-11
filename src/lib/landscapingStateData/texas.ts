@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, TreePine, Sprout, Leaf } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const texasLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const texasLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Texas Landscaping SEO: Cultivate Bigger Business in the Lone Star State',
     heroSubtitle: 'Outrank Competitors & Attract More Landscaping Clients Across Texas with TRAC',
     heroDescription: 'TRAC provides powerful SEO services for Texas landscaping companies, helping you thrive in a state known for its vast landscapes and diverse horticultural needs. From the sprawling lawns of Dallas-Fort Worth to the unique gardens of Austin and the coastal challenges of Houston, we tailor our strategies to your specific region and clientele. We help landscapers specializing in native Texas plants, robust irrigation systems, commercial property maintenance, or luxury residential designs to significantly boost their online visibility and generate a consistent flow of quality leads. Our team understands the Texas climate, soil types, and popular landscaping trends, enabling us to create content and keyword strategies that resonate deeply with Texans. Whether you serve Houston, Dallas, Austin, San Antonio, or smaller communities, TRAC can help your landscaping business achieve prominent search rankings and sustainable growth.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Texas landscape with bluebonnets', dataAiHint: 'texas landscape flowers' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Texas landscape with bluebonnets' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Texas Landscaping SEO Analysis!',
   },

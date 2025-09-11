@@ -20,7 +20,6 @@ export function PartneredWithSection() {
                 alt={`${logo.name} logo`}
                 width={150}
                 height={64}
-                data-ai-hint={logo.dataAiHint}
                 className="object-contain h-full w-auto"
               />
             </div>

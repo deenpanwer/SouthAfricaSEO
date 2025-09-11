@@ -15,7 +15,6 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <Image
             src={testimonial.avatarUrl}
             alt={testimonial.name}
-            data-ai-hint={testimonial.dataAiHint || "person"}
             width={60}
             height={60}
             className="rounded-full"

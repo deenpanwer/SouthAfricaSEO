@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, TreePine, Sprout, Leaf, Building } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const newYorkLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const newYorkLandscapingData: LandscapingStatePageData = {
     heroTitle: 'New York Landscaping SEO: Cultivate Success in the Empire State',
     heroSubtitle: 'Reach More Landscaping Clients Across New York State with TRAC SEO',
     heroDescription: 'TRAC provides top-tier SEO services for New York State landscaping businesses, helping you connect with clients from the bustling urban environments of NYC and its suburbs to the picturesque landscapes upstate. We understand the diverse needs of New Yorkers, whether they seek sophisticated rooftop gardens in Manhattan, lush suburban lawns in Westchester, or large-scale commercial landscaping for properties across the state. Our SEO strategies are tailored to highlight your unique services, such as four-season garden maintenance, hardscaping for varied terrains, or specialized tree care. We focus on local SEO to target specific regions and cities within New York, technical optimization for a seamless online experience, and content marketing that showcases your expertise and beautiful New York projects. Partner with TRAC to significantly enhance your online visibility and attract a steady stream of qualified leads for your New York landscaping business.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'New York State landscape', dataAiHint: 'new york landscape city' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'New York State landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free New York Landscaping SEO Analysis!',
   },

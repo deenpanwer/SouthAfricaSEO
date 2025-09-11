@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const georgiaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const georgiaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Georgia Landscaping SEO: Cultivate Growth in the Peach State',
     heroSubtitle: 'Reach More Landscaping Clients from Atlanta to Savannah with TRAC SEO',
     heroDescription: 'TRAC provides specialized SEO services for Georgia landscaping businesses, helping you flourish in a state known for its beautiful gardens and Southern charm. Whether you serve the bustling Atlanta metro area, historic Savannah, or other communities across Georgia, we tailor strategies to your market. Our SEO services help landscapers specializing in classic Southern garden designs, lawn maintenance for warm-season grasses, tree care, or commercial property landscaping to significantly increase their online visibility and attract a consistent flow of qualified local leads. We understand Georgia\'s climate, native flora, and homeowner preferences. Our approach includes local SEO optimization, technical website enhancements, and content marketing that showcases your Georgia projects and expertise in creating stunning, sustainable outdoor spaces. Partner with TRAC to cultivate a robust online presence for your Georgia landscaping business and achieve measurable, lasting growth.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Georgia landscape with peach trees', dataAiHint: 'georgia landscape garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Georgia landscape with peach trees' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Georgia Landscaping SEO Quote!',
   },

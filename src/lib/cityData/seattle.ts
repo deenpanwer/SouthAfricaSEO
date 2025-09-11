@@ -1,6 +1,6 @@
 
 import type { CityPageData } from '@/types';
-import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck, Newspaper, LineChart, Users, MapPinned, Code, FileText, LinkIcon } from 'lucide-react';
+import { Search, Settings, Briefcase, Mail, BarChart2, TrendingUp, Lightbulb, ShieldCheck, Newspaper, LineChart, Users, MapPinned, Code, FileText, LinkIcon, BarChart, CheckCircle } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
 const GENERIC_CITY_HERO_IMAGE_SRC = '/trac-seo.jpg';
@@ -64,7 +64,7 @@ export const seattleData: CityPageData = {
     heroTitle: 'Seattle SEO Experts: Elevate Your Emerald City Presence',
     heroSubtitle: 'Navigate Seattle\'s Competitive Search Landscape with TRAC SEO',
     heroDescription: 'TRAC offers comprehensive SEO services for businesses in Seattle, Washington, a global hub for technology, innovation, aerospace, and coffee. Our tailored strategies focus on significantly improving your search engine rankings, attracting qualified local traffic from the tech-savvy Seattle populace and surrounding areas like Bellevue and Redmond, and increasing your ROI in this highly innovative and competitive market. We understand the nuances of targeting audiences in distinct Seattle neighborhoods such as South Lake Union, Capitol Hill, Fremont, and Ballard. From optimizing your website for local searches and ensuring cutting-edge technical SEO for optimal performance (critical for tech companies and e-commerce), to developing compelling content that resonates with Seattle\'s unique culture and thriving industries, TRAC provides a full-spectrum SEO solution. We help businesses, from startups to enterprise-level corporations, establish market leadership. Partner with us to make your Seattle business a dominant force in online search and achieve sustainable, long-term growth.',
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Seattle, WA', dataAiHint: 'Seattle space needle' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Seattle, WA' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Seattle SEO Strategy!',
   },
@@ -88,7 +88,36 @@ export const seattleData: CityPageData = {
     { icon: MapPinned, title: 'Amazon Marketing for Seattle Sellers', description: 'Empower your success on the world\'s largest online marketplace with our expert Amazon marketing services. Our team develops and executes tailored strategies to boost your product visibility, drive sales, and maximize your return on investment. From optimizing product listings to managing Amazon PPC campaigns, we help your Seattle-based business dominate the competitive Amazon landscape and reach millions of potential customers.' },
     { icon: Code, title: 'Technical SEO for Seattle Websites', description: 'Our technical SEO services focus on optimizing your website\'s infrastructure to ensure seamless crawling and indexing by search engines. We address critical elements like site speed, mobile-friendliness, structured data, and site architecture. A robust technical foundation is crucial for search engine visibility, allowing your content to be discovered and ranked effectively, ultimately improving your organic performance and ensuring your Seattle business is easily found online.' },
     { icon: FileText, title: 'On-Page SEO for Seattle Businesses', description: 'Optimize individual web pages to rank higher and earn more relevant traffic from search engines with our on-page SEO services. Our process includes meticulous keyword research, compelling content optimization, strategic internal linking, and meta tag enhancements. By aligning your page content with user intent and search engine best practices, we ensure your pages are highly visible and attractive to both users and algorithms, driving targeted traffic to your Seattle business.' },
-    { icon: LinkIcon, title: 'Off-Page SEO / Link Building in Seattle', description: 'Significantly improve your website\'s authority and relevance through external signals with our off-page SEO and link building strategies. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic, solidifying your online presence in Seattle.' },
+    {
+      icon: LinkIcon,
+      title: 'Off-Page SEO / Link Building in Seattle',
+      url: '/services/off-page-seo',
+      description: 'Significantly improve your website\'s authority and relevance through external signals with our off-page SEO and link-building strategies. We focus on acquiring high-quality, natural backlinks from reputable sources, enhancing your domain authority and search engine trust. This crucial aspect of SEO helps your website rank higher for competitive keywords and drives more referral traffic, solidifying your online presence in Seattle.'
+    },
+    {
+      icon: Settings,
+      title: 'Schema Markup',
+      url: '/services/schema-markup',
+      description: 'Enhance search engine understanding of your content and achieve rich results in SERPs with our Schema Markup implementation. We meticulously apply relevant schema types to your website, providing search engines with explicit clues about your page’s meaning. This can lead to enhanced listings like star ratings, product information, or event details, significantly boosting click-through rates and improving your visibility in Seattle search results.'
+    },
+    {
+      icon: Search,
+      title: 'Local SEO',
+      url: '/services/local-seo',
+      description: 'Optimize your online presence to attract more business from local searches in Seattle with our dedicated local SEO services. We focus on Google Business Profile optimization, local citation building, and geo-targeted content creation. This ensures your business appears prominently in local map packs and search results, connecting you directly with nearby customers actively seeking your products or services in Seattle.'
+    },
+    {
+      icon: BarChart,
+      title: 'SEO Audits',
+      url: '/services/seo-audits',
+      description: 'Gain a clear understanding of your website\'s current performance and identify critical areas for improvement with our comprehensive SEO audits. We meticulously examine technical aspects, on-page elements, off-page factors, and content quality. Our audit delivers actionable recommendations and a clear roadmap to address deficiencies, capitalize on opportunities, and significantly enhance your overall search engine visibility and organic traffic for your Seattle business.'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Content Marketing for SEO',
+      url: '/services/content-marketing-for-seo',
+      description: 'Attract and retain your target audience in Seattle with our content marketing for SEO services. We focus on creating and distributing valuable, relevant, and consistent content. We develop content strategies aligned with your SEO goals, ensuring every piece of content is optimized for target keywords and user intent. This approach not only improves rankings but also establishes your brand as a thought leader in the Seattle market.'
+    },
   ],
   whyChooseSectionHeadline: 'TRAC: Your Trusted Seattle SEO Agency for Innovation & Growth',
   whyChooseIntro: 'Partner with TRAC for effective, data-driven SEO services in Seattle. We have a deep understanding of the local market, its highly competitive tech landscape, and the strategies required to make your business succeed online and achieve industry leadership.',

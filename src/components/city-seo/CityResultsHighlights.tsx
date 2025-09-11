@@ -25,9 +25,9 @@ interface CityResultsHighlightsProps {
 }
 
 export const cityTestimonials: Testimonial[] = [
-  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "/home/marci-wiersma.webp", dataAiHint: "Marci Wiersma photo", rating: 5 },
-  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "/home/whitney-wells-lewis.webp", dataAiHint: "Whitney Wells Lewis photo", rating: 5 },
-  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "/home/chad-montgomery.webp", dataAiHint: "Chad Montgomery photo", rating: 5 },
+  { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "/home/marci-wiersma.webp", rating: 5 },
+  { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "/home/whitney-wells-lewis.webp", rating: 5 },
+  { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "/home/chad-montgomery.webp", rating: 5 },
 ];
 
 export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) {
@@ -47,7 +47,6 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
               alt="A law firm's case results, including a 664% increase in qualified leads and a 360% increase in conversion rate."
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="business results graph"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 flex items-center justify-center transition-opacity">
               </div>
@@ -82,7 +81,6 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
               alt="A construction firm's case results, including an 800% increase in client leads and a 22-point increase in domain authority."
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="marketing success chart"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 flex items-center justify-center transition-opacity">
               </div>
@@ -132,7 +130,6 @@ export function CityResultsHighlights({ headline }: CityResultsHighlightsProps) 
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-yellow-400"
-                  data-ai-hint={testimonial.dataAiHint || "client photo"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5">{testimonial.name}</h3>
                 <p className="text-xs text-gray-500 mb-3">{testimonial.company}</p>

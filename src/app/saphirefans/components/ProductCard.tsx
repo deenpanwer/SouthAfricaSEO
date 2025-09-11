@@ -18,7 +18,6 @@ export function ProductCard({ product }: ProductCardProps) {
           <Image
             src={product.imageUrl}
             alt={product.name}
-            data-ai-hint={product.dataAiHint}
             layout="fill"
             objectFit="contain" // Use contain for product images to show full item
             className="p-2"

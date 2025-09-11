@@ -20,7 +20,6 @@ export function BlogPreviewCard({ post }: BlogPreviewCardProps) {
             <Image
               src={post.imageUrl}
               alt={post.title}
-              data-ai-hint={post.dataAiHint}
               fill
               style={{ objectFit: 'cover' }}
               className="transition-transform duration-300 group-hover:scale-105"

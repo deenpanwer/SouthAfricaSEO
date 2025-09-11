@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Sun, Droplets } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const arizonaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const arizonaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Arizona Landscaping SEO: Make Your Business Bloom in the Desert',
     heroSubtitle: 'Attract More Clients Across Arizona with TRAC\'s Sun-Powered SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Arizona landscaping businesses, helping you thrive in the unique desert environment of the Grand Canyon State. Whether you specialize in stunning xeriscapes, native Sonoran Desert plants, efficient irrigation systems, or creating cool, inviting outdoor living spaces, we can significantly enhance your online visibility. Our team understands the challenges and opportunities of landscaping in Arizona, from extreme heat and water conservation to HOA guidelines in communities across Phoenix, Tucson, Scottsdale, and beyond. We create SEO strategies that highlight your expertise in sustainable, drought-tolerant designs and connect you with homeowners and commercial clients seeking your specialized services. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your beautiful Arizona projects and deep knowledge of desert horticulture. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Arizona landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Arizona desert landscape with saguaros', dataAiHint: 'arizona desert landscape' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Arizona desert landscape with saguaros' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Arizona Landscaping SEO Quote!',
   },

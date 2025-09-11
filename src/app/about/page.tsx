@@ -39,8 +39,6 @@ export default function AboutUsPage() {
               <Image
                 src={mission.imageUrl}
                 alt={mission.title}
-                data-ai-hint={mission.dataAiHint}
-                layout="fill"
                 objectFit="cover"
               />
             </div>
@@ -88,8 +86,6 @@ export default function AboutUsPage() {
                <Image
                 src={expertise.imageUrl}
                 alt="Digital Strategy Session"
-                data-ai-hint={expertise.dataAiHint}
-                layout="fill"
                 objectFit="cover"
               />
             </div>
@@ -112,7 +108,6 @@ export default function AboutUsPage() {
                     <Image
                       src={member.imageUrl}
                       alt={member.name}
-                      data-ai-hint={member.dataAiHint}
                       width={120}
                       height={120}
                       className="rounded-full mx-auto mb-4 border-4 border-primary/20"

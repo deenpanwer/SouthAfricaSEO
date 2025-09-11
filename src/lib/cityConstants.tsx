@@ -38,7 +38,17 @@ import { faisalabadData } from './cityData/faisalabad';
 import { gulshanEHadeedData } from './cityData/gulshanEHadeed';
 import { sanFranciscoData } from './cityData/sanFrancisco';
 import { kilkennyData } from './cityData/kilkenny';
+import { waterfordData } from './cityData/waterford';
+import { droghedaData } from './cityData/drogheda';
+import { sligoData } from './cityData/sligo';
+import { swordsData } from './cityData/swords';
 
+// Recommended cities to add in the future:
+// - Fort Worth, TX
+// - Columbus, OH
+// - Charlotte, NC
+// - Indianapolis, IN
+// - Washington, D.C.
 
 export const CITIES_DATA: CityPageData[] = [
   sanFranciscoData,
@@ -78,6 +88,10 @@ export const CITIES_DATA: CityPageData[] = [
   islamabadData,
   faisalabadData,
   gulshanEHadeedData,
+  waterfordData,
+  droghedaData,
+  sligoData,
+  swordsData,
 ];
 
 export const getCityData = (slug: string): CityPageData | undefined => {

@@ -35,7 +35,6 @@ export function ClientLogosSection() {
                     alt={`${logo.name} logo`}
                     width={120}
                     height={48}
-                    data-ai-hint={logo.dataAiHint}
                     className="object-contain h-full w-auto"
                   />
                 </div>
@@ -53,7 +52,6 @@ export function ClientLogosSection() {
                     alt={`${logo.name} logo`}
                     width={120}
                     height={48}
-                    data-ai-hint={logo.dataAiHint}
                     className="object-contain h-full w-auto"
                   />
                 </div>

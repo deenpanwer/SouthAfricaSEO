@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Palmtree } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const southCarolinaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const southCarolinaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'South Carolina Landscaping SEO: Cultivate Success in the Palmetto State',
     heroSubtitle: 'Connect with More Clients Across South Carolina with TRAC\'s Southern SEO Charm',
     heroDescription: 'TRAC delivers specialized SEO services for South Carolina landscaping businesses, helping you flourish from the historic charm of Charleston to the vibrant communities of Columbia and Greenville, and along the beautiful Grand Strand. Whether you specialize in creating classic Southern gardens, coastal-resilient landscapes, maintaining pristine lawns for resorts and communities, or designing elegant outdoor living spaces, we can significantly enhance your online visibility. Our team understands the unique horticultural conditions of South Carolina, from sandy coastal soils to the clay of the Midlands and Upstate. We create SEO strategies that highlight your expertise in lowcountry planting, heat-tolerant flora, and designing for Southern hospitality. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your stunning South Carolina projects and deep understanding of regional landscaping needs. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your South Carolina landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'South Carolina coastal landscape', dataAiHint: 'south carolina landscape beach' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'South Carolina coastal landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free South Carolina Landscaping SEO Quote!',
   },

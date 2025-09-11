@@ -26,7 +26,6 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           <Image
             src={caseStudy.imageUrl}
             alt={`Case study for ${caseStudy.clientName}`}
-            data-ai-hint={caseStudy.dataAiHint || "business success"}
             layout="fill"
             objectFit="cover"
             className="transition-transform duration-300 group-hover:scale-105"

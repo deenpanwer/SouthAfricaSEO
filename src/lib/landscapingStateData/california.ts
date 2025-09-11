@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, TreePine, Sprout, Leaf, MapPin } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; // Generic placeholder
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; // Generic placeholder
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png'; // Generic placeholder
 
 export const californiaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const californiaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'California Landscaping SEO: Grow Your Golden State Business',
     heroSubtitle: 'Dominate Search for Landscaping Services Across California with TRAC',
     heroDescription: 'TRAC provides specialized SEO services for California landscaping companies, from San Diego to San Francisco and beyond. The Golden State\'s diverse climates and discerning clientele demand a sophisticated online presence. We help landscapers specializing in drought-tolerant designs, sustainable gardening, luxury estates, or commercial properties to significantly increase their online visibility and attract a steady stream of qualified leads. Our expert team understands the unique challenges of the California market, including water conservation regulations and varied horticultural zones. We craft SEO strategies that resonate with your target audience, whether they are in Los Angeles, the Bay Area, Sacramento, or smaller communities. We focus on local SEO, technical website optimization, and content that showcases your expertise in California-native plants, water-wise irrigation, and stunning outdoor living spaces. Partner with TRAC to cultivate a thriving online presence for your California landscaping business and achieve measurable growth.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Lush California landscape', dataAiHint: 'california landscape garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Lush California landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', // Generic video
     formTitle: 'Free California Landscaping SEO Quote!',
   },

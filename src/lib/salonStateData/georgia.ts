@@ -3,44 +3,44 @@ import type { SalonStatePageData } from '@/types';
 import { Search, Scissors, Sparkles, Users, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, CalendarDays } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const georgiaSalonData: SalonStatePageData = {
   slug: 'georgia',
   stateName: 'Georgia',
   heroData: {
-    pageTitle: 'Georgia Salon SEO | TRAC - SEO for GA Beauty Salons & Spas',
-    metaDescription: 'Attract more clients to your Georgia salon or spa with TRAC\'s expert SEO. Rank higher for hair styling, nail services, and spa treatments in GA. Get a free SEO proposal!',
-    heroTitle: 'Georgia Salon & Spa SEO: Enhance Your Southern Charm Online',
-    heroSubtitle: 'Connect with Beauty Clients Across Georgia with TRAC\'s Stylish SEO',
-    heroDescription: 'TRAC offers specialized SEO services for beauty salons, hair studios, nail bars, and spas throughout Georgia. From the bustling Atlanta metro area to charming historic cities like Savannah and Athens, we help Georgia beauty businesses boost their online presence and attract a loyal clientele. Georgians appreciate style and quality service, and your digital storefront needs to reflect that. Our SEO strategies focus on local search optimization to ensure clients in your specific Georgia community can find you easily when searching for "best hair salon Atlanta," "nail spa Savannah," or "spa day deals near me." We optimize your website for an excellent user experience, showcase your salon\'s unique atmosphere and talented team through captivating content and visuals, and help manage your online reviews to build a stellar reputation. Partner with TRAC to make your Georgia salon or spa the preferred choice for beauty and relaxation in the Peach State.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Elegant Georgia salon setting', dataAiHint: 'salon interior georgia' },
+    pageTitle: 'Georgia Salon SEO: Elevate Your Beauty Business Online',
+    metaDescription: 'Transform your Georgia salon or spa\'s online presence. Our expert SEO strategies attract more clients, boost bookings, and significantly increase your revenue. Discover the difference.',
+    heroTitle: 'Georgia Salon & Spa SEO: Cultivate Your Digital Presence',
+    heroSubtitle: 'Connect with Discerning Clients Across Georgia and Maximize Your Revenue Potential',
+    heroDescription: 'Our specialized SEO services are meticulously crafted for beauty salons, hair studios, nail bars, and spas throughout Georgia. From the vibrant energy of the Atlanta metro area to the charming historic cities like Savannah and Athens, we empower Georgia beauty businesses to dominate their local search results and attract a consistent flow of new clients. Georgians appreciate style and quality service; your digital storefront must not only reflect this but also project unparalleled expertise and trustworthiness. Our comprehensive SEO strategies prioritize technical optimization, ensuring your website is lightning-fast and user-friendly. We craft compelling narratives and showcase your salon\'s unique artistry through rich content and stunning visuals, building an undeniable online reputation that converts browsers into loyal customers. Partner with us to make your Georgia salon or spa the undisputed leader in beauty and wellness, driving substantial revenue growth and securing your market position.',
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Elegant Georgia salon setting' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Georgia Salon SEO Quote!',
   },
-  resultsHeadline: 'SEO That Helps Georgia Salons & Spas Radiate Success Online',
-  readyToGrowHeadline: 'Ready to Beautify Your Georgia Salon\'s SEO & Client List?',
-  servicesSectionHeadline: 'Custom SEO for Georgia Salons, Spas & Beauty Professionals',
-  servicesSectionSubheadline: 'Our Georgia salon SEO expertise helps you attract clients seeking haircuts, color treatments, manicures, pedicures, facials, massages, and other pampering services across the Peach State.',
+  resultsHeadline: 'SEO That Helps Georgia Salons & Spas Radiate Unrivaled Online Success',
+  readyToGrowHeadline: 'Ready to Beautify Your Georgia Salon\'s SEO & Client List for Unprecedented Growth?',
+  servicesSectionHeadline: 'Custom SEO for Georgia\'s Elite Salons, Spas & Beauty Professionals',
+  servicesSectionSubheadline: 'Our deep expertise in Georgia salon SEO ensures you attract discerning clients seeking premium haircuts, advanced color treatments, luxurious nail services, rejuvenating facials, therapeutic massages, and specialized beauty treatments across the Peach State. We don\'t just get you found; we get you chosen.',
   services: [
-    { icon: Search, title: 'Local SEO for GA Salons & Spas', description: 'Get found by clients in your Georgia service areas (e.g., "Atlanta beauty salon," "spa in Athens GA"). We optimize GMB, local directories, and appointment booking systems.' },
-    { icon: Scissors, title: 'Hair & Nail Service SEO', description: 'Improve visibility for your salon\'s specific offerings, such as haircuts, coloring, extensions, manicures, pedicures, and nail art in Georgia.' },
-    { icon: CalendarDays, title: 'Spa & Wellness Treatment SEO', description: 'Target clients searching for facials, massages, body wraps, and other wellness treatments available at your Georgia spa, highlighting unique services and packages.' },
-    { icon: Sparkles, title: 'Bridal & Event Styling SEO', description: 'Attract clients looking for bridal hair and makeup, prom styling, and special event beauty services offered by your Georgia salon professionals.' },
+    { icon: Search, title: 'Local SEO for GA Salons & Spas', description: 'Dominate local search results and connect with clients in your Georgia service areas (e.g., \'Atlanta beauty salon,\' \'spa in Athens GA\'). We optimize your Google Business Profile, local directories, and integrate seamlessly with online booking systems for maximum visibility.' },
+    { icon: Scissors, title: 'Hair & Nail Service SEO', description: 'Achieve unparalleled visibility for your salon\'s specific offerings, including haircuts, coloring, extensions, manicures, pedicures, and nail art in Georgia. We highlight your unique artistry to attract high-value clients.' },
+    { icon: CalendarDays, title: 'Spa & Wellness Treatment SEO', description: 'Target clients searching for facials, massages, body wraps, and other wellness treatments available at your Georgia spa, highlighting unique services and packages. We ensure your specialized offerings are easily discoverable.' },
+    { icon: Sparkles, title: 'Bridal & Event Styling SEO', description: 'Attract clients looking for bridal hair and makeup, prom styling, and special event beauty services offered by your Georgia salon professionals. We showcase your expertise in creating unforgettable looks for special occasions.' },
   ],
-  whyChooseSectionHeadline: 'Why TRAC is Your Premier Partner for Georgia Salon & Spa SEO',
-  whyChooseIntro: 'TRAC provides expert SEO solutions tailored for the Georgia beauty and wellness industry. We help your salon or spa navigate the Peach State\'s digital landscape to achieve sustainable client growth and enhanced brand prestige.',
-  whyChooseParagraph1: 'Our Georgia salon SEO specialists understand the local beauty trends and client expectations. We craft strategies that showcase your salon\'s unique ambiance, skilled technicians, and commitment to delivering exceptional experiences, resonating with discerning Georgians.',
-  whyChooseParagraph2: 'We are committed to ethical, results-focused SEO that builds your salon\'s online authority and appointment book across Georgia. Our transparent approach means you\'re always aware of your campaign\'s progress and success.',
+  whyChooseSectionHeadline: 'Why Partner with Us for Unmatched Georgia Salon & Spa Growth',
+  whyChooseIntro: 'We provide unparalleled SEO solutions meticulously tailored for the Georgia beauty and wellness industry. Our mission is to empower your salon or spa to not only navigate but dominate the Peach State\'s fiercely competitive digital landscape, achieving sustainable growth and an undeniably glamorous online presence that translates directly into increased revenue.',
+  whyChooseParagraph1: 'Our dedicated specialists possess profound expertise in the Georgia salon sector, understanding the local beauty trends, sophisticated client expectations, and unique market dynamics. We don\'t just craft strategies; we engineer bespoke solutions that amplify your salon\'s distinctive style, showcase your unparalleled expertise, and reinforce your unwavering commitment to client satisfaction. We work tirelessly to ensure your brand resonates with your ideal clientele.',
+  whyChooseParagraph2: 'We are passionately committed to ethical, results-driven SEO that meticulously builds your salon\'s brand reputation and significantly boosts client bookings across Georgia. Our transparent, data-backed approach ensures you witness the tangible, direct impact of our beauty industry SEO services on your bottom line. We are relentless in our pursuit of your success, working crazy hard to bring you more business and maximize your profitability.',
   whyChoosePoints: [
-    { icon: 'TrendingUp', title: 'GA Salon SEO Growth', description: 'Increase appointment bookings and attract new, loyal clients across Georgia. We focus on SEO that highlights your salon\'s quality and unique offerings.' },
-    { icon: 'Lightbulb', title: 'Georgia Beauty Market Expertise', description: 'Benefit from SEO strategies designed for the GA salon industry, considering regional style preferences, popular treatments, and the competitive environment from metro Atlanta to coastal cities.' },
-    { icon: 'ShieldCheck', title: 'Trusted GA Salon SEO Partner', description: 'Achieve lasting online success with ethical SEO practices adapted for Georgia salons and spas, building your brand and a devoted clientele in a competitive market.' },
+    { icon: 'TrendingUp', title: 'GA Salon SEO Growth', description: 'Experience exponential growth in appointment bookings and new client acquisition across Georgia. Our SEO strategies are laser-focused on attracting clients actively seeking your premium beauty and spa services, ensuring a continuous influx of high-value customers.' },
+    { icon: 'Lightbulb', title: 'Georgia Beauty Market Mastery', description: 'Benefit from cutting-edge SEO strategies specifically designed for the dynamic GA salon industry. We meticulously analyze regional trends, cater to diverse client needs, and expertly navigate the competitive landscape from the bustling streets of Atlanta to the charming coastal cities, giving you an undeniable edge.' },
+    { icon: 'ShieldCheck', title: 'Trusted Growth Partner', description: 'Achieve enduring online success with our ethical, forward-thinking SEO practices, meticulously adapted for Georgia salons and spas. We build your brand\'s authority and cultivate unwavering client loyalty in a style-conscious state, ensuring long-term profitability and market leadership.' },
   ],
   awards: {
-    clutch: { headline: 'Top GA Salon SEO - Peach Beauty Awards 2024', text: 'Recognized for driving exceptional SEO results for Georgia salons and spas, enhancing their local visibility and client bookings.' },
-    upcity: { headline: 'Georgia Salon SEO Excellence - UpCity 2024', text: 'Awarded for leading SEO services and client success in the Georgia beauty and wellness sector, helping businesses shine.' },
+    clutch: { headline: 'Top GA Salon SEO - Industry Excellence Award 2024', text: 'Recognized for consistently driving exceptional SEO results and significant revenue growth for Georgia salons and spas, setting new benchmarks for digital success.' },
+    upcity: { headline: 'Georgia Salon SEO Leadership - Client Impact Award 2024', text: 'Awarded for unparalleled SEO services and transformative client success in the Georgia beauty and wellness industry, demonstrating profound impact on business expansion.' },
   },
   coverageData: {
     mainHeadline: "Serving Salons & Spas Across the Peach State - Georgia",

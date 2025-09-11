@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Landmark, Fence, Waves } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const virginiaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const virginiaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Virginia Landscaping SEO: Cultivate Growth in the Old Dominion',
     heroSubtitle: 'Connect with More Clients Across Virginia with TRAC\'s Historically Savvy SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Virginia landscaping businesses, helping you thrive from the historic estates of Northern Virginia to the coastal plains of the Chesapeake Bay and the scenic Blue Ridge Mountains. Whether your expertise lies in designing historically appropriate gardens, creating bay-friendly landscapes, providing expert lawn care for diverse Virginian climates, or crafting elegant outdoor living spaces, we can significantly enhance your online visibility. Our team understands Virginia\'s rich heritage, varied geography, and specific horticultural needs. We create SEO strategies that highlight your ability to design and maintain landscapes that complement Virginia\'s charm and environmental considerations. We focus on local search optimization to target your specific service areas in Northern Virginia, Richmond, Hampton Roads, and other communities. Our technical website enhancements and content marketing showcase your stunning Virginia projects and deep knowledge of regional landscaping. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Virginia landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Virginia historic landscape', dataAiHint: 'virginia landscape historic garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Virginia historic landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Virginia Landscaping SEO Quote!',
   },

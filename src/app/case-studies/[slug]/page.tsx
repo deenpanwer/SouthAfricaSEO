@@ -76,7 +76,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           layout="fill"
           objectFit="cover"
           className="brightness-50" // Darken image for text readability
-          data-ai-hint={caseStudy.dataAiHint}
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4 bg-black/40">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">

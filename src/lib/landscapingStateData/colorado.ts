@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, TreePine, Sprout, Leaf, Mountain } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const coloradoLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const coloradoLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Colorado Landscaping SEO: Reach New Heights in the Centennial State',
     heroSubtitle: 'Connect with More Landscaping Clients from Denver to Aspen with TRAC SEO',
     heroDescription: 'TRAC offers expert SEO services for Colorado landscaping businesses, helping you thrive in a state renowned for its stunning natural beauty and challenging high-altitude environments. Whether you specialize in mountain-adaptive designs, xeriscaping, creating outdoor living spaces for the active Colorado lifestyle, or commercial landscaping for ski resorts and Front Range communities, we can elevate your online presence. Our team understands the unique demands of Colorado landscaping, including water conservation, native plant selection for diverse elevations, and designing for four distinct seasons. We create SEO strategies that showcase your expertise and connect you with homeowners and businesses in Denver, Boulder, Colorado Springs, Fort Collins, and mountain towns. We focus on local search optimization, service-specific keyword targeting (e.g., "fire mitigation landscaping Colorado"), and content that highlights your stunning Colorado projects and knowledge of regional horticulture. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Colorado landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Colorado mountain landscape', dataAiHint: 'colorado landscape mountain' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Colorado mountain landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Colorado Landscaping SEO Quote!',
   },

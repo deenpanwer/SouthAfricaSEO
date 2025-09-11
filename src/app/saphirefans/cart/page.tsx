@@ -58,7 +58,6 @@ export default function CartPage() {
                     width={100}
                     height={100}
                     className="rounded-md object-contain border border-slate-200"
-                    data-ai-hint={item.dataAiHint}
                   />
                 </Link>
                 <div className="flex-grow">

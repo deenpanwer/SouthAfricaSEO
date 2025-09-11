@@ -20,7 +20,6 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
           <Image
             src={post.image}
             alt={post.title}
-            data-ai-hint={post.dataAiHint || "blog article"}
             fill={true}
             style={{ objectFit: 'cover' }}
           />

@@ -6,9 +6,36 @@ import type { Testimonial } from '@/types';
 import { TrendingUp, Users, Sparkles, CalendarCheck } from 'lucide-react';
 
 const salonTestimonials: Testimonial[] = [
-  { id: '1', name: "Jessica L.", company: "NYC Glam Studio, NY", quote: "TRAC helped us get noticed in a very competitive market. Our online bookings for bridal services have tripled!", highlightedQuote: "Bridal bookings tripled!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "salon owner portrait" },
-  { id: '2', name: "Maria R.", company: "Atlanta Beauty Haven, GA", quote: "Our spa services are now ranking on the first page for local searches. TRAC's team is fantastic to work with.", highlightedQuote: "First page for spa services!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "spa therapist" },
-  { id: '3', name: "Chloe T.", company: "Upstate Style Bar, NY", quote: "We've seen a steady increase in new clients since starting SEO with TRAC. They really understand the beauty industry.", highlightedQuote: "Steady increase in new clients!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "happy salon client" },
+  {
+    id: '1',
+    name: "Marci Wiersma",
+    company: "Broker – About Roatan Real Estate",
+    quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.",
+    highlightedQuote: "They do everything they say...no BS",
+    avatarUrl: "/home/marci-wiersma.webp",
+    
+    alt: "Marci Wiersma"
+  },
+  {
+    id: '2',
+    name: "Whitney Wells Lewis",
+    company: "Practice Manager – PARC Urology",
+    quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!",
+    highlightedQuote: "These guys are incredible",
+    avatarUrl: "/home/whitney-wells-lewis.webp",
+    
+    alt: "Whitney Wells Lewis"
+  },
+  {
+    id: '3',
+    name: "Chad Montgomery",
+    company: "CEO – Accurate Leak and Line",
+    quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!",
+    highlightedQuote: "Unrivaled customer support",
+    avatarUrl: "/home/chad-montgomery.webp",
+    
+    alt: "Chad Montgomery"
+  },
 ];
 
 interface SalonStateResultsHighlightsProps {
@@ -17,9 +44,9 @@ interface SalonStateResultsHighlightsProps {
 }
 
 const salonResults = [
-    { metric: "Avg. Increase in Online Bookings", value: "+50%", icon: CalendarCheck, dataAiHint: "booking calendar chart" },
-    { metric: "Avg. Growth in Local Search Visibility", value: "+70%", icon: Users, dataAiHint: "local search graph" },
-    { metric: "Avg. Rise in New Client Inquiries", value: "+40%", icon: Sparkles, dataAiHint: "client growth icon" }
+    { metric: "Avg. Increase in Online Bookings", value: "+50%", icon: CalendarCheck },
+    { metric: "Avg. Growth in Local Search Visibility", value: "+70%", icon: Users },
+    { metric: "Avg. Rise in New Client Inquiries", value: "+40%", icon: Sparkles }
 ];
 
 export function SalonStateResultsHighlights({ headline, stateName }: SalonStateResultsHighlightsProps) {
@@ -53,7 +80,6 @@ export function SalonStateResultsHighlights({ headline, stateName }: SalonStateR
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-accent"
-                  data-ai-hint={testimonial.dataAiHint || "salon professional"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5 text-foreground">{testimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{testimonial.company}</p>

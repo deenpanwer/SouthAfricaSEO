@@ -24,7 +24,6 @@ export function ProjectsShowcase() {
                   layout="fill"
                   objectFit="cover"
                   className="transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={project.dataAiHint}
                 />
               </div>
               <div className="p-6 bg-white">

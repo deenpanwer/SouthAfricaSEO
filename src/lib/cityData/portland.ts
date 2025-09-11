@@ -81,8 +81,7 @@ We don't just promise results; we deliver them. Our team provides monthly strate
 Don't let your competitors capture the Portland market. Partner with TRAC, the trusted Portland SEO agency committed to driving your success. We specialize in helping businesses like yours increase online visibility, attract more qualified leads, and ultimately, dominate local search results. Ready to transform your online presence and achieve sustainable growth in Portland? Contact us today for a free SEO analysis and discover the TRAC difference.`,
     heroImage: {
       src: '/trac-seo.jpg',
-      alt: 'Skyline of Portland, Oregon, showcasing TRAC\'s SEO services',
-      dataAiHint: 'portland skyline business'
+      alt: 'Skyline of Portland, Oregon, showcasing TRAC\'s SEO services'
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Portland SEO Audit!',
@@ -120,7 +119,8 @@ Don't let your competitors capture the Portland market. Partner with TRAC, the t
     {
       icon: BarChart2,
       title: 'Transparent SEO Analytics & Reporting for Portland',
-      description: 'Track the success of your Portland SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.'
+      url: '/services/seo-reporting',
+      description: 'Track the success of your Portland SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.',
     },
   ],
   whyChooseSectionHeadline: 'Why TRAC is Your Trusted Portland SEO Partner',

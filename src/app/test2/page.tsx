@@ -21,7 +21,7 @@ const ThriveHeader = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-20">
         <Link href="#" className="flex items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/thrive-logo.svg" alt="Thrive Logo" width={120} height={35} data-ai-hint="company logo" />
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/thrive-logo.svg" alt="Thrive Logo" width={120} height={35} />
         </Link>
         <nav className="hidden md:flex space-x-6 items-center">
           {['SERVICES', 'WORK', 'RESULTS', 'ABOUT', 'LEARN', 'SUPPORT'].map((item) => (
@@ -67,7 +67,7 @@ const HeroSection = () => (
             </button>
           </div>
           <div>
-            <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Badge-Strip-670X60.png" alt="Client Badges" width={670} height={60} data-ai-hint="award badges" />
+            <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/files/Badge-Strip-670X60.png" alt="Client Badges" width={670} height={60} />
           </div>
         </div>
         <div className="relative">
@@ -90,17 +90,17 @@ const PartnerLogosSection = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" data-ai-hint="Google logo reviews" />
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" width={150} height={50} className="mx-auto mb-2" />
           <StarRating rating={5} />
           <p className="text-sm mt-1 text-yellow-400">500+ Reviews</p>
         </div>
         <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" data-ai-hint="Clutch logo" />
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch" width={120} height={40} className="mx-auto mb-2" />
            <StarRating rating={5} />
           <p className="text-sm mt-1 text-yellow-400">200+ Reviews</p>
         </div>
         <div className="flex flex-col items-center">
-          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" data-ai-hint="UpCity logo" />
+          <Image src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d6d7292/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity" width={130} height={45} className="mx-auto mb-2" />
            <StarRating rating={5} />
           <p className="text-sm mt-1 text-yellow-400">150+ Reviews</p>
         </div>
@@ -142,7 +142,6 @@ const ClientResultsSection = () => {
               width={600}
               height={300}
               className="w-full object-cover"
-              data-ai-hint="Client testimonial image 1"
             />
           </div>
           <Modal isOpen={isModalOpen1} onClose={() => setIsModalOpen1(false)}>
@@ -179,7 +178,6 @@ const ClientResultsSection = () => {
               width={600}
               height={300}
               className="w-full object-cover"
-              data-ai-hint="Client testimonial image 2"
             />
           </div>
            <Modal isOpen={isModalOpen2} onClose={() => setIsModalOpen2(false)}>
@@ -236,7 +234,6 @@ const TestimonialsSection = () => {
           width={100} // Adjust width and height as needed
           height={100} // Adjust width and height as needed
           className="rounded-full mx-auto mb-4"
-          data-ai-hint={`Photo of ${testimonial.name}`}
         />
       )}
       <p className="text-gray-600 italic">"{testimonial.quote}"</p>
@@ -329,7 +326,6 @@ const AwardStripSection = () => (
         width={1000} // Adjust width and height as needed
         height={50} // Adjust width and height as needed
         className="mx-auto"
-        data-ai-hint="Award strip image"
       />
     </div>
   </section>
@@ -337,9 +333,9 @@ const AwardStripSection = () => (
 
 const ThriveGrowthInsiderSection = () => {
   const articles = [
-    { title: "10 Reasons Why You Should Transition Your Business to Our Platform", date: "Jan 15, 2024", excerpt: "Businesses are moving their operations and sales platforms more rapidly than ever before. And for...", image: "https://placehold.co/350x200.png?text=Article+1", dataAiHint: "business platform"},
-    { title: "How To Build Your First B2B Web Design That Actually Converts", date: "Jan 18, 2024", excerpt: "If your B2B web design is not properly structured and optimized for conversions, it’s time for a...", image: "https://placehold.co/350x200.png?text=Article+2", dataAiHint: "web design" },
-    { title: "8 Strategies To Get More Direct Bookings and Boost Your Online...", date: "Jan 21, 2024", excerpt: "Is your direct booking channel underperforming? If you are tired of paying high commission rates to...", image: "https://placehold.co/350x200.png?text=Article+3", dataAiHint: "online booking" },
+    { title: "10 Reasons Why You Should Transition Your Business to Our Platform", date: "Jan 15, 2024", excerpt: "Businesses are moving their operations and sales platforms more rapidly than ever before. And for...", image: "https://placehold.co/350x200.png?text=Article+1"},
+    { title: "How To Build Your First B2B Web Design That Actually Converts", date: "Jan 18, 2024", excerpt: "If your B2B web design is not properly structured and optimized for conversions, it’s time for a...", image: "https://placehold.co/350x200.png?text=Article+2" },
+    { title: "8 Strategies To Get More Direct Bookings and Boost Your Online...", date: "Jan 21, 2024", excerpt: "Is your direct booking channel underperforming? If you are tired of paying high commission rates to...", image: "https://placehold.co/350x200.png?text=Article+3" },
   ];
   return (
     <section className="py-16 lg:py-24 bg-gray-100">

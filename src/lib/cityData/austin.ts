@@ -43,7 +43,6 @@ Don't let your competitors dominate the Austin market. Partner with TRAC, the tr
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
       alt: 'SEO Services in Austin, TX',
-      dataAiHint: 'Austin city SEO agency',
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE SEO Audit!',

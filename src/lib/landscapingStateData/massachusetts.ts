@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Landmark } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const massachusettsLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const massachusettsLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Massachusetts Landscaping SEO: Cultivate Success in the Bay State',
     heroSubtitle: 'Connect with More Clients Across Massachusetts with TRAC\'s Historic SEO Insight',
     heroDescription: 'TRAC delivers specialized SEO services for Massachusetts landscaping businesses, helping you flourish from Boston and its historic suburbs to Cape Cod and the Berkshires. Whether you specialize in classic New England garden designs, maintaining historic landscapes, creating modern outdoor living spaces, or providing expert tree and lawn care, we can significantly enhance your online visibility. Our team understands the unique horticultural challenges and aesthetic preferences of Massachusetts, including designing for four distinct seasons and complementing diverse architectural styles. We create SEO strategies that highlight your expertise in local plant knowledge, sustainable practices, and creating beautiful, functional landscapes that thrive in MA. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your stunning Massachusetts projects and deep understanding of regional landscaping needs. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Massachusetts landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Massachusetts New England landscape', dataAiHint: 'massachusetts landscape historic' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Massachusetts New England landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Massachusetts Landscaping SEO Quote!',
   },

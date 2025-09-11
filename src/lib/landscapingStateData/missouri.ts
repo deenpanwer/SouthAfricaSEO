@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Waves, Mountain } from 'lucide-react'; // Assuming Waves for rivers, Mountain for Ozarks
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const missouriLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const missouriLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Missouri Landscaping SEO: Show Me Your Growth in the Show-Me State',
     heroSubtitle: 'Connect with More Clients Across Missouri with TRAC\'s Strategic SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Missouri landscaping businesses, helping you flourish from the urban centers of St. Louis and Kansas City to the scenic Ozark Mountains and agricultural plains. Whether your expertise lies in creating stunning four-season gardens, designing beautiful outdoor living spaces, providing expert lawn care, or crafting sustainable native Missouri landscapes, we can significantly boost your online visibility. Our team understands the unique challenges of Missouri\'s climate and the diverse needs of its residents. We create SEO strategies that highlight your ability to design and maintain landscapes that thrive in the Show-Me State. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your beautiful Missouri projects and deep knowledge of regional horticulture and seasonal care. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Missouri landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Missouri landscape with river or Ozark hills', dataAiHint: 'missouri landscape river' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Missouri landscape with river or Ozark hills' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Missouri Landscaping SEO Quote!',
   },

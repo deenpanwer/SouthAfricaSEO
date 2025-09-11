@@ -63,7 +63,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Alex Chen',
     company: 'Innovate Solutions Ltd.',
     avatarUrl: 'https://tse2.mm.bing.net/th?id=OIP.8gfW4VLy8s-icI5yOXd4SQHaDE&pid=Api&P=0&h=220',
-    dataAiHint: 'happy person',
     quote: "TRAC transformed our online strategy! We've seen a 150% increase in qualified leads and our sales have doubled. Their market understanding is unparalleled.",
     location: 'New York, USA',
   },
@@ -72,7 +71,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Priya Sharma',
     company: 'Global Goods Co.',
     avatarUrl: 'https://tse3.mm.bing.net/th?id=OIP.tzXyry6oTAofbQURf-1OWQAAAA&pid=Api&P=0&h=220',
-    dataAiHint: 'business owner',
     quote: "The team at TRAC is professional, knowledgeable, and truly cares about their clients' success. Our conversions have improved dramatically, and we're now achieving goals we never thought possible.",
     location: 'London, UK',
   },
@@ -81,7 +79,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Marcus Johnson',
     company: 'TechForward Inc.',
     avatarUrl: 'https://tse2.mm.bing.net/th?id=OIP.fr6SX0x279_2W-UCrzHp0gHaGF&pid=Api&P=0&h=220',
-    dataAiHint: 'smiling professional',
     quote: "Since partnering with TRAC, our lead generation has gone through the roof. Their strategic approach to business growth has delivered outstanding ROI. Highly recommended!",
     location: 'Toronto, CA',
   },
@@ -138,8 +135,7 @@ export const ABOUT_US_CONTENT = {
   mission: {
     title: "Our Mission",
     text: "To empower businesses with effective, data-driven solutions that drive sustainable growth, increase brand authority, and maximize return on investment.",
-    imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    dataAiHint: "team meeting"
+    imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   expertise: {
     title: "Our Expertise",
@@ -150,15 +146,14 @@ export const ABOUT_US_CONTENT = {
       { title: "Client-Centric Approach", text: "Building long-term partnerships through personalized service and a deep understanding of your business goals.", icon: Users2 },
       { title: "Cutting-Edge Techniques", text: "Staying ahead of market trends and technological updates to keep your business at the forefront.", icon: Lightbulb }
     ],
-    imageUrl: "https://images.pexels.com/photos/6476787/pexels-photo-6476787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    dataAiHint: "business analytics"
+    imageUrl: "https://images.pexels.com/photos/6476787/pexels-photo-6476787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   team: {
     title: "Meet Our Team (Placeholder)",
     members: [
-      { name: "Eleanor Vance", role: "Lead Strategist", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.Nw1A3CGvx46PBqyzaRirGQHaKs&pid=Api&P=0&h=220", dataAiHint: "professional woman portrait" },
-      { name: "Marcus Bellwether", role: "Technical Analyst", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.0ruIqpQD6EIyDpmrYzOsCQHaKR&pid=Api&P=0&h=220", dataAiHint: "professional man portrait" },
-      { name: "Sarah Chen", role: "Growth Marketing Manager", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.A1CwO5Q3kquQPVeE9y4WWgHaJ9&pid=Api&P=0&h=220", dataAiHint: "creative professional portrait" },
+      { name: "Eleanor Vance", role: "Lead Strategist", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.Nw1A3CGvx46PBqyzaRirGQHaKs&pid=Api&P=0&h=220" },
+      { name: "Marcus Bellwether", role: "Technical Analyst", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.0ruIqpQD6EIyDpmrYzOsCQHaKR&pid=Api&P=0&h=220" },
+      { name: "Sarah Chen", role: "Growth Marketing Manager", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.A1CwO5Q3kquQPVeE9y4WWgHaJ9&pid=Api&P=0&h=220" },
     ],
     description: "Our team comprises passionate professionals, content creators, and digital strategists with years of experience in various markets. We are committed to your success."
   }
@@ -202,23 +197,23 @@ export const IMPORTANCE_OF_STRATEGY = {
 
 
 export const CLIENT_LOGOS: ClientLogo[] = [
-  { name: "Stripe", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.d7mpW7AVZHnqXoWiBgkCygHaEC&pid=Api&P=0&h=220", dataAiHint: "Stripe logo" },
-  { name: "Shopify", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.aRtM1aecf3rhXfOiCns0KgHaHa&pid=Api&P=0&h=220", dataAiHint: "Shopify logo" },
-  { name: "Slack", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.WETwKh7Ac2sdebsjlGJpvAHaHa&pid=Api&P=0&h=220", dataAiHint: "Slack logo" },
-  { name: "Notion", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.6oungoYf52D38a_1sksuPQHaHa&pid=Api&P=0&h=220", dataAiHint: "Notion logo" },
-  { name: "Figma", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.4NOdRAXrmLTpCETPXn946QHaHa&pid=Api&P=0&h=220", dataAiHint: "Figma logo" },
-  { name: "Airbnb", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.iCWL9J0ViHJP3TWfgRyHUAHaHa&pid=Api&P=0&h=220", dataAiHint: "Airbnb logo" },
-  { name: "Asana", imageUrl: "https://tse3.mm.bing.net/th?id=OIP.jGfiSLa32Cr_WNRoesUIPAHaG8&pid=Api&P=0&h=220", dataAiHint: "Asana logo" },
-  { name: "Zoom", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.ehJr3lVyQCfrDNpCi8AE5QHaGo&pid=Api&P=0&h=220", dataAiHint: "Zoom logo" },
-  { name: "Intercom", imageUrl: "https://tse3.mm.bing.net/th?id=OIP.aZourqZHtinlXtgxi-E4FwHaH-&pid=Api&P=0&h=220", dataAiHint: "Intercom logo" },
-  { name: "Dropbox", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.BK-Ix8qMi__ka6NDk2OOLwHaFZ&pid=Api&P=0&h=220", dataAiHint: "Dropbox logo" },
+  { name: "Stripe", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.d7mpW7AVZHnqXoWiBgkCygHaEC&pid=Api&P=0&h=220" },
+  { name: "Shopify", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.aRtM1aecf3rhXfOiCns0KgHaHa&pid=Api&P=0&h=220" },
+  { name: "Slack", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.WETwKh7Ac2sdebsjlGJpvAHaHa&pid=Api&P=0&h=220" },
+  { name: "Notion", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.6oungoYf52D38a_1sksuPQHaHa&pid=Api&P=0&h=220" },
+  { name: "Figma", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.4NOdRAXrmLTpCETPXn946QHaHa&pid=Api&P=0&h=220" },
+  { name: "Airbnb", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.iCWL9J0ViHJP3TWfgRyHUAHaHa&pid=Api&P=0&h=220" },
+  { name: "Asana", imageUrl: "https://tse3.mm.bing.net/th?id=OIP.jGfiSLa32Cr_WNRoesUIPAHaG8&pid=Api&P=0&h=220" },
+  { name: "Zoom", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.ehJr3lVyQCfrDNpCi8AE5QHaGo&pid=Api&P=0&h=220" },
+  { name: "Intercom", imageUrl: "https://tse3.mm.bing.net/th?id=OIP.aZourqZHtinlXtgxi-E4FwHaH-&pid=Api&P=0&h=220" },
+  { name: "Dropbox", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.BK-Ix8qMi__ka6NDk2OOLwHaFZ&pid=Api&P=0&h=220" },
 ];
 
 export const PARTNER_LOGOS: ClientLogo[] = [
-  { name: "Google Reviews", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.GJAOB-_MyXKLOBPd1AEpNgHaEK&pid=Api&P=0&h=220", dataAiHint: "Google Reviews logo" },
-  { name: "Clutch", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.KarYa2qk0vIUK3imqEd33QHaHa&pid=Api&P=0&h=220", dataAiHint: "Clutch logo" },
-  { name: "G2", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.BQI4Vfrnz19kbl-HGmS-DQAAAA&pid=Api&P=0&h=220", dataAiHint: "G2 logo" },
-  { name: "Trustpilot", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.QgS4nIqcKaCdNj0D6fAX9wHaEK&pid=Api&P=0&h=220", dataAiHint: "Trustpilot logo" },
+  { name: "Google Reviews", imageUrl: "https://tse1.mm.bing.net/th?id=OIP.GJAOB-_MyXKLOBPd1AEpNgHaEK&pid=Api&P=0&h=220" },
+  { name: "Clutch", imageUrl: "https://tse4.mm.bing.net/th?id=OIP.KarYa2qk0vIUK3imqEd33QHaHa&pid=Api&P=0&h=220" },
+  { name: "G2", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.BQI4Vfrnz19kbl-HGmS-DQAAAA&pid=Api&P=0&h=220" },
+  { name: "Trustpilot", imageUrl: "https://tse2.mm.bing.net/th?id=OIP.QgS4nIqcKaCdNj0D6fAX9wHaEK&pid=Api&P=0&h=220" },
 ];
 
 export const STATS_DATA: StatItem[] = [

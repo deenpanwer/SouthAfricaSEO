@@ -7,9 +7,33 @@ import { TrendingUp, Users, Car, Tag } from 'lucide-react';
 
 // Placeholder testimonials - replace with actual auto dealer testimonials
 const autoDealerTestimonials: Testimonial[] = [
-  { id: '1', name: "Mike R.", company: "Texas Drive Autos, TX", quote: "TRAC's SEO strategy significantly increased our website leads for used trucks. We're seeing more local buyers than ever!", highlightedQuote: "Increased leads for used trucks!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "dealership manager" },
-  { id: '2', name: "Linda K.", company: "Michigan Motors, MI", quote: "Our online inventory visibility improved dramatically after partnering with TRAC. Their team is responsive and results-oriented.", highlightedQuote: "Inventory visibility improved!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "salesperson portrait" },
-  { id: '3', name: "David P.", company: "Lone Star Cars, TX", quote: "We've seen a great ROI from TRAC's SEO services. More online inquiries are converting to showroom visits.", highlightedQuote: "Great ROI from SEO!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "happy car buyer" },
+  {
+    id: '1',
+    name: "Marci Wiersma",
+    company: "Broker – About Roatan Real Estate",
+    quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.",
+    highlightedQuote: "They do everything they say...no BS",
+    avatarUrl: "/home/marci-wiersma.webp",
+    alt: "Marci Wiersma"
+  },
+  {
+    id: '2',
+    name: "Whitney Wells Lewis",
+    company: "Practice Manager – PARC Urology",
+    quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!",
+    highlightedQuote: "These guys are incredible",
+    avatarUrl: "/home/whitney-wells-lewis.webp",
+    alt: "Whitney Wells Lewis"
+  },
+  {
+    id: '3',
+    name: "Chad Montgomery",
+    company: "CEO – Accurate Leak and Line",
+    quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!",
+    highlightedQuote: "Unrivaled customer support",
+    avatarUrl: "/home/chad-montgomery.webp",
+    alt: "Chad Montgomery"
+  },
 ];
 
 interface AutoDealerStateResultsHighlightsProps {
@@ -18,9 +42,9 @@ interface AutoDealerStateResultsHighlightsProps {
 }
 
 const autoDealerResults = [
-    { metric: "Avg. Increase in Website Leads", value: "+35%", icon: TrendingUp, dataAiHint: "lead generation graph" },
-    { metric: "Avg. Growth in Online Inventory Views", value: "+50%", icon: Car, dataAiHint: "car views chart" },
-    { metric: "Avg. Rise in Local SEO Rankings", value: "+40%", icon: Users, dataAiHint: "local ranking icon" }
+    { metric: "Avg. Increase in Website Leads", value: "+35%", icon: TrendingUp },
+    { metric: "Avg. Growth in Online Inventory Views", value: "+50%", icon: Car },
+    { metric: "Avg. Rise in Local SEO Rankings", value: "+40%", icon: Users }
 ];
 
 export function AutoDealerStateResultsHighlights({ headline, stateName }: AutoDealerStateResultsHighlightsProps) {
@@ -54,7 +78,6 @@ export function AutoDealerStateResultsHighlights({ headline, stateName }: AutoDe
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-accent"
-                  data-ai-hint={testimonial.dataAiHint || "dealership staff"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5 text-foreground">{testimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{testimonial.company}</p>

@@ -37,7 +37,7 @@ Our comprehensive Lahore SEO campaigns begin with a deep dive into your current 
 Whether you're a burgeoning tech startup in DHA, an established educational institution in Model Town, a thriving retail business in Liberty Market, or a service provider in Johar Town, TRAC has a proven track record of helping Lahore businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local and industry-specific SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Lahore market. Partner with TRAC, the trusted Lahore SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local and industry-specific search results. Ready to grow your Lahore business and secure your position at the forefront of local and industrial search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Lahore, Pakistan', dataAiHint: 'Lahore badshahi mosque' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Lahore, Pakistan' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Lahore SEO Analysis!',
   },

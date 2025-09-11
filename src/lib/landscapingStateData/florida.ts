@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, Settings, Users, Mail, TrendingUp, Lightbulb, ShieldCheck, TreePine, Sprout, Leaf, Sun } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const floridaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const floridaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Florida Landscaping SEO: Make Your Business Shine in the Sunshine State',
     heroSubtitle: 'Attract More Landscaping Clients from Miami to Orlando with TRAC SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Florida landscaping businesses, helping you thrive in a state known for its lush tropical environments and high demand for beautiful outdoor spaces. Whether you specialize in coastal landscaping, palm tree care, pool-enhancing designs, or sustainable Florida-friendly yards, we can boost your online visibility. Our team understands the unique challenges of landscaping in Florida, from hurricane preparedness to managing tropical pests and selecting heat-tolerant plants. We create SEO strategies that highlight your expertise and connect you with homeowners and commercial clients across the Sunshine State, including major markets like Miami, Orlando, Tampa, Jacksonville, and Fort Lauderdale. We focus on local search optimization, service-specific keyword targeting, and creating content that showcases your stunning Florida projects, attracting customers seeking your specific skills.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Tropical Florida landscape', dataAiHint: 'florida landscape palm' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Tropical Florida landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Florida Landscaping SEO Quote!',
   },

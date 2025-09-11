@@ -40,7 +40,6 @@ Don't let your competitors dominate the Chicago market. Partner with TRAC, the t
     heroImage: {
       src: GENERIC_CITY_HERO_IMAGE_SRC,
       alt: "Chicago city skyline, illustrating TRAC's SEO services",
-      dataAiHint: 'chicago skyline buildings'
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE SEO Plan!'

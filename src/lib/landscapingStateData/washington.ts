@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Waves } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const washingtonLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const washingtonLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Washington Landscaping SEO: Grow Your Business in the Evergreen State',
     heroSubtitle: 'Connect with More Clients Across Washington with TRAC\'s PNW-Focused SEO',
     heroDescription: 'TRAC provides specialized SEO services for Washington State landscaping businesses, helping you thrive from the Puget Sound to the Inland Northwest. Whether you specialize in Pacific Northwest native plant gardens, eco-friendly designs, urban landscaping in Seattle, or creating beautiful outdoor spaces that embrace Washington\'s diverse microclimates, we can elevate your online presence. Our team understands the unique horticultural needs of the Evergreen State, from managing rainy conditions to selecting plants suitable for varied terrains. We create SEO strategies that highlight your expertise in sustainable practices, rainwater harvesting, and designing for year-round interest. We focus on local search optimization to target your specific service areas in Seattle, Tacoma, Spokane, Vancouver, and other communities. Our technical website enhancements and content marketing showcase your stunning Washington projects and deep knowledge of regional landscaping. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Washington landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Washington State evergreen landscape', dataAiHint: 'washington landscape forest' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Washington State evergreen landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Washington Landscaping SEO Quote!',
   },

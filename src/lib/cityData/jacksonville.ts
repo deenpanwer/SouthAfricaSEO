@@ -37,7 +37,7 @@ Our comprehensive Jacksonville SEO campaigns begin with a deep dive into your cu
 Whether you're a burgeoning tech startup in San Marco, an established law firm in the Northbank, a thriving restaurant in Five Points, or a service provider in Orange Park, TRAC has a proven track record of helping Jacksonville businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local and industry-specific SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Jacksonville market. Partner with TRAC, the trusted Jacksonville SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local and industry-specific search results. Ready to grow your Jacksonville business and secure your position at the forefront of local and industrial search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Jacksonville, FL', dataAiHint: 'Jacksonville city beach SEO' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Jacksonville, FL' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Jacksonville SEO Audit!',
   },

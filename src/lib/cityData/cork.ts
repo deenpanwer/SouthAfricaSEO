@@ -38,7 +38,7 @@ Our comprehensive Cork SEO campaigns begin with a deep dive into your current on
 Whether you're a burgeoning startup in the tech sector, an established professional service firm in the city center, a thriving restaurant in Kinsale, or a service provider in Ballincollig, TRAC has a proven track record of helping Cork businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Cork market. Partner with TRAC, the trusted Cork SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local search results. Ready to grow your Cork business and secure your position at the forefront of local search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Cork, Ireland', dataAiHint: 'Cork city business' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Cork, Ireland' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE SEO Analysis!',
   },

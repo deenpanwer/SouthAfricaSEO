@@ -16,7 +16,6 @@ const posts: EnviroPost[] = [
         date: "2024-07-15",
         excerpt: "Learn about the benefits of low-VOC and zero-VOC paints, from improved air quality to long-lasting durability.",
         imageUrl: "https://tse1.mm.bing.net/th/id/OIP.uv-n7uBViMjwHiDk395kYgHaEK?pid=Api&P=0&h=220",
-        dataAiHint: "paint can with leaf",
         category: "Sustainability",
         tags: ["Eco-Friendly", "Health", "Painting Tips"],
     },
@@ -26,7 +25,6 @@ const posts: EnviroPost[] = [
         date: "2024-07-10",
         excerpt: "Ready for a change? Discover the colors that are defining interior design this year, from earthy tones to bold accent hues.",
         imageUrl: "https://tse4.mm.bing.net/th/id/OIP.VXjq3MHzBgjvNV4KaUpkMwHaFF?pid=Api&P=0&h=220",
-        dataAiHint: "paint swatches wall",
         category: "Design Trends",
         tags: ["Color Theory", "Interior Design", "Trends"],
     },
@@ -36,7 +34,6 @@ const posts: EnviroPost[] = [
         date: "2024-07-01",
         excerpt: "A flawless finish doesn't start with the first coat of paint. It starts with meticulous preparation. Learn why we never skip this crucial step.",
         imageUrl: "https://tse2.mm.bing.net/th/id/OIP.QBlSVPT_80jZIof0WMfYBQHaF7?pid=Api&P=0&h=220",
-        dataAiHint: "painter taping wall",
         category: "Painting Tips",
         tags: ["DIY", "Professional Painting", "Quality"],
     }

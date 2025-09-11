@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const ohioLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const ohioLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Ohio Landscaping SEO: Grow Your Business in the Buckeye State',
     heroSubtitle: 'Connect with More Landscaping Clients from Cleveland to Cincinnati with TRAC SEO',
     heroDescription: 'TRAC delivers expert SEO services for Ohio landscaping businesses, helping you thrive in a state known for its diverse landscapes and strong community focus. Whether you serve clients in major cities like Cleveland, Columbus, and Cincinnati, or in suburban and rural areas, we tailor strategies to your unique market. Our SEO services help landscapers specializing in four-season garden design, lawn care programs, sustainable landscaping, or custom hardscaping projects to significantly increase their online visibility and attract a consistent flow of qualified local leads. We understand Ohio\'s climate, native plant species, and homeowner preferences. Our approach includes local SEO optimization, technical website enhancements, and content marketing that showcases your Ohio projects and expertise in creating beautiful, functional outdoor spaces. Partner with TRAC to cultivate a robust online presence for your Ohio landscaping business and achieve measurable, sustainable growth.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Ohio landscape with buckeye trees', dataAiHint: 'ohio landscape garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Ohio landscape with buckeye trees' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Ohio Landscaping SEO Quote!',
   },

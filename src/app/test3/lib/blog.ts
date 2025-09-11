@@ -7,7 +7,6 @@ export interface EnviroPost {
   date: string;
   excerpt: string;
   imageUrl: string;
-  dataAiHint: string;
   category: string;
   tags: string[];
   content?: string;

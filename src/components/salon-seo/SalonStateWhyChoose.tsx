@@ -66,8 +66,8 @@ export function SalonStateWhyChoose({ headline, intro, points, whyChooseParagrap
           </div>
           <div className="md:w-1/2 relative group cursor-pointer" onClick={() => setIsModalOpen(true)}>
             <Image
-                src={videoThumbnailUrl}
-                alt={videoThumbnailAlt.replace('[StateName]', stateName)}
+                src="/home/Our-Team.webp"
+                alt="Our Team"
                 width={600} height={338}
                 className="rounded-md shadow-lg w-full h-auto object-cover"
                 data-ai-hint="salon team video"

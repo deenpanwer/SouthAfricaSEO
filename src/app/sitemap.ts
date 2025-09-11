@@ -1,6 +1,6 @@
 
 import type { MetadataRoute } from 'next';
-import { getAllBlogPosts } from '@/lib/blogService';
+import { getContentfulBlogPosts as getAllBlogPosts } from '@/lib/contentfulBlogService';
 import { CITIES_DATA } from '@/lib/cityConstants.tsx';
 import { LANDSCAPING_STATES_DATA } from '@/lib/landscapingStateConstants';
 import { VETERINARY_STATES_DATA } from '@/lib/veterinaryStateConstants';
@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogPostEntries = blogPosts.map(post => ({
     url: `${domain}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.publicationDate),
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

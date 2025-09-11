@@ -45,7 +45,7 @@ Our comprehensive Denver SEO campaigns begin with a deep dive into your current 
 Whether you're a burgeoning tech startup in LoDo, an established law firm in Capitol Hill, a thriving restaurant in Highland, or a service provider in the DTC area, TRAC has a proven track record of helping Denver businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Denver market. Partner with TRAC, the trusted Denver SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local search results. Ready to grow your Denver business and secure your position at the forefront of local search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Denver, CO', dataAiHint: 'Denver city mountains' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Denver, CO' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Denver SEO Proposal!',
   },

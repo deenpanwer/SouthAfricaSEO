@@ -6,9 +6,36 @@ import type { Testimonial } from '@/types';
 import { TrendingUp, Users, Wrench, Settings } from 'lucide-react';
 
 const autoRepairTestimonials: Testimonial[] = [
-  { id: '1', name: "Tom B.", company: "Keystone Auto Care, PA", quote: "TRAC's SEO work has brought a steady flow of new customers to our shop. We're busier than ever!", highlightedQuote: "Busier than ever!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "mechanic portrait" },
-  { id: '2', name: "Maria G.", company: "Buckeye Car Repairs, OH", quote: "Our rankings for specific repair services like 'brake repair Columbus' have significantly improved thanks to TRAC.", highlightedQuote: "Rankings significantly improved!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "auto shop owner" },
-  { id: '3', name: "Kevin S.", company: "Philly Tune-Up, PA", quote: "The team is professional and delivers on their promises. Our online presence is much stronger now.", highlightedQuote: "Online presence stronger!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "satisfied customer" },
+  {
+    id: '1',
+    name: "Marci Wiersma",
+    company: "Broker – About Roatan Real Estate",
+    quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.",
+    highlightedQuote: "They do everything they say...no BS",
+    avatarUrl: "/home/marci-wiersma.webp",
+    
+    alt: "Marci Wiersma"
+  },
+  {
+    id: '2',
+    name: "Whitney Wells Lewis",
+    company: "Practice Manager – PARC Urology",
+    quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!",
+    highlightedQuote: "These guys are incredible",
+    avatarUrl: "/home/whitney-wells-lewis.webp",
+    
+    alt: "Whitney Wells Lewis"
+  },
+  {
+    id: '3',
+    name: "Chad Montgomery",
+    company: "CEO – Accurate Leak and Line",
+    quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!",
+    highlightedQuote: "Unrivaled customer support",
+    avatarUrl: "/home/chad-montgomery.webp",
+    
+    alt: "Chad Montgomery"
+  },
 ];
 
 interface AutoRepairStateResultsHighlightsProps {
@@ -17,9 +44,9 @@ interface AutoRepairStateResultsHighlightsProps {
 }
 
 const autoRepairResults = [
-    { metric: "Avg. Increase in Repair Bookings", value: "+40%", icon: TrendingUp, dataAiHint: "booking increase chart" },
-    { metric: "Avg. Growth in Local Search Calls", value: "+55%", icon: Users, dataAiHint: "phone call increase" },
-    { metric: "Avg. Improvement in Service Keyword Rankings", value: "+30%", icon: Wrench, dataAiHint: "keyword ranking graph" }
+    { metric: "Avg. Increase in Repair Bookings", value: "+40%", icon: TrendingUp },
+    { metric: "Avg. Growth in Local Search Calls", value: "+55%", icon: Users },
+    { metric: "Avg. Improvement in Service Keyword Rankings", value: "+30%", icon: Wrench }
 ];
 
 export function AutoRepairStateResultsHighlights({ headline, stateName }: AutoRepairStateResultsHighlightsProps) {
@@ -53,7 +80,6 @@ export function AutoRepairStateResultsHighlights({ headline, stateName }: AutoRe
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-accent"
-                  data-ai-hint={testimonial.dataAiHint || "mechanic shop staff"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5 text-foreground">{testimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{testimonial.company}</p>

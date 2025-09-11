@@ -36,7 +36,7 @@ Our comprehensive Faisalabad SEO campaigns begin with a deep dive into your curr
 Whether you're a burgeoning textile exporter in Millat Town, an established manufacturing firm in the industrial zone, a thriving agricultural business in Jaranwala, or a service provider in D-Ground, TRAC has a proven track record of helping Faisalabad businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local and industry-specific SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Faisalabad market. Partner with TRAC, the trusted Faisalabad SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local and industry-specific search results. Ready to grow your Faisalabad business and secure your position at the forefront of local and industrial search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Faisalabad, Pakistan', dataAiHint: 'Faisalabad textile industry' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Faisalabad, Pakistan' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Faisalabad SEO Audit!',
   },

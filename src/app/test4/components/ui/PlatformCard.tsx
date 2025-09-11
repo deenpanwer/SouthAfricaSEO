@@ -9,7 +9,6 @@ interface Platform {
   title: string;
   description: string;
   imageUrl: string;
-  dataAiHint: string;
   link: string;
 }
 
@@ -26,7 +25,6 @@ const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => {
         layout="fill"
         objectFit="cover"
         className="transition-transform duration-500 ease-in-out group-hover:scale-105 opacity-50 group-hover:opacity-70"
-        data-ai-hint={platform.dataAiHint}
       />
       <div className="absolute inset-0 flex items-start justify-start p-6 md:p-8">
         <div 

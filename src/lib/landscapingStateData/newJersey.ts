@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Waves, Building } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const newJerseyLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const newJerseyLandscapingData: LandscapingStatePageData = {
     heroTitle: 'New Jersey Landscaping SEO: Grow Your Business in the Garden State',
     heroSubtitle: 'Connect with More Clients Across New Jersey with TRAC\'s Targeted SEO',
     heroDescription: 'TRAC delivers specialized SEO services for New Jersey landscaping businesses, helping you flourish from the dense suburban communities of North Jersey to the coastal towns of the Jersey Shore and the agricultural areas of South Jersey. Whether your expertise lies in creating beautiful residential gardens, maintaining pristine commercial properties, designing intricate hardscapes, or providing expert lawn care and seasonal cleanups, we can significantly enhance your online visibility. Our team understands the unique horticultural needs and aesthetic preferences across New Jersey, including designing for four distinct seasons and varying soil conditions. We create SEO strategies that highlight your expertise in local plant knowledge, sustainable practices, and creating functional, attractive outdoor living spaces. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your stunning New Jersey projects and deep understanding of regional landscaping needs. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your New Jersey landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'New Jersey suburban landscape', dataAiHint: 'new jersey landscape suburban' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'New Jersey suburban landscape' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free New Jersey Landscaping SEO Quote!',
   },

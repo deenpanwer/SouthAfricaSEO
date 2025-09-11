@@ -57,7 +57,6 @@ export function AutoDealerStateHeroSection({ stateData, stateName }: AutoDealerS
                 width={600}
                 height={400}
                 layout="responsive"
-                data-ai-hint={heroImage.dataAiHint || "car dealership"}
                 priority
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-opacity">

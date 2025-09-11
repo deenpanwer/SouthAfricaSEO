@@ -26,8 +26,8 @@ export function CityServicesGrid({ headline, subheadline, services }: CityServic
                       <div className="flex-shrink-0 p-3 rounded-full bg-green-100">
                         {service.icon && <service.icon className="h-8 w-8 text-orange-500" />}
                       </div>
-                      {/* Title for linked cards: white text, orange on hover */}
-                      <CardTitle className="text-white hover:text-orange-500">{service.title}</CardTitle>
+                      {/* Title for linked cards: black text, orange on hover */}
+                      <CardTitle className="text-black hover:text-orange-500">{service.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>

@@ -84,7 +84,7 @@ Whether you're a growing retail store on High Street, an established hotel near 
 We don't just promise results; we deliver them. Our team provides monthly strategy sessions, detailed performance dashboards, and content calendars, keeping you informed and involved every step of the way. Our ethical, white-hat SEO tactics build long-term equity, protecting your rankings and fostering trust with both search engines and your customers.
 
 Don't let your competitors capture the Kilkenny market. Partner with TRAC, the trusted Kilkenny SEO agency committed to driving your success. We specialize in helping businesses like yours increase online visibility, attract more qualified leads, and ultimately, dominate local search results. Ready to transform your online presence and achieve sustainable growth in Kilkenny? Contact us today for a free SEO analysis and discover the TRAC difference.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'Kilkenny Castle', dataAiHint: 'Kilkenny city castle' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'Kilkenny Castle' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Kilkenny SEO Audit!',
   },
@@ -96,32 +96,38 @@ Don't let your competitors capture the Kilkenny market. Partner with TRAC, the t
     {
       icon: Search,
       title: 'Kilkenny Local SEO Excellence',
+      url: '/services/local-seo',
       description: 'Dominate local search results in Kilkenny. We optimize your Google Business Profile, build authoritative local citations, and implement geo-targeted keyword strategies to connect your business with customers actively searching in your Kilkenny neighborhoods. This is crucial for brick-and-mortar stores and service-area businesses aiming for local market penetration, ensuring you appear for "near me" searches and in the Google Local Pack for Kilkenny.'
     },
     {
       icon: Settings,
       title: 'Advanced Technical SEO for Kilkenny Websites',
+      url: '/services/technical-seo',
       description: 'Ensure your website is technically sound for optimal search engine crawling, indexing, and ranking. Our Kilkenny SEO experts conduct in-depth audits focusing on site speed (Core Web Vitals), mobile-friendliness, structured data implementation (Schema.org markup), XML sitemap optimization, and robots.txt management, critical for performing well in competitive Kilkenny search results.'
     },
     {
       icon: Users,
       title: 'In-Depth Keyword Research & Strategy for the Kilkenny Market',
+      url: '/services/keyword-research',
       description: 'We identify high-intent keywords that Kilkenny consumers and businesses are actively searching for. Our comprehensive research, including long-tail keywords and competitor analysis, forms the foundation of a targeted SEO strategy, ensuring we attract relevant organic traffic that is more likely to convert into leads and sales for your Kilkenny-based operations.'
     },
     {
       icon: Briefcase,
       title: 'E-commerce SEO Solutions for Kilkenny Retailers',
+      url: '/services/ecommerce-optimization',
       description: 'Drive more sales for your Kilkenny-based online store with our specialized e-commerce SEO services. We optimize product pages, category structures, implement effective strategies for faceted navigation, and manage technical aspects like canonicalization and pagination to ensure your products are found by eager buyers in the Kilkenny area and beyond.'
     },
     {
       icon: Mail,
       title: 'Strategic Content Marketing for Kilkenny SEO',
+      url: '/services/content-marketing',
       description: 'Create authoritative, engaging, and Kilkenny-relevant content that resonates with your target audience and attracts valuable backlinks. Our content strategies focus on establishing your brand as a thought leader, improving search engine rankings through topic clusters and pillar pages, and guiding Kilkenny users through the conversion funnel with valuable information.'
     },
     {
       icon: BarChart2,
       title: 'Transparent SEO Analytics & Reporting for Kilkenny',
-      description: 'Track the success of your Kilkenny SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.'
+      url: '/services/seo-reporting',
+      description: 'Track the success of your Kilkenny SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.',
     },
   ],
   whyChooseSectionHeadline: 'Why TRAC is Your Trusted Kilkenny SEO Partner',

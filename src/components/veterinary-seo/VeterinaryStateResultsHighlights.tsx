@@ -6,9 +6,33 @@ import type { Testimonial } from '@/types';
 import { TrendingUp, Users, HeartHandshake, Stethoscope } from 'lucide-react';
 
 const vetTestimonials: Testimonial[] = [
-  { id: '1', name: "Dr. Emily Carter", company: "Happy Paws Clinic, CA", quote: "TRAC's SEO services helped us reach so many more pet owners in our community. Our appointment bookings have significantly increased!", highlightedQuote: "Appointment bookings increased!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "smiling veterinarian" },
-  { id: '2', name: "John Miller", company: "Sunshine Animal Hospital, FL", quote: "Since working with TRAC, our online visibility for emergency vet services has skyrocketed. They truly understand the local market.", highlightedQuote: "Visibility skyrocketed!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "vet with dog" },
-  { id: '3', name: "Dr. Sarah Chen", company: "Advanced Pet Care, CA", quote: "The team at TRAC is knowledgeable and responsive. They've helped us attract clients for our specialized veterinary services.", highlightedQuote: "Attracted specialized clients!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "vet professional" },
+  {
+    id: '1',
+    name: "Marci Wiersma",
+    company: "Broker – About Roatan Real Estate",
+    quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.",
+    highlightedQuote: "They do everything they say...no BS",
+    avatarUrl: "/home/marci-wiersma.webp",
+    alt: "Marci Wiersma"
+  },
+  {
+    id: '2',
+    name: "Whitney Wells Lewis",
+    company: "Practice Manager – PARC Urology",
+    quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!",
+    highlightedQuote: "These guys are incredible",
+    avatarUrl: "/home/whitney-wells-lewis.webp",
+    alt: "Whitney Wells Lewis"
+  },
+  {
+    id: '3',
+    name: "Chad Montgomery",
+    company: "CEO – Accurate Leak and Line",
+    quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!",
+    highlightedQuote: "Unrivaled customer support",
+    avatarUrl: "/home/chad-montgomery.webp",
+    alt: "Chad Montgomery"
+  },
 ];
 
 interface VeterinaryStateResultsHighlightsProps {
@@ -17,9 +41,9 @@ interface VeterinaryStateResultsHighlightsProps {
 }
 
 const vetResults = [
-    { metric: "Avg. Increase in New Patient Calls", value: "+45%", icon: TrendingUp, dataAiHint: "phone call graph" },
-    { metric: "Avg. Growth in Local Map Visibility", value: "+60%", icon: Users, dataAiHint: "map pin chart" },
-    { metric: "Avg. Rise in Online Appointment Bookings", value: "+30%", icon: HeartHandshake, dataAiHint: "calendar booking icon" }
+    { metric: "Avg. Increase in New Patient Calls", value: "+45%", icon: TrendingUp },
+    { metric: "Avg. Growth in Local Map Visibility", value: "+60%", icon: Users },
+    { metric: "Avg. Rise in Online Appointment Bookings", value: "+30%", icon: HeartHandshake }
 ];
 
 export function VeterinaryStateResultsHighlights({ headline, stateName }: VeterinaryStateResultsHighlightsProps) {
@@ -53,7 +77,6 @@ export function VeterinaryStateResultsHighlights({ headline, stateName }: Veteri
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-accent"
-                  data-ai-hint={testimonial.dataAiHint || "veterinarian photo"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5 text-foreground">{testimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{testimonial.company}</p>

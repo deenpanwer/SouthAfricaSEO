@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const northCarolinaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const northCarolinaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'North Carolina Landscaping SEO: Cultivate Success from Mountains to Coast',
     heroSubtitle: 'Reach More Landscaping Clients Across North Carolina with TRAC SEO',
     heroDescription: 'TRAC provides specialized SEO services for North Carolina landscaping businesses, helping you connect with clients from the Blue Ridge Mountains to the Outer Banks. We understand the diverse horticultural needs of North Carolinians, whether they seek mountain--native gardens, coastal-resilient landscapes, or classic suburban lawn care. Our SEO strategies are tailored to highlight your unique services, such as four-season interest garden design, solutions for varied terrains, or specialized tree care appropriate for North Carolina\'s climate. We focus on local SEO to target specific regions within NC (Charlotte, Raleigh, Asheville, Wilmington), technical optimization for a seamless online experience, and content marketing that showcases your expertise and beautiful North Carolina projects. Partner with TRAC to significantly enhance your online visibility and attract a steady stream of qualified leads for your North Carolina landscaping business.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'North Carolina landscape with mountains or coast', dataAiHint: 'north carolina landscape garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'North Carolina landscape with mountains or coast' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free North Carolina Landscaping SEO Analysis!',
   },

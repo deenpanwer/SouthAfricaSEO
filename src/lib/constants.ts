@@ -82,7 +82,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Thabo Mbeki Jr.',
     company: 'Safari Adventures ZA',
     avatarUrl: 'https://placehold.co/100x100.png',
-    dataAiHint: 'happy person',
     quote: "ZA Rank Boost transformed our online presence! We've seen a 150% increase in organic traffic and our bookings have doubled. Their understanding of the South African market is unparalleled.",
     location: 'Johannesburg, SA',
   },
@@ -91,7 +90,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Aisha Patel',
     company: 'Cape Town Crafts Co.',
     avatarUrl: 'https://placehold.co/100x100.png',
-    dataAiHint: 'business owner',
     quote: "The team at ZA Rank Boost is professional, knowledgeable, and truly cares about their clients' success. Our local SEO has improved dramatically, and we're now ranking for keywords we never thought possible.",
     location: 'Cape Town, SA',
   },
@@ -100,7 +98,6 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'David Miller',
     company: 'Durban Tech Solutions',
     avatarUrl: 'https://placehold.co/100x100.png',
-    dataAiHint: 'smiling professional',
     quote: "Since partnering with ZA Rank Boost, our lead generation has gone through the roof. Their strategic approach to SEO and content marketing has delivered outstanding ROI. Highly recommended!",
     location: 'Durban, SA',
   },
@@ -119,7 +116,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: 'Local Keyword Rankings (Top 3)', value: '15', icon: Award },
     ],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'flowers business',
     testimonial: "ZA Rank Boost helped us bloom online! We're now reaching more customers in Cape Town than ever before."
   },
   {
@@ -134,7 +130,6 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: 'Search Visibility for Core Services', value: '+70%', icon: Search },
     ],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'legal office',
     testimonial: "The expertise of ZA Rank Boost has been invaluable. Our firm is now a recognized authority in our practice areas online."
   },
 ];
@@ -147,7 +142,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2024-07-15',
     excerpt: 'Discover the latest SEO strategies that are shaping the digital landscape in South Africa and how your business can leverage them.',
     imageUrl: 'https://placehold.co/400x250.png',
-    dataAiHint: 'south africa technology',
     author: 'The ZA Rank Boost Team',
     category: 'SEO Trends',
     tags: ['South Africa SEO', 'Digital Marketing', '2024 Trends'],
@@ -159,7 +153,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2024-06-28',
     excerpt: 'Learn how to optimize your online presence to attract local customers in South Africa, from Google My Business to local link building.',
     imageUrl: 'https://placehold.co/400x250.png',
-    dataAiHint: 'small business meeting',
     author: 'Jane Doe',
     category: 'Local SEO',
     tags: ['Local SEO', 'SMEs', 'South Africa'],
@@ -171,7 +164,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2024-06-10',
     excerpt: 'Effective content marketing strategies tailored for South African audiences that drive engagement and conversions.',
     imageUrl: 'https://placehold.co/400x250.png',
-    dataAiHint: 'content creation',
     author: 'John Smith',
     category: 'Content Marketing',
     tags: ['Content Strategy', 'ROI', 'South Africa'],
@@ -261,8 +253,7 @@ export const ABOUT_US_CONTENT = {
   mission: {
     title: "Our Mission",
     text: "To empower South African businesses with effective, data-driven SEO solutions that drive sustainable growth, increase brand authority, and maximize return on investment.",
-    imageUrl: "https://placehold.co/500x350.png",
-    dataAiHint: "team collaboration"
+    imageUrl: "https://placehold.co/500x350.png"
   },
   expertise: {
     title: "Our Expertise",
@@ -273,15 +264,14 @@ export const ABOUT_US_CONTENT = {
       { title: "Client-Centric Approach", text: "Building long-term partnerships through personalized service and a deep understanding of your business goals.", icon: Users2 },
       { title: "Cutting-Edge Techniques", text: "Staying ahead of SEO trends and algorithm updates to keep your business at the forefront.", icon: Lightbulb }
     ],
-    imageUrl: "https://placehold.co/500x350.png",
-    dataAiHint: "digital strategy"
+    imageUrl: "https://placehold.co/500x350.png"
   },
   team: {
     title: "Meet Our Team (Placeholder)",
     members: [
-      { name: "Lerato Khumalo", role: "SEO Strategist Lead", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "professional woman" },
-      { name: "Ben van der Merwe", role: "Technical SEO Specialist", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "professional man" },
-      { name: "Sipho Ndlovu", role: "Content Marketing Manager", imageUrl: "https://placehold.co/150x150.png", dataAiHint: "creative person" },
+      { name: "Lerato Khumalo", role: "SEO Strategist Lead", imageUrl: "https://placehold.co/150x150.png" },
+      { name: "Ben van der Merwe", role: "Technical SEO Specialist", imageUrl: "https://placehold.co/150x150.png" },
+      { name: "Sipho Ndlovu", role: "Content Marketing Manager", imageUrl: "https://placehold.co/150x150.png" },
     ],
     description: "Our team comprises passionate SEO professionals, content creators, and digital strategists with years of experience in the South African market. We are committed to your success."
   }
@@ -321,6 +311,5 @@ export const IMPORTANCE_OF_SEO_SA = {
       icon: Zap,
     },
   ],
-  imageUrl: "https://placehold.co/500x400.png",
-  dataAiHint: "South Africa business graph"
+  imageUrl: "https://placehold.co/500x400.png"
 };

@@ -48,8 +48,7 @@ Whether you're a burgeoning startup in Deep Ellum, an established law firm in th
 Don't let your competitors dominate the Dallas market. Partner with TRAC, the trusted Dallas SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local search results. Ready to grow your Dallas business and secure your position at the forefront of local search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
     heroImage: {
       src: '/trac-seo.jpg',
-      alt: 'Dallas skyline highlighting TRAC\'s SEO services for local businesses',
-      dataAiHint: 'dallas city seo'
+      alt: 'Dallas skyline highlighting TRAC\'s SEO services for local businesses'
     },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Dallas SEO Quote!',

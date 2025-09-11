@@ -85,7 +85,7 @@ Whether you\'re a growing startup in SoMa, an established law firm in the Financ
 We don\'t just promise results; we deliver them. Our team provides monthly strategy sessions, detailed performance dashboards, and content calendars, keeping you informed and involved every step of the way. Our ethical, white-hat SEO tactics build long-term equity, protecting your rankings and fostering trust with both search engines and your customers.
 
 Don\'t let your competitors capture the San Francisco market. Partner with TRAC, the trusted San Francisco SEO agency committed to driving your success. We specialize in helping businesses like yours increase online visibility, attract more qualified leads, and ultimately, dominate local search results. Ready to transform your online presence and achieve sustainable growth in San Francisco? Contact us today for a free SEO analysis and discover the TRAC difference.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'San Francisco Golden Gate Bridge', dataAiHint: 'San Francisco city skyline' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'San Francisco Golden Gate Bridge' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE San Francisco SEO Audit!',
   },
@@ -97,32 +97,38 @@ Don\'t let your competitors capture the San Francisco market. Partner with TRAC,
     {
       icon: Search,
       title: 'San Francisco Local SEO Excellence',
+      url: '/services/local-seo',
       description: 'Dominate local search results in San Francisco. We optimize your Google Business Profile, build authoritative local citations, and implement geo-targeted keyword strategies to connect your business with customers actively searching in your San Francisco neighborhoods. This is crucial for brick-and-mortar stores and service-area businesses aiming for local market penetration, ensuring you appear for "near me" searches and in the Google Local Pack for San Francisco.'
     },
     {
       icon: Settings,
       title: 'Advanced Technical SEO for San Francisco Websites',
+      url: '/services/technical-seo',
       description: 'Ensure your website is technically sound for optimal search engine crawling, indexing, and ranking. Our San Francisco SEO experts conduct in-depth audits focusing on site speed (Core Web Vitals), mobile-friendliness, structured data implementation (Schema.org markup), XML sitemap optimization, and robots.txt management, critical for performing well in competitive San Francisco search results.'
     },
     {
       icon: Users,
       title: 'In-Depth Keyword Research & Strategy for the San Francisco Market',
+      url: '/services/keyword-research',
       description: 'We identify high-intent keywords that San Francisco consumers and businesses are actively searching for. Our comprehensive research, including long-tail keywords and competitor analysis, forms the foundation of a targeted SEO strategy, ensuring we attract relevant organic traffic that is more likely to convert into leads and sales for your San Francisco-based operations.'
     },
     {
       icon: Briefcase,
       title: 'E-commerce SEO Solutions for San Francisco Retailers',
+      url: '/services/ecommerce-optimization',
       description: 'Drive more sales for your San Francisco-based online store with our specialized e-commerce SEO services. We optimize product pages, category structures, implement effective strategies for faceted navigation, and manage technical aspects like canonicalization and pagination to ensure your products are found by eager buyers in the San Francisco area and beyond.'
     },
     {
       icon: Mail,
       title: 'Strategic Content Marketing for San Francisco SEO',
-      description: 'Create authoritative, engaging, and San Francisco-relevant content that resonates with your target audience and attracts valuable backlinks. Our content strategies focus on establishing your brand as a thought leader, improving search engine rankings through topic clusters and pillar pages, and guiding San Francisco users through the conversion funnel with valuable information.'
+      url: '/services/content-marketing',
+      description: 'Create authoritative, engaging, and San Francisco-relevant content that resonates with your target audience and attracts valuable backlinks. Our content strategies focus on establishing your brand as a thought leader, improving search engine rankings through topic clusters and pillar pages, and guiding San Francisco users through the conversion funnel with valuable information.',
     },
     {
       icon: BarChart2,
       title: 'Transparent SEO Analytics & Reporting for San Francisco',
-      description: 'Track the success of your San Francisco SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.'
+      url: '/services/seo-reporting',
+      description: 'Track the success of your San Francisco SEO campaign with clear, actionable reports. We focus on key performance indicators (KPIs) such as organic traffic growth, keyword ranking improvements, backlink acquisition, conversion rates, and overall ROI, providing you with a transparent view of your SEO investment and progress.',
     },
   ],
   whyChooseSectionHeadline: 'Why TRAC is Your Trusted San Francisco SEO Partner',

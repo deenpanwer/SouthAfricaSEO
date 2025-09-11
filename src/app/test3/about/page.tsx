@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const teamMembers = [
-    { name: 'Tayne Sinclair', role: 'Co-Owner | Lead Painter', imageUrl: 'https://static.wixstatic.com/media/3ec430_ffda54d427b441a3ac78da5b7a02acc8~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tayne_Headshot.jpg', dataAiHint: 'professional man portrait' },
-    { name: 'Lisa Sinclair', role: 'Co-Owner | Office Manager', imageUrl: 'https://static.wixstatic.com/media/3ec430_9a5f95557d0e462cb421d3c7ad8d9a6c~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Lisa_Headshot_2.jpg', dataAiHint: 'professional woman portrait' },
-    { name: 'Jordan Sinclair', role: 'Job Coordinator', imageUrl: 'https://static.wixstatic.com/media/3ec430_1065410371bc487db2fa8767da48f100~mv2.jpg/v1/crop/x_0,y_287,w_1147,h_1147/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jordan_Headshot_2.jpg', dataAiHint: 'creative person portrait' },
-    { name: 'Mason', role: 'Head of Security', imageUrl: 'https://static.wixstatic.com/media/3ec430_63c8c57f628e4df3b8e171cea37b0373~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mason5.jpg', dataAiHint: 'dog cute' },
+    { name: 'Tayne Sinclair', role: 'Co-Owner | Lead Painter', imageUrl: 'https://static.wixstatic.com/media/3ec430_ffda54d427b441a3ac78da5b7a02acc8~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tayne_Headshot.jpg' },
+    { name: 'Lisa Sinclair', role: 'Co-Owner | Office Manager', imageUrl: 'https://static.wixstatic.com/media/3ec430_9a5f95557d0e462cb421d3c7ad8d9a6c~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Lisa_Headshot_2.jpg' },
+    { name: 'Jordan Sinclair', role: 'Job Coordinator', imageUrl: 'https://static.wixstatic.com/media/3ec430_1065410371bc487db2fa8767da48f100~mv2.jpg/v1/crop/x_0,y_287,w_1147,h_1147/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jordan_Headshot_2.jpg' },
+    { name: 'Mason', role: 'Head of Security', imageUrl: 'https://static.wixstatic.com/media/3ec430_63c8c57f628e4df3b8e171cea37b0373~mv2.jpg/v1/fill/w_235,h_238,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/mason5.jpg' },
   ];
 
   return (
@@ -82,7 +82,7 @@ export default function AboutPage() {
             {teamMembers.map(member => (
               <div key={member.name} className="text-center">
                 <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
-                  <Image src={member.imageUrl} alt={member.name} layout="fill" objectFit="cover" data-ai-hint={member.dataAiHint} />
+                  <Image src={member.imageUrl} alt={member.name} layout="fill" objectFit="cover" />
                 </div>
                 <h3 className="text-xl font-bold text-enviro-green">{member.name}</h3>
                 <p className="text-enviro-pink font-semibold">{member.role}</p>

@@ -16,7 +16,6 @@ export function CategoryCard({ category }: CategoryCardProps) {
           <Image
             src={category.imageUrl}
             alt={category.name}
-            data-ai-hint={category.dataAiHint}
             layout="fill"
             objectFit="cover"
             className="group-hover:scale-105 transition-transform duration-300"

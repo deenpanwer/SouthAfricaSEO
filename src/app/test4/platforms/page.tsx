@@ -14,7 +14,6 @@ const platforms = [
     largeText: "Gotham",
     link: "/test4/platforms/gotham",
     imageUrl: "https://tse4.mm.bing.net/th/id/OIP.ymLTKxXZ4nrz4JRU69VLaQHaE8?pid=Api&P=0&h=220",
-    dataAiHint: "defense system interface",
     details: {
       writtenBy: "Alex Karp, CEO",
       published: "2023",
@@ -28,7 +27,6 @@ const platforms = [
     largeText: "Foundry",
     link: "/test4/platforms/foundry",
     imageUrl: "https://tse2.mm.bing.net/th/id/OIP.XmvQx4oA9-xeZ7kEQcM8mwHaEp?pid=Api&P=0&h=220",
-    dataAiHint: "enterprise data graph",
     details: {
       writtenBy: "Shyam Sankar, CTO",
       published: "2024",
@@ -42,7 +40,6 @@ const platforms = [
     largeText: "AIP",
     link: "/test4/platforms/aip",
     imageUrl: "https://tse4.mm.bing.net/th/id/OIP.KeH-qYdWqFvfs2igElKiBQHaEU?pid=Api&P=0&h=220",
-    dataAiHint: "ai model network",
      details: {
       writtenBy: "AI Division",
       published: "2024",
@@ -56,7 +53,6 @@ const platforms = [
     largeText: "Apollo",
     link: "/test4/platforms/apollo",
     imageUrl: "https://tse3.mm.bing.net/th/id/OIP.5V0cFbikaK5sit3BkEFNDQHaEK?pid=Api&P=0&h=220",
-    dataAiHint: "software deployment pipeline",
      details: {
       writtenBy: "DevOps Team",
       published: "2023",

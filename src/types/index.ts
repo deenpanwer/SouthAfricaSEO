@@ -41,7 +41,6 @@ export interface Testimonial {
   name: string;
   company: string;
   avatarUrl: string;
-  dataAiHint?: string;
   quote: string;
   location?: string;
   rating?: number;
@@ -63,7 +62,6 @@ export interface CaseStudy {
   results: CaseStudyResult[];
   imageUrl: string;
   logoUrl?: string;
-  dataAiHint?: string;
   testimonial?: {
     quote: string;
     author: string;
@@ -80,7 +78,6 @@ export interface BlogPost {
   publicationDate: string;
   description: string;
   image: string;
-  dataAiHint?: string;
   author: string;
   category: string;
   tags: string[];
@@ -107,7 +104,6 @@ export interface ContactFormValues {
 export interface ClientLogo {
   name: string;
   imageUrl: string;
-  dataAiHint?: string;
 }
 
 export interface StatItem {
@@ -131,7 +127,6 @@ export interface CityHeroData {
  heroImage: string | {
  src: string;
  alt: string;
- dataAiHint?: string;
  };
   heroVideoUrl: string;
   formTitle: string;
@@ -232,7 +227,7 @@ interface BaseStateHeroData {
   heroImage: {
     src: string;
     alt: string;
-    dataAiHint?: string;
+
   };
   heroVideoUrl: string;
   formTitle: string;
@@ -281,6 +276,7 @@ interface BaseStatePageData {
     upcity: BaseStateAwardData;
   };
   coverageData: BaseStateCoverageData;
+  bottomFormTitle: string;
 }
 
 interface BaseStateHeroFormValues {

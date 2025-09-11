@@ -108,7 +108,6 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
                   objectFit="contain"
                   className="p-4 transition-opacity duration-300"
                   key={selectedImage} 
-                  data-ai-hint={product.dataAiHint}
                   priority
                 />
               </div>

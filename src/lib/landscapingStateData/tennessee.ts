@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Mountain, Music } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const tennesseeLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const tennesseeLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Tennessee Landscaping SEO: Grow Your Business in the Volunteer State',
     heroSubtitle: 'Connect with More Clients Across Tennessee with TRAC\'s Scenic SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Tennessee landscaping businesses, helping you flourish from the rolling hills of Middle Tennessee to the vibrant cities of Nashville, Memphis, Knoxville, and Chattanooga. Whether your expertise lies in creating stunning four-season gardens, designing beautiful outdoor living spaces, providing expert lawn care, or crafting sustainable native Tennessee landscapes, we can significantly boost your online visibility. Our team understands the unique challenges of Tennessee\'s climate and the diverse needs of its residents. We create SEO strategies that highlight your ability to design and maintain landscapes that thrive in the Volunteer State. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your beautiful Tennessee projects and deep knowledge of regional horticulture and seasonal care. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Tennessee landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Tennessee landscape with rolling hills', dataAiHint: 'tennessee landscape hills' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Tennessee landscape with rolling hills' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Tennessee Landscaping SEO Quote!',
   },

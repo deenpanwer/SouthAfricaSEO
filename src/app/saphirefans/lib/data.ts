@@ -7,7 +7,6 @@ export const saphireCategories: SaphireCategory[] = [
     slug: 'axial-flow-fans',
     name: 'Axial Flow Fans',
     imageUrl: 'https://placehold.co/400x300.png?text=Axial+Fan',
-    dataAiHint: 'axial fan industrial',
     description: 'High-efficiency axial fans for ventilation, cooling, and air circulation in industrial settings across Pakistan.'
   },
   {
@@ -15,7 +14,6 @@ export const saphireCategories: SaphireCategory[] = [
     slug: 'centrifugal-fans',
     name: 'Centrifugal Fans',
     imageUrl: 'https://placehold.co/400x300.png?text=Centrifugal+Fan',
-    dataAiHint: 'centrifugal fan blower',
     description: 'Robust centrifugal fans designed for high-pressure applications, material handling, and exhaust systems in Pakistani industries.'
   },
   {
@@ -23,7 +21,6 @@ export const saphireCategories: SaphireCategory[] = [
     slug: 'exhaust-fans',
     name: 'Industrial Exhaust Fans',
     imageUrl: 'https://placehold.co/400x300.png?text=Exhaust+Fan',
-    dataAiHint: 'industrial exhaust fan',
     description: 'Powerful exhaust fans to remove fumes, smoke, and pollutants from factories, workshops, and commercial kitchens in Pakistan.'
   },
   {
@@ -31,7 +28,6 @@ export const saphireCategories: SaphireCategory[] = [
     slug: 'pedestal-fans',
     name: 'Heavy Duty Pedestal Fans',
     imageUrl: 'https://placehold.co/400x300.png?text=Pedestal+Fan',
-    dataAiHint: 'industrial pedestal fan',
     description: 'Durable and high-performance pedestal fans for effective air circulation in large industrial spaces and warehouses in Pakistan.'
   }
 ];
@@ -48,7 +44,6 @@ export const saphireProducts: SaphireProduct[] = [
     price: 25000, // PKR
     imageUrl: 'https://placehold.co/600x400.png?text=Axial+X100',
     images: ['https://placehold.co/600x400.png?text=Axial+X100+Side', 'https://placehold.co/600x400.png?text=Axial+X100+Detail'],
-    dataAiHint: 'axial fan motor',
     specifications: [
       { name: 'Model', value: 'X100' },
       { name: 'Diameter', value: '600mm' },
@@ -69,7 +64,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The CV20 offers effective ventilation in confined spaces. Its compact design makes it suitable for integration into machinery or smaller rooms. Built for reliability in Pakistani industrial conditions.',
     price: 18500,
     imageUrl: 'https://placehold.co/600x400.png?text=Axial+CV20',
-    dataAiHint: 'small axial fan',
     specifications: [
       { name: 'Model', value: 'CV20' },
       { name: 'Diameter', value: '350mm' },
@@ -91,7 +85,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The HPB50 centrifugal blower is ideal for systems requiring high pressure, such as dust collection, pneumatic conveying, and industrial drying processes. Robustly built for continuous operation in Pakistani industries.',
     price: 45000,
     imageUrl: 'https://placehold.co/600x400.png?text=Centrifugal+HPB50',
-    dataAiHint: 'centrifugal blower industrial',
     specifications: [
       { name: 'Model', value: 'HPB50' },
       { name: 'Type', value: 'Backward Curved' },
@@ -112,7 +105,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The MHF30 is built to handle the passage of light, non-abrasive materials such as sawdust, wood chips, or textile fibers. A workhorse for relevant industries in Pakistan.',
     price: 38000,
     imageUrl: 'https://placehold.co/600x400.png?text=Centrifugal+MHF30',
-    dataAiHint: 'material handling fan',
     specifications: [
       { name: 'Model', value: 'MHF30' },
       { name: 'Type', value: 'Radial Blade' },
@@ -134,7 +126,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The WEX40 is designed for effective removal of stale air, fumes, and heat from large industrial spaces. Easy to install on walls, it provides essential ventilation for a healthier work environment in Pakistan.',
     price: 22000,
     imageUrl: 'https://placehold.co/600x400.png?text=Exhaust+WEX40',
-    dataAiHint: 'wall exhaust fan',
     specifications: [
       { name: 'Model', value: 'WEX40' },
       { name: 'Size', value: '400mm x 400mm' },
@@ -155,7 +146,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The RMV60 is ideal for commercial and industrial buildings in Pakistan requiring effective roof ventilation. It helps maintain optimal indoor air quality by expelling heat, smoke, and fumes.',
     price: 32000,
     imageUrl: 'https://placehold.co/600x400.png?text=Exhaust+RMV60',
-    dataAiHint: 'roof exhaust fan',
     specifications: [
       { name: 'Model', value: 'RMV60' },
       { name: 'Throat Diameter', value: '600mm' },
@@ -177,7 +167,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The PDF750 is a robust pedestal fan designed for cooling large industrial areas, warehouses, and workshops in Pakistan. Features adjustable height and tilt for targeted airflow.',
     price: 15000,
     imageUrl: 'https://placehold.co/600x400.png?text=Pedestal+PDF750',
-    dataAiHint: 'large pedestal fan',
     specifications: [
       { name: 'Model', value: 'PDF750' },
       { name: 'Blade Diameter', value: '750mm (30 inch)' },
@@ -198,7 +187,6 @@ export const saphireProducts: SaphireProduct[] = [
     longDescription: 'The IOP600 provides consistent and widespread air circulation, making it suitable for medium to large industrial spaces in Pakistan. Its oscillating feature ensures broader coverage.',
     price: 12500,
     imageUrl: 'https://placehold.co/600x400.png?text=Pedestal+IOP600',
-    dataAiHint: 'oscillating pedestal fan',
     specifications: [
       { name: 'Model', value: 'IOP600' },
       { name: 'Blade Diameter', value: '600mm (24 inch)' },

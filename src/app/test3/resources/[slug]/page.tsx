@@ -15,7 +15,6 @@ const post = {
     date: "2024-07-15",
     excerpt: "Learn about the benefits of low-VOC and zero-VOC paints, from improved air quality to long-lasting durability.",
     imageUrl: "https://tse1.mm.bing.net/th/id/OIP.uv-n7uBViMjwHiDk395kYgHaEK?pid=Api&P=0&h=220",
-    dataAiHint: "paint can with leaf",
     category: "Sustainability",
     tags: ["Eco-Friendly", "Health", "Painting Tips"],
     content: `
@@ -86,7 +85,6 @@ export default function PostPage({ params }: { params: { slug: string }}) {
                 fill
                 priority
                 style={{ objectFit: 'cover' }}
-                data-ai-hint={post.dataAiHint}
               />
             </div>
           )}

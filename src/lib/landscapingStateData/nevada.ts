@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Sun, Droplets, Mountain } from 'lucide-react'; // Mountain for Sierra Nevada proximity
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const nevadaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const nevadaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Nevada Landscaping SEO: Make Your Business Thrive in the Silver State',
     heroSubtitle: 'Connect with More Clients Across Nevada with TRAC\'s Desert-Smart SEO',
     heroDescription: 'TRAC delivers specialized SEO services for Nevada landscaping businesses, helping you flourish in the unique arid environments of the Silver State. Whether your expertise lies in creating stunning xeriscapes, designing drought-tolerant gardens, implementing efficient irrigation systems, or crafting inviting outdoor living spaces that beat the desert heat, we can significantly enhance your online visibility. Our team understands the challenges and opportunities of landscaping in Nevada, from water conservation mandates to designing for extreme temperatures and high desert conditions around Las Vegas, Reno, Henderson, and beyond. We create SEO strategies that highlight your expertise in sustainable, water-wise designs and connect you with homeowners and commercial clients seeking your specialized services. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your beautiful Nevada projects and deep knowledge of desert horticulture. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Nevada landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Nevada desert landscape with mountains', dataAiHint: 'nevada desert landscape mountains' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Nevada desert landscape with mountains' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Nevada Landscaping SEO Quote!',
   },

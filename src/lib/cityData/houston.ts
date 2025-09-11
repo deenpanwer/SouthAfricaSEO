@@ -37,7 +37,7 @@ Our comprehensive Houston SEO campaigns begin with a deep dive into your current
 Whether you're a burgeoning tech startup in Midtown, an established law firm in the Galleria, a thriving restaurant in Montrose, or a service provider in Pearland, TRAC has a proven track record of helping Houston businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local and industry-specific SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Houston market. Partner with TRAC, the trusted Houston SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local and industry-specific search results. Ready to grow your Houston business and secure your position at the forefront of local and industrial search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Houston, TX', dataAiHint: 'Houston skyline and SEO concept' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Houston, TX' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Houston SEO Strategy!',
   },

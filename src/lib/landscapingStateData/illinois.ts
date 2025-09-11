@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const illinoisLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const illinoisLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Illinois Landscaping SEO: Grow Your Business in the Prairie State',
     heroSubtitle: 'Connect with More Landscaping Clients from Chicago to Springfield with TRAC SEO',
     heroDescription: 'TRAC provides expert SEO services for Illinois landscaping companies, enabling you to flourish in a state with diverse urban and suburban landscapes. Whether you serve the dense Chicago metropolitan area, affluent North Shore suburbs, or communities across Central and Southern Illinois, we tailor strategies to your unique market. Our SEO services help landscapers specializing in four-season garden design, commercial property maintenance, residential lawn care, or specialized hardscaping to significantly boost their online visibility and attract a consistent flow of qualified local leads. We understand Illinois\' climate challenges and horticultural needs, from cold winters to hot summers. Our approach includes local SEO optimization, technical website enhancements, and content marketing that showcases your Illinois projects and expertise in creating beautiful, resilient outdoor spaces. Partner with TRAC to cultivate a dominant online presence for your Illinois landscaping business and achieve sustained growth.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Illinois prairie landscape with flowers', dataAiHint: 'illinois landscape prairie' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Illinois prairie landscape with flowers' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Illinois Landscaping SEO Analysis!',
   },

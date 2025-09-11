@@ -42,7 +42,7 @@ Our comprehensive Dublin SEO campaigns begin with a deep dive into your current 
 Whether you're a burgeoning tech startup in Grand Canal Dock, an established financial institution in the IFSC, a thriving hospitality business in the city center, or a service provider in Rathmines, TRAC has a proven track record of helping Dublin businesses achieve their growth goals. We leverage advanced keyword research, sophisticated local and international SEO strategies, and transparent reporting to ensure your investment translates into tangible results. Our commitment to ethical, white-hat SEO practices means your online growth is sustainable and built for long-term success.
 
 Don't let your competitors dominate the Dublin market. Partner with TRAC, the trusted Dublin SEO agency committed to driving your success. We specialize in helping service-based businesses like yours increase online visibility, attract more customers, and ultimately, dominate local and international search results. Ready to grow your Dublin business and secure your position at the forefront of local and global search? Contact us today for a free SEO analysis and discover how our expertise can elevate your brand.`,
-    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Dublin, Ireland', dataAiHint: 'Dublin city tech' },
+    heroImage: { src: GENERIC_CITY_HERO_IMAGE_SRC, alt: 'SEO Services in Dublin, Ireland' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Get Your FREE Dublin SEO Audit!',
   },

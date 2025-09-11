@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png'; 
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg'; 
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const pennsylvaniaLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const pennsylvaniaLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Pennsylvania Landscaping SEO: Cultivate Success in the Keystone State',
     heroSubtitle: 'Reach More Landscaping Clients Across Pennsylvania with TRAC SEO',
     heroDescription: 'TRAC provides specialized SEO services for Pennsylvania landscaping businesses, helping you connect with clients from Philadelphia and Pittsburgh to the Lehigh Valley and beyond. We understand the diverse needs of Pennsylvanians, whether they seek classic garden designs, sustainable native plant landscaping, or robust hardscaping for varied terrains. Our SEO strategies are tailored to highlight your unique services, such as four-season garden maintenance, solutions for hilly landscapes, or specialized tree care suitable for Pennsylvania\'s climate. We focus on local SEO to target specific regions within PA, technical optimization for a seamless online experience, and content marketing that showcases your expertise and beautiful Pennsylvania projects. Partner with TRAC to significantly enhance your online visibility and attract a steady stream of qualified leads for your Pennsylvania landscaping business.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Pennsylvania landscape with rolling hills', dataAiHint: 'pennsylvania landscape garden' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Pennsylvania landscape with rolling hills' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek', 
     formTitle: 'Free Pennsylvania Landscaping SEO Analysis!',
   },

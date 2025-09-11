@@ -4,7 +4,7 @@ import { CheckCircle } from 'lucide-react';
 import { IMPORTANCE_OF_STRATEGY } from '@/lib/constants.tsx'; // Updated constant name
 
 export function ImportanceSection() {
-  const { title, points, imageUrl, dataAiHint } = IMPORTANCE_OF_STRATEGY; // Using IMPORTANCE_OF_STRATEGY
+  const { title, points, imageUrl } = IMPORTANCE_OF_STRATEGY; // Using IMPORTANCE_OF_STRATEGY
 
   return (
     <section className="py-16 md:py-24 bg-background">

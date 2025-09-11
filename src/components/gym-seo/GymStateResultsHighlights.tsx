@@ -6,9 +6,36 @@ import type { Testimonial } from '@/types';
 import { TrendingUp, Users, Dumbbell, CalendarCheck } from 'lucide-react';
 
 const gymTestimonials: Testimonial[] = [
-  { id: '1', name: "Mark P.", company: "Peak Fitness Colorado, CO", quote: "TRAC's SEO strategy helped us fill our new HIIT classes faster than we imagined. Our local visibility is way up!", highlightedQuote: "HIIT classes filled fast!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "fitness instructor" },
-  { id: '2', name: "Sarah W.", company: "Desert Strong Gym, AZ", quote: "We've seen a significant increase in membership inquiries since TRAC optimized our website and Google Business Profile.", highlightedQuote: "Membership inquiries up!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "gym owner portrait" },
-  { id: '3', name: "Alex G.", company: "Zenith Yoga Colorado, CO", quote: "Our specialized yoga workshops are now much easier to find online. TRAC understood our niche and targeted the right audience.", highlightedQuote: "Easier to find workshops!", avatarUrl: "https://placehold.co/100x100.png", dataAiHint: "yoga instructor" },
+  {
+    id: '1',
+    name: "Marci Wiersma",
+    company: "Broker – About Roatan Real Estate",
+    quote: "Thrive is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.",
+    highlightedQuote: "They do everything they say...no BS",
+    avatarUrl: "/home/marci-wiersma.webp",
+    
+    alt: "Marci Wiersma"
+  },
+  {
+    id: '2',
+    name: "Whitney Wells Lewis",
+    company: "Practice Manager – PARC Urology",
+    quote: "These guys are incredible. They\'ve helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Thrive made that possible. Thanks guys!",
+    highlightedQuote: "These guys are incredible",
+    avatarUrl: "/home/whitney-wells-lewis.webp",
+    
+    alt: "Whitney Wells Lewis"
+  },
+  {
+    id: '3',
+    name: "Chad Montgomery",
+    company: "CEO – Accurate Leak and Line",
+    quote: "Working with the Thrive team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!",
+    highlightedQuote: "Unrivaled customer support",
+    avatarUrl: "/home/chad-montgomery.webp",
+    
+    alt: "Chad Montgomery"
+  },
 ];
 
 interface GymStateResultsHighlightsProps {
@@ -17,9 +44,9 @@ interface GymStateResultsHighlightsProps {
 }
 
 const gymResults = [
-    { metric: "Avg. Increase in Membership Sign-ups", value: "+30%", icon: Users, dataAiHint: "membership growth chart" },
-    { metric: "Avg. Growth in Class Bookings", value: "+45%", icon: CalendarCheck, dataAiHint: "class booking graph" },
-    { metric: "Avg. Improvement in Local Fitness Searches", value: "+60%", icon: TrendingUp, dataAiHint: "local search ranking" }
+    { metric: "Avg. Increase in Membership Sign-ups", value: "+30%", icon: Users },
+    { metric: "Avg. Growth in Class Bookings", value: "+45%", icon: CalendarCheck },
+    { metric: "Avg. Improvement in Local Fitness Searches", value: "+60%", icon: TrendingUp }
 ];
 
 export function GymStateResultsHighlights({ headline, stateName }: GymStateResultsHighlightsProps) {
@@ -53,7 +80,6 @@ export function GymStateResultsHighlights({ headline, stateName }: GymStateResul
                   width={80}
                   height={80}
                   className="rounded-full mx-auto mb-4 border-2 border-accent"
-                  data-ai-hint={testimonial.dataAiHint || "fitness professional"}
                 />
                 <h3 className="font-semibold text-lg mb-0.5 text-foreground">{testimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{testimonial.company}</p>

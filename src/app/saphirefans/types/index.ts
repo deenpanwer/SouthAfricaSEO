@@ -4,7 +4,6 @@ export interface SaphireCategory {
   slug: string;
   name: string;
   imageUrl: string;
-  dataAiHint: string;
   description?: string;
 }
 
@@ -23,7 +22,6 @@ export interface SaphireProduct {
   price: number; // PKR
   imageUrl: string;
   images?: string[]; // For product gallery
-  dataAiHint: string;
   specifications: SaphireProductSpecification[];
   features?: string[];
   availability?: 'In Stock' | 'Out of Stock' | 'Pre-Order';

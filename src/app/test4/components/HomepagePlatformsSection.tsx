@@ -12,7 +12,6 @@ const platforms = [
       category: "Platform",
       description: "An AI-ready operating system for global defense and intelligence.",
       imageUrl: "https://tse4.mm.bing.net/th/id/OIP.ymLTKxXZ4nrz4JRU69VLaQHaE8?pid=Api&P=0&h=220",
-      dataAiHint: "defense system interface",
       link: "/test4/platforms/gotham",
     },
     {
@@ -20,7 +19,6 @@ const platforms = [
       category: "Platform",
       description: "An ontology-powered operating system for the modern enterprise.",
       imageUrl: "https://tse2.mm.bing.net/th/id/OIP.XmvQx4oA9-xeZ7kEQcM8mwHaEp?pid=Api&P=0&h=220",
-      dataAiHint: "enterprise data graph",
       link: "/test4/platforms/foundry",
     },
     {
@@ -28,7 +26,6 @@ const platforms = [
       category: "Platform",
       description: "Activate large language models and other AI on private networks.",
       imageUrl: "https://tse4.mm.bing.net/th/id/OIP.KeH-qYdWqFvfs2igElKiBQHaEU?pid=Api&P=0&h=220",
-      dataAiHint: "ai model network",
       link: "/test4/platforms/aip",
     },
      {
@@ -36,7 +33,6 @@ const platforms = [
       category: "Platform",
       description: "Continuous delivery system for deploying software across all environments.",
       imageUrl: "https://tse3.mm.bing.net/th/id/OIP.5V0cFbikaK5sit3BkEFNDQHaEK?pid=Api&P=0&h=220",
-      dataAiHint: "software deployment pipeline",
       link: "/test4/platforms/apollo",
     },
   ];

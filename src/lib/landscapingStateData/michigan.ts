@@ -3,7 +3,7 @@ import type { LandscapingStatePageData } from '@/types';
 import { Search, TreePine, Leaf, Sprout, TrendingUp, Lightbulb, ShieldCheck, Settings, Mail, Snowflake } from 'lucide-react';
 import { CONTACT_DETAILS } from '@/lib/constants';
 
-const STATE_HERO_IMAGE_SRC = 'https://placehold.co/800x500.png';
+const STATE_HERO_IMAGE_SRC = '/trac-seo.jpg';
 const STATE_COVERAGE_IMAGE_SRC = 'https://placehold.co/600x400.png';
 
 export const michiganLandscapingData: LandscapingStatePageData = {
@@ -15,7 +15,7 @@ export const michiganLandscapingData: LandscapingStatePageData = {
     heroTitle: 'Michigan Landscaping SEO: Grow Your Business in the Great Lakes State',
     heroSubtitle: 'Connect with More Clients Across Michigan with TRAC\'s Four-Season SEO',
     heroDescription: 'TRAC offers specialized SEO services for Michigan landscaping businesses, helping you flourish from the shores of the Great Lakes to vibrant urban centers like Detroit, Grand Rapids, and Ann Arbor. Whether your expertise lies in creating stunning four-season gardens, designing beautiful lakefront properties, providing expert lawn care and snow removal, or crafting sustainable native Michigan landscapes, we can significantly boost your online visibility. Our team understands the unique challenges of Michigan\'s climate, from cold winters to warm summers, and the diverse needs of its residents. We create SEO strategies that highlight your ability to design and maintain landscapes that thrive year-round. We focus on local search optimization to target your specific service areas, technical website enhancements for optimal performance, and content marketing that showcases your beautiful Michigan projects and deep knowledge of regional horticulture and seasonal care. Partner with TRAC to cultivate a robust online presence and attract more qualified leads for your Michigan landscaping company.',
-    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Michigan landscape with Great Lakes shoreline', dataAiHint: 'michigan landscape lake' },
+    heroImage: { src: STATE_HERO_IMAGE_SRC, alt: 'Michigan landscape with Great Lakes shoreline' },
     heroVideoUrl: 'https://www.youtube.com/embed/JBPmDzL-Xek',
     formTitle: 'Free Michigan Landscaping SEO Quote!',
   },
