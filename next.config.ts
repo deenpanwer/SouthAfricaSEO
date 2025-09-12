@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'placehold.co', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'picsum.photos', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'img.favpng.com', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'tse4.mm.bing.net', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'tse3.mm.bing.net', port: '', pathname: '/**' },
