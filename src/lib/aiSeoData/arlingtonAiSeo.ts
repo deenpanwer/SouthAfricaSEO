@@ -6,9 +6,10 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
   heroData: {
     pageTitle: 'Arlington AI SEO Company | AI-Powered Search Strategies',
     metaDescription: 'Supercharge your Arlington business with AI-driven SEO. Our advanced strategies leverage machine learning for predictive keyword analysis, content optimization, and superior market visibility.',
-    heroTitle: 'AI-Powered SEO for Arlington Businesses',
-    heroSubtitle: 'Harness the Power of Artificial Intelligence to Dominate Search',
-    heroDescription: 'In the competitive Arlington market, traditional SEO is no longer enough. We utilize cutting-edge AI to analyze market trends, predict keyword performance, and automate content optimization, giving your business an unparalleled advantage.',
+    heroTitle: 'AI SEO Services',
+    heroSubtitle: 'Optimize Your Business for Large Language Models to Ensure Brand Visibility',
+    formPlaceholder: 'Enter Website Address',
+    formButtonText: 'Get My Free Proposal',
   },
   problemSolutionData: {
     headline: "The Old Way vs. The AI-Powered Way",

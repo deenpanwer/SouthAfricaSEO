@@ -10,6 +10,7 @@ import { headers, cookies } from 'next/headers';
 import { Button } from '@/components/ui/button';
 import { Gift } from 'lucide-react';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -158,6 +159,7 @@ export default async function RootLayout({
           {showMainLayout && <FloatingOfferBanner />}
           <Toaster />
         </PostHogProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -5,7 +5,8 @@ export interface AiSeoHeroData {
   metaDescription: string;
   heroTitle: string;
   heroSubtitle: string;
-  heroDescription: string;
+  formPlaceholder: string;
+  formButtonText: string;
 }
 
 export interface AiSeoProblemSolutionItem {

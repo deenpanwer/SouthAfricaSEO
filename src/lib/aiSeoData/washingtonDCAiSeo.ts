@@ -7,9 +7,10 @@ export const washingtonDCAiSeoData: AiSeoCityPageData = {
   heroData: {
     pageTitle: 'Washington D.C. AI SEO Company | AI-Powered Search Strategies',
     metaDescription: 'AI-driven SEO for businesses in Washington D.C. Leverage machine learning for predictive analysis, content optimization, and dominating your market.',
-    heroTitle: 'AI-Powered SEO for Washington D.C.',
-    heroSubtitle: 'Harness Artificial Intelligence to Command Search Rankings in the Capital',
-    heroDescription: 'In the high-stakes digital arena of Washington D.C., staying ahead requires more than just standard SEO. Our AI-driven approach provides a decisive advantage, analyzing political, regulatory, and market trends to deliver unparalleled search visibility.',
+    heroTitle: 'AI SEO Services',
+    heroSubtitle: 'Optimize Your Business for Large Language Models to Ensure Brand Visibility',
+    formPlaceholder: 'Enter Website Address',
+    formButtonText: 'Get My Free Proposal',
   },
   problemSolutionData: {
     headline: "Conventional Methods vs. Intelligent Solutions",
