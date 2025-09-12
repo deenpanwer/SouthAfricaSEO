@@ -73,12 +73,29 @@ export interface AiSeoIntroData {
   bottomDescription: string[];
 }
 
+export interface AiSeoComparisonItem {
+  source: string;
+  overview: {
+    title: string;
+    description: string;
+  };
+  capabilities: {
+    title: string;
+    points: string[];
+  };
+}
+
 export interface AiSeoCityPageData {
   slug: string;
   cityName: string;
   heroData: AiSeoHeroData;
   visibilityData: AiSeoVisibilityData;
   introData: AiSeoIntroData;
+  comparisonData: {
+    headline: string;
+    ctaText: string;
+    items: AiSeoComparisonItem[];
+  };
   problemSolutionData: {
     headline: string;
     items: AiSeoProblemSolutionItem[];

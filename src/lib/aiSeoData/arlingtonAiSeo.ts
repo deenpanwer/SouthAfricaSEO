@@ -43,6 +43,56 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
       "Our generative engine optimization agency combines human expertise with AI efficiency to give you the best of both worlds: **personalization + speed**. We can do more work in less time to get you better results."
     ]
   },
+  comparisonData: {
+    headline: "AI Source Overview & Our Capabilities",
+    ctaText: "BUILD MY AI VISIBILITY STRATEGY",
+    items: [
+      {
+        source: "AI Mode",
+        overview: {
+          title: "How AI Mode Works:",
+          description: "Powered by Gemini, AI Mode synthesizes information from multiple sources to generate personalized answers at the top of the search results. It breaks down complex queries into subtopics and allows follow-up questions. This keeps users within Google Search and reduces the need to click on websites."
+        },
+        capabilities: {
+          title: "Boost your AI mode visibility with Thrive's data-driven AI SEO optimization services. We prioritize:",
+          points: ["Passage-level content optimization", "Conversational query targeting", "Semantic SEO implementation", "Topical authority building", "Schema markup optimization"]
+        }
+      },
+      {
+        source: "AI Overviews",
+        overview: {
+          title: "How AI Overview Works:",
+          description: "Featured in over 65% of Google searches, AI Overviews combine data from various trusted sources and display AI-generated summaries above organic results. They provide a quick overview of a topic and links to the sources used."
+        },
+        capabilities: {
+          title: "Get cited with our proven Google AI overview optimization techniques. We focus on creating content that AI finds valuable and worth referencing. Our AI Search SEO tactics include:",
+          points: ["Content optimization", "Technical SEO", "Listings management and optimization", "Digital PR services", "Reputation management"]
+        }
+      },
+      {
+        source: "ChatGPT Search",
+        overview: {
+          title: "How ChatGPT Search Works:",
+          description: "ChatGPT is a conversational LLM developed by OpenAI to answer queries directly in chat. It relies on Bing Search APIs to pull high-quality content from top-ranking websites, citations, reviews and roundups."
+        },
+        capabilities: {
+          title: "Learn how to use ChatGPT for search engine optimization and maximize your ChatGPT visibility. Our ChatGPT search optimization tactics include:",
+          points: ["Bing optimization", "AI-optimized content creation", "Targeted link building", "Technical SEO", "Social media brand management", "Reputation management"]
+        }
+      },
+      {
+        source: "Gemini Search",
+        overview: {
+          title: "How Gemini Works:",
+          description: "Gemini (formerly Bard) powers Google Gemini Search and its broader AI ecosystem (Gmail, Docs, Android and the Gemini app). It delivers concise, conversational results and actively engages users within Search. It powers AI Overviews and AI Mode, processing real-time queries from text, voice, images and uploaded documents."
+        },
+        capabilities: {
+          title: "Thrive implements growth-focused Gemini SEO strategies to boost your AI visibility. Our Gemini optimization strategies focus on:",
+          points: ["Intent-matching", "Technical SEO", "Citations management", "Link building", "Reputation management"]
+        }
+      }
+    ]
+  },
   problemSolutionData: {
     headline: "The Old Way vs. The AI-Powered Way",
     items: [
