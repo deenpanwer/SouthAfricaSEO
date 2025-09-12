@@ -12,6 +12,7 @@ export const washingtonDCAiSeoData: AiSeoCityPageData = {
     heroSubtitle: 'Optimize Your Business for Large Language Models to Ensure Brand Visibility',
     formPlaceholder: 'Enter Website Address',
     formButtonText: 'Get My Free Proposal',
+    formTitle: 'Get Your FREE AI SEO Analysis',
   },
   visibilityData: {
     headline: "Gain Visibility in Google AI Search",

@@ -407,3 +407,24 @@ export interface GymStatePageData extends BaseStatePageData {
 }
 export interface GymStateHeroFormValues extends BaseStateHeroFormValues {}
 export interface GymStateBottomFormValues extends BaseStateBottomFormValues {}
+
+// AI SEO Form Types
+export interface AiSeoHeroFormValues {
+  website?: string;
+  city: string;
+  formType: string;
+}
+export interface AiSeoSgeFormValues {
+  firstName?: string;
+  lastName?: string;
+  company?: string;
+  website?: string;
+  email?: string;
+  phone?: string;
+  services?: string;
+  budget?: string;
+  howDidYouHear?: string;
+  businessInfo?: string;
+  city: string;
+  formType: string;
+}

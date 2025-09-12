@@ -16,21 +16,57 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { NumberTicker } from '../ui/NumberTicker';
 import { CONTACT_DETAILS } from '@/lib/constants';
+import type { AiSeoSgeFormValues } from '@/types/aiSeo';
 
 const formSchema = z.object({
-  firstName: z.string().min(1, 'First Name is required'),
-  lastName: z.string().min(1, 'Last Name is required'),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
   company: z.string().optional(),
   website: z.string().optional(),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
+  email: z.string().optional(),
+  phone: z.string().optional(),
   services: z.string().optional(),
   budget: z.string().optional(),
   howDidYouHear: z.string().optional(),
   businessInfo: z.string().optional(),
+  city: z.string(),
+  formType: z.string(),
 });
 
-type FormValues = z.infer<typeof formSchema>;
+async function submitSgeForm(data: AiSeoSgeFormValues): Promise<{ success: boolean; message: string }> {
+  try {
+    const submissionData = {
+      "Name": `${data.firstName || ''} ${data.lastName || ''}`.trim(),
+      "Email Address": data.email || '',
+      "Company Name": data.company || '',
+      "Phone Number": data.phone || '',
+      "Website URL": data.website || '',
+      "Service of Interest": data.services || 'AI SEO',
+      "Your Message": data.businessInfo || `Lead from SGE/GEO Form - ${data.city}`,
+      "Form Type": `${data.formType} - ${data.city}`,
+      "Timestamp": new Date().toISOString()
+    };
+
+    const response = await fetch('https://sheetdb.io/api/v1/rsdd3ypenh4uu', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(submissionData),
+    });
+
+    if (response.ok) {
+      return { success: true, message: "Thank you for your proposal request! We'll be in touch soon." };
+    } else {
+      const errorText = await response.text();
+      console.error("SheetDB submission failed for SGE/GEO Form:", response.status, errorText);
+      return { success: false, message: `Could not submit your request. Status: ${response.status}. Please try again.` };
+    }
+  } catch (error) {
+    console.error("Error submitting SGE/GEO Form to SheetDB:", error);
+    return { success: false, message: "An unexpected error occurred. Please try again later." };
+  }
+}
 
 const InfoCard = ({ icon, title, description, headerColor, bodyColor }: { icon: React.ReactNode; title: string; description: string; headerColor: string; bodyColor: string; }) => (
   <div className="rounded-lg shadow-md overflow-hidden h-full flex flex-col border border-gray-200">
@@ -78,10 +114,10 @@ const GeoIcon = () => (
   </svg>
 );
 
-export function SgeGeoSection() {
+export function SgeGeoSection({ cityName }: { cityName: string }) {
     const { toast } = useToast();
     const [isLoading, setIsLoading] = React.useState(false);
-    const form = useForm<FormValues>({
+    const form = useForm<AiSeoSgeFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             firstName: '',
@@ -94,19 +130,41 @@ export function SgeGeoSection() {
             budget: undefined,
             howDidYouHear: '',
             businessInfo: '',
+            city: cityName,
+            formType: 'AI SEO SGE/GEO Form',
         }
     });
 
-    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+     React.useEffect(() => {
+        form.setValue('city', cityName);
+    }, [cityName, form]);
+
+    const onSubmit: SubmitHandler<AiSeoSgeFormValues> = async (data) => {
         setIsLoading(true);
-        console.log(data);
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        toast({
-            title: "Proposal Request Sent!",
-            description: "Thank you for your interest. We'll be in touch with you shortly.",
-        });
-        form.reset();
-        setIsLoading(false);
+        try {
+            const response = await submitSgeForm(data);
+             if (response.success) {
+                toast({
+                    title: "Proposal Request Sent!",
+                    description: response.message,
+                });
+                form.reset();
+            } else {
+                 toast({
+                    title: "Submission Failed",
+                    description: response.message,
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+             toast({
+                title: "Error",
+                description: "An unexpected error occurred. Please try again later.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -136,15 +194,15 @@ export function SgeGeoSection() {
                         icon={<SgeIcon />} 
                         title="Search Generative Experience (SGE)"
                         description="SGE is a search experience that uses generative artificial intelligence to provide users with quick, more relevant and contextual responses without having to click on individual web pages."
-                        headerColor="#008080"
-                        bodyColor="#E0F2F1"
+                        headerColor="#00A86B"
+                        bodyColor="#E6F4EA"
                     />
                     <InfoCard 
                         icon={<GeoIcon />} 
                         title="Generative Engine Optimization (GEO)"
                         description="GEO combines SEO best practices with an understanding of generative AI to align strategies with the expectations of AI-driven search engines and ensure your content is discovered and favorably ranked."
-                        headerColor="#00A86B"
-                        bodyColor="#E6F4EA"
+                        headerColor="#008080"
+                        bodyColor="#E0F2F1"
                     />
                 </div>
                 
@@ -158,9 +216,9 @@ export function SgeGeoSection() {
                 </div>
 
                 {/* Form Section */}
-                 <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto border border-gray-200">
-                    <div className="grid md:grid-cols-2">
-                        <div className="bg-green-700/90 text-white p-8 rounded-l-lg flex flex-col justify-center">
+                 <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto border border-green-700 p-8">
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="bg-green-700/90 text-white p-8 rounded-lg flex flex-col justify-center">
                             <h3 className="text-3xl font-bold mb-4">Experience Real Results</h3>
                             <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
                             <div className="space-y-6 text-left">
@@ -178,7 +236,7 @@ export function SgeGeoSection() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-8">
+                        <div className="p-0 md:p-8">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -233,4 +291,3 @@ export function SgeGeoSection() {
         </section>
     );
 }
-

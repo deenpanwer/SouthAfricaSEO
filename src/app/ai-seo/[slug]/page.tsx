@@ -18,7 +18,7 @@ import { AiSeoResultsHighlights } from '@/components/ai-seo/AiSeoResultsHighligh
 import { AiSeoTechnologyShowcase } from '@/components/ai-seo/AiSeoTechnologyShowcase';
 import { AiSeoFaqSection } from '@/components/ai-seo/AiSeoFaqSection';
 import { AiSeoFinalCTA } from '@/components/ai-seo/AiSeoFinalCTA';
-import { AiSeoWhyChoose } from '@/components/ai-seo/AiSeoWhyChooseThrive';
+import { AiSeoWhyChoose } from '@/components/ai-seo/AiSeoWhyChoose';
 
 interface AiSeoPageProps {
   params: { slug: string };
@@ -64,7 +64,7 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
       <AiSeoVisibilitySection visibilityData={cityData.visibilityData} />
       <AiSeoIntroSection introData={cityData.introData} />
       <AiSeoComparisonTable headline={cityData.comparisonData.headline} items={cityData.comparisonData.items} ctaText={cityData.comparisonData.ctaText} />
-      <SgeGeoSection />
+      <SgeGeoSection cityName={cityData.cityName} />
       <AiSeoWhyNeedSection whyNeedData={cityData.whyNeedData} />
       <AiSeoWhyChoose whyChooseData={cityData.whyChooseData} />
       <AiSeoProblemSolution
