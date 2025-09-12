@@ -29,7 +29,7 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
           <div className="grid grid-cols-3 font-semibold text-gray-700 uppercase text-sm tracking-wider">
             <div className="px-6 py-4 text-left bg-[#E6F4EA]">AI Source</div>
             <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Overview</div>
-            <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Thrive's Capabilities</div>
+            <div className="px-6 py-4 text-left bg-[#F0FAF4] border-l border-gray-200">Thrive's Capabilities</div>
           </div>
           <div className="divide-y divide-gray-200">
             {items.map((item, index) => (
@@ -56,20 +56,22 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
         <div className="md:hidden space-y-6">
           {items.map((item, index) => (
             <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
-               <h3 className="text-lg font-bold text-gray-800 bg-[#E6F4EA] p-4">{item.source}</h3>
-               <div className="p-6 border-t border-gray-200 bg-white">
-                   <h4 className="font-semibold text-gray-700 mb-2 bg-[#E3F2FD] -mx-6 -mt-6 p-4">Overview</h4>
-                   <h5 className="font-semibold text-gray-800 mb-2 mt-4">{item.overview.title}</h5>
-                   <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
-               </div>
-               <div className="p-6 bg-[#F0FAF4] border-t border-gray-200">
-                   <h4 className="font-semibold text-gray-700 mb-4 bg-[#E3F2FD] -mx-6 -mt-6 p-4">Thrive's Capabilities</h4>
-                   <p className="text-sm text-gray-600 mb-4 mt-4">{item.capabilities.title}</p>
-                   <ul className="space-y-3 text-sm text-gray-600">
-                     {item.capabilities.points.map((point, pIndex) => (
-                       <li key={pIndex} className="flex items-start"><CheckmarkIcon /><span>{point}</span></li>
-                     ))}
-                   </ul>
+               <h3 className="text-lg font-bold text-gray-800 bg-[#E6F4EA] p-4 text-center">{item.source}</h3>
+               <div className="grid grid-cols-1 divide-y divide-gray-200">
+                    <div className="p-4 bg-white">
+                        <h4 className="font-semibold text-blue-800 mb-2 uppercase text-sm bg-blue-100/50 p-2 -m-1 rounded-t-md">Overview</h4>
+                        <h5 className="font-semibold text-gray-800 my-2">{item.overview.title}</h5>
+                        <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
+                    </div>
+                    <div className="p-4 bg-[#F0FAF4]">
+                        <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm bg-green-100/50 p-2 -m-1 rounded-t-md">Thrive's Capabilities</h4>
+                        <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
+                        <ul className="space-y-3 text-sm text-gray-600">
+                            {item.capabilities.points.map((point, pIndex) => (
+                            <li key={pIndex} className="flex items-start"><CheckmarkIcon /><span>{point}</span></li>
+                            ))}
+                        </ul>
+                    </div>
                </div>
             </div>
           ))}
