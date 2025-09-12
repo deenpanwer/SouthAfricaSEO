@@ -12,6 +12,15 @@ export const washingtonDCAiSeoData: AiSeoCityPageData = {
     formPlaceholder: 'Enter Website Address',
     formButtonText: 'Get My Free Proposal',
   },
+  visibilityData: {
+    headline: "Gain Visibility in Google AI Search",
+    subheadline: "Losing traffic to AI search results?",
+    description1: "With the rise of generative engines such as Gemini (formerly Bard), Bing Chat and Google Search Generative Experience (SGE), searches now deliver more dynamic, multimodal responses without having users click through to websites.",
+    description2: "To remain visible and relevant to your audience, your business must evolve alongside these Google AI advancements. Our Demand Generation team has been actively testing and refining strategies across leading AI platforms. Through structured prompt engineering, rich snippet optimization and real-time experimentation, we identify what actually works before implementing tactics for clients.",
+    resultsHeadline: "The results speak for themselves. From Q1 to Q2 2025, Thrive grew its total traffic from all AI platforms by a staggering 2,219%, including a:",
+    finalDescription: "We offer fully managed generative engine optimization (GEO) services that boost your visibility in generative search, attract more traffic and elevate your online presence, no matter your industry. Every strategy implemented is tailored to your business goals, with affordable and flexible pricing options suited to any budget and company size.\n\nReady to get started?",
+    ctaText: "UNLOCK MY DIGITAL POTENTIAL",
+  },
   problemSolutionData: {
     headline: "Conventional Methods vs. Intelligent Solutions",
     items: [

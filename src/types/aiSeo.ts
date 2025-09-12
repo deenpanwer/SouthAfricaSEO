@@ -9,6 +9,16 @@ export interface AiSeoHeroData {
   formButtonText: string;
 }
 
+export interface AiSeoVisibilityData {
+  headline: string;
+  subheadline: string;
+  description1: string;
+  description2: string;
+  resultsHeadline: string;
+  finalDescription: string;
+  ctaText: string;
+}
+
 export interface AiSeoProblemSolutionItem {
   problem: string;
   solution: string;
@@ -56,6 +66,7 @@ export interface AiSeoCityPageData {
   slug: string;
   cityName: string;
   heroData: AiSeoHeroData;
+  visibilityData: AiSeoVisibilityData;
   problemSolutionData: {
     headline: string;
     items: AiSeoProblemSolutionItem[];
