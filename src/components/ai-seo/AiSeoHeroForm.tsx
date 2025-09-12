@@ -85,7 +85,11 @@ export function AiSeoHeroForm({ cityName, formTitle }: AiSeoHeroFormProps) {
           title: "Request Sent!",
           description: response.message,
         });
-        form.reset();
+        form.reset({
+          website: "",
+          city: cityName,
+          formType: "AI SEO Hero Form",
+        });
       } else {
         toast({
           title: "Submission Failed",
@@ -115,17 +119,17 @@ export function AiSeoHeroForm({ cityName, formTitle }: AiSeoHeroFormProps) {
                     <FormItem className="relative flex-grow">
                     <FormLabel className="sr-only">Website Address</FormLabel>
                     <FormControl>
-                        <>
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                        <Input
-                            id={`ai-hero-website-${cityName}`}
-                            type="text"
-                            placeholder="Enter Website Address"
-                            className="w-full pl-10 h-12 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
-                            {...field}
-                            disabled={isLoading}
-                        />
-                        </>
+                        <div className="relative flex items-center w-full">
+                          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                          <Input
+                              id={`ai-hero-website-${cityName}`}
+                              type="text"
+                              placeholder="Enter Website Address"
+                              className="w-full pl-10 h-12 border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                              {...field}
+                              disabled={isLoading}
+                          />
+                        </div>
                     </FormControl>
                     <FormMessage />
                     </FormItem>
