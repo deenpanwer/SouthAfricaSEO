@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -15,8 +16,7 @@ export function AiSeoHeroSection({ cityName, heroData }: AiSeoHeroSectionProps) 
     
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
-    { name: 'Digital Marketing Services', href: '/services' },
-    { name: 'AI SEO Services', href: `/ai-seo/${heroData.pageTitle.toLowerCase().replace(/ /g, '-')}` }
+    { name: heroData.pageTitle, href: `/ai-seo/${heroData.pageTitle.toLowerCase().replace(/ /g, '-')}` }
   ];
 
   return (
