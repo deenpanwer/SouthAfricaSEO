@@ -34,6 +34,7 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
       "You’ll fall behind competitors actively building topical authority across AI platforms.",
       "ChatGPT and other LLMs may skip over your business entirely when providing results."
     ],
+    risksFollowup: "At Thrive, we help our clients lead the charge by exploring AI-driven optimization solutions that align with your goals and deliver value to your target audience. Partner with the best generative engine optimization company for AI visibility and dominate the AI-powered Search across ChatGPT, Google AI Mode and beyond.",
     bottomHeadline: "Get Found or Be Forgotten: Competing in AI Search",
     bottomDescription: [
       "As businesses navigate the future of SEO, one question frequently arises: **Is AI eliminating SEO?**",

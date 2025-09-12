@@ -68,6 +68,7 @@ export interface AiSeoIntroData {
   topDescription: string[];
   risksHeadline: string;
   risks: string[];
+  risksFollowup: string;
   bottomHeadline: string;
   bottomDescription: string[];
 }

@@ -30,7 +30,7 @@ interface AiSeoIntroSectionProps {
 }
 
 export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
-  const { topHeadline, topSubheadline, topDescription, risksHeadline, risks, bottomHeadline, bottomDescription } = introData;
+  const { topHeadline, topSubheadline, topDescription, risksHeadline, risks, risksFollowup, bottomHeadline, bottomDescription } = introData;
 
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -43,8 +43,8 @@ export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
                 <Image 
                     src="https://picsum.photos/seed/aiseo2/600/400"
                     alt="A professional analyzing AI data on a tablet"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
                     data-ai-hint="man using tablet"
                 />
             </div>
@@ -69,12 +69,15 @@ export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
                 </div>
               ))}
             </div>
+             <div className="mt-8 text-gray-700">
+                <p>{risksFollowup}</p>
+            </div>
           </div>
         </div>
 
         {/* Bottom Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center pt-16 border-t">
-          <div className="text-gray-700 md:order-2">
+          <div className="text-gray-700">
             <h2 className="text-3xl font-bold text-gray-800 mb-2">{bottomHeadline}</h2>
              <div className="space-y-4">
                 {bottomDescription.map((paragraph, index) => (
@@ -82,12 +85,12 @@ export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
                 ))}
               </div>
           </div>
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden md:order-1">
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
                   src="https://picsum.photos/seed/aiseo3/600/400"
                   alt="A smiling woman working on a laptop, representing successful SEO transformation"
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover"
                   data-ai-hint="woman using laptop"
               />
           </div>
