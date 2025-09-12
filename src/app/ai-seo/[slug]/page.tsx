@@ -10,6 +10,7 @@ import { AiSeoVisibilitySection } from '@/components/ai-seo/AiSeoVisibilitySecti
 import { AiSeoIntroSection } from '@/components/ai-seo/AiSeoIntroSection';
 import { AiSeoComparisonTable } from '@/components/ai-seo/AiSeoComparisonTable';
 import { SgeGeoSection } from '@/components/ai-seo/SgeGeoSection';
+import { AiSeoWhyNeedSection } from '@/components/ai-seo/AiSeoWhyNeedSection';
 import { AiSeoProblemSolution } from '@/components/ai-seo/AiSeoProblemSolution';
 import { AiSeoServiceGrid } from '@/components/ai-seo/AiSeoServiceGrid';
 import { AiSeoProcessVisual } from '@/components/ai-seo/AiSeoProcessVisual';
@@ -60,6 +61,7 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
     <div className="bg-background">
       <AiSeoHeroSection cityName={cityData.cityName} heroData={cityData.heroData} />
       <AiSeoVisibilitySection visibilityData={cityData.visibilityData} />
+      <AiSeoWhyNeedSection whyNeedData={cityData.whyNeedData} />
       <AiSeoIntroSection introData={cityData.introData} />
       <AiSeoComparisonTable headline={cityData.comparisonData.headline} items={cityData.comparisonData.items} ctaText={cityData.comparisonData.ctaText} />
       <SgeGeoSection />

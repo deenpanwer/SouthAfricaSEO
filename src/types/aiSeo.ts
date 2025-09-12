@@ -19,6 +19,13 @@ export interface AiSeoVisibilityData {
   ctaText: string;
 }
 
+export interface AiSeoWhyNeedData {
+  headline: string;
+  subheadline: string;
+  paragraphs: string[];
+  ctaText: string;
+}
+
 export interface AiSeoProblemSolutionItem {
   problem: string;
   solution: string;
@@ -90,6 +97,7 @@ export interface AiSeoCityPageData {
   cityName: string;
   heroData: AiSeoHeroData;
   visibilityData: AiSeoVisibilityData;
+  whyNeedData: AiSeoWhyNeedData;
   introData: AiSeoIntroData;
   comparisonData: {
     headline: string;

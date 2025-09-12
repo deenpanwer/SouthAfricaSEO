@@ -20,6 +20,16 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
     finalDescription: "We offer fully managed generative engine optimization (GEO) services that boost your visibility in generative search, attract more traffic and elevate your online presence, no matter your industry. Every strategy implemented is tailored to your business goals, with affordable and flexible pricing options suited to any budget and company size.\n\nReady to get started?",
     ctaText: "UNLOCK MY DIGITAL POTENTIAL",
   },
+  whyNeedData: {
+    headline: "Why Does Your Business Need AI SEO Services?",
+    subheadline: "Gain a Significant Edge Over Competitors",
+    paragraphs: [
+      "Many business owners and marketers have reported a **20-40% decrease in search traffic** since the introduction of AI Overviews. With the rise of artificial intelligence search and the growing prevalence of <u>zero-click Google AI search results</u>, many believe there will be an even greater decline in traffic to come.",
+      "Your competitors are investing in AI SEO services to boost their chances of appearing in the Google AI search results -- what steps are you taking to outrank and outpace the competition?",
+      "At Thrive, we're not just adopting generative search optimization, we're defining it. Our AI SEO services provide:"
+    ],
+    ctaText: "OPTIMIZE MY WEBSITE FOR SGE"
+  },
   introData: {
     topHeadline: "The Best Generative Engine Optimization Company for AI Visibility",
     topSubheadline: "Build Topical Authority and Maximize Discoverability",
