@@ -151,79 +151,79 @@ export function SgeGeoSection() {
                 </div>
 
                 {/* Form Section */}
-                <div className="bg-white rounded-lg shadow-xl grid md:grid-cols-2 overflow-hidden max-w-6xl mx-auto">
-                    <div className="bg-green-700/90 text-white p-8 flex flex-col justify-center">
-                        <h3 className="text-4xl font-bold mb-4">Experience Real Results</h3>
-                        <p className="mb-6">Partner with Thrive Internet Marketing Agency and scale your business.</p>
-                        <div className="space-y-4 text-left">
-                            <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+133" />%</span>
-                                <span>Organic Conversions</span>
-                            </div>
-                            <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+279" />%</span>
-                                <span>Organic Traffic</span>
-                            </div>
-                            <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+268" />%</span>
-                                <span>Monthly Traffic</span>
-                            </div>
-                        </div>
-                         <div className="mt-8">
-                            <Image src="https://www.thriveagency.com/files/award-seal-clutch-top-company-2023.svg" alt="Clutch Top Company 2023 Award" width={150} height={150} className="w-48 h-auto"/>
-                        </div>
-                    </div>
-                    <div className="p-8">
-                        <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <FormField control={form.control} name="firstName" render={({ field }) => (
-                                        <FormItem><FormLabel className="sr-only">First Name*</FormLabel><FormControl><Input placeholder="First Name*" {...field} /></FormControl><FormMessage /></FormItem>
-                                    )}/>
-                                    <FormField control={form.control} name="lastName" render={({ field }) => (
-                                        <FormItem><FormLabel className="sr-only">Last Name*</FormLabel><FormControl><Input placeholder="Last Name*" {...field} /></FormControl><FormMessage /></FormItem>
-                                    )}/>
+                <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2">
+                        <div className="bg-green-700/90 text-white p-8 flex flex-col justify-center">
+                            <h3 className="text-4xl font-bold mb-4">Experience Real Results</h3>
+                            <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
+                            <div className="space-y-6 text-left">
+                                <div className="flex items-center">
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+133" />%</span>
+                                    <span className="text-lg">Organic Conversions</span>
                                 </div>
-                                 <FormField control={form.control} name="company" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Company/Organization*</FormLabel><FormControl><Input placeholder="Company/Organization*" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="email" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Email Address*</FormLabel><FormControl><Input type="email" placeholder="Email Address*" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                 <FormField control={form.control} name="phone" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Phone*</FormLabel><FormControl><PhoneInput defaultCountry="us" placeholder="Phone*" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="website" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Website</FormLabel><FormControl><Input placeholder="Website" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="services" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Services*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl><SelectTrigger><SelectValue placeholder="Services*" /></SelectTrigger></FormControl>
-                                        <SelectContent><SelectItem value="seo">SEO</SelectItem><SelectItem value="ppc">PPC</SelectItem><SelectItem value="social">Social Media</SelectItem></SelectContent>
-                                    </Select><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="budget" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Monthly Marketing Budget*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl><SelectTrigger><SelectValue placeholder="Monthly Marketing Budget*" /></SelectTrigger></FormControl>
-                                        <SelectContent><SelectItem value="<2.5k">&lt; $2,500</SelectItem><SelectItem value="2.5k-5k">$2,500 - $5,000</SelectItem><SelectItem value="5k+">$5,000+</SelectItem></SelectContent>
-                                    </Select><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="howDidYouHear" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">How Did You Hear About Thrive?</FormLabel><FormControl><Input placeholder="How Did You Hear About Thrive?" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="businessInfo" render={({ field }) => (
-                                    <FormItem><FormLabel className="sr-only">Tell us about your business</FormLabel><FormControl><Textarea placeholder="Tell us about your business" {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <Button type="submit" disabled={isLoading} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg py-3">
-                                    {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/> Sending...</> : "SEND MY FREE PROPOSAL"}
-                                </Button>
-                                <p className="text-xs text-center text-muted-foreground">In a hurry? Give us a call now at 866-908-4748</p>
-                                <p className="text-xs text-center text-muted-foreground">By submitting your phone number, you agree to receiving texts from Thrive Ideas.</p>
-                            </form>
-                        </Form>
+                                <div className="flex items-center">
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+279" />%</span>
+                                    <span className="text-lg">Organic Traffic</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+268" />%</span>
+                                    <span className="text-lg">Monthly Traffic</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="p-8">
+                            <Form {...form}>
+                                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <FormField control={form.control} name="firstName" render={({ field }) => (
+                                            <FormItem><FormLabel className="sr-only">First Name*</FormLabel><FormControl><Input placeholder="First Name*" {...field} /></FormControl><FormMessage /></FormItem>
+                                        )}/>
+                                        <FormField control={form.control} name="lastName" render={({ field }) => (
+                                            <FormItem><FormLabel className="sr-only">Last Name*</FormLabel><FormControl><Input placeholder="Last Name*" {...field} /></FormControl><FormMessage /></FormItem>
+                                        )}/>
+                                    </div>
+                                    <FormField control={form.control} name="company" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Company/Organization*</FormLabel><FormControl><Input placeholder="Company/Organization*" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="email" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Email Address*</FormLabel><FormControl><Input type="email" placeholder="Email Address*" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="phone" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Phone*</FormLabel><FormControl><PhoneInput defaultCountry="us" placeholder="Phone*" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="website" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Website</FormLabel><FormControl><Input placeholder="Website" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="services" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Services*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
+                                            <FormControl><SelectTrigger><SelectValue placeholder="Services*" /></SelectTrigger></FormControl>
+                                            <SelectContent><SelectItem value="seo">SEO</SelectItem><SelectItem value="ppc">PPC</SelectItem><SelectItem value="social">Social Media</SelectItem></SelectContent>
+                                        </Select><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="budget" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Monthly Marketing Budget*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
+                                            <FormControl><SelectTrigger><SelectValue placeholder="Monthly Marketing Budget*" /></SelectTrigger></FormControl>
+                                            <SelectContent><SelectItem value="&lt;2.5k">&lt; $2,500</SelectItem><SelectItem value="2.5k-5k">$2,500 - $5,000</SelectItem><SelectItem value="5k+">$5,000+</SelectItem></SelectContent>
+                                        </Select><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="howDidYouHear" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">How Did You Hear About Thrive?</FormLabel><FormControl><Input placeholder="How Did You Hear About Thrive?" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <FormField control={form.control} name="businessInfo" render={({ field }) => (
+                                        <FormItem><FormLabel className="sr-only">Tell us about your business</FormLabel><FormControl><Textarea placeholder="Tell us about your business" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )}/>
+                                    <Button type="submit" disabled={isLoading} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg py-3">
+                                        {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/> Sending...</> : "SEND MY FREE PROPOSAL"}
+                                    </Button>
+                                    <p className="text-xs text-center text-muted-foreground">In a hurry? Give us a call now at 866-908-4748</p>
+                                    <p className="text-xs text-center text-muted-foreground">By submitting your phone number, you agree to receiving texts from Thrive Ideas.</p>
+                                </form>
+                            </Form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     );
 }
+
