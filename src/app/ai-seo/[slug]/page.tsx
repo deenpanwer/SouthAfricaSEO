@@ -9,6 +9,7 @@ import { AiSeoHeroSection } from '@/components/ai-seo/AiSeoHeroSection';
 import { AiSeoVisibilitySection } from '@/components/ai-seo/AiSeoVisibilitySection';
 import { AiSeoIntroSection } from '@/components/ai-seo/AiSeoIntroSection';
 import { AiSeoComparisonTable } from '@/components/ai-seo/AiSeoComparisonTable';
+import { SgeGeoSection } from '@/components/ai-seo/SgeGeoSection';
 import { AiSeoProblemSolution } from '@/components/ai-seo/AiSeoProblemSolution';
 import { AiSeoServiceGrid } from '@/components/ai-seo/AiSeoServiceGrid';
 import { AiSeoProcessVisual } from '@/components/ai-seo/AiSeoProcessVisual';
@@ -61,6 +62,7 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
       <AiSeoVisibilitySection visibilityData={cityData.visibilityData} />
       <AiSeoIntroSection introData={cityData.introData} />
       <AiSeoComparisonTable headline={cityData.comparisonData.headline} items={cityData.comparisonData.items} ctaText={cityData.comparisonData.ctaText} />
+      <SgeGeoSection />
       <AiSeoProblemSolution
         headline={cityData.problemSolutionData.headline}
         items={cityData.problemSolutionData.items}
