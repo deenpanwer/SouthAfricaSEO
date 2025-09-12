@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export interface AiSeoHeroData {
@@ -92,6 +93,26 @@ export interface AiSeoComparisonItem {
   };
 }
 
+export interface AiSeoWhyChooseCard {
+    icon: string;
+    title: string;
+    description: string;
+    headerColor: string;
+    bodyColor: string;
+}
+
+export interface AiSeoWhyChooseData {
+    mainHeadline: string;
+    subheadline: string;
+    ctaText1: string;
+    sectionHeadline: string;
+    sectionSubheadline: string;
+    introParagraph1: string;
+    introParagraph2: string;
+    cards: AiSeoWhyChooseCard[];
+    ctaText2: string;
+}
+
 export interface AiSeoCityPageData {
   slug: string;
   cityName: string;
@@ -104,6 +125,7 @@ export interface AiSeoCityPageData {
     ctaText: string;
     items: AiSeoComparisonItem[];
   };
+  whyChooseData: AiSeoWhyChooseData;
   problemSolutionData: {
     headline: string;
     items: AiSeoProblemSolutionItem[];

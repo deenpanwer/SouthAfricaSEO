@@ -1,3 +1,4 @@
+
 import { AiSeoCityPageData } from '../../types/aiSeo';
 
 export const arlingtonAiSeoData: AiSeoCityPageData = {
@@ -26,7 +27,7 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
     paragraphs: [
       "Many business owners and marketers have reported a **20-40% decrease in search traffic** since the introduction of AI Overviews. With the rise of artificial intelligence search and the growing prevalence of <u>zero-click Google AI search results</u>, many believe there will be an even greater decline in traffic to come.",
       "Your competitors are investing in AI SEO services to boost their chances of appearing in the Google AI search results -- what steps are you taking to outrank and outpace the competition?",
-      "At Thrive, we're not just adopting generative search optimization, we're defining it. Our AI SEO services provide:"
+      "At TRAC, we're not just adopting generative search optimization, we're defining it. Our AI SEO services provide:"
     ],
     ctaText: "OPTIMIZE MY WEBSITE FOR SGE"
   },
@@ -44,7 +45,7 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
       "You’ll fall behind competitors actively building topical authority across AI platforms.",
       "ChatGPT and other LLMs may skip over your business entirely when providing results."
     ],
-    risksFollowup: "At Thrive, we help our clients lead the charge by exploring AI-driven optimization solutions that align with your goals and deliver value to your target audience. Partner with the best generative engine optimization company for AI visibility and dominate the AI-powered Search across ChatGPT, Google AI Mode and beyond.",
+    risksFollowup: "At TRAC, we help our clients lead the charge by exploring AI-driven optimization solutions that align with your goals and deliver value to your target audience. Partner with the best generative engine optimization company for AI visibility and dominate the AI-powered Search across ChatGPT, Google AI Mode and beyond.",
     bottomHeadline: "Get Found or Be Forgotten: Competing in AI Search",
     bottomDescription: [
       "As businesses navigate the future of SEO, one question frequently arises: **Is AI eliminating SEO?**",
@@ -64,7 +65,7 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
           description: "Powered by Gemini, AI Mode synthesizes information from multiple sources to generate personalized answers at the top of the search results. It breaks down complex queries into subtopics and allows follow-up questions. This keeps users within Google Search and reduces the need to click on websites."
         },
         capabilities: {
-          title: "Boost your AI mode visibility with Thrive's data-driven AI SEO optimization services. We prioritize:",
+          title: "Boost your AI mode visibility with TRAC's data-driven AI SEO optimization services. We prioritize:",
           points: ["Passage-level content optimization", "Conversational query targeting", "Semantic SEO implementation", "Topical authority building", "Schema markup optimization"]
         }
       },
@@ -97,11 +98,65 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
           description: "Gemini (formerly Bard) powers Google Gemini Search and its broader AI ecosystem (Gmail, Docs, Android and the Gemini app). It delivers concise, conversational results and actively engages users within Search. It powers AI Overviews and AI Mode, processing real-time queries from text, voice, images and uploaded documents."
         },
         capabilities: {
-          title: "Thrive implements growth-focused Gemini SEO strategies to boost your AI visibility. Our Gemini optimization strategies focus on:",
+          title: "TRAC implements growth-focused Gemini SEO strategies to boost your AI visibility. Our Gemini optimization strategies focus on:",
           points: ["Intent-matching", "Technical SEO", "Citations management", "Link building", "Reputation management"]
         }
       }
     ]
+  },
+    whyChooseData: {
+    mainHeadline: "Our AI SEO Services",
+    subheadline: "Ensure Success With More Intelligent Search Models",
+    ctaText1: "STAY AHEAD OF THE COMPETITION",
+    sectionHeadline: "Why Choose TRAC for Your AI Search Engine Optimization",
+    sectionSubheadline: "Drive Website Traffic and Maximize Your ROI",
+    introParagraph1: "TRAC leads the charge in generative artificial intelligence adoption and digital marketing innovation. We constantly push boundaries to achieve digital success for our company and clients, setting the bar high and leading by example.",
+    introParagraph2: "With our generative engine optimization service, you get:",
+    cards: [
+      {
+        icon: 'BookOpen',
+        title: 'Authoritative Content',
+        description: 'Meaningful and informative content is the driving force behind GEO. TRAC boasts an in-house team of content specialists adept at writing AI-optimized content that aligns with generative search intent and instills user confidence and trust.',
+        headerColor: '#3B5998',
+        bodyColor: '#F0F2F5'
+      },
+      {
+        icon: 'Target',
+        title: 'Tailored AI SEO Strategy',
+        description: 'We analyze your current digital presence, identify opportunities for generative engine optimization and develop a comprehensive plan to boost your chances of appearing in AI-generated responses and ensure you stay ahead of the latest Google AI advancements.',
+        headerColor: '#00A86B',
+        bodyColor: '#E6F4EA'
+      },
+      {
+        icon: 'Users',
+        title: 'Client-Centric Approach',
+        description: 'Our AI SEO agency prioritizes open communication and collaboration with our clients, ensuring we understand your needs and expectations. This approach enables us to deliver personalized GEO solutions that drive measurable results.',
+        headerColor: '#00A86B',
+        bodyColor: '#E6F4EA'
+      },
+      {
+        icon: 'Star',
+        title: 'Expertise and Experience',
+        description: "TRAC prides itself on having a team of professionals with extensive experience in digital marketing and generative AI. Our Demand Generation team serves as a testing ground for all strategies we implement, so we know what works and what doesn't.",
+        headerColor: '#808000',
+        bodyColor: '#F5F5DC'
+      },
+      {
+        icon: 'Info',
+        title: 'Proven Results',
+        description: "Our AI SEO company's commitment to excellence is reflected in the impressive results we've achieved for our thousands of clients across various industries, nationwide and internationally. Each case study highlights the unique strategies we employed and the remarkable results we've delivered.",
+        headerColor: '#D2691E',
+        bodyColor: '#FAEBD7'
+      },
+      {
+        icon: 'BarChart2',
+        title: 'Data-Driven Insights and Reporting',
+        description: "Our approach is rooted in data analysis and performance tracking. We utilize advanced analytics tools to monitor the effectiveness of our GEO strategies, providing you with detailed reports and actionable insights.",
+        headerColor: '#FFD700',
+        bodyColor: '#FFFACD'
+      }
+    ],
+    ctaText2: 'FUTURE-PROOF MY SEO'
   },
   problemSolutionData: {
     headline: "The Old Way vs. The AI-Powered Way",
