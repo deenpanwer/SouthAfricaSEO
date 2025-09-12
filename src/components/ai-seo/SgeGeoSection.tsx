@@ -15,7 +15,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { NumberTicker } from '../ui/NumberTicker';
-import Image from 'next/image';
 
 const formSchema = z.object({
   firstName: z.string().min(1, 'First Name is required'),
@@ -32,13 +31,15 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-const InfoCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string; }) => (
-  <div className="p-6 rounded-lg shadow-md border-t-4 border-primary bg-primary/10">
-    <div className="flex items-center gap-4 mb-3">
+const InfoCard = ({ icon, title, description, headerColor, bodyColor }: { icon: React.ReactNode; title: string; description: string; headerColor: string; bodyColor: string; }) => (
+  <div className="rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+    <div className="p-4 flex items-center gap-4 text-white" style={{ backgroundColor: headerColor }}>
       {icon}
-      <h3 className="text-xl font-bold">{title}</h3>
+      <h3 className="text-lg font-bold">{title}</h3>
     </div>
-    <p className="text-muted-foreground">{description}</p>
+    <div className="p-6 flex-grow" style={{ backgroundColor: bodyColor }}>
+        <p className="text-gray-700 leading-relaxed">{description}</p>
+    </div>
   </div>
 );
 
@@ -75,7 +76,6 @@ const GeoIcon = () => (
     <path d="M2 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
-
 
 export function SgeGeoSection() {
     const { toast } = useToast();
@@ -123,21 +123,27 @@ export function SgeGeoSection() {
                 </div>
 
                 {/* Cards Section */}
-                <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
                     <InfoCard 
                         icon={<SeoIcon />} 
                         title="Search Engine Optimization (SEO)"
                         description="SEO is the process of optimizing your website and content to increase visibility, drive organic traffic and boost your rankings on search engines. The higher your search rankings, the more traffic for your website."
+                        headerColor="#E3F2FD"
+                        bodyColor="#F5F9FD"
                     />
                     <InfoCard 
                         icon={<SgeIcon />} 
                         title="Search Generative Experience (SGE)"
                         description="SGE is a search experience that uses generative artificial intelligence to provide users with quick, more relevant and contextual responses without having to click on individual web pages."
+                        headerColor="#E6F4EA"
+                        bodyColor="#F9FCF9"
                     />
                     <InfoCard 
                         icon={<GeoIcon />} 
                         title="Generative Engine Optimization (GEO)"
                         description="GEO combines SEO best practices with an understanding of generative AI to align strategies with the expectations of AI-driven search engines and ensure your content is discovered and favorably ranked."
+                        headerColor="#D1FAE5"
+                        bodyColor="#F0FDF4"
                     />
                 </div>
                 
@@ -153,8 +159,8 @@ export function SgeGeoSection() {
                 {/* Form Section */}
                 <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2">
-                        <div className="bg-green-700/90 text-white p-8 flex flex-col justify-center">
-                            <h3 className="text-4xl font-bold mb-4">Experience Real Results</h3>
+                        <div className="bg-green-700/90 text-white p-8 flex flex-col justify-center rounded-l-lg">
+                            <h3 className="text-3xl font-bold mb-4">Experience Real Results</h3>
                             <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
                             <div className="space-y-6 text-left">
                                 <div className="flex items-center">
@@ -203,7 +209,7 @@ export function SgeGeoSection() {
                                     <FormField control={form.control} name="budget" render={({ field }) => (
                                         <FormItem><FormLabel className="sr-only">Monthly Marketing Budget*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
                                             <FormControl><SelectTrigger><SelectValue placeholder="Monthly Marketing Budget*" /></SelectTrigger></FormControl>
-                                            <SelectContent><SelectItem value="&lt;2.5k">&lt; $2,500</SelectItem><SelectItem value="2.5k-5k">$2,500 - $5,000</SelectItem><SelectItem value="5k+">$5,000+</SelectItem></SelectContent>
+                                            <SelectContent><SelectItem value="<2.5k">&lt; $2,500</SelectItem><SelectItem value="2.5k-5k">$2,500 - $5,000</SelectItem><SelectItem value="5k+">$5,000+</SelectItem></SelectContent>
                                         </Select><FormMessage /></FormItem>
                                     )}/>
                                     <FormField control={form.control} name="howDidYouHear" render={({ field }) => (
@@ -226,4 +232,3 @@ export function SgeGeoSection() {
         </section>
     );
 }
-

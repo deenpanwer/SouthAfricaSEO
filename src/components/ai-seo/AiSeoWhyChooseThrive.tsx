@@ -16,11 +16,11 @@ const iconMap: { [key: string]: React.ElementType } = {
   BarChart2,
 };
 
-interface AiSeoWhyChooseThriveProps {
+interface AiSeoWhyChooseProps {
   whyChooseData: AiSeoWhyChooseData;
 }
 
-export function AiSeoWhyChooseThrive({ whyChooseData }: AiSeoWhyChooseThriveProps) {
+export function AiSeoWhyChoose({ whyChooseData }: AiSeoWhyChooseProps) {
   const { mainHeadline, subheadline, ctaText1, sectionHeadline, sectionSubheadline, introParagraph1, introParagraph2, cards, ctaText2 } = whyChooseData;
   return (
     <section className="py-16 md:py-24 bg-white">
