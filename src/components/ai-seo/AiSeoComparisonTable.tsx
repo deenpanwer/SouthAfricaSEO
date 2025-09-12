@@ -26,22 +26,22 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
         
         {/* Desktop Table View */}
         <div className="hidden md:block border border-gray-200 rounded-lg overflow-hidden">
-          <div className="grid grid-cols-3 bg-gray-50 font-semibold text-gray-700 uppercase text-sm tracking-wider">
+          <div className="grid grid-cols-3 font-semibold text-gray-700 uppercase text-sm tracking-wider">
             <div className="px-6 py-4 text-left bg-[#E6F4EA]">AI Source</div>
             <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Overview</div>
             <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Thrive's Capabilities</div>
           </div>
           <div className="divide-y divide-gray-200">
             {items.map((item, index) => (
-              <div key={index} className="grid grid-cols-3">
-                <div className="px-6 py-4 font-bold text-center self-center bg-[#F0FAF4]">{item.source}</div>
-                <div className="px-6 py-4 border-l border-gray-200">
+              <div key={index} className="grid grid-cols-3 auto-rows-fr">
+                <div className="px-6 py-8 font-bold text-center flex items-center justify-center bg-[#F0FAF4]">{item.source}</div>
+                <div className="px-6 py-8 border-l border-gray-200">
                   <h4 className="font-semibold text-gray-800 mb-2">{item.overview.title}</h4>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                 </div>
-                <div className="px-6 py-4 border-l border-gray-200">
-                  <p className="text-sm text-gray-600 mb-2">{item.capabilities.title}</p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                <div className="px-6 py-8 border-l border-gray-200">
+                  <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
+                  <ul className="space-y-3 text-sm text-gray-600">
                     {item.capabilities.points.map((point, pIndex) => (
                       <li key={pIndex} className="flex items-start"><CheckmarkIcon /><span>{point}</span></li>
                     ))}
@@ -57,13 +57,13 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
           {items.map((item, index) => (
             <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
                <h3 className="text-lg font-bold text-gray-800 bg-[#E6F4EA] p-4">{item.source}</h3>
-               <div className="p-4 border-t border-gray-200">
+               <div className="p-6 border-t border-gray-200">
                    <h4 className="font-semibold text-gray-700 mb-2">{item.overview.title}</h4>
                    <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                </div>
-               <div className="p-4 bg-gray-50 border-t border-gray-200">
+               <div className="p-6 bg-gray-50 border-t border-gray-200">
                    <h4 className="font-semibold text-gray-700 mb-2">{item.capabilities.title}</h4>
-                   <ul className="space-y-2 text-sm text-gray-600">
+                   <ul className="space-y-3 text-sm text-gray-600">
                      {item.capabilities.points.map((point, pIndex) => (
                        <li key={pIndex} className="flex items-start"><CheckmarkIcon /><span>{point}</span></li>
                      ))}
