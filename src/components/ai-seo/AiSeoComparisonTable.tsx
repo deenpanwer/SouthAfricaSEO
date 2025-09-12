@@ -11,7 +11,6 @@ interface AiSeoComparisonTableProps {
   ctaText: string;
 }
 
-
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mr-2 mt-1">
     <circle cx="10" cy="10" r="10" fill="#D1FAE5"/>
@@ -35,12 +34,12 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
           <div className="divide-y divide-gray-200">
             {items.map((item, index) => (
               <div key={index} className="grid grid-cols-3 auto-rows-fr">
-                <div className="px-6 py-8 font-bold text-center flex items-center justify-center bg-[#F9FCF9]">{item.source}</div>
-                <div className="px-6 py-8 border-l border-gray-200 bg-white">
+                <div className="px-6 py-8 font-bold text-center flex items-center justify-center bg-[#F9FCF9] border-r border-gray-200">{item.source}</div>
+                <div className="px-6 py-8 bg-white">
                   <h4 className="font-semibold text-gray-800 mb-2">{item.overview.title}</h4>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                 </div>
-                <div className="px-6 py-8 border-l border-gray-200 bg-[#F9FCF9]">
+                <div className="px-6 py-8 bg-[#F9FCF9] border-l border-gray-200">
                   <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
                   <ul className="space-y-3 text-sm text-gray-600">
                     {item.capabilities.points.map((point, pIndex) => (
@@ -59,12 +58,12 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
             <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
                <h3 className="text-lg font-bold text-gray-800 bg-[#E6F4EA] p-4 text-center">{item.source}</h3>
                <div className="grid grid-cols-2">
-                    <div className="p-4 bg-[#E3F2FD] border-r border-gray-200">
+                    <div className="p-4 bg-white border-r border-gray-200">
                         <h4 className="font-semibold text-blue-800 mb-2 uppercase text-sm">Overview</h4>
                         <h5 className="font-semibold text-gray-800 my-2">{item.overview.title}</h5>
                         <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                     </div>
-                    <div className="p-4 bg-[#E6F4EA]">
+                    <div className="p-4 bg-[#F9FCF9]">
                         <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm">Thrive's Capabilities</h4>
                         <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
                         <ul className="space-y-3 text-sm text-gray-600">
@@ -89,3 +88,4 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
     </section>
   );
 }
+
