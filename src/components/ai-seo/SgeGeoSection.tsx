@@ -128,22 +128,22 @@ export function SgeGeoSection() {
                         icon={<SeoIcon />} 
                         title="Search Engine Optimization (SEO)"
                         description="SEO is the process of optimizing your website and content to increase visibility, drive organic traffic and boost your rankings on search engines. The higher your search rankings, the more traffic for your website."
-                        headerColor="#E3F2FD"
-                        bodyColor="#F5F9FD"
+                        headerColor="#3B5998"
+                        bodyColor="#F0F2F5"
                     />
                     <InfoCard 
                         icon={<SgeIcon />} 
                         title="Search Generative Experience (SGE)"
                         description="SGE is a search experience that uses generative artificial intelligence to provide users with quick, more relevant and contextual responses without having to click on individual web pages."
-                        headerColor="#E6F4EA"
-                        bodyColor="#F9FCF9"
+                        headerColor="#008080"
+                        bodyColor="#E0F2F1"
                     />
                     <InfoCard 
                         icon={<GeoIcon />} 
                         title="Generative Engine Optimization (GEO)"
                         description="GEO combines SEO best practices with an understanding of generative AI to align strategies with the expectations of AI-driven search engines and ensure your content is discovered and favorably ranked."
-                        headerColor="#D1FAE5"
-                        bodyColor="#F0FDF4"
+                        headerColor="#00A86B"
+                        bodyColor="#E6F4EA"
                     />
                 </div>
                 
@@ -157,9 +157,9 @@ export function SgeGeoSection() {
                 </div>
 
                 {/* Form Section */}
-                <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2">
-                        <div className="bg-green-700/90 text-white p-8 flex flex-col justify-center rounded-l-lg">
+                <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto p-8">
+                    <div className="grid md:grid-cols-2 gap-8">
+                         <div className="bg-green-700/90 text-white p-8 rounded-lg flex flex-col justify-center">
                             <h3 className="text-3xl font-bold mb-4">Experience Real Results</h3>
                             <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
                             <div className="space-y-6 text-left">
@@ -177,10 +177,10 @@ export function SgeGeoSection() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-8">
+                        <div>
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <FormField control={form.control} name="firstName" render={({ field }) => (
                                             <FormItem><FormLabel className="sr-only">First Name*</FormLabel><FormControl><Input placeholder="First Name*" {...field} /></FormControl><FormMessage /></FormItem>
                                         )}/>
