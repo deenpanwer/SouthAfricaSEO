@@ -7,6 +7,7 @@ import type { AiSeoCityPageData } from '@/types/aiSeo';
 // Import New Components
 import { AiSeoHeroSection } from '@/components/ai-seo/AiSeoHeroSection';
 import { AiSeoVisibilitySection } from '@/components/ai-seo/AiSeoVisibilitySection';
+import { AiSeoIntroSection } from '@/components/ai-seo/AiSeoIntroSection';
 import { AiSeoProblemSolution } from '@/components/ai-seo/AiSeoProblemSolution';
 import { AiSeoServiceGrid } from '@/components/ai-seo/AiSeoServiceGrid';
 import { AiSeoProcessVisual } from '@/components/ai-seo/AiSeoProcessVisual';
@@ -57,6 +58,7 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
     <div className="bg-background">
       <AiSeoHeroSection cityName={cityData.cityName} heroData={cityData.heroData} />
       <AiSeoVisibilitySection visibilityData={cityData.visibilityData} />
+      <AiSeoIntroSection introData={cityData.introData} />
       <AiSeoProblemSolution
         headline={cityData.problemSolutionData.headline}
         items={cityData.problemSolutionData.items}

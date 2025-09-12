@@ -62,11 +62,22 @@ export interface AiSeoFinalCta {
     ctaText: string;
 }
 
+export interface AiSeoIntroData {
+  topHeadline: string;
+  topSubheadline: string;
+  topDescription: string[];
+  risksHeadline: string;
+  risks: string[];
+  bottomHeadline: string;
+  bottomDescription: string[];
+}
+
 export interface AiSeoCityPageData {
   slug: string;
   cityName: string;
   heroData: AiSeoHeroData;
   visibilityData: AiSeoVisibilityData;
+  introData: AiSeoIntroData;
   problemSolutionData: {
     headline: string;
     items: AiSeoProblemSolutionItem[];

@@ -20,6 +20,28 @@ export const arlingtonAiSeoData: AiSeoCityPageData = {
     finalDescription: "We offer fully managed generative engine optimization (GEO) services that boost your visibility in generative search, attract more traffic and elevate your online presence, no matter your industry. Every strategy implemented is tailored to your business goals, with affordable and flexible pricing options suited to any budget and company size.\n\nReady to get started?",
     ctaText: "UNLOCK MY DIGITAL POTENTIAL",
   },
+  introData: {
+    topHeadline: "The Best Generative Engine Optimization Company for AI Visibility",
+    topSubheadline: "Build Topical Authority and Maximize Discoverability",
+    topDescription: [
+      "AI has fundamentally reshaped how search engines interpret, rank and deliver content to the end user.",
+      "Instead of focusing primarily on traditional keyword matching, search engines leverage advanced large language models (LLMs), such as ChatGPT and Gemini, to understand user intent and generate highly personalized answers.",
+      "**Zero-Click Search** is commonplace, with users getting the information they need directly from AI-generated answers, often without visiting a website. That means fewer clicks, lower organic traffic and more missed opportunities unless your business is actively optimized for AI discoverability."
+    ],
+    risksHeadline: "Without an active AI SEO strategy:",
+    risks: [
+      "Your brand risks becoming completely invisible in Google’s AI Mode and AI Overviews.",
+      "You’ll fall behind competitors actively building topical authority across AI platforms.",
+      "ChatGPT and other LLMs may skip over your business entirely when providing results."
+    ],
+    bottomHeadline: "Get Found or Be Forgotten: Competing in AI Search",
+    bottomDescription: [
+      "As businesses navigate the future of SEO, one question frequently arises: **Is AI eliminating SEO?**",
+      "The simple answer: No, AI isn't eliminating SEO; **it's transforming it**.",
+      "Search engine optimization (SEO) now encompasses two key approaches: **answer engine optimization (AEO)** and **generative engine optimization (GEO)**. AEO focuses on optimizing content to answer user queries directly in search engines. GEO takes the principles of AEO to ensure your content is synthesized and cited within AI-generated responses.",
+      "Our generative engine optimization agency combines human expertise with AI efficiency to give you the best of both worlds: **personalization + speed**. We can do more work in less time to get you better results."
+    ]
+  },
   problemSolutionData: {
     headline: "The Old Way vs. The AI-Powered Way",
     items: [
