@@ -32,8 +32,8 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-const InfoCard = ({ icon, title, description, color }: { icon: React.ReactNode; title: string; description: string; color: string }) => (
-  <div className={`p-6 rounded-lg shadow-md border-t-4 ${color}`}>
+const InfoCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string; }) => (
+  <div className="p-6 rounded-lg shadow-md border-t-4 border-primary bg-primary/10">
     <div className="flex items-center gap-4 mb-3">
       {icon}
       <h3 className="text-xl font-bold">{title}</h3>
@@ -128,19 +128,16 @@ export function SgeGeoSection() {
                         icon={<SeoIcon />} 
                         title="Search Engine Optimization (SEO)"
                         description="SEO is the process of optimizing your website and content to increase visibility, drive organic traffic and boost your rankings on search engines. The higher your search rankings, the more traffic for your website."
-                        color="border-blue-600 bg-blue-600/10"
                     />
                     <InfoCard 
                         icon={<SgeIcon />} 
                         title="Search Generative Experience (SGE)"
                         description="SGE is a search experience that uses generative artificial intelligence to provide users with quick, more relevant and contextual responses without having to click on individual web pages."
-                        color="border-teal-500 bg-teal-500/10"
                     />
                     <InfoCard 
                         icon={<GeoIcon />} 
                         title="Generative Engine Optimization (GEO)"
                         description="GEO combines SEO best practices with an understanding of generative AI to align strategies with the expectations of AI-driven search engines and ensure your content is discovered and favorably ranked."
-                        color="border-green-600 bg-green-600/10"
                     />
                 </div>
                 
@@ -160,20 +157,20 @@ export function SgeGeoSection() {
                         <p className="mb-6">Partner with Thrive Internet Marketing Agency and scale your business.</p>
                         <div className="space-y-4 text-left">
                             <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4">+<NumberTicker value="133" />%</span>
+                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+133" />%</span>
                                 <span>Organic Conversions</span>
                             </div>
                             <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4">+<NumberTicker value="279" />%</span>
+                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+279" />%</span>
                                 <span>Organic Traffic</span>
                             </div>
                             <div className="flex items-center">
-                                <span className="text-4xl font-bold text-yellow-400 mr-4">+<NumberTicker value="268" />%</span>
+                                <span className="text-4xl font-bold text-yellow-400 mr-4"><NumberTicker value="+268" />%</span>
                                 <span>Monthly Traffic</span>
                             </div>
                         </div>
-                        <div className="mt-8">
-                             <Image src="https://www.thriveagency.com/files/award-seal-clutch-top-company-2023.svg" alt="Laptop with growing tree" width={500} height={300} className="w-full h-auto"/>
+                         <div className="mt-8">
+                            <Image src="https://www.thriveagency.com/files/award-seal-clutch-top-company-2023.svg" alt="Clutch Top Company 2023 Award" width={150} height={150} className="w-48 h-auto"/>
                         </div>
                     </div>
                     <div className="p-8">
@@ -181,41 +178,41 @@ export function SgeGeoSection() {
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <FormField control={form.control} name="firstName" render={({ field }) => (
-                                        <FormItem><FormLabel>First Name*</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                                        <FormItem><FormLabel className="sr-only">First Name*</FormLabel><FormControl><Input placeholder="First Name*" {...field} /></FormControl><FormMessage /></FormItem>
                                     )}/>
                                     <FormField control={form.control} name="lastName" render={({ field }) => (
-                                        <FormItem><FormLabel>Last Name*</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                                        <FormItem><FormLabel className="sr-only">Last Name*</FormLabel><FormControl><Input placeholder="Last Name*" {...field} /></FormControl><FormMessage /></FormItem>
                                     )}/>
                                 </div>
-                                <FormField control={form.control} name="company" render={({ field }) => (
-                                    <FormItem><FormLabel>Company/Organization*</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
-                                )}/>
-                                <FormField control={form.control} name="website" render={({ field }) => (
-                                    <FormItem><FormLabel>Website</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                                 <FormField control={form.control} name="company" render={({ field }) => (
+                                    <FormItem><FormLabel className="sr-only">Company/Organization*</FormLabel><FormControl><Input placeholder="Company/Organization*" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={form.control} name="email" render={({ field }) => (
-                                    <FormItem><FormLabel>Email Address*</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>
+                                    <FormItem><FormLabel className="sr-only">Email Address*</FormLabel><FormControl><Input type="email" placeholder="Email Address*" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                  <FormField control={form.control} name="phone" render={({ field }) => (
-                                    <FormItem><FormLabel>Phone*</FormLabel><FormControl><PhoneInput defaultCountry="us" {...field} /></FormControl><FormMessage /></FormItem>
+                                    <FormItem><FormLabel className="sr-only">Phone*</FormLabel><FormControl><PhoneInput defaultCountry="us" placeholder="Phone*" {...field} /></FormControl><FormMessage /></FormItem>
+                                )}/>
+                                <FormField control={form.control} name="website" render={({ field }) => (
+                                    <FormItem><FormLabel className="sr-only">Website</FormLabel><FormControl><Input placeholder="Website" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={form.control} name="services" render={({ field }) => (
-                                    <FormItem><FormLabel>Services*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl><SelectTrigger><SelectValue placeholder="Select a service" /></SelectTrigger></FormControl>
+                                    <FormItem><FormLabel className="sr-only">Services*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl><SelectTrigger><SelectValue placeholder="Services*" /></SelectTrigger></FormControl>
                                         <SelectContent><SelectItem value="seo">SEO</SelectItem><SelectItem value="ppc">PPC</SelectItem><SelectItem value="social">Social Media</SelectItem></SelectContent>
                                     </Select><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={form.control} name="budget" render={({ field }) => (
-                                    <FormItem><FormLabel>Monthly Marketing Budget*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl><SelectTrigger><SelectValue placeholder="Select a budget" /></SelectTrigger></FormControl>
+                                    <FormItem><FormLabel className="sr-only">Monthly Marketing Budget*</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl><SelectTrigger><SelectValue placeholder="Monthly Marketing Budget*" /></SelectTrigger></FormControl>
                                         <SelectContent><SelectItem value="<2.5k">&lt; $2,500</SelectItem><SelectItem value="2.5k-5k">$2,500 - $5,000</SelectItem><SelectItem value="5k+">$5,000+</SelectItem></SelectContent>
                                     </Select><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={form.control} name="howDidYouHear" render={({ field }) => (
-                                    <FormItem><FormLabel>How Did You Hear About Thrive?</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>
+                                    <FormItem><FormLabel className="sr-only">How Did You Hear About Thrive?</FormLabel><FormControl><Input placeholder="How Did You Hear About Thrive?" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <FormField control={form.control} name="businessInfo" render={({ field }) => (
-                                    <FormItem><FormLabel>Tell us about your business</FormLabel><FormControl><Textarea {...field} /></FormControl><FormMessage /></FormItem>
+                                    <FormItem><FormLabel className="sr-only">Tell us about your business</FormLabel><FormControl><Textarea placeholder="Tell us about your business" {...field} /></FormControl><FormMessage /></FormItem>
                                 )}/>
                                 <Button type="submit" disabled={isLoading} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg py-3">
                                     {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/> Sending...</> : "SEND MY FREE PROPOSAL"}
