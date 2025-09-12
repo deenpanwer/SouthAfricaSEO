@@ -5,6 +5,13 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { AiSeoComparisonItem } from '@/types/aiSeo';
 
+interface AiSeoComparisonTableProps {
+  headline: string;
+  items: AiSeoComparisonItem[];
+  ctaText: string;
+}
+
+
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 mr-2 mt-1">
     <circle cx="10" cy="10" r="10" fill="#D1FAE5"/>
@@ -21,7 +28,7 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
         {/* Desktop Table View */}
         <div className="hidden md:block border border-gray-200 rounded-lg overflow-hidden">
           <div className="grid grid-cols-3 font-semibold text-gray-700 uppercase text-sm tracking-wider">
-            <div className="px-6 py-4 text-left bg-[#E6F4EA]">AI Source</div>
+            <div className="px-6 py-4 text-center bg-[#E6F4EA]">AI Source</div>
             <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Overview</div>
             <div className="px-6 py-4 text-left bg-[#E6F4EA] border-l border-gray-200">Thrive's Capabilities</div>
           </div>
@@ -47,18 +54,18 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
         </div>
 
         {/* Mobile Card View */}
-        <div className="md:hidden space-y-6">
+        <div className="md:hidden space-y-8">
           {items.map((item, index) => (
             <div key={index} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
                <h3 className="text-lg font-bold text-gray-800 bg-[#E6F4EA] p-4 text-center">{item.source}</h3>
-               <div className="grid grid-cols-1 divide-y divide-gray-200">
-                    <div className="p-4 bg-white">
-                        <h4 className="font-semibold text-blue-800 mb-2 uppercase text-sm bg-blue-100/50 p-2 -m-1 rounded-t-md">Overview</h4>
+               <div className="grid grid-cols-2">
+                    <div className="p-4 bg-[#E3F2FD] border-r border-gray-200">
+                        <h4 className="font-semibold text-blue-800 mb-2 uppercase text-sm">Overview</h4>
                         <h5 className="font-semibold text-gray-800 my-2">{item.overview.title}</h5>
                         <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                     </div>
-                    <div className="p-4 bg-[#F0FAF4]">
-                        <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm bg-green-100/50 p-2 -m-1 rounded-t-md">Thrive's Capabilities</h4>
+                    <div className="p-4 bg-[#E6F4EA]">
+                        <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm">Thrive's Capabilities</h4>
                         <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
                         <ul className="space-y-3 text-sm text-gray-600">
                             {item.capabilities.points.map((point, pIndex) => (
