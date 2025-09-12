@@ -45,8 +45,8 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
                 <Image
                     src="https://picsum.photos/seed/aiseo1/600/600"
                     alt="AI SEO professional analyzing data"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
                     data-ai-hint="woman working on laptop"
                 />
             </div>

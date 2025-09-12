@@ -26,6 +26,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: AiSeoPageProps): Promise<Metadata> {
+  await params; // Await params before accessing its properties
   const cityData: AiSeoCityPageData | undefined = getAiSeoCityData(params.slug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
