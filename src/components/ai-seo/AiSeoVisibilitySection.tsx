@@ -35,7 +35,6 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
             <div className="space-y-4 text-gray-700">
               <p>{description1}</p>
               <p>{description2}</p>
-              <p>{resultsHeadline}</p>
             </div>
           </div>
 
@@ -53,20 +52,23 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 max-w-4xl mx-auto">
-          <div className="bg-blue-100/60 p-6 rounded-lg text-center">
-            <p className="text-4xl font-bold text-blue-600">+117%</p>
-            <p className="text-sm font-medium text-blue-800 mt-1">Boost from Gemini</p>
-          </div>
-          <div className="bg-blue-100/60 p-6 rounded-lg text-center">
-            <p className="text-4xl font-bold text-blue-600">+119%</p>
-            <p className="text-sm font-medium text-blue-800 mt-1">Increase from ChatGPT</p>
+        {/* Stats Section - Moved Below */}
+        <div className="mt-16 text-center max-w-3xl mx-auto">
+          <p className="text-gray-700 mb-6">{resultsHeadline}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-blue-100/60 p-6 rounded-lg text-center">
+              <p className="text-4xl font-bold text-blue-600">+117%</p>
+              <p className="text-sm font-medium text-blue-800 mt-1">Boost from Gemini</p>
+            </div>
+            <div className="bg-blue-100/60 p-6 rounded-lg text-center">
+              <p className="text-4xl font-bold text-blue-600">+119%</p>
+              <p className="text-sm font-medium text-blue-800 mt-1">Increase from ChatGPT</p>
+            </div>
           </div>
         </div>
 
         {/* Final Content and CTA */}
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center mt-12">
           <div className="space-y-4 text-gray-700 mb-8">
              {finalDescriptionParts.map((part, index) => (
                 <p key={index}>{part}</p>
