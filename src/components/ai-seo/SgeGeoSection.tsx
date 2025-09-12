@@ -15,12 +15,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from 'lucide-react';
 import { NumberTicker } from '../ui/NumberTicker';
+import { CONTACT_DETAILS } from '@/lib/constants';
 
 const formSchema = z.object({
   firstName: z.string().min(1, 'First Name is required'),
   lastName: z.string().min(1, 'Last Name is required'),
-  company: z.string().min(1, 'Company/Organization is required'),
-  website: z.string().url({ message: "Please enter a valid URL." }).optional().or(z.literal('')),
+  company: z.string().optional(),
+  website: z.string().optional(),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
   services: z.string().optional(),
@@ -32,7 +33,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const InfoCard = ({ icon, title, description, headerColor, bodyColor }: { icon: React.ReactNode; title: string; description: string; headerColor: string; bodyColor: string; }) => (
-  <div className="rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+  <div className="rounded-lg shadow-md overflow-hidden h-full flex flex-col border border-gray-200">
     <div className="p-4 flex items-center gap-4 text-white" style={{ backgroundColor: headerColor }}>
       {icon}
       <h3 className="text-lg font-bold">{title}</h3>
@@ -157,9 +158,9 @@ export function SgeGeoSection() {
                 </div>
 
                 {/* Form Section */}
-                <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto p-8">
-                    <div className="grid md:grid-cols-2 gap-8">
-                         <div className="bg-green-700/90 text-white p-8 rounded-lg flex flex-col justify-center">
+                 <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto border border-gray-200">
+                    <div className="grid md:grid-cols-2">
+                        <div className="bg-green-700/90 text-white p-8 rounded-l-lg flex flex-col justify-center">
                             <h3 className="text-3xl font-bold mb-4">Experience Real Results</h3>
                             <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
                             <div className="space-y-6 text-left">
@@ -177,7 +178,7 @@ export function SgeGeoSection() {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="p-8">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -189,7 +190,7 @@ export function SgeGeoSection() {
                                         )}/>
                                     </div>
                                     <FormField control={form.control} name="company" render={({ field }) => (
-                                        <FormItem><FormLabel className="sr-only">Company/Organization*</FormLabel><FormControl><Input placeholder="Company/Organization*" {...field} /></FormControl><FormMessage /></FormItem>
+                                        <FormItem><FormLabel className="sr-only">Company/Organization*</FormLabel><FormControl><Input placeholder="Company/Organization" {...field} /></FormControl><FormMessage /></FormItem>
                                     )}/>
                                     <FormField control={form.control} name="email" render={({ field }) => (
                                         <FormItem><FormLabel className="sr-only">Email Address*</FormLabel><FormControl><Input type="email" placeholder="Email Address*" {...field} /></FormControl><FormMessage /></FormItem>
@@ -221,7 +222,7 @@ export function SgeGeoSection() {
                                     <Button type="submit" disabled={isLoading} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg py-3">
                                         {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/> Sending...</> : "SEND MY FREE PROPOSAL"}
                                     </Button>
-                                    <p className="text-xs text-center text-muted-foreground">In a hurry? Give us a call now at 866-908-4748</p>
+                                    <p className="text-xs text-center text-muted-foreground">In a hurry? Give us a call now at <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-orange-600 font-semibold">{CONTACT_DETAILS.phone}</a></p>
                                     <p className="text-xs text-center text-muted-foreground">By submitting your phone number, you agree to receiving texts from Thrive Ideas.</p>
                                 </form>
                             </Form>
@@ -232,3 +233,4 @@ export function SgeGeoSection() {
         </section>
     );
 }
+
