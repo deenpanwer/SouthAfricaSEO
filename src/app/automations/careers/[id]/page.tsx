@@ -22,7 +22,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export default function JobDetailsPage({ params }: Props) {
+export default async function JobDetailsPage({ params }: Props) {
   const jobData = getJobData(params.id);
 
   if (!jobData) {

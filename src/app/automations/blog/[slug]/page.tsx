@@ -29,7 +29,8 @@ async function getPost(slug: string) {
 
 // For metadata generation (still runs on server)
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const awaitedParams = await params;
+  const post = await getPost(awaitedParams.slug);
 
   if (!post) {
     return notFound();
@@ -64,7 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Main component (now a server component)
 export default async function Post({ params }: Props) {
-  const postData = await getPost(params.slug);
+  const awaitedParams = await params;
+  const postData = await getPost(awaitedParams.slug);
 
   if (!postData) {
     notFound(); // Redirect if post not found

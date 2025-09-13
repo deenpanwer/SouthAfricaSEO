@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: LandscapingStatePageProps): Promise<Metadata> {
-  const stateData = getLandscapingStateData(params.stateSlug);
+  const awaitedParams = await params;
+  const stateData = getLandscapingStateData(awaitedParams.stateSlug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com'; 
 
   if (!stateData) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: LandscapingStatePageProps): P
   };
 }
 
-export default function LandscapingStatePage({ params }: LandscapingStatePageProps) {
-  const stateData = getLandscapingStateData(params.stateSlug);
+export default async function LandscapingStatePage({ params }: LandscapingStatePageProps) {
+  const awaitedParams = await params;
+  const stateData = getLandscapingStateData(awaitedParams.stateSlug);
 
   if (!stateData) {
     notFound();

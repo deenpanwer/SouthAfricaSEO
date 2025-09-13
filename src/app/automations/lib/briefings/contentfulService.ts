@@ -40,7 +40,7 @@ export const getContentfulBriefingArticles = async (): Promise<ContentfulBriefin
         author: fields.author || 'Admin',
         tags: fields.tags || [],
         featuredImage: {
-          url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+          url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
           title: imageTitle || '',
           description: imageDescription || '',
         },
@@ -81,7 +81,7 @@ export const getContentfulBriefingArticleBySlug = async (slug: string): Promise<
       author: fields.author || 'Admin',
       tags: fields.tags || [],
       featuredImage: {
-        url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+        url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
         title: imageTitle || '',
         description: imageDescription || '',
       },

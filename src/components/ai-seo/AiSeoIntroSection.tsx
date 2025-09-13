@@ -42,10 +42,10 @@ export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                 <Image 
                     src="https://picsum.photos/seed/aiseo2/600/400"
-                    alt="A professional analyzing AI data on a tablet"
+                    alt="A Traconomics professional analyzing AI data on a tablet"
                     fill
                     className="object-cover"
-                    data-ai-hint="man using tablet"
+                    
                 />
             </div>
             <div className="text-gray-700">
@@ -88,10 +88,10 @@ export function AiSeoIntroSection({ introData }: AiSeoIntroSectionProps) {
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
                   src="https://picsum.photos/seed/aiseo3/600/400"
-                  alt="A smiling woman working on a laptop, representing successful SEO transformation"
+                  alt="A smiling Traconomics woman working on a laptop, representing successful SEO transformation"
                   fill
                   className="object-cover"
-                  data-ai-hint="woman using laptop"
+                  
               />
           </div>
         </div>

@@ -35,7 +35,7 @@ export const getContentfulBlogPosts = async (): Promise<ContentfulBlogPost[]> =>
         description: String(fields.description || ''),
 
         publicationDate: String(fields.publicationDate),
-        image: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+        image: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
         imageTitle: String(imageTitle || ''),
         imageDescription: String(imageDescription || ''),
         author: String(fields.author || 'Admin'),
@@ -74,7 +74,7 @@ export const getContentfulBlogPostBySlug = async (slug: string): Promise<Content
       description: String(fields.description || ''),
       
       publicationDate: String(fields.publicationDate),
-      image: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+      image: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
       imageTitle: String(imageTitle || ''),
       imageDescription: String(imageDescription || ''),
       author: String(fields.author || 'Admin'),

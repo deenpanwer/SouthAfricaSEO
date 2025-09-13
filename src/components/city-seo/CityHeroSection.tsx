@@ -68,7 +68,7 @@ export function CityHeroSection({ cityData, cityName }: CityHeroSectionProps) {
   const needsReadMore = heroDescription.length > characterLimit;
 
   const breadcrumbItems = [
-    { name: 'TRAC', href: '/' },
+    { name: 'Home', href: '/' },
     { name: `${cityName} SEO Service Agency`, href: '#' },
   ];
 

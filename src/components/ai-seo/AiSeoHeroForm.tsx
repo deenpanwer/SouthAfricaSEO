@@ -28,7 +28,7 @@ async function submitAiSeoHeroForm(data: AiSeoHeroFormValues): Promise<{ success
       "Website URL": data.website || '',
       "Service of Interest": 'AI SEO',
       "Your Message": `Lead from ${data.city} AI SEO Hero Form.`,
-      "Form Type": `${data.formType} - ${data.city}`,
+      "Form Type": `AI SEO Hero Form - ${data.city}`,
       "Timestamp": new Date().toISOString()
     };
 
@@ -55,10 +55,9 @@ async function submitAiSeoHeroForm(data: AiSeoHeroFormValues): Promise<{ success
 
 interface AiSeoHeroFormProps {
   cityName: string;
-  formTitle: string;
 }
 
-export function AiSeoHeroForm({ cityName, formTitle }: AiSeoHeroFormProps) {
+export function AiSeoHeroForm({ cityName }: AiSeoHeroFormProps) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -111,7 +110,7 @@ export function AiSeoHeroForm({ cityName, formTitle }: AiSeoHeroFormProps) {
   return (
     <div className="max-w-2xl mx-auto bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-200">
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-2 sm:items-center">
                 <FormField
                 control={form.control}
                 name="website"
@@ -135,14 +134,14 @@ export function AiSeoHeroForm({ cityName, formTitle }: AiSeoHeroFormProps) {
                     </FormItem>
                 )}
                 />
-                <Button type="submit" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white h-12" disabled={isLoading}>
+                <Button type="submit" size="lg" className="bg-orange-500 hover:bg-orange-600 text-white h-12 flex-shrink-0" disabled={isLoading}>
                 {isLoading ? (
                     <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     Sending...
                     </>
                 ) : (
-                    formTitle
+                    "Get Your FREE AI SEO Analysis"
                 )}
                 </Button>
             </form>

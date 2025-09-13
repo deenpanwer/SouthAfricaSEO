@@ -31,7 +31,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
-  const cityData = getCityData(params.slug);
+  const awaitedParams = await params;
+  const cityData = getCityData(awaitedParams.slug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!cityData) {
@@ -52,7 +53,8 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
 }
 
 export default async function CityPage({ params }: CityPageProps) {
-  const cityData = getCityData(params.slug);
+  const awaitedParams = await params;
+  const cityData = getCityData(awaitedParams.slug);
 
   if (!cityData) {
     notFound();

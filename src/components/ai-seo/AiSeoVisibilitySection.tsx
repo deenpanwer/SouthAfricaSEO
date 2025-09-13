@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import type { AiSeoVisibilityData } from '@/types/aiSeo';
+import Link from 'next/link';
 
 interface AiSeoVisibilitySectionProps {
   visibilityData: AiSeoVisibilityData;
@@ -17,7 +18,6 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
     description2,
     resultsHeadline,
     finalDescription,
-    ctaText
   } = visibilityData;
 
   const finalDescriptionParts = finalDescription.split('\n\n');
@@ -43,10 +43,10 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
             <div className="relative aspect-[4/3] rounded-lg shadow-lg overflow-hidden">
                 <Image
                     src="https://picsum.photos/seed/aiseo1/600/400"
-                    alt="AI SEO professional analyzing data"
+                    alt="Traconomics AI SEO professional analyzing data"
                     fill
                     className="object-cover"
-                    data-ai-hint="woman working on laptop"
+                    data-ai-hint="Traconomics woman working on laptop"
                 />
             </div>
           </div>
@@ -58,11 +58,11 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="bg-blue-100/60 p-6 rounded-lg text-center">
-              <p className="text-4xl font-bold text-blue-600">+117%</p>
+              <p className="text-4xl font-bold text-blue-600">+127%</p>
               <p className="text-sm font-medium text-blue-800 mt-1">Boost from Gemini</p>
             </div>
             <div className="bg-blue-100/60 p-6 rounded-lg text-center">
-              <p className="text-4xl font-bold text-blue-600">+119%</p>
+              <p className="text-4xl font-bold text-blue-600">+139%</p>
               <p className="text-sm font-medium text-blue-800 mt-1">Increase from ChatGPT</p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export function AiSeoVisibilitySection({ visibilityData }: AiSeoVisibilitySectio
 
           <div className="text-center">
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-8 py-6">
-              {ctaText}
+              <Link href="/contact">{"BOOST MY VISIBILITY"}</Link>
             </Button>
           </div>
         </div>

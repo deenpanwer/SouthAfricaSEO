@@ -24,7 +24,8 @@ async function getCaseStudy(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const caseStudy = await getCaseStudy(params.slug);
+  const awaitedParams = await params;
+  const caseStudy = await getCaseStudy(awaitedParams.slug);
 
   if (!caseStudy) {
     return notFound();
@@ -47,7 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CaseStudyArticle({ params }: Props) {
-  const caseStudyData = await getCaseStudy(params.slug);
+  const awaitedParams = await params;
+  const caseStudyData = await getCaseStudy(awaitedParams.slug);
 
   if (!caseStudyData) {
     notFound();

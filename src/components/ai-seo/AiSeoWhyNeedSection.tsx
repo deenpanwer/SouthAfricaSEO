@@ -24,7 +24,7 @@ const parseText = (text: string) => {
 };
 
 export function AiSeoWhyNeedSection({ whyNeedData }: AiSeoWhyNeedSectionProps) {
-  const { headline, subheadline, paragraphs, ctaText } = whyNeedData;
+  const { headline, subheadline, paragraphs } = whyNeedData;
 
   return (
     <section className="py-16 md:py-24" style={{ backgroundColor: '#F8FFF8' }}>
@@ -45,8 +45,8 @@ export function AiSeoWhyNeedSection({ whyNeedData }: AiSeoWhyNeedSectionProps) {
         </div>
 
         <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-md text-lg px-8 py-6">
-          <Link href="/contact?service=SGE-Optimization">
-            {ctaText}
+          <Link href="/contact">
+            {"OPTIMIZE MY WEBSITE FOR SGE"}
           </Link>
         </Button>
       </div>

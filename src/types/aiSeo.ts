@@ -6,9 +6,7 @@ export interface AiSeoHeroData {
   metaDescription: string;
   heroTitle: string;
   heroSubtitle: string;
-  formPlaceholder: string;
-  formButtonText: string;
-  formTitle: string;
+  
 }
 
 export interface AiSeoVisibilityData {
@@ -18,57 +16,17 @@ export interface AiSeoVisibilityData {
   description2: string;
   resultsHeadline: string;
   finalDescription: string;
-  ctaText: string;
 }
 
 export interface AiSeoWhyNeedData {
   headline: string;
   subheadline: string;
   paragraphs: string[];
-  ctaText: string;
-}
-
-export interface AiSeoProblemSolutionItem {
-  problem: string;
-  solution: string;
-}
-
-export interface AiSeoServiceItem {
-  icon: string; // Icon name as string
-  title: string;
-  description: string;
-}
-
-export interface AiSeoProcessStep {
-  title: string;
-  description: string;
-}
-
-export interface AiSeoResult {
-  metric: string;
-  value: string;
-}
-
-export interface AiSeoTestimonial {
-  quote: string;
-  author: string;
-  company: string;
-}
-
-export interface AiSeoTechnology {
-  name: string;
-  description: string;
 }
 
 export interface AiSeoFaqItem {
   question: string;
   answer: string;
-}
-
-export interface AiSeoFinalCta {
-    headline: string;
-    description: string;
-    ctaText: string;
 }
 
 export interface AiSeoIntroData {
@@ -98,20 +56,16 @@ export interface AiSeoWhyChooseCard {
     icon: string;
     title: string;
     description: string;
-    headerColor: string;
-    bodyColor: string;
 }
 
 export interface AiSeoWhyChooseData {
     mainHeadline: string;
     subheadline: string;
-    ctaText1: string;
     sectionHeadline: string;
     sectionSubheadline: string;
     introParagraph1: string;
     introParagraph2: string;
     cards: AiSeoWhyChooseCard[];
-    ctaText2: string;
 }
 
 export interface AiSeoCityPageData {
@@ -123,36 +77,13 @@ export interface AiSeoCityPageData {
   introData: AiSeoIntroData;
   comparisonData: {
     headline: string;
-    ctaText: string;
     items: AiSeoComparisonItem[];
   };
   whyChooseData: AiSeoWhyChooseData;
-  problemSolutionData: {
-    headline: string;
-    items: AiSeoProblemSolutionItem[];
-  };
-  servicesData: {
-    headline: string;
-    items: AiSeoServiceItem[];
-  };
-  processData: {
-    headline: string;
-    steps: AiSeoProcessStep[];
-  };
-  resultsData: {
-    headline: string;
-    stats: AiSeoResult[];
-    testimonials: AiSeoTestimonial[];
-  };
-  technologyData: {
-    headline: string;
-    items: AiSeoTechnology[];
-  };
   faqData: {
     headline: string;
     items: AiSeoFaqItem[];
   };
-  finalCtaData: AiSeoFinalCta;
 }
 
 // AI SEO Form Types

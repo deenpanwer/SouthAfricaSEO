@@ -16,12 +16,36 @@ const iconMap: { [key: string]: React.ElementType } = {
   BarChart2,
 };
 
+const getHeaderColor = (index: number) => {
+  const colors = [
+    '#3B5998', // BookOpen
+    '#00A86B', // Target
+    '#00A86B', // Users
+    '#808000', // Star
+    '#D2691E', // Info
+    '#FFD700', // BarChart2
+  ];
+  return colors[index % colors.length];
+};
+
+const getBodyColor = (index: number) => {
+  const colors = [
+    '#F0F2F5', // BookOpen
+    '#E6F4EA', // Target
+    '#E6F4EA', // Users
+    '#F5F5DC', // Star
+    '#FAEBD7', // Info
+    '#FFFACD', // BarChart2
+  ];
+  return colors[index % colors.length];
+};
+
 interface AiSeoWhyChooseProps {
   whyChooseData: AiSeoWhyChooseData;
 }
 
 export function AiSeoWhyChoose({ whyChooseData }: AiSeoWhyChooseProps) {
-  const { mainHeadline, subheadline, ctaText1, sectionHeadline, sectionSubheadline, introParagraph1, introParagraph2, cards, ctaText2 } = whyChooseData;
+  const { mainHeadline, subheadline, sectionHeadline, sectionSubheadline, introParagraph1, introParagraph2, cards } = whyChooseData;
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +54,7 @@ export function AiSeoWhyChoose({ whyChooseData }: AiSeoWhyChooseProps) {
             <h2 className="text-3xl font-bold mb-2">{mainHeadline}</h2>
             <p className="text-lg text-gray-600 mb-6">{subheadline}</p>
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full">
-                <Link href="/contact?service=ai-seo">{ctaText1}</Link>
+                <Link href="/contact">{"STAY AHEAD OF THE COMPETITION"}</Link>
             </Button>
         </div>
 
@@ -46,11 +70,11 @@ export function AiSeoWhyChoose({ whyChooseData }: AiSeoWhyChooseProps) {
             const Icon = iconMap[card.icon];
             return (
               <div key={index} className="rounded-lg shadow-lg overflow-hidden">
-                <div className="p-4 flex items-center text-white" style={{ backgroundColor: card.headerColor }}>
+                <div className="p-4 flex items-center text-white" style={{ backgroundColor: getHeaderColor(index) }}>
                   {Icon && <Icon className="h-6 w-6 mr-3" />}
                   <h3 className="text-lg font-bold">{card.title}</h3>
                 </div>
-                <div className="p-6 h-full" style={{ backgroundColor: card.bodyColor }}>
+                <div className="p-6 h-full" style={{ backgroundColor: getBodyColor(index) }}>
                   <p className="text-gray-700 leading-relaxed">{card.description}</p>
                 </div>
               </div>
@@ -60,7 +84,7 @@ export function AiSeoWhyChoose({ whyChooseData }: AiSeoWhyChooseProps) {
 
         <div className="mt-12 text-center">
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full">
-                <Link href="/contact?service=future-proof-seo">{ctaText2}</Link>
+                <Link href="/contact">{'FUTURE-PROOF MY SEO'}</Link>
             </Button>
         </div>
 

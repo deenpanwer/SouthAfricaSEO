@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Input } from '@/components/ui/input';
@@ -9,18 +8,40 @@ import { AiSeoHeroForm } from './AiSeoHeroForm';
 
 interface AiSeoHeroSectionProps {
   cityName: string;
-  heroData: AiSeoHeroData;
 }
 
 export function AiSeoHeroSection({ cityName, heroData }: AiSeoHeroSectionProps) {
     
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
-    { name: heroData.pageTitle, href: `/ai-seo/${heroData.pageTitle.toLowerCase().replace(/ /g, '-')}` }
+    { name: `${cityName} AI SEO Company`, href: `/${cityName.toLowerCase().replace(/ /g, '-')}-ai-seo-company` }
   ];
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.traconomics.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": `${cityName} AI SEO Company`,
+        "item": `https://www.traconomics.com/${cityName.toLowerCase().replace(/ /g, '-')}-ai-seo-company`
+      }
+    ]
+  };
 
   return (
     <section className="relative py-16 md:py-20 bg-[#F8FFF8] overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Decorative background shapes */}
       <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/3">
         <div className="w-[400px] h-[400px] bg-lime-200/50 rounded-full opacity-50 blur-3xl" />
@@ -37,7 +58,7 @@ export function AiSeoHeroSection({ cityName, heroData }: AiSeoHeroSectionProps) 
           {heroData.heroSubtitle}
         </p>
 
-        <AiSeoHeroForm cityName={cityName} formTitle={heroData.formTitle} />
+        <AiSeoHeroForm cityName={cityName} />
         
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-8">

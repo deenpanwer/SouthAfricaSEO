@@ -9,7 +9,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const newsData = await getContentfulNewsArticleBySlug(params.slug);
+  const awaitedParams = await params;
+  const newsData = await getContentfulNewsArticleBySlug(awaitedParams.slug);
   if (!newsData) {
     return notFound();
   }
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function NewsArticle({ params }: Props) {
-  const newsData = await getContentfulNewsArticleBySlug(params.slug);
+  const awaitedParams = await params;
+  const newsData = await getContentfulNewsArticleBySlug(awaitedParams.slug);
 
   if (!newsData) {
     return notFound();

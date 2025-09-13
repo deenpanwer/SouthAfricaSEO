@@ -40,7 +40,7 @@ export const getContentfulCaseStudies = async (): Promise<ContentfulCaseStudy[]>
         author: fields.author || 'Admin',
         tags: fields.tags || [],
         featuredImage: {
-          url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+          url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
           title: imageTitle || '',
           description: imageDescription || '',
         },
@@ -81,7 +81,7 @@ export const getContentfulCaseStudyBySlug = async (slug: string): Promise<Conten
       author: fields.author || 'Admin',
       tags: fields.tags || [],
       featuredImage: {
-        url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+        url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
         title: imageTitle || '',
         description: imageDescription || '',
       },

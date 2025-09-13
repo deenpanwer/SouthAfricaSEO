@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: VeterinaryStatePageProps): Promise<Metadata> {
-  const stateData = getVeterinaryStateData(params.stateSlug);
+  const awaitedParams = await params;
+  const stateData = getVeterinaryStateData(awaitedParams.stateSlug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!stateData) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: VeterinaryStatePageProps): Pr
   };
 }
 
-export default function VeterinaryStatePage({ params }: VeterinaryStatePageProps) {
-  const stateData = getVeterinaryStateData(params.stateSlug);
+export default async function VeterinaryStatePage({ params }: VeterinaryStatePageProps) {
+  const awaitedParams = await params;
+  const stateData = getVeterinaryStateData(awaitedParams.stateSlug);
 
   if (!stateData) {
     notFound();

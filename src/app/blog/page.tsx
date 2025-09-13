@@ -1,38 +1,26 @@
-
 import { Metadata } from 'next';
-// import { AITopicSuggestion } from '@/components/blog/AITopicSuggestion'; // AI component removed
-import { BlogPostCard } from '@/components/blog/BlogPostCard';
 import { APP_NAME } from '@/lib/constants';
-import { getContentfulBlogPosts } from '@/lib/contentfulBlogService';
 import { Rss, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { InfiniteBlogScroll } from '@/components/blog/InfiniteBlogScroll';
+import { searchBlogPosts } from './actions'; // Import from the new actions file
 
 export const metadata: Metadata = {
   title: 'Business Insights Blog',
   description: `Stay updated with the latest business insights, tips, and trends from ${APP_NAME}.`,
 };
 
-// Mock search functionality for demonstration
-async function searchBlogPosts(query: string | undefined) {
-  "use server";
-  const allPosts = await getContentfulBlogPosts();
-  if (!query) return allPosts;
-  return allPosts.filter(post =>
-    post.title.toLowerCase().includes(query.toLowerCase()) ||
-    post.description.toLowerCase().includes(query.toLowerCase()) ||
-    post.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
-  );
-}
-
-
 export default async function BlogPage({ searchParams }: { searchParams?: { query?: string }}) {
-  const searchQuery = searchParams?.query || undefined;
-  const postsToDisplay = await searchBlogPosts(searchQuery); // This function now uses getAllBlogPosts internally
+  const awaitedSearchParams = await searchParams;
+  const searchQuery = awaitedSearchParams?.query || undefined;
+  const POSTS_PER_PAGE = 6;
+  const currentPage = 1; // Always start with page 1 for initial load
+  const { paginatedPosts: initialPosts, totalPosts: initialTotalPosts } = await searchBlogPosts(searchQuery, currentPage, POSTS_PER_PAGE);
 
   const breadcrumbItems = [
-    { name: 'TRAC', href: '/' },
+    { name: 'Home', href: '/' },
     { name: 'Blog', href: '/blog' },
   ];
 
@@ -50,13 +38,6 @@ export default async function BlogPage({ searchParams }: { searchParams?: { quer
           </p>
         </section>
 
-        {/* AI Topic Suggestion section removed */}
-        {/* 
-        <section className="mb-12 md:mb-16">
-          <AITopicSuggestion />
-        </section> 
-        */}
-        
         <section className="mb-12">
           <form method="GET" action="/blog" className="flex gap-2 mb-8 max-w-lg mx-auto">
             <Input 
@@ -69,25 +50,15 @@ export default async function BlogPage({ searchParams }: { searchParams?: { quer
             <Button type="submit" variant="outline"><Search className="mr-2 h-4 w-4"/> Search</Button>
           </form>
         
-          {postsToDisplay.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {postsToDisplay.map((post) => (
-                <BlogPostCard key={post.id} post={post} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">No blog posts found matching your search criteria.</p>
-            </div>
-          )}
+          <InfiniteBlogScroll 
+            initialPosts={initialPosts}
+            initialTotalPosts={initialTotalPosts}
+            searchQuery={searchQuery}
+            postsPerPage={POSTS_PER_PAGE}
+          />
         </section>
 
-        {/* Placeholder for pagination if many posts */}
-        {/* 
-        <section className="text-center mt-12">
-          <Button variant="outline">Load More Posts</Button>
-        </section> 
-        */}
+        {/* In the future, a user might want to bring back the numbered pagination. */}
       </div>
     </div>
   );

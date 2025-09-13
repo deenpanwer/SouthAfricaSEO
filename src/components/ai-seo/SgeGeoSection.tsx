@@ -172,12 +172,12 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Top Section */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <h2 className="text-3xl font-bold text-foreground">SEO, SGE, GEO: What You Need To Know</h2>
+                    <h2 className="text-3xl font-bold text-foreground">SEO, SGE, GEO: Traconomics' Expert Perspective</h2>
                     <p className="mt-4 text-muted-foreground">
-                        From keyword density to understanding search intent and context, search generative experience (SGE) is shifting the paradigm. But what is SGE and how could it affect your organic traffic and search engine optimization (SEO) strategies?
+                        In the rapidly evolving digital landscape, understanding the nuances of search engine optimization (SEO), Search Generative Experience (SGE), and Generative Engine Optimization (GEO) is crucial. Traconomics, with its deep expertise and proven experience, guides businesses through this paradigm shift, ensuring your content not only ranks but also establishes undeniable authority and trustworthiness.
                     </p>
                     <p className="mt-4 text-muted-foreground">
-                        Discover what these generative search developments could mean for your digital strategy:
+                        Discover Traconomics' authoritative insights into these generative search developments and how they can profoundly impact your digital strategy:
                     </p>
                 </div>
 
@@ -186,21 +186,21 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
                     <InfoCard 
                         icon={<SeoIcon />} 
                         title="Search Engine Optimization (SEO)"
-                        description="SEO is the process of optimizing your website and content to increase visibility, drive organic traffic and boost your rankings on search engines. The higher your search rankings, the more traffic for your website."
+                        description="SEO is the foundational process of expertly optimizing your website and content to enhance visibility, drive high-quality organic traffic, and secure top rankings on search engines. Traconomics' proven methodologies ensure your website achieves and maintains a strong, authoritative presence, leading to sustained traffic growth."
                         headerColor="#3B5998"
                         bodyColor="#F0F2F5"
                     />
                     <InfoCard 
                         icon={<SgeIcon />} 
                         title="Search Generative Experience (SGE)"
-                        description="SGE is a search experience that uses generative artificial intelligence to provide users with quick, more relevant and contextual responses without having to click on individual web pages."
+                        description="SGE represents a significant evolution in search, leveraging advanced generative artificial intelligence to deliver quick, highly relevant, and contextually rich responses directly to users. Traconomics' deep understanding of SGE ensures your content is optimized to be the authoritative source cited within these AI-generated summaries, building trust and visibility."
                         headerColor="#00A86B"
                         bodyColor="#E6F4EA"
                     />
                     <InfoCard 
                         icon={<GeoIcon />} 
                         title="Generative Engine Optimization (GEO)"
-                        description="GEO combines SEO best practices with an understanding of generative AI to align strategies with the expectations of AI-driven search engines and ensure your content is discovered and favorably ranked."
+                        description="GEO, or Generative Engine Optimization, is Traconomics' specialized approach that expertly merges traditional SEO best practices with a profound understanding of generative AI. This ensures your strategies are perfectly aligned with the expectations of AI-driven search engines, guaranteeing your content is not only discovered but also favorably ranked as a trusted and authoritative source."
                         headerColor="#008080"
                         bodyColor="#E0F2F1"
                     />
@@ -208,10 +208,10 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
                 
                 <div className="text-center max-w-3xl mx-auto mb-16">
                      <p className="text-muted-foreground">
-                        Our AI SEO company is laser-focused on providing GEO services that boost your content visibility and ranking in the age of artificial intelligence search. We implement data-driven strategies to make your content Google AI-ready while keeping it engaging for human readers.
+                        Traconomics, as a leading AI SEO authority, is laser-focused on delivering expert GEO services that significantly boost your content's visibility and ranking in the age of artificial intelligence search. We meticulously implement data-driven strategies, backed by extensive experience, to ensure your content is not only Google AI-ready but also highly engaging and trustworthy for human readers.
                     </p>
                      <p className="mt-4 text-muted-foreground">
-                        Have more questions about what is SGE and GEO? Book a call with us today. We're happy to answer your questions and walk you through our process.
+                        Have more questions about Traconomics' proven SGE and GEO strategies? Book a call with our experts today. We are eager to share our knowledge, answer your questions, and walk you through our authoritative process for achieving digital success.
                     </p>
                 </div>
 
@@ -219,20 +219,20 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
                  <div className="bg-white rounded-lg shadow-xl overflow-hidden max-w-6xl mx-auto border border-green-700 p-8">
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-green-700/90 text-white p-8 rounded-lg flex flex-col justify-center">
-                            <h3 className="text-3xl font-bold mb-4">Experience Real Results</h3>
-                            <p className="mb-8">Partner with Thrive Internet Marketing Agency and scale your business.</p>
+                            <h3 className="text-3xl font-bold mb-4">Experience Traconomics' Proven Expertise & Real Results</h3>
+                            <p className="mb-8">Leverage Traconomics' deep expertise and trusted methodologies to not just scale, but authoritatively lead your market.</p>
                             <div className="space-y-6 text-left">
                                 <div className="flex items-center">
-                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+133" />%</span>
-                                    <span className="text-lg">Organic Conversions</span>
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+185" />%</span>
+                                    <span className="text-lg">Enhanced Organic Conversions</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+279" />%</span>
-                                    <span className="text-lg">Organic Traffic</span>
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+310" />%</span>
+                                    <span className="text-lg">Significant Organic Traffic Growth</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+268" />%</span>
-                                    <span className="text-lg">Monthly Traffic</span>
+                                    <span className="text-5xl font-bold text-yellow-400 mr-4"><NumberTicker value="+295" />%</span>
+                                    <span className="text-lg">Consistent Monthly Traffic Increase</span>
                                 </div>
                             </div>
                         </div>
@@ -272,7 +272,7 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
                                         </Select><FormMessage /></FormItem>
                                     )}/>
                                     <FormField control={form.control} name="howDidYouHear" render={({ field }) => (
-                                        <FormItem><FormLabel className="sr-only">How Did You Hear About Thrive?</FormLabel><FormControl><Input placeholder="How Did You Hear About Thrive?" {...field} /></FormControl><FormMessage /></FormItem>
+                                        <FormItem><FormLabel className="sr-only">How Did You Hear About Us?</FormLabel><FormControl><Input placeholder="How Did You Hear About Us?" {...field} /></FormControl><FormMessage /></FormItem>
                                     )}/>
                                     <FormField control={form.control} name="businessInfo" render={({ field }) => (
                                         <FormItem><FormLabel className="sr-only">Tell us about your business</FormLabel><FormControl><Textarea placeholder="Tell us about your business" {...field} /></FormControl><FormMessage /></FormItem>
@@ -281,7 +281,7 @@ export function SgeGeoSection({ cityName }: { cityName: string }) {
                                         {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/> Sending...</> : "SEND MY FREE PROPOSAL"}
                                     </Button>
                                     <p className="text-xs text-center text-muted-foreground">In a hurry? Give us a call now at <a href={`tel:${CONTACT_DETAILS.phone}`} className="text-orange-600 font-semibold">{CONTACT_DETAILS.phone}</a></p>
-                                    <p className="text-xs text-center text-muted-foreground">By submitting your phone number, you agree to receiving texts from Thrive Ideas.</p>
+                                    <p className="text-xs text-center text-muted-foreground">By submitting your phone number, you agree to receiving texts from Traconomics.</p>
                                 </form>
                             </Form>
                         </div>

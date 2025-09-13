@@ -2,7 +2,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAiSeoCityData, AI_SEO_CITIES_DATA } from '@/lib/aiSeoConstants';
-import type { AiSeoCityPageData } from '@/types/aiSeo';
+import type { AiSeoCityPageData, AiSeoFaqItem } from '@/types/aiSeo';
 
 // Import New Components
 import { AiSeoHeroSection } from '@/components/ai-seo/AiSeoHeroSection';
@@ -11,13 +11,7 @@ import { AiSeoIntroSection } from '@/components/ai-seo/AiSeoIntroSection';
 import { AiSeoComparisonTable } from '@/components/ai-seo/AiSeoComparisonTable';
 import { SgeGeoSection } from '@/components/ai-seo/SgeGeoSection';
 import { AiSeoWhyNeedSection } from '@/components/ai-seo/AiSeoWhyNeedSection';
-import { AiSeoProblemSolution } from '@/components/ai-seo/AiSeoProblemSolution';
-import { AiSeoServiceGrid } from '@/components/ai-seo/AiSeoServiceGrid';
-import { AiSeoProcessVisual } from '@/components/ai-seo/AiSeoProcessVisual';
-import { AiSeoResultsHighlights } from '@/components/ai-seo/AiSeoResultsHighlights';
-import { AiSeoTechnologyShowcase } from '@/components/ai-seo/AiSeoTechnologyShowcase';
 import { AiSeoFaqSection } from '@/components/ai-seo/AiSeoFaqSection';
-import { AiSeoFinalCTA } from '@/components/ai-seo/AiSeoFinalCTA';
 import { AiSeoWhyChoose } from '@/components/ai-seo/AiSeoWhyChoose';
 
 interface AiSeoPageProps {
@@ -31,8 +25,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: AiSeoPageProps): Promise<Metadata> {
-  await params; // Await params before accessing its properties
-  const cityData: AiSeoCityPageData | undefined = getAiSeoCityData(params.slug);
+  const { slug } = await params;
+  const cityData: AiSeoCityPageData | undefined = getAiSeoCityData(slug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!cityData) {
@@ -52,11 +46,25 @@ export async function generateMetadata({ params }: AiSeoPageProps): Promise<Meta
 }
 
 export default async function AiSeoPage({ params }: AiSeoPageProps) {
-  const cityData: AiSeoCityPageData | undefined = getAiSeoCityData(params.slug);
+  const { slug } = await params;
+  const cityData: AiSeoCityPageData | undefined = getAiSeoCityData(slug);
 
   if (!cityData) {
     notFound();
   }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": cityData.faqData.items.map((item: AiSeoFaqItem) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
 
   return (
     <div className="bg-background">
@@ -67,32 +75,14 @@ export default async function AiSeoPage({ params }: AiSeoPageProps) {
       <SgeGeoSection cityName={cityData.cityName} />
       <AiSeoWhyNeedSection whyNeedData={cityData.whyNeedData} />
       <AiSeoWhyChoose whyChooseData={cityData.whyChooseData} />
-      <AiSeoProblemSolution
-        headline={cityData.problemSolutionData.headline}
-        items={cityData.problemSolutionData.items}
-      />
-      <AiSeoServiceGrid
-        headline={cityData.servicesData.headline}
-        items={cityData.servicesData.items}
-      />
-      <AiSeoProcessVisual
-        headline={cityData.processData.headline}
-        steps={cityData.processData.steps}
-      />
-      <AiSeoResultsHighlights
-        headline={cityData.resultsData.headline}
-        stats={cityData.resultsData.stats}
-        testimonials={cityData.resultsData.testimonials}
-      />
-      <AiSeoTechnologyShowcase
-        headline={cityData.technologyData.headline}
-        items={cityData.technologyData.items}
-      />
       <AiSeoFaqSection
         headline={cityData.faqData.headline}
         items={cityData.faqData.items}
       />
-      <AiSeoFinalCTA finalCtaData={cityData.finalCtaData} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </div>
   );
 }

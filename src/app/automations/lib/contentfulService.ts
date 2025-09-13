@@ -45,7 +45,7 @@ export const getContentfulBlogPosts = async (): Promise<ContentfulBlogPost[]> =>
         title: fields.title || 'Untitled Post',
         description: fields.description || '', // Make sure your model has this
         date: new Date(item.sys.createdAt).toISOString(),
-        image: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg', // Handle missing image
+        image: imageUrl ? `https:${imageUrl}` : '/placeholder.svg', // Handle missing image
         author: fields.author || 'Admin', // Make sure your model has this
         tags: fields.tags || [], // Make sure your model has this
       };
@@ -78,7 +78,7 @@ export const getContentfulBlogPostBySlug = async (slug: string): Promise<Content
       title: fields.title || 'Untitled Post',
       description: fields.description || '',
       date: new Date(item.sys.createdAt).toISOString(),
-      image: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+      image: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
       author: fields.author || 'Admin',
       tags: fields.tags || [],
       // Note: We need to handle Rich Text to HTML conversion here

@@ -8,6 +8,7 @@ import { AUTO_DEALER_STATES_DATA } from '@/lib/autoDealerStateConstants';
 import { AUTO_REPAIR_STATES_DATA } from '@/lib/autoRepairStateConstants';
 import { SALON_STATES_DATA } from '@/lib/salonStateConstants';
 import { GYM_STATES_DATA } from '@/lib/gymStateConstants';
+import { AI_SEO_CITIES_DATA } from '@/lib/aiSeoConstants';
 
 // Import automations Contentful services
 import { getContentfulBlogPosts as getAutomationsBlogPosts } from '@/app/automations/lib/blog/contentfulService';
@@ -137,6 +138,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const aiSeoCityPageEntries = AI_SEO_CITIES_DATA.map(city => ({
+    url: `${domain}/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }));
+
   const serviceSlugs = [
     'amazon-marketing',
     'content-writing',
@@ -184,6 +192,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...autoRepairStateEntries,
     ...salonStateEntries,
     ...gymStateEntries,
+    ...aiSeoCityPageEntries,
     ...servicePageEntries,
     ...philosophyPageEntries,
   ];

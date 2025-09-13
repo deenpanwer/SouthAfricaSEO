@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: GymStatePageProps): Promise<Metadata> {
-  const stateData = getGymStateData(params.stateSlug);
+  const awaitedParams = await params;
+  const stateData = getGymStateData(awaitedParams.stateSlug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!stateData) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: GymStatePageProps): Promise<M
   };
 }
 
-export default function GymStatePage({ params }: GymStatePageProps) {
-  const stateData = getGymStateData(params.stateSlug);
+export default async function GymStatePage({ params }: GymStatePageProps) {
+  const awaitedParams = await params;
+  const stateData = getGymStateData(awaitedParams.stateSlug);
 
   if (!stateData) {
     notFound();

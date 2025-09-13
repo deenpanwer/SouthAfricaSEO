@@ -8,9 +8,10 @@ import { AUTO_DEALER_STATES_DATA } from '@/lib/autoDealerStateConstants';
 import { AUTO_REPAIR_STATES_DATA } from '@/lib/autoRepairStateConstants';
 import { SALON_STATES_DATA } from '@/lib/salonStateConstants';
 import { GYM_STATES_DATA } from '@/lib/gymStateConstants';
+import { AI_SEO_CITIES_DATA } from '@/lib/aiSeoConstants';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Sprout, Stethoscope, Car, Wrench, Scissors, Dumbbell } from 'lucide-react';
+import { MapPin, Sprout, Stethoscope, Car, Wrench, Scissors, Dumbbell, Search } from 'lucide-react';
 import { APP_NAME } from '@/lib/constants';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -104,6 +105,13 @@ export default function LocationsPage() {
       icon: Dumbbell,
       items: GYM_STATES_DATA.map(state => ({ slug: state.slug, name: state.stateName, linkPrefix: "", linkSuffix: "-gym-seo-strategies" })),
       iconColor: "text-purple-600",
+    },
+    {
+      title: "AI SEO Service Locations",
+      description: "Specialized AI-powered SEO strategies for businesses in these cities.",
+      icon: Search,
+      items: AI_SEO_CITIES_DATA.map(city => ({ slug: city.slug, name: city.cityName, linkPrefix: "", linkSuffix: "" })),
+      iconColor: "text-indigo-600",
     },
   ];
 

@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-export default function PostPage({ params }: { params: { slug: string }}) {
+export default async function PostPage({ params }: { params: { slug: string }}) {
   // In a real app, you'd use params.slug to fetch the correct post.
   // Here, we just check if the slug matches our single hardcoded post for demonstration.
   if (params.slug !== post.slug) {

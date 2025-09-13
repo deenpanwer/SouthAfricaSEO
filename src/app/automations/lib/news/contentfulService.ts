@@ -44,7 +44,7 @@ export const getContentfulNewsArticles = async (): Promise<ContentfulNewsArticle
         excerpt: fields.excerpt || '',
         description: fields.description || '',
         featuredImage: {
-          url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+          url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
           title: imageTitle || '',
           description: imageDescription || '',
         },
@@ -88,7 +88,7 @@ export const getContentfulNewsArticleBySlug = async (slug: string): Promise<Cont
       excerpt: fields.excerpt || '',
       description: fields.description || '',
       featuredImage: {
-        url: imageUrl ? `https:${imageUrl}` : '/placeholder.jpg',
+        url: imageUrl ? `https:${imageUrl}` : '/placeholder.svg',
         title: imageTitle || '',
         description: imageDescription || '',
       },

@@ -24,7 +24,8 @@ async function getBriefing(slug: string) {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const briefing = await getBriefing(params.slug);
+  const awaitedParams = await params;
+  const briefing = await getBriefing(awaitedParams.slug);
 
   if (!briefing) {
     return notFound();
@@ -47,7 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BriefingArticle({ params }: Props) {
-  const briefingData = await getBriefing(params.slug);
+  const awaitedParams = await params;
+  const briefingData = await getBriefing(awaitedParams.slug);
 
   if (!briefingData) {
     notFound();

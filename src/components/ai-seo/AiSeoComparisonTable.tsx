@@ -8,7 +8,6 @@ import type { AiSeoComparisonItem } from '@/types/aiSeo';
 interface AiSeoComparisonTableProps {
   headline: string;
   items: AiSeoComparisonItem[];
-  ctaText: string;
 }
 
 const CheckmarkIcon = () => (
@@ -18,7 +17,7 @@ const CheckmarkIcon = () => (
   </svg>
 );
 
-export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparisonTableProps) {
+export function AiSeoComparisonTable({ headline, items }: AiSeoComparisonTableProps) {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +28,7 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
           <div className="grid grid-cols-3 font-semibold text-gray-700 uppercase text-sm tracking-wider">
             <div className="px-6 py-4 text-center bg-[#E6F4EA]">AI Source</div>
             <div className="px-6 py-4 text-left bg-[#E3F2FD] border-l border-gray-200">Overview</div>
-            <div className="px-6 py-4 text-left bg-[#E6F4EA] border-l border-gray-200">Thrive's Capabilities</div>
+            <div className="px-6 py-4 text-left bg-[#E6F4EA] border-l border-gray-200">Traconomics's Capabilities</div>
           </div>
           <div className="divide-y divide-gray-200">
             {items.map((item, index) => (
@@ -64,7 +63,7 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
                         <p className="text-sm text-gray-600 leading-relaxed">{item.overview.description}</p>
                     </div>
                     <div className="p-4 bg-[#F9FCF9]">
-                        <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm">Thrive's Capabilities</h4>
+                        <h4 className="font-semibold text-green-800 mb-4 uppercase text-sm">Traconomics's Capabilities</h4>
                         <p className="text-sm text-gray-600 mb-4">{item.capabilities.title}</p>
                         <ul className="space-y-3 text-sm text-gray-600">
                             {item.capabilities.points.map((point, pIndex) => (
@@ -79,8 +78,8 @@ export function AiSeoComparisonTable({ headline, items, ctaText }: AiSeoComparis
 
         <div className="mt-12 text-center">
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
-                <Link href="/contact?service=ai-seo-strategy">
-                    {ctaText}
+                <Link href="/contact">
+                    {"BUILD MY AI VISIBILITY STRATEGY"}
                 </Link>
             </Button>
         </div>

@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: AutoDealerStatePageProps): Promise<Metadata> {
-  const stateData = getAutoDealerStateData(params.stateSlug);
+  const awaitedParams = await params;
+  const stateData = getAutoDealerStateData(awaitedParams.stateSlug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!stateData) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: AutoDealerStatePageProps): Pr
   };
 }
 
-export default function AutoDealerStatePage({ params }: AutoDealerStatePageProps) {
-  const stateData = getAutoDealerStateData(params.stateSlug);
+export default async function AutoDealerStatePage({ params }: AutoDealerStatePageProps) {
+  const awaitedParams = await params;
+  const stateData = getAutoDealerStateData(awaitedParams.stateSlug);
 
   if (!stateData) {
     notFound();

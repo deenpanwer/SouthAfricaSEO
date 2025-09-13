@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: SalonStatePageProps): Promise<Metadata> {
-  const stateData = getSalonStateData(params.stateSlug);
+  const awaitedParams = await params;
+  const stateData = getSalonStateData(awaitedParams.stateSlug);
   const domain = process.env.WEBSITE_URL || 'https://www.traconomics.com';
 
   if (!stateData) {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: SalonStatePageProps): Promise
   };
 }
 
-export default function SalonStatePage({ params }: SalonStatePageProps) {
-  const stateData = getSalonStateData(params.stateSlug);
+export default async function SalonStatePage({ params }: SalonStatePageProps) {
+  const awaitedParams = await params;
+  const stateData = getSalonStateData(awaitedParams.stateSlug);
 
   if (!stateData) {
     notFound();
