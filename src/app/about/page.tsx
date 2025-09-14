@@ -39,7 +39,8 @@ export default function AboutUsPage() {
               <Image
                 src={mission.imageUrl}
                 alt={mission.title}
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div>
@@ -86,7 +87,8 @@ export default function AboutUsPage() {
                <Image
                 src={expertise.imageUrl}
                 alt="Digital Strategy Session"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
             </div>
           </div>
