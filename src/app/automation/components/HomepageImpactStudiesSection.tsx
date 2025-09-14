@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Card from './ui/Card';
+import Card from '@/components/ui/Card';
 import { motion } from 'framer-motion';
 
 const HomepageImpactStudiesSection: React.FC = () => {

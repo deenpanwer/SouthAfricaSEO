@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Carousel from './ui/Carousel';
+import Carousel from '@/components/ui/Carousel';
 import { motion } from 'framer-motion';
 
 const TestimonialsCarousel: React.FC = () => {

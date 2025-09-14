@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import Card from './ui/Card';
+import { Card, CardContent, CardFooter } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import { motion } from 'framer-motion';
 
 const HomepageBlogSection: React.FC = () => {
