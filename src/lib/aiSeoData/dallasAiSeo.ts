@@ -5,9 +5,9 @@ export const dallasAiSeoData: AiSeoCityPageData = {
   cityName: 'Dallas',
   heroData: {
     pageTitle: 'Dallas AI SEO Experts | Powering Finance, Tech & Energy Visibility',
-    metaDescription: 'Traconomics: Dallas's premier AI SEO partner. We empower the city's finance, tech, energy, and transportation giants to dominate digital landscapes, ensuring unparalleled visibility and authority in this global business hub.',
+    metaDescription: 'Traconomics: Dallas\'s premier AI SEO partner. We empower the city\'s finance, tech, energy, and transportation giants to dominate digital landscapes, ensuring unparalleled visibility and authority in this global business hub.',
     heroTitle: 'AI-Driven SEO for Dallas: Propelling Finance, Tech, and Energy Leaders to Digital Dominance',
-    heroSubtitle: 'Conquering the Digital Frontier: Unlocking AI-Powered Visibility for Dallas's Diverse Economic Powerhouses',
+    heroSubtitle: 'Conquering the Digital Frontier: Unlocking AI-Powered Visibility for Dallas\'s Diverse Economic Powerhouses',
   },
   visibilityData: {
     headline: "Command Dallas's Expansive Digital Frontier with AI-Powered Authority: A Traconomics Imperative",

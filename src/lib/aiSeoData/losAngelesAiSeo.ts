@@ -5,7 +5,7 @@ export const losAngelesAiSeoData: AiSeoCityPageData = {
   cityName: 'Los Angeles',
   heroData: {
     pageTitle: 'Los Angeles AI SEO Agency | Traconomics: Elevate Your Digital Presence in the Entertainment Capital',
-    metaDescription: 'Traconomics offers bespoke AI SEO solutions for Los Angeles businesses. Specializing in the entertainment, tech, and creative sectors, we enhance your visibility and authority in LA's dynamic digital landscape.',
+    metaDescription: 'Traconomics offers bespoke AI SEO solutions for Los Angeles businesses. Specializing in the entertainment, tech, and creative sectors, we enhance your visibility and authority in LA\'s dynamic digital landscape.',
     heroTitle: 'Cutting-Edge AI SEO Strategies for Los Angeles\' Visionary Businesses',
     heroSubtitle: 'Conquer AI-Powered Search in LA: Precision-Engineered Solutions for Hollywood, Silicon Beach & Beyond',
   },

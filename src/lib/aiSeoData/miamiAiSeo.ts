@@ -5,9 +5,9 @@ export const miamiAiSeoData: AiSeoCityPageData = {
   cityName: 'Miami',
   heroData: {
     pageTitle: 'Miami AI SEO: Command Digital Authority in the Global Gateway',
-    metaDescription: 'Traconomics, Miami's leading AI SEO firm, empowers luxury, finance, and tech businesses to dominate search. Navigate the Magic City's multilingual, international markets with AI-driven precision and unparalleled digital authority.',
-    heroTitle: 'AI-Powered SEO for Miami's Elite: Luxury, Finance & Tech in a Multilingual World',
-    heroSubtitle: 'Beyond the Horizon: AI-Driven Visibility for Miami's Dynamic Luxury, Finance, and Tech Sectors, Captivating a Diverse Global Audience.',
+    metaDescription: 'Traconomics, Miami\'s leading AI SEO firm, empowers luxury, finance, and tech businesses to dominate search. Navigate the Magic City\'s multilingual, international markets with AI-driven precision and unparalleled digital authority.',
+    heroTitle: 'AI-Powered SEO for Miami\'s Elite: Luxury, Finance & Tech in a Multilingual World',
+    heroSubtitle: 'Beyond the Horizon: AI-Driven Visibility for Miami\'s Dynamic Luxury, Finance, and Tech Sectors, Captivating a Diverse Global Audience.',
   },
   visibilityData: {
     headline: "Command Unrivaled Authority in Miami's Global AI Search Arena",
@@ -108,32 +108,32 @@ export const miamiAiSeoData: AiSeoCityPageData = {
     cards: [
       {
         icon: 'BookOpen',
-        title: 'Expert-Driven, Authoritative Content for Miami's Key Global Sectors',
-        description: 'Meaningful, accurate, and authoritative content is the bedrock of successful GEO. Traconomics boasts an in-house team of highly experienced content specialists, adept at crafting AI-optimized content that precisely aligns with generative search intent. This instills deep user confidence and trust, establishing your brand as a credible source in Miami's competitive luxury, tourism, and finance markets, including sophisticated multilingual content strategies that resonate with diverse audiences.',
+        title: 'Expert-Driven, Authoritative Content for Miami\'s Key Global Sectors',
+        description: 'Meaningful, accurate, and authoritative content is the bedrock of successful GEO. Traconomics boasts an in-house team of highly experienced content specialists, adept at crafting AI-optimized content that precisely aligns with generative search intent. This instills deep user confidence and trust, establishing your brand as a credible source in Miami\'s competitive luxury, tourism, and finance markets, including sophisticated multilingual content strategies that resonate with diverse audiences.',
       },
       {
         icon: 'Target',
-        title: 'Tailored AI SEO Strategy from Proven Experts for Miami's Unique Market',
+        title: 'Tailored AI SEO Strategy from Proven Experts for Miami\'s Unique Market',
         description: 'Our seasoned experts meticulously analyze your current digital footprint in Miami, identifying unique opportunities for generative engine optimization across its diverse sectors. We then develop a comprehensive, data-backed plan, leveraging our deep expertise to significantly boost your chances of appearing in AI-generated responses and ensuring you consistently stay ahead of the latest Google AI advancements in the Miami area, providing a competitive edge in specialized industries and international markets, from South Beach to Brickell.',
       },
       {
         icon: 'Users',
         title: 'Miami-Centric Approach Built on Trust and Collaborative Partnership',
-        description: 'As Miami's trusted AI SEO agency, we prioritize transparent communication and genuine collaboration. We ensure a thorough understanding of your specific needs and expectations, enabling us to deliver personalized GEO solutions that are not only effective but also build lasting trust and drive measurable results for your Miami business, whether you're a luxury brand, a hospitality group, a financial institution, or a tech innovator, fostering a true partnership for digital growth.',
+        description: 'As Miami\'s trusted AI SEO agency, we prioritize transparent communication and genuine collaboration. We ensure a thorough understanding of your specific needs and expectations, enabling us to deliver personalized GEO solutions that are not only effective but also build lasting trust and drive measurable results for your Miami business, whether you\'re a luxury brand, a hospitality group, a financial institution, or a tech innovator, fostering a true partnership for digital growth.',
       },
       {
         icon: 'Star',
-        title: 'Unrivaled Expertise and Extensive Experience in Miami's Digital Landscape',
+        title: 'Unrivaled Expertise and Extensive Experience in Miami\'s Digital Landscape',
         description: "Traconomics prides itself on a team of professionals with unparalleled experience and deep expertise in digital marketing and generative AI for the Miami market. Our dedicated Demand Generation team serves as a rigorous testing ground for all strategies, ensuring we implement only what is proven to work effectively for businesses in Miami's unique economic landscape, solidifying our authority and trustworthiness among a global clientele and across its diverse industries.",
       },
       {
         icon: 'Info',
-        title: 'Demonstrated Results and Client Trust in Miami's Competitive Arena',
+        title: 'Demonstrated Results and Client Trust in Miami\'s Competitive Arena',
         description: "Our AI SEO company's unwavering commitment to excellence is evident in the impressive, verifiable results we've consistently achieved for clients across diverse industries in the Miami area, including luxury retail, tourism, international finance, and emerging tech. Each case study serves as a testament to the unique, expert-driven strategies we employ and the remarkable, trustworthy outcomes we've delivered for Miami businesses, proving our capability to navigate its complex digital ecosystem.",
       },
       {
         icon: 'BarChart2',
-        title: 'Data-Driven Insights from Experienced Analysts for Miami's Global Market',
+        title: 'Data-Driven Insights from Experienced Analysts for Miami\'s Global Market',
         description: "Our approach is firmly rooted in meticulous data analysis and continuous performance tracking for the Miami market. We utilize advanced analytics tools, managed by experienced analysts, to monitor the effectiveness of our GEO strategies, providing you with detailed, actionable reports and transparent insights for your Miami business, fostering complete trust and enabling informed decision-making in a competitive and international landscape, from the Port of Miami to the Design District."
       }
     ],

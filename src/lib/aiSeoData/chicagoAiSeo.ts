@@ -6,7 +6,7 @@ export const chicagoAiSeoData: AiSeoCityPageData = {
   heroData: {
     pageTitle: 'Chicago AI SEO Experts | Dominate the Digital Skyline',
     metaDescription: 'Elevate your Chicago business with Traconomics, a premier AI SEO agency. We craft data-driven strategies for finance, manufacturing, and tech sectors in the heart of the Midwest.',
-    heroTitle: 'Cutting-Edge AI SEO for Chicago's Industry Leaders',
+    heroTitle: 'Cutting-Edge AI SEO for Chicago\'s Industry Leaders',
     heroSubtitle: 'Navigate AI Search in the Windy City: Bespoke Strategies for Finance, Logistics, and Innovation-Driven Enterprises',
   },
   visibilityData: {
