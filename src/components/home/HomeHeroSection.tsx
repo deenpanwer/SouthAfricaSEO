@@ -31,9 +31,10 @@ const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const heroLeadFormSchema = z.object({
  website: z.string().optional(),
-  phoneNumber: z.string({ required_error: "Phone number is required." })
-    .min(1, "Please enter your phone number.")
-    .regex(e164Regex, { message: "Please enter a valid phone number, including country code." }),
+ phoneNumber: z.string(),
+}).refine(data => data.phoneNumber.length > 0, {
+  message: "Phone number is required.",
+  path: ["phoneNumber"],
 });
 
 // Function to submit data to SheetDB
@@ -95,6 +96,7 @@ export const HomeHeroSection = () => {
           description: response.message,
           variant: "default",
         });
+        fbq('track', 'Lead');
         form.reset();
       } else {
         toast({

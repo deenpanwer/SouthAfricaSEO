@@ -18,6 +18,8 @@ import { CONTACT_DETAILS } from '@/lib/constants';
 // E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
+declare const fbq: any;
+
 const cityHeroFormSchema = z.object({
   website: z.string().optional(),
   phoneNumber: z.string({ required_error: "Phone number is required." })

@@ -86,6 +86,7 @@ export function AiSeoHeroForm({ cityName }: AiSeoHeroFormProps) {
           title: "Request Sent!",
           description: response.message,
         });
+        fbq('track', 'Lead');
         form.reset({
           website: "",
           city: cityName,

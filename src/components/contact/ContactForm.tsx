@@ -20,16 +20,19 @@ import { GENERAL_INQUIRY_VALUE, CUSTOM_SOLUTION_VALUE } from './ContactFormWrapp
 // E.164 basic validation.
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
+declare const fbq: any;
+
 const contactFormSchema = z.object({
   name: z.string().optional().or(z.literal('')),
   email: z.string().optional().or(z.literal('')),
   company: z.string().optional().or(z.literal('')),
-  phoneNumber: z.string({ required_error: "Phone number is required." })
-    .min(1, "Phone number is required.")
-    .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
+  phoneNumber: z.string(),
   website: z.string().optional().or(z.literal('')),
   service: z.string().optional().or(z.literal('')),
   message: z.string().optional().or(z.literal('')),
+}).refine(data => data.phoneNumber.length > 0, {
+  message: "Phone number is required.",
+  path: ["phoneNumber"],
 });
 
 
