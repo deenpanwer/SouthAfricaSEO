@@ -100,6 +100,7 @@ export function ContactForm({ preselectedService }: { preselectedService?: strin
           title: "Message Sent!",
           description: response.message,
         });
+        fbq('track', 'Contact');
         form.reset({ // Reset with default values ensuring service field is handled correctly
           name: "",
           email: "",

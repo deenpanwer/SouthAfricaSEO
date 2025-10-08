@@ -99,6 +99,7 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
           description: response.message,
           variant: "default",
         });
+        fbq('track', 'Lead');
         form.reset(); // Resets to defaultValues, which includes the current cityName
       } else {
         toast({

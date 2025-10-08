@@ -12,6 +12,8 @@ import { Loader2, Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import type { AiSeoHeroFormValues } from '@/types/aiSeo';
 
+declare const fbq: any;
+
 const formSchema = z.object({
   website: z.string().optional(),
   city: z.string(),

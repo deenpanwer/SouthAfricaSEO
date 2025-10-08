@@ -18,6 +18,8 @@ import 'react-international-phone/style.css';
 import logoStripHome from '../../../public/home/logostriphome.png';
 import amitCro from '../../../public/home/amit-cro.png';
 
+declare const fbq: any;
+
 // Define the type for form values
 interface HeroLeadFormValues {
   website?: string;
