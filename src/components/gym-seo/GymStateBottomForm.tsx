@@ -15,16 +15,19 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import type { GymStateBottomFormValues } from '@/types';
 
+declare const fbq: any;
+
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const gymStateBottomFormSchema = z.object({
   website: z.string().url({ message: "Please enter a valid website URL (e.g., https://example.com)" }).optional().or(z.literal('')),
-  phoneNumber: z.string({ required_error: "Phone number is required." })
-    .min(1, "Phone number is required.")
-    .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
+  phoneNumber: z.string(),
   message: z.string().max(1000, { message: "Message cannot exceed 1000 characters." }).optional().or(z.literal('')),
   state: z.string(),
   formType: z.string(),
+}).refine(data => data.phoneNumber.length > 0, {
+  message: "Phone number is required.",
+  path: ["phoneNumber"],
 });
 
 async function submitGymStateBottomForm(data: GymStateBottomFormValues): Promise<{ success: boolean; message: string }> {
@@ -96,6 +99,7 @@ export function GymStateBottomForm({ stateName, formTitle }: GymStateBottomFormP
           title: "Proposal Request Sent!",
           description: response.message,
         });
+        fbq('track', 'Lead');
         form.reset({
             website: "",
             phoneNumber: "",

@@ -16,15 +16,19 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import type { CityBottomFormValues } from '@/types';
 
+declare const fbq: any;
+
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const cityBottomFormSchema = z.object({
  website: z.string().optional(),
-  phoneNumber: z.string({ required_error: "Phone number is required." })
-    .regex(e164Regex, { message: "Please enter a valid international phone number (e.g., +14155552671)." }),
+  phoneNumber: z.string(),
   message: z.string().max(1000, { message: "Message cannot exceed 1000 characters." }).optional().or(z.literal('')),
   city: z.string(), // Hidden field
   formType: z.string(), // Hidden field
+}).refine(data => data.phoneNumber.length > 0, {
+  message: "Phone number is required.",
+  path: ["phoneNumber"],
 });
 
 async function submitCityBottomForm(data: CityBottomFormValues): Promise<{ success: boolean; message: string }> {
@@ -96,6 +100,7 @@ export function CityBottomForm({ cityName, formTitle }: CityBottomFormProps) {
           title: "Proposal Request Sent!",
           description: response.message,
         });
+        fbq('track', 'Lead');
         form.reset();
       } else {
         toast({
