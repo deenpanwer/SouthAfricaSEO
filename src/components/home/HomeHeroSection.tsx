@@ -191,7 +191,7 @@ export const HomeHeroSection = () => {
           </div>
           <div className="relative">
             <Image
-              src="/home/amit-cro.png"
+              src={amitCro}
               alt="Amit Sharma"
               width={450}
               height={500}

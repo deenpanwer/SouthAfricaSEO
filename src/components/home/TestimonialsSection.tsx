@@ -3,6 +3,9 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { Star } from 'lucide-react';
+import marciWiersma from '../../../public/home/marci-wiersma.webp';
+import whitneyWellsLewis from '../../../public/home/whitney-wells-lewis.webp';
+import chadMontgomery from '../../../public/home/chad-montgomery.webp';
 
 const StarRating = ({ rating, count }: { rating: number; count?: number }) => (
   <div className="flex items-center">
@@ -15,9 +18,9 @@ const StarRating = ({ rating, count }: { rating: number; count?: number }) => (
 
 export const TestimonialsSection = () => {
   const testimonials = [
-    { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: "/home/marci-wiersma.webp", rating: 5 },
-    { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: "/home/whitney-wells-lewis.webp", rating: 5 },
-    { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: "/home/chad-montgomery.webp", rating: 5 },
+    { id: '1', name: "Marci Wiersma", company: "Broker – About Roatan Real Estate", quote: "Trac is a much-needed blessing and exceeded our expectations in every way. They are honest, straightforward, they take care of ALL your needs quickly, they are reliable, you can count on them and most of all, they do everything they say they will do, no BS.", highlightedQuote: "They do everything they say...no BS", avatarUrl: marciWiersma, rating: 5 },
+    { id: '2', name: "Whitney Wells Lewis", company: "Practice Manager – PARC Urology", quote: "These guys are incredible. They've helped us to grow our business and now the biggest problem we seem to come across is having too much business - which is the ideal problem to have. We are right where we wanted to be and Trac made that possible. Thanks guys!", highlightedQuote: "These guys are incredible", avatarUrl: whitneyWellsLewis, rating: 5 },
+    { id: '3', name: "Chad Montgomery", company: "CEO – Accurate Leak and Line", quote: "Working with the Trac team has been a most pleasant experience! Their dedication and passion for what they do is exemplified by their unrivaled customer support and attentiveness to the specific needs of our business. We look forward to a long-lasting and prosperous relationship!", highlightedQuote: "Unrivaled customer support", avatarUrl: chadMontgomery, rating: 5 },
   ];
 
 

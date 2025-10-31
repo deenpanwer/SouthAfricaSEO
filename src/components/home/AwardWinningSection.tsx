@@ -19,7 +19,7 @@ export const AwardWinningSection = () => {
    </section><section className="py-8 bg-white">
        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
          <Image
-           src="/home/awardimage2025.webp"
+           src={awardImage}
            alt="A collection of award badges from various industry leaders."
            width={1000}
            height={50}

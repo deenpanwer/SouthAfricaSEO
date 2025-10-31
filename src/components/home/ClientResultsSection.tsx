@@ -73,7 +73,7 @@ export const ClientResultsSection = () => {
         <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
            <div className="cursor-pointer" onClick={() => setIsModalOpen2(true)}>
             <Image
-              src="/home/Client-Natiowide-Construction.webp"
+              src={clientNationwideConstruction}
               alt="A construction firm's case results, including an 800% increase in client leads and a 22-point increase in domain authority."
               width={600}
               height={300}
