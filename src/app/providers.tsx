@@ -22,7 +22,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    const clarityProjectId = process.env.CLARITY_PROJECT_ID;
+    const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
     if (process.env.NODE_ENV === 'production' && clarityProjectId) {
       clarity.init(clarityProjectId);
     }

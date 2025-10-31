@@ -12,6 +12,8 @@ import { Gift } from 'lucide-react';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -160,6 +162,7 @@ export default async function RootLayout({
           <Toaster />
         </PostHogProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
