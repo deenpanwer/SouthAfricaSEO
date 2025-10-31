@@ -1,0 +1,61 @@
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+    border: 2px solid white;
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc white;
+  }
+
+  .fade-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, white, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .fade-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to top, white, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    80%,
+    100% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }

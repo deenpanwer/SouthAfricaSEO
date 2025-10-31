@@ -7,6 +7,7 @@ import { usePostHog } from 'posthog-js/react'
 
 import posthog from 'posthog-js'
 import { PostHogProvider as PHProvider } from 'posthog-js/react'
+import clarity from '@microsoft/clarity';
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -19,6 +20,13 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       })
     }
   }, [])
+
+  useEffect(() => {
+    const clarityProjectId = process.env.CLARITY_PROJECT_ID;
+    if (process.env.NODE_ENV === 'production' && clarityProjectId) {
+      clarity.init(clarityProjectId);
+    }
+  }, []);
 
   return (
     <PHProvider client={posthog}>

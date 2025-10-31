@@ -75,7 +75,7 @@ export default async function RootLayout({
   const isEnviroPaintingPath = pathname.startsWith(ENVIROPAINTING_PATH);
   const isTest4Path = pathname.startsWith(TEST4_PATH);
 
-  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !isTest4Path && !pathname.startsWith(AUTOMATION_PATH) && !pathname.startsWith('/saphirefans');
+  const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !isTest4Path && !pathname.startsWith(AUTOMATION_PATH) && !pathname.startsWith('/saphirefans') && !pathname.startsWith('/1');
 
   return (
     <html lang="en" className={showMainLayout ? "scroll-smooth" : ""}>
