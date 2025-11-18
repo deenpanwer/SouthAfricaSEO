@@ -1,4 +1,3 @@
-
 // tailwind.config.js
 import type { Config } from "tailwindcss";
 
@@ -8,8 +7,6 @@ export default {
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/automations/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/automations/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
@@ -88,6 +85,7 @@ export default {
             fontFamily: {
               sans: ['var(--font-geist-sans)', 'sans-serif'],
               poppins: ['var(--font-poppins)', 'sans-serif'],
+              playfair: ['var(--font-playfair)', 'serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -110,11 +108,27 @@ export default {
                     to: {
                         height: '0'
                     }
-                }
+                },
+                'fade-in': {
+                  'from': { opacity: '0' },
+                  'to': { opacity: '1' },
+                },
+                'pulse-dot': {
+                  '0%, 80%, 100%': { transform: 'scale(0.5)', opacity: '0.5' },
+                  '40%': { transform: 'scale(1)', opacity: '1' },
+                },
+                'animated-gradient': {
+                  '0%': { 'background-position': '0% 50%' },
+                  '50%': { 'background-position': '100% 50%' },
+                  '100%': { 'background-position': '0% 50%' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out'
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.5s ease-out',
+                'pulse-dot': 'pulse-dot 1.2s infinite ease-in-out',
+                'animated-gradient': 'animated-gradient 3s ease-in-out infinite',
             },
             // --- START OF TYPOGRAPHY EXTENSION FOR TABLES ---
             typography: ({ theme }: { theme: any }) => ({

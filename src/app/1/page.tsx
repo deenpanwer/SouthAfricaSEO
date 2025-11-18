@@ -1,11 +1,12 @@
 "use client";
 
-import './styles.css';
 import 'regenerator-runtime/runtime';
-import React, { useState, useRef, useEffect, forwardRef, useCallback } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
 import { cn } from "@/lib/utils";
-import { Mic, ArrowRight, X, Check, ChevronUp } from "lucide-react";
+import { Mic, X, Check, ChevronUp } from "lucide-react";
 import { format } from "date-fns";
 import {
   Tooltip,
@@ -16,6 +17,7 @@ import {
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { IdeationPanel } from './components/IdeationPanel';
 import { Input } from "@/components/ui/input";
+import { Button } from '@/components/ui/button';
 
 
 const MAX_TEXTAREA_HEIGHT = 200;
@@ -27,9 +29,9 @@ interface AutoResizingTextareaProps extends React.TextareaHTMLAttributes<HTMLTex
   setShowBottomFade: (show: boolean) => void;
 }
 
-const AutoResizingTextarea = forwardRef<HTMLTextAreaElement, AutoResizingTextareaProps>(
+const AutoResizingTextarea = React.forwardRef<HTMLTextAreaElement, AutoResizingTextareaProps>(
   ({ className, setShowTopFade, setShowBottomFade, ...props }, ref) => {
-    const internalRef = useRef<HTMLTextAreaElement>(null);
+    const internalRef = React.useRef<HTMLTextAreaElement>(null);
     React.useImperativeHandle(ref, () => internalRef.current!);
 
     const handleInput = () => {
@@ -42,7 +44,7 @@ const AutoResizingTextarea = forwardRef<HTMLTextAreaElement, AutoResizingTextare
       }
     };
 
-    const handleScroll = useCallback(() => {
+    const handleScroll = React.useCallback(() => {
       const textarea = internalRef.current;
       if (textarea) {
         const { scrollTop, scrollHeight, clientHeight } = textarea;
@@ -51,11 +53,11 @@ const AutoResizingTextarea = forwardRef<HTMLTextAreaElement, AutoResizingTextare
       }
     }, [setShowTopFade, setShowBottomFade]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         handleInput();
     }, [props.value]);
 
-    useEffect(() => {
+    React.useEffect(() => {
       const textarea = internalRef.current;
       if (textarea) {
         textarea.addEventListener('scroll', handleScroll);
@@ -76,7 +78,7 @@ const AutoResizingTextarea = forwardRef<HTMLTextAreaElement, AutoResizingTextare
           rows={1}
           onInput={handleInput}
           className={cn(
-            "w-full h-10 resize-none bg-transparent text-black placeholder-gray-500 focus:outline-none custom-scrollbar p-2",
+            "w-full h-14 resize-none bg-transparent placeholder:text-muted-foreground focus:outline-none custom-scrollbar p-4 text-base",
             className
           )}
           {...props}
@@ -89,54 +91,73 @@ AutoResizingTextarea.displayName = 'AutoResizingTextarea';
 
 
 const VoiceRecordingUI = ({ onCancel, onAccept, transcript }: { onCancel: () => void; onAccept: () => void; transcript: string }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [transcript]);
 
     return (
-        <div className="flex h-auto min-h-[40px] w-full items-center justify-between bg-white p-2">
-            <div className="flex items-start gap-2 overflow-hidden w-full">
-                <div className="flex h-full items-center gap-1 shrink-0 pt-1">
-                    <span className="h-4 w-1 animate-pulse rounded-full bg-black [animation-delay:-0.3s]"></span>
-                    <span className="h-4 w-1 animate-pulse rounded-full bg-black [animation-delay:-0.15s]"></span>
-                    <span className="h-4 w-1 animate-pulse rounded-full bg-black"></span>
+        <div className="flex h-auto min-h-[56px] w-full items-center justify-between p-4">
+            <div className="flex items-start gap-3 overflow-hidden w-full">
+                <div className="flex h-full items-center gap-1.5 shrink-0 pt-1">
+                    <span className="h-5 w-1 animate-pulse rounded-full bg-primary [animation-delay:-0.3s]"></span>
+                    <span className="h-5 w-1 animate-pulse rounded-full bg-primary [animation-delay:-0.15s]"></span>
+                    <span className="h-5 w-1 animate-pulse rounded-full bg-primary"></span>
                 </div>
-                <div ref={scrollRef} className="text-sm text-gray-600 w-full max-h-[80px] overflow-y-auto custom-scrollbar">
+                <div ref={scrollRef} className="text-base text-muted-foreground w-full max-h-[80px] overflow-y-auto custom-scrollbar">
                     {transcript || "Listening..."}
                 </div>
             </div>
             <div className="flex items-center">
-                <button onClick={onCancel} className="p-2 text-black hover:bg-gray-100">
-                    <X size={20} />
-                </button>
-                <button onClick={onAccept} className="p-2 text-black hover:bg-gray-100">
-                    <Check size={20} />
-                </button>
+                <Button onClick={onCancel} variant="ghost" size="icon">
+                    <X />
+                </Button>
+                <Button onClick={onAccept} variant="ghost" size="icon">
+                    <Check />
+                </Button>
             </div>
         </div>
     );
 };
 
+const placeholderProblems = [
+    "design a landing page that converts.",
+    "write a cold email sequence that gets replies.",
+    "manage our social media presence.",
+    "build a financial model for fundraising.",
+    "find our first 100 paying customers.",
+    "create a pitch deck that investors will love.",
+    "automate our user onboarding process.",
+    "handle our customer support inquiries."
+];
+const basePlaceholder = "I need someone to ";
+
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
-  const [contactInfo, setContactInfo] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [emailError, setEmailError] = useState("");
+  const [inputValue, setInputValue] = React.useState("");
+  const [contactInfo, setContactInfo] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [emailError, setEmailError] = React.useState("");
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const router = useRouter();
-  const [showIdeationPanel, setShowIdeationPanel] = useState(false);
+  const [showIdeationPanel, setShowIdeationPanel] = React.useState(false);
+
+  const [placeholder, setPlaceholder] = React.useState(basePlaceholder);
+  const [problemIndex, setProblemIndex] = React.useState(0);
+  const [charIndex, setCharIndex] = React.useState(0);
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [hasInteracted, setHasInteracted] = React.useState(false);
 
 
-  const [interactionState, setInteractionState] = useState({ voiceUsed: false, keystrokes: 0, pasted: false });
-  const pageLoadTime = useRef<number>(0);
-  const pageLoadEnd = useRef<number>(0);
-  const referrer = useRef<string>("");
-  const deviceType = useRef<string>("");
-  const networkType = useRef<string>("");
+  const [interactionState, setInteractionState] = React.useState({ voiceUsed: false, keystrokes: 0, pasted: false });
+  const pageLoadTime = React.useRef<number>(0);
+  const pageLoadEnd = React.useRef<number>(0);
+  const referrer = React.useRef<string>("");
+  const deviceType = React.useRef<string>("");
+  const networkType = React.useRef<string>("");
 
   const {
     transcript,
@@ -145,11 +166,44 @@ export default function Home() {
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
   
-  const [showTopFade, setShowTopFade] = useState(false);
-  const [showBottomFade, setShowBottomFade] = useState(false);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [showTopFade, setShowTopFade] = React.useState(false);
+  const [showBottomFade, setShowBottomFade] = React.useState(false);
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
+    if (hasInteracted) return;
+
+    const currentProblem = placeholderProblems[problemIndex];
+    let timeout: NodeJS.Timeout;
+
+    const type = () => {
+      if (isDeleting) {
+        if (placeholder.length > basePlaceholder.length) {
+          setPlaceholder(prev => prev.slice(0, -1));
+          timeout = setTimeout(type, 10);
+        } else {
+          setIsDeleting(false);
+          setProblemIndex((prevIndex) => (prevIndex + 1) % placeholderProblems.length);
+          setCharIndex(0);
+          timeout = setTimeout(type, 50);
+        }
+      } else {
+        if (charIndex < currentProblem.length) {
+          setPlaceholder(prev => basePlaceholder + currentProblem.substring(0, charIndex + 1));
+          setCharIndex(prev => prev + 1);
+          timeout = setTimeout(type, 10);
+        } else {
+          timeout = setTimeout(() => setIsDeleting(true), 2000);
+        }
+      }
+    };
+
+    timeout = setTimeout(type, 0);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, problemIndex, placeholder.length, hasInteracted]);
+
+  React.useEffect(() => {
     pageLoadTime.current = Date.now();
     referrer.current = document.referrer || "direct";
     deviceType.current = /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
@@ -177,15 +231,27 @@ export default function Home() {
       console.error("Voice recognition is not supported in your browser.");
       return;
     }
+    setHasInteracted(true);
     setInteractionState(prev => ({ ...prev, voiceUsed: true }));
     resetTranscript();
+    const prefix = "I need someone to ";
+    if (!inputValue.startsWith(prefix)) {
+      setInputValue(prefix);
+    }
     SpeechRecognition.startListening({ continuous: true, language: 'en-US' });
   };
 
   const stopRecording = (shouldAccept: boolean) => {
     SpeechRecognition.stopListening();
     if (shouldAccept) {
-        setInputValue(prev => prev ? `${prev}\n${transcript}` : transcript);
+        const prefix = "I need someone to ";
+        const currentTranscript = transcript.trim();
+        setInputValue(prev => {
+          if (prev === prefix) {
+            return `${prefix}${currentTranscript}`;
+          }
+          return prev ? `${prev} ${currentTranscript}` : `${prefix}${currentTranscript}`;
+        });
     }
     resetTranscript();
   };
@@ -248,7 +314,7 @@ export default function Home() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          data: [{
+          data: [{ 
             input: inputValue, 
             contact_info: contactInfo,
             time: formattedTime, 
@@ -276,9 +342,7 @@ export default function Home() {
         throw new Error(errorMessage);
       }
       
-      setInputValue("");
-      setContactInfo("");
-      router.push('/1/thank-you');
+      setIsSubmitted(true);
 
     } catch (error) {
       console.error(error);
@@ -293,8 +357,18 @@ export default function Home() {
       setInteractionState(prev => ({...prev, keystrokes: prev.keystrokes + 1}));
     }
   };
+
+  const handleFocus = () => {
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      setInputValue("I need someone to ");
+    }
+  };
   
   const handlePaste = () => {
+    if (!hasInteracted) {
+        setHasInteracted(true);
+    }
     setInteractionState(prev => ({...prev, pasted: true}));
   };
 
@@ -307,122 +381,155 @@ export default function Home() {
 
   
   return (
-    <main className="relative flex flex-col min-h-screen bg-white animate-fade-in pb-20">
-      <div className='flex-grow flex flex-col justify-center px-4'>
-        <h1 className="absolute top-4 left-4 font-serif text-3xl md:text-4xl text-black">
+    <main className="relative flex flex-col min-h-screen bg-background animate-fade-in pb-20 font-sans">
+      <header className="absolute top-6 left-6 flex items-baseline gap-3">
+        <h1 className="font-poppins font-bold text-2xl text-foreground">
           TRAC
         </h1>
+      </header>
+
+      <div className='flex-grow flex flex-col justify-center px-4'>
         <div className="flex-grow flex items-center justify-center">
-            <div className="w-full max-w-lg">
+            <div className="w-full max-w-2xl">
                 <div className="pt-4">
-                    <form onSubmit={handleSubmit} className="mx-auto w-full">
-                        <div className={cn("relative flex w-full flex-col items-center self-auto border border-black bg-white",
-                          listening && "p-0"
-                        )}>
-                          {listening ? (
-                            <VoiceRecordingUI 
-                                onCancel={() => stopRecording(false)}
-                                onAccept={() => stopRecording(true)}
-                                transcript={transcript}
-                            />
-                          ) : (
-                              <div className="w-full">
-                                  <div className={cn("relative w-full",
-                                      {"fade-top": showTopFade, "fade-bottom": showBottomFade}
-                                  )}>
-                                      <AutoResizingTextarea
-                                        ref={textareaRef}
-                                        value={inputValue}
-                                        onChange={handleInputChange}
-                                        onKeyDown={handleKeyDown}
-                                        onPaste={handlePaste}
-                                        placeholder="what's stopping you from growing faster?"
-                                        aria-label="Data input"
-                                        disabled={isLoading}
-                                        setShowTopFade={setShowTopFade}
-                                        setShowBottomFade={setShowBottomFade}
-                                      />
-                                  </div>
-                              </div>
-                          )}
-                        </div>
-                        
-                        <div className="mt-4 flex items-start gap-2">
-                            <div className="flex-grow">
-                                <Input
-                                    type="email"
-                                    value={contactInfo}
-                                    onChange={(e) => {
-                                      setContactInfo(e.target.value);
-                                      if (emailError) setEmailError("");
-                                    }}
-                                    onKeyDown={handleKeyDown}
-                                    placeholder="Your email address"
-                                    aria-label="Contact information"
-                                    disabled={isLoading}
-                                    className="h-10 w-full rounded-none border-black bg-transparent px-2 focus-visible:ring-0"
-                                />
-                                {emailError && <p className="mt-2 text-xs text-red-600">{emailError}</p>}
-                                <p className="mt-2 text-xs text-gray-700">
-                                  Our agent will send profiles of relevant experts to this email.
-                                </p>
-                            </div>
-                            
-                            {!listening && (
-                                <div className="flex h-full items-center justify-end gap-2 self-start shrink-0">
-                                    <TooltipProvider>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <button type="button" onClick={startRecording} className="flex h-10 w-10 items-center justify-center border border-black text-black shrink-0" disabled={isLoading || listening}>
-                                                    <Mic size={16} />
-                                                </button>
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>Voice Input</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                    <div className="relative">
-                                        <TooltipProvider>
-                                            <Tooltip>
-                                                <TooltipTrigger asChild>
-                                                    <button type="submit" className="flex h-10 w-10 items-center justify-center border border-black text-black shrink-0 disabled:opacity-50" disabled={isLoading || !inputValue.trim() || listening}>
-                                                        {isLoading ? (
-                                                            <div className="flex items-center justify-center space-x-1">
-                                                                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-black [animation-delay:-0.3s]"></span>
-                                                                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-black [animation-delay:-0.15s]"></span>
-                                                                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-black"></span>
-                                                            </div>
-                                                        ) : <ArrowRight size={18} />}
-                                                    </button>
-                                                </TooltipTrigger>
-                                                <TooltipContent>
-                                                    <p>Send (Ctrl+Enter)</p>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
+                  {isSubmitted ? (
+                    <div className="animate-fade-in text-center">
+                      <div className="inline-block bg-secondary p-4 rounded-full mb-6">
+                        <Check className="text-primary" size={48} />
+                      </div>
+                      <h1 className="mb-4 text-3xl font-bold text-foreground">Thank You</h1>
+                      <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
+                        Our agent is scouring the net to find the right fit to solve your problem. We'll be in touch.
+                      </p>
+                      <Button
+                        onClick={() => {
+                          setInputValue("");
+                          setContactInfo("");
+                          setIsSubmitted(false);
+                          setHasInteracted(false);
+                        }}
+                        variant="outline"
+                        size="lg"
+                      >
+                        Submit Another Problem
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="animate-fade-in">
+                      <h2 className="text-center text-4xl md:text-5xl font-medium mb-4 text-foreground leading-tight font-playfair">
+                        What's stopping you from growing faster?
+                      </h2>
+                      <p className="text-center text-muted-foreground mb-8">
+                        please be specific that helps us find better candidates for you
+                      </p>
+                      <form onSubmit={handleSubmit} className="mx-auto w-full space-y-4">
+                          <div className={cn("relative w-full overflow-hidden flex flex-col items-center self-auto border bg-secondary/30 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-primary/50",
+                            listening && "p-0"
+                          )}>
+                            {listening ? (
+                              <VoiceRecordingUI 
+                                  onCancel={() => stopRecording(false)}
+                                  onAccept={() => stopRecording(true)}
+                                  transcript={transcript}
+                              />
+                            ) : (
+                                <div className="w-full">
+                                    <div className={cn("relative w-full",
+                                        {"fade-top": showTopFade, "fade-bottom": showBottomFade}
+                                    )}>
+                                        <AutoResizingTextarea
+                                          ref={textareaRef}
+                                          value={inputValue}
+                                          onChange={handleInputChange}
+                                          onFocus={handleFocus}
+                                          onKeyDown={handleKeyDown}
+                                          onPaste={handlePaste}
+                                          placeholder={hasInteracted ? '' : placeholder}
+                                          aria-label="Data input"
+                                          disabled={isLoading}
+                                          setShowTopFade={setShowTopFade}
+                                          setShowBottomFade={setShowBottomFade}
+                                        />
                                     </div>
                                 </div>
                             )}
-                        </div>
-                    </form>
+                          </div>
+                          
+                          <div className="flex items-start gap-4 pt-2">
+                              <div className="flex-grow">
+                                  <Input
+                                      type="email"
+                                      value={contactInfo}
+                                      onChange={(e) => {
+                                        setContactInfo(e.target.value);
+                                        if (emailError) setEmailError("");
+                                      }}
+                                      onKeyDown={handleKeyDown}
+                                      placeholder="Your email address"
+                                      aria-label="Contact information"
+                                      disabled={isLoading}
+                                      className="h-14 w-full rounded-2xl bg-secondary/30 text-base"
+                                  />
+                                  {emailError && <p className="mt-2 text-sm text-red-500">{emailError}</p>}
+                                  <p className="mt-2 text-xs text-muted-foreground">
+                                    Our agent will send profiles of relevant experts to this email.
+                                  </p>
+                              </div>
+                              
+                              {!listening && (
+                                  <div className="flex h-full items-center justify-end gap-2 self-start shrink-0">
+                                      <TooltipProvider>
+                                          <Tooltip>
+                                              <TooltipTrigger asChild>
+                                                <Button type="button" onClick={startRecording} variant="secondary" size="icon" className="h-14 w-14 rounded-2xl" disabled={isLoading || listening}>
+                                                  <Mic />
+                                                </Button>
+                                              </TooltipTrigger>
+                                              <TooltipContent>
+                                                  <p>Voice Input</p>
+                                              </TooltipContent>
+                                          </Tooltip>
+                                      </TooltipProvider>
+                                      <TooltipProvider>
+                                          <Tooltip>
+                                              <TooltipTrigger asChild>
+                                                <Button type="submit" size="lg" className="h-14 rounded-2xl px-6" disabled={isLoading || !inputValue.trim() || listening}>
+                                                    {isLoading ? (
+                                                        <div className="flex items-center justify-center space-x-1">
+                                                            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-primary-foreground [animation-delay:-0.3s]"></span>
+                                                            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-primary-foreground [animation-delay:-0.15s]"></span>
+                                                            <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-primary-foreground"></span>
+                                                        </div>
+                                                    ) : 'Submit'}
+                                                </Button>
+                                              </TooltipTrigger>
+                                              <TooltipContent>
+                                                  <p>Send (Ctrl+Enter)</p>
+                                              </TooltipContent>
+                                          </Tooltip>
+                                      </TooltipProvider>
+                                  </div>
+                              )}
+                          </div>
+                      </form>
+                    </div>
+                  )}
                 </div>
             </div>
         </div>
       </div>
       
-      <footer className="fixed bottom-0 left-0 right-0 z-10 bg-gray-100 text-black text-sm">
-            <div className="md:border-t md:border-gray-200">
+      <footer className="fixed bottom-0 left-0 right-0 z-10 text-sm">
+            <div className="container mx-auto px-4 py-4">
                 <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
-                    <div className="bg-gray-100 py-3 px-4 text-center md:text-left border-t border-black md:border-none">
-                    {/* <p>Connecting the world's problems to the world's experts.</p> */}
-                    <p>© 2025 TRAC. All rights reserved.</p>
+                    <div className="py-3 px-4 text-center md:text-left text-muted-foreground">
+                      <p>Google for Hiring</p>
                     </div>
-                    <div className="relative bg-gray-100 py-3 px-4">
-                        <div className="flex justify-end">
+                    <div className="relative py-3 px-4">
+                        <div className="flex justify-center md:justify-end">
                              <button
                                 onClick={() => setShowIdeationPanel(prev => !prev)}
-                                className="flex items-center gap-2 text-sm font-medium text-black transition-transform hover:scale-105"
+                                className="flex items-center gap-2 text-sm font-medium text-foreground transition-transform hover:scale-105"
                             >
                                 Ideate with PG <ChevronUp size={16} className={cn('transition-transform', showIdeationPanel && 'rotate-180')} />
                             </button>
