@@ -33,14 +33,14 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               </div>
             </div>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-md aspect-[3/2]">
+          <div className="rounded-lg overflow-hidden shadow-md aspect-[3/2] bg-gray-200">
             {locationData.officeImageUrl ? (
               <Image
                 src={locationData.officeImageUrl}
                 alt={`${cityName} Office Photo`}
                 width={600}
                 height={400}
-                className="object-cover w-full h-full"
+                className="object-contain w-full h-full"
               />
             ) : (
               <Skeleton className="w-full h-full" />
