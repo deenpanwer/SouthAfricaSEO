@@ -34,7 +34,7 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
             </div>
           </div>
           <div className="rounded-lg overflow-hidden shadow-md aspect-[3/2] bg-gray-200">
-            {locationData.officeImageUrl ? (
+            {locationData.officeImageUrl && locationData.officeImageUrl.trim() !== '' ? (
               <Image
                 src={locationData.officeImageUrl}
                 alt={`${cityName} Office Photo`}
@@ -43,7 +43,7 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
                 className="object-contain w-full h-full"
               />
             ) : (
-              <Skeleton className="w-full h-full" />
+              <Skeleton className="w-full h-full animate-shimmer" />
             )}
           </div>
         </div>
