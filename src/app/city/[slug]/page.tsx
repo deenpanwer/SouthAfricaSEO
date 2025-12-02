@@ -225,12 +225,14 @@ export default async function CityPage({ params }: CityPageProps) {
         cityName={cityData.cityName}
       />
       <CityRoadmap cityName={cityData.cityName} roadmapSteps={cityData.roadmapSteps} />
-            <CityTeam
+      {/*
+      <CityTeam
         cityName={cityData.cityName}
         teamSectionHeadline={cityData.teamSectionHeadline}
         teamSectionDescription={cityData.teamSectionDescription}
         founderBio={cityData.founderBio}
       />
+      */}
       <CityBlogSection />
       <CityROICalculator cityName={cityData.cityName} />
       <CityAwards
