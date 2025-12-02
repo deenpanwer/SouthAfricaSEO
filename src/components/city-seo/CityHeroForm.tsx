@@ -153,7 +153,8 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
                     onChange={(phone) => {
                       // Clean the phone number: remove non-digits and keep the leading '+'
                       const cleanedPhone = phone.replace(/[^+\d]/g, '');
-                      field.onChange(cleanedPhone);
+                      // Ensure the '+' is only at the very beginning
+                      field.onChange(cleanedPhone.replace(/(?<!^)\+/g, ''));
                     }}
                     disabled={isLoading}
                     placeholder="Your Phone Number*"
@@ -207,7 +208,7 @@ export function CityHeroForm({ cityName, formTitle }: CityHeroFormProps) {
         </div>
       </div>
       <div className="mt-6 text-center text-xs text-gray-500">
-        By submitting your phone number, you agree to receiving texts from Thrive Ideas.
+        By submitting your phone number, you agree to receiving texts from TRAC.
       </div>
     </div>
   );

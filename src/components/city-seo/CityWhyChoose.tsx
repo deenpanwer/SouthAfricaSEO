@@ -44,6 +44,8 @@ export function CityWhyChoose({ headline, intro, points, whyChooseParagraph1, wh
     LineChart: LineChart,
     MapPinned: MapPinned,
     Newspaper: Newspaper,
+    Users: Users,
+    Mail: Mail,
   };
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -53,16 +55,16 @@ export function CityWhyChoose({ headline, intro, points, whyChooseParagraph1, wh
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
  <h2 className="text-3xl font-bold mb-4 md:text-4xl">{headline}</h2>
- <p className="text-gray-600 max-w-2xl mx-auto mb-8">{intro}</p> {/* Added mb-8 for space below intro */}
+ <p className="text-gray-600 max-w-2xl mx-auto mb-8">{intro}</p>
         </div>
         <div className="flex flex-col md:flex-row items-start md:space-x-8">
           <div className="md:w-1/2 mb-6 md:mb-0 flex flex-col justify-between">
-            <div className="mb-8"> {/* Container for the first paragraph */}
-              <p className="text-gray-600 leading-relaxed">{whyChooseParagraph1}</p> {/* Removed mb-4, parent container has mb-8 */}
+            <div className="mb-8">
+              <p className="text-gray-600 leading-relaxed">{whyChooseParagraph1}</p>
             </div>
-            <div className="text-center md:text-left"> {/* Container for Meet Our Team */}
-              <p className="text-green-600 mb-1 text-xl font-bold">Meet Our Team</p> {/* Reduced mb */}
-              <p className="text-gray-600 mb-6 text-base">Say Hello to all the Thrivers!</p> {/* Increased mb */}
+            <div className="text-center md:text-left">
+              <p className="text-green-600 mb-1 text-xl font-bold">Meet Our Team</p>
+              <p className="text-gray-600 mb-6 text-base">Say Hello to the TRAC Team!</p>
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold">
                 <Link href="/about">GET TO KNOW US</Link>
               </Button>
@@ -81,7 +83,7 @@ export function CityWhyChoose({ headline, intro, points, whyChooseParagraph1, wh
               <iframe className="w-full aspect-video" src="https://www.youtube.com/embed/pmt7OaqS7Rg?rel=0&showinfo=0&controls=0&autoplay=1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </Modal>
         </div>
-        <p className="text-gray-600 mt-8 mb-10 leading-relaxed">{whyChooseParagraph2}</p> {/* mt-8 seems fine based on screenshot */}
+        <p className="text-gray-600 mt-8 mb-10 leading-relaxed">{whyChooseParagraph2}</p>
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {points.map((point) => (
             <div key={point.title} className="text-center p-4">
