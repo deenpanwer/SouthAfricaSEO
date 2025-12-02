@@ -1,7 +1,7 @@
-
 import type { CityLocationData } from '@/types';
 import Image from 'next/image';
-import { MapPin, Phone, Mail } from 'lucide-react'; // Assuming using lucide icons
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface CityLocationProps {
   locationData: CityLocationData;
@@ -19,12 +19,8 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-orange-500 mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  {/* Display address using new structured properties */}
                   <p>{locationData.streetAddress}</p>
                   <p>{locationData.addressLocality}, {locationData.addressRegion} {locationData.postalCode}</p>
-                  {/* You might want to conditionally render the country if needed */}
-                  {/* <p>{locationData.addressCountry}</p> */}
-
                 </div>
               </div>
               <div className="flex items-center">
@@ -37,17 +33,19 @@ export function CityLocation({ locationData, cityName }: CityLocationProps) {
               </div>
             </div>
           </div>
-          {locationData.officeImageUrl && (
-            <div className="rounded-lg overflow-hidden shadow-md">
+          <div className="rounded-lg overflow-hidden shadow-md aspect-[3/2]">
+            {locationData.officeImageUrl ? (
               <Image
                 src={locationData.officeImageUrl}
                 alt={`${cityName} Office Photo`}
-                width={600} // Adjust as needed for desired image size
-                height={400} // Adjust as needed for desired image size
-                title={`${cityName} Office Location`}
+                width={600}
+                height={400}
+                className="object-cover w-full h-full"
               />
-            </div>
-          )}
+            ) : (
+              <Skeleton className="w-full h-full" />
+            )}
+          </div>
         </div>
       </div>
     </section>
