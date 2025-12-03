@@ -75,9 +75,14 @@ const ProblemAgitation = () => {
               words="Traditional SEO is Holding You Back"
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left max-w-4xl"
           />
-          <p className="text-neutral-700 text-sm md:text-base max-w-sm">
+          <motion.p 
+            className="text-neutral-700 text-sm md:text-base max-w-sm"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
             The old way of doing things is expensive, slow, and labor-intensive.
-          </p>
+          </motion.p>
         </div>
 
         <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
