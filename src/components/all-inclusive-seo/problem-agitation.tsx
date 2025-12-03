@@ -78,7 +78,8 @@ const ProblemAgitation = () => {
           <motion.p 
             className="text-neutral-700 text-sm md:text-base max-w-sm"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             The old way of doing things is expensive, slow, and labor-intensive.
