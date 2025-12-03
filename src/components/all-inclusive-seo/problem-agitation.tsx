@@ -61,26 +61,31 @@ const ProblemAgitation = () => {
 
   return (
     <div
-      className="w-full bg-white font-sans md:px-10"
+      className="w-full bg-white font-sans md:px-10 relative"
       ref={containerRef}
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
         viewport={{ once: true }}
+        transition={{ duration: 1 }}
       >
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <TextGenerateEffect
-              words="Traditional SEO is Holding You Back"
+          <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left max-w-4xl"
-          />
+          >
+            Traditional SEO is Holding You Back
+          </motion.h2>
           <motion.p 
             className="text-neutral-700 text-sm md:text-base max-w-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
             The old way of doing things is expensive, slow, and labor-intensive.
           </motion.p>
@@ -129,6 +134,7 @@ const ProblemAgitation = () => {
           </div>
         </div>
       </motion.div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </div>
   );
 };

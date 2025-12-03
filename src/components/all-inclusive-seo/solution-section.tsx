@@ -9,7 +9,13 @@ const SolutionSection = () => {
   return (
     <section className="w-full bg-black py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16 bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 max-w-4xl mx-auto"
           >
@@ -19,7 +25,7 @@ const SolutionSection = () => {
             Experience unparalleled SEO power with our AI-driven strategies.
             Transform your online presence effortlessly.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
           <motion.div
