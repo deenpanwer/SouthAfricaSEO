@@ -163,15 +163,25 @@ function Hero() {
                   </span>
               ))}
           </h1>
-          <p className="text-lg leading-relaxed tracking-tight text-gray-700 max-w-2xl">
+          <motion.p 
+            className="text-lg leading-relaxed tracking-tight text-gray-700 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
             Our all-inclusive AI-powered SEO service handles everything from
             keyword research to content creation, so you can focus on your
             business. Plans start at just $300/month.
-          </p>
+          </motion.p>
         </div>
 
         {/* Form Container Below Text */}
-        <div className="mt-12 w-full max-w-screen-sm mx-auto">
+        <motion.div 
+            className="mt-12 w-full max-w-screen-sm mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.5 }}
+        >
            <div className="bg-gray-200 rounded-[2rem] p-1">
              <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg space-y-6">
                 <div className="text-center">
@@ -244,7 +254,7 @@ function Hero() {
                   </Form>
               </div>
           </div>
-        </div>
+        </motion.div>
         <PointingArrow targetRef={formButtonRef} />
       </div>
     </div>
