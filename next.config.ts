@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'ahrefs.com', port: '', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn.brandfetch.io' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
+      { protocol: 'https', hostname: 'api.microlink.io' },
     ],
   },
 
