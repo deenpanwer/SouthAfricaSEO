@@ -80,7 +80,7 @@ export default async function RootLayout({
   const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !isTest4Path && !pathname.startsWith(AUTOMATION_PATH) && !pathname.startsWith('/saphirefans') && !pathname.startsWith('/1');
 
   return (
-    <html lang="en" className={showMainLayout ? "scroll-smooth" : ""}>
+    <html lang="en" className={showMainLayout ? "scroll-smooth" : ""} suppressHydrationWarning>
       <head>
         {showMainLayout && (
           <script
