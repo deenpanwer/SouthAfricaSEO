@@ -19,6 +19,7 @@ import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import logoStripHome from '../../../public/home/logostriphome.png';
 import { Button } from '../ui/button';
+import { Check } from 'lucide-react'; // Import Check icon
 
 declare const fbq: any; // Assuming fbq is globally available as in the HomeHeroSection
 
@@ -80,6 +81,21 @@ function Hero() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
+  // MoneyBackGuaranteePill Component
+  const MoneyBackGuaranteePill = () => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.0, duration: 0.5 }}
+      className="mt-4 inline-flex items-center space-x-2 bg-gray-50 border border-gray-200 text-gray-700 text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm"
+    >
+      <div className="flex items-center justify-center w-5 h-5 rounded-full bg-white border border-yellow-400 text-yellow-500">
+        <Check className="h-4 w-4" />
+      </div>
+      <span>Money Back Guarantee</span>
+    </motion.div>
+  );
+
   const form = useForm<HeroLeadFormValues>({
     resolver: zodResolver(heroLeadFormSchema),
     defaultValues: {
@@ -119,7 +135,7 @@ function Hero() {
       setIsLoading(false);
     }
   };
-  const title = "Your SEO, Now on Autopilot.";
+  const title = "The Best Deal in SEO.";
   const words = title.split(" ");
   const formButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -169,10 +185,9 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            Our all-inclusive AI-powered SEO service handles everything from
-            keyword research to content creation, so you can focus on your
-            business. Plans start at just $300/month.
+            Unlock complete, AI-powered SEO from just $300/month. We handle everything: keyword research, content creation, technical optimization, link building, and many More! The comprehensive solution your business needs, with zero risk.
           </motion.p>
+          <MoneyBackGuaranteePill />
         </div>
 
         {/* Form Container Below Text */}
@@ -185,9 +200,9 @@ function Hero() {
            <div className="bg-gray-200 rounded-[2rem] p-1">
              <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900">Get Your Free SEO Analysis</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Get Your Free SEO Game Plan</h3>
                   <p className="text-gray-600 mt-2">
-                    Enter your website URL to get started.
+                    Enter your website. We'll send you a no-fluff, actionable blueprint showing how we'll get you results.
                   </p>
                 </div>
                   <Form {...form}>
@@ -242,7 +257,7 @@ function Hero() {
                               Submitting...
                             </>
                           ) : (
-                            "GET MY FREE PROPOSAL"
+                            "Get My Free Plan"
                           )}
                         </Button>
                       </div>

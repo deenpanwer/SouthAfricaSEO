@@ -19,11 +19,10 @@ const SolutionSection = () => {
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 max-w-4xl mx-auto"
           >
-            The Solution: Your SEO on Autopilot.
+            The Ultimate SEO Deal. One Flat Fee. All-Inclusive.
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Experience unparalleled SEO power with our AI-driven strategies.
-            Transform your online presence effortlessly.
+            We've eliminated the risk and complexity. This is the straightforward, results-driven SEO solution you've been looking for.
           </p>
         </motion.div>
 
@@ -35,14 +34,13 @@ const SolutionSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="col-span-1 lg:col-span-2 min-h-[400px]"
           >
-            <WobbleCard containerClassName="h-full bg-pink-800">
+            <WobbleCard containerClassName="h-full bg-blue-600">
               <div className="max-w-xs md:max-w-sm">
                 <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                  AI Drives Unmatched Efficiency & Speed
+                  Total Transparency. Zero Risk.
                 </h2>
                 <p className="mt-4 text-left text-base/6 text-neutral-200">
-                  Automate tedious tasks like keyword research, content optimization, and
-                  competitor analysis to free up your valuable time for strategic growth.
+                  We are so confident in our service that we offer a no-questions-asked, 2-month money-back guarantee. If you are not satisfied with our process, communication, and the initial results, we’ll refund your investment in full.
                 </p>
               </div>
             </WobbleCard>
@@ -55,13 +53,12 @@ const SolutionSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
              className="col-span-1 min-h-[300px]"
           >
-            <WobbleCard containerClassName="h-full bg-blue-700">
+            <WobbleCard containerClassName="h-full bg-indigo-700">
               <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                Predictive AI for Smarter Growth Strategies
+                Every Service You Need. Included.
               </h2>
               <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                Our platform analyzes market trends and predicts keyword performance,
-                giving you a competitive edge and rapid ranking improvements.
+                Stop paying for a dozen different tools and services. Our one flat-rate plan includes the full breadth of SEO services – from technical audits and content creation to link building and strategy. No tiers. No add-ons.
               </p>
             </WobbleCard>
           </motion.div>
@@ -73,14 +70,13 @@ const SolutionSection = () => {
              transition={{ duration: 0.5, delay: 0.3 }}
              className="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[300px]"
           >
-            <WobbleCard containerClassName="h-full bg-indigo-900">
+            <WobbleCard containerClassName="h-full bg-green-700">
               <div className="max-w-sm md:max-w-lg">
                 <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                  All-Inclusive & Transparent: Simplified SEO Management
+                  Results You Can Actually See.
                 </h2>
                 <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
-                  No hidden fees, no complex dashboards. Get clear, actionable insights
-                  and a complete suite of SEO tools for one predictable monthly price.
+                  We replace confusing reports with a real-time dashboard showing your progress. Our process is built for speed, so you'll see meaningful activity and a clear path to ROI from the very beginning.
                 </p>
               </div>
             </WobbleCard>

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Check, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link"; // Import Link
 
 export interface PlanFeature {
   label: string;
@@ -112,8 +113,9 @@ export function PricingModule({
                 <Button
                   variant={plan.recommended ? "default" : "outline"}
                   className="w-full mb-6"
+                  asChild // Add asChild prop
                 >
-                  {buttonLabel}
+                  <Link href="/contact">{buttonLabel}</Link>
                 </Button>
 
                 <div className="text-left text-sm">

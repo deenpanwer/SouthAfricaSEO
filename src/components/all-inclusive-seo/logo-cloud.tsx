@@ -52,17 +52,17 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
 export function LogoCloud({ className, ...props }: React.ComponentProps<"div">) {
   const logos: Logo[] = [
     { src: "https://cdn.brandfetch.io/idxAg10C0L/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Stripe Logo", previewUrl: "https://stripe.com" },
+    { src: "https://cdn.brandfetch.io/idwDWo4ONQ/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Coinbase Logo", previewUrl: "https://coinbase.com" },
+    { src: "https://cdn.brandfetch.io/id4NSNrRnG/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Deel Logo", previewUrl: "https://www.deel.com/" },
+    { src: "https://cdn.brandfetch.io/idyS3r5vpr/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Rippling Logo", previewUrl: "https://www.rippling.com/" },
+    { src: "https://cdn.brandfetch.io/idxLNTSrGB/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Flexport Logo", previewUrl: "https://www.flexport.com/" },
+    { src: "https://cdn.brandfetch.io/idLdViRnHy/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Scale AI Logo", previewUrl: "https://scale.com/" },
+    { src: "https://cdn.brandfetch.io/idu49Dl4i8/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Brex Logo", previewUrl: "https://www.brex.com/" },
+    { src: "https://cdn.brandfetch.io/idAkkC1hF-/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Gusto Logo", previewUrl: "https://gusto.com/" },
     { src: "https://cdn.brandfetch.io/idKhWTXUYD/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Y Combinator Logo", previewUrl: "https://ycombinator.com" },
-    { src: "/grok.svg", alt: "Microsoft Logo", previewUrl: "https://microsoft.com" },
-    { src: "/grok.svg", alt: "Google Logo", previewUrl: "https://google.com" },
-    { src: "/grok.svg", alt: "Amazon Logo", previewUrl: "https://amazon.com" },
-    { src: "/grok.svg", alt: "Meta Logo", previewUrl: "https://meta.com" },
-    { src: "/grok.svg", alt: "Contentful Logo", previewUrl: "https://contentful.com" },
-    { src: "/grok.svg", alt: "Vercel Logo", previewUrl: "https://vercel.com" },
-    { src: "/grok.svg", alt: "Shopify Logo", previewUrl: "https://shopify.com" },
-    { src: "/grok.svg", alt: "Salesforce Logo", previewUrl: "https://salesforce.com" },
-    { src: "/grok.svg", alt: "Palantir Logo", previewUrl: "https://palantir.com" },
-    { src: "/grok.svg", alt: "Ramp Logo", previewUrl: "https://ramp.com" },
+    { src: "https://cdn.brandfetch.io/idkuvXnjOH/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Airbnb Logo", previewUrl: "https://www.airbnb.com/" },
+    { src: "https://cdn.brandfetch.io/idrVhdDocf/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "DoorDash Logo", previewUrl: "https://www.doordash.com/" },
+    { src: "https://cdn.brandfetch.io/idVyDKR7Xk/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B", alt: "Instacart Logo", previewUrl: "https://www.instacart.com/" }
   ];
 
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero } from '@/components/all-inclusive-seo/hero';
 import { LogoCloud } from '@/components/all-inclusive-seo/logo-cloud';
+import { AllInclusiveFeatures } from '@/components/all-inclusive-seo/AllInclusiveFeatures';
 import ProblemAgitation from '@/components/all-inclusive-seo/problem-agitation';
 import SolutionSection from '@/components/all-inclusive-seo/solution-section';
 import HowItWorksSection from '@/components/all-inclusive-seo/how-it-works-section'; // New import
@@ -18,13 +19,14 @@ const AllInclusiveSeoPage = () => {
     <main className="min-h-screen w-full flex-col bg-white overflow-x-hidden">
       <Hero />
       <LogoCloud className="py-12 px-4 sm:px-8 lg:px-16" />
+      {/* <AllInclusiveFeatures /> work on it add back in the future to show all the things given in package */}
       <ProblemAgitation />
       <SolutionSection /> {/* New component */}
       <HowItWorksSection /> {/* New component */}
       <CoreFeaturesSection /> {/* Core Features Section */}
       <PricingSection /> {/* Pricing Section */}
-      <ROICalculator /> {/* ROI Calculator Section */}
       <ComparisonTable /> {/* Comparison Table Section */}
+      <ROICalculator /> {/* ROI Calculator Section */}
       <GrowthRoadmap /> {/* Growth Roadmap Section */}
       <CallToActionSection /> {/* Call To Action Section */}
       <TestimonialSection /> {/* Testimonial Section */}

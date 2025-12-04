@@ -19,26 +19,26 @@ const ProblemAgitation = () => {
 
   const data: TimelineEntry[] = [
     {
-      title: "Opaque Costs",
+      title: "Vague Quotes & Hidden Fees",
       content: (
         <p className="text-lg text-gray-700">
-          Traditional SEO often comes with vague pricing and hidden fees. You're left wondering where your money is actually going, with little to show for it.
+          Most agencies give you a "custom" price that feels plucked from thin air. Then the extra charges start rolling in. You're left paying more than you budgeted for results you can't see.
         </p>
       ),
     },
     {
-      title: "Glacial Timelines",
+      title: "Endless Waiting for \"Results\"",
       content: (
         <p className="text-lg text-gray-700">
-          Results can take 6-12 months, with no guarantee of success. In the fast-paced digital world, this is too slow to compete effectively.
+          You're told "SEO takes time." But after 6, 9, even 12 months of paying invoices, you're still waiting for the needle to move. In the time it takes them to get started, your competition is already winning.
         </p>
       ),
     },
     {
-      title: "Manual Overload",
+      title: "Zero Transparency",
       content: (
         <p className="text-lg text-gray-700">
-          Endless hours are spent on keyword research, content creation, and technical tweaks. It's a full-time job that distracts you from your actual business.
+          What are you actually paying for? Most SEOs hide behind jargon and confusing reports. You don't know what they're doing, if it's working, or why it's costing so much.
         </p>
       ),
     },
@@ -78,7 +78,7 @@ const ProblemAgitation = () => {
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-left max-w-4xl"
           >
-            Traditional SEO is Holding You Back
+            Stop Gambling on SEO.
           </motion.h2>
           <motion.p 
             className="text-neutral-700 text-sm md:text-base max-w-sm"
@@ -87,7 +87,7 @@ const ProblemAgitation = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            The old way of doing things is expensive, slow, and labor-intensive.
+            You're here because you know you need SEO, but you're tired of the risks and the runaround.
           </motion.p>
         </div>
 
@@ -134,7 +134,7 @@ const ProblemAgitation = () => {
           </div>
         </div>
       </motion.div>
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </div>
   );
 };

@@ -36,6 +36,13 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'cdn.brandfetch.io' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
       { protocol: 'https', hostname: 'api.microlink.io' },
+      { protocol: 'https', hostname: 'logo.svgcdn.com' },
+      { protocol: 'https', hostname: 'logosarchive.com' },
+      { protocol: 'https', hostname: 'img.logokit.com' },
+      { protocol: 'https', hostname: 'github.com' },
+      { protocol: 'https', hostname: 'www.stickpng.com' },
+      { protocol: 'https', hostname: 'www.brandfetch.com' },
+      { protocol: 'https', hostname: 'seeklogo.com' },
     ],
   },
 

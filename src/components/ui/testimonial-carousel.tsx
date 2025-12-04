@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/carousel";
 
 interface Testimonial {
-  company: string;
+  company?: string;
+  companyLogo: string;
   avatar: string;
   name: string;
   role: string;
@@ -20,12 +21,10 @@ interface Testimonial {
 
 interface TestimonialCarouselProps extends React.HTMLAttributes<HTMLDivElement> {
   testimonials: Testimonial[];
-  companyLogoPath?: string;
-  avatarPath?: string;
 }
 
 export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialCarouselProps>(
-  ({ className, testimonials, companyLogoPath = "", avatarPath = "", ...props }, ref) => {
+  ({ className, testimonials, ...props }, ref) => {
     const [api, setApi] = React.useState<CarouselApi>();
     const [current, setCurrent] = React.useState(0);
 
@@ -45,12 +44,12 @@ export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialC
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem
-                key={testimonial.company}
+                key={testimonial.name}
                 className="flex flex-col items-center cursor-grab"
               >
                 <div className="mb-7 relative h-8 w-32">
                   <Image
-                    src={`${companyLogoPath}${testimonial.company}.svg`}
+                    src={testimonial.companyLogo}
                     alt={`${testimonial.company} logo`}
                     fill
                     className="object-contain"
@@ -68,7 +67,7 @@ export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialC
                 </h5>
                 <div className="mt-5 relative size-12 rounded-full overflow-hidden bg-muted">
                   <Image
-                    src={`${avatarPath}${testimonial.avatar}`}
+                    src={testimonial.avatar}
                     alt={testimonial.name}
                     fill
                     className="object-cover"

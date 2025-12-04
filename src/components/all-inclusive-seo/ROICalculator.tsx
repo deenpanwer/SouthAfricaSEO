@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Slider } from '@/components/ui/slider'; // Assuming a Slider component exists in ui
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
 
@@ -54,14 +55,29 @@ const ROICalculator: React.FC = () => {
   return (
     <section className="py-16 bg-white text-gray-900"> {/* White theme background and text */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extrabold text-center mb-10 tracking-tight">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-extrabold text-center mb-10 tracking-tight">
           ROI Calculator: The Animated Payoff
-        </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center text-lg text-gray-600 mb-12">
           See how an all-inclusive SEO strategy can drive significant returns for your business.
-        </p>
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
           {/* Input Sliders */}
           <div className="space-y-8 lg:col-span-2 p-6 bg-gray-50 rounded-lg shadow-inner">
             <h3 className="text-2xl font-semibold mb-6">Your Business Metrics</h3>
@@ -166,7 +182,7 @@ const ROICalculator: React.FC = () => {
               This calculation provides an estimate. For a tailored ROI projection, let's discuss your specific business goals.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

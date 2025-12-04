@@ -24,72 +24,48 @@ interface ComparisonColumn {
 
 // --- Column Definitions ---
 const columnHeaders: ComparisonColumn[] = [
-  { id: 'aiSeo', name: 'AI SEO (Our Solution)', subheading: 'The Future of Growth', highlightColor: 'blue' },
-  { id: 'traditionalAgency', name: 'Traditional Agency', subheading: 'Standard Approach' },
-  { id: 'doingItYourself', name: 'Doing It Yourself', subheading: 'Time & Effort Intensive' },
+  { id: 'aiSeo', name: 'Our All-Inclusive SEO', subheading: 'The Confident Path', highlightColor: 'blue' },
+  { id: 'traditionalAgency', name: 'Other Agencies', subheading: 'The Opaque Approach' },
+  { id: 'doingItYourself', name: 'Doing It Yourself', subheading: 'The Endless Struggle' },
 ];
 
 // --- Comparison Data ---
 const comparisonData: ComparisonData[] = [
   {
-    feature: 'Automated Keyword Research',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: <AnimatedCheck />,
-    doingItYourself: <AnimatedX />,
+    feature: 'Upfront Cost & Risk',
+    aiSeo: 'Zero Risk (2-Month Guarantee)',
+    traditionalAgency: 'High Risk, Big Deposit, Locked Contracts',
+    doingItYourself: 'High "Sweat Equity" Cost',
   },
   {
-    feature: 'AI Content Briefs & Generation',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: 'Limited AI Tools',
-    doingItYourself: <AnimatedX />,
+    feature: 'Pricing Model',
+    aiSeo: 'Flat-Rate, All-Inclusive',
+    traditionalAgency: 'Complex, Vague, Hidden Upsells',
+    doingItYourself: 'Death by a Thousand Tools',
   },
   {
-    feature: 'On-Page Optimization Engine',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: <AnimatedCheck />,
-    doingItYourself: 'Manual & Basic',
+    feature: 'Breadth of Service',
+    aiSeo: 'Everything Included, Always Evolving',
+    traditionalAgency: 'Tiered, Limited & Feature-Gated',
+    doingItYourself: 'Fragmented & Incomplete',
   },
   {
-    feature: 'Automated Backlink Monitoring',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: 'Manual Reporting',
-    doingItYourself: 'Basic Tools',
+    feature: 'Speed to Action',
+    aiSeo: 'Immediate Execution & Momentum',
+    traditionalAgency: 'Slow Onboarding, Bureaucratic Delays',
+    doingItYourself: 'Overwhelmingly Slow',
   },
   {
-    feature: 'Real-time Reporting Dashboard',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: <AnimatedCheck />,
-    doingItYourself: 'Fragmented',
+    feature: 'Transparency',
+    aiSeo: '100% (Live Dashboard, Direct Access)',
+    traditionalAgency: 'A Black Box of Jargon',
+    doingItYourself: 'Lost in Spreadsheets & Guesswork',
   },
   {
-    feature: 'Cost-Effectiveness',
-    aiSeo: 'High (Automated Savings)',
-    traditionalAgency: 'Moderate to Low',
-    doingItYourself: 'Variable (High Time Cost)',
-  },
-  {
-    feature: 'Speed of Implementation',
-    aiSeo: 'Very Fast',
-    traditionalAgency: 'Moderate',
-    doingItYourself: 'Slow',
-  },
-  {
-    feature: 'Scalability',
-    aiSeo: 'Excellent (AI-driven)',
-    traditionalAgency: 'Limited',
-    doingItYourself: 'Poor',
-  },
-  {
-    feature: 'Dedicated Support',
-    aiSeo: <AnimatedCheck />,
-    traditionalAgency: <AnimatedCheck />,
-    doingItYourself: <AnimatedX />,
-  },
-  {
-    feature: 'Innovation & Updates',
-    aiSeo: 'Continuous (AI-led)',
-    traditionalAgency: 'Periodic',
-    doingItYourself: 'Self-researched',
+    feature: 'Support',
+    aiSeo: 'Dedicated Account Manager, Expert Team',
+    traditionalAgency: 'Passed Around, Junior Staff',
+    doingItYourself: 'You\'re On Your Own',
   },
 ];
 
@@ -131,12 +107,20 @@ const ComparisonTable: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50 text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-extrabold text-center mb-6 tracking-tight leading-tight">
-          AI SEO <span className="text-blue-600">vs.</span> The Old Way
-        </h2>
-        <p className="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto">
-          See why our AI-powered SEO solution is the clear choice for modern businesses seeking exponential growth and efficiency.
-        </p>
+      <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+            The Smart Choice <span className="text-blue-600">vs.</span> The Risky Bets
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+            Discover why our transparent, risk-free model is the only logical decision for businesses serious about growth.
+          </p>
+        </motion.div>
 
         {/* --- Comparison Grid --- */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -217,7 +201,7 @@ const ComparisonTable: React.FC = () => {
         </div>
 
         <p className="mt-16 text-center text-gray-500 text-sm max-w-2xl mx-auto">
-          * Note: AI SEO represents our advanced, comprehensive solution, leveraging cutting-edge technology for superior results. Traditional Agency and Doing It Yourself options often come with limitations in speed, scalability, and cost-effectiveness.
+          * Note: Our All-Inclusive SEO offers a complete, transparent, and risk-free path to growth. Other options often come with limitations in transparency, effectiveness, and financial risk.
         </p>
       </div>
     </section>

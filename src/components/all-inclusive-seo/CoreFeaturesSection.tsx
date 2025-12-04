@@ -3,6 +3,7 @@
 
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
+import { motion } from 'framer-motion';
 
 // Adapting the CSS from MagicBento.css
 const CORE_FEATURES_CSS = `
@@ -241,7 +242,6 @@ interface CardData {
   title: string;
   description: string;
   label: string;
-  // icon?: React.ReactNode; // Removed as requested
 }
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR) => {
@@ -696,40 +696,58 @@ const useMobileDetection = () => {
 const cardData: CardData[] = [
   {
     color: '#060010',
-    title: 'Automated Keyword Tracking',
-    description: 'Monitor your keyword rankings with precision and real-time updates.',
-    label: 'SEO Core',
+    title: 'Strategic Keyword Research',
+    description: 'We pinpoint the most profitable keywords for your business, driving targeted traffic ready to convert.',
+    label: 'On-Page SEO',
   },
   {
     color: '#060010',
-    title: 'AI Content Brief & Generation',
-    description: 'Generate high-quality content briefs and drafts powered by AI.',
-    label: 'Content AI'
+    title: 'Content Optimization & Creation',
+    description: 'Crafting high-ranking, engaging content for your website that resonates with your audience and search engines.',
+    label: 'On-Page SEO',
   },
   {
     color: '#060010',
-    title: 'On-Page Optimization Engine',
-    description: 'Optimize your website pages for maximum search engine visibility.',
-    label: 'On-Page SEO'
+    title: 'Local SEO & GMB Management',
+    description: 'Optimizing your presence for local searches and managing your Google My Business profile to attract nearby customers.',
+    label: 'On-Page SEO',
   },
   {
     color: '#060010',
-    title: 'Automated Backlink Monitoring',
-    description: 'Keep track of your backlink profile and identify new opportunities.',
-    label: 'Link Building'
+    title: 'Comprehensive Technical Audit',
+    description: 'A deep dive into your site\'s health, crawlability, mobile-friendliness, and overall technical foundation for peak performance.',
+    label: 'Technical SEO',
   },
   {
     color: '#060010',
-    title: 'Real-time Reporting Dashboard',
-    description: 'Access comprehensive reports and analytics in an intuitive dashboard.',
-    label: 'Analytics',
+    title: 'Schema Markup & Structured Data',
+    description: 'Implementing advanced schema markup and structured data to enhance your visibility with rich snippets in search results.',
+    label: 'Technical SEO',
   },
   {
     color: '#060010',
-    title: 'Competitor Analysis',
-    description: 'Uncover competitor strategies and gain a competitive edge.',
-    label: 'Market Insights'
-  }
+    title: 'Website Speed & Core Web Vitals',
+    description: 'Optimizing your site\'s loading speed and Core Web Vitals to improve user experience and boost search rankings.',
+    label: 'Technical SEO',
+  },
+  {
+    color: '#060010',
+    title: 'High-Authority Link Building',
+    description: 'Acquiring quality backlinks from reputable sources to significantly enhance your website\'s domain authority and search ranking.',
+    label: 'Off-Page SEO',
+  },
+  {
+    color: '#060010',
+    title: 'Competitor Backlink Analysis',
+    description: 'Uncovering the backlink strategies of your competitors to identify new opportunities and gain a decisive edge.',
+    label: 'Off-Page SEO',
+  },
+  {
+    color: '#060010',
+    title: 'Online Reputation Management',
+    description: 'Monitoring and enhancing your brand\'s online mentions and reviews to build trust and improve your local and organic visibility.',
+    label: 'Off-Page SEO',
+  },
 ];
 
 const CoreFeaturesSection: React.FC = () => {
@@ -738,7 +756,13 @@ const CoreFeaturesSection: React.FC = () => {
   const shouldDisableAnimations = isMobile; // Disable animations on mobile
 
   return (
-    <section className="core-features-section">
+    <motion.section 
+      className="core-features-section"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+    >
       <GlobalSpotlight
         gridRef={gridRef}
         disableAnimations={shouldDisableAnimations}
@@ -777,9 +801,8 @@ const CoreFeaturesSection: React.FC = () => {
         })}
       </BentoCardGrid>
 
-
       <style jsx global>{CORE_FEATURES_CSS}</style>
-    </section>
+    </motion.section>
   );
 };
 
