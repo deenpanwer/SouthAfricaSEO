@@ -2,7 +2,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, Zap, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -27,7 +27,12 @@ import React from 'react';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const mobileLinkClass = "text-base font-medium transition-colors hover:text-primary py-2 block w-full text-left";
   const desktopLinkClass = "text-sm font-medium transition-colors hover:text-primary hover:bg-transparent";
@@ -42,7 +47,7 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-1 items-center">
-            {NAV_ITEMS.map((item) => {
+            {NAV_ITEMS.map((item, idx) => {
               if (item.children) {
                 return (
                   <DropdownMenu key={item.label}>
@@ -67,9 +72,9 @@ export function Header() {
                           {/* Services List Section */}
                           <div className="col-span-3">
                              <div className="grid grid-cols-4 gap-x-6 gap-y-2">
-                                {item.children.map((child) => {
+                                {item.children.map((child, childIdx) => {
                                   if (child.isSeparator) {
-                                    return <DropdownMenuSeparator key={Math.random()} className="col-span-full my-2" />;
+                                    return <DropdownMenuSeparator key={`sep-${childIdx}`} className="col-span-full my-2" />;
                                   }
                                   return (
                                     <DropdownMenuItem key={child.label} asChild className="p-0">
@@ -110,74 +115,76 @@ export function Header() {
             </div>
 
             <div className="md:hidden">
-              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Open menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
-                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  <ScrollArea className="h-full w-full">
-                    <div className="p-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
-                          <Zap className="h-7 w-7" />
-                          <span className="font-bold text-lg">{APP_NAME}</span>
-                        </Link>
-                      </div>
-                      <nav className="flex flex-col">
-                        {NAV_ITEMS.map((item) => {
-                          if (item.children) {
+             {isClient && (
+                <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <Menu className="h-6 w-6" />
+                      <span className="sr-only">Open menu</span>
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                    <ScrollArea className="h-full w-full">
+                      <div className="p-6">
+                        <div className="flex justify-between items-center mb-4">
+                          <Link href="/" className="flex items-center space-x-2 text-primary" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Zap className="h-7 w-7" />
+                            <span className="font-bold text-lg">{APP_NAME}</span>
+                          </Link>
+                        </div>
+                        <nav className="flex flex-col">
+                          {NAV_ITEMS.map((item, idx) => {
+                            if (item.children) {
+                              return (
+                                <Accordion type="single" collapsible key={item.label} className="w-full">
+                                  <AccordionItem value={item.label} className="border-b-0">
+                                    <AccordionTrigger className={cn(
+                                      "py-2 text-base font-medium hover:no-underline",
+                                      pathname.startsWith(item.href) ? "text-primary" : "text-foreground"
+                                    )}>
+                                      {item.label}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pl-4">
+                                      <div className="flex flex-col space-y-1 mt-1">
+                                        {item.children.map((child, childIdx) => {
+                                          if (child.isSeparator) {
+                                            return <hr key={`sep-mobile-${childIdx}`} className="my-2 border-border" />;
+                                          }
+                                          return (
+                                            <SheetClose asChild key={child.label}>
+                                              <Link href={child.href} className={cn("flex items-center space-x-2 py-2 text-muted-foreground hover:text-primary block text-base", pathname === child.href && "text-primary")}>
+                                                {child.icon && <child.icon className="h-5 w-5" />}
+                                                <span>{child.label}</span>
+                                              </Link>
+                                            </SheetClose>
+                                          );
+                                        })}
+                                      </div>
+                                    </AccordionContent>
+                                  </AccordionItem>
+                                </Accordion>
+                              );
+                            }
                             return (
-                              <Accordion type="single" collapsible key={item.label} className="w-full">
-                                <AccordionItem value={item.label} className="border-b-0">
-                                  <AccordionTrigger className={cn(
-                                    "py-2 text-base font-medium hover:no-underline",
-                                    pathname.startsWith(item.href) ? "text-primary" : "text-foreground"
-                                  )}>
-                                    {item.label}
-                                  </AccordionTrigger>
-                                  <AccordionContent className="pl-4">
-                                    <div className="flex flex-col space-y-1 mt-1">
-                                      {item.children.map((child) => {
-                                        if (child.isSeparator) {
-                                          return <hr key={Math.random()} className="my-2 border-border" />;
-                                        }
-                                        return (
-                                          <SheetClose asChild key={child.label}>
-                                            <Link href={child.href} className={cn("flex items-center space-x-2 py-2 text-muted-foreground hover:text-primary block text-base", pathname === child.href && "text-primary")}>
-                                              {child.icon && <child.icon className="h-5 w-5" />}
-                                              <span>{child.label}</span>
-                                            </Link>
-                                          </SheetClose>
-                                        );
-                                      })}
-                                    </div>
-                                  </AccordionContent>
-                                </AccordionItem>
-                              </Accordion>
+                              <SheetClose asChild key={item.label}>
+                                <Link href={item.href} className={cn(mobileLinkClass, pathname === item.href ? "text-primary" : "text-foreground")}>
+                                  {item.label}
+                                </Link>
+                              </SheetClose>
                             );
-                          }
-                          return (
-                            <SheetClose asChild key={item.label}>
-                              <Link href={item.href} className={cn(mobileLinkClass, pathname === item.href ? "text-primary" : "text-foreground")}>
-                                {item.label}
-                              </Link>
-                            </SheetClose>
-                          );
-                        })}
-                      </nav>
-                      <SheetClose asChild>
-                        <Button asChild className="w-full mt-6 bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
-                          <Link href="/contact">Get a Free Quote</Link>
-                        </Button>
-                      </SheetClose>
-                    </div>
-                  </ScrollArea>
-                </SheetContent>
-              </Sheet>
+                          })}
+                        </nav>
+                        <SheetClose asChild>
+                          <Button asChild className="w-full mt-6 bg-orange-500 text-white font-semibold hover:bg-orange-600 transition-colors py-2 px-4">
+                            <Link href="/contact">Get a Free Quote</Link>
+                          </Button>
+                        </SheetClose>
+                      </div>
+                    </ScrollArea>
+                  </SheetContent>
+                </Sheet>
+              )}
             </div>
           </div>
         </div>

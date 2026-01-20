@@ -29,7 +29,7 @@ async function submitToSheet(data: FormValues): Promise<{ success: boolean; mess
       },
       body: JSON.stringify({
         "Email Address": data.email,
-        "Form Type": "PPC Campaign Exit Intent Form",
+        "Form Type": "All Inclusive SEO Exit Intent Form",
         "Timestamp": new Date().toISOString()
       }),
     });

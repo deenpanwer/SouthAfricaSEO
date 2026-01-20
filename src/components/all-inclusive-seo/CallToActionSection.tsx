@@ -30,7 +30,7 @@ async function submitToSheet(data: FormValues): Promise<{ success: boolean; mess
         "Email Address": data.email,
         "Website URL": data.website,
         "Your Message": data.message,
-        "Form Type": "PPC Campaign Bottom Form",
+        "Form Type": "All Inclusive SEO Bottom Form",
         "Timestamp": new Date().toISOString()
       }),
     });

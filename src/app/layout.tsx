@@ -80,7 +80,7 @@ export default async function RootLayout({
   const showMainLayout = !isSaphireFansDomain && !isEnviroPaintingPath && !isTest4Path && !pathname.startsWith(AUTOMATION_PATH) && !pathname.startsWith('/saphirefans') && !pathname.startsWith('/1');
 
   return (
-    <html lang="en" className={showMainLayout ? "scroll-smooth" : ""} suppressHydrationWarning>
+    <html lang="en" className={showMainLayout ? "scroll-smooth" : ""}>
       <head>
         {showMainLayout && (
           <script
@@ -156,9 +156,9 @@ export default async function RootLayout({
           {showMainLayout && <Header />}
           <main className="flex-grow">
             {children}
+            {showMainLayout && <FloatingOfferBanner />}
           </main>
           {showMainLayout && <Footer />}
-          {showMainLayout && <FloatingOfferBanner />}
           <Toaster />
         </PostHogProvider>
         <Analytics />
