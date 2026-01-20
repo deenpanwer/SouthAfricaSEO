@@ -16,7 +16,7 @@ interface CalendlyModalProps {
 }
 
 export const CalendlyModal: React.FC<CalendlyModalProps> = ({ isOpen, onOpenChange }) => {
-  const calendlyUrl = "https://calendly.com/your-username/30min"; // Placeholder URL
+  const calendlyUrl = "https://calendly.com/kaayfkhan/discovery-call";
 
   return (
     <AnimatePresence>
