@@ -26,6 +26,18 @@ const AllInclusiveSeoPage = () => {
 
   return (
     <main className="min-h-screen w-full flex-col bg-white overflow-x-hidden">
+      {/* Google tag (gtag.js) */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17668221650"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17668221650');
+          `,
+        }}
+      />
       <Hero onFormSuccess={handleFormSuccess} />
       <LogoCloud className="py-12 px-4 sm:px-8 lg:px-16" />
       {/* <AllInclusiveFeatures /> work on it add back in the future to show all the things given in package */}
