@@ -1,4 +1,3 @@
-// src/components/all-inclusive-seo/CallToActionSection.tsx
 "use client";
 
 import React, { useState } from 'react';
@@ -48,7 +47,7 @@ async function submitToSheet(data: FormValues): Promise<{ success: boolean; mess
   }
 }
 
-const CallToActionSection: React.FC = () => {
+const CallToActionSection = ({ onFormSuccess }: { onFormSuccess: () => void }) => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm<FormValues>();
@@ -65,6 +64,7 @@ const CallToActionSection: React.FC = () => {
         variant: "default",
       });
       reset();
+      onFormSuccess(); // Trigger Calendly modal
     } else {
       toast({
         title: "Error",

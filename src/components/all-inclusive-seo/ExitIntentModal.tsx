@@ -29,7 +29,7 @@ async function submitToSheet(data: FormValues): Promise<{ success: boolean; mess
       },
       body: JSON.stringify({
         "Email Address": data.email,
-        "Form Type": "All Inclusive SEO Exit Intent Form",
+        "Form Type": "All Inclusive SEO Exit Intent",
         "Timestamp": new Date().toISOString()
       }),
     });
@@ -47,7 +47,7 @@ async function submitToSheet(data: FormValues): Promise<{ success: boolean; mess
   }
 }
 
-const ExitIntentModal: React.FC = () => {
+const ExitIntentModal = ({ onFormSuccess }: { onFormSuccess: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const { toast } = useToast();
@@ -82,6 +82,7 @@ const ExitIntentModal: React.FC = () => {
       });
       reset();
       setIsOpen(false);
+      onFormSuccess(); // Trigger Calendly modal
     } else {
       toast({
         title: "Error",

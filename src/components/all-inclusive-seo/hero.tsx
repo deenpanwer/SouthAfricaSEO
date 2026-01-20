@@ -77,7 +77,7 @@ async function submitHeroLead(data: HeroLeadFormValues, formType: string): Promi
   }
 }
 
-function Hero() {
+function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -107,7 +107,7 @@ function Hero() {
   const onSubmit: SubmitHandler<HeroLeadFormValues> = async (data) => {
     setIsLoading(true);
     try {
-      const response = await submitHeroLead(data, "All Inclusive SEO Hero Lead Form"); // Pass form type
+      const response = await submitHeroLead(data, "All Inclusive SEO Hero Form"); // Pass form type
       if (response.success) {
         toast({
           title: "Information Received!",
@@ -118,6 +118,7 @@ function Hero() {
             fbq('track', 'Lead');
         }
         form.reset();
+        onFormSuccess(); // Trigger Calendly modal
       } else {
         toast({
           title: "Submission Failed",
