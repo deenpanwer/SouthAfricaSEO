@@ -66,93 +66,95 @@ export function LogoCloud({ className, ...props }: React.ComponentProps<"div">) 
   ];
 
   return (
-    <div
-      className={cn(
-        "relative grid grid-cols-2 border-x md:grid-cols-4",
-        className
-      )}
-      {...props}
-    >
-      <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+    <div className={cn("bg-white", className)}>
+      <h2 className="text-3xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-neutral-700/80">
+        Our Prime Customers Include
+      </h2>
+      <div
+        className="relative grid grid-cols-2 border-x md:grid-cols-4"
+        {...props}
+      >
+        <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
 
-      {/* Row 1 */}
-      <LogoCard
-        className="relative border-r border-b bg-secondary dark:bg-secondary/30"
-        logo={logos[0]}
-      >
-        <PlusIcon
-          className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
-          strokeWidth={1}
+        {/* Row 1 */}
+        <LogoCard
+          className="relative border-r border-b bg-secondary dark:bg-secondary/30"
+          logo={logos[0]}
+        >
+          <PlusIcon
+            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard className="border-b md:border-r" logo={logos[1]} />
+        <LogoCard
+          className="relative border-r border-b md:bg-secondary dark:md:bg-secondary/30"
+          logo={logos[2]}
+        >
+          <PlusIcon
+            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
+            strokeWidth={1}
+          />
+          <PlusIcon
+            className="-bottom-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard
+          className="relative border-b bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
+          logo={logos[3]}
         />
-      </LogoCard>
-      <LogoCard className="border-b md:border-r" logo={logos[1]} />
-      <LogoCard
-        className="relative border-r border-b md:bg-secondary dark:md:bg-secondary/30"
-        logo={logos[2]}
-      >
-        <PlusIcon
-          className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
-          strokeWidth={1}
-        />
-        <PlusIcon
-          className="-bottom-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block"
-          strokeWidth={1}
-        />
-      </LogoCard>
-      <LogoCard
-        className="relative border-b bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
-        logo={logos[3]}
-      />
 
-      {/* Row 2 */}
-      <LogoCard
-        className="relative border-r border-b bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
-        logo={logos[4]}
-      >
-        <PlusIcon
-          className="-right-[12.5px] -bottom-[12.5px] md:-left-[12.5px] absolute z-10 size-6 md:hidden"
-          strokeWidth={1}
+        {/* Row 2 */}
+        <LogoCard
+          className="relative border-r border-b bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
+          logo={logos[4]}
+        >
+          <PlusIcon
+            className="-right-[12.5px] -bottom-[12.5px] md:-left-[12.5px] absolute z-10 size-6 md:hidden"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard
+          className="border-b bg-background md:border-r md:bg-secondary dark:md:bg-secondary/30"
+          logo={logos[5]}
         />
-      </LogoCard>
-      <LogoCard
-        className="border-b bg-background md:border-r md:bg-secondary dark:md:bg-secondary/30"
-        logo={logos[5]}
-      />
-      <LogoCard className="border-r border-b" logo={logos[6]}>
-        <PlusIcon
-          className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
-          strokeWidth={1}
+        <LogoCard className="border-r border-b" logo={logos[6]}>
+          <PlusIcon
+            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard className="border-b bg-secondary dark:bg-secondary/30" logo={logos[7]} />
+        
+        {/* Row 3 */}
+        <LogoCard className="relative border-r bg-secondary dark:bg-secondary/30" logo={logos[8]}>
+          <PlusIcon
+            className="-right-[12.5px] -top-[12.5px] absolute z-10 size-6"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard className="md:border-r" logo={logos[9]} />
+        <LogoCard
+          className="relative border-r md:bg-secondary dark:md:bg-secondary/30"
+          logo={logos[10]}
+        >
+          <PlusIcon
+            className="-right-[12.5px] -top-[12.5px] absolute z-10 size-6"
+            strokeWidth={1}
+          />
+          <PlusIcon
+            className="-top-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block"
+            strokeWidth={1}
+          />
+        </LogoCard>
+        <LogoCard
+          className="relative bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
+          logo={logos[11]}
         />
-      </LogoCard>
-      <LogoCard className="border-b bg-secondary dark:bg-secondary/30" logo={logos[7]} />
-      
-      {/* Row 3 */}
-      <LogoCard className="relative border-r bg-secondary dark:bg-secondary/30" logo={logos[8]}>
-        <PlusIcon
-          className="-right-[12.5px] -top-[12.5px] absolute z-10 size-6"
-          strokeWidth={1}
-        />
-      </LogoCard>
-      <LogoCard className="md:border-r" logo={logos[9]} />
-      <LogoCard
-        className="relative border-r md:bg-secondary dark:md:bg-secondary/30"
-        logo={logos[10]}
-      >
-        <PlusIcon
-          className="-right-[12.5px] -top-[12.5px] absolute z-10 size-6"
-          strokeWidth={1}
-        />
-        <PlusIcon
-          className="-top-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block"
-          strokeWidth={1}
-        />
-      </LogoCard>
-      <LogoCard
-        className="relative bg-secondary md:bg-background dark:bg-secondary/30 md:dark:bg-background"
-        logo={logos[11]}
-      />
 
-      <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+        <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+      </div>
     </div>
   );
 }
