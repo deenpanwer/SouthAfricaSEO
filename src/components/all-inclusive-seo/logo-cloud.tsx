@@ -68,7 +68,7 @@ export function LogoCloud({ className, ...props }: React.ComponentProps<"div">) 
   return (
     <div className={cn("bg-white", className)}>
       <h2 className="text-3xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-neutral-700/80">
-        Our Prime Customers Include
+        Brands That Trust Us<span className="text-blue-600">.</span>
       </h2>
       <div
         className="relative grid grid-cols-2 border-x md:grid-cols-4"

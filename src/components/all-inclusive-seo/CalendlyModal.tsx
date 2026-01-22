@@ -32,7 +32,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({ isOpen, onOpenChan
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="relative bg-white rounded-lg h-[70vh] md:h-[80vh]"
+              className="relative bg-white rounded-lg"
             >
               <DialogHeader className="p-4 border-b">
                 <DialogTitle className="text-lg font-medium text-gray-900">Schedule Your Free Consultation</DialogTitle>
@@ -40,7 +40,7 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({ isOpen, onOpenChan
                   Choose a time that works best for you.
                 </DialogDescription>
               </DialogHeader>
-              <div className="w-full h-full">
+              <div className="w-full aspect-[9/16] sm:aspect-video">
                 <iframe
                   src={calendlyUrl}
                   width="100%"

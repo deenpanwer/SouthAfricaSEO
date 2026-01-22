@@ -7,15 +7,6 @@ import FloatingPaths from '@/components/ui/floating-paths';
 import Image from "next/image";
  // Add this import
 
-import { useForm, type SubmitHandler, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from 'lucide-react';
-import { useState } from 'react';
-import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import logoStripHome from '../../../public/home/logostriphome.png';
 import { Button } from '../ui/button';
@@ -23,65 +14,7 @@ import { Check } from 'lucide-react'; // Import Check icon
 
 declare const fbq: any; // Assuming fbq is globally available as in the HomeHeroSection
 
-// Define the type for form values
-interface HeroLeadFormValues {
-  website?: string;
-  email: string;
-  phoneNumber: string;
-}
-
-// E.164 basic validation.
-const e164Regex = /^\+[1-9]\d{1,14}$/;
-
-const heroLeadFormSchema = z.object({
-  website: z.string().optional(),
-  email: z.string().min(1, "Email is required.").email({ message: "Please enter a valid email address." }),
-  phoneNumber: z.string(),
-}).refine(data => data.phoneNumber.length > 0, {
-  message: "Phone number is required.",
-  path: ["phoneNumber"],
-});
-
-// Function to submit data to SheetDB
-async function submitHeroLead(data: HeroLeadFormValues, formType: string): Promise<{ success: boolean; message: string }> {
-  try {
-    const submissionData = {
-      "Name": '', // Hero form doesn't have name
-      "Email Address": data.email || '',
-      "Company Name": '', // Hero form doesn't have company
-      "Phone Number": data.phoneNumber || '', // Map to 'Phone Number' column
-      "Website URL": data.website || '', // Map to 'Website URL' column
-      "Service of Interest": '', // Hero form doesn't have service
-      "Your Message": '', // Hero form doesn't have message
-      "Form Type": formType, // Identifier
-      "Timestamp": new Date().toISOString() // Timestamp
-    };
-
-    const response = await fetch('https://sheetdb.io/api/v1/rsdd3ypenh4uu', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(submissionData),
-    });
-
-    if (response.ok) {
- return { success: true, message: "Thanks! Our experts will reach out to you ASAP." };
-    } else {
-      const errorText = await response.text();
-      console.error("SheetDB submission failed:", response.status, errorText);
-      return { success: false, message: `Could not submit your information. Status: ${response.status}. Please try again.` };
-    }
-
-  } catch (error) {
-    console.error("Error submitting form to SheetDB:", error);
-    return { success: false, message: "An unexpected error occurred. Please try again later." };
-  }
-}
-
 function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
-  const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
 
   // MoneyBackGuaranteePill Component
   const MoneyBackGuaranteePill = () => (
@@ -98,47 +31,6 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
     </motion.div>
   );
 
-  const form = useForm<HeroLeadFormValues>({
-    resolver: zodResolver(heroLeadFormSchema),
-    defaultValues: {
-      website: "",
-      email: "",
-      phoneNumber: "",
-    },
-  });
-
-  const onSubmit: SubmitHandler<HeroLeadFormValues> = async (data) => {
-    setIsLoading(true);
-    try {
-      const response = await submitHeroLead(data, "All Inclusive SEO Hero Form"); // Pass form type
-      if (response.success) {
-        toast({
-          title: "Information Received!",
-          description: response.message,
-          variant: "default",
-        });
-        if (typeof fbq === 'function') {
-            fbq('track', 'Lead');
-        }
-        form.reset();
-        onFormSuccess(); // Trigger Calendly modal
-      } else {
-        toast({
-          title: "Submission Failed",
-          description: response.message || "Could not submit your information. Please try again.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
   const title = "The Best Deal in SEO.";
   const words = title.split(" ");
   const formButtonRef = useRef<HTMLButtonElement>(null);
@@ -189,102 +81,35 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            Unlock complete, AI-powered SEO from just $300/month. We handle everything: keyword research, content creation, technical optimization, link building, and many More! The comprehensive solution your business needs, with zero risk.
+            Your next big SEO breakthrough is just a conversation away. Discover how our AI-powered strategies deliver unparalleled returns and propel your business to the top.
           </motion.p>
           <MoneyBackGuaranteePill />
         </div>
 
         {/* Form Container Below Text */}
         <motion.div 
-            className="mt-12 w-full max-w-screen-sm mx-auto"
+            className="mt-12 w-full max-w-lg mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.5 }}
         >
            <div className="bg-gray-200 rounded-[2rem] p-1">
-             <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg space-y-6">
+             <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg flex flex-col justify-center items-center h-full space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900">Get a Free SEO Growth Plan</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Ready to Skyrocket Your SEO?</h3>
                   <p className="text-gray-600 mt-2">
-                    Enter your details below and our experts will build you a custom strategy to outrank your competitors.
+                    Connect with our AI SEO experts. We're just a call away from crafting your high-return strategy.
                   </p>
                 </div>
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                      <FormField
-                        control={form.control}
-                        name="website"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel htmlFor="hero-website" className="sr-only">Your Website URL</FormLabel>
-                            <FormControl>
-                              <Input id="hero-website" placeholder="Enter Your Website URL" {...field} disabled={isLoading} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                       <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel htmlFor="hero-email" className="sr-only">Your Email</FormLabel>
-                            <FormControl>
-                              <Input id="hero-email" type="email" placeholder="Your business email" {...field} disabled={isLoading} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phoneNumber"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel htmlFor="hero-phoneNumber" className="sr-only">Phone Number</FormLabel>
-                            <FormControl>
-                              <PhoneInput
-                                defaultCountry="us"
-                                value={field.value}
-                                placeholder="Your phone number*"
-                                onChange={(phone) => {
-                                  const cleanedPhone = phone.replace(/[^0-9+]/g, '');
-                                  const finalCleanedPhone = cleanedPhone.startsWith('+') ? '+' + cleanedPhone.replace(/\+/g, '') : cleanedPhone.replace(/\+/g, '');
-                                  field.onChange(finalCleanedPhone);
-                                }}
-                                disabled={isLoading}
-                                inputClassName="w-full"
-                                countrySelectorStyleProps={{
-                                  buttonClassName: "!border-input",
-                                }}
-                                inputStyle={{ width: '100%' }}
-                                style={{ '--react-international-phone-border-radius': '0.375rem', '--react-international-phone-border-color': 'hsl(var(--input))' } as React.CSSProperties}
-                              />
-                            </FormControl>
-                            <FormDescription>Please include your country code (e.g., +1 for USA).</FormDescription>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <div>
-                        <Button ref={formButtonRef} type="submit" className="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors" size="lg" disabled={isLoading}>
-                          {isLoading ? (
-                            <>
-                              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                              Submitting...
-                            </>
-                          ) : (
-                            "Schedule Your Free SEO Call"
-                          )}
-                        </Button>
-                      </div>
-                      {/* Logo Strip */}
-                      <div className="mt-8">
-                        <Image src={logoStripHome} alt="Client Badges" width={670} height={60} data-ai-hint="award badges" className="mx-auto" />
-                      </div>
-                    </form>
-                  </Form>
+                <div>
+                  <Button ref={formButtonRef} onClick={onFormSuccess} className="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 transition-colors" size="lg">
+                    Book a Free AI SEO Consultation
+                  </Button>
+                </div>
+                {/* Logo Strip */}
+                <div className="mt-8">
+                  <Image src="/ai-seo-for-gemini-chatgpt-claude-perplexity.png" alt="AI SEO Brands" width={250} height={22} data-ai-hint="award badges" className="mx-auto" />
+                </div>
               </div>
           </div>
         </motion.div>
