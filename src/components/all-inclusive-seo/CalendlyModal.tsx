@@ -25,22 +25,22 @@ export const CalendlyModal: React.FC<CalendlyModalProps> = ({ isOpen, onOpenChan
           <DialogContent
             onEscapeKeyDown={() => onOpenChange(false)}
             onPointerDownOutside={() => onOpenChange(false)}
-            className="max-w-4xl w-full p-0 border-none rounded-lg shadow-2xl overflow-hidden"
+            className="fixed inset-0 max-w-full h-full w-full p-0 border-none rounded-none shadow-none overflow-y-auto flex flex-col translate-x-0 translate-y-0 left-0 top-0 sm:rounded-none"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+              exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="relative bg-white rounded-lg"
+              className="relative bg-white rounded-none flex flex-col flex-grow h-full w-full"
             >
-              <DialogHeader className="p-4 border-b">
+              <DialogHeader className="p-4 border-b flex-shrink-0">
                 <DialogTitle className="text-lg font-medium text-gray-900">Schedule Your Free Consultation</DialogTitle>
                 <DialogDescription className="text-sm text-gray-500">
                   Choose a time that works best for you.
                 </DialogDescription>
               </DialogHeader>
-              <div className="w-full aspect-[9/16] sm:aspect-video">
+              <div className="flex-grow w-full h-full">
                 <iframe
                   src={calendlyUrl}
                   width="100%"
