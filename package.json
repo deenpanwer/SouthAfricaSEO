@@ -76,7 +76,7 @@
     "next-mdx-remote": "^5.0.0",
     "papaparse": "^5.5.3",
     "patch-package": "^8.0.0",
-    "posthog-js": "^1.256.2",
+    "posthog-js": "^1.334.1",
     "qss": "^3.0.0",
     "react": "^18.3.1",
     "react-aria-components": "^1.13.0",
