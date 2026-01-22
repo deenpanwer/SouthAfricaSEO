@@ -204,9 +204,9 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
            <div className="bg-gray-200 rounded-[2rem] p-1">
              <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900">Schedule Your Free SEO Game Plan</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Get a Free SEO Growth Plan</h3>
                   <p className="text-gray-600 mt-2">
-                    Enter your details. We'll send you a no-fluff, actionable blueprint showing how we'll get you results.
+                    Enter your details below and our experts will build you a custom strategy to outrank your competitors.
                   </p>
                 </div>
                   <Form {...form}>
@@ -231,7 +231,7 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
                           <FormItem>
                             <FormLabel htmlFor="hero-email" className="sr-only">Your Email</FormLabel>
                             <FormControl>
-                              <Input id="hero-email" type="email" placeholder="Enter Your Email Address*" {...field} disabled={isLoading} />
+                              <Input id="hero-email" type="email" placeholder="Your business email" {...field} disabled={isLoading} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -247,6 +247,7 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
                               <PhoneInput
                                 defaultCountry="us"
                                 value={field.value}
+                                placeholder="Your phone number*"
                                 onChange={(phone) => {
                                   const cleanedPhone = phone.replace(/[^0-9+]/g, '');
                                   const finalCleanedPhone = cleanedPhone.startsWith('+') ? '+' + cleanedPhone.replace(/\+/g, '') : cleanedPhone.replace(/\+/g, '');
@@ -294,3 +295,5 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
 }
 
 export { Hero };
+
+    
