@@ -26,6 +26,7 @@ declare const fbq: any; // Assuming fbq is globally available as in the HomeHero
 // Define the type for form values
 interface HeroLeadFormValues {
   website?: string;
+  email: string;
   phoneNumber: string;
 }
 
@@ -33,8 +34,9 @@ interface HeroLeadFormValues {
 const e164Regex = /^\+[1-9]\d{1,14}$/;
 
 const heroLeadFormSchema = z.object({
- website: z.string().optional(),
- phoneNumber: z.string(),
+  website: z.string().optional(),
+  email: z.string().min(1, "Email is required.").email({ message: "Please enter a valid email address." }),
+  phoneNumber: z.string(),
 }).refine(data => data.phoneNumber.length > 0, {
   message: "Phone number is required.",
   path: ["phoneNumber"],
@@ -45,7 +47,7 @@ async function submitHeroLead(data: HeroLeadFormValues, formType: string): Promi
   try {
     const submissionData = {
       "Name": '', // Hero form doesn't have name
-      "Email Address": '', // Hero form doesn't have email
+      "Email Address": data.email || '',
       "Company Name": '', // Hero form doesn't have company
       "Phone Number": data.phoneNumber || '', // Map to 'Phone Number' column
       "Website URL": data.website || '', // Map to 'Website URL' column
@@ -100,6 +102,7 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
     resolver: zodResolver(heroLeadFormSchema),
     defaultValues: {
       website: "",
+      email: "",
       phoneNumber: "",
     },
   });
@@ -201,9 +204,9 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
            <div className="bg-gray-200 rounded-[2rem] p-1">
              <div className="w-full bg-gray-50 border border-gray-200 rounded-[1.75rem] p-8 shadow-lg space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900">Get Your Free SEO Game Plan</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Schedule Your Free SEO Game Plan</h3>
                   <p className="text-gray-600 mt-2">
-                    Enter your website. We'll send you a no-fluff, actionable blueprint showing how we'll get you results.
+                    Enter your details. We'll send you a no-fluff, actionable blueprint showing how we'll get you results.
                   </p>
                 </div>
                   <Form {...form}>
@@ -216,6 +219,19 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
                             <FormLabel htmlFor="hero-website" className="sr-only">Your Website URL</FormLabel>
                             <FormControl>
                               <Input id="hero-website" placeholder="Enter Your Website URL" {...field} disabled={isLoading} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                       <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel htmlFor="hero-email" className="sr-only">Your Email</FormLabel>
+                            <FormControl>
+                              <Input id="hero-email" type="email" placeholder="Enter Your Email Address*" {...field} disabled={isLoading} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -258,7 +274,7 @@ function Hero({ onFormSuccess }: { onFormSuccess: () => void }) {
                               Submitting...
                             </>
                           ) : (
-                            "Get My Free Plan"
+                            "Schedule Your Free SEO Call"
                           )}
                         </Button>
                       </div>
